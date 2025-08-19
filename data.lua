@@ -9,4 +9,3 @@ data.raw ["research-achievement"] = {}
 require("prototypes.items")
 require("prototypes.technology")
 require("prototypes.shortcuts")
-
