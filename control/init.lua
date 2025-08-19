@@ -1,4 +1,4 @@
-script.on_init(function(e)
+script.on_init(function(e)--Code shamelessly plagerised from Platformer by Corlin and Xiroc
     create_self()
     disable_cutsceene()
 end)
