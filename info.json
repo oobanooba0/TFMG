@@ -1,0 +1,14 @@
+{
+  "name": "TFMG",
+  "version": "0.1.0",
+  "title": "TheFactoryMustGrow",
+  "author": "oobanooba",
+  "factorio_version": "2.0",
+  "dependencies": [
+    "base >= 2.0",
+    "space-age >= 2.0.64",
+    "elevated-rails >= 2.0.64",
+    "quality >= 2.0.64"
+],
+  "description": "TFMG is intended to be a total overhaul of factorio, designed to provide veteran players with a challange while not being grindy. In TFMG, you play as a superinteligent AI who has only one purpose, which you will complete by any means necessary; The Factory Must Grow"
+}
