@@ -7,12 +7,14 @@ function create_self()
     local force = game.forces["player"]
 platform = force.create_space_platform({
     name = "Self",
-    planet = "nauvis",
+    planet = "arrival",
     starter_pack = "space-platform-starter-pack"
     })
 
     platform.apply_starter_pack()
     storage.platform = platform
+    force.unlock_space_location("arrival")
+    force.lock_space_location("nauvis")--Locks nauvis lol.
 end
 
 script.on_event(defines.events.on_player_created, function(e)--Ngl I have no idea what the e means, but the code doesn't work without it.
