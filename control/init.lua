@@ -17,12 +17,6 @@ platform = force.create_space_platform({
     force.lock_space_location("nauvis")--Locks nauvis lol.
 end
 
-script.on_event(defines.events.on_player_created, function(e)--Ngl I have no idea what the e means, but the code doesn't work without it.
-    local player = game.players[e.player_index]
-    player.teleport({ x = 0, y = 0 }, storage.platform.surface.name)
-    player.enter_space_platform (platform)
-end)
-
 function disable_cutsceene()--apparently, the cutscene prevents the player from being teleported?
     if remote.interfaces.freeplay then
         if remote.interfaces.freeplay.set_disable_crashsite then
@@ -30,3 +24,11 @@ function disable_cutsceene()--apparently, the cutscene prevents the player from 
         end
     end
 end
+
+-- Upon player joins
+
+script.on_event(defines.events.on_player_created, function(e)--Ngl I have no idea what the e means, but the code doesn't work without it.
+    local player = game.players[e.player_index]
+    player.teleport({ x = 0, y = 0 }, storage.platform.surface.name)
+    player.enter_space_platform (platform)
+end)
