@@ -1,1 +1,1 @@
-require("control.init")
+require("scripts.init")

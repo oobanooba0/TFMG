@@ -5,13 +5,20 @@ data.raw ["shortcuts"] = {}
 data.raw ["tips-and-tricks-item"] = {}
 data.raw ["research-achievement"] = {}
 
---this is the part where I add stuff back in
-require("prototypes.items")
+--this is the part where I add stuff
 
-require("prototypes.technology")
-require("prototypes.shortcuts")
-require("prototypes.planet.planet")
-require("prototypes.entity.asteroid")
-require("prototypes.particles")
+require("prototypes.buildings.assemblers")
+
 require("prototypes.entity.explosions")
 require("prototypes.entity.smoke")
+
+require("prototypes.items.items")
+
+require("prototypes.particles.asteroid-particles")
+
+require("prototypes.planet.planet")
+require("prototypes.entity.asteroid")
+
+require("prototypes.technologies.PlatformPhase")
+
+require("prototypes.shortcuts")
