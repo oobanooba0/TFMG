@@ -7,18 +7,36 @@ data.raw ["research-achievement"] = {}
 
 --this is the part where I add stuff
 
-require("prototypes.buildings.assemblers")
+--buildings
+require("prototypes.buildings.belts")
+require("prototypes.buildings.crafting")
 
+--categories
+require("prototypes.categories.recipe")
+
+--entities
+require("prototypes.entity.asteroid")
 require("prototypes.entity.explosions")
 require("prototypes.entity.smoke")
 
-require("prototypes.items.items")
+--items
+require("prototypes.items.buildings.belts")
+require("prototypes.items.buildings.crafting")
+require("prototypes.items.intermediates")
+require("prototypes.items.asteroid-chunks")
 
+--particles
 require("prototypes.particles.asteroid-particles")
 
+--planets
 require("prototypes.planet.planet")
-require("prototypes.entity.asteroid")
 
-require("prototypes.technologies.PlatformPhase")
+--recipes
+require("prototypes.recipes.basic-assembling")
+require("prototypes.recipes.matter-reconstructor")
 
+--technolgoies
+require("prototypes.technologies.platformphase")
+
+--other stuff
 require("prototypes.shortcuts")
