@@ -1,5 +1,5 @@
-local asteroid_util = require("__space-age__.prototypes.planet.asteroid-spawn-definitions")--borrowing from space age rn
 local planet_map_gen = require("__base__/prototypes/planet/planet-map-gen")
+local asteroid_util = require("__TFMG__.prototypes.planet.asteroid-spawn-definitions")
 local effects = require("__core__/lualib/surface-render-parameter-effects")
 local procession_graphic_catalogue_types = require("__base__/prototypes/planet/procession-graphic-catalogue-types")
 
@@ -33,6 +33,9 @@ data:extend({
     {
       clouds = effects.default_clouds_effect_properties()
     },
+    --Asteroid code
+    asteroid_spawn_influence = 1,
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.arrival_arrival, 0.1),
     persistent_ambient_sounds =
     {
       base_ambience = { filename = "__base__/sound/world/world_base_wind.ogg", volume = 0.3 },

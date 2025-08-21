@@ -7,6 +7,7 @@ data.raw ["research-achievement"] = {}
 
 --this is the part where I add stuff back in
 require("prototypes.items")
+
 require("prototypes.technology")
 require("prototypes.shortcuts")
 require("prototypes.planet.planet")

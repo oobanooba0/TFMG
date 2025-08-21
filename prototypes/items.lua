@@ -1,23 +1,26 @@
---Raw Materials
+
+--require from vanilla
+local sounds = require("__base__.prototypes.entity.sounds")
+local item_sounds = require("__base__.prototypes.item_sounds")
+local item_tints = require("__base__.prototypes.item-tints")
+--local simulations = require("__base__.prototypes.factoriopedia-simulations") -- don't need this atm, so I won't require rn.
+
+--Intermediates
 data:extend({
-      {
-    type = "item",
-    name = "metal-ore",
-    icon = "__base__/graphics/icons/iron-ore.png",
-    pictures =
     {
-      {size = 64, filename = "__base__/graphics/icons/iron-ore.png", scale = 0.5, mipmap_count = 4},
-      {size = 64, filename = "__base__/graphics/icons/iron-ore-1.png", scale = 0.5, mipmap_count = 4},
-      {size = 64, filename = "__base__/graphics/icons/iron-ore-2.png", scale = 0.5, mipmap_count = 4},
-      {size = 64, filename = "__base__/graphics/icons/iron-ore-3.png", scale = 0.5, mipmap_count = 4}
-    },
-    subgroup = "raw-resource",
+    type = "item",
+    name = "general-purpose-structure",
+    icons = {{icon = "__base__/graphics/icons/low-density-structure.png", tint = {0.7, 0.7, 1, 1}}},
+    subgroup = "intermediate-product",
     color_hint = { text = "I" },
-    order = "e[iron-ore]",
-    stack_size = 50,
-    weight = 2 * kg
+    order = "a[structural-materials]-a[general-purpose-structure]",
+    inventory_move_sound = item_sounds.low_density_inventory_move,
+    pick_sound = item_sounds.low_density_inventory_pickup,
+    drop_sound = item_sounds.low_density_inventory_move,
+    stack_size = 100,
   },
 })
+
 --Asteroid Chunks
 data:extend({
   {
