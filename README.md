@@ -8,7 +8,7 @@ Contributors:
 oobanooba
 
 
-People who I never talked to but I'd like to thank anyway. One way or another, You have helped me in this project.
+People who I never talked to but I'd like to thank anyway:
 
 Rseding91 - For various fourm posts that helped me out
 
@@ -17,3 +17,5 @@ Corlin and Xiroc - Platformer Mod
 SafTheLamb + S6X - Cupric-asteroids
 
 raiguard + K2 team - Krastorio 2
+
+One way or another, You have helped me in this project.
