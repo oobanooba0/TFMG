@@ -173,10 +173,10 @@ data:extend({
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = { pollution = 2 }
+      emissions_per_minute = { pollution = 2 },
     },
     energy_usage = "100kW",
     module_slots = 2,
-    allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"}
+    allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
   },
 })

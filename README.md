@@ -10,12 +10,16 @@ oobanooba
 
 People who I never talked to but I'd like to thank anyway:
 
-Rseding91 - For various fourm posts that helped me out
-
 Corlin and Xiroc - Platformer Mod
 
-SafTheLamb + S6X - Cupric-asteroids
+NindyBun - Heat Powered production
 
 raiguard + K2 team - Krastorio 2
 
-One way or another, You have helped me in this project.
+Rseding91 - For various fourm posts that helped me out
+
+SafTheLamb + S6X - Cupric-asteroids
+
+Z4NON - Electric Heating Tower
+
+One way or another, You have unwittingly helped me in this project.
