@@ -10,6 +10,7 @@ data.raw ["research-achievement"] = {}
 --buildings
 require("prototypes.buildings.belts")
 require("prototypes.buildings.crafting")
+require("prototypes.buildings.inserters")
 
 --categories
 require("prototypes.categories.recipe")
@@ -22,6 +23,7 @@ require("prototypes.entity.smoke")
 --items
 require("prototypes.items.buildings.belts")
 require("prototypes.items.buildings.crafting")
+require("prototypes.items.buildings.inserters")
 require("prototypes.items.intermediates")
 require("prototypes.items.asteroid-chunks")
 
