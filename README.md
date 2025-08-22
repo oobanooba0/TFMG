@@ -7,6 +7,10 @@ Contributors:
 
 oobanooba
 
+People who have helped me out:
+
+Dobberoonski - For teaching me about compound entities
+
 
 People who I never talked to but I'd like to thank anyway:
 

@@ -179,4 +179,41 @@ data:extend({
     module_slots = 2,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
   },
+  {--assembling machine heat interface
+    type = "heat-interface",
+    name = "assembling-machine-heat-interface",
+    icon = "__base__/graphics/icons/heat-interface.png",
+    hidden = true,
+    selectable_in_game = false,
+    allow_copy_paste = false,
+    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    heat_buffer =
+    {
+      max_temperature = 300,
+      specific_heat = "10MJ",
+      max_transfer = "10GW",
+      default_temperature = 0,
+      min_working_temperature = 0,
+      connections =
+      {
+        {
+          position = {0, -1},
+          direction = defines.direction.north
+        },
+        {
+          position = {1, 0},
+          direction = defines.direction.east
+        },
+        {
+          position = {0, 1},
+          direction = defines.direction.south
+        },
+        {
+          position = {-1, 0},
+          direction = defines.direction.west
+        }
+      },
+    },
+  },
 })
