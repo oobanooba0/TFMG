@@ -64,4 +64,43 @@
         { type = "item", name = "assembling-machine", amount = 1 }
     },
   },
+  {--asteroid collector
+    type = "recipe",
+    category = "basic-assembling",
+    name = "asteroid-machine",
+    energy_required = 15,
+    enabled = true,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 20 },
+    },
+    results = { 
+        { type = "item", name = "asteroid-collector", amount = 1 }
+    },
+  },
+  {--heavy space platform
+    type = "recipe",
+    category = "basic-assembling",
+    name = "heavy-space-platform",
+    energy_required = 10,
+    enabled = true,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 20 },
+    },
+    results = { 
+        { type = "item", name = "space-platform-foundation", amount = 1 }
+    },
+  },
+  {--heat pipe
+    type = "recipe",
+    category = "basic-assembling",
+    name = "heat-pipe",
+    energy_required = 2,
+    enabled = true,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 5 },
+    },
+    results = { 
+        { type = "item", name = "heat-pipe", amount = 1 }
+    },
+  },
 })
