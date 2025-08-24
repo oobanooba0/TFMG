@@ -67,7 +67,7 @@
   {--asteroid collector
     type = "recipe",
     category = "basic-assembling",
-    name = "asteroid-machine",
+    name = "asteroid-collector",
     energy_required = 15,
     enabled = true,
     ingredients = {
