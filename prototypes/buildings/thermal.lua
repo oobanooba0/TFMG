@@ -1,4 +1,5 @@
 data:extend({
+    --small radiator wont work as heat interface prototype because heat interface prototype cannot be rotated, try re-implementing it as a fluid pump or something similar instaid.
   {--small radiator
     type = "heat-interface",
     name = "small-radiator",
