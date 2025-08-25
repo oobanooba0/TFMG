@@ -19,11 +19,13 @@ require("prototypes.categories.recipe")
 require("prototypes.entity.asteroid")
 require("prototypes.entity.explosions")
 require("prototypes.entity.smoke")
+require("prototypes.buildings.thermal")
 
 --items
 require("prototypes.items.buildings.belts")
 require("prototypes.items.buildings.crafting")
 require("prototypes.items.buildings.inserters")
+require("prototypes.items.buildings.thermal")
 require("prototypes.items.intermediates")
 require("prototypes.items.asteroid-chunks")
 
