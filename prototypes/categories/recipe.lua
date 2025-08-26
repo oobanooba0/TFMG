@@ -6,5 +6,9 @@ data:extend({
     {
         type = "recipe-category",
         name = "basic-assembling"
-    }
+    },
+    {
+        type = "recipe-category",
+        name = "special"--thermal and other secret recipes live here.
+    },
 })

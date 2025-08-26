@@ -3,18 +3,27 @@ local sounds = require("__base__.prototypes.entity.sounds")
 --local # = require("__base__.prorotypes.never.forger")
 
 data:extend({
-    --small radiator wont work as heat interface prototype because heat interface prototype cannot be rotated, try re-implementing it as a fluid pump or something similar instaid.
-  {--Small Radiator, attempt 2: electric boogaloo
-    type = "offshore-pump",
+  {--Assembling machine
+    type = "assembling-machine",
     name = "small-radiator",
     icon = "__base__/graphics/icons/offshore-pump.png",
-    flags = {"placeable-neutral", "player-creation", "filter-directions"},
+    flags = {"placeable-neutral","placeable-player", "player-creation"},
+    minable = {mining_time = 0.2, result = "small-radiator"},
+    max_health = 400,
+    corpse = "offshore-pump-remnants",
+    dying_explosion = "offshore-pump-explosion",
+    circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["assembling-machine"],
+    collision_box = {{-0.6, -1.05}, {0.6, 0.3}},
+    selection_box = {{-0.6, -1.49}, {0.6, 0.49}},
+    tile_height = 1,
+    tile_width = 1,
     surface_conditions =
     {
       {
         property = "pressure",
         min = 0,
-        max = 0,
+        max = 0
       }
     },
     collision_mask = {layers={train=true, is_object=true, is_lower_object=true}}, -- collide just with object-layer and train-layer which don't collide with water, this allows us to build on 1 tile wide ground
@@ -23,83 +32,18 @@ data:extend({
       {area = {{-0.4, -0.4}, {0.4, 0.4}}, required_tiles = {layers={ground_tile=true}}, colliding_tiles = {layers={empty_space=true}}, remove_on_collision = true},
       {area = {{-1, -2}, {1, -1}}, required_tiles = {layers={empty_space=true}}, colliding_tiles = {layers={}}},--all those braces and its empty.
     },
-    minable = {mining_time = 0.1, result = "small-radiator"},
-    max_health = 150,--at some point i actually need to decide what hp this shit gonna have
-    corpse = "offshore-pump-remnants",
-    dying_explosion = "offshore-pump-explosion",
-    fluid_source_offset = {0, -1},
-    resistances =
-    {
-      {
-        type = "fire",--in case of fire, in space.
-        percent = 70
-      },
-      {
-        type = "impact",--this is impact damage against vehicles. I have no idea what damage type asteroids do, probably psychic, to me.
-        percent = 30
-      }
-    },
-    collision_box = {{-0.6, -1.05}, {0.6, 0.3}},
-    selection_box = {{-0.6, -1.49}, {0.6, 0.49}},
-    damaged_trigger_effect = hit_effects.entity(),
-    fluid_box =
-    {
-      volume = 100,
-      filter = "heat",
-      pipe_covers = pipecoverspictures(),
-      production_type = "none",
-      pipe_connections =
-      {
-        {
-          position = {0, 0},
-          direction = defines.direction.south,
-          flow_direction = "output"
-        }
-      }
-    },
-    energy_source =
-    {
-      type = "heat",
-      max_temperature = 100000, --this has to be a big number or a thermal system could lock up and be unable to cool down
-      specific_heat = "1MJ",
-      max_transfer = "1GW",
-      connections =
-      {--a north connection is not real and cannot happen.
-        {
-          position = {0, 0},
-          direction = defines.direction.east
-        },
-        {
-          position = {0, 0},
-          direction = defines.direction.south
-        },
-        {
-          position = {0, 0},
-          direction = defines.direction.west
-        }
-      }
-    },
-    energy_usage = "10000kW",
-    pumping_speed = 1,--why isnt it possible?
-    tile_width = 1,
-    tile_height = 1,
-    impact_category = "metal",--clonk
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
+    impact_category = "metal",
     working_sound =
     {
-      sound = sound_variations("__base__/sound/nuclear-reactor", 2, 0.55, volume_multiplier("main-menu", 0.8)),
-      max_sounds_per_prototype = 3,
+      sound = {filename = "__base__/sound/nuclear-reactor-1.ogg", volume = 0.45, audible_distance_modifier = 0.5},
       fade_in_ticks = 4,
-      fade_out_ticks = 20,
-      match_volume_to_activity = true,
+      fade_out_ticks = 20
     },
-    perceived_performance = {minimum = 0.5},
-    always_draw_fluid = true,
-    graphics_set =
+    damaged_trigger_effect = hit_effects.entity(),
+    graphics_set =--pumpcore
     {
-      underwater_layer_offset = 15,
-      base_render_layer = "ground-patch",
       animation =
       {
         north =
@@ -219,163 +163,33 @@ data:extend({
           }
         }
       },
-      fluid_animation =
-      {
-        north =
+    },
+    crafting_categories = {"special"},
+    fixed_recipe = "small-radiator",
+    crafting_speed = 1,
+    energy_source =
+    {
+      type = "heat",
+      max_temperature = 1000, --this has to be a big number or a thermal system could lock up and be unable to cool down
+      specific_heat = "1MJ",
+      max_transfer = "1GW",
+      connections =
+      {--north connection is not real and cannot hurt me.
         {
-          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_North-fluid.png",
-          apply_runtime_tint = true,
-          line_length = 8,
-          frame_count = 32,
-          animation_speed = 0.25,
-          width = 40,
-          height = 40,
-          shift = util.by_pixel(-1, -22),
-          scale = 0.5
+          position = {0, 0},
+          direction = defines.direction.east
         },
-        east =
         {
-          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_East-fluid.png",
-          apply_runtime_tint = true,
-          line_length = 8,
-          frame_count = 32,
-          animation_speed = 0.25,
-          width = 38,
-          height = 50,
-          shift = util.by_pixel(6, -11),
-          scale = 0.5
+          position = {0, 0},
+          direction = defines.direction.south
         },
-        south =
         {
-          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_South-fluid.png",
-          apply_runtime_tint = true,
-          line_length = 8,
-          frame_count = 32,
-          animation_speed = 0.25,
-          width = 36,
-          height = 14,
-          shift = util.by_pixel(-1, -4),
-          scale = 0.5
-        },
-        west =
-        {
-          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_West-fluid.png",
-          apply_runtime_tint = true,
-          line_length = 8,
-          frame_count = 32,
-          animation_speed = 0.25,
-          width = 36,
-          height = 50,
-          shift = util.by_pixel(-7, -11),
-          scale = 0.5
-        }
-      },
-      glass_pictures =
-      {
-        north =
-        {
-          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_North-glass.png",
-          width = 36,
-          height = 40,
-          shift = util.by_pixel(-2, -22),
-          scale = 0.5
-        },
-        east =
-        {
-          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_East-glass.png",
-          width = 30,
-          height = 32,
-          shift = util.by_pixel(5, -13),
-          scale = 0.5
-        },
-        south =
-        {
-          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_South-glass.png",
-          width = 40,
-          height = 24,
-          shift = util.by_pixel(-1, -6),
-          scale = 0.5
-        },
-        west =
-        {
-          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_West-glass.png",
-          width = 30,
-          height = 32,
-          shift = util.by_pixel(-6, -14),
-          scale = 0.5
-        }
-      },
-      base_pictures =
-      {
-        north =
-        {
-          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_North-legs.png",
-          width = 114,
-          height = 106,
-          shift = util.by_pixel(-1, -5),
-          scale = 0.5
-        },
-        east =
-        {
-          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_East-legs.png",
-          width = 106,
-          height = 60,
-          shift = util.by_pixel(4, 13),
-          scale = 0.5
-        },
-        south =
-        {
-          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_South-legs.png",
-          width = 110,
-          height = 108,
-          shift = util.by_pixel(-2, 6),
-          scale = 0.5
-        },
-        west =
-        {
-          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_West-legs.png",
-          width = 108,
-          height = 64,
-          shift = util.by_pixel(-6, 12),
-          scale = 0.5
-        }
-      },
-      underwater_pictures =
-      {
-        north =
-        {
-          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_North-underwater.png",
-          width = 98,
-          height = 36,
-          shift = util.by_pixel(-1, -32),
-          scale = 0.5
-        },
-        east =
-        {
-          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_East-underwater.png",
-          width = 40,
-          height = 72,
-          shift = util.by_pixel(39, 17),
-          scale = 0.5
-        },
-        south =
-        {
-          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_South-underwater.png",
-          width = 98,
-          height = 48,
-          shift = util.by_pixel(-1, 49),
-          scale = 0.5
-        },
-        west =
-        {
-          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_West-underwater.png",
-          width = 40,
-          height = 72,
-          shift = util.by_pixel(-40, 17),
-          scale = 0.5
+          position = {0, 0},
+          direction = defines.direction.west
         }
       }
     },
+    energy_usage = "10000kW",
     placeable_position_visualization =
     {
       filename = "__core__/graphics/cursor-boxes-32x32.png",
@@ -385,22 +199,5 @@ data:extend({
       scale = 0.5,
       x = 3*64
     },
-    circuit_connector = circuit_connector_definitions["offshore-pump"],
-    circuit_wire_max_distance = default_circuit_wire_max_distance,
-    water_reflection =
-    {
-      pictures =
-      {
-        filename = "__base__/graphics/entity/offshore-pump/offshore-pump-reflection.png",
-        priority = "extra-high",
-        width = 132,
-        height = 156,
-        shift = util.by_pixel(0, 19),
-        variation_count = 4,
-        scale = 1
-      },
-      rotate = false,
-      orientation_to_variation = true
-    }
   },
 })

@@ -38,12 +38,10 @@ require("prototypes.planet.planet")
 --recipes
 require("prototypes.recipes.basic-assembling")
 require("prototypes.recipes.matter-reconstructor")
+require("prototypes.recipes.special")
 
 --technolgoies
 require("prototypes.technologies.platformphase")
-
---fuids
-require("prototypes.fluids")
 
 --shortcuts
 require("prototypes.shortcuts")

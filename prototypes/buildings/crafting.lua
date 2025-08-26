@@ -10,7 +10,7 @@ data:extend({
     minable = {mining_time = 0.2, result = "matter-reconstructor"},
     max_health = 300,
     corpse = "assembling-machine-1-remnants",
-    dying_explosion = "assembling-machine-1-explosion",
+    dying_explosion = "assembling-machine-1-remnants",
     icon_draw_specification = {shift = {0, -0.3}},
     resistances =
     {
