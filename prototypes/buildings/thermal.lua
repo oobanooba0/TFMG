@@ -3,7 +3,7 @@ local sounds = require("__base__.prototypes.entity.sounds")
 --local # = require("__base__.prorotypes.never.forger")
 
 data:extend({
-  {--Assembling machine
+  {--small radiator
     type = "assembling-machine",
     name = "small-radiator",
     icon = "__base__/graphics/icons/offshore-pump.png",
