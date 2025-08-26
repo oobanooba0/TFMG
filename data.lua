@@ -42,5 +42,8 @@ require("prototypes.recipes.matter-reconstructor")
 --technolgoies
 require("prototypes.technologies.platformphase")
 
---other stuff
+--fuids
+require("prototypes.fluids")
+
+--shortcuts
 require("prototypes.shortcuts")
