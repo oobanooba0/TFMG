@@ -92,16 +92,6 @@ data:extend({
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["assembling-machine"],
     alert_icon_shift = util.by_pixel(0, -12),
-    created_effect = {
-      type = "direct",
-        action_delivery = {
-          type = "instant",
-          source_effects = {
-            type = "script",
-            effect_id = "create-heat-assembling-machine"
-        }
-      }
-    },
     resistances =
     {
       {
