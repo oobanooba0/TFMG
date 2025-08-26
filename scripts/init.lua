@@ -32,3 +32,10 @@ script.on_event(defines.events.on_player_created, function(e)--Ngl I have no ide
     player.teleport({ x = 0, y = 0 }, storage.platform.surface.name)
     player.enter_space_platform (platform)
 end)
+
+
+
+
+
+
+
