@@ -5,7 +5,33 @@ data.raw ["shortcuts"] = {}
 data.raw ["tips-and-tricks-item"] = {}
 data.raw ["research-achievement"] = {}
 
---this is the part where I add stuff
+-- hide vanilla content from game, this seems easier than outright removing certain things due to dependancies.
+-- expand brain.png if this works.
+local hidden_items = {"wooden-chest"}
+local hidden_recipes = {"speed-module"}
+--i'd like to also hide entites from the factoriopedia, but i'm not sure how.
+
+for name, item in pairs(data.raw.item) do
+    for _, hideName in ipairs(hidden_items) do
+        if item.name == hideName then
+        item.hidden = true
+        item.hidden_in_factoriopedia = true
+        end
+    end
+end
+
+for name, recipe in pairs(data.raw.recipe) do
+    for _, hideName in ipairs(hidden_recipes) do
+        if recipe.name == hideName then
+        recipe.hidden = true
+        recipe.hidden_in_factoriopedia = true
+        end
+    end
+end
+
+-- adjust vanilla content
+
+--this is the part where I add stuff into the game again
 
 --buildings
 require("prototypes.buildings.belts")
