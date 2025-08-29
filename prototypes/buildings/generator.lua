@@ -24,7 +24,7 @@ data:extend({
       buffer_capacity = "0.001GJ",
       usage_priority = "primary-output"
     },
-    energy_production = "0.1GW",
+    energy_production = "1GW",
     energy_usage = "0kW",
     -- also 'pictures' for 4-way sprite is available, or 'animation' resp. 'animations'
     picture =

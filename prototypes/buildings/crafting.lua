@@ -1,5 +1,15 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
+--this relates to the assembling machine heat interface prototype. I wish I understood it better so i could make a more useful comment.
+local function setOnScriptTriggerEffect(effectID)
+    function setSourceEffects()
+        return {type="script", effect_id=effectID}
+    end
+    function setActionDelivery()
+        return {type="instant", source_effects=setSourceEffects()}
+    end
+    return {type="direct", action_delivery=setActionDelivery()}
+end
 
 data:extend({
   {--matter reconstructor
@@ -64,9 +74,9 @@ data:extend({
     {
       type = "electric",
     usage_priority = "secondary-input",
-    emissions_per_minute = { pollution = 4 }
+    emissions_per_minute = { pollution = 1 }
     },
-    energy_usage = "100kW",
+    energy_usage = "500kW",
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
     module_slots = 0,
@@ -132,7 +142,6 @@ data:extend({
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.2,
-    fast_replaceable_group = "assembling-machine",
     graphics_set =
     {
       animation_progress = 0.5,
@@ -174,16 +183,16 @@ data:extend({
       usage_priority = "secondary-input",
       emissions_per_minute = { pollution = 2 },
     },
-    energy_usage = "100kW",
+    energy_usage = "1000kW",
     module_slots = 2,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
+    created_effect = setOnScriptTriggerEffect("assembling-machine")
   },
-  {
+  {--assembling machine heat interface
     type = "reactor",
     name = "assembling-machine-heat-interface",
     icon  = "__space-age__/graphics/icons/heating-tower.png",
-    flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 0.5, result = "heating-tower"},
+    flags = {"placeable-neutral", "player-creation","not-on-map",},
     max_health = 500,
     corpse = "heating-tower-remnants",
     dying_explosion = "heating-tower-explosion",
@@ -195,54 +204,21 @@ data:extend({
         min = 0,
       }
     },
-    consumption = "40MW",
+    consumption = "1MW",
     neighbour_bonus = 0,
     energy_source =
     {
       type = "void",
     },
-    collision_box = {{-1.25, -1.25}, {1.25, 1.25}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
+    selection_box = {{-1, -1}, {1, 1}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 1,
-
-    picture =
-    {
-      layers =
-      {
-        util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-main", {
-         scale = 0.5
-        }),
-        util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-shadow", {
-          scale = 0.5,
-          draw_as_shadow = true
-        })
-      }
-    },
-
-    working_light_picture =
-    {
-      layers = {
-        util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-working-fire", {
-          frame_count = 24,
-          scale = 0.5,
-          blend_mode = "additive",
-          draw_as_glow = true,
-          animation_speed = 0.333
-        }),
-        util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-working-light", {
-          frame_count = 1,
-          repeat_count = 24,
-          scale = 0.5,
-          blend_mode = "additive",
-          draw_as_glow = true
-        })
-      }
-    },
-
+    selectable_in_game = false,
+    allow_copy_paste = false,
     heat_buffer =
     {
-      max_temperature = 1000,
+      max_temperature = 250,
       specific_heat = "5MJ",
       max_transfer = "10GW",
       minimum_glow_temperature = 50,
@@ -265,14 +241,7 @@ data:extend({
           direction = defines.direction.west
         },
       },
-
-    heat_picture = apply_heat_pipe_glow(
-      util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-glow", {
-        scale = 0.5,
-        blend_mode = "additive"
-      }))
     },
-
     connection_patches_connected =
     {
       sheet = util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-pipes", {
@@ -280,7 +249,6 @@ data:extend({
         variation_count = 4
       })
     },
-
     connection_patches_disconnected =
     {
       sheet = util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-pipes-disconnected", {
@@ -288,7 +256,6 @@ data:extend({
         variation_count = 4
       })
     },
-
     heat_connection_patches_connected =
     {
       sheet = apply_heat_pipe_glow(
@@ -297,7 +264,6 @@ data:extend({
         variation_count = 4
       }))
     },
-
     heat_connection_patches_disconnected =
     {
       sheet = apply_heat_pipe_glow(
@@ -306,17 +272,6 @@ data:extend({
         variation_count = 4
       }))
     },
-
-    open_sound = sounds.steam_open,
-    close_sound = sounds.steam_close,
-    working_sound =
-    {
-      sound = {filename = "__space-age__/sound/entity//heating-tower/heating-tower-loop.ogg", volume = 0.5},
-      max_sounds_per_prototype = 2,
-      fade_in_ticks = 4,
-      fade_out_ticks = 20
-    },
-
     default_temperature_signal = {type = "virtual", name = "signal-T"},
     circuit_wire_max_distance = reactor_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["heating-tower"]

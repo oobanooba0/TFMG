@@ -4,7 +4,7 @@ script.on_init(function(e)--Code shamelessly plagerised from Platformer by Corli
     give_starting_items()
 end)
 
-function disable_cutsceene()--apparently, the cutscene prevents the player from being teleported?
+function disable_cutsceene()--apparently, the cutscene prevents the player from being teleported.
     if remote.interfaces.freeplay then
         if remote.interfaces.freeplay.set_disable_crashsite then
             remote.call("freeplay", "set_disable_crashsite", true)
