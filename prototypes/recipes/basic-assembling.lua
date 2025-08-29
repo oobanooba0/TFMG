@@ -103,4 +103,18 @@
         { type = "item", name = "heat-pipe", amount = 1 }
     },
   },
+  {--small radiator
+    type = "recipe",
+    category = "basic-assembling",
+    name = "small-radiator",
+    energy_required = 10,
+    enabled = true,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 4 },
+      { type = "item", name = "heat-pipe", amount = 2 },
+    },
+    results = { 
+        { type = "item", name = "small-radiator", amount = 1 }
+    },
+  },
 })

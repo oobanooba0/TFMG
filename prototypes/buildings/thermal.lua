@@ -165,7 +165,7 @@ data:extend({
       },
     },
     crafting_categories = {"special"},
-    fixed_recipe = "small-radiator",
+    fixed_recipe = "small-radiator-radiation",
     crafting_speed = 1,
     energy_source =
     {
