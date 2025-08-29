@@ -33,6 +33,9 @@ require("prototypes.items.buildings.thermal")
 require("prototypes.items.intermediates")
 require("prototypes.items.asteroid-chunks")
 
+--menu simulations
+require("prototypes.menu-simulations.menu-simulations")
+
 --particles
 require("prototypes.particles.asteroid-particles")
 

@@ -3,7 +3,7 @@ script.on_init(function(e)--Code shamelessly plagerised from Platformer by Corli
     disable_cutsceene()--Necessary for player to be teleported and imprisoned
 end)
 
-function create_self()
+function create_self()--self is the name of the space platform, I just thought it was funny.
     local force = game.forces["player"]
 platform = force.create_space_platform({
     name = "Self",
@@ -32,3 +32,4 @@ script.on_event(defines.events.on_player_created, function(e)--Ngl I have no ide
     player.teleport({ x = 0, y = 0 }, storage.platform.surface.name)
     player.enter_space_platform (platform)
 end)
+

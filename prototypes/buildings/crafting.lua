@@ -164,7 +164,6 @@ data:extend({
         }
       }
     },
-
     crafting_categories = {
       "basic-assembling"
     },
