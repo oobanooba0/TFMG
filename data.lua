@@ -5,12 +5,16 @@ data.raw ["shortcuts"] = {}
 data.raw ["tips-and-tricks-item"] = {}
 data.raw ["research-achievement"] = {}
 
+--adjust vanilla content
+local hidden_items = {"wood","coal","stone","iron-ore","copper-ore","uranium-ore","raw-fish","spoilage","pistol",}
+local hidden_recipes = {}
+local disabled_recipes = {"wooden-cheest","iron-chest","transport-belt","burner-inserter","stone-brick","burner-mining-drill","stone-furnace","iron-plate","copper-plate","iron-gear-wheel","firearm-magazine","light-armor",}
+--i'd like to also hide entites from the factoriopedia, but i'm not sure how.
+--raw fish and the pistol seem to be immune to being hidden, not sure why.
+
+
 -- hide vanilla content from game, this seems easier than outright removing certain things due to dependancies.
 -- expand brain.png if this works.
-local hidden_items = {"wooden-chest"}
-local hidden_recipes = {"wooden-chest"}
---i'd like to also hide entites from the factoriopedia, but i'm not sure how.
-
 for name, item in pairs(data.raw.item) do
     for _, hideName in ipairs(hidden_items) do
         if item.name == hideName then
@@ -19,7 +23,7 @@ for name, item in pairs(data.raw.item) do
         end
     end
 end
-
+--hide recipies
 for name, recipe in pairs(data.raw.recipe) do
     for _, hideName in ipairs(hidden_recipes) do
         if recipe.name == hideName then
@@ -28,8 +32,16 @@ for name, recipe in pairs(data.raw.recipe) do
         end
     end
 end
+--disable recipies
+for name, recipe in pairs(data.raw.recipe) do
+    for _, disableName in ipairs(disabled_recipes) do
+        if recipe.name == disableName then
+        recipe.enabled = false
+        end
+    end
+end
 
--- adjust vanilla content
+data.raw.recipe ["space-platform-foundation"].enabled = true
 
 --this is the part where I add stuff into the game again
 
