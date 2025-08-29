@@ -192,7 +192,7 @@ data:extend({
     type = "reactor",
     name = "assembling-machine-heat-interface",
     icon  = "__space-age__/graphics/icons/heating-tower.png",
-    flags = {"placeable-neutral", "player-creation","not-on-map",},
+    flags = {"placeable-neutral", "player-creation","not-on-map","no-automated-item-insertion","no-automated-item-removal"},
     max_health = 500,
     corpse = "heating-tower-remnants",
     dying_explosion = "heating-tower-explosion",
