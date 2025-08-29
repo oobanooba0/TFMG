@@ -8,7 +8,7 @@ data.raw ["research-achievement"] = {}
 -- hide vanilla content from game, this seems easier than outright removing certain things due to dependancies.
 -- expand brain.png if this works.
 local hidden_items = {"wooden-chest"}
-local hidden_recipes = {"speed-module"}
+local hidden_recipes = {"wooden-chest"}
 --i'd like to also hide entites from the factoriopedia, but i'm not sure how.
 
 for name, item in pairs(data.raw.item) do

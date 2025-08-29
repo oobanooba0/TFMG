@@ -16,7 +16,7 @@ data:extend({
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.5,
-    gui_mode = "all",
+    gui_mode = "none",
     allow_copy_paste = true,
     energy_source =
     {
