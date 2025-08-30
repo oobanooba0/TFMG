@@ -2,6 +2,33 @@ local item_sounds = require("__base__.prototypes.item_sounds")
 
 --Intermediates
 data:extend({
+---Asteroid Chunks
+  {
+    type = "item",
+    name = "ferric-asteroid-chunk",
+    icon = "__TFMG__/graphics/icons/ferric-asteroid-chunk.png",
+    subgroup = "raw-materials",
+    order = "a[chunk]-a[ferric]",
+    inventory_move_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
+    pick_sound = "__space-age__/sound/item/rock-inventory-pickup.ogg",
+    drop_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
+    stack_size = 1,
+    weight = 100 * kg,
+    enabled = true,
+  },
+  {
+    type = "item",
+    name = "crystalline-asteroid-chunk",
+    icon = "__TFMG__/graphics/icons/crystalline-asteroid-chunk.png",
+    subgroup = "raw-materials",
+    order = "a[chunk]-b[crystalline]",
+    inventory_move_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
+    pick_sound = "__space-age__/sound/item/rock-inventory-pickup.ogg",
+    drop_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
+    stack_size = 1,
+    weight = 100 * kg,
+    enabled = true,
+  },
 
 ---Base intermediates (Things we make other intermediates out of)
   {
@@ -11,6 +38,19 @@ data:extend({
     subgroup = "basic-intermediates",
     color_hint = { text = "I" },
     order = "a[plates]-a[ferric-plate]",
+    inventory_move_sound = item_sounds.metal_small_inventory_move,
+    pick_sound = item_sounds.metal_small_inventory_pickup,
+    drop_sound = item_sounds.metal_small_inventory_move,
+    stack_size = 100,
+    random_tint_color = item_tints.iron_rust
+  },
+    {
+    type = "item",
+    name = "crystalline-plate",
+    icons = {{ icon = "__base__/graphics/icons/iron-plate.png", tint = {1, 1, 1, 0.5}}},
+    subgroup = "basic-intermediates",
+    color_hint = { text = "I" },
+    order = "a[plates]-b[crystalline-plate]",
     inventory_move_sound = item_sounds.metal_small_inventory_move,
     pick_sound = item_sounds.metal_small_inventory_pickup,
     drop_sound = item_sounds.metal_small_inventory_move,

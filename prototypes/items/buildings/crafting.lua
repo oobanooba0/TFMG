@@ -26,4 +26,17 @@ data:extend({
     stack_size = 50,
     weight = 40*kg,
   },
+    {
+    type = "item",
+    name = "furnace",
+    icon = "__base__/graphics/icons/electric-furnace.png",
+    subgroup = "smelting-machine",
+    order = "a[furnace]",
+    inventory_move_sound = item_sounds.electric_large_inventory_move,
+    pick_sound = item_sounds.electric_large_inventory_pickup,
+    drop_sound = item_sounds.electric_large_inventory_move,
+    place_result = "furnace",
+    stack_size = 50,
+    weight = 20*kg
+  },
 })

@@ -49,7 +49,8 @@ function create_permission_group()--hopefully prevents players from goign to sur
 end
 
 function create_data_storage()
-	storage.TFMGthermal = {}
+	storage.assembling_machine_thermal = {}
+    storage.furnace_thermal = {}
 end
 
 -- Upon player joins

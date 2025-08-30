@@ -64,6 +64,19 @@
         { type = "item", name = "assembling-machine", amount = 1 }
     },
   },
+  {--furnace
+    type = "recipe",
+    category = "basic-assembling",
+    name = "assembling-machine",
+    energy_required = 15,
+    enabled = true,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 20 },
+    },
+    results = { 
+        { type = "item", name = "furnace", amount = 1 }
+    },
+  },
   {--asteroid collector
     type = "recipe",
     category = "basic-assembling",

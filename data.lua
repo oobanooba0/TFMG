@@ -70,8 +70,7 @@ require("prototypes.items.buildings.crafting")
 require("prototypes.items.buildings.generator")
 require("prototypes.items.buildings.inserters")
 require("prototypes.items.buildings.thermal")
----other items
-require("prototypes.items.asteroid-chunks")
+---inventory items
 require("prototypes.items.intermediates")
 require("prototypes.items.spiders")
 
@@ -86,6 +85,7 @@ require("prototypes.planet.planet")
 
 --recipes
 require("prototypes.recipes.basic-assembling")
+require("prototypes.recipes.furnace")
 require("prototypes.recipes.matter-reconstructor")
 require("prototypes.recipes.special")
 
