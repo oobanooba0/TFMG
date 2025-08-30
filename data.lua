@@ -59,6 +59,7 @@ require("prototypes.categories.recipe")
 require("prototypes.entity.asteroid")
 require("prototypes.entity.explosions")
 require("prototypes.entity.smoke")
+require("prototypes.entity.spiders")
 
 --items
 ---buildings
@@ -68,8 +69,9 @@ require("prototypes.items.buildings.generator")
 require("prototypes.items.buildings.inserters")
 require("prototypes.items.buildings.thermal")
 ---other items
-require("prototypes.items.intermediates")
 require("prototypes.items.asteroid-chunks")
+require("prototypes.items.intermediates")
+require("prototypes.items.spiders")
 
 --menu simulations
 require("prototypes.menu-simulations.menu-simulations")

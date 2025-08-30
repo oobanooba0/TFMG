@@ -30,7 +30,7 @@ data:extend({
     tile_buildability_rules =--build on the edge of space.
     {
       {area = {{-0.4, -0.4}, {0.4, 0.4}}, required_tiles = {layers={ground_tile=true}}, colliding_tiles = {layers={empty_space=true}}, remove_on_collision = true},
-      {area = {{-1, -2}, {1, -1}}, required_tiles = {layers={empty_space=true}}, colliding_tiles = {layers={}}},--all those braces and its empty.
+      {area = {{-0.4, -4}, {0.4, -1}}, required_tiles = {layers={empty_space=true}}, colliding_tiles = {layers={}}},--all those braces and its empty.
     },
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
@@ -189,7 +189,7 @@ data:extend({
         }
       }
     },
-    energy_usage = "10000kW",
+    energy_usage = "5000kW",--5mw should be enough for assembling machines per radiator. I do wonder if this will be a bit tight with more advanced machines/beacons.
     placeable_position_visualization =
     {
       filename = "__core__/graphics/cursor-boxes-32x32.png",

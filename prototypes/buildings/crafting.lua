@@ -1,16 +1,5 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
---this relates to the assembling machine heat interface prototype. I wish I understood it better so i could make a more useful comment.
-local function setOnScriptTriggerEffect(effectID)
-    function setSourceEffects()
-        return {type="script", effect_id=effectID}
-    end
-    function setActionDelivery()
-        return {type="instant", source_effects=setSourceEffects()}
-    end
-    return {type="direct", action_delivery=setActionDelivery()}
-end
-
 data:extend({
   {--matter reconstructor
     type = "assembling-machine",
@@ -186,13 +175,12 @@ data:extend({
     energy_usage = "1000kW",
     module_slots = 2,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-    created_effect = setOnScriptTriggerEffect("assembling-machine")
   },
   {--assembling machine heat interface
-    type = "reactor",
+    type = "heat-interface",
     name = "assembling-machine-heat-interface",
     icon  = "__space-age__/graphics/icons/heating-tower.png",
-    flags = {"placeable-neutral", "player-creation","not-on-map","no-automated-item-insertion","no-automated-item-removal"},
+    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable",},
     max_health = 500,
     corpse = "heating-tower-remnants",
     dying_explosion = "heating-tower-explosion",
@@ -204,12 +192,6 @@ data:extend({
         min = 0,
       }
     },
-    consumption = "1MW",
-    neighbour_bonus = 0,
-    energy_source =
-    {
-      type = "void",
-    },
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
     selection_box = {{-1, -1}, {1, 1}},
     damaged_trigger_effect = hit_effects.entity(),
@@ -219,9 +201,8 @@ data:extend({
     heat_buffer =
     {
       max_temperature = 250,
-      specific_heat = "5MJ",
+      specific_heat = "1MJ",
       max_transfer = "10GW",
-      minimum_glow_temperature = 50,
       connections =
       {
         {
@@ -242,38 +223,5 @@ data:extend({
         },
       },
     },
-    connection_patches_connected =
-    {
-      sheet = util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-pipes", {
-        scale = 0.5,
-        variation_count = 4
-      })
-    },
-    connection_patches_disconnected =
-    {
-      sheet = util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-pipes-disconnected", {
-        scale = 0.5,
-        variation_count = 4
-      })
-    },
-    heat_connection_patches_connected =
-    {
-      sheet = apply_heat_pipe_glow(
-        util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-pipes-heat", {
-        scale = 0.5,
-        variation_count = 4
-      }))
-    },
-    heat_connection_patches_disconnected =
-    {
-      sheet = apply_heat_pipe_glow(
-        util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-pipes-heat-disconnected", {
-        scale = 0.5,
-        variation_count = 4
-      }))
-    },
-    default_temperature_signal = {type = "virtual", name = "signal-T"},
-    circuit_wire_max_distance = reactor_circuit_wire_max_distance,
-    circuit_connector = circuit_connector_definitions["heating-tower"]
   },
 })

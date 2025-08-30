@@ -11,10 +11,16 @@ People who have helped me out:
 
 Dobberoonski - For teaching me about compound entities
 
+allison - For helping me make compound entities work for the thermal system
+
+Mr.SmoothieHuman - for pointing me to the runtime docs, which i somehow missed because i am stoopid.
+
 
 People who I never talked to but I'd like to thank anyway:
 
 Corlin and Xiroc - Platformer Mod
+
+Flib team - Flib is pretty nice.
 
 NindyBun - Heat Powered production
 

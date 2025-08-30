@@ -2,6 +2,7 @@ script.on_init(function(e)--Code shamelessly plagerised from Platformer by Corli
     disable_cutsceene()--Necessary for player to be teleported and imprisoned    
     create_self()--Create starting space platform
     give_starting_items()
+    create_data_storage()
 end)
 
 function disable_cutsceene()--apparently, the cutscene prevents the player from being teleported.
@@ -39,6 +40,10 @@ function give_starting_items()
     end
 end
 
+function create_data_storage()
+	storage.TFMGthermal = {}
+end
+
 -- Upon player joins
 
 script.on_event(defines.events.on_player_created, function(e)--Ngl I have no idea what the e means, but the code doesn't work without it.
@@ -46,4 +51,3 @@ script.on_event(defines.events.on_player_created, function(e)--Ngl I have no ide
     player.teleport({ x = 0, y = 0 }, storage.platform.surface.name)
     player.enter_space_platform (platform)
 end)
-
