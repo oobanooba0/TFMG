@@ -5,12 +5,13 @@ local thermal_system = {}
 
 function thermal_system.on_machine_destroyed(event)--fuck this. Works somehow.
 	if event.type == defines.target_type.entity then
-		if storage.assembling_machine_thermal[event.useful_id] ~= nil then
+
+		if storage.assembling_machine_thermal[event.useful_id] ~= nil then --check if assembling machine
 		local entry = storage.assembling_machine_thermal[event.useful_id]
 		entry.interface.destroy()
 		storage.assembling_machine_thermal[event.useful_id] = nil
 
-		elseif storage.furnace_thermal[event.useful_id] ~= nil then
+		elseif storage.furnace_thermal[event.useful_id] ~= nil then --check if furnace
 		local entry = storage.furnace_thermal[event.useful_id]
 		entry.interface.destroy()
 		storage.furnace_thermal[event.useful_id] = nil
