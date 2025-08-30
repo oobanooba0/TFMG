@@ -9,11 +9,13 @@ oobanooba
 
 People who have helped me out:
 
+Allison - For helping me make compound entities work for the thermal system
+
 Dobberoonski - For teaching me about compound entities
 
-allison - For helping me make compound entities work for the thermal system
-
 Mr.SmoothieHuman - for pointing me to the runtime docs, which i somehow missed because i am stoopid.
+
+notnotmelon - for helping me with the spidertron deployment mechanic.
 
 
 People who I never talked to but I'd like to thank anyway:
