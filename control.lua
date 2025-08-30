@@ -18,7 +18,7 @@ filters = {
 }
 
 
-script.on_event(
+script.on_event(--machines create machines create machines create machines create machines create.venjent.wav
 	defines.events.on_built_entity,
 	function(event)
 		handle_build_event(event)
