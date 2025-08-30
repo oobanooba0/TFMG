@@ -13,6 +13,8 @@ Allison - For helping me make compound entities work for the thermal system
 
 Dobberoonski - For teaching me about compound entities
 
+Loup&Snoop - For helping me with compound entities
+
 Mr.SmoothieHuman - for pointing me to the runtime docs, which i somehow missed because i am stoopid.
 
 notnotmelon - for helping me with the spidertron deployment mechanic.
