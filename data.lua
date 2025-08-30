@@ -53,6 +53,7 @@ require("prototypes.buildings.inserters")
 require("prototypes.buildings.thermal")
 
 --categories
+require("prototypes.categories.item-groups")
 require("prototypes.categories.recipe")
 
 --entities

@@ -4,10 +4,10 @@ local sounds = require("__base__.prototypes.entity.sounds")
 data:extend({
     {--proton decay RTG
     type = "electric-energy-interface",
-    name = "proton-decay-thermolectric-generator",
+    name = "proton-decay-thermoelectric-generator",
     icons = {{icon = "__base__/graphics/icons/nuclear-reactor.png", tint = {1, 1, 1, 1}}},
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 0.1, result = "proton-decay-thermolectric-generator"},
+    minable = {mining_time = 0.1, result = "proton-decay-thermoelectric-generator"},
     max_health = 150,
     corpse = "nuclear-reactor-remnants",
     dying_explosion = "nuclear-reactor-explosion",

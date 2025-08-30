@@ -119,5 +119,5 @@ create_scout_o_tron{
     scale = 0.8,
     leg_scale = 1.8, -- relative to scale
     leg_thickness = 0.6, -- relative to leg_scale
-    leg_movement_speed = 0.8,
+    leg_movement_speed = 1,
 }

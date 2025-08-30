@@ -128,7 +128,7 @@ data:extend({
       fade_out_ticks = 20
     },
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    selection_box = {{-1.4, -1.4}, {1.4, 1.4}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.2,
     graphics_set =
@@ -180,7 +180,7 @@ data:extend({
     type = "heat-interface",
     name = "assembling-machine-heat-interface",
     icon  = "__space-age__/graphics/icons/heating-tower.png",
-    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable",},
+    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable","not-deconstructable"},
     max_health = 500,
     corpse = "heating-tower-remnants",
     dying_explosion = "heating-tower-explosion",
@@ -193,11 +193,13 @@ data:extend({
       }
     },
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
-    selection_box = {{-1, -1}, {1, 1}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    selection_priority = 40,
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 1,
-    selectable_in_game = false,
+    selectable_in_game = true,
     allow_copy_paste = false,
+    gui_mode = "none",
     heat_buffer =
     {
       max_temperature = 250,
