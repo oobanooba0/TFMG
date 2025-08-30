@@ -34,6 +34,7 @@ local make_particle = function(params)
 end
 
 local particles = {
+  --ferric asteroid particles
   make_particle{
     name = "ferric-asteroid-chunk-particle-small",
     life_time = 25,
@@ -105,6 +106,81 @@ local particles = {
     life_time = 160,
     pictures = particle_animations.get_ferric_asteroid_particle_big_pictures(),
     shadows = particle_animations.get_ferric_asteroid_particle_big_pictures({tint=shadowtint(), shift=util.by_pixel(1,0)}),
+    regular_trigger_effect = nil,
+    render_layer_when_on_ground = "lower-object-above-shadow",
+    movement_modifier = 0.1
+  },
+  --crystalline asteroid particles
+    make_particle{
+    name = "crystalline-asteroid-chunk-particle-small",
+    life_time = 25,
+    pictures = particle_animations.get_crystalline_asteroid_particle_small_pictures(),
+    shadows = particle_animations.get_crystalline_asteroid_particle_small_pictures({ tint = shadowtint(), shift = util.by_pixel (1,0)}),
+    regular_trigger_effect = nil,
+    render_layer_when_on_ground = "lower-object-above-shadow"
+  },
+    make_particle{
+    name = "crystalline-asteroid-chunk-particle-medium",
+    life_time = 45,
+    pictures = particle_animations.get_crystalline_asteroid_particle_medium_pictures ({}),
+    shadows = particle_animations.get_crystalline_asteroid_particle_medium_pictures({ tint = shadowtint(), shift = util.by_pixel (1,0)}),
+    regular_trigger_effect = nil,
+    render_layer_when_on_ground = "lower-object-above-shadow",
+    movement_modifier = 0.1
+  },
+    make_particle{
+    name = "crystalline-asteroid-particle-top-small",
+    life_time = 82,
+    pictures = particle_animations.get_crystalline_asteroid_particle_top_small_pictures({ }),
+    shadows = particle_animations.get_crystalline_asteroid_particle_top_small_pictures({ tint = shadowtint(), shift = util.by_pixel (1,0)}),
+    regular_trigger_effect = nil,
+    render_layer = "air-object",
+    render_layer_when_on_ground = "lower-object-above-shadow",
+    movement_modifier = 0.1
+  },
+    make_particle{
+    name = "crystalline-asteroid-particle-top-big",
+    life_time = 78,
+    pictures = particle_animations.get_crystalline_asteroid_particle_top_big_pictures({}),
+    shadows = particle_animations.get_crystalline_asteroid_particle_top_big_pictures({ tint = shadowtint(), shift = util.by_pixel (1,0)}),
+    regular_trigger_effect = nil,
+    render_layer = "air-object",
+    render_layer_when_on_ground = "lower-object-above-shadow",
+    movement_modifier = 0.1
+  },
+  make_particle{
+    name = "crystalline-asteroid-particle-top-huge",
+    life_time = 64,
+    pictures = particle_animations.get_crystalline_asteroid_particle_top_big_pictures({scale = 1}),
+    shadows = particle_animations.get_crystalline_asteroid_particle_top_big_pictures({ tint = shadowtint(), shift = util.by_pixel (1,0)}),
+    regular_trigger_effect = nil,
+    render_layer = "air-object",
+    render_layer_when_on_ground = "lower-object-above-shadow",
+    movement_modifier = 0.1
+  },
+    make_particle{
+    name = "crystalline-asteroid-particle-small",
+    life_time = 120,
+    pictures = particle_animations.get_crystalline_asteroid_particle_small_pictures ({}),
+    shadows = particle_animations.get_crystalline_asteroid_particle_small_pictures({ tint = shadowtint(), shift = util.by_pixel (1,0)}),
+    regular_trigger_effect = nil,
+    render_layer_when_on_ground = "lower-object-above-shadow",
+    movement_modifier = 0.1
+  },
+    make_particle{
+    name = "crystalline-asteroid-particle-medium",
+    life_time = 200,
+    pictures = particle_animations.get_crystalline_asteroid_particle_medium_pictures ({}),
+    shadows = particle_animations.get_crystalline_asteroid_particle_medium_pictures({ tint = shadowtint(), shift = util.by_pixel (1,0)}),
+    regular_trigger_effect = nil,
+    render_layer_when_on_ground = "lower-object-above-shadow",
+    movement_modifier = 0.1
+  },
+    make_particle{
+    name = "crystalline-asteroid-particle-big",
+    life_time = 160,
+    pictures = particle_animations.get_crystalline_asteroid_particle_big_pictures ({}),
+    shadows = particle_animations.get_crystalline_asteroid_particle_big_pictures({ tint = shadowtint(), shift = util.by_pixel (1,0)}),
     regular_trigger_effect = nil,
     render_layer_when_on_ground = "lower-object-above-shadow",
     movement_modifier = 0.1

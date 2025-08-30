@@ -7,7 +7,7 @@ asteroid_functions.weighted_average = function(A, B, weight)
   return result
 end
 
-asteroid_functions.arrival_ratio      = {1}
+asteroid_functions.arrival_ratio      = {1 , 0.1}
 
 asteroid_functions.arrival_chunks      = 0.02
 asteroid_functions.arrival_medium      = 0
@@ -170,7 +170,7 @@ end
 asteroid_functions.spawn_definitions = function(data, planet)
   local asteroid_spawn_definitions = {}
   local asteroid_sizes = {"chunk", "small", "medium", "big", "huge"}
-  local asteroid_types = {"ferric",}
+  local asteroid_types = {"ferric","crystalline"}
   for k, asteroid_size in pairs(asteroid_sizes) do
     for k, asteroid_type in pairs(asteroid_types) do
       local asteroid_name = ""
@@ -183,6 +183,8 @@ asteroid_functions.spawn_definitions = function(data, planet)
       local asteroid_id = 0
       if asteroid_type == "ferric" then
         asteroid_id = 1
+      elseif asteroid_type == "crystalline" then
+        asteroid_id = 2
       end
 
       local probability_data = {}

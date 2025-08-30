@@ -1,8 +1,5 @@
 --Thanks to SafTheLamb + S6X, Via "studying (plagerising) your code, I managed to kind of get an idea of how any of this works"
 
-
---local simulations = require("__TFMG__.prototypes.factoriopedia-simulations")
-
 local asteroid_sizes = {"chunk", "small", "medium", "big", "huge"}
 local shared_resistances =
 {
@@ -48,7 +45,30 @@ local asteroids_data =
       },
       ambient_light = {0.01, 0.01, 0.01},
     }
-  }
+  },
+  crystalline =
+  {
+    order = "b",
+    mass = shared_mass,
+    max_health = shared_health,
+    resistances = shared_resistances,
+    shading_data =
+    {
+      normal_strength = 1.2,
+      light_width = 0.3,
+      brightness = 0.3,
+      specular_strength = 2.5,
+      specular_power = 1.5,
+      specular_purity = 0.1,
+      sss_contrast = 0,
+      sss_amount = 0.15,
+      lights = {
+        { color = {1,1,1}, direction = {0.75,0.22,-1} },
+        { color = {0.2,0,0}, direction = {0.5, 0, 0.95} },
+      },
+      ambient_light = {0.0, 0.0, 0.0},
+    }
+  },
 }
 
 local collision_radiuses =
@@ -189,6 +209,18 @@ for asteroid_size, asteroid_size_name in pairs(asteroid_sizes) do
 
     local variations ={}
     if (asteroid_type == "ferric") then
+      if (asteroid_size_name == "chunk") then
+        table.insert(variations, asteroid_variation(asteroid_type, "01", graphics_scale, asteroid_size))
+      elseif (asteroid_size_name == "small") then
+        table.insert(variations, asteroid_variation(asteroid_type, "01", graphics_scale, asteroid_size))
+      elseif  (asteroid_size_name == "medium") then
+        table.insert(variations, asteroid_variation(asteroid_type, "01", graphics_scale, asteroid_size))
+      elseif (asteroid_size_name == "big") then
+        table.insert(variations, asteroid_variation(asteroid_type, "01", graphics_scale, asteroid_size))
+      elseif  (asteroid_size_name == "huge") then
+        table.insert(variations, asteroid_variation(asteroid_type, "01", graphics_scale, asteroid_size))
+      end
+    elseif (asteroid_type == "crystalline") then
       if (asteroid_size_name == "chunk") then
         table.insert(variations, asteroid_variation(asteroid_type, "01", graphics_scale, asteroid_size))
       elseif (asteroid_size_name == "small") then

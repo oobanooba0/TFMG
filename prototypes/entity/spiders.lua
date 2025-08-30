@@ -6,7 +6,7 @@ local movement_triggers = require("__base__.prototypes.entity.movement-triggers"
 function create_scout_o_tron(arguments)
 local scale = arguments.scale
 local leg_scale = scale * arguments.leg_scale
-local body_height = 2 * scale * leg_scale
+local body_height = 1.8 * scale * leg_scale
 local scout_o_tron_resistances ={}
 local scout_o_tron_leg_resistances = util.table.deepcopy(scout_o_tron_resistances)
 scout_o_tron_leg_resistances[4] = { type = "explosion", percent = 100 }
@@ -42,7 +42,7 @@ data:extend(
     friction_force = 1,
     flags = {"placeable-neutral", "player-creation", "placeable-off-grid"},
     minable = {mining_time = 1, result = arguments.name},
-    max_health = 3000,
+    max_health = 1000,
     resistances = util.table.deepcopy(scout_o_tron_resistances),
     minimap_representation =
     {
@@ -62,12 +62,12 @@ data:extend(
     dying_explosion = "spidertron-explosion",
     energy_per_hit_point = 1,
     guns = { "spidertron-rocket-launcher-1", "spidertron-rocket-launcher-2", "spidertron-rocket-launcher-3", "spidertron-rocket-launcher-4" },
-    inventory_size = 80,
+    inventory_size = 20,
     equipment_grid = "spidertron-equipment-grid",
-    trash_inventory_size = 20,
+    trash_inventory_size = 10,
     height = body_height,
     alert_icon_shift = { 0, -body_height },
-    torso_rotation_speed = 0.005,
+    torso_rotation_speed = 0.025,
     chunk_exploration_radius = 3,
     selection_priority = 60,
     graphics_set = spidertron_torso_graphics_set(scale),
@@ -80,6 +80,7 @@ data:extend(
     chain_shooting_cooldown_modifier = 0.5,
     spider_engine =
     {
+      walking_group_overlap = 0.1,
       legs =
       {
         { -- 1
@@ -108,16 +109,50 @@ data:extend(
     is_military_target = true,
     allow_remote_driving = true,
   },
-  make_spidertron_leg(arguments.name, leg_scale, arguments.leg_thickness, arguments.leg_movement_speed, 1, spidertron_leg_resistances),
-  make_spidertron_leg(arguments.name, leg_scale, arguments.leg_thickness, arguments.leg_movement_speed, 2, spidertron_leg_resistances),
-  make_spidertron_leg(arguments.name, leg_scale, arguments.leg_thickness, arguments.leg_movement_speed, 3, spidertron_leg_resistances),
+  make_scout_o_tron_leg(arguments.name, leg_scale, arguments.leg_thickness, arguments.leg_movement_speed, 1, spidertron_leg_resistances),
+  make_scout_o_tron_leg(arguments.name, leg_scale, arguments.leg_thickness, arguments.leg_movement_speed, 2, spidertron_leg_resistances),
+  make_scout_o_tron_leg(arguments.name, leg_scale, arguments.leg_thickness, arguments.leg_movement_speed, 3, spidertron_leg_resistances),
 })
+end
+
+function make_scout_o_tron_leg(spidertron_name, scale, leg_thickness, movement_speed, number, leg_resistances)
+  return
+  {
+    type = "spider-leg",
+    name = spidertron_name .. "-leg-" .. number,
+    hidden = true,
+    localised_name = {"entity-name.scout'o'tron-leg"},
+    collision_box = {{-0.05, -0.05}, {0.05, 0.05}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    icon = "__base__/graphics/icons/spidertron.png",
+    walking_sound_volume_modifier = 0.8,
+    walking_sound_speed_modifier = 0.5,
+    target_position_randomisation_distance = 0.25 * scale,
+    minimal_step_size = 1 * scale,
+    working_sound =
+    {
+      match_progress_to_activity = true,
+      sound = sounds.spidertron_leg,
+    },
+    stretch_force_scalar = 2.5 / (3.5 * scale), -- longer legs, weaker stretch force
+    knee_height = 2.5 * scale,
+    knee_distance_factor = 0.4,
+    initial_movement_speed = 0.06 * movement_speed,
+    movement_acceleration = 0.03 * movement_speed,
+    max_health = 100,
+    resistances = util.table.deepcopy(leg_resistances),
+    base_position_selection_distance = 6 * scale,
+    movement_based_position_selection_distance = 5 * scale,
+    selectable_in_game = false,
+    alert_when_damaged = false,
+    graphics_set = create_spidertron_leg_graphics_set(scale * leg_thickness, number)
+  }
 end
 
 create_scout_o_tron{
     name = "scout-o-tron",
-    scale = 0.8,
+    scale = 0.75,
     leg_scale = 1.8, -- relative to scale
     leg_thickness = 0.6, -- relative to leg_scale
-    leg_movement_speed = 1,
+    leg_movement_speed = 2.2,
 }

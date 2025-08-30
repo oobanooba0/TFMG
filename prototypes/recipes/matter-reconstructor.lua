@@ -22,7 +22,7 @@ data:extend({
       { type = "item", name = "ferric-asteroid-chunk", amount = 1 },
     },
     results = { 
-        { type = "item", name = "mechanical-components", amount = 10 }
+        { type = "item", name = "mechanical-components", amount = 5 }
     },
   },
   {--modular circuit simple recipe
@@ -33,6 +33,7 @@ data:extend({
     enabled = true,
     ingredients = {
       { type = "item", name = "ferric-asteroid-chunk", amount = 1 },
+      { type = "item", name = "crystalline-asteroid-chunk", amount = 1 },
     },
     results = { 
         { type = "item", name = "modular-circuit", amount = 10 }
