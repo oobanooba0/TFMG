@@ -89,7 +89,7 @@ require("prototypes.recipes.matter-reconstructor")
 require("prototypes.recipes.special")
 
 --technolgoies
-require("prototypes.technologies.platformphase")
+require("prototypes.technologies.platform-phase")
 
 --shortcuts
 require("prototypes.shortcuts")
