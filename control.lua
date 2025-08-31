@@ -1,5 +1,6 @@
 require("scripts.init")
 require("scripts.thermal-system")
+require("scripts.story")
 thermal_system = require("scripts.thermal-system")
 
 --i crie everytime i redo several hours of work.

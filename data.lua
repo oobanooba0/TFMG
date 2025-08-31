@@ -42,8 +42,6 @@ for name, recipe in pairs(data.raw.recipe) do
     end
 end
 
-data.raw.recipe ["space-platform-foundation"].enabled = true
-
 --this is the part where I add stuff into the game again
 
 --buildings

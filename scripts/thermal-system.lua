@@ -38,7 +38,7 @@ function thermal_system.on_assembling_machine_tick()
 		function(v)
         local iscrafting = v.machine.is_crafting()
             if iscrafting == true then
-        local energy_usage = (800*(1 + v.machine.consumption_bonus)) --in Kw. the assembling machine consumes 1000kw, but outputs 80% of it back out as heat
+        local energy_usage = (500*(1 + v.machine.consumption_bonus)) --in Kw. the assembling machine consumes 1000kw, but outputs 50% of it back out as heat
         local temperature_increase = (energy_usage / 60000) --interface has 1Mj specific heat. so 1mw=1degree/s and divide by 60 for per tick
         local final_temperature = (v.interface.temperature + (temperature_increase))
                 v.interface.temperature = final_temperature

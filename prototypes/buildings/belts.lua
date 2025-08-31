@@ -2,12 +2,9 @@
 
 local belt_1_speed = 16/480
 
-
-
 local meld = require("meld")
 local hit_effects = require ("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
-
 local belt_1_animation_set =
 {
   animation_set =
@@ -89,14 +86,11 @@ belt_reader_gfx = -- not local
     -- More belt reader layers (with possibly different render layer) should go here
   }
 }
-
 meld(belt_1_animation_set, belt_reader_gfx)
-
-
 
 data:extend
 {
-  {
+  {--transport belt 1
     type = "transport-belt",
     name = "transport-belt-1",
     icon = "__base__/graphics/icons/transport-belt.png",
@@ -132,8 +126,7 @@ data:extend
     circuit_connector = circuit_connector_definitions["belt"],
     circuit_wire_max_distance = transport_belt_circuit_wire_max_distance
   },
-
-  {
+  {--unerground belt 1
     type = "underground-belt",
     name = "underground-belt-1",
     icon = "__base__/graphics/icons/underground-belt.png",
@@ -145,7 +138,6 @@ data:extend
     max_distance = 5,
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
-
     working_sound =
     {
       sound = {filename = "__base__/sound/underground-belt.ogg", volume = 0.2, audible_distance_modifier = 0.5},
@@ -257,7 +249,7 @@ data:extend
     }
 
   },
-  {
+  {--splitter 1
     type = "splitter",
     name = "splitter-1",
     icon = "__base__/graphics/icons/splitter.png",
@@ -363,7 +355,7 @@ data:extend
       }
     }
   },
-  {
+  {--loader 1
     type = "loader",
     name = "loader-1",
     icon = "__base__/graphics/icons/loader.png",

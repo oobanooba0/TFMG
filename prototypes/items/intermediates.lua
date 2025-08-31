@@ -44,10 +44,10 @@ data:extend({
     stack_size = 100,
     random_tint_color = item_tints.iron_rust
   },
-    {
+  {
     type = "item",
     name = "crystalline-plate",
-    icons = {{ icon = "__base__/graphics/icons/iron-plate.png", tint = {1, 1, 1, 0.5}}},
+    icons = {{ icon = "__space-age__/graphics/icons/lithium-plate.png", tint = {1, 0.6, 0.6, 0.8}}},
     subgroup = "basic-intermediates",
     color_hint = { text = "I" },
     order = "a[plates]-b[crystalline-plate]",
@@ -76,11 +76,11 @@ data:extend({
   {--mechanical components
     type = "item",
     name = "mechanical-components",
-    icon = "__base__/graphics/icons/electric-engine-unit.png",
+    icon = "__base__/graphics/icons/engine-unit.png",
     subgroup = "mechanical-intermediates",
     order = "a[mechanical-components]",
     inventory_move_sound = item_sounds.metal_large_inventory_move,
-    pick_sound = item_sounds.electric_large_inventory_pickup,
+    pick_sound = item_sounds.metal_large_inventory_pickup,
     drop_sound = item_sounds.metal_large_inventory_move,
     stack_size = 100,
     random_tint_color = item_tints.iron_rust
