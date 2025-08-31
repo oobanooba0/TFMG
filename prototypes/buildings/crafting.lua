@@ -163,7 +163,7 @@ data:extend({
       }
     },
     crafting_categories = {
-      "basic-assembling"
+      "basic-assembling","assembling-machine"
     },
     crafting_speed = 1,
     energy_source =

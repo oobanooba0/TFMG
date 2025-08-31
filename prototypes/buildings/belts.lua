@@ -1,3 +1,9 @@
+--- Easy belt speed tuning here.
+
+local belt_1_speed = 16/480
+
+
+
 local meld = require("meld")
 local hit_effects = require ("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
@@ -86,7 +92,7 @@ belt_reader_gfx = -- not local
 
 meld(belt_1_animation_set, belt_reader_gfx)
 
-local belt_1_speed = 16/480
+
 
 data:extend
 {

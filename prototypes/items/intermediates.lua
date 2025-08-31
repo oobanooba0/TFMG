@@ -2,8 +2,8 @@ local item_sounds = require("__base__.prototypes.item_sounds")
 
 --Intermediates
 data:extend({
----Asteroid Chunks
-  {
+---Asteroid Chunks (about 1-10 with their plate counterparts)
+  {--ferric asteroid chunk
     type = "item",
     name = "ferric-asteroid-chunk",
     icon = "__TFMG__/graphics/icons/ferric-asteroid-chunk.png",
@@ -16,7 +16,7 @@ data:extend({
     weight = 100 * kg,
     enabled = true,
   },
-  {
+  {--crystalline asteroid chunk
     type = "item",
     name = "crystalline-asteroid-chunk",
     icon = "__TFMG__/graphics/icons/crystalline-asteroid-chunk.png",
@@ -86,18 +86,29 @@ data:extend({
     random_tint_color = item_tints.iron_rust
   },
 ---Electonic intermediates (things that deal with electricity)
+  {--Conductive Coil
+    type = "item",
+    name = "conductive-coil",
+    icon = "__base__/graphics/icons/copper-cable.png",
+    subgroup = "electronic-intermediates",
+    color_hint = { text = "1" },
+    order = "a[conductive-coil]",
+    inventory_move_sound = item_sounds.electric_small_inventory_move,
+    pick_sound = item_sounds.electric_small_inventory_pickup,
+    drop_sound = item_sounds.electric_small_inventory_move,
+    stack_size = 100,
+  },
   {--modular circuit
     type = "item",
     name = "modular-circuit",
     icon = "__base__/graphics/icons/electronic-circuit.png",
     subgroup = "electronic-intermediates",
     color_hint = { text = "1" },
-    order = "a[modular-circuit]",
+    order = "b[modular-circuit]",
     inventory_move_sound = item_sounds.electric_small_inventory_move,
     pick_sound = item_sounds.electric_small_inventory_pickup,
     drop_sound = item_sounds.electric_small_inventory_move,
     stack_size = 200,
-    ingredient_to_weight_coefficient = 0.28
   },
 ---advanced intermediates. (things that are complex i guess. I will likely subdivide this futher)
   {--Ai processor

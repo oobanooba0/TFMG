@@ -1,3 +1,11 @@
+--Up top for convenience
+--in revolutions per second
+local inserter_1_rotation_speed = 1
+--in tiles per second?
+local inserter_1_extension_speed = 2
+
+--remember that revolutions per second =/= actions per second. Actual speeds vary depending on circumstances.
+
 local hit_effects = require ("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 
@@ -29,8 +37,8 @@ data:extend({
       usage_priority = "secondary-input",
       drain = "0.4kW"
     },
-    extension_speed = 0.035,
-    rotation_speed = 0.014,
+    extension_speed = inserter_1_extension_speed/60,
+    rotation_speed = inserter_1_rotation_speed/60,
     filter_count = 5,
     icon_draw_specification = {scale = 0.5},
     fast_replaceable_group = "inserter",

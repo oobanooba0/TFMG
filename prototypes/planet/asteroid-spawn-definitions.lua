@@ -7,9 +7,9 @@ asteroid_functions.weighted_average = function(A, B, weight)
   return result
 end
 
-asteroid_functions.arrival_ratio      = {1 , 0.1}
+asteroid_functions.arrival_ratio      = {0.8 , 0.2}
 
-asteroid_functions.arrival_chunks      = 0.02
+asteroid_functions.arrival_chunks      = 0.03
 asteroid_functions.arrival_medium      = 0
 
 asteroid_functions.chunk_angle = 1

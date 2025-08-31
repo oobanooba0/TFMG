@@ -1,3 +1,5 @@
+  --basic assembling recipes are those that should be craftable in both the assembling machine, and in the matter reconstructor.
+  
   data:extend({
   {--transport belt 1
     type = "recipe",
@@ -55,10 +57,12 @@
     type = "recipe",
     category = "basic-assembling",
     name = "assembling-machine",
-    energy_required = 15,
+    energy_required = 20,
     enabled = true,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 20 },
+      { type = "item", name = "general-purpose-structure", amount = 10 },
+      { type = "item", name = "mechanical-components", amount = 5 },
+      { type = "item", name = "modular-circuit", amount = 2 },
     },
     results = { 
         { type = "item", name = "assembling-machine", amount = 1 }
@@ -67,11 +71,12 @@
   {--furnace
     type = "recipe",
     category = "basic-assembling",
-    name = "assembling-machine",
-    energy_required = 15,
+    name = "furnace",
+    energy_required = 10,
     enabled = true,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 20 },
+      { type = "item", name = "general-purpose-structure", amount = 10 },
+      { type = "item", name = "conductive-coil", amount = 10 },
     },
     results = { 
         { type = "item", name = "furnace", amount = 1 }

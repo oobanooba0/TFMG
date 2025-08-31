@@ -84,6 +84,7 @@ require("prototypes.particles.asteroid-particles")
 require("prototypes.planet.planet")
 
 --recipes
+require("prototypes.recipes.assembling-machine")
 require("prototypes.recipes.basic-assembling")
 require("prototypes.recipes.furnace")
 require("prototypes.recipes.matter-reconstructor")

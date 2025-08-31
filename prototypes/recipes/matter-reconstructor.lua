@@ -25,6 +25,19 @@ data:extend({
         { type = "item", name = "mechanical-components", amount = 5 }
     },
   },
+  {--conductive coil simple recipe
+    type = "recipe",
+    category = "matter-reconstructor",
+    name = "conductive-coil-reconstruction",
+    energy_required = 10,
+    enabled = true,
+    ingredients = {
+      { type = "item", name = "crystalline-asteroid-chunk", amount = 1 },
+    },
+    results = { 
+        { type = "item", name = "conductive-coil", amount = 40 }
+    },
+  },
   {--modular circuit simple recipe
     type = "recipe",
     category = "matter-reconstructor",
@@ -39,16 +52,17 @@ data:extend({
         { type = "item", name = "modular-circuit", amount = 10 }
     },
   },
-
-  {
+  {--Ai Processor printing
     type = "recipe",
     category = "matter-reconstructor",
     name = "print-ai-processor",
     energy_required = 50,
     enabled = true,
     ingredients = {
-      { type = "item", name = "modular-circuit", amount = 5},
-      { type = "item", name = "ferric-plate", amount = 1},
+      { type = "item", name = "modular-circuit", amount = 2},
+      { type = "item", name = "conductive-coil", amount = 5},
+      { type = "item", name = "crystalline-plate", amount = 1},
+      { type = "item", name = "crystalline-asteroid-chunk", amount = 1},
     },
     results = { 
         { type = "item", name = "ai-processor", amount = 1 }
