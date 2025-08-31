@@ -1,3 +1,4 @@
+--make it stickj
 data:extend({
   {--consider your purpose
     type = "technology",
