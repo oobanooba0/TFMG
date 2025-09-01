@@ -134,7 +134,7 @@ function make_scout_o_tron_leg(spidertron_name, scale, leg_thickness, movement_s
       match_progress_to_activity = true,
       sound = sounds.spidertron_leg,
     },
-    stretch_force_scalar = 2.5 / (3.5 * scale), -- longer legs, weaker stretch force
+    stretch_force_scalar = 3 / (3.5 * scale), -- longer legs, weaker stretch force
     knee_height = 2.5 * scale,
     knee_distance_factor = 0.4,
     initial_movement_speed = 0.06 * movement_speed,
@@ -142,7 +142,7 @@ function make_scout_o_tron_leg(spidertron_name, scale, leg_thickness, movement_s
     max_health = 100,
     resistances = util.table.deepcopy(leg_resistances),
     base_position_selection_distance = 6 * scale,
-    movement_based_position_selection_distance = 5 * scale,
+    movement_based_position_selection_distance = 6 * scale,
     selectable_in_game = false,
     alert_when_damaged = false,
     graphics_set = create_spidertron_leg_graphics_set(scale * leg_thickness, number)
@@ -154,5 +154,5 @@ create_scout_o_tron{
     scale = 0.75,
     leg_scale = 1.8, -- relative to scale
     leg_thickness = 0.6, -- relative to leg_scale
-    leg_movement_speed = 2.2,
+    leg_movement_speed = 2.5,
 }
