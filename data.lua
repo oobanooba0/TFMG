@@ -17,29 +17,29 @@ data.raw.gun ["pistol"].hidden = true
 -- hide vanilla content from game, this seems easier than outright removing certain things due to dependancies.
 -- expand brain.png if this works.
 for name, item in pairs(data.raw.item) do
-    for _, hideName in ipairs(hidden_items) do
-        if item.name == hideName then
-        item.hidden = true
-        item.hidden_in_factoriopedia = true
-        end
-    end
+	for _, hideName in ipairs(hidden_items) do
+		if item.name == hideName then
+		item.hidden = true
+		item.hidden_in_factoriopedia = true
+		end
+	end
 end
 --hide recipies
 for name, recipe in pairs(data.raw.recipe) do
-    for _, hideName in ipairs(hidden_recipes) do
-        if recipe.name == hideName then
-        recipe.hidden = true
-        recipe.hidden_in_factoriopedia = true
-        end
-    end
+	for _, hideName in ipairs(hidden_recipes) do
+		if recipe.name == hideName then
+		recipe.hidden = true
+		recipe.hidden_in_factoriopedia = true
+		end
+	end
 end
 --disable recipies
 for name, recipe in pairs(data.raw.recipe) do
-    for _, disableName in ipairs(disabled_recipes) do
-        if recipe.name == disableName then
-            recipe.enabled = false
-        end
-    end
+	for _, disableName in ipairs(disabled_recipes) do
+		if recipe.name == disableName then
+			recipe.enabled = false
+		end
+	end
 end
 
 --this is the part where I add stuff into the game again

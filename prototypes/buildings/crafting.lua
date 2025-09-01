@@ -7,7 +7,7 @@ data:extend({
     icon = "__base__/graphics/icons/assembling-machine-1.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "matter-reconstructor"},
-    max_health = 300,
+    max_health = 1000,
     corpse = "assembling-machine-1-remnants",
     dying_explosion = "assembling-machine-1-remnants",
     icon_draw_specification = {shift = {0, -0.3}},
@@ -82,6 +82,18 @@ data:extend({
     type = "assembling-machine",
     name = "assembling-machine",
     icon = "__base__/graphics/icons/assembling-machine-3.png",
+    custom_tooltip_fields = {
+      {
+      name = {"thermal-system.max-temperature"},
+      value = {"thermal-system.assembling-machine-max-temperature"},
+      order = 254,
+      },
+      {
+      name = {"thermal-system.efficiency"},
+      value = {"thermal-system.assembling-machine-efficiency"},
+      order = 255,
+      },
+    },
     flags = {"placeable-neutral","placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "assembling-machine"},
     max_health = 400,
@@ -181,7 +193,7 @@ data:extend({
     name = "assembling-machine-heat-interface",
     icon  = "__space-age__/graphics/icons/heating-tower.png",
     flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable","not-deconstructable"},
-    max_health = 500,
+    max_health = 250,
     corpse = "heating-tower-remnants",
     dying_explosion = "heating-tower-explosion",
     surface_conditions =
@@ -230,6 +242,18 @@ data:extend({
     type = "furnace",
     name = "furnace",
     icon = "__base__/graphics/icons/electric-furnace.png",
+    custom_tooltip_fields = {
+      {
+      name = {"thermal-system.max-temperature"},
+      value = {"thermal-system.furnace-max-temperature"},
+      order = 254,
+      },
+      {
+      name = {"thermal-system.efficiency"},
+      value = {"thermal-system.furnace-efficiency"},
+      order = 255,
+      },
+    },
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "furnace"},
     circuit_wire_max_distance = furnace_circuit_wire_max_distance,
