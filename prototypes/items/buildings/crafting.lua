@@ -12,6 +12,7 @@ data:extend({
     drop_sound = item_sounds.mechanical_inventory_move,
     place_result = "matter-reconstructor",
     stack_size = 50,
+    flags = {"always-show"},
   },
   {
     type = "item",

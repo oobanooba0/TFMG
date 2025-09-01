@@ -14,7 +14,7 @@ data:extend({
     drop_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
     stack_size = 1,
     weight = 100 * kg,
-    enabled = true,
+    flags = {"always-show"},
   },
   {--crystalline asteroid chunk
     type = "item",
@@ -27,7 +27,7 @@ data:extend({
     drop_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
     stack_size = 1,
     weight = 100 * kg,
-    enabled = true,
+    flags = {"always-show"},
   },
 
 ---Base intermediates (Things we make other intermediates out of)
@@ -167,6 +167,7 @@ data:extend({--debug items
     type = "item",
     name = "kraken-uber-fuel",
     icon = "__base__/graphics/icons/nuclear-fuel.png",
+    flags = {"hide-from-fuel-tooltip"},
     pictures =
     {
       layers =

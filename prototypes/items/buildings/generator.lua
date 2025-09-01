@@ -12,6 +12,7 @@ data:extend({
     drop_sound = item_sounds.reactor_inventory_move,
     place_result = "proton-decay-thermoelectric-generator",
     weight = 1 * tons,
-    stack_size = 10
+    stack_size = 10,
+    flags = {"always-show"},
   },
 })

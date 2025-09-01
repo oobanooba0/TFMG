@@ -12,6 +12,7 @@ data:extend({
     pick_sound = item_sounds.inserter_inventory_pickup,
     drop_sound = item_sounds.inserter_inventory_move,
     place_result = "inserter-1",
-    stack_size = 50
+    stack_size = 50,
+    flags = {"always-show"},
   },
 })

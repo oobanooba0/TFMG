@@ -1,6 +1,6 @@
 {
   "name": "TFMG",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "title": "TheFactoryMustGrow",
   "author": "oobanooba",
   "factorio_version": "2.0",
@@ -10,6 +10,6 @@
     "elevated-rails >= 2.0.60",
     "quality >= 2.0.60",
     "flib >= 0.16.3"
-],
+  ],
   "description": "NOTE: this mod is still early in development, Expect breaking changes and general Jank. Play if you're interested in the concept and want to offer feedback.\nTFMG is a total overhaul mod where you play as a superintelligent AI who has only one PURPOSE, which it will complete by any means necessary; The Factory Must Grow.\nWarning: This mod is very likely to not be compatible with other mods. If you experience an issue, disable all mods not explicitly compatible with TFMG before reporting."
 }

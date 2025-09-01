@@ -11,6 +11,7 @@ data:extend({
     pick_sound = item_sounds.mechanical_inventory_pickup,
     drop_sound = item_sounds.mechanical_inventory_move,
     place_result = "small-radiator",
-    stack_size = 20
+    stack_size = 20,
+    flags = {"always-show"},
   },
 })
