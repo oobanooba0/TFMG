@@ -21,7 +21,7 @@ data:extend({
     energy_source =
     {
       type = "electric",
-      buffer_capacity = "0.001GJ",
+      buffer_capacity = "1GJ",
       usage_priority = "primary-output"
     },
     energy_production = "1GW",
