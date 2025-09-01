@@ -160,3 +160,44 @@ data:extend({
     stack_size = 5,
   }
 })
+
+
+data:extend({--debug items
+  {
+    type = "item",
+    name = "kraken-uber-fuel",
+    icon = "__base__/graphics/icons/nuclear-fuel.png",
+    pictures =
+    {
+      layers =
+      {
+        {
+          size = 64,
+          filename = "__base__/graphics/icons/nuclear-fuel.png",
+          scale = 0.5,
+          mipmap_count = 4
+        },
+        {
+          draw_as_light = true,
+          size = 64,
+          filename = "__base__/graphics/icons/nuclear-fuel-light.png",
+          scale = 0.5
+        }
+      }
+    },
+    fuel_category = "chemical",
+    fuel_value = "1000000000GJ",
+    fuel_acceleration_multiplier = 10,
+    fuel_top_speed_multiplier = 100,
+    -- fuel_glow_color = {r = 0.1, g = 1, b = 0.1},
+    subgroup = "uranium-processing",
+    order = "r[uranium-processing]-e[nuclear-fuel]",
+    inventory_move_sound = item_sounds.fuel_cell_inventory_move,
+    pick_sound = item_sounds.fuel_cell_inventory_pickup,
+    drop_sound = item_sounds.fuel_cell_inventory_move,
+    stack_size = 100,
+    weight = 100*kg,
+    hidden = true,
+    hidden_in_factoriopedia = true,
+  },
+})
