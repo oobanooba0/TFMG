@@ -3,7 +3,9 @@ Version: 0.1.5
 Date: 2025-09-01
   Features:
     - Machines now have a status indicator when overheated
-    - Machines now have max temperature and thermal efficiency in their tooltip. This should make it easier for players to identify why their machine isnt working.
+    - Machines now have max temperature and thermal efficiency in their tooltip.
+    - Machine Heat interfaces now have a temperature bar and can be connected to circuits.
+    - Machines now have much prettier heat pipe connections
   Balancing:
     - Scout'o'tron is a bit faster.
 ---------------------------------------------------------------------------------------------------

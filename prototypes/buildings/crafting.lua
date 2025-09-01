@@ -1,5 +1,6 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
+
 data:extend({
   {--matter reconstructor
     type = "assembling-machine",
@@ -189,10 +190,10 @@ data:extend({
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
   },
   {--assembling machine heat interface
-    type = "heat-interface",
+    type = "reactor",
     name = "assembling-machine-heat-interface",
     icon  = "__space-age__/graphics/icons/heating-tower.png",
-    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable","not-deconstructable"},
+    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable","not-deconstructable","no-automated-item-insertion","no-automated-item-removal"},
     max_health = 250,
     corpse = "heating-tower-remnants",
     dying_explosion = "heating-tower-explosion",
@@ -209,12 +210,19 @@ data:extend({
     selection_priority = 40,
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 1,
-    selectable_in_game = true,
+    selectable_in_game = false,
     allow_copy_paste = false,
     gui_mode = "none",
+    consumption = "1MW",
+    neighbour_bonus = 0,
+    energy_source =
+    {
+      type = "void",
+    },
     heat_buffer =
     {
       max_temperature = 250,
+      minimum_glow_temperature = 50,
       specific_heat = "1MJ",
       max_transfer = "10GW",
       connections =
@@ -237,6 +245,39 @@ data:extend({
         },
       },
     },
+    connection_patches_connected =
+    {
+      sheet = util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-pipes", {
+        scale = 0.5,
+        variation_count = 4
+      })
+    },
+    connection_patches_disconnected =
+    {
+      sheet = util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-pipes-disconnected", {
+        scale = 0.5,
+        variation_count = 4
+      })
+    },
+    heat_connection_patches_connected =
+    {
+      sheet = apply_heat_pipe_glow(
+        util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-pipes-heat", {
+        scale = 0.5,
+        variation_count = 4
+      }))
+    },
+    heat_connection_patches_disconnected =
+    {
+      sheet = apply_heat_pipe_glow(
+        util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-pipes-heat-disconnected", {
+        scale = 0.5,
+        variation_count = 4
+      }))
+    },
+    default_temperature_signal = {type = "virtual", name = "signal-T"},
+    circuit_wire_max_distance = reactor_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["heating-tower"]
   },
   {--furnace
     type = "furnace",
@@ -421,11 +462,11 @@ data:extend({
     }
   },
   {--furnace heat interface
-    type = "heat-interface",
+    type = "reactor",
     name = "furnace-heat-interface",
     icon  = "__space-age__/graphics/icons/heating-tower.png",
-    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable","not-deconstructable"},
-    max_health = 500,
+    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable","not-deconstructable","no-automated-item-insertion","no-automated-item-removal"},
+    max_health = 250,
     corpse = "heating-tower-remnants",
     dying_explosion = "heating-tower-explosion",
     surface_conditions =
@@ -441,12 +482,19 @@ data:extend({
     selection_priority = 40,
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 1,
-    selectable_in_game = true,
+    selectable_in_game = false,
     allow_copy_paste = false,
     gui_mode = "none",
+    consumption = "1MW",
+    neighbour_bonus = 0,
+    energy_source =
+    {
+      type = "void",
+    },
     heat_buffer =
     {
       max_temperature = 750,
+      minimum_glow_temperature = 250,
       specific_heat = "1MJ",
       max_transfer = "10GW",
       connections =
@@ -469,6 +517,38 @@ data:extend({
         },
       },
     },
+    connection_patches_connected =
+    {
+      sheet = util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-pipes", {
+        scale = 0.5,
+        variation_count = 4
+      })
+    },
+    connection_patches_disconnected =
+    {
+      sheet = util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-pipes-disconnected", {
+        scale = 0.5,
+        variation_count = 4
+      })
+    },
+    heat_connection_patches_connected =
+    {
+      sheet = apply_heat_pipe_glow(
+        util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-pipes-heat", {
+        scale = 0.5,
+        variation_count = 4
+      }))
+    },
+    heat_connection_patches_disconnected =
+    {
+      sheet = apply_heat_pipe_glow(
+        util.sprite_load("__space-age__/graphics/entity/heating-tower/heating-tower-pipes-heat-disconnected", {
+        scale = 0.5,
+        variation_count = 4
+      }))
+    },
+    default_temperature_signal = {type = "virtual", name = "signal-T"},
+    circuit_wire_max_distance = reactor_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["heating-tower"]
   },
-
 })
