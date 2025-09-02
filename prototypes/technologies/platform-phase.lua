@@ -34,7 +34,11 @@ data:extend({
       },
       {
         type = "unlock-recipe",
-        recipe = "crystalline-plate"
+        recipe = "hot-mineral-plate"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "mineral-glass"
       },
       {
         type = "unlock-recipe",
@@ -83,6 +87,10 @@ data:extend({
       {
         type = "unlock-recipe",
         recipe = "modular-circuit"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "mineral-glass-cooling"
       },
     },
     research_trigger =
@@ -146,7 +154,7 @@ data:extend({
     research_trigger =
     {
       type = "craft-item",
-      item = "crystalline-plate",
+      item = "mineral-glass",
       count = 16
     },
     prerequisites = {"smelting"},

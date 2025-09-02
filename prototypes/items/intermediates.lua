@@ -42,21 +42,47 @@ data:extend({
     pick_sound = item_sounds.metal_small_inventory_pickup,
     drop_sound = item_sounds.metal_small_inventory_move,
     stack_size = 100,
-    random_tint_color = item_tints.iron_rust
+    random_tint_color = item_tints.iron_rust,
   },
   {
     type = "item",
-    name = "crystalline-plate",
-    icons = {{ icon = "__space-age__/graphics/icons/lithium-plate.png", tint = {1, 0.6, 0.6, 0.8}}},
+    name = "hot-mineral-plate",
+    icons = {{ icon = "__space-age__/graphics/icons/lithium-plate.png", tint = {1, 0.6, 0.6, 1}}},
     subgroup = "basic-intermediates",
     color_hint = { text = "I" },
-    order = "a[plates]-b[crystalline-plate]",
+    order = "b[crystal-plates]-a[hot-mineral-plate]",
     inventory_move_sound = item_sounds.metal_small_inventory_move,
     pick_sound = item_sounds.metal_small_inventory_pickup,
     drop_sound = item_sounds.metal_small_inventory_move,
     stack_size = 100,
-    random_tint_color = item_tints.iron_rust
+    spoil_result = "crystalline-plate",
+    spoil_ticks = 3600
   },
+  {
+    type = "item",
+    name = "crystalline-plate",
+    icons = {{ icon = "__space-age__/graphics/icons/lithium-plate.png", tint = {0.6, 0.6, 1, 0.8}}},
+    subgroup = "basic-intermediates",
+    color_hint = { text = "I" },
+    order = "b[crystal-plates]-b[crystalline-plate]",
+    inventory_move_sound = item_sounds.metal_small_inventory_move,
+    pick_sound = item_sounds.metal_small_inventory_pickup,
+    drop_sound = item_sounds.metal_small_inventory_move,
+    stack_size = 100,
+  },
+  {
+    type = "item",
+    name = "mineral-glass",
+    icons = {{ icon = "__space-age__/graphics/icons/lithium-plate.png", tint = {0.8, 1, 0.8, 0.5}}},
+    subgroup = "basic-intermediates",
+    color_hint = { text = "I" },
+    order = "b[crystal-plates]-c[crystalline-plate]",
+    inventory_move_sound = item_sounds.metal_small_inventory_move,
+    pick_sound = item_sounds.metal_small_inventory_pickup,
+    drop_sound = item_sounds.metal_small_inventory_move,
+    stack_size = 100,
+  },
+
 
 ---structural intermediates (things which hold everything together)
     {--general purpose structure

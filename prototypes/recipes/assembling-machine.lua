@@ -4,6 +4,19 @@ data:extend({
   {--General purpose structure
     type = "recipe",
     category = "assembling-machine",
+    name = "mineral-glass-cooling",
+    energy_required = 1,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "hot-mineral-plate", amount = 1 },
+    },
+    results = { 
+      { type = "item", name = "mineral-glass", amount = 1 }
+    },
+  },
+  {--General purpose structure
+    type = "recipe",
+    category = "assembling-machine",
     name = "general-purpose-structure",
     energy_required = 1,
     enabled = false,
@@ -35,7 +48,7 @@ data:extend({
     energy_required = 1,
     enabled = false,
     ingredients = {
-      { type = "item", name = "crystalline-plate", amount = 1 },
+      { type = "item", name = "ferric-plate", amount = 1 },
     },
     results = { 
         { type = "item", name = "conductive-coil", amount = 4 }
@@ -48,7 +61,7 @@ data:extend({
     energy_required = 2,
     enabled = false,
     ingredients = {
-      { type = "item", name = "crystalline-plate", amount = 1 },
+      { type = "item", name = "mineral-glass", amount = 1 },
       { type = "item", name = "ferric-plate", amount = 1 },
       { type = "item", name = "conductive-coil", amount = 4 },--puts the coil assembler to circuit assembler ratio at 1:2
     },

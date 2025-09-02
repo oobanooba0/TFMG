@@ -61,7 +61,7 @@ data:extend({
     ingredients = {
       { type = "item", name = "modular-circuit", amount = 2},
       { type = "item", name = "conductive-coil", amount = 5},
-      { type = "item", name = "crystalline-plate", amount = 1},
+      { type = "item", name = "crystalline-plate", amount = 5},
       { type = "item", name = "crystalline-asteroid-chunk", amount = 1},
     },
     results = { 
