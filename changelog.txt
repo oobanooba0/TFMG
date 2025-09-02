@@ -1,7 +1,15 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.7
-Date: ????
+Date: 2025-09-02
+  Features:
+    - Divergent production chain added for crystalline asteroids. They now smelt into Hot mineral plates, which naturally cool (spoil) into Crystalline plates. But if disturbed, they will turn into mineral glass instaid.
+    - Crystalline asteroids smelt directly into mineral glass when smelted on the surface, crystaline plates can only be produced in space.
+    - Mineral Glass added
+    - Hot Mineral plates added
   Changes:
+    - Crystalline asteroids now produce Hot mineral plates when smelted instaid of crystalline plates directly
+    - Conductive coil now uses ferric plates, Idk why they used Crystalline plates before, as they were explicitly non-conductive.
+    - Recipies which use Crystalline plates now use mineral glass (this will make them aquirable on the surface later.) Excluded from these changes is the AI processor, which is intended to be crafted in space at this stage of the game.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.6
 Date: 2025-09-01
