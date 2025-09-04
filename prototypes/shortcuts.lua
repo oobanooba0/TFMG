@@ -1,3 +1,5 @@
+
+--vanilla shortcuts i really should bring back to the vanilla game
 data:extend({
   {
     type = "shortcut",

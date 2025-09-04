@@ -68,7 +68,7 @@ data:extend(
     height = body_height,
     alert_icon_shift = { 0, -body_height },
     torso_rotation_speed = 0.025,
-    chunk_exploration_radius = 3,
+    chunk_exploration_radius = 4,
     selection_priority = 60,
     graphics_set = spidertron_torso_graphics_set(scale),
     energy_source =
