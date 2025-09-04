@@ -1,7 +1,8 @@
-local planet_map_gen = require("__base__/prototypes/planet/planet-map-gen")
+local planet_map_gen = require("__TFMG__.prototypes.planet.planet_map_gen")
 local asteroid_util = require("__TFMG__.prototypes.planet.asteroid-spawn-definitions")
 local effects = require("__core__/lualib/surface-render-parameter-effects")
 local procession_graphic_catalogue_types = require("__base__/prototypes/planet/procession-graphic-catalogue-types")
+
 
 data:extend({
   {
@@ -17,9 +18,9 @@ data:extend({
     order = "a[nauvis]",
     subgroup = "planets",
     map_seed_offset = 0,
-    map_gen_settings = planet_map_gen.nauvis(),
-    pollutant_type = "pollution",
-    solar_power_in_space = 300,
+    map_gen_settings = planet_map_gen.arrival(),
+    pollutant_type = nill,
+    solar_power_in_space = 20,
     planet_procession_set =
     {
       arrival = {"default-b"},
@@ -27,7 +28,10 @@ data:extend({
     },
     surface_properties =
     {
-      ["day-night-cycle"] = 7 * minute
+      ["day-night-cycle"] = 20 * minute,
+      ["solar-power"] = 5,
+      pressure = 500,
+      gravity = 4,
     },
     surface_render_parameters =
     {
@@ -38,14 +42,34 @@ data:extend({
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.arrival_arrival, 0.1),
     persistent_ambient_sounds =
     {
-      base_ambience = { filename = "__base__/sound/world/world_base_wind.ogg", volume = 0.3 },
-      wind = { filename = "__base__/sound/wind/wind.ogg", volume = 0.8 },
+      base_ambience = {filename = "__space-age__/sound/wind/base-wind-aquilo.ogg", volume = 0.5},
+      wind = {filename = "__space-age__/sound/wind/wind-aquilo.ogg", volume = 0.8},
       crossfade =
       {
-        order = { "wind", "base_ambience" },
+        order = {"wind", "base_ambience"},
         curve_type = "cosine",
-        from = { control = 0.35, volume_percentage = 0.0 },
-        to = { control = 2, volume_percentage = 100.0 }
+        from = {control = 0.35, volume_percentage = 0.0},
+        to = {control = 2, volume_percentage = 100.0}
+      },
+      semi_persistent =
+      {
+        {
+          sound =
+          {
+            variations = sound_variations("__space-age__/sound/world/semi-persistent/ice-cracks", 5, 0.7),
+            advanced_volume_control =
+            {
+              fades = {fade_in = {curve_type = "cosine", from = {control = 0.5, volume_percentage = 0.0}, to = {2, 100.0}}}
+            }
+          },
+          delay_mean_seconds = 10,
+          delay_variance_seconds = 5
+        },
+        {
+          sound = {variations = sound_variations("__space-age__/sound/world/semi-persistent/cold-wind-gust", 5, 0.3)},
+          delay_mean_seconds = 15,
+          delay_variance_seconds = 9
+        }
       }
     },
     procession_graphic_catalogue =

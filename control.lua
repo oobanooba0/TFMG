@@ -93,9 +93,6 @@ script.on_event(defines.events.on_gui_opened, function(event)
     end
 end)
 
-
-
-
 script.on_event(defines.events.on_gui_click, function(event)
     if event.element.name == "deploy_scout_o_tron" then
 			gameplay.deploy_scout_o_tron(event)
