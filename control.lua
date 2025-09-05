@@ -73,9 +73,9 @@ script.on_event(defines.events.on_player_created, function(e)--Ngl I have no ide
 	local player = game.players[e.player_index]
 	storage.players[player.index] = {hub = {}}--initialise player storage
 
-  --player.teleport({ x = 0, y = 0 }, storage.platform.surface.name)
-	player.teleport({x=0,y=0}, "arrival")
-  --player.enter_space_platform (platform)
+  player.teleport({ x = 0, y = 0 }, storage.platform.surface.name)
+	--player.teleport({x=0,y=0}, "arrival")--for debug
+  player.enter_space_platform (platform)
   local group = game.permissions.get_group("players")
     if group then
     	group.add_player(player)
