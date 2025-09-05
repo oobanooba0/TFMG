@@ -8,24 +8,19 @@ planet_map_gen.arrival = function()
       ["tile"] =
       {
         settings =
-        {
-          --["volcanic-ash-cracks"] = {},
-          --["volcanic-ash-dark"] = {},
-          --["volcanic-ash-light"] = {},
-          --["volcanic-ash-soil"] = {},
-          --["volcanic-pumice-stones"] = {},
-          --["dust-flat"] = {},
-          --["dust-crests"] = {},
+        {          
+          ["dust-flat"] = {},
+          ["dust-crests"] = {},
           --["dust-patchy"] = {},
-          ["dust-lumpy"] = {},
-          ["fulgoran-dust"] = {},
+          --["dust-lumpy"] = {},
           --["fulgoran-dunes"] = {},
           --["fulgoran-sand"] = {},
+          --["fulgoran-rock"] = {},
+          ["fulgoran-dust"] = {},
           --["snow-flat"] = {},
           --["snow-crests"] = {},
           --["snow-lumpy"] = {},
           --["snow-patchy"] = {},
-          --["fulgoran-rock"] = {},
         }
       },
     }
