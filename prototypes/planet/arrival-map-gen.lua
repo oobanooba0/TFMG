@@ -12,7 +12,7 @@ data:extend{
 			octaves = 4,
 			input_scale = 1/200,
 			output_scale = 0.7
-		} + arrival_rough_noise(xx, yy)),0,1)
+		} + arrival_rough_noise(xx,yy) + arrival_trenches(xx,yy,1)+ arrival_trenches(xx,yy,100)+ arrival_trenches(xx,yy,200)),0,1)
 	]],
 	parameters = {"xx", "yy"}
   }
@@ -37,6 +37,53 @@ data:extend{
   }
 }
 
+
+
+data:extend{--main function deciding where there are trenches.
+	{
+	type = "noise-function",
+	name = "arrival_trenches",
+	expression = [[
+		2 * floor(
+			abs(
+				ridge(
+					multioctave_noise{
+						x = xx,
+						y = yy,
+						persistence = 0.45,
+						seed0 = map_seed,
+						seed1 = layer,
+						octaves = 6,
+						input_scale = 1/800,
+						output_scale = 120
+					},
+					0.2,1.05)
+				 -arrival_trench_noise_large(xx,yy,layer) - arrival_rough_noise(xx,yy) * 0.5
+		))
+	]],
+	parameters = {"xx", "yy", "layer"}
+  }
+}
+
+data:extend{
+	{
+	type = "noise-function",--effectively decides what thickness a trench should be, down to 0, meaning no trench.
+	name = "arrival_trench_noise_large",--mainly so trenches arent continuous
+	expression = [[
+		ridge(multioctave_noise{
+			x = xx,
+			y = yy,
+			persistence = 0.4,
+			seed0 = map_seed,
+			seed1 = layer,
+			octaves = 4,
+			input_scale = 1/100,
+			output_scale = 0.2
+		},0,0.4)
+	]],
+	parameters = {"xx", "yy", "layer"}
+  }
+}
 --Red Biome
 data.raw.tile["fulgoran-rock"].autoplace = {
 	probability_expression = [[

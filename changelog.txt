@@ -2,9 +2,9 @@
 Version: 0.2.0
 Date: ????
   Features:
-    - Arrival Phase added
+    - Phase 2 part 1: Arrival
     - You can now deploy Scout'o'trons onto the surface of arrival via the space platform UI
-    - Arrival now has some world gen
+    - Arrival now has some world gen, nothing too fancy, nor final, but it should get at the intended vibe of the planet.
   Changes:
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.7
