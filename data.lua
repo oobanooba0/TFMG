@@ -58,6 +58,7 @@ require("prototypes.categories.recipe")
 --entities
 require("prototypes.entity.asteroid")
 require("prototypes.entity.explosions")
+require("prototypes.entity.resources")
 require("prototypes.entity.smoke")
 require("prototypes.entity.spiders")
 
@@ -70,6 +71,7 @@ require("prototypes.items.buildings.inserters")
 require("prototypes.items.buildings.thermal")
 ---inventory items
 require("prototypes.items.intermediates")
+require("prototypes.items.raw-resources")
 require("prototypes.items.spiders")
 
 --menu simulations

@@ -17,6 +17,7 @@ data:extend{
 	parameters = {"xx", "yy"}
   }
 }
+
 data:extend{
 	{
 	type = "noise-function",
@@ -36,8 +37,6 @@ data:extend{
 	parameters = {"xx", "yy"}
   }
 }
-
-
 
 data:extend{--main function deciding where there are trenches.
 	{
@@ -84,6 +83,48 @@ data:extend{
 	parameters = {"xx", "yy", "layer"}
   }
 }
+
+data:extend{--ice bed placement (I hope)
+	{
+	type = "noise-function",
+	name = "arrival_ice_noise",
+	expression = [[
+			arrival_height(x, y) - multioctave_noise{
+			x = x,
+			y = y,
+			persistence = 0.2,
+			seed0 = map_seed,
+			seed1 = 30,
+			octaves = 2,
+			input_scale = 1/100,
+			output_scale = 0.2
+		}
+	]],
+	parameters = {"xx", "yy"}
+  }
+}
+data:extend {
+	{
+    type = "noise-expression",
+    name = "ice_ore",
+    expression = "((arrival_ice_noise(x, y) < -0.15) * noise)",
+		local_expressions = {
+    noise = [[
+		clamp((multioctave_noise{
+			x = x,
+			y = y,
+			persistence = 0.5,
+			seed0 = map_seed,
+			seed1 = 40,
+			octaves = 2,
+			input_scale = 1/20,
+			output_scale = 5
+		}-2/(var("control:ice_ore:size"))),0,5)
+	]],
+  },
+	}
+}
+
 --Red Biome
 data.raw.tile["fulgoran-rock"].autoplace = {
 	probability_expression = [[
@@ -105,7 +146,6 @@ data.raw.tile["fulgoran-rock"].autoplace = {
   },
 	order = "a[red]-a[dunes]"
 }
-
 data.raw.tile["fulgoran-dunes"].autoplace = {
 	probability_expression = [[
 	  arrival_height(x, y) - noise >= 0.95
@@ -126,7 +166,6 @@ data.raw.tile["fulgoran-dunes"].autoplace = {
   },
 	order = "a[red]-b[sand]"
 }
-
 data.raw.tile["fulgoran-sand"].autoplace = {
 	probability_expression = [[
 	  arrival_height(x, y) - noise >= 0.9
@@ -147,15 +186,12 @@ data.raw.tile["fulgoran-sand"].autoplace = {
   },
 	order = "a[red]-c[rock]"
 }
-
-
 data.raw.tile["fulgoran-dust"].autoplace = {
 	probability_expression = [[
 		arrival_height(x, y) >= 0.85
 	]],
 	order = "a[red]-d[dust]"
 }
-
 --Dust Biome (midlands)
 data.raw.tile["dust-lumpy"].autoplace = {
 	probability_expression = [[
@@ -177,7 +213,6 @@ data.raw.tile["dust-lumpy"].autoplace = {
   },
 	order = "c[dust]-a[lumpy]"
 }
-
 data.raw.tile["dust-crests"].autoplace = {
 	probability_expression = [[
 		arrival_height(x, y) - noise >= 0.7
@@ -218,7 +253,6 @@ data.raw.tile["dust-patchy"].autoplace = {
   },
 	order = "c[dust]-c[patchy]"
 }
-
 data.raw.tile["dust-flat"].autoplace = {
 	probability_expression = [[
 		arrival_height(x, y) >= 0
@@ -226,26 +260,9 @@ data.raw.tile["dust-flat"].autoplace = {
 	order = "c[dust]-d[flat]"
 }
 --ice biome
-
 data.raw.tile["ice-smooth"].autoplace = {
 	probability_expression = [[
-		arrival_height(x, y) - noise <= -0.1
+		arrival_ice_noise(x, y) <= -0.1
 	]],
-	local_expressions = {
-  noise = [[
-		multioctave_noise{
-			x = x,
-			y = y,
-			persistence = 0.2,
-			seed0 = map_seed,
-			seed1 = 30,
-			octaves = 2,
-			input_scale = 1/100,
-			output_scale = 0.2
-		}
-	]],
-  },
 	order = "b[ice]-a[flat]"
 }
-
---data.raw.entity["cliff"]

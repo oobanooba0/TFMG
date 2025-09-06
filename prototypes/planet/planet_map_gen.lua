@@ -3,6 +3,10 @@ local planet_map_gen = {}
 planet_map_gen.arrival = function()
   return
   {
+    autoplace_controls =
+    {
+      ["ice_ore"] = {},
+    },
     autoplace_settings =
     {
       ["tile"] =
@@ -51,6 +55,7 @@ planet_map_gen.arrival = function()
       {
         settings =
         {
+          ["ice-ore"] = {},
         }
       }
     }
