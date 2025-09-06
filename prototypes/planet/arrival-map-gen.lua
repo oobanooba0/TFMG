@@ -44,7 +44,7 @@ data:extend{--main function deciding where there are trenches.
 	type = "noise-function",
 	name = "arrival_trenches",
 	expression = [[
-		2 * floor(
+		10 * floor(
 			abs(
 				ridge(
 					multioctave_noise{
@@ -53,9 +53,9 @@ data:extend{--main function deciding where there are trenches.
 						persistence = 0.45,
 						seed0 = map_seed,
 						seed1 = layer,
-						octaves = 6,
-						input_scale = 1/800,
-						output_scale = 120
+						octaves = 8,
+						input_scale = 1/1000,
+						output_scale = 150
 					},
 					0.2,1.05)
 				 -arrival_trench_noise_large(xx,yy,layer) - arrival_rough_noise(xx,yy) * 0.5
@@ -77,7 +77,7 @@ data:extend{
 			seed0 = map_seed,
 			seed1 = layer,
 			octaves = 4,
-			input_scale = 1/100,
+			input_scale = 1/600,
 			output_scale = 0.2
 		},0,0.4)
 	]],
