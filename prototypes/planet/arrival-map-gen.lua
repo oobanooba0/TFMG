@@ -103,7 +103,7 @@ data:extend{--ice bed placement (I hope)
 	parameters = {"xx", "yy"}
   }
 }
-data:extend {
+data:extend {--ice ore placement
 	{
     type = "noise-expression",
     name = "ice_ore",
@@ -123,6 +123,120 @@ data:extend {
 	]],
   },
 	}
+}
+
+data:extend {
+	{
+    type = "noise-expression",
+    name = "distance_from_center",
+    expression = "(sqrt(x*x + y*y))",
+  },
+}
+
+
+data:extend{-- Ice worm
+  {
+    type = "noise-expression",
+    name = "ice_worm_territory_radius",
+    expression = 1000
+  },
+}
+
+data:extend{-- small ice worm placement
+  {
+    type = "noise-expression",
+    name = "small_ice_worm",
+    expression = [[spot_noise{
+			x = x,
+			y = y,
+			skip_span= 3,
+			skip_offset = 0,
+			density_expression = 1,
+			spot_quantity_expression = 1,
+			spot_radius_expression = 1,
+			spot_favorability_expression = 1,
+			seed0 = map_seed,
+			seed1 = 0,
+			basement_value = 0,
+			maximum_spot_basement_radius = 1,
+			region_size = ice_worm_territory_radius,
+			candidate_point_count = 3,
+			suggested_minimum_candidate_point_spacing = ice_worm_territory_radius/5
+			}
+		]]
+  },
+}
+
+data:extend{-- ice worm placement
+  {
+    type = "noise-expression",
+    name = "medium_ice_worm",
+    expression = [[spot_noise{
+			x = x,
+			y = y,
+			skip_span= 3,
+			skip_offset = 1,
+			density_expression = 1,
+			spot_quantity_expression = 0.3,
+			spot_radius_expression = 1,
+			spot_favorability_expression = 1,
+			seed0 = map_seed,
+			seed1 = 0,
+			basement_value = 0,
+			maximum_spot_basement_radius = 1,
+			region_size = ice_worm_territory_radius,
+			candidate_point_count = 3,
+			suggested_minimum_candidate_point_spacing = ice_worm_territory_radius/5
+			}
+		]]
+  },
+}
+
+data:extend{-- ice worm placement
+  {
+    type = "noise-expression",
+    name = "big_ice_worm",
+    expression = [[spot_noise{
+			x = x,
+			y = y,
+			skip_span= 3,
+			skip_offset = 2,
+			density_expression = 1,
+			spot_quantity_expression = 0.08,
+			spot_radius_expression = 1,
+			spot_favorability_expression = 1,
+			seed0 = map_seed,
+			seed1 = 0,
+			basement_value = 0,
+			maximum_spot_basement_radius = 1,
+			region_size = ice_worm_territory_radius,
+			candidate_point_count = 3,
+			suggested_minimum_candidate_point_spacing = ice_worm_territory_radius/5
+			}
+		]]
+  },
+}
+
+
+data.raw["segmented-unit"]["small-ice-worm"].autoplace = {
+	force = "neutral",
+	placement_density = 1,
+	probability_expression = "small_ice_worm",
+	order = "b-a"
+}
+
+data.raw["segmented-unit"]["medium-ice-worm"].autoplace = {
+	force = "neutral",
+	placement_density = 1,
+	probability_expression = "medium_ice_worm",
+	order = "b-b"
+}
+
+data.raw["segmented-unit"]["big-ice-worm"].autoplace = {
+	force = "neutral",
+	placement_density = 1,
+	probability_expression = "big_ice_worm",
+	order = "b-c"
 }
 
 --Red Biome

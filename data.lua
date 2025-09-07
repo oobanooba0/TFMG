@@ -57,6 +57,7 @@ require("prototypes.categories.recipe")
 
 --entities
 require("prototypes.entity.asteroid")
+require("prototypes.entity.enemies")
 require("prototypes.entity.explosions")
 require("prototypes.entity.resources")
 require("prototypes.entity.smoke")

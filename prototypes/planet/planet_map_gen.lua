@@ -56,6 +56,9 @@ planet_map_gen.arrival = function()
         settings =
         {
           ["ice-ore"] = {},
+          ["small-ice-worm"] = {},
+          ["medium-ice-worm"] = {},
+          ["big-ice-worm"] = {}
         }
       }
     }
