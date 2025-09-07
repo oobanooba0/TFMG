@@ -1,12 +1,15 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.2.0
+Version: 0.1.9
 Date: ????
+  Changes:
+---------------------------------------------------------------------------------------------------
+Version: 0.1.8
+Date: 2025-09-07
   Features:
-    - Phase 2 part 1: Arrival
+    - First planet added: Arrival. you can now explore the surface. nothing to do here yet, just enjoy the scenery.
     - You can now deploy Scout'o'trons onto the surface of arrival via the space platform UI
     - Arrival now has some world gen, nothing too fancy, nor final, but it should get at the intended vibe of the planet.
     - Ice worms added. "That's only a juvenile!"
-  Changes:
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.7
 Date: 2025-09-02
