@@ -14,6 +14,11 @@ local disabled_recipes = {"wooden-chest","iron-chest","transport-belt","burner-i
 data.raw.capsule ["raw-fish"].hidden = true
 data.raw.gun ["pistol"].hidden = true
 
+data.raw.item ["asteroid-collector"].flags = {"always-show"}
+data.raw.item ["space-platform-foundation"].flags = {"always-show"}
+data.raw.item ["heat-pipe"].flags = {"always-show"}
+data.raw.recipe ["space-platform-foundation"] = nil
+
 -- hide vanilla content from game, this seems easier than outright removing certain things due to dependancies.
 -- expand brain.png if this works.
 for name, item in pairs(data.raw.item) do
