@@ -1,7 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.9
-Date: ????
+Date: 2025-09-07
+  Bugfixes:
+    - fixed some items not visible in selection menus at game start
+    - fixed machine heat interfaces not being selectable (tempoary while I add a proper gui)
   Changes:
+    - you now start with 500 space platforms to save your poor fingers.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.8
 Date: 2025-09-07
