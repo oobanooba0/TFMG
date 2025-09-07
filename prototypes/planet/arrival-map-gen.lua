@@ -138,7 +138,7 @@ data:extend{-- Ice worm
   {
     type = "noise-expression",
     name = "ice_worm_territory_radius",
-    expression = 1000
+    expression = 800
   },
 }
 
@@ -161,7 +161,7 @@ data:extend{-- small ice worm placement
 			maximum_spot_basement_radius = 1,
 			region_size = ice_worm_territory_radius,
 			candidate_point_count = 3,
-			suggested_minimum_candidate_point_spacing = ice_worm_territory_radius/5
+			suggested_minimum_candidate_point_spacing = ice_worm_territory_radius/2
 			}
 		]]
   },
@@ -186,7 +186,7 @@ data:extend{-- ice worm placement
 			maximum_spot_basement_radius = 1,
 			region_size = ice_worm_territory_radius,
 			candidate_point_count = 3,
-			suggested_minimum_candidate_point_spacing = ice_worm_territory_radius/5
+			suggested_minimum_candidate_point_spacing = ice_worm_territory_radius/2
 			}
 		]]
   },
@@ -202,7 +202,7 @@ data:extend{-- ice worm placement
 			skip_span= 3,
 			skip_offset = 2,
 			density_expression = 1,
-			spot_quantity_expression = 0.08,
+			spot_quantity_expression = 0.1,
 			spot_radius_expression = 1,
 			spot_favorability_expression = 1,
 			seed0 = map_seed,
@@ -211,12 +211,12 @@ data:extend{-- ice worm placement
 			maximum_spot_basement_radius = 1,
 			region_size = ice_worm_territory_radius,
 			candidate_point_count = 3,
-			suggested_minimum_candidate_point_spacing = ice_worm_territory_radius/5
+			suggested_minimum_candidate_point_spacing = ice_worm_territory_radius/2
 			}
 		]]
   },
 }
-
+--ice worms
 
 data.raw["segmented-unit"]["small-ice-worm"].autoplace = {
 	force = "neutral",

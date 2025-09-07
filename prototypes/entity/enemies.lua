@@ -147,7 +147,7 @@ function make_ice_worm_head(base_name, order, scale, damage_multiplier, health, 
     is_military_target = true,
     overkill_fraction = ice_worm_overkill_fraction,
     vision_distance = 0,
-    territory_radius = 10 * scale,
+    territory_radius = (1.5*scale)+1,
     enraged_duration = 30 * 60, -- 30 seconds
     patrolling_speed = 2.0 * speed_multiplier / 60, -- 1.5 tiles per second
     investigating_speed = 4.0 * speed_multiplier / 60, -- 2.25 tiles per second
@@ -155,8 +155,8 @@ function make_ice_worm_head(base_name, order, scale, damage_multiplier, health, 
     enraged_speed = 10.0 * speed_multiplier / 60, -- 4.0 tiles per second
     acceleration_rate = 1 * speed_multiplier / 60 / 60, -- 1 tile per second per second
     turn_radius = 12 * scale, -- tiles
-    patrolling_turn_radius = 50 * scale, -- tiles
-    turn_smoothing = 0.75, -- fraction of the total turning range (based on turning radius)
+    patrolling_turn_radius = (32*scale)+60, -- tiles--current result great
+    turn_smoothing = 0, -- fraction of the total turning range (based on turning radius)
     roar = sounds.roar,
     roar_probability = sounds.roar_probability,
     hurt_roar = sounds.hurt_roar,
@@ -194,6 +194,15 @@ function make_ice_worm_head(base_name, order, scale, damage_multiplier, health, 
           }
         }
       },
+      --{--DEBUG: traces their path on a map to see how they move
+      --  distance_cooldown = 4 * scale,
+      --  effect = 
+      --    {
+      --      type = "set-tile",
+      --      radius = 2,
+      --      tile_name = "grass-1"
+      --    }
+      --}
     },
     segment_engine =
     {
@@ -211,7 +220,7 @@ function make_ice_worm_segment(base_name, scale, damage_multiplier, health, soun
     name = make_segment_name(base_name.."-segment", scale),
     type = "segment",
     selectable_in_game = false,
-    map_color = {0,0,0,0.02},
+    map_color = {0.5,0.5,0.8,0.02},
     --map_color = {0,0,0,0.5},--this ones for debug
     localised_name = {"entity-name.ice_worm-segment", {"entity-name."..base_name}},
     hidden = true,
@@ -368,6 +377,6 @@ function make_ice_worm(base_name, order, scale, damage_multiplier, health, regen
 end
 
 -- With a few damage and rate of fire upgrades the engineer can easily be at 60 DPS if Vulcanus is the first new planet.
-make_ice_worm("small-ice-worm", "a-a", 0.8, 1, 300000, 1000, 0.6, space_age_sounds.demolisher.small)
-make_ice_worm("medium-ice-worm", "a-b", 2, 1.5, 1000000, 1000, 1, space_age_sounds.demolisher.medium)
-make_ice_worm("big-ice-worm", "a-c", 5, 2.5, 3000000, 1000, 1.5, space_age_sounds.demolisher.big)
+make_ice_worm("small-ice-worm", "a-a", 0.8, 1, 8000000, 1000, 0.5, space_age_sounds.demolisher.small)
+make_ice_worm("medium-ice-worm", "a-b", 2, 1.5, 50000000, 1000, 0.7, space_age_sounds.demolisher.medium)
+make_ice_worm("big-ice-worm", "a-c", 5, 2.5, 1000000000, 1000, 1, space_age_sounds.demolisher.big)
