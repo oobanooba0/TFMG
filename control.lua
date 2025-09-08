@@ -81,7 +81,7 @@ script.on_event(
 		thermal_system.on_furnace_tick()
 	end
 )
-script.on_nth_tick(300,
+script.on_nth_tick(100,
 	function(event)
 		gameplay.softlock_detection(event)
 	end
