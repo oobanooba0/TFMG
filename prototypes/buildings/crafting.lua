@@ -79,7 +79,7 @@ data:extend({
       fade_out_ticks = 20
     }
   },
-  {--Assembling machine
+  {--Assembling machine thermal
     type = "assembling-machine",
     name = "assembling-machine",
     icon = "__base__/graphics/icons/assembling-machine-3.png",

@@ -18,6 +18,17 @@ filters = {
 		name = "furnace",
 		mode = "or"
 	},
+	{
+		filter = "name",
+		name = "matter-reconstructor",
+		mode = "or"
+	},
+	{
+		filter = "name",
+		name = "proton-decay-thermoelectric-generator",
+		mode = "or"
+	},
+
 }
 --- on events
 
@@ -50,6 +61,10 @@ function handle_build_event(event)
 		thermal_system.on_assembling_machine_built(entity)
 	elseif entity.name == "furnace" then
 		thermal_system.on_furnace_built(entity)
+	elseif entity.name == "matter-reconstructor" then
+		gameplay.on_vital_building_built(entity)
+	elseif entity.name == "proton-decay-thermoelectric-generator" then
+		gameplay.on_vital_building_built(entity)
 	end
 end
 
@@ -64,6 +79,11 @@ script.on_event(
 	function()
 		thermal_system.on_assembling_machine_tick()
 		thermal_system.on_furnace_tick()
+	end
+)
+script.on_nth_tick(300,
+	function(event)
+		gameplay.softlock_detection(event)
 	end
 )
 

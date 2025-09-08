@@ -1,3 +1,4 @@
+
 ---Scout'o'tron deploy script. (hopefully)
 local gameplay = {}
 
@@ -27,4 +28,28 @@ function gameplay.deploy_scout_o_tron(event)
   end
 end
 
+function gameplay.on_vital_building_built(entity)
+  entity.destructible = false
+end
+
+
+function gameplay.softlock_detection()
+  local platform = storage.platform
+  for _, v in ipairs(platform.ejected_items) do
+    --game.print(v.item.name.name)
+    if v.item.name.name == "matter-reconstructor" or v.item.name.name == "proton-decay-thermoelectric-generator" then
+      game.set_win_ending_info{
+        title = {"story-event.reject-purpose-ending-title"},
+        message = {"story-event.reject-purpose-ending-message"},
+        final_message = {"story-event.reject-purpose-ending-final-message"},
+        image_path = "__TFMG__/graphics/ui/victory-screen/ultrathumbsup.png"
+      }
+      game.set_game_state{
+        game_finished= true,
+        player_won= true,
+        can_continue= false
+      }
+    end
+  end
+end
 return gameplay
