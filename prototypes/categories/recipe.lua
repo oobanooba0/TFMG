@@ -19,5 +19,9 @@ data:extend({
         type = "recipe-category",
         name = "special"--thermal and other secret recipes live here.
     },
+    {
+        type = "recipe-category",
+        name = "computing"--supercomputer recipes
+    },
 
 })
