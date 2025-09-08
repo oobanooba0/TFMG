@@ -1,7 +1,7 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
 
 data:extend({
-      {
+  {
     type = "item",
     name = "matter-reconstructor",
     icon = "__base__/graphics/icons/assembling-machine-1.png",
@@ -27,7 +27,7 @@ data:extend({
     stack_size = 50,
     weight = 40*kg,
   },
-    {
+  {
     type = "item",
     name = "furnace",
     icon = "__base__/graphics/icons/electric-furnace.png",

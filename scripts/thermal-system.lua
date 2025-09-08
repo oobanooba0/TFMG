@@ -28,6 +28,7 @@ function thermal_system.on_assembling_machine_built(entity)
 		local interface = surface.create_entity({ name = "assembling-machine-heat-interface", position = position, force = force })
 		interface.disabled_by_script = true
 		interface.temperature = 240 -- Can't do it in the prototype :(
+		interface.destructible = false
 		if storage.assembling_machine_thermal == nil then
 			storage.assembling_machine_thermal = {}
 		end
@@ -81,6 +82,7 @@ function thermal_system.on_furnace_built(entity)
 		local interface = surface.create_entity({ name = "furnace-heat-interface", position = position, force = force })
 		interface.disabled_by_script = true
 		interface.temperature = 350 -- Can't do it in the prototype :(
+		interface.destructible = false
 		if storage.furnace_thermal == nil then
 			storage.furnace_thermal = {}
 		end

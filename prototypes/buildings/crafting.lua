@@ -210,7 +210,9 @@ data:extend({
         min = 0,
       }
     },
-    collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
+    tile_height = 1,
+    tile_width = 1,
+    collision_mask = {layers ={}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     selection_priority = 40,
     damaged_trigger_effect = hit_effects.entity(),
@@ -482,7 +484,9 @@ data:extend({
         min = 0,
       }
     },
-    collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
+    tile_height = 1,
+    tile_width = 1,
+    collision_mask = {layers ={}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     selection_priority = 40,
     damaged_trigger_effect = hit_effects.entity(),
