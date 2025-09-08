@@ -54,4 +54,5 @@ function create_data_storage()
 	storage.assembling_machine_thermal = {}
   storage.furnace_thermal = {}
   storage.players = {}
+  storage.supercomputer = {}
 end

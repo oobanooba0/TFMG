@@ -4,6 +4,8 @@ require("scripts.thermal-system")
 thermal_system = require("scripts.thermal-system")
 require("scripts.gameplay")
 gameplay = require("scripts.gameplay")
+require("scripts.supercomputer")
+supercomputer = require("scripts.supercomputer")
 
 --i crie everytime i redo several hours of work.
 --stolen from allison
@@ -28,6 +30,12 @@ filters = {
 		name = "proton-decay-thermoelectric-generator",
 		mode = "or"
 	},
+	{
+		filter = "name",
+		name = "supercomputer-interface",
+		mode = "or"
+	},
+
 
 }
 --- on events
@@ -65,6 +73,8 @@ function handle_build_event(event)
 		gameplay.on_vital_building_built(entity)
 	elseif entity.name == "proton-decay-thermoelectric-generator" then
 		gameplay.on_vital_building_built(entity)
+	elseif entity.name == "supercomputer-interface" then
+		supercomputer.on_supercomputer_built(entity)
 	end
 end
 
@@ -72,6 +82,7 @@ script.on_event(
 	defines.events.on_object_destroyed,
 	function(event)
 		thermal_system.on_machine_destroyed(event)
+		supercomputer.on_supercomputer_destroyed(event)
 	end
 )
 script.on_event(
@@ -79,6 +90,7 @@ script.on_event(
 	function()
 		thermal_system.on_assembling_machine_tick()
 		thermal_system.on_furnace_tick()
+		supercomputer.on_supercomputer_tick()
 	end
 )
 script.on_nth_tick(100,

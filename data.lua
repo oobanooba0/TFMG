@@ -78,6 +78,7 @@ require("prototypes.items.buildings.thermal")
 ---inventory items
 require("prototypes.items.intermediates")
 require("prototypes.items.raw-resources")
+require("prototypes.items.science")
 require("prototypes.items.spiders")
 
 --menu simulations
@@ -96,6 +97,7 @@ require("prototypes.recipes.basic-assembling")
 require("prototypes.recipes.furnace")
 require("prototypes.recipes.matter-reconstructor")
 require("prototypes.recipes.special")
+require("prototypes.recipes.supercomputer")
 
 --technolgoies
 require("prototypes.technologies.platform-phase")

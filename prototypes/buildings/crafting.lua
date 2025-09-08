@@ -644,7 +644,7 @@ data:extend({
       },
     },
     crafting_categories = {
-      "computing"
+      "supercomputer"
     },
     crafting_speed = 1,
     energy_source =

@@ -21,7 +21,7 @@ data:extend({
     },
     {
         type = "recipe-category",
-        name = "computing"--supercomputer recipes
+        name = "supercomputer"--supercomputer recipes
     },
 
 })
