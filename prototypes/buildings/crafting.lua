@@ -90,6 +90,11 @@ data:extend({
       order = 254,
       },
       {
+      name = {"thermal-system.damage-temperature"},
+      value = {"thermal-system.assembling-machine-damage-temperature"},
+      order = 254,
+      },
+      {
       name = {"thermal-system.efficiency"},
       value = {"thermal-system.assembling-machine-efficiency"},
       order = 255,
@@ -221,7 +226,7 @@ data:extend({
     },
     heat_buffer =
     {
-      max_temperature = 250,
+      max_temperature = 450,--200 degrees above max.
       minimum_glow_temperature = 50,
       specific_heat = "1MJ",
       max_transfer = "10GW",
@@ -493,8 +498,8 @@ data:extend({
     },
     heat_buffer =
     {
-      max_temperature = 750,
-      minimum_glow_temperature = 250,
+      max_temperature = 600,--200 degrees above max temperature.
+      minimum_glow_temperature = 150,
       specific_heat = "1MJ",
       max_transfer = "10GW",
       connections =

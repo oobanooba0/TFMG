@@ -171,6 +171,8 @@ data:extend({
     {
       type = "heat",
       max_temperature = 1000, --this has to be a big number or a thermal system could lock up and be unable to cool down
+      min_working_temperature = 15,
+      default_temperature = 15,
       specific_heat = "1MJ",
       max_transfer = "1GW",
       connections =

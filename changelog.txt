@@ -2,8 +2,12 @@
 Version: 0.1.10
 Date: ????
   Changes:
+    - Furnace now has a max operating temperature of 400c instaid of 750c, To make it more similar to the assembling machine, but still noticably higher.
+    - Thermal system objects now place at near max operating temperature, to make abusing manual replacement less appealing. They should still be able to craft for a little bit though, so you wont have to deal with aquilo waiting for a build to heat up syndrome.
+    - all thermal system objects now accept heat over their overheat temperature. 
   Bugfixes:
     - Thermal system now doesn't apply on planet surfaces!
+    - Fixed crash when destroying thermal interface parents via editor or other instantanious means.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.9
 Date: 2025-09-07

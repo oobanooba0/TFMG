@@ -27,6 +27,7 @@ function thermal_system.on_assembling_machine_built(entity)
 	if surface.get_property("gravity") == 0 then
 		local interface = surface.create_entity({ name = "assembling-machine-heat-interface", position = position, force = force })
 		interface.disabled_by_script = true
+		interface.temperature = 240 -- Can't do it in the prototype :(
 		if storage.assembling_machine_thermal == nil then
 			storage.assembling_machine_thermal = {}
 		end
@@ -35,23 +36,33 @@ function thermal_system.on_assembling_machine_built(entity)
 end
 
 function thermal_system.on_assembling_machine_tick()
+	local max_working_temperature = 250
+	local max_safe_temperature = 350
 	storage.machine_from_k = flib_table.for_n_of(
-	storage.assembling_machine_thermal, storage.machine_from_k, 100000000, --this causes massive lag with lots of entites. I'll need a better solution
-	function(v)
-		local iscrafting = v.machine.is_crafting()
-			if iscrafting == true then
-		local energy_usage = (500*(1 + v.machine.consumption_bonus)) --in Kw. the assembling machine consumes 1000kw, but outputs 50% of it back out as heat
-		local temperature_increase = (energy_usage / 60000) --interface has 1Mj specific heat. so 1mw=1degree/s and divide by 60 for per tick
-		local final_temperature = (v.interface.temperature + (temperature_increase))
-				v.interface.temperature = final_temperature
+		storage.assembling_machine_thermal, storage.machine_from_k, 100000000, --this causes massive lag with lots of entites. I'll need a better solution
+		function(v)
+			if v.machine.valid == false then--checks for machine validity, preventing a game crash if the machine is destroyed instantly.
+			return end
+			local temperature = v.interface.temperature
+			if v.machine.status == 1 then
+				local energy_usage = (500*(1 + v.machine.consumption_bonus)) --in Kw. the assembling machine consumes 1000kw, but outputs 50% of it back out as heat
+				local temperature_increase = (energy_usage / 60000) --interface has 1Mj specific heat. so 1mw=1degree/s and divide by 60 for per tick
+				local final_temperature = (temperature + (temperature_increase))
+					v.interface.temperature = final_temperature
 			end
-		local temperature = v.interface.temperature--this should disable the assembling machine if it gets too warm, performance consequences abound.
-			if temperature >= 250 then
+			if temperature >= max_working_temperature then
 				v.machine.disabled_by_script = true
 				v.machine.custom_status = {
 					diode = defines.entity_status_diode.red,
 					label = "Overheated!"
 					}
+				if temperature >= max_safe_temperature then
+					v.machine.custom_status = {
+						diode = defines.entity_status_diode.red,
+						label = "Taking thermal damage!"
+						}
+					v.machine.damage(0.1,"neutral")--must be last part of the script that runs.
+				end
 			else
 				v.machine.disabled_by_script = false
 				v.machine.custom_status = nil
@@ -69,6 +80,7 @@ function thermal_system.on_furnace_built(entity)
 	if surface.get_property("gravity") == 0 then
 		local interface = surface.create_entity({ name = "furnace-heat-interface", position = position, force = force })
 		interface.disabled_by_script = true
+		interface.temperature = 350 -- Can't do it in the prototype :(
 		if storage.furnace_thermal == nil then
 			storage.furnace_thermal = {}
 		end
@@ -77,23 +89,33 @@ function thermal_system.on_furnace_built(entity)
 end
 
 function thermal_system.on_furnace_tick()
+	local max_working_temperature = 400
+	local max_safe_temperature = 500
 	storage.machine_from_k = flib_table.for_n_of(
 		storage.furnace_thermal, storage.machine_from_k, 100000000, --this causes massive lag with lots of entites. I'll need a better solution
 		function(v)
-		local iscrafting = v.machine.is_crafting()
-			if iscrafting == true then
-		local energy_usage = (2000*(1 + v.machine.consumption_bonus)) --in Kw. the furnace consumes 2500kw, but outputs 80% of it back out as heat
-		local temperature_increase = (energy_usage / 60000) --interface has 1Mj specific heat. so 1mw=1degree/s and divide by 60 for per tick
-		local final_temperature = (v.interface.temperature + (temperature_increase))
-				v.interface.temperature = final_temperature
+		  if v.machine.valid == false then--checks for machine validity, preventing a game crash if the machine is destroyed instantly.
+			return end
+			local temperature = v.interface.temperature
+			if v.machine.status == 1 then --This just checks weather the machine is currently working
+				local energy_usage = (2000*(1 + v.machine.consumption_bonus)) --in Kw. the furnace consumes 2500kw, but outputs 80% of it back out as heat
+				local temperature_increase = (energy_usage / 60000) --interface has 1Mj specific heat. so 1mw=1degree/s and divide by 60 for per tick
+				local final_temperature = (temperature + (temperature_increase))
+					v.interface.temperature = final_temperature
 			end
-		local temperature = v.interface.temperature--this should disable the assembling machine if it gets too warm, performance consequences abound.
-			if temperature >= 750 then
+			if temperature >= max_working_temperature then
 				v.machine.disabled_by_script = true
 				v.machine.custom_status = {
 					diode = defines.entity_status_diode.red,
 					label = "Overheated!"
 					}
+				if temperature >= max_safe_temperature then
+					v.machine.custom_status = {
+						diode = defines.entity_status_diode.red,
+						label = "Taking thermal damage!"
+						}
+					v.machine.damage(0.1,"neutral")--must be last thing that happens, past this point assembling machine might no longer exist and cannot be interacted with
+				end
 			else
 				v.machine.disabled_by_script = false
 				v.machine.custom_status = nil
