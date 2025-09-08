@@ -26,7 +26,7 @@ platform = force.create_space_platform({
   platform.apply_starter_pack()
   storage.platform = platform
 	force.lock_space_location("nauvis")--Locks nauvis lol.
-	game.planets['arrival'].create_surface()
+	--game.planets['arrival'].create_surface()
 end
 
 function give_starting_items()

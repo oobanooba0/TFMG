@@ -1,10 +1,13 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.10
 Date: ????
+  Features:
+    - Machines beyond 100c over their max temperature will now take damage! Be careful when designing your systems!
   Changes:
     - Furnace now has a max operating temperature of 400c instaid of 750c, To make it more similar to the assembling machine, but still noticably higher.
     - Thermal system objects now place at near max operating temperature, to make abusing manual replacement less appealing. They should still be able to craft for a little bit though, so you wont have to deal with aquilo waiting for a build to heat up syndrome.
     - all thermal system objects now accept heat over their overheat temperature. 
+    - arrival is no longer generated until you actually deploy your Scout'o'tron, this prevents players from accidentally dropping important items onto the surface and softlocking themselves.
   Bugfixes:
     - Thermal system now doesn't apply on planet surfaces!
     - Fixed crash when destroying thermal interface parents via editor or other instantanious means.
