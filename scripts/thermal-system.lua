@@ -24,12 +24,14 @@ function thermal_system.on_assembling_machine_built(entity)
 	local surface = entity.surface
 	local position = entity.position
 	local force = entity.force
-	local interface = surface.create_entity({ name = "assembling-machine-heat-interface", position = position, force = force })
-	interface.disabled_by_script = true
-	if storage.assembling_machine_thermal == nil then
+	if surface.get_property("gravity") == 0 then
+		local interface = surface.create_entity({ name = "assembling-machine-heat-interface", position = position, force = force })
+		interface.disabled_by_script = true
+		if storage.assembling_machine_thermal == nil then
 			storage.assembling_machine_thermal = {}
+		end
+		table.insert(storage.assembling_machine_thermal, unit_number, { machine = entity, interface = interface })
 	end
-	table.insert(storage.assembling_machine_thermal, unit_number, { machine = entity, interface = interface })
 end
 
 function thermal_system.on_assembling_machine_tick()
@@ -64,12 +66,14 @@ function thermal_system.on_furnace_built(entity)
 	local surface = entity.surface
 	local position = entity.position
 	local force = entity.force
-	local interface = surface.create_entity({ name = "furnace-heat-interface", position = position, force = force })
-	interface.disabled_by_script = true
-	if storage.furnace_thermal == nil then
-		storage.furnace_thermal = {}
+	if surface.get_property("gravity") == 0 then
+		local interface = surface.create_entity({ name = "furnace-heat-interface", position = position, force = force })
+		interface.disabled_by_script = true
+		if storage.furnace_thermal == nil then
+			storage.furnace_thermal = {}
+		end
+		table.insert(storage.furnace_thermal, unit_number, { machine = entity, interface = interface })
 	end
-	table.insert(storage.furnace_thermal, unit_number, { machine = entity, interface = interface })
 end
 
 function thermal_system.on_furnace_tick()
