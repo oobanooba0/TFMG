@@ -1,9 +1,13 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.1.10
+Version: 0.1.11
 Date: ????
+  Changes:
+---------------------------------------------------------------------------------------------------
+Version: 0.1.10
+Date: 2025-09-08
   Features:
     - Machines beyond 100c over their max temperature will now take damage! Be careful when designing your systems!
-    - Many thermal system improvments!
+    - Many thermal system improvments! (proper interface still in progress)
     - A true ending?
   Changes:
     - Furnace now has a max operating temperature of 400c instaid of 750c, To make it more similar to the assembling machine, but still noticably higher.

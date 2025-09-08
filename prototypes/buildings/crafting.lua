@@ -285,7 +285,7 @@ data:extend({
     default_temperature_signal = {type = "virtual", name = "signal-T"},
     circuit_wire_max_distance = reactor_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["heating-tower"]
-  },
+    },
   {--furnace
     type = "furnace",
     name = "furnace",

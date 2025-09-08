@@ -111,7 +111,7 @@ script.on_event(defines.events.on_gui_opened, function(event)
   if event.gui_type == defines.gui_type.entity and event.entity.type == "space-platform-hub" then
 		local player_storage = storage.players[event.player_index]
 		player_storage.hub = event.entity--we're gonna store the location, which is always 0,0
-    end
+  end
 end)
 
 script.on_event(defines.events.on_gui_click, function(event)

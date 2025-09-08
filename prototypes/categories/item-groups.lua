@@ -35,4 +35,16 @@ data:extend({
     group = "intermediate-products",
     order = "f"
   },
+  {
+    type = "item-subgroup",
+    name = "science-unverified",
+    group = "intermediate-products",
+    order = "g"
+  },
+  {
+    type = "item-subgroup",
+    name = "science-verified",
+    group = "intermediate-products",
+    order = "h"
+  },
 })
