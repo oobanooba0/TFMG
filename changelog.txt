@@ -1,10 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.12
+Date: 2025-09-10
+  Bugfixes:
+    - heat pipes now snap to buildings properly. oops. Thanks Louloubichou for catching that one
+---------------------------------------------------------------------------------------------------
 Version: 0.1.11
 Date: 2025-09-10
   Features:
     - Main Menu theme "PURPOSE" added, created by yours truly.
-  Bugfixes:
-    - heat pipes now snap to buildings properly. oops.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.10
 Date: 2025-09-08
