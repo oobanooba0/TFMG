@@ -5,6 +5,7 @@ data:extend({
     name = "solution",
     icon = "__base__/graphics/icons/signal/signal-science-pack.png",
     subgroup = "debug",
+    hidden = true,
     color_hint = { text = "1" },
     order = "a[introspection]",
     inventory_move_sound = item_sounds.science_inventory_move,

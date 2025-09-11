@@ -32,7 +32,7 @@ filters = {
 	},
 	{
 		filter = "name",
-		name = "supercomputer-interface",
+		name = "supercomputer",
 		mode = "or"
 	},
 
@@ -73,7 +73,7 @@ function handle_build_event(event)
 		gameplay.on_vital_building_built(entity)
 	elseif entity.name == "proton-decay-thermoelectric-generator" then
 		gameplay.on_vital_building_built(entity)
-	elseif entity.name == "supercomputer-interface" then
+	elseif entity.name == "supercomputer" then
 		supercomputer.on_supercomputer_built(entity)
 	end
 end

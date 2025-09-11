@@ -1,5 +1,6 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
+local simulations = require("__base__.prototypes.factoriopedia-simulations")
 
 data:extend({
   {--matter reconstructor
@@ -560,16 +561,16 @@ data:extend({
   },
   {--supercomputer
     type = "assembling-machine",
-    name = "supercomputer-interface",
+    name = "supercomputer",
     icon = "__base__/graphics/icons/assembling-machine-2.png",
     flags = {"placeable-neutral","placeable-player", "player-creation"},
-    minable = {mining_time = 0.2, result = "supercomputer-interface"},
+    minable = {mining_time = 0.2, result = "supercomputer"},
     max_health = 400,
     corpse = "assembling-machine-2-remnants",
     dying_explosion = "assembling-machine-2-explosion",
     icon_draw_specification = {shift = {0, -0.3}},
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
-    circuit_connector = circuit_connector_definitions["assembling-machine"],
+    circuit_connector = circuit_connector_definitions["assembling-machine"], --leaving this,since circuit connections may still be useful to the player
     alert_icon_shift = util.by_pixel(0, -12),
     resistances =
     {
@@ -578,26 +579,28 @@ data:extend({
         percent = 70
       }
     },
-    fluid_boxes =
+    fluid_boxes =--ill have to do something with these at some point. but enabling these is required to make this entity rotatable
     {
       {
         production_type = "input",
         pipe_picture = assembler2pipepictures(),
-        pipe_covers = pipecoverspictures(),
+        --pipe_covers = pipecoverspictures(),
         volume = 1000,
-        pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {0, -1} }},
-        secondary_draw_orders = { north = -1 }
+        pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {0, -2} }},
+        secondary_draw_orders = { north = -1 },
+        draw_only_when_connected = true,
       },
       {
         production_type = "output",
         pipe_picture = assembler2pipepictures(),
-        pipe_covers = pipecoverspictures(),
+        --pipe_covers = pipecoverspictures(),
         volume = 1000,
-        pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {0, 1} }},
-        secondary_draw_orders = { north = -1 }
+        pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {0, 2} }},
+        secondary_draw_orders = { north = -1 },
+        draw_only_when_connected = true,
       }
     },
-    fluid_boxes_off_when_no_fluid_recipe = true,
+    fluid_boxes_off_when_no_fluid_recipe = false,
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
     impact_category = "metal",
@@ -607,8 +610,8 @@ data:extend({
       fade_in_ticks = 4,
       fade_out_ticks = 20
     },
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.4, -1.4}, {1.4, 1.4}},
+    collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
+    selection_box = {{-2.4, -2.4}, {2.4, 2.4}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.2,
    graphics_set =
@@ -625,7 +628,7 @@ data:extend({
             frame_count = 32,
             line_length = 8,
             shift = util.by_pixel(0, 4),
-            scale = 0.5
+            scale = 0.8,
           },
           {
             filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2-shadow.png",
@@ -636,7 +639,7 @@ data:extend({
             line_length = 8,
             draw_as_shadow = true,
             shift = util.by_pixel(12, 4.75),
-            scale = 0.5
+            scale = 0.8
           }
         }
       },
@@ -644,7 +647,7 @@ data:extend({
     crafting_categories = {
       "supercomputer"
     },
-    crafting_speed = 1,
+    crafting_speed = 60,
     energy_source =
     {
       type = "electric",
@@ -656,3 +659,13 @@ data:extend({
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
   },
 })
+--make the combinators the lazy way, I have no need to completely overhaul their functionality.
+
+local supercomputer_input = table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
+supercomputer_input.name = "supercomputer-input"
+data:extend{supercomputer_input}
+
+local supercomputer_output = table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
+supercomputer_output.name = "supercomputer-output"
+data:extend{supercomputer_output}
+
