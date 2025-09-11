@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.13
+Date: ????
+  Features:
+    - Data verification system added. Science packs now must be verified in a supercomputer before they can be processed.
+    - Supercomputer added
+  Changes:
+---------------------------------------------------------------------------------------------------
 Version: 0.1.12
 Date: 2025-09-10
   Bugfixes:
