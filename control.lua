@@ -63,6 +63,27 @@ script.on_event(
     filters
 )
 
+script.on_event(
+	defines.events.on_player_rotated_entity,
+		function(event)
+			local entity = event.entity
+			if entity.name == "supercomputer" then
+				supercomputer.on_supercomputer_rotated(entity)
+			end
+		end
+)
+
+script.on_event(
+	defines.events.on_player_flipped_entity,
+		function(event)
+			local entity = event.entity
+			if entity.name == "supercomputer" then
+				supercomputer.on_supercomputer_flipped(entity)
+			end
+		end
+)
+
+
 function handle_build_event(event)
 	local entity = event.entity
 	if entity.name == "assembling-machine" then

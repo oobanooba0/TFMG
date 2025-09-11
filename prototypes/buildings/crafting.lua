@@ -586,7 +586,7 @@ data:extend({
         pipe_picture = assembler2pipepictures(),
         --pipe_covers = pipecoverspictures(),
         volume = 1000,
-        pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {0, -2} }},
+        pipe_connections = {{ flow_direction="input", direction = defines.direction.south, position = {1, -2} }},
         secondary_draw_orders = { north = -1 },
         draw_only_when_connected = true,
       },
@@ -595,7 +595,7 @@ data:extend({
         pipe_picture = assembler2pipepictures(),
         --pipe_covers = pipecoverspictures(),
         volume = 1000,
-        pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {0, 2} }},
+        pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {-1, -2} }},
         secondary_draw_orders = { north = -1 },
         draw_only_when_connected = true,
       }
@@ -663,9 +663,19 @@ data:extend({
 
 local supercomputer_input = table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
 supercomputer_input.name = "supercomputer-input"
+supercomputer_input.collision_mask = {layers = {},not_colliding_with_itself = true}
+--supercomputer_input.allow_copy_paste = false
+--supercomputer_input.flags = {"placeable-neutral", "player-creation","not-blueprintable"}
+supercomputer_input.minable = nil
+supercomputer_input.selection_priority = 51
 data:extend{supercomputer_input}
 
 local supercomputer_output = table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
 supercomputer_output.name = "supercomputer-output"
+supercomputer_output.collision_mask = {layers = {},not_colliding_with_itself = true}
+--supercomputer_output.allow_copy_paste = false
+--supercomputer_output.flags = {"placeable-neutral", "player-creation","not-blueprintable"}
+supercomputer_output.minable = nil
+supercomputer_output.selection_priority = 51
 data:extend{supercomputer_output}
 
