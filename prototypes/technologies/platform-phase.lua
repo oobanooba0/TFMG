@@ -15,7 +15,8 @@ data:extend({
     {
       type = "build-entity",
       entity = "matter-reconstructor",
-    }
+    },
+    essential = true
   },
   {--furnaces
     type = "technology",
@@ -179,6 +180,66 @@ data:extend({
     },
     prerequisites = {"assembling"},
   },
+  {--consider the self
+    type = "technology",
+    name = "consider-the-self",
+    icon = "__base__/graphics/icons/signal/signal_each.png",
+    icon_size = 64,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "print-ai-processor"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "supercomputer"
+      },
+    },
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "modular-circuit",
+      count = 64
+    },
+    prerequisites = {"logistics-1","asteroid-collection","heat-management"},
+    essential = true
+  },
+
+  {--Introspection science
+    type = "technology",
+    name = "introspection-science-pack",
+    icon = "__base__/graphics/technology/automation-science-pack.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "introspection-science-unverified"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "introspection-science"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "neural-node"
+      }
+    },
+    research_trigger =
+    {
+      type = "build-entity",
+      entity = "supercomputer",
+    },
+    prerequisites = {"consider-the-self"},
+    essential = true
+  },
+
+
+
+
+---to be changed
+
   {--Scout-o-tron parts
     type = "technology",
     name = "scout-o-tron-parts",
@@ -207,26 +268,7 @@ data:extend({
     },
     prerequisites = {"logistics-1","asteroid-collection","heat-management"},
   },
-  {--the collective self
-    type = "technology",
-    name = "consider-the-collective-self",
-    icon = "__base__/graphics/icons/signal/signal_each.png",
-    icon_size = 64,
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "print-ai-processor"
-      },
-    },
-    research_trigger =
-    {
-      type = "craft-item",
-      item = "spidertron-frame",
-      count = 1
-    },
-    prerequisites = {"scout-o-tron-parts"},
-  },
+
   {--scout-o-tron
     type = "technology",
     name = "scout-o-tron",
@@ -245,7 +287,7 @@ data:extend({
       item = "ai-processor",
       count = 1
     },
-    prerequisites = {"consider-the-collective-self"},
+    prerequisites = {"consider-the-self"},
   },
   {--consider your potential. Platform phase end.
     type = "technology",
@@ -267,6 +309,7 @@ data:extend({
       count = 1
     },
     prerequisites = {"scout-o-tron"},
+    essential = true
   },
 
 ---extra techs

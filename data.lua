@@ -54,6 +54,7 @@ require("prototypes.buildings.belts")
 require("prototypes.buildings.crafting")
 require("prototypes.buildings.generator")
 require("prototypes.buildings.inserters")
+require("prototypes.buildings.labs")
 require("prototypes.buildings.thermal")
 
 --categories
@@ -74,6 +75,7 @@ require("prototypes.items.buildings.belts")
 require("prototypes.items.buildings.crafting")
 require("prototypes.items.buildings.generator")
 require("prototypes.items.buildings.inserters")
+require("prototypes.items.buildings.labs")
 require("prototypes.items.buildings.thermal")
 ---inventory items
 require("prototypes.items.intermediates")

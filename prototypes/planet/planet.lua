@@ -15,12 +15,12 @@ data:extend({
     distance = 20,
     orientation = 0.275,
     magnitude = 1,
-    order = "a[nauvis]",
+    order = "a[arrival]",
     subgroup = "planets",
     map_seed_offset = 0,
     map_gen_settings = planet_map_gen.arrival(),
-    pollutant_type = nill,
-    solar_power_in_space = 20,
+    pollutant_type = nil,
+    solar_power_in_space = 100,
     planet_procession_set =
     {
       arrival = {"default-b"},

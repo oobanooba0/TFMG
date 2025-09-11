@@ -146,4 +146,36 @@
         { type = "item", name = "small-radiator", amount = 1 }
     },
   },
+  {--supercomputer
+    type = "recipe",
+    category = "basic-assembling",
+    name = "supercomputer",
+    energy_required = 20,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 16 },
+      { type = "item", name = "conductive-coil", amount = 24 },
+      { type = "item", name = "heat-pipe", amount = 8 },
+      { type = "item", name = "ai-processor", amount = 1 },
+    },
+    results = { 
+        { type = "item", name = "supercomputer", amount = 1 }
+    },
+  },
+  {--neural-node
+    type = "recipe",
+    category = "basic-assembling",
+    name = "neural-node",
+    energy_required = 20,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 16 },
+      { type = "item", name = "modular-circuit", amount = 16 },
+      { type = "item", name = "mineral-glass", amount = 4 },
+      { type = "item", name = "ai-processor", amount = 1 },
+    },
+    results = { 
+        { type = "item", name = "neural-node", amount = 1 }
+    },
+  }
 })

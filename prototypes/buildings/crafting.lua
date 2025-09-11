@@ -628,7 +628,7 @@ data:extend({
             frame_count = 32,
             line_length = 8,
             shift = util.by_pixel(0, 4),
-            scale = 0.8,
+            scale = 0.85,
           },
           {
             filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2-shadow.png",
@@ -639,7 +639,7 @@ data:extend({
             line_length = 8,
             draw_as_shadow = true,
             shift = util.by_pixel(12, 4.75),
-            scale = 0.8
+            scale = 0.85
           }
         }
       },

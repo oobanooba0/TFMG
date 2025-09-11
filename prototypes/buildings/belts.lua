@@ -10,7 +10,6 @@ local belt_1_animation_set =
   animation_set =
   {
     filename = "__base__/graphics/entity/transport-belt/transport-belt.png",
-    tint = {0.7, 0.7, 1, 1},
     priority = "extra-high",
     size = 128,
     scale = 0.5,

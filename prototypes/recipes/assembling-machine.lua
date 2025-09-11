@@ -69,6 +69,23 @@ data:extend({
       { type = "item", name = "modular-circuit", amount = 1 }
     },
   },
+  --Science packs
+  {--introspection science
+    type = "recipe",
+    category = "assembling-machine",
+    name = "introspection-science-unverified",
+    energy_required = 5,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "modular-circuit", amount = 1 },
+      { type = "item", name = "mechanical-components", amount = 1 },
+      { type = "item", name = "crystalline-plate", amount = 1 },
+    },
+    results = { 
+      { type = "item", name = "introspection-science-unverified", amount = 1 }
+    },
+  },
+
 
   {--spidertron frame
     type = "recipe",
@@ -132,5 +149,22 @@ data:extend({
     },
   },
 
+---building recipes
+  {--
+    type = "recipe",
+    category = "assembling-machine",
+    name = "scout-o-tron",
+    energy_required = 32,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "spidertron-frame", amount = 1 },
+      { type = "item", name = "mechanical-leg", amount = 3 },
+      { type = "item", name = "manipulation-tool", amount = 2 },
+      { type = "item", name = "ai-processor", amount = 1 },
+    },
+    results = { 
+      { type = "item", name = "scout-o-tron", amount = 1 }
+    },
+  },
 
 })
