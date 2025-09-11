@@ -1,10 +1,14 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.1.13
+Version: 0.2.0
 Date: ????
   Features:
-    - Data verification system added. Science packs now must be verified in a supercomputer before they can be processed.
+    - Data verification mechanic added. Science packs now must be verified in a supercomputer before they can be processed.
     - Supercomputer added
+    - Neural Node added
+    - Introspection Science Pack added
+    - Several technologies related to science production, and circuit networks added
   Changes:
+    - Scout'o'trons are now unlocked via research and are not a trigger tech anymore
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.12
 Date: 2025-09-10
