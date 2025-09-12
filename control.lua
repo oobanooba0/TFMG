@@ -57,6 +57,7 @@ script.on_event(--machines create machines create machines create machines creat
 	end,
 	filters
 )
+
 script.on_event(
 	defines.events.on_robot_built_entity,
 	function(event)
@@ -87,6 +88,7 @@ script.on_event(
 	defines.events.on_player_flipped_entity,
 		function(event)
 			local entity = event.entity
+			if entity.valid == false then return end
 			if entity.name == "supercomputer" then
 				supercomputer.on_supercomputer_flipped(entity)
 			end
