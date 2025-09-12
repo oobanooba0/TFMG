@@ -336,4 +336,24 @@ data:extend({
     prerequisites = {"logistics-1"},
     upgrade = true
   },
+
+  {
+    type = "technology",
+    name = "infinite-technology-1",
+    icon = ("__base__/graphics/icons/signal/signal-speed.png"),
+    icon_size = 64,
+    effects = {},
+    prerequisites = {},
+    unit =
+    {
+      count_formula = "1000*(L)",
+      ingredients =
+      {
+        {"introspection-science", 1},
+      },
+      time = 60
+    },
+    max_level = "infinite",
+    upgrade = true
+  },
 })

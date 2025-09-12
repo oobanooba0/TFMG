@@ -2,17 +2,34 @@
   local sounds = require("__base__.prototypes.entity.sounds")
 
   data:extend({
-  {--Thought node
+  {--neural node
     type = "lab",
     name = "neural-node",
     icon = "__base__/graphics/icons/lab.png",
+    custom_tooltip_fields = {
+      {
+      name = {"thermal-system.max-temperature"},
+      value = {"thermal-system.neural-node-max-temperature"},
+      order = 254,
+      },
+      {
+      name = {"thermal-system.damage-temperature"},
+      value = {"thermal-system.neural-node-damage-temperature"},
+      order = 254,
+      },
+      {
+      name = {"thermal-system.efficiency"},
+      value = {"thermal-system.neural-node-efficiency"},
+      order = 255,
+      },
+    },
     flags = {"placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "neural-node"},
     max_health = 150,
     corpse = "lab-remnants",
     dying_explosion = "lab-explosion",
     collision_box = {{-1.9, -1.9}, {1.9, 1.9}},
-    selection_box = {{-2, -2}, {2, 2}},
+    selection_box = {{-1.9, -1.9}, {1.9, 1.9}},
     damaged_trigger_effect = hit_effects.entity(),
     on_animation =
     {

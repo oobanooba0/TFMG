@@ -40,6 +40,11 @@ filters = {
 		name = "supercomputer",
 		mode = "or"
 	},
+	{
+		filter = "name",
+		name = "neural-node",
+		mode = "or"
+	},
 
 
 }
@@ -102,6 +107,8 @@ function handle_build_event(event)
 		gameplay.on_vital_building_built(entity)
 	elseif entity.name == "supercomputer" then
 		supercomputer.on_supercomputer_built(entity)
+	elseif entity.name == "neural-node" then
+		thermal_system.on_neural_node_built(entity)
 	end
 end
 
@@ -118,6 +125,7 @@ script.on_event(
 		thermal_system.on_matter_reconstructor_tick()
 		thermal_system.on_assembling_machine_tick()
 		thermal_system.on_furnace_tick()
+		thermal_system.on_neural_node_tick()
 		supercomputer.on_supercomputer_tick()
 	end
 )

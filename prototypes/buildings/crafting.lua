@@ -2,38 +2,28 @@ local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 local simulations = require("__base__.prototypes.factoriopedia-simulations")
 
----Heat interface connections
---connected
-local HP_NS = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-straight-vertical-1.png", scale = 0.5}
-local HP_EW = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-straight-horizontal-1.png", scale = 0.5}
---disconnected
-local HP_N = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-down-1.png", scale = 0.5}
-local HP_N_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-down-1.png", scale = 0.5,shift = {0,-0.3}}
-local HP_E = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-left-1.png", scale = 0.5}
-local HP_E_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-left-1.png", scale = 0.5,shift = {0.3,0}}
-local HP_S = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-up-1.png", scale = 0.5}
-local HP_S_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-up-1.png", scale = 0.5,shift = {0,0.3}}
-local HP_W = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-right-1.png", scale = 0.5}
-local HP_W_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-right-1.png", scale = 0.5,shift = {-0.3,0}}
----Hot Heat interface connections
---connected
-local HP_NS_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-straight-vertical-1.png", scale = 0.5}
-local HP_EW_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-straight-horizontal-1.png", scale = 0.5}
---disconnected
-local HP_N_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-down-1.png", scale = 0.5}
-local HP_N_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-down-1.png", scale = 0.5,shift = {0,-0.3}}
-local HP_E_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-left-1.png", scale = 0.5}
-local HP_E_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-left-1.png", scale = 0.5,shift = {0,-0.3}}
-local HP_S_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-up-1.png", scale = 0.5}
-local HP_S_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-up-1.png", scale = 0.5,shift = {0,-0.3}}
-local HP_W_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5}
-local HP_W_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5,shift = {0,-0.3}}
-
 data:extend({
   {--matter reconstructor
     type = "assembling-machine",
     name = "matter-reconstructor",
     icon = "__base__/graphics/icons/assembling-machine-1.png",
+    custom_tooltip_fields = {
+      {
+      name = {"thermal-system.max-temperature"},
+      value = {"thermal-system.matter-reassembler-max-temperature"},
+      order = 254,
+      },
+      {
+      name = {"thermal-system.damage-temperature"},
+      value = {"thermal-system.matter-reassembler-damage-temperature"},
+      order = 254,
+      },
+      {
+      name = {"thermal-system.efficiency"},
+      value = {"thermal-system.matter-reassembler-efficiency"},
+      order = 255,
+      },
+    },
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "matter-reconstructor"},
     max_health = 1000,
@@ -106,56 +96,6 @@ data:extend({
       fade_in_ticks = 4,
       fade_out_ticks = 20
     }
-  },
-  {--matter reconstructor heat interface
-    type = "reactor",
-    name = "matter-reconstructor-heat-interface",
-    icon  = "__space-age__/graphics/icons/heating-tower.png",
-    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable","not-deconstructable","no-automated-item-insertion","no-automated-item-removal"},
-    max_health = 250,
-    corpse = "heating-tower-remnants",
-    dying_explosion = "heating-tower-explosion",
-    surface_conditions =
-    {
-      {
-        property = "pressure",
-        max = 0,
-        min = 0,
-      }
-    },
-    collision_mask = {layers ={}},
-    collision_box = {{-0.7, -0.7}, {0.7, 0.7}},
-    selection_box = {{-1, -1}, {1, 1}},
-    selection_priority = 40,
-    damaged_trigger_effect = hit_effects.entity(),
-    drawing_box_vertical_extension = 1,
-    --selectable_in_game = false,
-    allow_copy_paste = false,
-    gui_mode = "none",
-    consumption = "1MW",
-    neighbour_bonus = 0,
-    energy_source = {
-      type = "void",
-    },
-    heat_buffer = {
-      max_temperature = 5000,--200 degrees above max.
-      minimum_glow_temperature = 50,
-      specific_heat = "1MJ",
-      max_transfer = "10GW",
-      connections = {
-        { position = {-0.5, -0.5}, direction = defines.direction.north },
-        { position = {0.5, -0.5}, direction = defines.direction.east },
-        { position = {0.5, 0.5}, direction = defines.direction.south },
-        { position = {-0.5, 0.5}, direction = defines.direction.west },
-      },
-    },
-    connection_patches_connected = { HP_NS, HP_EW, HP_NS, HP_EW },
-    connection_patches_disconnected = { HP_N_big, HP_E_big, HP_S_big, HP_W_big },
-    heat_connection_patches_connected ={ HP_NS_Hot, HP_EW_Hot, HP_NS_Hot, HP_EW_Hot },
-    heat_connection_patches_disconnected ={ HP_N_Hot_big, HP_E_Hot_big, HP_S_Hot_big, HP_W_Hot_big },
-    default_temperature_signal = {type = "virtual", name = "signal-T"},
-    circuit_wire_max_distance = reactor_circuit_wire_max_distance,
-    circuit_connector = circuit_connector_definitions["heating-tower"]
   },
   {--Assembling machine
     type = "assembling-machine",
@@ -271,56 +211,6 @@ data:extend({
     energy_usage = "1000kW",
     module_slots = 2,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-  },
-  {--assembling machine heat interface
-    type = "reactor",
-    name = "assembling-machine-heat-interface",
-    icon  = "__space-age__/graphics/icons/heating-tower.png",
-    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable","not-deconstructable","no-automated-item-insertion","no-automated-item-removal"},
-    max_health = 250,
-    corpse = "heating-tower-remnants",
-    dying_explosion = "heating-tower-explosion",
-    surface_conditions =
-    {
-      {
-        property = "pressure",
-        max = 0,
-        min = 0,
-      }
-    },
-    collision_mask = {layers ={}},
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    selection_priority = 40,
-    damaged_trigger_effect = hit_effects.entity(),
-    drawing_box_vertical_extension = 1,
-    --selectable_in_game = false,
-    allow_copy_paste = false,
-    gui_mode = "none",
-    consumption = "1MW",
-    neighbour_bonus = 0,
-    energy_source = {
-      type = "void",
-    },
-    heat_buffer = {
-      max_temperature = 450,--200 degrees above max.
-      minimum_glow_temperature = 50,
-      specific_heat = "1MJ",
-      max_transfer = "10GW",
-      connections = {
-        { position = {0, -1}, direction = defines.direction.north },
-        { position = {1, 0}, direction = defines.direction.east },
-        { position = {0, 1}, direction = defines.direction.south },
-        { position = {-1, 0}, direction = defines.direction.west },
-      },
-    },
-    connection_patches_connected = { HP_NS, HP_EW, HP_NS, HP_EW },
-    connection_patches_disconnected = { HP_N_big, HP_E_big, HP_S_big, HP_W_big },
-    heat_connection_patches_connected ={ HP_NS_Hot, HP_EW_Hot, HP_NS_Hot, HP_EW_Hot },
-    heat_connection_patches_disconnected ={ HP_N_Hot_big, HP_E_Hot_big, HP_S_Hot_big, HP_W_Hot_big },
-    default_temperature_signal = {type = "virtual", name = "signal-T"},
-    circuit_wire_max_distance = reactor_circuit_wire_max_distance,
-    circuit_connector = circuit_connector_definitions["heating-tower"]
   },
   {--furnace
     type = "furnace",
@@ -504,82 +394,6 @@ data:extend({
       }
     }
   },
-  {--furnace heat interface
-    type = "reactor",
-    name = "furnace-heat-interface",
-    icon  = "__space-age__/graphics/icons/heating-tower.png",
-    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable","not-deconstructable","no-automated-item-insertion","no-automated-item-removal"},
-    max_health = 250,
-    corpse = "heating-tower-remnants",
-    dying_explosion = "heating-tower-explosion",
-    surface_conditions =
-    {
-      {
-        property = "pressure",
-        max = 0,
-        min = 0,
-      }
-    },
-    collision_mask = {layers ={}},
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    selection_priority = 40,
-    damaged_trigger_effect = hit_effects.entity(),
-    drawing_box_vertical_extension = 1,
-    --selectable_in_game = false,
-    allow_copy_paste = false,
-    gui_mode = "none",
-    consumption = "1MW",
-    neighbour_bonus = 0,
-    energy_source =
-    {
-      type = "void",
-    },
-    heat_buffer =
-    {
-      max_temperature = 600,--200 degrees above max temperature.
-      minimum_glow_temperature = 150,
-      specific_heat = "1MJ",
-      max_transfer = "10GW",
-      connections ={
-        {position = {-1, -1}, direction = defines.direction.north},
-        {position = {1, -1}, direction = defines.direction.north},
-        {position = {1, -1}, direction = defines.direction.east},
-        {position = {1, 1}, direction = defines.direction.east},
-        {position = {1, 1}, direction = defines.direction.south},
-        {position = {-1, 1}, direction = defines.direction.south},
-        {position = {-1, 1}, direction = defines.direction.west},
-        {position = {-1, -1}, direction = defines.direction.west},
-      },
-    },
-    connection_patches_connected = {
-      HP_NS,HP_NS,
-      HP_EW,HP_EW,
-      HP_NS,HP_NS,
-      HP_EW,HP_EW,
-      },
-    connection_patches_disconnected = {
-      HP_N_big,HP_N_big,
-      HP_E_big,HP_E_big,
-      HP_S_big,HP_S_big,
-      HP_W_big,HP_W_big,
-      },
-    heat_connection_patches_connected ={
-      HP_NS_Hot,HP_NS_Hot,
-      HP_EW_Hot,HP_EW_Hot,
-      HP_NS_Hot,HP_NS_Hot,
-      HP_EW_Hot,HP_EW_Hot,
-      },
-    heat_connection_patches_disconnected ={
-      HP_N_Hot_big,HP_N_Hot_big,
-      HP_E_Hot_big,HP_E_Hot_big,
-      HP_S_Hot_big,HP_S_Hot_big,
-      HP_W_Hot_big,HP_W_Hot_big,
-    },
-    default_temperature_signal = {type = "virtual", name = "signal-T"},
-    circuit_wire_max_distance = reactor_circuit_wire_max_distance,
-    circuit_connector = circuit_connector_definitions["heating-tower"]
-  },
   {--supercomputer
     type = "assembling-machine",
     name = "supercomputer",
@@ -680,6 +494,7 @@ data:extend({
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
   },
 })
+
 --make the combinators the lazy way, I have no need to completely overhaul their functionality.
 
 local supercomputer_input = table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
