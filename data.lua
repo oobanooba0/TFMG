@@ -17,6 +17,14 @@ data.raw.item ["asteroid-collector"].flags = {"always-show"}
 data.raw.item ["space-platform-foundation"].flags = {"always-show"}
 data.raw.item ["heat-pipe"].flags = {"always-show"}
 data.raw.recipe ["space-platform-foundation"] = nil
+data.raw.recipe ["small-lamp"] = nil
+data.raw.recipe ["constant-combinator"] = nil
+data.raw.recipe ["selector-combinator"] = nil
+data.raw.recipe ["arithmetic-combinator"] = nil
+data.raw.recipe ["decider-combinator"] = nil
+data.raw.recipe ["power-switch"] = nil
+data.raw.recipe ["programmable-speaker"] = nil
+data.raw.recipe ["display-panel"] = nil
 
 
 --shortcuts woooooooooo
@@ -87,8 +95,9 @@ end
 
 --buildings
 require("prototypes.buildings.belts")
+require("prototypes.buildings.containers")
 require("prototypes.buildings.crafting")
-require("prototypes.buildings.generator")
+require("prototypes.buildings.electrical")
 require("prototypes.buildings.inserters")
 require("prototypes.buildings.labs")
 require("prototypes.buildings.thermal")
@@ -108,8 +117,9 @@ require("prototypes.entity.spiders")
 --items
 ---buildings
 require("prototypes.items.buildings.belts")
+require("prototypes.items.buildings.containers")
 require("prototypes.items.buildings.crafting")
-require("prototypes.items.buildings.generator")
+require("prototypes.items.buildings.electrical")
 require("prototypes.items.buildings.inserters")
 require("prototypes.items.buildings.labs")
 require("prototypes.items.buildings.thermal")

@@ -127,6 +127,10 @@ data:extend({
         type = "unlock-recipe",
         recipe = "inserter-1"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "container-1"
+      },
     },
     research_trigger =
     {
@@ -206,7 +210,7 @@ data:extend({
     essential = true
   },
 
-  {--Introspection science
+  {--introspection science
     type = "technology",
     name = "introspection-science-pack",
     icon = "__base__/graphics/technology/automation-science-pack.png",
@@ -224,6 +228,18 @@ data:extend({
       {
         type = "unlock-recipe",
         recipe = "neural-node"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "arithmetic-combinator"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "decider-combinator"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "constant-combinator"
       }
     },
     research_trigger =
@@ -235,10 +251,113 @@ data:extend({
     essential = true
   },
 
-
-
-
----to be changed
+  {--energy distribution 1
+    type = "technology",
+    name = "energy-distribution-1",
+    icon = "__base__/graphics/technology/electric-energy-distribution-1.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "tiny-electric-pole"
+      },
+    },
+    prerequisites = {"introspection-science-pack"},
+    unit = {
+    count = 32,
+    ingredients = {{"introspection-science", 1}},
+    time = 16
+    },
+  },
+  {--small-lamp
+    type = "technology",
+    name = "small-lamp",
+    icon = "__base__/graphics/technology/lamp.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "small-lamp"
+      },
+    },
+    prerequisites = {"introspection-science-pack"},
+    unit = {
+    count = 32,
+    ingredients = {{"introspection-science", 1}},
+    time = 16
+    },
+  },
+  {--circuit-network
+    type = "technology",
+    name = "combinators",
+    icon = "__base__/graphics/technology/advanced-combinators.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "power-switch"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "programmable-speaker"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "display-panel"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "selector-combinator"
+      },
+    },
+    prerequisites = {"introspection-science-pack"},
+    unit = {
+    count = 64,
+    ingredients = {{"introspection-science", 1}},
+    time = 16
+    },
+  },
+  {--solar power
+    type = "technology",
+    name = "solar-power",
+    icon = "__base__/graphics/technology/solar-energy.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "solar-cell"
+      },
+    },
+    prerequisites = {"introspection-science-pack"},
+    unit = {
+    count = 32,
+    ingredients = {{"introspection-science", 1}},
+    time = 16
+    },
+  },
+  {--long-inserter-1
+    type = "technology",
+    name = "long-inserter-1",
+    icon = "__base__/graphics/technology/inserter-capacity.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "long-inserter-1"
+      },
+    },
+    prerequisites = {"introspection-science-pack"},
+    unit = {
+    count = 64,
+    ingredients = {{"introspection-science", 1}},
+    time = 16
+    },
+  },
 
   {--Scout-o-tron parts
     type = "technology",
@@ -260,13 +379,12 @@ data:extend({
         recipe = "manipulation-tool"
       },
     },
-    research_trigger =
-    {
-      type = "craft-item",
-      item = "modular-circuit",
-      count = 64
+    prerequisites = {"introspection-science-pack"},
+    unit = {
+    count = 32,
+    ingredients = {{"introspection-science", 1}},
+    time = 16
     },
-    prerequisites = {"logistics-1","asteroid-collection","heat-management"},
   },
 
   {--scout-o-tron
@@ -281,13 +399,12 @@ data:extend({
         recipe = "scout-o-tron"
       },
     },
-    research_trigger =
-    {
-      type = "craft-item",
-      item = "ai-processor",
-      count = 1
+    prerequisites = {"scout-o-tron-parts"},
+    unit = {
+    count = 48,
+    ingredients = {{"introspection-science", 1}},
+    time = 16
     },
-    prerequisites = {"consider-the-self"},
   },
   {--consider your potential. Platform phase end.
     type = "technology",
@@ -308,7 +425,7 @@ data:extend({
       item = "scout-o-tron",
       count = 1
     },
-    prerequisites = {"scout-o-tron"},
+    prerequisites = {"scout-o-tron","solar-power","energy-distribution-1"},
     essential = true
   },
 
@@ -343,7 +460,7 @@ data:extend({
     icon = ("__base__/graphics/icons/signal/signal-speed.png"),
     icon_size = 64,
     effects = {},
-    prerequisites = {},
+    prerequisites = {"consider-your-potential"},
     unit =
     {
       count_formula = "1000*(L)",

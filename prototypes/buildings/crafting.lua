@@ -11,7 +11,7 @@ data:extend({
       {
       name = {"thermal-system.max-temperature"},
       value = {"thermal-system.matter-reassembler-max-temperature"},
-      order = 254,
+      order = 253,
       },
       {
       name = {"thermal-system.damage-temperature"},
@@ -105,7 +105,7 @@ data:extend({
       {
       name = {"thermal-system.max-temperature"},
       value = {"thermal-system.assembling-machine-max-temperature"},
-      order = 254,
+      order = 253,
       },
       {
       name = {"thermal-system.damage-temperature"},
@@ -220,6 +220,11 @@ data:extend({
       {
       name = {"thermal-system.max-temperature"},
       value = {"thermal-system.furnace-max-temperature"},
+      order = 253,
+      },
+      {
+      name = {"thermal-system.damage-temperature"},
+      value = {"thermal-system.furnace-damage-temperature"},
       order = 254,
       },
       {
@@ -398,6 +403,23 @@ data:extend({
     type = "assembling-machine",
     name = "supercomputer",
     icon = "__base__/graphics/icons/assembling-machine-2.png",
+    custom_tooltip_fields = {
+      {
+      name = {"thermal-system.max-temperature"},
+      value = {"thermal-system.supercomputer-max-temperature"},
+      order = 253,
+      },
+      {
+      name = {"thermal-system.damage-temperature"},
+      value = {"thermal-system.supercomputer-temperature"},
+      order = 254,
+      },
+      {
+      name = {"thermal-system.efficiency"},
+      value = {"thermal-system.supercomputer-efficiency"},
+      order = 255,
+      },
+    },
     flags = {"placeable-neutral","placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "supercomputer"},
     max_health = 400,
