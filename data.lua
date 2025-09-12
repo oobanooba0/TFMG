@@ -140,8 +140,5 @@ require("prototypes.recipes.supercomputer")
 --technolgoies
 require("prototypes.technologies.platform-phase")
 
---shortcuts
-require("prototypes.shortcuts")
-
 --sound
 require("sound.ambient.ambient-sounds")

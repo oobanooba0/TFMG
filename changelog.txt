@@ -10,6 +10,8 @@ Date: ????
   Changes:
     - Scout'o'trons are now unlocked via research and are not a trigger tech anymore
     - many internal code changes to make my future living easier.
+    - Thermal system heat connections now support more advanced layouts, this means we can do some more intresting stuff
+    - Furnace now has heat pipe connections at its corners.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.12
 Date: 2025-09-10

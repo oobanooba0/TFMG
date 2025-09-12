@@ -4,9 +4,14 @@ script.on_init(function(e)--Code shamelessly plagerised from Platformer by Corli
   disable_cutsceene()--Necessary for player to be teleported and imprisoned    
   create_self()--Create starting space platform
   give_starting_items()
-  create_data_storage()
+  refresh_data_storage()
   create_permission_group()
 end)
+
+script.on_configuration_changed(function()
+  refresh_data_storage()
+end)
+
 
 function disable_cutsceene()--apparently, the cutscene prevents the player from being teleported.
   if remote.interfaces.freeplay then
@@ -51,8 +56,23 @@ function create_permission_group()--hopefully prevents players from goign to sur
 end
 
 function create_data_storage()
+  storage.matter_reconstructor_thermal = {}
 	storage.assembling_machine_thermal = {}
   storage.furnace_thermal = {}
   storage.players = {}
   storage.supercomputer = {}
 end
+
+function refresh_data_storage()--This should allow new storages to be added without the creation of a new world
+  if storage.matter_reconstructor_thermal == nil then
+    storage.matter_reconstructor_thermal = {} end
+  if storage.assembling_machine_thermal == nil then
+    storage.assembling_machine_thermal = {} end
+  if storage.furnace_thermal == nil then
+    storage.furnace_thermal = {} end
+  if storage.players == nil then
+    storage.players = {} end
+  if storage.supercomputer == nil then
+    storage.supercomputer = {} end
+end
+

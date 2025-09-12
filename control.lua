@@ -12,6 +12,11 @@ supercomputer = require("scripts.supercomputer")
 filters = {
 	{
 		filter = "name",
+		name = "matter-reconstructor",
+		mode = "or"
+	},
+	{
+		filter = "name",
 		name = "assembling-machine",
 		mode = "or"
 	},
@@ -92,6 +97,7 @@ function handle_build_event(event)
 		thermal_system.on_furnace_built(entity)
 	elseif entity.name == "matter-reconstructor" then
 		gameplay.on_vital_building_built(entity)
+		thermal_system.on_matter_reconstructor_built(entity)
 	elseif entity.name == "proton-decay-thermoelectric-generator" then
 		gameplay.on_vital_building_built(entity)
 	elseif entity.name == "supercomputer" then
@@ -109,6 +115,7 @@ script.on_event(
 script.on_event(
 	defines.events.on_tick,
 	function()
+		thermal_system.on_matter_reconstructor_tick()
 		thermal_system.on_assembling_machine_tick()
 		thermal_system.on_furnace_tick()
 		supercomputer.on_supercomputer_tick()
