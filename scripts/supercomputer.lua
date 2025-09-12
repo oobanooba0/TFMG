@@ -8,14 +8,15 @@ function supercomputer.on_supercomputer_destroyed(event)
       local entry = storage.supercomputer[event.useful_id]
       entry.input.destroy()
       entry.output.destroy()--byebye!
+      entry.interface.destroy()
   		storage.supercomputer[event.useful_id] = nil
 	  end
 	end
 end
-
 function supercomputer.on_supercomputer_built(entity)
   local _reg_number, unit_number, _type = script.register_on_object_destroyed(entity)
   local surface = entity.surface
+  local force = entity.force
 	local position_x = entity.position.x
   local position_y = entity.position.y
   local direction = entity.direction--no idea if i can get things supporting orientations, but i need to. worst case this requires an additional proxy entity.
@@ -48,30 +49,29 @@ function supercomputer.on_supercomputer_built(entity)
       inputxy = {position_x-2,position_y-1}
     end
   end
-	local force = entity.force
   local supercomputer_input = surface.create_entity({ name = "supercomputer-input", position = inputxy, force = force, direction = direction, fast_replace = true })
   local supercomputer_output = surface.create_entity({ name = "supercomputer-output", position = outputxy, force = force, direction = direction, fast_replace = true})
+  local interface = surface.create_entity({ name = "supercomputer-heat-interface", position = entity.position, force = force })
   supercomputer_input.destructible = false
   supercomputer_output.destructible = false
+  interface.destructible = false
+  interface.disabled_by_script = true
   entity.disabled_by_script = true
   if storage.supercomputer == nil then
 	  storage.supercomputer = {}
 	end
-  table.insert(storage.supercomputer, unit_number, {machine = entity, input = supercomputer_input, output = supercomputer_output, recipe = nil, problem_a = nil, problem_b = nil, problem_operator = nil, solution_x = nil})
+  table.insert(storage.supercomputer, unit_number, {machine = entity, interface = interface, input = supercomputer_input, output = supercomputer_output, recipe = nil, problem_a = nil, problem_b = nil, problem_operator = nil, solution_x = nil})--bigass table lol
 end
-
 function supercomputer.on_supercomputer_rotated(entity)
     local v = storage.supercomputer[entity.unit_number]
     v.input.rotate{}
     v.output.rotate{}
     supercomputer.relocate(v)
 end
-
 function supercomputer.on_supercomputer_flipped(entity)
     local v = storage.supercomputer[entity.unit_number]
     supercomputer.relocate(v)
 end
-
 function supercomputer.relocate(v)--this saves us from doing this twice.
     local position_x = v.machine.position.x
     local position_y = v.machine.position.y
@@ -113,11 +113,22 @@ function supercomputer.on_supercomputer_tick()
 		function(v)
       if v.machine.valid == false then--checks for machine validity, preventing a game crash if the machine is destroyed instantly.
 		  return end
+			local max_working_temperature = 90
+			local max_safe_temperature = 120
+			local specific_heat = 5
+			local heat_ratio = 1
+			local base_energy_consumption = 25--25MW is alot, but this machine never runs continuously
+			thermal_update(v,max_working_temperature,max_safe_temperature,specific_heat,heat_ratio,base_energy_consumption)
+      if v.interface.temperature >= max_working_temperature then
+      return end
+
+      if v.machine.status ~= 1 then
+      return end
+
       local recipe = v.machine.get_recipe()
       if recipe == nil then --atm no point in running any script unless theres a recipe
       return end
-      local input_green_signal_x = v.input.get_signal({type = "virtual", name = "signal-X"},defines.wire_connector_id.circuit_green)
-      local input_red_signal_x = v.input.get_signal({type = "virtual", name = "signal-X"},defines.wire_connector_id.circuit_red)
+      
       if recipe ~= v.recipe then--check if the recipe has changed, so we know to generate a new problem
         if recipe.name == "introspection-science" then
           supercomputer.create_new_problem_introspection(v)
@@ -125,19 +136,25 @@ function supercomputer.on_supercomputer_tick()
         v.recipe = recipe
       end
 
+      local input_green_signal_x = v.input.get_signal({type = "virtual", name = "signal-X"},defines.wire_connector_id.circuit_green)
+      local input_red_signal_x = v.input.get_signal({type = "virtual", name = "signal-X"},defines.wire_connector_id.circuit_red)
       if recipe.name == "introspection-science" then
         if input_green_signal_x == v.solution_x or input_red_signal_x == v.solution_x then--first check if we've solved the current problem
           v.machine.disabled_by_script = false
           supercomputer.create_new_problem_introspection(v)
         else
           v.machine.disabled_by_script = true
+          v.machine.custom_status = {
+					diode = defines.entity_status_diode.yellow,
+					label = "Incorrect signal x"
+					}
         end 
       end
     end
   )
 end
 
-function supercomputer.create_new_problem_introspection(v)
+function supercomputer.create_new_problem_introspection(v)--introspection recipe mechanics
   if v.output.get_control_behavior().get_section(1) == nil then
     v.output.get_control_behavior().add_section(nil)
   end

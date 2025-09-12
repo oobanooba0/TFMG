@@ -128,13 +128,13 @@
       type = "electric",
       usage_priority = "secondary-input"
     },
-    energy_usage = "5000kW",
+    energy_usage = "5MW",
     researching_speed = 1,
     inputs =
     {
       "introspection-science",
     },
-    module_slots = 2,
+    --module_slots = 2,
     icons_positioning =
     {
       {inventory_index = defines.inventory.lab_modules, shift = {0, 0.9}},

@@ -22,11 +22,11 @@ local HP_EW_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/hea
 local HP_N_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-down-1.png", scale = 0.5}
 local HP_N_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-down-1.png", scale = 0.5,shift = {0,-0.3}}
 local HP_E_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-left-1.png", scale = 0.5}
-local HP_E_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-left-1.png", scale = 0.5,shift = {0,-0.3}}
+local HP_E_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-left-1.png", scale = 0.5,shift = {0.3,0}}
 local HP_S_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-up-1.png", scale = 0.5}
-local HP_S_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-up-1.png", scale = 0.5,shift = {0,-0.3}}
+local HP_S_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-up-1.png", scale = 0.5,shift = {0,0.3}}
 local HP_W_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5}
-local HP_W_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5,shift = {0,-0.3}}
+local HP_W_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5,shift = {-0.3,-0}}
 
 data:extend({
   {--small radiator
@@ -264,7 +264,7 @@ data:extend({
       max_temperature = 1000,--lol
       minimum_glow_temperature = 50,
       specific_heat = "1MJ",
-      max_transfer = "10GW",
+      max_transfer = "100GW",
       connections = {
         { position = {-0.5, -0.5}, direction = defines.direction.north },
         { position = {0.5, -0.5}, direction = defines.direction.east },
@@ -314,7 +314,7 @@ data:extend({
       max_temperature = 450,--200 degrees above max.
       minimum_glow_temperature = 50,
       specific_heat = "1MJ",
-      max_transfer = "10GW",
+      max_transfer = "100GW",
       connections = {
         { position = {0, -1}, direction = defines.direction.north },
         { position = {1, 0}, direction = defines.direction.east },
@@ -366,7 +366,7 @@ data:extend({
       max_temperature = 600,--200 degrees above max temperature.
       minimum_glow_temperature = 150,
       specific_heat = "1MJ",
-      max_transfer = "10GW",
+      max_transfer = "100GW",
       connections ={
         {position = {-1, -1}, direction = defines.direction.north},
         {position = {1, -1}, direction = defines.direction.north},
@@ -439,8 +439,8 @@ data:extend({
     heat_buffer = {
       max_temperature = 150,--30 degrees above max.
       minimum_glow_temperature = 50,
-      specific_heat = "1MJ",
-      max_transfer = "10GW",
+      specific_heat = "5MJ",
+      max_transfer = "100GW",
       connections = {
         { position = {-0.5, -1.5}, direction = defines.direction.north },
         { position = {1.5, -0.5}, direction = defines.direction.east },
@@ -452,6 +452,82 @@ data:extend({
     connection_patches_disconnected = { HP_N_big, HP_E_big, HP_S_big, HP_W_big },
     heat_connection_patches_connected ={ HP_NS_Hot, HP_EW_Hot, HP_NS_Hot, HP_EW_Hot },
     heat_connection_patches_disconnected ={ HP_N_Hot_big, HP_E_Hot_big, HP_S_Hot_big, HP_W_Hot_big },
+    default_temperature_signal = {type = "virtual", name = "signal-T"},
+    circuit_wire_max_distance = reactor_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["heating-tower"]
+  },
+  {--supercomputer heat interface
+    type = "reactor",
+    name = "supercomputer-heat-interface",
+    icon  = "__space-age__/graphics/icons/heating-tower.png",
+    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable","not-deconstructable","no-automated-item-insertion","no-automated-item-removal"},
+    max_health = 250,
+    corpse = "heating-tower-remnants",
+    dying_explosion = "heating-tower-explosion",
+    surface_conditions =
+    {
+      {
+        property = "pressure",
+        max = 0,
+        min = 0,
+      }
+    },
+    collision_mask = {layers ={}},
+    collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
+    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    selection_priority = 40,
+    damaged_trigger_effect = hit_effects.entity(),
+    drawing_box_vertical_extension = 1,
+    --selectable_in_game = false,
+    allow_copy_paste = false,
+    gui_mode = "none",
+    consumption = "1MW",
+    neighbour_bonus = 0,
+    energy_source =
+    {
+      type = "void",
+    },
+    heat_buffer =
+    {
+      max_temperature = 600,--200 degrees above max temperature.
+      minimum_glow_temperature = 150,
+      specific_heat = "5MJ",
+      max_transfer = "100GW",
+      connections ={
+        {position = {-1, -2}, direction = defines.direction.north},
+        {position = {1, -2}, direction = defines.direction.north},
+        {position = {2, -1}, direction = defines.direction.east},
+        {position = {2, 1}, direction = defines.direction.east},
+        {position = {1, 2}, direction = defines.direction.south},
+        {position = {-1, 2}, direction = defines.direction.south},
+        {position = {-2, 1}, direction = defines.direction.west},
+        {position = {-2, -1}, direction = defines.direction.west},
+      },
+    },
+    connection_patches_connected = {
+      HP_NS,HP_NS,
+      HP_EW,HP_EW,
+      HP_NS,HP_NS,
+      HP_EW,HP_EW,
+      },
+    connection_patches_disconnected = {
+      HP_N_big,HP_N_big,
+      HP_E_big,HP_E_big,
+      HP_S_big,HP_S_big,
+      HP_W_big,HP_W_big,
+      },
+    heat_connection_patches_connected ={
+      HP_NS_Hot,HP_NS_Hot,
+      HP_EW_Hot,HP_EW_Hot,
+      HP_NS_Hot,HP_NS_Hot,
+      HP_EW_Hot,HP_EW_Hot,
+      },
+    heat_connection_patches_disconnected ={
+      HP_N_Hot_big,HP_N_Hot_big,
+      HP_E_Hot_big,HP_E_Hot_big,
+      HP_S_Hot_big,HP_S_Hot_big,
+      HP_W_Hot_big,HP_W_Hot_big,
+    },
     default_temperature_signal = {type = "virtual", name = "signal-T"},
     circuit_wire_max_distance = reactor_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["heating-tower"]

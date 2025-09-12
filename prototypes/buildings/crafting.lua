@@ -84,7 +84,7 @@ data:extend({
     usage_priority = "secondary-input",
     emissions_per_minute = { pollution = 1 }
     },
-    energy_usage = "500kW",
+    energy_usage = "0.5MW",
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
     module_slots = 0,
@@ -208,9 +208,9 @@ data:extend({
       usage_priority = "secondary-input",
       emissions_per_minute = { pollution = 2 },
     },
-    energy_usage = "1000kW",
-    module_slots = 2,
-    allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
+    energy_usage = "1MW",
+    --module_slots = 2,
+    --allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
   },
   {--furnace
     type = "furnace",
@@ -245,17 +245,17 @@ data:extend({
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.4, -1.4}, {1.4, 1.4}},
     damaged_trigger_effect = hit_effects.entity(),
-    module_slots = 2,
     icon_draw_specification = {shift = {0, -0.1}},
     icons_positioning =
     {
-      {inventory_index = defines.inventory.furnace_modules, shift = {0, 0.8}}
+      {inventory_index = defines.inventory.crafter_modules, shift = {0, 0.8}}
     },
-    allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
+    --module_slots = 2,
+    --allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
     crafting_categories = {"furnace"},
     result_inventory_size = 1,
     crafting_speed = 1,
-    energy_usage = "2500kW",
+    energy_usage = "2.5MW",
     source_inventory_size = 1,
     energy_source =
     {
@@ -489,9 +489,7 @@ data:extend({
       usage_priority = "secondary-input",
       emissions_per_minute = { pollution = 2 },
     },
-    energy_usage = "1000kW",
-    module_slots = 2,
-    allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
+    energy_usage = "25MW",
   },
 })
 
