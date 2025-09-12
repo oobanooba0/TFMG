@@ -1,7 +1,6 @@
 --this is the part where I murder the game, Thanks to Rseding91's fourm comments which helped me do this.
 
 data.raw ["technology"] = {}
-data.raw ["shortcuts"] = {}
 data.raw ["tips-and-tricks-item"] = {}
 data.raw ["research-achievement"] = {}
 
@@ -18,6 +17,43 @@ data.raw.item ["asteroid-collector"].flags = {"always-show"}
 data.raw.item ["space-platform-foundation"].flags = {"always-show"}
 data.raw.item ["heat-pipe"].flags = {"always-show"}
 data.raw.recipe ["space-platform-foundation"] = nil
+
+
+--shortcuts woooooooooo
+
+data.raw ["shortcut"]["undo"].technology_to_unlock = nil
+data.raw ["shortcut"]["redo"].technology_to_unlock = nil
+data.raw ["shortcut"]["copy"].technology_to_unlock = nil
+data.raw ["shortcut"]["cut"].technology_to_unlock = nil
+data.raw ["shortcut"]["paste"].technology_to_unlock = nil
+data.raw ["shortcut"]["import-string"].technology_to_unlock = nil
+data.raw ["shortcut"]["give-blueprint"].technology_to_unlock = nil
+data.raw ["shortcut"]["give-blueprint-book"].technology_to_unlock = nil
+data.raw ["shortcut"]["give-deconstruction-planner"].technology_to_unlock = nil
+data.raw ["shortcut"]["give-upgrade-planner"].technology_to_unlock = nil
+data.raw ["shortcut"]["toggle-personal-roboport"].technology_to_unlock = nil
+data.raw ["shortcut"]["toggle-equipment-movement-bonus"].technology_to_unlock = nil
+data.raw ["shortcut"]["give-copper-wire"].technology_to_unlock = "consider-the-self"
+data.raw ["shortcut"]["give-red-wire"].technology_to_unlock = "consider-the-self"
+data.raw ["shortcut"]["give-green-wire"].technology_to_unlock = "consider-the-self"
+data.raw ["shortcut"]["give-spidertron-remote"].technology_to_unlock = "consider-your-potential"
+data.raw ["shortcut"]["give-discharge-defense-remote"].technology_to_unlock = nil
+data.raw ["shortcut"]["give-artillery-targeting-remote"].technology_to_unlock = nil
+
+data.raw ["shortcut"]["undo"].unavailable_until_unlocked = nil
+data.raw ["shortcut"]["redo"].unavailable_until_unlocked = nil
+data.raw ["shortcut"]["copy"].unavailable_until_unlocked = nil
+data.raw ["shortcut"]["cut"].unavailable_until_unlocked = nil
+data.raw ["shortcut"]["paste"].unavailable_until_unlocked = nil
+data.raw ["shortcut"]["import-string"].unavailable_until_unlocked = nil
+data.raw ["shortcut"]["give-blueprint"].unavailable_until_unlocked = nil
+data.raw ["shortcut"]["give-blueprint-book"].unavailable_until_unlocked = nil
+data.raw ["shortcut"]["give-deconstruction-planner"].unavailable_until_unlocked = nil
+data.raw ["shortcut"]["give-upgrade-planner"].unavailable_until_unlocked = nil
+data.raw ["shortcut"]["toggle-personal-roboport"].unavailable_until_unlocked = nil
+data.raw ["shortcut"]["toggle-equipment-movement-bonus"].unavailable_until_unlocked = nil
+data.raw ["shortcut"]["give-discharge-defense-remote"].unavailable_until_unlocked = nil
+data.raw ["shortcut"]["give-artillery-targeting-remote"].unavailable_until_unlocked = nil
 
 -- hide vanilla content from game, this seems easier than outright removing certain things due to dependancies.
 -- expand brain.png if this works.
