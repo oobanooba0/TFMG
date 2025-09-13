@@ -10,6 +10,7 @@ Date: ????
     - Several recipies related to circuit networks, power poles, and solar panels added
     - Long inserter MK1 added. have fun inserting longly.
     - Several techs now have some more descriptions
+    - story scripts are now better, and interact with multiplayer
   Changes:
     - Scout'o'trons are now unlocked via research and are not a trigger tech anymore
     - many internal code changes to make my future living easier.

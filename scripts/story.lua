@@ -33,7 +33,7 @@ script.on_event(defines.events.on_research_finished, function(event)
     random_say("story-event.consider-your-purpose-1")
     random_say("story-event.consider-your-purpose-2")
     random_say("story-event.consider-your-purpose-3")
-    chant("story-event.consider-your-purpose-3")
+    chant("story-event.consider-your-purpose-4")
   end
   if event.research.name == "assembling" then
     game.show_message_dialog{
