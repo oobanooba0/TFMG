@@ -40,8 +40,8 @@ data:extend({
     dying_explosion = "offshore-pump-explosion",
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["assembling-machine"],
-    collision_box = {{-0.6, -1.05}, {0.6, 0.3}},
-    selection_box = {{-0.6, -1.49}, {0.6, 0.49}},
+    collision_box = {{-0.6, -4.05}, {0.6, 0.3}},
+    selection_box = {{-0.6, -4.49}, {0.6, 0.49}},
     tile_height = 1,
     tile_width = 1,
     surface_conditions =

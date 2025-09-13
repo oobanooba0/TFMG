@@ -5,7 +5,10 @@ data:extend({
   {--introspection unverified
     type = "item",
     name = "introspection-science-unverified",
-    icons = {{icon = "__base__/graphics/icons/automation-science-pack.png" , tint = {0.6, 0.6, 0.6}}},
+    icons = {
+      {icon = "__Krastorio2Assets__/icons/cards/matter-tech-card.png"},
+      {icon = "__Krastorio2Assets__/icons/cards/matter-tech-card-light.png",tint = {1,0,0,0.1}}
+    },
     subgroup = "science-unverified",
     order = "a[introspection]",
     inventory_move_sound = item_sounds.science_inventory_move,
@@ -17,7 +20,7 @@ data:extend({
   {--introspection
     type = "tool",
     name = "introspection-science",
-    icon = "__base__/graphics/icons/automation-science-pack.png",
+    icon = "__Krastorio2Assets__/icons/cards/matter-tech-card.png",
     subgroup = "science-verified",
     order = "a[introspection]",
     inventory_move_sound = item_sounds.science_inventory_move,
@@ -29,7 +32,22 @@ data:extend({
     durability_description_key = "description.science-pack-remaining-amount-key",
     factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
     durability_description_value = "description.science-pack-remaining-amount-value",
-    random_tint_color = item_tints.bluish_science
+    random_tint_color = item_tints.bluish_science,
+    pictures = {
+      layers = {
+        {
+          filename = "__Krastorio2Assets__/icons/cards/matter-tech-card.png",
+          size = 64,
+          scale = 0.5,
+        },
+        {
+          filename = "__Krastorio2Assets__/icons/cards/matter-tech-card-light.png",
+          size = 64,
+          scale = 0.5,
+          draw_as_light = true,
+        },
+      },
+    },
   },
 
 })

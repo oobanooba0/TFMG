@@ -47,7 +47,7 @@ data:extend({
   {
     type = "item",
     name = "hot-mineral-plate",
-    icons = {{ icon = "__space-age__/graphics/icons/lithium-plate.png", tint = {1, 0.6, 0.6, 1}}},
+    icons = {{ icon = "__Krastorio2Assets__/icons/items/glass.png", tint = {1, 0.6, 0.6, 1}}},
     subgroup = "basic-intermediates",
     color_hint = { text = "I" },
     order = "b[crystal-plates]-a[hot-mineral-plate]",
@@ -61,7 +61,7 @@ data:extend({
   {
     type = "item",
     name = "crystalline-plate",
-    icons = {{ icon = "__space-age__/graphics/icons/lithium-plate.png", tint = {0.6, 0.6, 1, 0.8}}},
+    icons = {{ icon = "__Krastorio2Assets__/icons/items/glass.png", tint = {0.6, 0.6, 1}}},
     subgroup = "basic-intermediates",
     color_hint = { text = "I" },
     order = "b[crystal-plates]-b[crystalline-plate]",
@@ -73,7 +73,7 @@ data:extend({
   {
     type = "item",
     name = "mineral-glass",
-    icons = {{ icon = "__space-age__/graphics/icons/lithium-plate.png", tint = {0.8, 1, 0.8, 0.5}}},
+    icons = {{ icon = "__Krastorio2Assets__/icons/items/glass.png", tint = {0.8, 1, 0.8}}},
     subgroup = "basic-intermediates",
     color_hint = { text = "I" },
     order = "b[crystal-plates]-c[crystalline-plate]",
@@ -88,7 +88,7 @@ data:extend({
     {--general purpose structure
     type = "item",
     name = "general-purpose-structure",
-    icon = "__base__/graphics/icons/low-density-structure.png",
+    icon = "__Krastorio2Assets__/icons/items/iron-beam.png",
     subgroup = "structural-intermediates",
     color_hint = { text = "I" },
     order = "a[general-purpose-structure]",
@@ -102,7 +102,7 @@ data:extend({
   {--mechanical components
     type = "item",
     name = "mechanical-components",
-    icon = "__base__/graphics/icons/engine-unit.png",
+    icon = "__Krastorio2Assets__/icons/items/automation-core.png",
     subgroup = "mechanical-intermediates",
     order = "a[mechanical-components]",
     inventory_move_sound = item_sounds.metal_large_inventory_move,
@@ -176,7 +176,7 @@ data:extend({
   {
     type = "item",
     name = "manipulation-tool",
-    icon = "__base__/graphics/icons/personal-laser-defense-equipment.png",
+    icon = "__Krastorio2Assets__/icons/items/jackhammer.png",
     subgroup = "advanced-intermediates",
     color_hint = { text = "1" },
     order = "c[robotics]-a[manipulation-tool]",

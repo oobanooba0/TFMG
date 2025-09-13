@@ -4,7 +4,7 @@ data:extend({
   {
     type = "item",
     name = "matter-reconstructor",
-    icon = "__base__/graphics/icons/assembling-machine-1.png",
+    icon = "__Krastorio2Assets__/icons/entities/stabilizer-charging-station.png",
     subgroup = "production-machine",
     order = "z",
     inventory_move_sound = item_sounds.mechanical_inventory_move,
@@ -43,7 +43,7 @@ data:extend({
   {
     type = "item",
     name = "supercomputer",
-    icon = "__base__/graphics/icons/assembling-machine-2.png",
+    icon = "__Krastorio2Assets__/icons/entities/quantum-computer.png",
     subgroup = "production-machine",
     order = "a-c",
     inventory_move_sound = item_sounds.mechanical_inventory_move,

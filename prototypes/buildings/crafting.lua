@@ -6,7 +6,7 @@ data:extend({
   {--matter reconstructor
     type = "assembling-machine",
     name = "matter-reconstructor",
-    icon = "__base__/graphics/icons/assembling-machine-1.png",
+    icon = "__Krastorio2Assets__/icons/entities/stabilizer-charging-station.png",
     custom_tooltip_fields = {
       {
       name = {"thermal-system.max-temperature"},
@@ -43,35 +43,61 @@ data:extend({
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["assembling-machine"],
     alert_icon_shift = util.by_pixel(0, -12),
-    graphics_set =
-    {
-      animation =
-      {
-        layers =
-        {
+    graphics_set = {
+      animation = {
+        layers = {
           {
-            filename = "__base__/graphics/entity/assembling-machine-1/assembling-machine-1.png",
-            priority="high",
-            width = 214,
-            height = 226,
-            frame_count = 32,
-            line_length = 8,
-            shift = util.by_pixel(0, 2),
-            scale = 0.35
+            filename = "__Krastorio2Assets__/buildings/stabilizer-charging-station/stabilizer-charging-station.png",
+            priority = "high",
+            width = 170,
+            height = 170,
+            frame_count = 80,
+            line_length = 10,
+            animation_speed = 0.4,
+            scale = 0.4,
           },
           {
-            filename = "__base__/graphics/entity/assembling-machine-1/assembling-machine-1-shadow.png",
-            priority="high",
-            width = 190,
-            height = 165,
-            line_length = 1,
-            repeat_count = 32,
+            filename = "__Krastorio2Assets__/buildings/stabilizer-charging-station/stabilizer-charging-station-sh.png",
+            priority = "high",
+            width = 170,
+            height = 144,
+            frame_count = 80,
+            line_length = 8,
+            animation_speed = 0.4,
+            shift = { 0.23, 0.262 },
             draw_as_shadow = true,
-            shift = util.by_pixel(8.5, 5),
-            scale = 0.35
-          }
-        }
-      }
+            scale = 0.4,
+          },
+        },
+      },
+      water_reflection = {
+        pictures = {
+          filename = "__Krastorio2Assets__/buildings/stabilizer-charging-station/stabilizer-charging-station-reflection.png",
+          priority = "extra-high",
+          width = 20,
+          height = 25,
+          shift = util.by_pixel(0, 40),
+          variation_count = 1,
+          scale = 5,
+        },
+        rotate = false,
+        orientation_to_variation = false,
+      },
+      working_visualisations = {
+        {
+          animation = {
+            filename = "__Krastorio2Assets__/buildings/stabilizer-charging-station/stabilizer-charging-station-light.png",
+            priority = "high",
+            width = 170,
+            height = 170,
+            frame_count = 80,
+            line_length = 10,
+            animation_speed = 0.4,
+            scale = 0.4,
+            draw_as_light = true,
+          },
+        },
+      },
     },
     crafting_categories = {
       "matter-reconstructor",
@@ -402,7 +428,7 @@ data:extend({
   {--supercomputer
     type = "assembling-machine",
     name = "supercomputer",
-    icon = "__base__/graphics/icons/assembling-machine-2.png",
+    icon = "__Krastorio2Assets__/icons/entities/quantum-computer.png",
     custom_tooltip_fields = {
       {
       name = {"thermal-system.max-temperature"},
@@ -458,47 +484,80 @@ data:extend({
       }
     },
     fluid_boxes_off_when_no_fluid_recipe = false,
-    open_sound = sounds.machine_open,
-    close_sound = sounds.machine_close,
+    open_sound = { filename = "__Krastorio2Assets__/sounds/buildings/open.ogg", volume = 1 },
+    close_sound = { filename = "__Krastorio2Assets__/sounds/buildings/close.ogg", volume = 1 },
+    --id love a working sound, but its awful.
     impact_category = "metal",
-    working_sound =
-    {
-      sound = {filename = "__base__/sound/assembling-machine-t2-1.ogg", volume = 0.45, audible_distance_modifier = 0.5},
-      fade_in_ticks = 4,
-      fade_out_ticks = 20
-    },
     collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
     selection_box = {{-2.4, -2.4}, {2.4, 2.4}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.2,
-   graphics_set =
-    {
-      animation =
-      {
-        layers =
-        {
+    graphics_set = {
+      animation = {
+        layers = {
           {
-            filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2.png",
+            filename = "__Krastorio2Assets__/buildings/quantum-computer/quantum-computer.png",
             priority = "high",
-            width = 214,
-            height = 218,
-            frame_count = 32,
+            width = 400,
+            height = 420,
+            shift = { 0, -0.2 },
+            frame_count = 48,
             line_length = 8,
-            shift = util.by_pixel(0, 4),
-            scale = 0.85,
+            animation_speed = 0.25,
+            scale = 0.4,
           },
           {
-            filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2-shadow.png",
-            priority = "high",
-            width = 196,
-            height = 163,
-            frame_count = 32,
-            line_length = 8,
+            filename = "__Krastorio2Assets__/buildings/quantum-computer/quantum-computer-sh.png",
+            priority = "medium",
+            width = 402,
+            height = 362,
+            shift = { 0.19, 0.315 },
+            frame_count = 1,
+            repeat_count = 48,
             draw_as_shadow = true,
-            shift = util.by_pixel(12, 4.75),
-            scale = 0.85
-          }
-        }
+            animation_speed = 0.25,
+            scale = 0.4,
+          },
+        },
+      },
+      working_visualisations = {
+        {
+          draw_as_light = true,
+          animation = {
+            filename = "__Krastorio2Assets__/buildings/quantum-computer/quantum-computer-light.png",
+            priority = "extra-high",
+            width = 400,
+            height = 420,
+            shift = { 0, -0.2 },
+            frame_count = 48,
+            line_length = 8,
+            animation_speed = 0.25,
+            scale = 0.4,
+          },
+        },
+        {
+          draw_as_glow = true,
+          blend_mode = "additive-soft",
+          animation = {
+            filename = "__Krastorio2Assets__/buildings/quantum-computer/quantum-computer-glow.png",
+            priority = "extra-high",
+            width = 400,
+            height = 420,
+            shift = { 0, -0.2 },
+            frame_count = 48,
+            line_length = 8,
+            animation_speed = 0.25,
+            scale = 0.4,
+          },
+        },
+        {
+          light = {
+            intensity = 0.85,
+            size = 5,
+            shift = { 0.0, 0.0 },
+            color = { r = 0.35, g = 0.75, b = 1 },
+          },
+        },
       },
     },
     crafting_categories = {

@@ -11,11 +11,18 @@ Music:
 
 oobanooba
 
+Graphics Sources:
+
+Krastorio team - Krastorio 2 graphics
+
+
 People who have helped me out:
 
 Allison - For helping me make compound entities work for the thermal system
 
 Dobberoonski - For teaching me about compound entities
+
+Louloubichou - Bug catching and feedback.
 
 Loup&Snoop - For helping me with compound entities
 

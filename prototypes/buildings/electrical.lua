@@ -141,17 +141,17 @@ data:extend({
 
 ---generators
   {--proton decay RTG
-    type = "electric-energy-interface",
+    type = "solar-panel",
     name = "proton-decay-thermoelectric-generator",
-    icons = {{icon = "__base__/graphics/icons/nuclear-reactor.png", tint = {1, 1, 1, 1}}},
+    icon = "__Krastorio2Assets__/icons/entities/matter-plant.png",
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 0.1, result = "proton-decay-thermoelectric-generator"},
     max_health = 150,
     corpse = "nuclear-reactor-remnants",
     dying_explosion = "nuclear-reactor-explosion",
     subgroup = "other",
-    collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
-    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    collision_box = {{-3.7, -3.7}, {3.7, 3.7}},
+    selection_box = {{-4, -4}, {4, 4}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.5,
     gui_mode = "none",
@@ -159,35 +159,34 @@ data:extend({
     energy_source =
     {
       type = "electric",
-      buffer_capacity = "1GJ",
-      usage_priority = "primary-output"
+      usage_priority = "solar"
     },
-    energy_production = "1GW",
-    energy_usage = "0kW",
-    -- also 'pictures' for 4-way sprite is available, or 'animation' resp. 'animations'
-    picture =
-    {
-      layers =
-      {
+    production = "1GW",
+    performance_at_day = 1,
+    performance_at_night =1,
+    picture = {
+      layers = {
         {
-          filename = "__base__/graphics/entity/nuclear-reactor/reactor.png",
-          width = 302,
-          height = 318,
+          filename = "__Krastorio2Assets__/buildings/matter-plant/matter-plant.png",
+          priority = "high",
+          width = 462,
+          height = 500,
+          shift = { -0.1, -0.2 },
           scale = 0.5,
-          shift = util.by_pixel(-5, -7)
         },
         {
-          filename = "__base__/graphics/entity/nuclear-reactor/reactor-shadow.png",
-          width = 525,
-          height = 323,
+          filename = "__Krastorio2Assets__/buildings/matter-plant/matter-plant-sh.png",
+          priority = "high",
+          width = 504,
+          height = 444,
+          draw_as_shadow = true,
+          shift = { 0.23, 0.24 },
           scale = 0.5,
-          shift = { 1.625, 0 },
-          draw_as_shadow = true
         }
       }
     },
-    open_sound = sounds.machine_open,
-    close_sound = sounds.machine_close,
+    open_sound = { filename = "__Krastorio2Assets__/sounds/buildings/open.ogg", volume = 1 },
+    close_sound = { filename = "__Krastorio2Assets__/sounds/buildings/close.ogg", volume = 1 },
     impact_category = "metal",
   },
   {

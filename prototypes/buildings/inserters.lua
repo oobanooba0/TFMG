@@ -205,7 +205,7 @@ data:extend({
     {
       sheet =
       {
-        filename = "__base__/graphics/entity/long-handed-inserter/long-handed-inserter-platform.png",
+        filename = "__base__/graphics/entity/inserter/inserter-platform.png",
         priority = "extra-high",
         width = 105,
         height = 79,

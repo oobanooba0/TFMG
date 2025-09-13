@@ -209,11 +209,11 @@ data:extend({
     prerequisites = {"logistics-1","asteroid-collection","heat-management"},
     essential = true
   },
-
+  
   {--introspection science
     type = "technology",
     name = "introspection-science-pack",
-    icon = "__base__/graphics/technology/automation-science-pack.png",
+    icon = "__Krastorio2Assets__/technologies/matter-tehc-card.png",
     icon_size = 256,
     effects =
     {
