@@ -250,7 +250,6 @@ data:extend({
     prerequisites = {"consider-the-self"},
     essential = true
   },
-
   {--energy distribution 1
     type = "technology",
     name = "energy-distribution-1",
@@ -358,7 +357,6 @@ data:extend({
     time = 16
     },
   },
-
   {--Scout-o-tron parts
     type = "technology",
     name = "scout-o-tron-parts",
@@ -386,7 +384,6 @@ data:extend({
     time = 16
     },
   },
-
   {--scout-o-tron
     type = "technology",
     name = "scout-o-tron",

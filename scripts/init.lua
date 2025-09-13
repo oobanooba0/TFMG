@@ -40,8 +40,8 @@ function give_starting_items()
     storage.platform.hub.insert({ name = "proton-decay-thermoelectric-generator", count = 1})
     storage.platform.hub.insert({ name = "inserter-1", count = 10})
     storage.platform.hub.insert({ name = "matter-reconstructor", count = 1})
-    storage.platform.hub.insert({ name = "small-radiator", count = 1})
-    storage.platform.hub.insert({ name = "heat-pipe", count = 15})
+    storage.platform.hub.insert({ name = "small-radiator", count = 2})
+    storage.platform.hub.insert({ name = "heat-pipe", count = 50})
     storage.platform.hub.insert({ name = "space-platform-foundation", count = 500})
   end
 end

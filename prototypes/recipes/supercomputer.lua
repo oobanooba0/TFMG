@@ -4,7 +4,7 @@ data:extend({
     category = "supercomputer",
     name = "introspection-science",
     energy_required = 5,
-    enabled = true,
+    enabled = false,
     ingredients = {
       { type = "item", name = "introspection-science-unverified", amount = 1},
     },

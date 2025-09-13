@@ -2,13 +2,14 @@
 Version: 0.2.0
 Date: ????
   Features:
-    - Data verification mechanic added. Science packs now must be verified in a supercomputer before they can be processed.
-    - Supercomputer added
-    - Neural Node added
+    - Data verification mechanic added. Science packs now must be verified in a supercomputer before they can be processed in a Neural node.
+    - Supercomputer added. Verifies science packs.
+    - Neural Node added. Research science packs.
     - Introspection Science Pack added, required to complete platform phase
     - Several technologies related to science production, and circuit networks added
     - Several recipies related to circuit networks, power poles, and solar panels added
     - Long inserter MK1 added. have fun inserting longly.
+    - Several techs now have some more descriptions
   Changes:
     - Scout'o'trons are now unlocked via research and are not a trigger tech anymore
     - many internal code changes to make my future living easier.
