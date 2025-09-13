@@ -18,11 +18,11 @@ function gameplay.deploy_scout_o_tron(event)
       local surface = game.get_surface(hub_location.name) --this has to be done after we make sure a surface actually exists.
       player_storage.hub.remove_item({ name = "scout-o-tron", count=1 })
       surface.create_entity({ name = "scout-o-tron", position = { 0 , 0 }, force = "player" })
-      local cargo_pod = player_storage.hub.create_cargo_pod()
-      cargo_pod.cargo_pod_destination = {
-        type = 3,
-        surface = "nauvis"
-      }
+      --cargo_pod = player_storage.hub.create_cargo_pod()
+      --cargo_pod.cargo_pod_destination = {
+      --  type = 3,
+      --  surface = "nauvis"
+      --}
       game.print("Deployed Scout'o'tron.")
     end
   end

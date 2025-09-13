@@ -93,6 +93,10 @@ data:extend({
         type = "unlock-recipe",
         recipe = "mineral-glass-cooling"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "repair-pack"
+      },
     },
     research_trigger =
     {
@@ -264,7 +268,7 @@ data:extend({
     },
     prerequisites = {"introspection-science-pack"},
     unit = {
-    count = 32,
+    count = 16,
     ingredients = {{"introspection-science", 1}},
     time = 16
     },
@@ -283,7 +287,7 @@ data:extend({
     },
     prerequisites = {"introspection-science-pack"},
     unit = {
-    count = 32,
+    count = 16,
     ingredients = {{"introspection-science", 1}},
     time = 16
     },
@@ -352,7 +356,7 @@ data:extend({
     },
     prerequisites = {"introspection-science-pack"},
     unit = {
-    count = 64,
+    count = 16,
     ingredients = {{"introspection-science", 1}},
     time = 16
     },
@@ -379,7 +383,7 @@ data:extend({
     },
     prerequisites = {"introspection-science-pack"},
     unit = {
-    count = 32,
+    count = 16,
     ingredients = {{"introspection-science", 1}},
     time = 16
     },

@@ -146,4 +146,18 @@
         { type = "item", name = "small-radiator", amount = 1 }
     },
   },
+  {--repair pack
+    type = "recipe",
+    category = "basic-assembling",
+    name = "repair-pack",
+    energy_required = 6,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 2 },
+      { type = "item", name = "mechanical-components", amount = 2 },
+    },
+    results = { 
+        { type = "item", name = "repair-pack", amount = 1 }
+    },
+  },
 })

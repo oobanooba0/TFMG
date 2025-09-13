@@ -7,7 +7,7 @@
     energy_required = 10,
     enabled = false,
     ingredients = {{type = "item", name = "ferric-asteroid-chunk", amount = 1}},
-    results = {{type="item", name="ferric-plate", amount=10}},
+    results = {{type="item", name="ferric-plate", amount=16}},
     allow_productivity = true,
   },
   {
@@ -18,7 +18,7 @@
     energy_required = 20,
     enabled = false,
     ingredients = {{type = "item", name = "crystalline-asteroid-chunk", amount = 1}},
-    results = {{type="item", name="hot-mineral-plate", amount=10}},
+    results = {{type="item", name="hot-mineral-plate", amount=16}},
     allow_productivity = true,
     surface_conditions = {{
       property = "pressure",
@@ -34,7 +34,7 @@
     energy_required = 20,
     enabled = false,
     ingredients = {{type = "item", name = "crystalline-asteroid-chunk", amount = 1}},
-    results = {{type="item", name="mineral-glass", amount=10}},
+    results = {{type="item", name="mineral-glass", amount=16}},
     allow_productivity = true,
   },
   })

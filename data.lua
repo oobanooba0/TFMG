@@ -25,6 +25,7 @@ data.raw.recipe ["decider-combinator"] = nil
 data.raw.recipe ["power-switch"] = nil
 data.raw.recipe ["programmable-speaker"] = nil
 data.raw.recipe ["display-panel"] = nil
+data.raw.recipe ["repair-pack"] = nil
 
 
 --shortcuts woooooooooo

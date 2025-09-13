@@ -12,6 +12,7 @@ Date: ????
     - Infinite science added.
   Changes:
     - Krastorio 2 assets are now a dependancy, due to the borrowing of krastorio 2 assets.
+    - several buildings and items have been changed to be more distinct.
     - Scout'o'trons are now unlocked via research and are not a trigger tech anymore
     - many internal code changes to make my future living easier.
     - Thermal system heat connections now support more advanced layouts, this means we can do some more intresting stuff
