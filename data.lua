@@ -3,6 +3,7 @@
 data.raw ["technology"] = {}
 data.raw ["tips-and-tricks-item"] = {}
 data.raw ["research-achievement"] = {}
+data.raw["utility-constants"]["default"].main_menu_simulations = {}
 
 --adjust vanilla content
 local hidden_items = {"wood","coal","stone","iron-ore","copper-ore","uranium-ore","spoilage","pistol",}
