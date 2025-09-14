@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+Date: 2025-09-14
+  Changes:
+    - radiators now have their own texture, derived from lordMiguels solar array wings mod.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.0
-Date: ????
+Date: 2025-09-14
   Features:
     - Data verification mechanic added. Science packs now must be verified in a supercomputer before they can be processed in a Neural node.
     - Supercomputer added. Verifies science packs.

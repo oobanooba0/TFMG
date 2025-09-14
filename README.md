@@ -15,6 +15,8 @@ Graphics Sources:
 
 Krastorio team - Krastorio 2 graphics
 
+Solar Array wings - LordMiguel
+
 
 People who have helped me out:
 

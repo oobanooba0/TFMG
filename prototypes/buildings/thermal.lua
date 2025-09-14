@@ -32,7 +32,7 @@ data:extend({
   {--small radiator
     type = "assembling-machine",
     name = "small-radiator",
-    icon = "__base__/graphics/icons/offshore-pump.png",
+    icon = "__TFMG__/graphics/buildings/small-radiator/panel_icon.png",
     flags = {"placeable-neutral","placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "small-radiator"},
     max_health = 400,
@@ -68,7 +68,7 @@ data:extend({
       fade_out_ticks = 20
     },
     damaged_trigger_effect = hit_effects.entity(),
-    graphics_set =--pumpcore
+    graphics_set =--solarcore
     {
       animation =
       {
@@ -77,28 +77,16 @@ data:extend({
           layers =
           {
             {
-              filename = "__base__/graphics/entity/offshore-pump/offshore-pump_North.png",
+              filename = "__TFMG__/graphics/buildings/small-radiator/panel_north.png",
               priority = "high",
-              line_length = 8,
-              frame_count = 32,
+              line_length = 1,
+              frame_count = 1,
               animation_speed = 0.25,
-              width = 90,
-              height = 162,
-              shift = util.by_pixel(-1, -15),
-              scale = 0.5
-            },
-            {
-              filename = "__base__/graphics/entity/offshore-pump/offshore-pump_North-shadow.png",
-              priority = "high",
-              line_length = 8,
-              frame_count = 32,
-              animation_speed = 0.25,
-              width = 150,
-              height = 134,
-              shift = util.by_pixel(13, -7),
-              draw_as_shadow = true,
-              scale = 0.5
-            }
+              width = 480,
+              height = 960,
+              shift = util.by_pixel(0, -75),
+              scale = 0.15
+            },HP_S_big,HP_E_big,HP_W_big
           }
         },
         east =
@@ -106,28 +94,16 @@ data:extend({
           layers =
           {
             {
-              filename = "__base__/graphics/entity/offshore-pump/offshore-pump_East.png",
+              filename = "__TFMG__/graphics/buildings/small-radiator/panel_east.png",
               priority = "high",
-              line_length = 8,
-              frame_count = 32,
+              line_length = 1,
+              frame_count = 1,
               animation_speed = 0.25,
-              width = 124,
-              height = 102,
-              shift = util.by_pixel(15, -2),
-              scale = 0.5
-            },
-            {
-              filename = "__base__/graphics/entity/offshore-pump/offshore-pump_East-shadow.png",
-              priority = "high",
-              line_length = 8,
-              frame_count = 32,
-              animation_speed = 0.25,
-              width = 180,
-              height = 66,
-              shift = util.by_pixel(27, 8),
-              draw_as_shadow = true,
-              scale = 0.5
-            }
+              width = 960,
+              height = 480,
+              shift = util.by_pixel(75, 0),
+              scale = 0.15
+            },HP_W_big,HP_N_big,HP_S_big
           }
         },
         south =
@@ -135,28 +111,16 @@ data:extend({
           layers =
           {
             {
-              filename = "__base__/graphics/entity/offshore-pump/offshore-pump_South.png",
+              filename = "__TFMG__/graphics/buildings/small-radiator/panel_south.png",
               priority = "high",
-              line_length = 8,
-              frame_count = 32,
+              line_length = 1,
+              frame_count = 1,
               animation_speed = 0.25,
-              width = 92,
-              height = 192,
-              shift = util.by_pixel(-1, 0),
-              scale = 0.5
-            },
-            {
-              filename = "__base__/graphics/entity/offshore-pump/offshore-pump_South-shadow.png",
-              priority = "high",
-              line_length = 8,
-              frame_count = 32,
-              animation_speed = 0.25,
-              width = 164,
-              height = 128,
-              shift = util.by_pixel(15, 23),
-              draw_as_shadow = true,
-              scale = 0.5
-            }
+              width = 480,
+              height = 960,
+              shift = util.by_pixel(0, 75),
+              scale = 0.15,
+            },HP_N_big,HP_E_big,HP_W_big
           }
         },
         west =
@@ -164,31 +128,92 @@ data:extend({
           layers =
           {
             {
-              filename = "__base__/graphics/entity/offshore-pump/offshore-pump_West.png",
+              filename = "__TFMG__/graphics/buildings/small-radiator/panel_west.png",
               priority = "high",
-              line_length = 8,
-              frame_count = 32,
+              line_length = 1,
+              frame_count = 1,
               animation_speed = 0.25,
-              width = 124,
-              height = 102,
-              shift = util.by_pixel(-15, -2),
-              scale = 0.5
-            },
-            {
-              filename = "__base__/graphics/entity/offshore-pump/offshore-pump_West-shadow.png",
-              priority = "high",
-              line_length = 8,
-              frame_count = 32,
-              animation_speed = 0.25,
-              width = 172,
-              height = 66,
-              shift = util.by_pixel(-3, 8),
-              draw_as_shadow = true,
-              scale = 0.5
-            }
+              width = 960,
+              height = 480,
+              shift = util.by_pixel(-75, 0),
+              scale = 0.15
+            },HP_E_big,HP_N_big,HP_S_big
           }
         }
       },
+      working_visualisations = {{
+        fadeout = true,
+        effect = "uranium-glow",
+        light = {intensity = 1, size = 9.9, shift = {0, 0}, color = {1, 0.2, 0.2}},
+        north_animation = {
+          layers = {
+            {
+              filename = "__TFMG__/graphics/buildings/small-radiator/panel_north_glow.png",
+              priority = "high",
+              line_length = 1,
+              frame_count = 1,
+              animation_speed = 0.25, 
+              width = 480,
+              height = 960,
+              shift = util.by_pixel(0, -75),
+              scale = 0.15,
+              draw_as_glow = true,
+              tint = {1,1,1,0.5}
+            },
+          }
+        },
+        east_animation = {
+          layers = {
+            {
+              filename = "__TFMG__/graphics/buildings/small-radiator/panel_east_glow.png",
+              priority = "high",
+              line_length = 1,
+              frame_count = 1,
+              animation_speed = 0.25,
+              width = 960,
+              height = 480,
+              shift = util.by_pixel(75, 0),
+              scale = 0.15,
+              draw_as_glow = true,
+              tint = {1,1,1,0.5}
+            },
+          }
+        },
+        south_animation = {
+          layers = {
+            {
+              filename = "__TFMG__/graphics/buildings/small-radiator/panel_south_glow.png",
+              priority = "high",
+              line_length = 1,
+              frame_count = 1,
+              animation_speed = 0.25,
+              width = 480,
+              height = 960,
+              shift = util.by_pixel(0, 75),
+              scale = 0.15,
+              draw_as_glow = true,
+              tint = {1,1,1,0.5}
+            },
+          }
+        },
+        west_animation = {
+          layers = {
+            {
+              filename = "__TFMG__/graphics/buildings/small-radiator/panel_west_glow.png",
+              priority = "high",
+              line_length = 1,
+              frame_count = 1,
+              animation_speed = 0.25,
+              width = 960,
+              height = 480,
+              shift = util.by_pixel(-75, 0),
+              scale = 0.15,
+              draw_as_glow = true,
+              tint = {1,1,1,0.5}
+            },
+          }
+        },
+      }}
     },
     crafting_categories = {"special"},
     fixed_recipe = "small-radiator-radiation",
@@ -214,8 +239,8 @@ data:extend({
         {
           position = {0, 0},
           direction = defines.direction.west
-        }
-      }
+        },
+      },
     },
     energy_usage = "5000kW",--5mw should be enough for assembling machines per radiator. I do wonder if this will be a bit tight with more advanced machines/beacons.
     placeable_position_visualization =
