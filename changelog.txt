@@ -1,4 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.3
+Date: 2025-09-15
+  Changes:
+    - Scout'o'trons now need to be packaged into a drop pod before deployment
+    - Dropped scout'o'trons now contain appropriate equipment and robots to allow the player to build
+    - Added technology for robots, roboports
+    - Mechanical legs are now an equipment grid item for spiders
+    - manipulator-tools are removed in favour of construction bots
+    - solar-cells now take crystalline plates to discorage use on the surface
+    - solar-cells are now an equipment grid item for construction bots
+    - solar cell equipment works at night with 20% efficiency due to the long day night cycle of Arrival, this should stop you from being unable to construct anything.
+    - arrival has an 85 minute day night cycle.
+    - Scout'o'tron deployment script is now improved
+    - basic roboports have been added, they are both buildings and equipment grid items for spiders. I don't feel like wasting your time crafting a "personal roboport" Equipment grid items and buildings will be equivilent unless i see fit otherwise.
+    - platform-1 menu sim updated to reflect these changes
+    - oh yeah, its all coming together
+---------------------------------------------------------------------------------------------------
 Version: 0.2.2
 Date: 2025-09-14
   Features:
