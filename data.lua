@@ -116,6 +116,9 @@ require("prototypes.entity.resources")
 require("prototypes.entity.smoke")
 require("prototypes.entity.spiders")
 
+--equipment
+require("prototypes.equipment")
+
 --items
 ---buildings
 require("prototypes.items.buildings.belts")
@@ -124,6 +127,7 @@ require("prototypes.items.buildings.crafting")
 require("prototypes.items.buildings.electrical")
 require("prototypes.items.buildings.inserters")
 require("prototypes.items.buildings.labs")
+require("prototypes.items.buildings.roboports")
 require("prototypes.items.buildings.thermal")
 ---inventory items
 require("prototypes.items.intermediates")

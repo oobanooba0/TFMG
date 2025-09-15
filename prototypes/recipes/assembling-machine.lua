@@ -149,6 +149,20 @@ data:extend({
     },
   },
 
+  {--Scout'o'tron pod
+    type = "recipe",
+    category = "assembling-machine",
+    name = "scout-o-tron-pod",
+    energy_required = 32,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "scout-o-tron", amount = 1 }
+    },
+    results = { 
+      { type = "item", name = "scout-o-tron-pod", amount = 1 }
+      
+    },
+  },
 ---building recipes
   {--supercomputer
     type = "recipe",

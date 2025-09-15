@@ -153,7 +153,7 @@ script.on_event(defines.events.on_player_created, function(e)--Ngl I have no ide
 
 		local anchor = {gui=defines.relative_gui_type.space_platform_hub_gui, position=defines.relative_gui_position.bottom}
   	local frame = player.gui.relative.add{type="frame", anchor=anchor}
-		frame.add{type="button", name="deploy_scout_o_tron", caption={"spider_ui.deploy-scout-o-tron"}}
+		frame.add{type="button", name="deploy_scout_o_tron", caption={"spider-ui.deploy-scout-o-tron"}}
 end)
 
 ---On open hub gui

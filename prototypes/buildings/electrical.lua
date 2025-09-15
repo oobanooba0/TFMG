@@ -189,7 +189,7 @@ data:extend({
     close_sound = { filename = "__Krastorio2Assets__/sounds/buildings/close.ogg", volume = 1 },
     impact_category = "metal",
   },
-  {
+  {--solar cell
     type = "solar-panel",
     name = "solar-cell",
     icon = "__base__/graphics/icons/solar-panel.png",

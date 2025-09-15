@@ -35,6 +35,7 @@ data:extend({
     type = "item",
     name = "solar-cell",
     icon = "__base__/graphics/icons/solar-panel.png",
+    place_as_equipment_result = "solar-cell-equipment",
     subgroup = "energy",
     order = "a",
     inventory_move_sound = item_sounds.electric_large_inventory_move,
