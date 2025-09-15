@@ -86,7 +86,6 @@ data:extend({
     },
   },
 
-
   {--spidertron frame
     type = "recipe",
     category = "assembling-machine",
@@ -94,8 +93,9 @@ data:extend({
     energy_required = 16,
     enabled = false,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 16 },
-      { type = "item", name = "heat-pipe", amount = 4 },
+      { type = "item", name = "general-purpose-structure", amount = 32 },
+      { type = "item", name = "heat-pipe", amount = 16 },
+      { type = "item", name = "modular-circuit", amount = 16 },
     },
     results = { 
       { type = "item", name = "spidertron-frame", amount = 1 }
@@ -108,30 +108,16 @@ data:extend({
     energy_required = 12,
     enabled = false,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 4 },
+      { type = "item", name = "general-purpose-structure", amount = 8 },
       { type = "item", name = "mechanical-components", amount = 8 },
-      { type = "item", name = "modular-circuit", amount = 4 },
+      { type = "item", name = "conductive-coil", amount = 12 },
     },
     results = { 
       { type = "item", name = "mechanical-leg", amount = 1 }
     },
   },
-  {--manipulation tool
-    type = "recipe",
-    category = "assembling-machine",
-    name = "manipulation-tool",
-    energy_required = 8,
-    enabled = false,
-    ingredients = {
-      { type = "item", name = "mechanical-components", amount = 2 },
-      { type = "item", name = "modular-circuit", amount = 2 },
-      { type = "item", name = "conductive-coil", amount = 8 },
-      { type = "item", name = "heat-pipe", amount = 2 },
-    },
-    results = { 
-      { type = "item", name = "manipulation-tool", amount = 1 }
-    },
-  },
+
+  ---spider hell
   {--Scout'o'tron
     type = "recipe",
     category = "assembling-machine",
@@ -141,7 +127,6 @@ data:extend({
     ingredients = {
       { type = "item", name = "spidertron-frame", amount = 1 },
       { type = "item", name = "mechanical-leg", amount = 3 },
-      { type = "item", name = "manipulation-tool", amount = 2 },
       { type = "item", name = "ai-processor", amount = 1 },
     },
     results = { 
@@ -156,11 +141,62 @@ data:extend({
     energy_required = 32,
     enabled = false,
     ingredients = {
-      { type = "item", name = "scout-o-tron", amount = 1 }
+      { type = "item", name = "scout-o-tron", amount = 1 },
+      { type = "item", name = "solar-cell", amount = 2 },
+      { type = "item", name = "roboport-1", amount = 1 },
+      { type = "item", name = "construction-robot", amount = 8 },
+      { type = "item", name = "general-purpose-structure", amount = 24 },
     },
     results = { 
       { type = "item", name = "scout-o-tron-pod", amount = 1 }
-      
+    },
+  },
+---robots
+  {--construction robot
+    type = "recipe",
+    category = "assembling-machine",
+    name = "construction-robot",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "mechanical-components", amount = 2 },
+      { type = "item", name = "general-purpose-structure", amount = 2 },
+      { type = "item", name = "modular-circuit", amount = 2 },
+      { type = "item", name = "conductive-coil", amount = 6 },
+    },
+    results = { 
+      { type = "item", name = "construction-robot", amount = 1 }
+    },
+  },
+  {--logistic robot
+    type = "recipe",
+    category = "assembling-machine",
+    name = "logistic-robot",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "mechanical-components", amount = 2 },
+      { type = "item", name = "general-purpose-structure", amount = 2 },
+      { type = "item", name = "modular-circuit", amount = 2 },
+      { type = "item", name = "conductive-coil", amount = 6 },
+    },
+    results = { 
+      { type = "item", name = "logistic-robot", amount = 1 }
+    },
+  },
+  {--roboport 1
+    type = "recipe",
+    category = "assembling-machine",
+    name = "roboport-1",
+    energy_required = 12,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 8 },
+      { type = "item", name = "modular-circuit", amount = 8 },
+      { type = "item", name = "conductive-coil", amount = 8 },
+    },
+    results = { 
+      { type = "item", name = "roboport-1", amount = 1 }
     },
   },
 ---building recipes

@@ -213,7 +213,6 @@ data:extend({
     prerequisites = {"logistics-1","asteroid-collection","heat-management"},
     essential = true
   },
-
   {--introspection science
     type = "technology",
     name = "introspection-science-pack",
@@ -361,11 +360,38 @@ data:extend({
     time = 16
     },
   },
-  {--Scout-o-tron parts
+  {--bots
     type = "technology",
-    name = "scout-o-tron-parts",
-    icon = "__base__/graphics/icons/spidertron-tintable-mask.png",
-    icon_size = 64,
+    name = "basic-bots",
+    icon = "__base__/graphics/technology/construction-robotics.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "construction-robot"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "logistic-robot"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "roboport-1"
+      },
+    },
+    prerequisites = {"introspection-science-pack"},
+    unit = {
+    count = 16,
+    ingredients = {{"introspection-science", 1}},
+    time = 16
+    },
+  },
+  {--Scout-o-tron
+    type = "technology",
+    name = "scout-o-tron",
+    icon = "__base__/graphics/technology/spidertron.png",
+    icon_size = 256,
     effects =
     {
       {
@@ -378,7 +404,7 @@ data:extend({
       },
       {
         type = "unlock-recipe",
-        recipe = "manipulation-tool"
+        recipe = "scout-o-tron"
       },
     },
     prerequisites = {"introspection-science-pack"},
@@ -388,21 +414,21 @@ data:extend({
     time = 16
     },
   },
-  {--scout-o-tron
+  {--scout-o-tron drop pods
     type = "technology",
-    name = "scout-o-tron",
-    icon = "__base__/graphics/technology/spidertron.png",
-    icon_size = 256,
+    name = "scout-o-tron-drop-pods",
+    icon = "__base__/graphics/icons/artillery-targeting-remote.png",
+    icon_size = 64,
     effects =
     {
       {
         type = "unlock-recipe",
-        recipe = "scout-o-tron"
+        recipe = "scout-o-tron-pod"
       },
     },
-    prerequisites = {"scout-o-tron-parts"},
+    prerequisites = {"scout-o-tron","solar-power","basic-bots"},
     unit = {
-    count = 48,
+    count = 64,
     ingredients = {{"introspection-science", 1}},
     time = 16
     },
@@ -426,7 +452,7 @@ data:extend({
       item = "scout-o-tron",
       count = 1
     },
-    prerequisites = {"scout-o-tron","solar-power","energy-distribution-1"},
+    prerequisites = {"scout-o-tron-drop-pods"},
     essential = true
   },
 

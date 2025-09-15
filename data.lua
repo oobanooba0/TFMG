@@ -27,6 +27,8 @@ data.raw.recipe ["power-switch"] = nil
 data.raw.recipe ["programmable-speaker"] = nil
 data.raw.recipe ["display-panel"] = nil
 data.raw.recipe ["repair-pack"] = nil
+data.raw.recipe ["construction-robot"] = nil
+data.raw.recipe ["logistic-robot"] = nil
 
 
 --shortcuts woooooooooo
@@ -102,11 +104,13 @@ require("prototypes.buildings.crafting")
 require("prototypes.buildings.electrical")
 require("prototypes.buildings.inserters")
 require("prototypes.buildings.labs")
+require("prototypes.buildings.roboports")
 require("prototypes.buildings.thermal")
 
 --categories
 require("prototypes.categories.item-groups")
 require("prototypes.categories.recipe")
+require("prototypes.categories.equipment-grid")
 
 --entities
 require("prototypes.entity.asteroid")
@@ -118,6 +122,7 @@ require("prototypes.entity.spiders")
 
 --equipment
 require("prototypes.equipment")
+require("prototypes.equipment-grids")
 
 --items
 ---buildings

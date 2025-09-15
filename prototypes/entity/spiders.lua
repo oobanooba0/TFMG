@@ -63,7 +63,7 @@ data:extend(
     energy_per_hit_point = 1,
     guns = { "spidertron-rocket-launcher-1", "spidertron-rocket-launcher-2", "spidertron-rocket-launcher-3", "spidertron-rocket-launcher-4" },
     inventory_size = 20,
-    equipment_grid = "spidertron-equipment-grid",
+    equipment_grid = "scout-o-tron-equipment-grid",
     trash_inventory_size = 10,
     height = body_height,
     alert_icon_shift = { 0, -body_height },

@@ -21,9 +21,10 @@ function gameplay.deploy_scout_o_tron(event)
   return end
   local spider_entity = surface.create_entity({name = "scout-o-tron", position = { math.random(-10,10) , math.random(-10,10) }, force = "player",})--adding item = spider allows it to deploy with inventory contents but unfortunately i lack a means to actually load its inventory properly
   spider.clear()
-  spider_entity.grid.put{name = "roboport-1-equipment"}
   spider_entity.grid.put{name = "solar-cell-equipment"}
-  spider_entity.insert({name = "construction-robot", count = 25})
+  spider_entity.grid.put{name = "solar-cell-equipment"}
+  spider_entity.grid.put{name = "roboport-1-equipment"}
+  spider_entity.insert({name = "construction-robot", count = 8})
   game.print({"spider-ui.scout-o-tron-deploy-message",spider_entity.gps_tag}) -- :)
 end
 

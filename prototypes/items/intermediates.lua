@@ -162,17 +162,7 @@ data:extend({
     pick_sound = item_sounds.electric_small_inventory_pickup,
     drop_sound = item_sounds.electric_small_inventory_move,
     stack_size = 5,
-  },
-  {
-    type = "item",
-    name = "manipulation-tool",
-    icon = "__Krastorio2Assets__/icons/items/jackhammer.png",
-    subgroup = "advanced-intermediates",
-    order = "c[robotics]-a[manipulation-tool]",
-    inventory_move_sound = item_sounds.electric_small_inventory_move,
-    pick_sound = item_sounds.electric_small_inventory_pickup,
-    drop_sound = item_sounds.electric_small_inventory_move,
-    stack_size = 5,
+    place_as_equipment_result = "mechanical-leg-equipment",
   },
 })
 

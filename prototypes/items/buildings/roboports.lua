@@ -7,6 +7,7 @@ data:extend({
     name = "roboport-1",
     icon = "__base__/graphics/icons/roboport.png",
     place_as_equipment_result = "roboport-1-equipment",
+    place_result = "roboport-1",
     subgroup = "logistic-network",
     order = "c[signal]-a[roboport]",
     inventory_move_sound = item_sounds.roboport_inventory_move,

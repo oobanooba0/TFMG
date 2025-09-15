@@ -20,13 +20,13 @@ data:extend({
     energy_source =
     {
       type = "electric",
-      buffer_capacity = "35MJ",
-      input_flow_limit = "3500kW",
+      buffer_capacity = "16MJ",
+      input_flow_limit = "2MW",
       usage_priority = "secondary-input"
     },
-    charging_energy = "1000kW",
-    robot_limit = 10,
-    construction_radius = 15,
+    charging_energy = "1MW",
+    robot_limit = 8,
+    construction_radius = 16,
     spawn_and_station_height = 0.4,
     spawn_and_station_shadow_height_offset = 0.5,
     charge_approach_distance = 2.6,
@@ -50,7 +50,7 @@ data:extend({
     charging_station_count_affected_by_quality = true,
     charging_distance = 1.6,
     charging_threshold_distance = 5,
-    categories = {"armor"}
+    categories = {"spider"}
   },
   {
     type = "solar-panel-equipment",
@@ -66,8 +66,8 @@ data:extend({
     },
     shape =
     {
-      width = 2,
-      height = 2,
+      width = 3,
+      height = 1,
       type = "full"
     },
     energy_source =
@@ -76,6 +76,33 @@ data:extend({
       usage_priority = "primary-output"
     },
     power = "500kW",
-    categories = {"armor"}
+    categories = {"spider"}
+  },
+  {
+    type = "movement-bonus-equipment",
+    name = "mechanical-leg-equipment",
+    take_result = "mechanical-leg",
+    sprite =
+    {
+      filename = "__base__/graphics/equipment/exoskeleton-equipment.png",
+      width = 128,
+      height = 256,
+      priority = "medium",
+      scale = 0.5
+    },
+    shape =
+    {
+      width = 1,
+      height = 3,
+      type = "full"
+    },
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input"
+    },
+    energy_consumption = "100kW",
+    movement_bonus = 0.25,
+    categories = {"spider"}
   },
 })
