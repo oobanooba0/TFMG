@@ -449,7 +449,7 @@ data:extend({
     research_trigger =
     {
       type = "craft-item",
-      item = "scout-o-tron",
+      item = "scout-o-tron-pod",
       count = 1
     },
     prerequisites = {"scout-o-tron-drop-pods"},

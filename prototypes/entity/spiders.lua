@@ -61,7 +61,6 @@ data:extend(
     corpse = "spidertron-remnants",
     dying_explosion = "spidertron-explosion",
     energy_per_hit_point = 1,
-    guns = { "spidertron-rocket-launcher-1", "spidertron-rocket-launcher-2", "spidertron-rocket-launcher-3", "spidertron-rocket-launcher-4" },
     inventory_size = 20,
     equipment_grid = "scout-o-tron-equipment-grid",
     trash_inventory_size = 10,

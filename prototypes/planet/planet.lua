@@ -28,7 +28,7 @@ data:extend({
     },
     surface_properties =
     {
-      ["day-night-cycle"] = 20 * minute,
+      ["day-night-cycle"] = 85 * minute,
       ["solar-power"] = 10,
       pressure = 500,
       gravity = 4,

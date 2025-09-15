@@ -1,5 +1,5 @@
 data:extend({
-    {
+    {--roboport 1
     type = "roboport-equipment",
     name = "roboport-1-equipment",
     take_result = "roboport-1",
@@ -52,10 +52,12 @@ data:extend({
     charging_threshold_distance = 5,
     categories = {"spider"}
   },
-  {
+  {--solar cell 1
     type = "solar-panel-equipment",
     name = "solar-cell-equipment",
     take_result = "solar-cell",
+    performance_at_day = 1,
+    performance_at_night = 0.2,--these solar panels work at night so you dont get hardstuck
     sprite =
     {
       filename = "__base__/graphics/equipment/solar-panel-equipment.png",

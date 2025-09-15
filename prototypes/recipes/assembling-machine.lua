@@ -371,6 +371,7 @@ data:extend({
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 4 },
       { type = "item", name = "mineral-glass", amount = 2 },
+      { type = "item", name = "crystalline-plate", amount = 2 },
     },
     results = { 
         { type = "item", name = "solar-cell", amount = 1 }
