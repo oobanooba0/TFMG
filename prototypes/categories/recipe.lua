@@ -3,13 +3,13 @@ data:extend({
         type = "recipe-category",
         name = "matter-reconstructor"
     },
-    {--matter reconstructor and Assembling machine, Early mall items here.
-        type = "recipe-category",
-        name = "basic-assembling"
-    },
-    {
+    {-- these also craft in the matter reconstructor
         type = "recipe-category",
         name = "assembling-machine"
+    },
+    {--recipes that explicitly only craft in the assembling machine, not the matter reconstructor
+        type = "recipe-category",
+        name = "assembling-machine-pure"
     },
     {
         type = "recipe-category",

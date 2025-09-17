@@ -152,7 +152,6 @@ require("prototypes.planet.arrival-map-gen")
 
 --recipes
 require("prototypes.recipes.assembling-machine")
-require("prototypes.recipes.basic-assembling")
 require("prototypes.recipes.furnace")
 require("prototypes.recipes.matter-reconstructor")
 require("prototypes.recipes.special")

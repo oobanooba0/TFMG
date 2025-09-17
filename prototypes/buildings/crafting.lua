@@ -101,7 +101,7 @@ data:extend({
     },
     crafting_categories = {
       "matter-reconstructor",
-      "basic-assembling"
+      "assembling-machine"
     },
     crafting_speed = 10,
     energy_source =
@@ -225,7 +225,7 @@ data:extend({
       }
     },
     crafting_categories = {
-      "basic-assembling","assembling-machine"
+      "assembling-machine","assembling-machine-pure"
     },
     crafting_speed = 1,
     energy_source =

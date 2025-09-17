@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.4
+Date: 2025-09-17
+  Changes:
+    - Matter reconstructor now takes ALL recipes that the assembling machine can, EXCEPT the ones that it has a special replacement for (General purpose structures, Conductive coils, Mechanical components, Modular circuits), this should give players more freedom to abuse the overpowered nature of the matter reconstructor, because its fun.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.3
 Date: 2025-09-15
   Changes:
