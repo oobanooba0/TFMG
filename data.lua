@@ -1,4 +1,5 @@
 --this is the part where I murder the game, Thanks to Rseding91's fourm comments which helped me do this.
+local tile_collision_masks = require("__base__/prototypes/tile/tile-collision-masks")
 
 data.raw ["technology"] = {}
 data.raw ["tips-and-tricks-item"] = {}
@@ -29,6 +30,7 @@ data.raw.recipe ["display-panel"] = nil
 data.raw.recipe ["repair-pack"] = nil
 data.raw.recipe ["construction-robot"] = nil
 data.raw.recipe ["logistic-robot"] = nil
+data.raw.tile ["ice-smooth"].collision_mask = tile_collision_masks.ground()
 
 
 --shortcuts woooooooooo
@@ -134,6 +136,8 @@ require("prototypes.items.buildings.inserters")
 require("prototypes.items.buildings.labs")
 require("prototypes.items.buildings.roboports")
 require("prototypes.items.buildings.thermal")
+---fluids
+require("prototypes.items.fluids")
 ---inventory items
 require("prototypes.items.intermediates")
 require("prototypes.items.raw-resources")

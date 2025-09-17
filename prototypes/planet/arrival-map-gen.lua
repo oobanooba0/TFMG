@@ -17,6 +17,14 @@ data:extend{
 	parameters = {"xx", "yy"}
   }
 }
+data:extend{
+  {
+	type = "noise-expression",
+	name = "arrival_elevation",
+	expression = "(arrival_height(x,y)*-1000)+1000"
+  }
+}
+
 
 data:extend{
 	{
@@ -37,7 +45,13 @@ data:extend{
 	parameters = {"xx", "yy"}
   }
 }
-
+data:extend {--distance from center
+	{
+    type = "noise-expression",
+    name = "distance_from_center",
+    expression = "(sqrt(x*x + y*y))",
+  },
+}
 data:extend{--main function deciding where there are trenches.
 	{
 	type = "noise-function",
@@ -63,8 +77,7 @@ data:extend{--main function deciding where there are trenches.
 	parameters = {"xx", "yy", "layer"}
   }
 }
-
-data:extend{
+data:extend{--arrival_trench_noise_large
 	{
 	type = "noise-function",--effectively decides what thickness a trench should be, down to 0, meaning no trench.
 	name = "arrival_trench_noise_large",--mainly so trenches arent continuous
@@ -83,7 +96,6 @@ data:extend{
 	parameters = {"xx", "yy", "layer"}
   }
 }
-
 data:extend{--ice bed placement (I hope)
 	{
 	type = "noise-function",
@@ -103,38 +115,117 @@ data:extend{--ice bed placement (I hope)
 	parameters = {"xx", "yy"}
   }
 }
-
-data:extend {--ferric ore placement
-	{
+data:extend({
+  {
     type = "noise-expression",
-    name = "ferric_ore",
-    expression = "((arrival_height(x, y) >= 0.85) * noise)",
-		local_expressions = {
-    noise = [[
-		clamp((multioctave_noise{
-			x = x,
-			y = y,
-			persistence = 0.5,
-			seed0 = map_seed,
-			seed1 = 40,
-			octaves = 2,
-			input_scale = 1/20,
-			output_scale = 5
-		}-2/(var("control:ferric_ore:size"))),0,5)
-	]],
+    name = "arrival_wobble_x", -- only add to input X or Y
+    expression = "multioctave_noise{x = x, y = y, persistence = 0.7, seed0 = map_seed, seed1 = 2000, octaves = 3, input_scale = 1/10}"
   },
-	}
-}
-
-data:extend {
-	{
+  {
     type = "noise-expression",
-    name = "distance_from_center",
-    expression = "(sqrt(x*x + y*y))",
+    name = "arrival_wobble_y", -- only add to input X or Y
+    expression = "multioctave_noise{x = x, y = y, persistence = 0.7, seed0 = map_seed, seed1 = 3000, octaves = 3, input_scale = 1/10}"
   },
-}
-
-
+})
+data:extend({
+  {
+    type = "noise-function",
+    name = "arrival_simple_spot",
+    parameters = {"seed1", "radius", "spacing", "favorability"},
+    expression = "spot_noise{\z
+      x = x + arrival_wobble_x* 0.5 * radius,\z
+      y = y + arrival_wobble_y* 0.5 * radius,\z
+      seed0 = map_seed,\z
+      seed1 = seed1,\z
+      skip_span = 1,\z
+      skip_offset = 1,\z
+      region_size = spacing * 5,\z
+      density_expression = favorability,\z
+      spot_favorability_expression = favorability,\z
+      candidate_spot_count = 22,\z
+      suggested_minimum_candidate_point_spacing = spacing,\z
+      spot_quantity_expression = radius * radius,\z
+      spot_radius_expression = radius,\z
+      hard_region_target_quantity = 0,\z
+      basement_value = -1,\z
+      maximum_spot_basement_radius = radius * 2\z
+    }"
+  },
+  {--ferric ore expression
+    type = "noise-expression",
+    name = "ferric_ore_richness",
+    expression = "(distance_from_center*2+2000) * arrival_simple_spot(1, 15 * size ^ 0.5, 250 / frequency ^ 0.5,1) * richness / size",
+    local_expressions =
+    {
+      richness = "control:ferric_ore:richness",
+      frequency = "control:ferric_ore:frequency",
+      size = "control:ferric_ore:size",
+    }
+  },
+  {--ferric ore placement
+    type = "noise-expression",
+    name = "ferric_ore_probability",
+    expression = "(control:ferric_ore:size > 0) * (ferric_ore_richness > 1) * ceil((arrival_height(x,y) >= 0.85))"
+  },
+	{--mineral ore expression
+    type = "noise-expression",
+    name = "mineral_ore_richness",
+    expression = "(distance_from_center+1000) * arrival_simple_spot(1000, 40 * size ^ 0.5, 450 / frequency ^ 0.5,1) * richness / size",
+    local_expressions =
+    {
+      richness = "control:mineral_ore:richness",
+      frequency = "control:mineral_ore:frequency",
+      size = "control:mineral_ore:size",
+    }
+  },
+  {--mineral ore placement
+    type = "noise-expression",
+    name = "mineral_ore_probability",
+    expression = "(control:mineral_ore:size > 0) * (mineral_ore_richness > 1) * ceil((arrival_height(x,y) < 0.7)) * ceil((arrival_height(x,y) > 0.2))"
+  },
+	{
+    type = "noise-function",
+    name = "arrival_spot_noise",
+    parameters = {"seed", "count", "skip_offset", "region_size", "density", "radius", "favorability"},
+    expression = "spot_noise{x = x,\z
+                             y = y,\z
+                             seed0 = map_seed,\z
+                             seed1 = seed,\z
+                             candidate_spot_count = count,\z
+                             suggested_minimum_candidate_point_spacing = 128,\z
+                             skip_span = 3,\z
+                             skip_offset = skip_offset,\z
+                             region_size = region_size,\z
+                             density_expression = density,\z
+                             spot_quantity_expression = radius * radius,\z
+                             spot_radius_expression = radius,\z
+                             hard_region_target_quantity = 0,\z
+                             spot_favorability_expression = favorability,\z
+                             basement_value = -1,\z
+                             maximum_spot_basement_radius = radius * 2}"
+  },
+  {
+    type = "noise-expression",
+    name = "ice_geysir_spots",
+    expression = "arrival_spot_noise{seed = 3000,\z
+                                    count = 1,\z
+                                    skip_offset = 0,\z
+                                    region_size = 80 / control:ice_geysir:frequency,\z
+                                    density = 1,\z
+                                    radius = 25 * sqrt(control:ice_geysir:size),\z
+                                    favorability = 1}"
+  },
+  {
+    type = "noise-expression",
+    name = "ice_geysir_probability",
+    expression = "(control:ice_geysir:size > 0) * (ice_geysir_spots * 0.020) * ceil(arrival_ice_noise(x,y) < -0.1)"
+  },
+  {
+    type = "noise-expression",
+    name = "ice_geysir_richness",
+    expression = "distance_from_center+1000 * ice_geysir_spots * control:ice_geysir:richness * 1000"
+  },
+})
 data:extend{-- Ice worm
   {
     type = "noise-expression",
@@ -142,7 +233,6 @@ data:extend{-- Ice worm
     expression = 800
   },
 }
-
 data:extend{-- small ice worm placement
   {
     type = "noise-expression",
@@ -167,8 +257,7 @@ data:extend{-- small ice worm placement
 		]]
   },
 }
-
-data:extend{-- ice worm placement
+data:extend{-- medium ice worm placement
   {
     type = "noise-expression",
     name = "medium_ice_worm",
@@ -192,8 +281,7 @@ data:extend{-- ice worm placement
 		]]
   },
 }
-
-data:extend{-- ice worm placement
+data:extend{-- big ice worm placement
   {
     type = "noise-expression",
     name = "big_ice_worm",
@@ -218,28 +306,24 @@ data:extend{-- ice worm placement
   },
 }
 --ice worms
-
 data.raw["segmented-unit"]["small-ice-worm"].autoplace = {
 	force = "neutral",
 	placement_density = 1,
 	probability_expression = "small_ice_worm",
 	order = "b-a"
 }
-
 data.raw["segmented-unit"]["medium-ice-worm"].autoplace = {
 	force = "neutral",
 	placement_density = 1,
 	probability_expression = "medium_ice_worm",
 	order = "b-b"
 }
-
 data.raw["segmented-unit"]["big-ice-worm"].autoplace = {
 	force = "neutral",
 	placement_density = 1,
 	probability_expression = "big_ice_worm",
 	order = "b-c"
 }
-
 --Red Biome
 data.raw.tile["fulgoran-rock"].autoplace = {
 	probability_expression = [[
