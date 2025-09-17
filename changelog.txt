@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.5
+Date: 2025-09-17
+  Bugfixes:
+    - Fixed a number of spelling errors, thanks Asterixyz
+    - Belts tooltip read 15 per second to reflect actual belt speed. (16 items per second isnt possible)
+    - RIP 2^4 belt speeds, I was informed by PFQNiet that factorio belt speeds can only increment in 1.875 values, so 16/s just ends up being 15/s but with janky animations.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.4
 Date: 2025-09-17
   Changes:

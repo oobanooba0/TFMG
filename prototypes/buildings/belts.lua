@@ -1,6 +1,6 @@
 --- Easy belt speed tuning here.
 
-local belt_1_speed = 16/480
+local belt_1_speed = 15/480 --Belt speeds can only change in 1.875 increments, so 16 doesnt work :(
 
 local meld = require("meld")
 local hit_effects = require ("__base__.prototypes.entity.hit-effects")
