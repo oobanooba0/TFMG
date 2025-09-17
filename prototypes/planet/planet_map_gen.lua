@@ -5,7 +5,7 @@ planet_map_gen.arrival = function()
   {
     autoplace_controls =
     {
-      ["ice_ore"] = {},
+      ["ferric_ore"] = {},
     },
     autoplace_settings =
     {
@@ -55,7 +55,7 @@ planet_map_gen.arrival = function()
       {
         settings =
         {
-          ["ice-ore"] = {},
+          ["ferric-ore"] = {},
           ["small-ice-worm"] = {},
           ["medium-ice-worm"] = {},
           ["big-ice-worm"] = {}

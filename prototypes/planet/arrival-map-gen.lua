@@ -103,11 +103,12 @@ data:extend{--ice bed placement (I hope)
 	parameters = {"xx", "yy"}
   }
 }
-data:extend {--ice ore placement
+
+data:extend {--ferric ore placement
 	{
     type = "noise-expression",
-    name = "ice_ore",
-    expression = "((arrival_ice_noise(x, y) < -0.15) * noise)",
+    name = "ferric_ore",
+    expression = "((arrival_height(x, y) >= 0.85) * noise)",
 		local_expressions = {
     noise = [[
 		clamp((multioctave_noise{
@@ -119,7 +120,7 @@ data:extend {--ice ore placement
 			octaves = 2,
 			input_scale = 1/20,
 			output_scale = 5
-		}-2/(var("control:ice_ore:size"))),0,5)
+		}-2/(var("control:ferric_ore:size"))),0,5)
 	]],
   },
 	}

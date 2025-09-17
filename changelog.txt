@@ -2,6 +2,7 @@
 Version: 0.3.0
 Date: ????
   Changes:
+    - Ice ore removed - it was merely a test to see if i could.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.5
 Date: 2025-09-17
