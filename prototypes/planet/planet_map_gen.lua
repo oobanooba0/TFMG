@@ -12,8 +12,8 @@ planet_map_gen.arrival = function()
       ["entity:ferric-ore:richness"] = "ferric_ore_richness",
       ["entity:mineral-ore:probability"] = "mineral_ore_probability",
       ["entity:mineral-ore:richness"] = "mineral_ore_richness",
-      ["entity:ice-geysir:probability"] = "ice_geysir_probability",
-      ["entity:ice-geysir:richness"] = "ice_geysir_richness",
+      ["entity:ice-geyser:probability"] = "ice_geyser_probability",
+      ["entity:ice-geyser:richness"] = "ice_geyser_richness",
     },
     cliff_settings =
     {
@@ -27,7 +27,7 @@ planet_map_gen.arrival = function()
     {
       ["ferric_ore"] = {},
       ["mineral_ore"] = {},
-      ["ice_geysir"] = {},
+      ["ice_geyser"] = {},
     },
     autoplace_settings =
     {
@@ -70,7 +70,7 @@ planet_map_gen.arrival = function()
         {
           ["ferric-ore"] = {},
           ["mineral-ore"] = {},
-          ["ice-geysir"] = {},
+          ["ice-geyser"] = {},
           ["small-ice-worm"] = {},
           ["medium-ice-worm"] = {},
           ["big-ice-worm"] = {}

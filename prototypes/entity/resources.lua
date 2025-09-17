@@ -2,7 +2,7 @@ local sounds = require "__base__.prototypes.entity.sounds"
 local base_tile_sounds = require("__base__.prototypes.tile.tile-sounds")
 local resource_autoplace = require("resource-autoplace")
 
-resource_autoplace.initialize_patch_set("ice-geysir", false, "arrival")
+resource_autoplace.initialize_patch_set("ice-geyser", false, "arrival")
 
 local function resource(resource_parameters, autoplace_parameters)
   return
@@ -111,10 +111,10 @@ data:extend({
     category = "resource"
   },
 
-  {--ice geysir
+  {--ice geyser
     type = "resource",
-    name = "ice-geysir",
-    icon = "__space-age__/graphics/icons/lithium-brine.png",
+    name = "ice-geyser",
+    icon = "__space-age__/graphics/icons/fluid/lithium-brine.png",
     flags = {"placeable-neutral"},
     category = "basic-fluid",
     subgroup = "mineable-fluids",
@@ -131,7 +131,7 @@ data:extend({
       {
         {
           type = "fluid",
-          name = "molten-ice",
+          name = "hydrocarbon-slush",
           amount_min = 1,
           amount_max = 1,
           probability = 1
@@ -143,10 +143,10 @@ data:extend({
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     autoplace = {
       --control = "lithium-brine",
-      order="a[resources]-c[ice-geysir]",
+      order="a[resources]-c[ice-geyser]",
       --default_enabled = false,
-      probability_expression = "ice_geysir_probability",
-      richness_expression = "ice_geysir_richness"
+      probability_expression = "ice_geyser_probability",
+      richness_expression = "ice_geyser_richness"
     },
     stage_counts = {0},
     stages =
@@ -224,10 +224,10 @@ data:extend({
     map_color = {0.6, 0.6, 1},
     map_grid = false,
   },
-  {--ice geysir autoplace controls
+  {--ice geyser autoplace controls
     type = "autoplace-control",
-    name = "ice_geysir",
-    localised_name = {"", "[entity=ice-geysir] ", {"entity-name.ice-geysir"}},
+    name = "ice_geyser",
+    localised_name = {"", "[entity=ice-geyser] ", {"entity-name.ice-geyser"}},
     richness = true,
     order = "a-b",
     category = "resource"

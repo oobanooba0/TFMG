@@ -206,24 +206,24 @@ data:extend({
   },
   {
     type = "noise-expression",
-    name = "ice_geysir_spots",
+    name = "ice_geyser_spots",
     expression = "arrival_spot_noise{seed = 3000,\z
                                     count = 1,\z
                                     skip_offset = 0,\z
-                                    region_size = 80 / control:ice_geysir:frequency,\z
+                                    region_size = 80 / control:ice_geyser:frequency,\z
                                     density = 1,\z
-                                    radius = 25 * sqrt(control:ice_geysir:size),\z
+                                    radius = 25 * sqrt(control:ice_geyser:size),\z
                                     favorability = 1}"
   },
   {
     type = "noise-expression",
-    name = "ice_geysir_probability",
-    expression = "(control:ice_geysir:size > 0) * (ice_geysir_spots * 0.020) * ceil(arrival_ice_noise(x,y) < -0.1)"
+    name = "ice_geyser_probability",
+    expression = "(control:ice_geyser:size > 0) * (ice_geyser_spots * 0.020) * ceil(arrival_ice_noise(x,y) < -0.1)"
   },
   {
     type = "noise-expression",
-    name = "ice_geysir_richness",
-    expression = "distance_from_center+1000 * ice_geysir_spots * control:ice_geysir:richness * 1000"
+    name = "ice_geyser_richness",
+    expression = "distance_from_center+1000 * ice_geyser_spots * control:ice_geyser:richness * 1000"
   },
 })
 data:extend{-- Ice worm

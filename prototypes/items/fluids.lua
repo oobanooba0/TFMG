@@ -1,8 +1,8 @@
 data:extend({
     {
     type = "fluid",
-    name = "molten-ice",
-    icon = "__space-age__/graphics/icons/fluid/ammoniacal-solution.png",
+    name = "hydrocarbon-slush",
+    icon = "__space-age__/graphics/icons/fluid/lithium-brine.png",
     subgroup = "fluid",
     order = "a[raw-fluid]-a[arrival]",
     default_temperature = 1,
