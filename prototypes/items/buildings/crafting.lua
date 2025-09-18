@@ -84,4 +84,16 @@ data:extend({
     place_result = "chemistry-plant",
     stack_size = 10
   },
+  {
+    type = "item",
+    name = "refinery",
+    icon = "__base__/graphics/icons/oil-refinery.png",
+    subgroup = "production-machine",
+    order = "a-d",
+    inventory_move_sound = item_sounds.fluid_inventory_move,
+    pick_sound = item_sounds.fluid_inventory_pickup,
+    drop_sound = item_sounds.fluid_inventory_move,
+    place_result = "refinery",
+    stack_size = 10
+  },
 })

@@ -388,11 +388,26 @@ data:extend({
     enabled = false,
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 8 },
-      { type = "item", name = "pipe", amount = 8 },
-      { type = "item", name = "modular-circuit", amount = 4 },
+      { type = "item", name = "mechanical-components", amount = 4 },
+      { type = "item", name = "storage-tank", amount = 1 },
     },
     results = { 
       { type = "item", name = "chemistry-plant", amount = 1 }
+    },
+  },
+  {--refinery
+    type = "recipe",
+    category = "assembling-machine",
+    name = "refinery",
+    energy_required = 16,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 16 },
+      { type = "item", name = "pipe", amount = 12 },
+      { type = "item", name = "modular-circuit", amount = 8 },
+    },
+    results = { 
+      { type = "item", name = "refinery", amount = 1 }
     },
   },
   {--asteroid collector

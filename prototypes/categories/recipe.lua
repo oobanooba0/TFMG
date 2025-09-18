@@ -27,5 +27,9 @@ data:extend({
         type = "recipe-category",
         name = "chemistry-plant"--chemistry plant recipies
     },
+    {
+        type = "recipe-category",
+        name = "refinery"--refinery
+    },
 
 })
