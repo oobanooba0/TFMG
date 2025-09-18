@@ -72,4 +72,16 @@ data:extend({
     place_result = "supercomputer-output",
     stack_size = 50,
   },
+  {
+    type = "item",
+    name = "chemistry-plant",
+    icon = "__base__/graphics/icons/chemical-plant.png",
+    subgroup = "production-machine",
+    order = "a-c",
+    inventory_move_sound = item_sounds.fluid_inventory_move,
+    pick_sound = item_sounds.fluid_inventory_pickup,
+    drop_sound = item_sounds.fluid_inventory_move,
+    place_result = "chemistry-plant",
+    stack_size = 10
+  },
 })

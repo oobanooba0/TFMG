@@ -23,5 +23,9 @@ data:extend({
         type = "recipe-category",
         name = "supercomputer"--supercomputer recipes
     },
+    {
+        type = "recipe-category",
+        name = "chemistry-plant"--chemistry plant recipies
+    },
 
 })

@@ -362,7 +362,7 @@ data:extend({
       { type = "item", name = "modular-circuit", amount = 2 },
     },
     results = { 
-        { type = "item", name = "assembling-machine", amount = 1 }
+      { type = "item", name = "assembling-machine", amount = 1 }
     },
   },
   {--furnace
@@ -372,12 +372,27 @@ data:extend({
     energy_required = 8,
     enabled = false,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 10 },
-      { type = "item", name = "conductive-coil", amount = 10 },
+      { type = "item", name = "general-purpose-structure", amount = 8 },
+      { type = "item", name = "conductive-coil", amount = 12 },
       { type = "item", name = "modular-circuit", amount = 2 },
     },
     results = { 
-        { type = "item", name = "furnace", amount = 1 }
+      { type = "item", name = "furnace", amount = 1 }
+    },
+  },
+  {--chemistry plant
+    type = "recipe",
+    category = "assembling-machine",
+    name = "chemistry-plant",
+    energy_required = 12,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 8 },
+      { type = "item", name = "pipe", amount = 8 },
+      { type = "item", name = "modular-circuit", amount = 4 },
+    },
+    results = { 
+      { type = "item", name = "chemistry-plant", amount = 1 }
     },
   },
   {--asteroid collector
