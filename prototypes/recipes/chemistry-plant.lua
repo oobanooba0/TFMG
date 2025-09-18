@@ -11,14 +11,14 @@ data:extend({
     energy_required = 1,
     enabled = true,
     ingredients = {
-      { type = "fluid", name = "water", amount = 10 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 10 },
-      { type = "fluid", name = "organic-sludge", amount = 10 },
+      { type = "fluid", name = "water", amount = 100 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 100 },
+      { type = "fluid", name = "organic-sludge", amount = 100 },
     },
     results = { 
-      { type = "fluid", name = "water", amount = 12 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 6 },
-      { type = "fluid", name = "organic-sludge", amount = 12 }
+      { type = "fluid", name = "water", amount = 120 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 60 },
+      { type = "fluid", name = "organic-sludge", amount = 120 }
     },
     allow_productivity = false,
   },
@@ -33,14 +33,14 @@ data:extend({
     energy_required = 1,
     enabled = true,
     ingredients = {
-      { type = "fluid", name = "water", amount = 10 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 10 },
-      { type = "fluid", name = "organic-sludge", amount = 10 },
+      { type = "fluid", name = "water", amount = 100 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 100 },
+      { type = "fluid", name = "organic-sludge", amount = 100 },
     },
     results = { 
-      { type = "fluid", name = "water", amount = 8 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 14 },
-      { type = "fluid", name = "organic-sludge", amount = 8 }
+      { type = "fluid", name = "water", amount = 80 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 140 },
+      { type = "fluid", name = "organic-sludge", amount = 80 }
     },
     allow_productivity = false,
   },
