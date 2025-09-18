@@ -132,8 +132,8 @@ data:extend({
         {
           type = "fluid",
           name = "hydrocarbon-slush",
-          amount_min = 1,
-          amount_max = 1,
+          amount_min = 100,
+          amount_max = 100,
           probability = 1
         }
       }

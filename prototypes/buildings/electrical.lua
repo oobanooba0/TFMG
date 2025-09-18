@@ -2,7 +2,6 @@ local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 
 data:extend({
-
   {--tiny electric pole
     type = "electric-pole",
     name = "tiny-electric-pole",
@@ -164,6 +163,7 @@ data:extend({
     production = "1GW",
     performance_at_day = 1,
     performance_at_night =1,
+    solar_coefficient_property = "spacetime-flow-viscosity",
     picture = {
       layers = {
         {

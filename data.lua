@@ -30,7 +30,18 @@ data.raw.recipe ["display-panel"] = nil
 data.raw.recipe ["repair-pack"] = nil
 data.raw.recipe ["construction-robot"] = nil
 data.raw.recipe ["logistic-robot"] = nil
+data.raw.recipe ["electric-mining-drill"] = nil
+data.raw.recipe ["pumpjack"] = nil
+data.raw.recipe ["pipe"] = nil
+data.raw.recipe ["pipe-to-ground"] = nil
+data.raw.recipe ["pump"] = nil
+data.raw.recipe ["storage-tank"] = nil
+
+
 data.raw.tile ["ice-smooth"].collision_mask = tile_collision_masks.ground()
+data.raw["mining-drill"]["electric-mining-drill"].mining_speed = 1
+data.raw["mining-drill"]["electric-mining-drill"].energy_usage = "0.5MW"
+data.raw["mining-drill"]["pumpjack"].energy_usage = "1MW"
 
 
 --shortcuts woooooooooo
@@ -163,6 +174,7 @@ require("prototypes.recipes.supercomputer")
 
 --technolgoies
 require("prototypes.technologies.platform-phase")
+require("prototypes.technologies.arrival-phase")
 
 --sound
 require("sound.ambient.ambient-sounds")

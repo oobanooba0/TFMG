@@ -2,7 +2,13 @@ local planet_map_gen = require("__TFMG__.prototypes.planet.planet_map_gen")
 local asteroid_util = require("__TFMG__.prototypes.planet.asteroid-spawn-definitions")
 local effects = require("__core__/lualib/surface-render-parameter-effects")
 local procession_graphic_catalogue_types = require("__base__/prototypes/planet/procession-graphic-catalogue-types")
-
+data:extend({--surface properties
+    {
+    type = "surface-property",
+    name = "spacetime-flow-viscosity",
+    default_value = 1
+  },
+})
 
 data:extend({
   {
@@ -30,8 +36,8 @@ data:extend({
     {
       ["day-night-cycle"] = 85 * minute,
       ["solar-power"] = 10,
-      pressure = 500,
-      gravity = 4,
+      pressure = 2,
+      gravity = 1.35,
     },
     surface_render_parameters =
     {

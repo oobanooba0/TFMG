@@ -1,0 +1,64 @@
+data:extend({
+  {--fluid extraction
+    type = "technology",
+    name = "fluid-extraction",
+    icon = "__base__/graphics/technology/oil-gathering.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "pipe"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "pipe-to-ground"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "pump"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "storage-tank"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "pumpjack"
+      },
+    },
+    prerequisites = {"consider-your-potential"},
+    unit = {
+    count = 64,
+    ingredients = {{"introspection-science", 1}},
+    time = 16
+    },
+  },
+  {--solid extraction
+    type = "technology",
+    name = "solid-extraction",
+    icon = "__base__/graphics/technology/electric-mining-drill.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "electric-mining-drill"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "mineral-ore-smelting"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "ferric-ore-smelting"
+      },
+    },
+    prerequisites = {"consider-your-potential"},
+    unit = {
+    count = 64,
+    ingredients = {{"introspection-science", 1}},
+    time = 16
+    },
+  },
+})

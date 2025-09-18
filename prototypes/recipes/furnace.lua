@@ -37,4 +37,26 @@
     results = {{type="item", name="mineral-glass", amount=16}},
     allow_productivity = true,
   },
-  })
+  {
+    type = "recipe",
+    name = "ferric-ore-smelting",
+    category = "furnace",
+    auto_recycle = false,
+    energy_required = 2,
+    enabled = false,
+    ingredients = {{type = "item", name = "ferric-ore", amount = 2}},
+    results = {{type="item", name="ferric-plate", amount=1}},
+    allow_productivity = true,
+  },
+  {
+    type = "recipe",
+    name = "mineral-ore-smelting",
+    category = "furnace",
+    auto_recycle = false,
+    energy_required = 2,
+    enabled = false,
+    ingredients = {{type = "item", name = "mineral-ore", amount = 2}},
+    results = {{type="item", name="mineral-glass", amount=1}},
+    allow_productivity = true,
+  },
+})

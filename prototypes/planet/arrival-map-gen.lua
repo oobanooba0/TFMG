@@ -187,33 +187,35 @@ data:extend({
     type = "noise-function",
     name = "arrival_spot_noise",
     parameters = {"seed", "count", "skip_offset", "region_size", "density", "radius", "favorability"},
-    expression = "spot_noise{x = x,\z
-                             y = y,\z
-                             seed0 = map_seed,\z
-                             seed1 = seed,\z
-                             candidate_spot_count = count,\z
-                             suggested_minimum_candidate_point_spacing = 128,\z
-                             skip_span = 3,\z
-                             skip_offset = skip_offset,\z
-                             region_size = region_size,\z
-                             density_expression = density,\z
-                             spot_quantity_expression = radius * radius,\z
-                             spot_radius_expression = radius,\z
-                             hard_region_target_quantity = 0,\z
-                             spot_favorability_expression = favorability,\z
-                             basement_value = -1,\z
-                             maximum_spot_basement_radius = radius * 2}"
+    expression = "spot_noise{\z
+			x = x,\z
+      y = y,\z
+      seed0 = map_seed,\z
+      seed1 = seed,\z
+      candidate_spot_count = count,\z
+      suggested_minimum_candidate_point_spacing = 128,\z
+      skip_span = 3,\z
+      skip_offset = skip_offset,\z
+      region_size = region_size,\z
+      density_expression = density,\z
+      spot_quantity_expression = radius * radius,\z
+      spot_radius_expression = radius,\z
+      hard_region_target_quantity = 0,\z
+      spot_favorability_expression = favorability,\z
+      basement_value = -1,\z
+      maximum_spot_basement_radius = radius * 2}"
   },
   {
     type = "noise-expression",
     name = "ice_geyser_spots",
-    expression = "arrival_spot_noise{seed = 3000,\z
-                                    count = 1,\z
-                                    skip_offset = 0,\z
-                                    region_size = 80 / control:ice_geyser:frequency,\z
-                                    density = 1,\z
-                                    radius = 25 * sqrt(control:ice_geyser:size),\z
-                                    favorability = 1}"
+    expression = "arrival_spot_noise{\z
+			seed = 3000,\z
+      count = 1,\z
+      skip_offset = 0,\z
+      region_size = 80 / control:ice_geyser:frequency,\z
+      density = 1,\z
+      radius = 25 * sqrt(control:ice_geyser:size),\z
+      favorability = 1}"
   },
   {
     type = "noise-expression",

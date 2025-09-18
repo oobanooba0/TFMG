@@ -259,6 +259,97 @@ data:extend({
         { type = "item", name = "inserter-1", amount = 1 }
     },
   },
+  {--pipe
+    type = "recipe",
+    category = "assembling-machine",
+    name = "pipe",
+    energy_required = 1,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 1 },
+      { type = "item", name = "mineral-glass", amount = 1 },
+    },
+    results = { 
+        { type = "item", name = "pipe", amount = 1 }
+    },
+  },
+  {--pipe-to-ground
+    type = "recipe",
+    category = "assembling-machine",
+    name = "pipe-to-ground",
+    energy_required = 4,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 5 },
+      { type = "item", name = "pipe", amount = 10 }
+    },
+    results = { 
+        { type = "item", name = "pipe-to-ground", amount = 2 }
+    },
+  },
+  {--pump
+    type = "recipe",
+    category = "assembling-machine",
+    name = "pump",
+    energy_required = 6,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 2 },
+      { type = "item", name = "mechanical-components", amount = 2 },
+      { type = "item", name = "pipe", amount = 2 },
+      
+    },
+    results = { 
+        { type = "item", name = "pump", amount = 1 }
+    },
+  },
+  {--storage tank
+    type = "recipe",
+    category = "assembling-machine",
+    name = "storage-tank",
+    energy_required = 6,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 12 },
+      { type = "item", name = "mineral-glass", amount = 12 },
+      { type = "item", name = "pipe", amount = 4 },
+      
+    },
+    results = { 
+        { type = "item", name = "storage-tank", amount = 1 }
+    },
+  },
+  {--pumpjack
+    type = "recipe",
+    category = "assembling-machine",
+    name = "pumpjack",
+    energy_required = 6,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 8 },
+      { type = "item", name = "mechanical-components", amount = 8 },
+      { type = "item", name = "pipe", amount = 8 },
+      
+    },
+    results = { 
+        { type = "item", name = "pumpjack", amount = 1 }
+    },
+  },
+  {--electric-mining-drill
+    type = "recipe",
+    category = "assembling-machine",
+    name = "electric-mining-drill",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 8 },
+      { type = "item", name = "mechanical-components", amount = 8 },
+      { type = "item", name = "modular-circuit", amount = 4 },
+    },
+    results = { 
+        { type = "item", name = "electric-mining-drill", amount = 1 }
+    },
+  },
   {--assembling machine
     type = "recipe",
     category = "assembling-machine",
