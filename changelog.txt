@@ -1,11 +1,13 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.3.0
-Date: ????
+Version: 0.2.6
+Date: 2025-09-17
   Changes:
     - Ice ore removed - it was merely a test to see if i could.
     - Ferric ore added
     - Mineral ore added
     - Ice geysers added + Hydrocarbon Slush
+  Bugfixes:
+    - multiplayer works now, thanks to the help of my friend, noobaooba. who is just me.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.5
 Date: 2025-09-17

@@ -36,9 +36,11 @@ script.on_event(defines.events.on_research_finished, function(event)
     chant("story-event.consider-your-purpose-4")
   end
   if event.research.name == "assembling" then
+    if game.is_multiplayer() == false then
     game.show_message_dialog{
       text = {"tutorial-popup.thermal-system-explainer"}
     }
+    end
   end
   if event.research.name == "consider-the-self" then
     game.print({"story-event.consider-the-self-0"})
