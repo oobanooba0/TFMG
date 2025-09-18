@@ -498,19 +498,33 @@ data:extend({
         { type = "item", name = "small-lamp", amount = 1 }
     },
   },
-  {--tiny electric pole
+  {--tiny electric pylon
     type = "recipe",
     category = "assembling-machine",
-    name = "tiny-electric-pole",
+    name = "tiny-electric-pylon",
     energy_required = 4,
     enabled = false,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 2 },
-      { type = "item", name = "conductive-coil", amount = 8 },
+      { type = "item", name = "general-purpose-structure", amount = 1 },
+      { type = "item", name = "conductive-coil", amount = 4 },
       { type = "item", name = "mineral-glass", amount = 2 },
     },
     results = { 
-        { type = "item", name = "tiny-electric-pole", amount = 1 }
+      { type = "item", name = "tiny-electric-pylon", amount = 1 }
+    },
+  },
+  {--small electric pylon
+    type = "recipe",
+    category = "assembling-machine",
+    name = "small-electric-pylon",
+    energy_required = 4,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "tiny-electric-pylon", amount = 1 },
+      { type = "item", name = "general-purpose-structure", amount = 2 },
+    },
+    results = { 
+        { type = "item", name = "small-electric-pylon", amount = 1 }
     },
   },
   {--Constant combinator

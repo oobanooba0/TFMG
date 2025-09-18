@@ -61,4 +61,23 @@ data:extend({
     time = 16
     },
   },
+  {--energy distribution 2
+    type = "technology",
+    name = "energy-distribution-2",
+    icon = "__base__/graphics/technology/electric-energy-distribution-1.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "small-electric-pylon"
+      },
+    },
+    prerequisites = {"energy-distribution-1","consider-your-potential"},
+    unit = {
+    count = 32,
+    ingredients = {{"introspection-science", 1}},
+    time = 16
+    },
+  },
 })

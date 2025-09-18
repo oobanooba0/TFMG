@@ -4,11 +4,11 @@ local sounds = require("__base__.prototypes.entity.sounds")
 data:extend({
   {--tiny electric pole
     type = "electric-pole",
-    name = "tiny-electric-pole",
+    name = "tiny-electric-pylon",
     icon = "__base__/graphics/icons/medium-electric-pole.png",
     quality_indicator_scale = 0.75,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 0.1, result = "tiny-electric-pole"},
+    minable = {mining_time = 0.1, result = "tiny-electric-pylon"},
     max_health = 100,
     corpse = "medium-electric-pole-remnants",
     dying_explosion = "medium-electric-pole-explosion",
@@ -34,84 +34,81 @@ data:extend({
       layers =
       {
         {
-          filename = "__base__/graphics/entity/medium-electric-pole/medium-electric-pole.png",
+          filename = "__space-age__/graphics/entity/stack-inserter/stack-inserter-platform.png",
           priority = "extra-high",
-          width = 84,
-          height = 252,
+          flags = { "low-object" },
           direction_count = 4,
-          shift = util.by_pixel(3.5, -44),
+          width = 105,
+          height = 79,
+          shift = util.by_pixel(1.5, 7.5-1),
           scale = 0.5
         },
         {
-          filename = "__base__/graphics/entity/medium-electric-pole/medium-electric-pole-shadow.png",
-          priority = "extra-high",
-          width = 280,
-          height = 64,
+          filename = "__base__/graphics/entity/circuit-connector/ccm-inserter-01-base-sequence.png",
           direction_count = 4,
-          shift = util.by_pixel(56.5, -1),
+          height = 40,
+          line_length = 4,
+          priority = "extra-high",
+          flags = { "low-object" },
+          scale = 0.5,
+          shift = util.by_pixel(1.0, 2.5),
+          width = 52
+        },
+        {
+          filename = "__base__/graphics/entity/circuit-connector/ccm-inserter-01-wire-sequence.png",
+          direction_count = 4,
+          height = 46,
+          line_length = 4,
+          priority = "extra-high",
+          flags = { "low-object" },
+          scale = 0.5,
+          shift = util.by_pixel(3, -1),
+          width = 62
+        },
+        {
           draw_as_shadow = true,
-          scale = 0.5
-        }
+          filename = "__base__/graphics/entity/circuit-connector/ccm-inserter-01-base-shadow.png",
+          direction_count = 4,
+          height = 36,
+          line_length = 4,
+          priority = "extra-high",
+          flags = { "low-object" },
+          scale = 0.5,
+          shift = util.by_pixel(6.5, 7),
+          width = 56
+        },
+        {
+          draw_as_shadow = true,
+          filename = "__base__/graphics/entity/circuit-connector/ccm-inserter-01-wire-shadow.png",
+          direction_count = 4,
+          height = 46,
+          line_length = 4,
+          priority = "extra-high",
+          flags = { "low-object" },
+          scale = 0.5,
+          shift = util.by_pixel(12, 5.5),
+          width = 64
+        },
       }
     },
     connection_points =
     {
       {
-        shadow =
-        {
-          copper = util.by_pixel_hr(229, -13),
-          red = util.by_pixel_hr(246, -2),
-          green = util.by_pixel_hr(201, -2)
-        },
-        wire =
-        {
-          copper = util.by_pixel_hr(15, -199),
-          red = util.by_pixel_hr(43, -179),
-          green = util.by_pixel_hr(-15, -185)
-        }
+        shadow = { red = util.by_pixel(21.5, -2.5), green = util.by_pixel(25, 3), copper = util.by_pixel(23.25,0.25)},
+        wire = { red = util.by_pixel(13, -10), green = util.by_pixel(16, -4.5), copper = util.by_pixel(14.5, -7.25)},
       },
       {
-        shadow =
-        {
-          copper = util.by_pixel_hr(229, -13),
-          red = util.by_pixel_hr(230, 10),
-          green = util.by_pixel_hr(196, -23)
-        },
-        wire =
-        {
-          copper = util.by_pixel_hr(15, -199),
-          red = util.by_pixel_hr(27, -167),
-          green = util.by_pixel_hr(-9, -200)
-        }
+        shadow = { red = util.by_pixel(15, -6.5), green = util.by_pixel(21.5, -3), copper = util.by_pixel(18.25,-4.75) },
+        wire = { red = util.by_pixel(7.5, -13), green = util.by_pixel(13, -10), copper = util.by_pixel(10.25,-11.5) },
       },
       {
-        shadow =
-        {
-          copper = util.by_pixel_hr(229, -13),
-          red = util.by_pixel_hr(208, 12),
-          green = util.by_pixel_hr(217, -30)
-        },
-        wire =
-        {
-          copper = util.by_pixel_hr(15, -199),
-          red = util.by_pixel_hr(5, -166),
-          green = util.by_pixel_hr(13, -206)
-        }
+        shadow = { red = util.by_pixel(25, 8.5), green = util.by_pixel(22, 13.5), copper = util.by_pixel(23.5,11) },
+        wire = { red = util.by_pixel(16.5, 1.5), green = util.by_pixel(12.5, 6), copper = util.by_pixel(14.5,3.75) },
       },
       {
-        shadow =
-        {
-          copper = util.by_pixel_hr(229, -13),
-          red = util.by_pixel_hr(195, 1),
-          green = util.by_pixel_hr(238, -23)
-        },
-        wire =
-        {
-          copper = util.by_pixel_hr(15, -199),
-          red = util.by_pixel_hr(-12, -175),
-          green = util.by_pixel_hr(36, -199)
-        }
-      }
+        shadow = { red = util.by_pixel(4.5, -6), green = util.by_pixel(-3, -3.5), copper = util.by_pixel(0.75,-4.75) },
+        wire = { red = util.by_pixel(-5.5, -12.5), green = util.by_pixel(-11, -11), copper = util.by_pixel(-8.25,-11.75) }
+      },
     },
     radius_visualisation_picture =
     {
@@ -124,25 +121,25 @@ data:extend({
     {
       pictures =
       {
-        filename = "__base__/graphics/entity/medium-electric-pole/medium-electric-pole-reflection.png",
+        filename = "__base__/graphics/entity/small-electric-pole/small-electric-pole-reflection.png",
         priority = "extra-high",
         width = 12,
         height = 28,
-        shift = util.by_pixel(0, 55),
-        variation_count = 1,
+        shift = util.by_pixel(5, 40),
+        variation_count = 4,
         scale = 5
       },
       rotate = false,
-      orientation_to_variation = false
+      orientation_to_variation = true
     }
   },
-  {--tiny electric pole
+  {--small electric pole
     type = "electric-pole",
-    name = "tiny-electric-pole",
-    icon = "__base__/graphics/icons/medium-electric-pole.png",
+    name = "small-electric-pylon",
+    icon = "__base__/graphics/icons/small-electric-pole.png",
     quality_indicator_scale = 0.75,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 0.1, result = "tiny-electric-pole"},
+    minable = {mining_time = 0.1, result = "small-electric-pylon"},
     max_health = 100,
     corpse = "medium-electric-pole-remnants",
     dying_explosion = "medium-electric-pole-explosion",
@@ -158,8 +155,8 @@ data:extend({
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     damaged_trigger_effect = hit_effects.entity({{-0.2, -2.2},{0.2, 0.2}}),
     drawing_box_vertical_extension = 2.3,
-    maximum_wire_distance = 8,
-    supply_area_distance = 1,
+    maximum_wire_distance = 12,
+    supply_area_distance = 6,
     impact_category = "metal",
     open_sound = sounds.electric_network_open,
     close_sound = sounds.electric_network_close,

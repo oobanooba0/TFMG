@@ -262,7 +262,7 @@ data:extend({
     {
       {
         type = "unlock-recipe",
-        recipe = "tiny-electric-pole"
+        recipe = "tiny-electric-pylon"
       },
     },
     prerequisites = {"introspection-science-pack"},

@@ -4,14 +4,26 @@ data:extend({
 ---poles
   {
     type = "item",
-    name = "tiny-electric-pole",
-    icon = "__base__/graphics/icons/medium-electric-pole.png",
+    name = "tiny-electric-pylon",
+    icon = "__base__/graphics/icons/small-electric-pole.png",
     subgroup = "energy-pipe-distribution",
     order = "a-a",
     inventory_move_sound = item_sounds.electric_large_inventory_move,
     pick_sound = item_sounds.electric_large_inventory_pickup,
     drop_sound = item_sounds.electric_large_inventory_move,
-    place_result = "tiny-electric-pole",
+    place_result = "tiny-electric-pylon",
+    stack_size = 100
+  },
+    {
+    type = "item",
+    name = "small-electric-pylon",
+    icon = "__base__/graphics/icons/medium-electric-pole.png",
+    subgroup = "energy-pipe-distribution",
+    order = "a-b",
+    inventory_move_sound = item_sounds.electric_large_inventory_move,
+    pick_sound = item_sounds.electric_large_inventory_pickup,
+    drop_sound = item_sounds.electric_large_inventory_move,
+    place_result = "small-electric-pylon",
     stack_size = 100
   },
 
