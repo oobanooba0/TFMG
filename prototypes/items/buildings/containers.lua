@@ -1,7 +1,7 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
 
 data.extend({
- {
+ {--container 1
     type = "item",
     name = "container-1",
     icon = "__base__/graphics/icons/iron-chest.png",
@@ -13,5 +13,31 @@ data.extend({
     place_result = "container-1",
     stack_size = 50,
     random_tint_color = item_tints.iron_rust
+  },
+  {--passive provider container 1
+    type = "item",
+    name = "passive-provider-container-1",
+    icon = "__base__/graphics/icons/passive-provider-chest.png",
+    subgroup = "logistic-network",
+    color_hint = { text = "P" },
+    order = "b[storage]-c[passive-provider-chest]",
+    inventory_move_sound = item_sounds.metal_chest_inventory_move,
+    pick_sound = item_sounds.metal_chest_inventory_pickup,
+    drop_sound = item_sounds.metal_chest_inventory_move,
+    place_result = "passive-provider-container-1",
+    stack_size = 50
+  },
+  {--storage container 1
+    type = "item",
+    name = "storage-container-1",
+    icon = "__base__/graphics/icons/storage-chest.png",
+    subgroup = "logistic-network",
+    color_hint = { text = "S" },
+    order = "b[storage]-c[storage-chest]",
+    inventory_move_sound = item_sounds.metal_chest_inventory_move,
+    pick_sound = item_sounds.metal_chest_inventory_pickup,
+    drop_sound = item_sounds.metal_chest_inventory_move,
+    place_result = "storage-container-1",
+    stack_size = 50
   },
 })

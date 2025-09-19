@@ -212,7 +212,7 @@ data:extend({
       { type = "item", name = "mechanical-components", amount = 1 },
     },
     results = { 
-        { type = "item", name = "transport-belt-1", amount = 1 }
+      { type = "item", name = "transport-belt-1", amount = 1 }
     },
   },
   {--underground belt 1
@@ -226,7 +226,7 @@ data:extend({
       { type = "item", name = "transport-belt-1", amount = 5 },
     },
     results = { 
-        { type = "item", name = "underground-belt-1", amount = 2 }
+      { type = "item", name = "underground-belt-1", amount = 2 }
     },
   },
   {--splitter-1
@@ -241,7 +241,7 @@ data:extend({
       { type = "item", name = "transport-belt-1", amount = 2 },
     },
     results = { 
-        { type = "item", name = "splitter-1", amount = 1 }
+      { type = "item", name = "splitter-1", amount = 1 }
     },
   },
   {--inserter-1
@@ -256,7 +256,7 @@ data:extend({
       { type = "item", name = "mechanical-components", amount = 2 },
     },
     results = { 
-        { type = "item", name = "inserter-1", amount = 1 }
+      { type = "item", name = "inserter-1", amount = 1 }
     },
   },
   {--pipe
@@ -270,7 +270,7 @@ data:extend({
       { type = "item", name = "mineral-glass", amount = 1 },
     },
     results = { 
-        { type = "item", name = "pipe", amount = 1 }
+      { type = "item", name = "pipe", amount = 1 }
     },
   },
   {--pipe-to-ground
@@ -284,7 +284,7 @@ data:extend({
       { type = "item", name = "pipe", amount = 10 }
     },
     results = { 
-        { type = "item", name = "pipe-to-ground", amount = 2 }
+      { type = "item", name = "pipe-to-ground", amount = 2 }
     },
   },
   {--pump
@@ -300,7 +300,7 @@ data:extend({
       
     },
     results = { 
-        { type = "item", name = "pump", amount = 1 }
+      { type = "item", name = "pump", amount = 1 }
     },
   },
   {--storage tank
@@ -332,7 +332,7 @@ data:extend({
       
     },
     results = { 
-        { type = "item", name = "pumpjack", amount = 1 }
+      { type = "item", name = "pumpjack", amount = 1 }
     },
   },
   {--electric-mining-drill
@@ -347,7 +347,7 @@ data:extend({
       { type = "item", name = "modular-circuit", amount = 4 },
     },
     results = { 
-        { type = "item", name = "electric-mining-drill", amount = 1 }
+      { type = "item", name = "electric-mining-drill", amount = 1 }
     },
   },
   {--assembling machine
@@ -423,7 +423,7 @@ data:extend({
 
     },
     results = { 
-        { type = "item", name = "asteroid-collector", amount = 1 }
+      { type = "item", name = "asteroid-collector", amount = 1 }
     },
   },
   {--heavy space platform
@@ -436,7 +436,7 @@ data:extend({
       { type = "item", name = "general-purpose-structure", amount = 4 },
     },
     results = { 
-        { type = "item", name = "space-platform-foundation", amount = 1 }
+      { type = "item", name = "space-platform-foundation", amount = 1 }
     },
   },
   {--heat pipe
@@ -450,7 +450,7 @@ data:extend({
       { type = "item", name = "conductive-coil", amount = 8 },
     },
     results = { 
-        { type = "item", name = "heat-pipe", amount = 1 }
+      { type = "item", name = "heat-pipe", amount = 1 }
     },
   },
   {--small radiator
@@ -464,7 +464,7 @@ data:extend({
       { type = "item", name = "heat-pipe", amount = 4 },
     },
     results = { 
-        { type = "item", name = "small-radiator", amount = 1 }
+      { type = "item", name = "small-radiator", amount = 1 }
     },
   },
   {--repair pack
@@ -478,7 +478,7 @@ data:extend({
       { type = "item", name = "mechanical-components", amount = 2 },
     },
     results = { 
-        { type = "item", name = "repair-pack", amount = 1 }
+      { type = "item", name = "repair-pack", amount = 1 }
     },
   },
   {--supercomputer
@@ -494,7 +494,7 @@ data:extend({
       { type = "item", name = "ai-processor", amount = 1 },
     },
     results = { 
-        { type = "item", name = "supercomputer", amount = 1 }
+      { type = "item", name = "supercomputer", amount = 1 }
     },
   },
   {--neural-node
@@ -510,7 +510,7 @@ data:extend({
       { type = "item", name = "ai-processor", amount = 1 },
     },
     results = { 
-        { type = "item", name = "neural-node", amount = 1 }
+      { type = "item", name = "neural-node", amount = 1 }
     },
   },
   {--lamp
@@ -525,7 +525,7 @@ data:extend({
       { type = "item", name = "mineral-glass", amount = 2 },
     },
     results = { 
-        { type = "item", name = "small-lamp", amount = 1 }
+      { type = "item", name = "small-lamp", amount = 1 }
     },
   },
   {--tiny electric pylon
@@ -554,7 +554,7 @@ data:extend({
       { type = "item", name = "general-purpose-structure", amount = 2 },
     },
     results = { 
-        { type = "item", name = "small-electric-pylon", amount = 1 }
+      { type = "item", name = "small-electric-pylon", amount = 1 }
     },
   },
   {--Constant combinator
@@ -568,7 +568,7 @@ data:extend({
       { type = "item", name = "modular-circuit", amount = 2 },
     },
     results = { 
-        { type = "item", name = "constant-combinator", amount = 1 }
+      { type = "item", name = "constant-combinator", amount = 1 }
     },
   },
   {--arithmetic combinator
@@ -582,7 +582,7 @@ data:extend({
       { type = "item", name = "modular-circuit", amount = 2 },
     },
     results = { 
-        { type = "item", name = "arithmetic-combinator", amount = 1 }
+      { type = "item", name = "arithmetic-combinator", amount = 1 }
     },
   },
   {--decider combinator
@@ -596,7 +596,7 @@ data:extend({
       { type = "item", name = "modular-circuit", amount = 2 },
     },
     results = { 
-        { type = "item", name = "decider-combinator", amount = 1 }
+      { type = "item", name = "decider-combinator", amount = 1 }
     },
   },
   {--selector combinator
@@ -610,7 +610,7 @@ data:extend({
       { type = "item", name = "modular-circuit", amount = 2 },
     },
     results = { 
-        { type = "item", name = "selector-combinator", amount = 1 }
+      { type = "item", name = "selector-combinator", amount = 1 }
     },
   },
   {--power switch
@@ -625,7 +625,7 @@ data:extend({
       { type = "item", name = "mineral-glass", amount = 2 },
     },
     results = { 
-        { type = "item", name = "power-switch", amount = 1 }
+      { type = "item", name = "power-switch", amount = 1 }
     },
   },
   {--display-panel
@@ -640,7 +640,7 @@ data:extend({
       { type = "item", name = "mineral-glass", amount = 2 },
     },
     results = { 
-        { type = "item", name = "display-panel", amount = 1 }
+      { type = "item", name = "display-panel", amount = 1 }
     },
   },
   {--programmable speaker
@@ -654,7 +654,7 @@ data:extend({
       { type = "item", name = "modular-circuit", amount = 2 },
     },
     results = { 
-        { type = "item", name = "programmable-speaker", amount = 1 }
+      { type = "item", name = "programmable-speaker", amount = 1 }
     },
   },
   {--solar cell
@@ -669,7 +669,7 @@ data:extend({
       { type = "item", name = "crystalline-plate", amount = 2 },
     },
     results = { 
-        { type = "item", name = "solar-cell", amount = 1 }
+      { type = "item", name = "solar-cell", amount = 1 }
     },
   },
 
@@ -683,10 +683,41 @@ data:extend({
       { type = "item", name = "general-purpose-structure", amount = 12 },
     },
     results = { 
-        { type = "item", name = "container-1", amount = 1 }
+      { type = "item", name = "container-1", amount = 1 }
     },
   },
-    {--long-inserter-1
+  {--passive-provider-container-1
+    type = "recipe",
+    category = "assembling-machine",
+    name = "passive-provider-container-1",
+    energy_required = 4,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "container-1", amount = 1 },
+      { type = "item", name = "mechanical-components", amount = 4 },
+      { type = "item", name = "modular-circuit", amount = 4 },
+
+    },
+    results = { 
+      { type = "item", name = "passive-provider-container-1", amount = 1 }
+    },
+  },
+  {--storage-container-1
+    type = "recipe",
+    category = "assembling-machine",
+    name = "storage-container-1",
+    energy_required = 4,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "container-1", amount = 1 },
+      { type = "item", name = "mechanical-components", amount = 4 },
+      { type = "item", name = "modular-circuit", amount = 4 },
+    },
+    results = { 
+      { type = "item", name = "storage-container-1", amount = 1 }
+    },
+  },
+  {--long-inserter-1
     type = "recipe",
     category = "assembling-machine",
     name = "long-inserter-1",
@@ -697,7 +728,7 @@ data:extend({
       { type = "item", name = "inserter-1", amount = 1 },
     },
     results = { 
-        { type = "item", name = "long-inserter-1", amount = 1 }
+      { type = "item", name = "long-inserter-1", amount = 1 }
     },
   },
 
