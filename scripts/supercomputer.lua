@@ -13,6 +13,7 @@ function supercomputer.on_supercomputer_destroyed(event)
 	  end
 	end
 end
+
 function supercomputer.on_supercomputer_built(entity)
   local _reg_number, unit_number, _type = script.register_on_object_destroyed(entity)
   local surface = entity.surface

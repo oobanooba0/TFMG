@@ -13,19 +13,19 @@ function thermal_update(v,max_working_temperature,max_safe_temperature,specific_
 			local final_temperature = (temperature + (base_heat_output*(1 + v.machine.consumption_bonus)))
 			v.interface.temperature = final_temperature
 		end
-		if temperature >= max_working_temperature then
+		if temperature >= max_safe_temperature then
+			v.machine.disabled_by_script = true
+			v.machine.custom_status = {
+				diode = defines.entity_status_diode.red,
+				label = "Taking thermal damage!"
+			}
+			v.machine.damage(0.1,"neutral")--must be last part of the script that runs, since after this point, the machine may no longer exist.
+		elseif temperature >= max_working_temperature then
 			v.machine.disabled_by_script = true
 			v.machine.custom_status = {
 				diode = defines.entity_status_diode.red,
 				label = "Overheated!"
-				}
-			if temperature >= max_safe_temperature then
-				v.machine.custom_status = {
-					diode = defines.entity_status_diode.red,
-					label = "Taking thermal damage!"
-					}
-				v.machine.damage(0.1,"neutral")--must be last part of the script that runs.
-			end
+			}
 		else
 			v.machine.disabled_by_script = false
 			v.machine.custom_status = nil

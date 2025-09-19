@@ -78,7 +78,7 @@ sounds.demolisher =
       },
       audible_distance_modifier = 10,
     },
-    roar_probability = 1 / (60 * 60), -- average pause between roars is 60 seconds
+    roar_probability = 1 / (60 * 600), -- average pause between roars is 600 seconds
     hurt_roar =
     {
       variations = sound_variations("__space-age__/sound/enemies/demolisher/demolisher-hurt-roar", 5, 1.0),
@@ -140,7 +140,7 @@ sounds.demolisher =
       },
       audible_distance_modifier = 15,
     },
-    roar_probability = 1 / (60 * 60), -- average pause between roars is 60 seconds
+    roar_probability = 1 / (60 * 600), -- average pause between roars is 600 seconds
     hurt_roar =
     {
       variations = sound_variations("__space-age__/sound/enemies/demolisher/demolisher-hurt-roar", 5, 1.0),
@@ -202,7 +202,7 @@ sounds.demolisher =
       },
       audible_distance_modifier = 40,
     },
-    roar_probability = 1 / (60 * 60), -- average pause between roars is 60 seconds
+    roar_probability = 1 / (60 * 600), -- average pause between roars is 600 seconds
     hurt_roar =
     {
       variations = sound_variations("__space-age__/sound/enemies/demolisher/demolisher-hurt-roar", 5, 1.0),

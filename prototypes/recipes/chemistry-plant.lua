@@ -1,4 +1,4 @@
-data:extend({
+data:extend({--5:2:1 Water, Hydrocarbon, Organic
   {--Hydrocarbon seperation
     type = "recipe",
     category = "chemistry-plant",
@@ -11,14 +11,14 @@ data:extend({
     energy_required = 1,
     enabled = true,
     ingredients = {
-      { type = "fluid", name = "water", amount = 100 },
+      { type = "fluid", name = "water", amount = 250 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 100 },
-      { type = "fluid", name = "organic-sludge", amount = 100 },
+      { type = "fluid", name = "organic-sludge", amount = 50 },
     },
     results = { 
-      { type = "fluid", name = "water", amount = 120 },
+      { type = "fluid", name = "water", amount = 300 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 60 },
-      { type = "fluid", name = "organic-sludge", amount = 120 }
+      { type = "fluid", name = "organic-sludge", amount = 60 }
     },
     allow_productivity = false,
   },
@@ -33,14 +33,14 @@ data:extend({
     energy_required = 1,
     enabled = true,
     ingredients = {
-      { type = "fluid", name = "water", amount = 100 },
+      { type = "fluid", name = "water", amount = 250 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 100 },
-      { type = "fluid", name = "organic-sludge", amount = 100 },
+      { type = "fluid", name = "organic-sludge", amount = 50 },
     },
     results = { 
-      { type = "fluid", name = "water", amount = 80 },
+      { type = "fluid", name = "water", amount = 200 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 140 },
-      { type = "fluid", name = "organic-sludge", amount = 80 }
+      { type = "fluid", name = "organic-sludge", amount = 40 }
     },
     allow_productivity = false,
   },
