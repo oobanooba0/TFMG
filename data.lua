@@ -45,7 +45,7 @@ data.raw.recipe ["locomotive"] = nil
 
 
 
-
+data.raw ["locomotive"]["locomotive"].energy_source.fuel_categories = {"chemical"}
 data.raw.tile ["ice-smooth"].collision_mask = tile_collision_masks.ground()
 data.raw["mining-drill"]["electric-mining-drill"].mining_speed = 1
 data.raw["mining-drill"]["electric-mining-drill"].energy_usage = "0.5MW"
