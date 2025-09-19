@@ -10,6 +10,7 @@ end)
 
 script.on_configuration_changed(function()
   refresh_data_storage()
+  game.forces.player.set_surface_hidden(game.surfaces.nauvis, true)
 end)
 
 
