@@ -731,5 +731,96 @@ data:extend({
       { type = "item", name = "long-inserter-1", amount = 1 }
     },
   },
+  {--locomotive
+    type = "recipe",
+    category = "assembling-machine",
+    name = "locomotive",
+    energy_required = 16,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 2 },
+    },
+    results = { 
+      { type = "item", name = "locomotive", amount = 1 }
+    },
+  },
+  {--cargo wagon
+    type = "recipe",
+    category = "assembling-machine",
+    name = "cargo-wagon",
+    energy_required = 16,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 2 },
+    },
+    results = { 
+      { type = "item", name = "cargo-wagon", amount = 1 }
+    },
+  },
+  {--fluid wagon
+    type = "recipe",
+    category = "assembling-machine",
+    name = "fluid-wagon",
+    energy_required = 16,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 2 },
+    },
+    results = { 
+      { type = "item", name = "fluid-wagon", amount = 1 }
+    },
+  },
+  {--rail
+    type = "recipe",
+    category = "assembling-machine",
+    name = "rail",
+    energy_required = 1,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 1 },
+    },
+    results = { 
+      { type = "item", name = "rail", amount = 1 }
+    },
+  },
+  {--rail signal
+    type = "recipe",
+    category = "assembling-machine",
+    name = "rail-signal",
+    energy_required = 1,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 1 },
+    },
+    results = { 
+      { type = "item", name = "rail-signal", amount = 1 }
+    },
+  },
+  {--rail chain signal
+    type = "recipe",
+    category = "assembling-machine",
+    name = "rail-chain-signal",
+    energy_required = 1,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 1 },
+    },
+    results = { 
+      { type = "item", name = "rail-chain-signal", amount = 1 }
+    },
+  },
+  {--train stop
+    type = "recipe",
+    category = "assembling-machine",
+    name = "train-stop",
+    energy_required = 1,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 1 },
+    },
+    results = { 
+      { type = "item", name = "train-stop", amount = 1 }
+    },
+  },
 
 })

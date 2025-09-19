@@ -35,6 +35,15 @@ data.raw.recipe ["pipe"] = nil
 data.raw.recipe ["pipe-to-ground"] = nil
 data.raw.recipe ["pump"] = nil
 data.raw.recipe ["storage-tank"] = nil
+data.raw.recipe ["rail"] = nil
+data.raw.recipe ["cargo-wagon"] = nil
+data.raw.recipe ["fluid-wagon"] = nil
+data.raw.recipe ["rail-signal"] = nil
+data.raw.recipe ["rail-chain-signal"] = nil
+data.raw.recipe ["train-stop"] = nil
+data.raw.recipe ["locomotive"] = nil
+
+
 
 
 data.raw.tile ["ice-smooth"].collision_mask = tile_collision_masks.ground()

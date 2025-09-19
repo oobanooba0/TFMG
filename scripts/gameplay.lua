@@ -33,7 +33,6 @@ function gameplay.on_vital_building_built(entity)
   entity.destructible = false
 end
 
-
 function gameplay.softlock_detection()
   local platform = storage.platform
   for _, v in ipairs(platform.ejected_items) do
