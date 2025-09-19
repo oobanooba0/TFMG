@@ -1,6 +1,33 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 
+---Heat interface connections, again
+--connected
+local HP_NS = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-straight-vertical-1.png", scale = 0.5}
+local HP_EW = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-straight-horizontal-1.png", scale = 0.5}
+--disconnected
+local HP_N = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-down-1.png", scale = 0.5}
+local HP_N_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-down-1.png", scale = 0.5,shift = {0,-0.3}}
+local HP_E = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-left-1.png", scale = 0.5}
+local HP_E_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-left-1.png", scale = 0.5,shift = {0.3,0}}
+local HP_S = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-up-1.png", scale = 0.5}
+local HP_S_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-up-1.png", scale = 0.5,shift = {0,0.3}}
+local HP_W = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-right-1.png", scale = 0.5}
+local HP_W_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-right-1.png", scale = 0.5,shift = {-0.3,0}}
+---Hot Heat interface connections
+--connected
+local HP_NS_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-straight-vertical-1.png", scale = 0.5}
+local HP_EW_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-straight-horizontal-1.png", scale = 0.5}
+--disconnected
+local HP_N_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-down-1.png", scale = 0.5}
+local HP_N_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-down-1.png", scale = 0.5,shift = {0,-0.3}}
+local HP_E_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-left-1.png", scale = 0.5}
+local HP_E_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-left-1.png", scale = 0.5,shift = {0.3,0}}
+local HP_S_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-up-1.png", scale = 0.5}
+local HP_S_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-up-1.png", scale = 0.5,shift = {0,0.3}}
+local HP_W_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5}
+local HP_W_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5,shift = {-0.3,-0}}
+
 data:extend({
   {--tiny electric pole
     type = "electric-pole",
@@ -25,7 +52,7 @@ data:extend({
     damaged_trigger_effect = hit_effects.entity({{-0.2, -2.2},{0.2, 0.2}}),
     drawing_box_vertical_extension = 2.3,
     maximum_wire_distance = 8,
-    supply_area_distance = 1,
+    supply_area_distance = 1.5,
     impact_category = "metal",
     open_sound = sounds.electric_network_open,
     close_sound = sounds.electric_network_close,
@@ -156,7 +183,7 @@ data:extend({
     damaged_trigger_effect = hit_effects.entity({{-0.2, -2.2},{0.2, 0.2}}),
     drawing_box_vertical_extension = 2.3,
     maximum_wire_distance = 12,
-    supply_area_distance = 6,
+    supply_area_distance = 6.5,
     impact_category = "metal",
     open_sound = sounds.electric_network_open,
     close_sound = sounds.electric_network_close,
@@ -267,8 +294,6 @@ data:extend({
       orientation_to_variation = false
     }
   },
-
-
 ---generators
   {--proton decay RTG
     type = "solar-panel",
@@ -376,5 +401,540 @@ data:extend({
     },
     impact_category = "glass",
     production = "0.5MW"
+  },
+  {--small turbine
+    type = "generator",
+    name = "small-turbine",
+    icon = "__base__/graphics/icons/steam-turbine.png",
+    flags = {"placeable-neutral","player-creation"},
+    minable = {mining_time = 0.3, result = "small-turbine"},
+    max_health = 300,
+    corpse = "steam-turbine-remnants",
+    dying_explosion = "steam-turbine-explosion",
+    alert_icon_shift = util.by_pixel(0, -12),
+    effectivity = 1,
+    fluid_usage_per_tick = 1,
+    maximum_temperature = 500,
+    burns_fluid = false,
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 70
+      }
+    },
+    collision_box = {{-1.25, -2.35}, {1.25, 2.35}},
+    selection_box = {{-1.5, -2.5}, {1.5, 2.5}},
+    damaged_trigger_effect = hit_effects.entity(),
+    fluid_box =
+    {
+      volume = 200,
+      pipe_covers = pipecoverspictures(),
+      pipe_connections =
+      {
+        { flow_direction = "input-output", direction = defines.direction.south, position = {0, 2} },
+        { flow_direction = "input-output", direction = defines.direction.north, position = {0, -2} }
+      },
+      production_type = "input",
+      filter = "steam",
+      minimum_temperature = 500.0
+    },
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-output"
+    },
+    horizontal_animation =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/steam-turbine/steam-turbine-H.png",
+          width = 320,
+          height = 245,
+          frame_count = 8,
+          line_length = 4,
+          shift = util.by_pixel(0, -2.75),
+          run_mode = "backward",
+          scale = 0.5
+        },
+        {
+          filename = "__base__/graphics/entity/steam-turbine/steam-turbine-H-shadow.png",
+          width = 435,
+          height = 150,
+          repeat_count = 8,
+          line_length = 1,
+          draw_as_shadow = true,
+          shift = util.by_pixel(28.5, 18),
+          run_mode = "backward",
+          scale = 0.5
+        }
+      }
+    },
+    vertical_animation =
+    {
+     layers =
+     {
+        {
+          filename = "__base__/graphics/entity/steam-turbine/steam-turbine-V.png",
+          width = 217,
+          height = 374,
+          frame_count = 8,
+          line_length = 4,
+          shift = util.by_pixel(4.75, 0.0),
+          run_mode = "backward",
+          scale = 0.5
+        },
+        {
+          filename = "__base__/graphics/entity/steam-turbine/steam-turbine-V-shadow.png",
+          width = 302,
+          height = 260,
+          repeat_count = 8,
+          line_length = 1,
+          draw_as_shadow = true,
+          shift = util.by_pixel(39.5, 24.5),
+          run_mode = "backward",
+          scale = 0.5
+        }
+      }
+    },
+    smoke =
+    {
+      {
+        name = "turbine-smoke",
+        north_position = {0.0, -1.0},
+        east_position = {0.75, -0.75},
+        frequency = 10 / 32,
+        starting_vertical_speed = 0.08,
+        starting_frame_deviation = 60
+      }
+    },
+    impact_category = "metal-large",
+    open_sound = sounds.machine_open,
+    close_sound = sounds.machine_close,
+    working_sound =
+    {
+      sound =
+      {
+        filename = "__base__/sound/steam-turbine.ogg",
+        volume = 0.49,
+        modifiers = volume_multiplier("main-menu", 0.7),
+        speed_smoothing_window_size = 60,
+        advanced_volume_control = {attenuation = "exponential"},
+        audible_distance_modifier = 0.8,
+      },
+      match_speed_to_activity = true,
+      max_sounds_per_prototype = 3,
+      fade_in_ticks = 4,
+      fade_out_ticks = 20
+    },
+    perceived_performance = {minimum = 0.25, performance_to_activity_rate = 2.0},
+    water_reflection =
+    {
+      pictures =
+      {
+        filename = "__base__/graphics/entity/steam-turbine/steam-turbine-reflection.png",
+        priority = "extra-high",
+        width = 40,
+        height = 36,
+        shift = util.by_pixel(0, 50),
+        variation_count = 2,
+        repeat_count = 2,
+        scale = 5
+      },
+      rotate = false,
+      orientation_to_variation = true
+    }
+  },
+  {--small heat exchanger
+    type = "boiler",
+    name = "small-heat-exchanger",
+    icon = "__base__/graphics/icons/heat-boiler.png",
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {mining_time = 0.1, result = "small-heat-exchanger"},
+    max_health = 200,
+    corpse = "heat-exchanger-remnants",
+    dying_explosion = "heat-exchanger-explosion",
+    impact_category = "metal",
+    mode = "output-to-separate-pipe",
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 90
+      },
+      {
+        type = "explosion",
+        percent = 30
+      },
+      {
+        type = "impact",
+        percent = 30
+      }
+    },
+    collision_box = {{-1.29, -0.79}, {1.29, 0.79}},
+    selection_box = {{-1.5, -1}, {1.5, 1}},
+    damaged_trigger_effect = hit_effects.entity(),
+    target_temperature = 500,
+    fluid_box =
+    {
+      volume = 200,
+      pipe_covers = pipecoverspictures(),
+      pipe_connections =
+      {
+        {flow_direction = "input-output", direction = defines.direction.west, position = {-1, 0.5}},
+        {flow_direction = "input-output", direction = defines.direction.east, position = {1, 0.5}}
+      },
+      production_type = "input",
+      filter = "water"
+    },
+    output_fluid_box =
+    {
+      volume  = 200,
+      pipe_covers = pipecoverspictures(),
+      pipe_connections =
+      {
+        {flow_direction = "output", direction = defines.direction.north, position = {0, -0.5}}
+      },
+      production_type = "output",
+      filter = "steam"
+    },
+    energy_consumption = "10MW",
+    energy_source =
+    {
+      type = "heat",
+      max_temperature = 1000,
+      specific_heat = "1MJ",
+      max_transfer = "2GW",
+      min_working_temperature = 500,
+      minimum_glow_temperature = 350,
+      connections =
+      {
+        {
+          position = {0, 0.5},
+          direction = defines.direction.south
+        }
+      },
+      pipe_covers =
+        make_4way_animation_from_spritesheet(
+        {
+          filename = "__base__/graphics/entity/heat-exchanger/heatex-endings.png",
+          width = 64,
+          height = 64,
+          direction_count = 4,
+          scale = 0.5
+        }),
+      heat_pipe_covers =
+        make_4way_animation_from_spritesheet(
+        apply_heat_pipe_glow{
+          filename = "__base__/graphics/entity/heat-exchanger/heatex-endings-heated.png",
+          width = 64,
+          height = 64,
+          direction_count = 4,
+          scale = 0.5
+        }),
+      heat_picture =
+      {
+        north = apply_heat_pipe_glow
+        {
+          filename = "__base__/graphics/entity/heat-exchanger/heatex-N-heated.png",
+          priority = "extra-high",
+          width = 44,
+          height = 96,
+          shift = util.by_pixel(-0.5, 8.5),
+          scale = 0.5
+        },
+        east = apply_heat_pipe_glow
+        {
+          filename = "__base__/graphics/entity/heat-exchanger/heatex-E-heated.png",
+          priority = "extra-high",
+          width = 80,
+          height = 80,
+          shift = util.by_pixel(-21, -13),
+          scale = 0.5
+        },
+        south = apply_heat_pipe_glow
+        {
+          filename = "__base__/graphics/entity/heat-exchanger/heatex-S-heated.png",
+          priority = "extra-high",
+          width = 28,
+          height = 40,
+          shift = util.by_pixel(-1, -30),
+          scale = 0.5
+        },
+        west = apply_heat_pipe_glow
+        {
+          filename = "__base__/graphics/entity/heat-exchanger/heatex-W-heated.png",
+          priority = "extra-high",
+          width = 64,
+          height = 76,
+          shift = util.by_pixel(23, -13),
+          scale = 0.5
+        }
+      }
+    },
+    working_sound =
+    {
+      sound =
+      {
+        filename = "__base__/sound/heat-exchanger.ogg",
+        volume = 0.65,
+        modifiers = volume_multiplier("main-menu", 0.7),
+        audible_distance_modifier = 0.5,
+      },
+      fade_in_ticks = 4,
+      fade_out_ticks = 20
+    },
+    open_sound = sounds.steam_open,
+    close_sound = sounds.steam_close,
+
+    pictures =
+    {
+      north =
+      {
+        structure =
+        {
+          layers =
+          {
+            {
+              filename = "__base__/graphics/entity/heat-exchanger/heatex-N-idle.png",
+              priority = "extra-high",
+              width = 269,
+              height = 221,
+              shift = util.by_pixel(-1.25, 5.25),
+              scale = 0.5
+            },
+            {
+              filename = "__base__/graphics/entity/boiler/boiler-N-shadow.png",
+              priority = "extra-high",
+              width = 274,
+              height = 164,
+              scale = 0.5,
+              shift = util.by_pixel(20.5, 9),
+              draw_as_shadow = true
+            }
+          }
+        }
+      },
+      east =
+      {
+        structure =
+        {
+          layers =
+          {
+            {
+              filename = "__base__/graphics/entity/heat-exchanger/heatex-E-idle.png",
+              priority = "extra-high",
+              width = 211,
+              height = 301,
+              shift = util.by_pixel(-1.75, 1.25),
+              scale = 0.5
+            },
+            {
+              filename = "__base__/graphics/entity/boiler/boiler-E-shadow.png",
+              priority = "extra-high",
+              width = 184,
+              height = 194,
+              scale = 0.5,
+              shift = util.by_pixel(30, 9.5),
+              draw_as_shadow = true
+            }
+          }
+        }
+      },
+      south =
+      {
+        structure =
+        {
+          layers =
+          {
+            {
+              filename = "__base__/graphics/entity/heat-exchanger/heatex-S-idle.png",
+              priority = "extra-high",
+              width = 260,
+              height = 201,
+              shift = util.by_pixel(4, 10.75),
+              scale = 0.5
+            },
+            {
+              filename = "__base__/graphics/entity/boiler/boiler-S-shadow.png",
+              priority = "extra-high",
+              width = 311,
+              height = 131,
+              scale = 0.5,
+              shift = util.by_pixel(29.75, 15.75),
+              draw_as_shadow = true
+            }
+          }
+        }
+      },
+      west =
+      {
+        structure =
+        {
+          layers =
+          {
+            {
+              filename = "__base__/graphics/entity/heat-exchanger/heatex-W-idle.png",
+              priority = "extra-high",
+              width = 196,
+              height = 273,
+              shift = util.by_pixel(1.5, 7.75),
+              scale = 0.5
+            },
+            {
+              filename = "__base__/graphics/entity/boiler/boiler-W-shadow.png",
+              priority = "extra-high",
+              width = 206,
+              height = 218,
+              scale = 0.5,
+              shift = util.by_pixel(19.5, 6.5),
+              draw_as_shadow = true
+            }
+          }
+        }
+      },
+    },
+    burning_cooldown = 20,
+    water_reflection = boiler_reflection()
+  },
+  {--chemical-reactor
+    type = "reactor",
+    name = "chemical-reactor",
+    icon  = "__base__/graphics/icons/nuclear-reactor.png",
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {mining_time = 0.5, result = "chemical-reactor"},
+    max_health = 500,
+    corpse = "nuclear-reactor-remnants",
+    dying_explosion = "nuclear-reactor-explosion",
+    consumption = "20MW",
+    neighbour_bonus = 0.5,
+    energy_source =
+    {
+      type = "fluid",
+      effectivity = 0.5,
+      burns_fluid = true,
+      scale_fluid_usage = true,
+      destroy_non_fuel_fluid = false,
+      fluid_box = {
+        pipe_covers = pipecoverspictures(),
+        volume = 200,
+        pipe_connections = {
+          { flow_direction = "input-output", direction = defines.direction.east, position = { 2, 0 } },
+          { flow_direction = "input-output", direction = defines.direction.west, position = { -2, 0 } },
+          { flow_direction = "input-output", direction = defines.direction.south, position = { 0, 2 } },
+          { flow_direction = "input-output", direction = defines.direction.north, position = { 0, -2 } },
+        },
+        production_type = "input-output",
+      },
+    },
+    collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
+    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    damaged_trigger_effect = hit_effects.entity(),
+    picture = {
+      layers = {
+        {
+          filename = "__Krastorio2Assets__/buildings/gas-power-station/gas-power-station.png",
+          width = 380,
+          height = 380,
+          scale = 0.5,
+          frame_count = 32,
+          line_length = 8,
+          animation_speed = 1.2,
+          shift = { 0, 0 },
+        },
+        {
+          filename = "__Krastorio2Assets__/buildings/pipe-patch/pipe-patch.png",
+          width = 55,
+          height = 50,
+          frame_count = 1,
+          repeat_count = 32,
+          scale = 0.5,
+          shift = { 0, 2.5 },
+        },
+        {
+          filename = "__Krastorio2Assets__/buildings/gas-power-station/gas-power-station-sh.png",
+          width = 380,
+          height = 380,
+          scale = 0.5,
+          frame_count = 1,
+          repeat_count = 32,
+          animation_speed = 1.2,
+          draw_as_shadow = true,
+          shift = { 0, 0 },
+        },
+      },
+    },
+    heat_buffer =
+    {
+      max_temperature = 750,
+      specific_heat = "10MJ",
+      max_transfer = "10GW",
+      minimum_glow_temperature = 350,
+      connections =
+      {
+        { position = {-1, -2}, direction = defines.direction.north },
+        { position = {1, -2}, direction = defines.direction.north },
+        { position = {2, -1}, direction = defines.direction.east },
+        { position = {2, 1}, direction = defines.direction.east },
+        { position = {1, 2}, direction = defines.direction.south },
+        { position = {-1, 2}, direction = defines.direction.south },
+        { position = {-2, 1}, direction = defines.direction.west },
+        { position = {-2, -1}, direction = defines.direction.west }
+      },
+    },
+    connection_patches_connected = {
+      HP_NS,HP_NS,
+      HP_EW,HP_EW,
+      HP_NS,HP_NS,
+      HP_EW,HP_EW,
+      },
+    connection_patches_disconnected = {
+      HP_N_big,HP_N_big,
+      HP_E_big,HP_E_big,
+      HP_S_big,HP_S_big,
+      HP_W_big,HP_W_big,
+      },
+    heat_connection_patches_connected ={
+      HP_NS_Hot,HP_NS_Hot,
+      HP_EW_Hot,HP_EW_Hot,
+      HP_NS_Hot,HP_NS_Hot,
+      HP_EW_Hot,HP_EW_Hot,
+      },
+    heat_connection_patches_disconnected ={
+      HP_N_Hot_big,HP_N_Hot_big,
+      HP_E_Hot_big,HP_E_Hot_big,
+      HP_S_Hot_big,HP_S_Hot_big,
+      HP_W_Hot_big,HP_W_Hot_big,
+    },
+    impact_category = "metal-large",
+    open_sound = {filename = "__base__/sound/open-close/nuclear-open.ogg", volume = 0.8},
+    close_sound = {filename = "__base__/sound/open-close/nuclear-close.ogg", volume = 0.8},
+    working_sound = {
+      sound = {
+        variations = {
+          {
+            filename = "__Krastorio2Assets__/sounds/buildings/gas-power-station-1.ogg",
+            volume = 0.5,
+          },
+          {
+            filename = "__Krastorio2Assets__/sounds/buildings/gas-power-station-2.ogg",
+            volume = 0.4,
+          },
+        },
+        aggregation = {
+          max_count = 3,
+          remove = false,
+          count_already_playing = true,
+        },
+      },
+      match_speed_to_activity = true,
+      max_sounds_per_prototype = 3,
+      fade_in_ticks = 10,
+      fade_out_ticks = 30,
+    },
+    default_temperature_signal = {type = "virtual", name = "signal-T"},
+    circuit_wire_max_distance = reactor_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["nuclear-reactor"],
   },
 })

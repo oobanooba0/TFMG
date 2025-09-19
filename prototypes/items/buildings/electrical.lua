@@ -1,5 +1,4 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
-
 data:extend({
 ---poles
   {
@@ -49,11 +48,47 @@ data:extend({
     icon = "__base__/graphics/icons/solar-panel.png",
     place_as_equipment_result = "solar-cell-equipment",
     subgroup = "energy",
-    order = "a",
+    order = "a[energy]-a[solar]",
     inventory_move_sound = item_sounds.electric_large_inventory_move,
     pick_sound = item_sounds.electric_large_inventory_pickup,
     drop_sound = item_sounds.electric_large_inventory_move,
     place_result = "solar-cell",
     stack_size = 50
+  },
+  {
+    type = "item",
+    name = "small-turbine",
+    icon = "__base__/graphics/icons/steam-turbine.png",
+    subgroup = "energy",
+    order = "a[energy]-b[steam]",
+    inventory_move_sound = item_sounds.steam_inventory_move,
+    pick_sound = item_sounds.steam_inventory_pickup,
+    drop_sound = item_sounds.steam_inventory_move,
+    place_result = "small-turbine",
+    stack_size = 10,
+    random_tint_color = item_tints.iron_rust
+  },
+  {
+    type = "item",
+    name = "small-heat-exchanger",
+    icon = "__base__/graphics/icons/heat-boiler.png",
+    subgroup = "energy",
+    order = "b[steam]-b[heat]",
+    inventory_move_sound = item_sounds.steam_inventory_move,
+    pick_sound = item_sounds.steam_inventory_pickup,
+    drop_sound = item_sounds.steam_inventory_move,
+    place_result = "small-heat-exchanger",
+    stack_size = 50,
+    weight = 40*kg,
+    random_tint_color = item_tints.iron_rust
+  },
+  {
+    type = "item",
+    name = "chemical-reactor",
+    icon = "__Krastorio2Assets__/icons/entities/gas-power-station.png",
+    stack_size = 10,
+    subgroup = "energy",
+    order = "c[heat]-a[chemical]",
+    place_result = "chemical-reactor",
   },
 })

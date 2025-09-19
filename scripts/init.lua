@@ -31,6 +31,7 @@ platform = force.create_space_platform({
   platform.apply_starter_pack()
   storage.platform = platform
 	force.lock_space_location("nauvis")--Locks nauvis lol.
+  game.forces.player.set_surface_hidden(game.surfaces.nauvis, true)
 	--game.planets['arrival'].create_surface()
 end
 

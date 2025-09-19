@@ -1,4 +1,4 @@
-data:extend({--5:2:1 Water, Hydrocarbon, Organic
+data:extend({--6:4:1 Water, Hydrocarbon, Organic
   {--Hydrocarbon slush seperation
     type = "recipe",
     category = "refinery",
@@ -7,14 +7,14 @@ data:extend({--5:2:1 Water, Hydrocarbon, Organic
       { icon = "__space-age__/graphics/icons/fluid/lithium-brine.png"},
       { icon = "__base__/graphics/icons/signal/signal-fire.png", shift = {0,7}, scale = 0.3, tint = {1,0.2,0.2,0.5}}
     },
-    energy_required = 5,
+    energy_required = 4,
     enabled = true,
     ingredients = {
       { type = "fluid", name = "hydrocarbon-slush", amount = 100 },
     },
     results = { 
-      { type = "fluid", name = "water", amount = 125 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 30 },
+      { type = "fluid", name = "water", amount = 150 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 60 },
       { type = "fluid", name = "organic-sludge", amount = 10 }
     },
   },
@@ -29,12 +29,12 @@ data:extend({--5:2:1 Water, Hydrocarbon, Organic
     energy_required = 1,
     enabled = true,
     ingredients = {
-      { type = "fluid", name = "water", amount = 250 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 100 },
+      { type = "fluid", name = "water", amount = 300 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
     },
     results = { 
-      { type = "fluid", name = "water", amount = 375 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 40 },
+      { type = "fluid", name = "water", amount = 450 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 80 },
       { type = "fluid", name = "organic-sludge", amount = 5 }
     },
     allow_productivity = false,
@@ -50,12 +50,12 @@ data:extend({--5:2:1 Water, Hydrocarbon, Organic
     energy_required = 1,
     enabled = true,
     ingredients = {
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 100 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
       { type = "fluid", name = "organic-sludge", amount = 50 },  
     },
     results = { 
-      { type = "fluid", name = "water", amount = 25 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 40 },
+      { type = "fluid", name = "water", amount = 30 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 80 },
       { type = "fluid", name = "organic-sludge", amount = 75 }
     },
     allow_productivity = false,

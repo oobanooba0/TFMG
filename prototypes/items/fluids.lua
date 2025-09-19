@@ -15,6 +15,7 @@ data:extend({
   {
     type = "fluid",
     name = "short-chain-hydrocarbons",
+    fuel_value = "5MJ",
     icon = "__base__/graphics/icons/fluid/petroleum-gas.png",
     subgroup = "fluid",
     order = "b[intermediate-fluid]-a[arrival]",
