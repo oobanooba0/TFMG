@@ -3,7 +3,6 @@ local tile_collision_masks = require("__base__/prototypes/tile/tile-collision-ma
 
 data.raw ["technology"] = {}
 data.raw ["tips-and-tricks-item"] = {}
-data.raw ["research-achievement"] = {}
 data.raw ["utility-constants"]["default"].main_menu_simulations = {}
 
 --adjust vanilla content
@@ -110,6 +109,9 @@ end
 
 --this is the part where I add stuff into the game again
 
+--achievements
+require("prototypes.achievements")
+
 --buildings
 require("prototypes.buildings.belts")
 require("prototypes.buildings.containers")
@@ -174,9 +176,9 @@ require("prototypes.recipes.refinery")
 require("prototypes.recipes.special")
 require("prototypes.recipes.supercomputer")
 
+--sound
+require("sound.ambient.ambient-sounds")
+
 --technolgoies
 require("prototypes.technologies.platform-phase")
 require("prototypes.technologies.arrival-phase")
-
---sound
-require("sound.ambient.ambient-sounds")

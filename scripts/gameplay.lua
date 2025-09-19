@@ -19,12 +19,13 @@ function gameplay.deploy_scout_o_tron(event)
   if spider == nil then -- check if no spider
     game.print("Space platform contains no scout'o'tron pod to deploy")--turn this into one of those floating text errors, or grey out the box somehow.
   return end
-  local spider_entity = surface.create_entity({name = "scout-o-tron", position = { math.random(-10,10) , math.random(-10,10) }, force = "player",})--adding item = spider allows it to deploy with inventory contents but unfortunately i lack a means to actually load its inventory properly
+  local spider_entity = surface.create_entity({name = "scout-o-tron", position = { math.random(-10,10) , math.random(-10,10) }, force = "player"})--adding item = spider allows it to deploy with inventory contents but unfortunately i lack a means to actually load its inventory properly
   spider.clear()
   spider_entity.grid.put{name = "solar-cell-equipment"}
   spider_entity.grid.put{name = "solar-cell-equipment"}
   spider_entity.grid.put{name = "roboport-1-equipment"}
   spider_entity.insert({name = "construction-robot", count = 8})
+  game.get_player(event.player_index).unlock_achievement ("spiders")
   game.print({"spider-ui.scout-o-tron-deploy-message",spider_entity.gps_tag}) -- :)
 end
 

@@ -379,6 +379,14 @@ data:extend({
         type = "unlock-recipe",
         recipe = "roboport-1"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "passive-provider-container-1"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "storage-container-1"
+      },
     },
     prerequisites = {"introspection-science-pack"},
     unit = {
