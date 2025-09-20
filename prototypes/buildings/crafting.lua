@@ -578,8 +578,6 @@ data:extend({
 local supercomputer_input = table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
 supercomputer_input.name = "supercomputer-input"
 supercomputer_input.collision_mask = {layers = {},not_colliding_with_itself = true}
---supercomputer_input.allow_copy_paste = false
---supercomputer_input.flags = {"placeable-neutral", "player-creation","not-blueprintable"}
 supercomputer_input.minable = nil
 supercomputer_input.selection_priority = 51
 data:extend{supercomputer_input}
@@ -587,8 +585,6 @@ data:extend{supercomputer_input}
 local supercomputer_output = table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
 supercomputer_output.name = "supercomputer-output"
 supercomputer_output.collision_mask = {layers = {},not_colliding_with_itself = true}
---supercomputer_output.allow_copy_paste = false
---supercomputer_output.flags = {"placeable-neutral", "player-creation","not-blueprintable"}
 supercomputer_output.minable = nil
 supercomputer_output.selection_priority = 51
 data:extend{supercomputer_output}
@@ -1281,5 +1277,73 @@ data:extend({
     energy_usage = "1.5MW",
     --module_slots = 2,
     --allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
+  },
+  {--Small crusher
+    type = "assembling-machine",
+    name = "small-crusher",
+    icon = "__space-age__/graphics/icons/crusher.png",
+    flags = {"placeable-neutral", "placeable-player", "player-creation"},
+    minable = {mining_time = 0.2, result = "small-crusher"},
+    max_health = 350,
+    corpse = "crusher-remnants",
+    dying_explosion = "electric-furnace-explosion",
+    circuit_wire_max_distance = 9,
+    circuit_connector = circuit_connector_definitions["crusher"],
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 80
+      }
+    },
+    collision_box = {{-0.7, -1.2}, {0.7, 1.2}},
+    selection_box = {{-1, -1.5}, {1, 1.5}},
+    damaged_trigger_effect = hit_effects.entity(),
+    module_slots = 0,
+    icons_positioning =
+    {
+      {inventory_index = defines.inventory.crafter_modules, shift = {0, 0.3}}
+    },
+    icon_draw_specification = {shift = {0, -0.45}},
+    allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
+    crafting_categories = {"small-crusher"},
+    crafting_speed = 1,
+    energy_usage = "1.5MW",
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions_per_minute = { pollution = 1 }
+    },
+    open_sound = sounds.mech_small_open,
+    close_sound = sounds.mech_small_close,
+    working_sound =
+    {
+      sound =
+      {
+        filename = "__space-age__/sound/entity/crusher/crusher-loop.ogg",
+        volume = 0.8,
+        audible_distance_modifier = 0.6,
+      },
+      fade_in_ticks = 4,
+      fade_out_ticks = 20,
+      max_sounds_per_prototype = 3
+    },
+    graphics_set = require("__space-age__.prototypes.entity.crusher-pictures"),
+    water_reflection =
+    {
+      pictures =
+      {
+        filename = "__space-age__/graphics/entity/crusher/crusher-reflection.png",
+        priority = "extra-high",
+        width = 24,
+        height = 24,
+        shift = util.by_pixel(5, 40-32),
+        variation_count = 1,
+        scale = 5
+      },
+      rotate = false,
+      orientation_to_variation = false
+    }
   },
 })

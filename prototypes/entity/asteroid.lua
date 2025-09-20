@@ -253,7 +253,7 @@ for asteroid_size, asteroid_size_name in pairs(asteroid_sizes) do
         --factoriopedia_simulation = factoriopedia_sim,
 
         -- asteroid-chunk properties
-        minable = asteroid_size_name == "chunk" and {mining_time = 0.2, result = asteroid_name, mining_particle = asteroid_type.."-asteroid-chunk-particle-medium" } or nil,
+        minable = asteroid_size_name == "chunk" and {mining_time = 0.2, result = asteroid_name, count = 10, mining_particle = asteroid_type.."-asteroid-chunk-particle-medium" } or nil,
 
         -- asteroid properties
         flags = asteroid_size_name ~= "chunk" and {"placeable-enemy", "placeable-off-grid", "not-repairable", "not-on-map"} or nil,
@@ -264,6 +264,5 @@ for asteroid_size, asteroid_size_name in pairs(asteroid_sizes) do
     })
   end
 end
-
 -- chunk backlight overrides
 data.raw["asteroid-chunk"]["ferric-asteroid-chunk"].graphics_set.lights[2] = { color = {0.85,0.5,0.4}, direction = {-1,-45,0.1} }

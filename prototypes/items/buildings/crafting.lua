@@ -1,7 +1,7 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
 
 data:extend({
-  {
+  {--matter reconstructor
     type = "item",
     name = "matter-reconstructor",
     icon = "__Krastorio2Assets__/icons/entities/stabilizer-charging-station.png",
@@ -14,7 +14,7 @@ data:extend({
     stack_size = 50,
     flags = {"always-show"},
   },
-  {
+  {-- assembling machine
     type = "item",
     name = "assembling-machine",
     icon = "__base__/graphics/icons/assembling-machine-3.png",
@@ -27,7 +27,7 @@ data:extend({
     stack_size = 50,
     weight = 40*kg,
   },
-  {
+  {-- furnace
     type = "item",
     name = "furnace",
     icon = "__base__/graphics/icons/electric-furnace.png",
@@ -40,39 +40,41 @@ data:extend({
     stack_size = 50,
     weight = 20*kg
   },
-  {
+  {--supercomputer
     type = "item",
     name = "supercomputer",
     icon = "__Krastorio2Assets__/icons/entities/quantum-computer.png",
     subgroup = "production-machine",
-    order = "a-c",
+    order = "b-a",
     inventory_move_sound = item_sounds.mechanical_inventory_move,
     pick_sound = item_sounds.mechanical_inventory_pickup,
     drop_sound = item_sounds.mechanical_inventory_move,
     place_result = "supercomputer",
     stack_size = 50,
   },
-  {
+  {--supercomputer input
     type = "item",
     name = "supercomputer-input",
     icon = "__base__/graphics/icons/assembling-machine-2.png",
     hidden = true,
+    hidden_in_factoriopedia =true,
     subgroup = "debug",
     order = "a-a",
     place_result = "supercomputer-input",
     stack_size = 50,
   },
-  {
+  {--supercomputer output
     type = "item",
     name = "supercomputer-output",
     icon = "__base__/graphics/icons/assembling-machine-2.png",
     hidden = true,
+    hidden_in_factoriopedia =true,
     subgroup = "debug",
     order = "a-b",
     place_result = "supercomputer-output",
     stack_size = 50,
   },
-  {
+  {--chemistry plant
     type = "item",
     name = "chemistry-plant",
     icon = "__base__/graphics/icons/chemical-plant.png",
@@ -84,7 +86,7 @@ data:extend({
     place_result = "chemistry-plant",
     stack_size = 10
   },
-  {
+  {-- refinery
     type = "item",
     name = "refinery",
     icon = "__base__/graphics/icons/oil-refinery.png",
@@ -96,17 +98,30 @@ data:extend({
     place_result = "refinery",
     stack_size = 10
   },
-  {
+  {-- micro assembler
     type = "item",
     name = "micro-assembler",
     icon = "__base__/graphics/icons/assembling-machine-2.png",
     subgroup = "production-machine",
-    order = "a-a",
+    order = "a-ab",
     inventory_move_sound = item_sounds.mechanical_inventory_move,
     pick_sound = item_sounds.mechanical_inventory_pickup,
     drop_sound = item_sounds.mechanical_inventory_move,
     place_result = "micro-assembler",
     stack_size = 50,
     weight = 40*kg,
+  },
+  {--small crusher
+    type = "item",
+    name = "small-crusher",
+    icon = "__space-age__/graphics/icons/crusher.png",
+    subgroup = "production-machine",
+    order = "a-e",
+    inventory_move_sound = item_sounds.drill_inventory_move,
+    pick_sound = item_sounds.drill_inventory_pickup,
+    drop_sound = item_sounds.drill_inventory_move,
+    place_result = "small-crusher",
+    stack_size = 10,
+    weight = 100*kg
   },
 })

@@ -35,5 +35,8 @@ data:extend({
         type = "recipe-category",
         name = "refinery"
     },
-
+    {--small crusher
+        type = "recipe-category",
+        name = "small-crusher"
+    },
 })

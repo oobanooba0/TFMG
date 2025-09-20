@@ -18,7 +18,7 @@ local function resource(resource_parameters, autoplace_parameters)
     {
       mining_particle = "stone-particle",--remember to change later
       mining_time = resource_parameters.mining_time,
-      result = resource_parameters.name
+      result = resource_parameters.result
     },
     category = resource_parameters.category,
     subgroup = resource_parameters.subgroup,
@@ -73,8 +73,9 @@ data:extend({
       order = "b",
       map_color = {0.803, 0.388, 0.215},
       mining_time = 1,
+      result = "ferric-asteroid-chunk",
       walking_sound = sounds.ore,
-      mining_visualisation_tint = {r = 1.000, g = 0.675, b = 0.541, a = 1.000}
+      mining_visualisation_tint = {r = 1.000, g = 0.675, b = 0.541, a = 1.000},
     },
     {
       probability_expression = 0
@@ -95,6 +96,7 @@ data:extend({
       order = "b",
       map_color = {0.4, 0.6, 0.4},
       mining_time = 2,
+      result = "crystalline-asteroid-chunk",
       walking_sound = sounds.ore,
       mining_visualisation_tint = {r = 0.99, g = 1.0, b = 0.92, a = 1.000},
     },

@@ -1,0 +1,36 @@
+data:extend({
+  {
+    type = "recipe",
+    name = "ferric-chunk-crushing",
+    icon = "__space-age__/graphics/icons/metallic-asteroid-chunk.png",
+    category = "small-crusher",
+    auto_recycle = false,
+    energy_required = 4,
+    enabled = true,
+    ingredients = {
+      {type = "item", name = "ferric-asteroid-chunk", amount = 2}
+    },
+    results = {
+      {type="item", name="ferric-ore", amount=5},
+      {type="item", name="mineral-ore", amount=1},
+    },
+    allow_productivity = true,
+  },
+  {
+    type = "recipe",
+    name = "crystalline-chunk-crushing",
+    icon = "__space-age__/graphics/icons/promethium-asteroid-chunk.png",
+    category = "small-crusher",
+    auto_recycle = false,
+    energy_required = 4,
+    enabled = true,
+    ingredients = {
+      {type = "item", name = "crystalline-asteroid-chunk", amount = 2}
+    },
+    results = {
+      {type="item", name="mineral-ore", amount=5},
+      {type="item", name="ferric-ore", amount=1},
+    },
+    allow_productivity = true,
+  },
+})

@@ -1,4 +1,5 @@
 data:extend({
+  --intermediates category
   {
     type = "item-subgroup",
     name = "raw-materials",
@@ -47,6 +48,7 @@ data:extend({
     group = "intermediate-products",
     order = "h"
   },
+  --debug group
   {
     type = "item-group",
     name = "debug",

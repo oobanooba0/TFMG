@@ -6,7 +6,7 @@ data:extend({
     energy_required = 10,
     enabled = false,
     ingredients = {
-      { type = "item", name = "ferric-asteroid-chunk", amount = 1 },
+      { type = "item", name = "ferric-asteroid-chunk", amount = 10 },
     },
     results = { 
         { type = "item", name = "general-purpose-structure", amount = 32 }
@@ -19,7 +19,7 @@ data:extend({
     energy_required = 10,
     enabled = false,
     ingredients = {
-      { type = "item", name = "ferric-asteroid-chunk", amount = 1 },
+      { type = "item", name = "ferric-asteroid-chunk", amount = 10 },
     },
     results = { 
         { type = "item", name = "mechanical-components", amount = 16 }
@@ -32,7 +32,7 @@ data:extend({
     energy_required = 10,
     enabled = false,
     ingredients = {
-      { type = "item", name = "crystalline-asteroid-chunk", amount = 1 },
+      { type = "item", name = "crystalline-asteroid-chunk", amount = 10 },
     },
     results = { 
         { type = "item", name = "conductive-coil", amount = 40 }
@@ -45,8 +45,8 @@ data:extend({
     energy_required = 10,
     enabled = false,
     ingredients = {
-      { type = "item", name = "ferric-asteroid-chunk", amount = 1 },
-      { type = "item", name = "crystalline-asteroid-chunk", amount = 1 },
+      { type = "item", name = "ferric-asteroid-chunk", amount = 10 },
+      { type = "item", name = "crystalline-asteroid-chunk", amount = 10 },
     },
     results = { 
         { type = "item", name = "modular-circuit", amount = 16 }
@@ -62,7 +62,7 @@ data:extend({
       { type = "item", name = "modular-circuit", amount = 2},
       { type = "item", name = "conductive-coil", amount = 5},
       { type = "item", name = "crystalline-plate", amount = 5},
-      { type = "item", name = "crystalline-asteroid-chunk", amount = 1},
+      { type = "item", name = "crystalline-asteroid-chunk", amount = 10},
     },
     results = { 
         { type = "item", name = "ai-processor", amount = 1 }

@@ -183,6 +183,7 @@ require("prototypes.recipes.furnace")
 require("prototypes.recipes.matter-reconstructor")
 require("prototypes.recipes.micro-assembler")
 require("prototypes.recipes.refinery")
+require("prototypes.recipes.small-crusher")
 require("prototypes.recipes.special")
 require("prototypes.recipes.supercomputer")
 

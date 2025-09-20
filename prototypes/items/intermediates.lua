@@ -2,34 +2,6 @@ local item_sounds = require("__base__.prototypes.item_sounds")
 
 --Intermediates
 data:extend({
----Asteroid Chunks (about 1-10 with their plate counterparts)
-  {--ferric asteroid chunk
-    type = "item",
-    name = "ferric-asteroid-chunk",
-    icon = "__TFMG__/graphics/icons/ferric-asteroid-chunk.png",
-    subgroup = "raw-materials",
-    order = "a[chunk]-a[ferric]",
-    inventory_move_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
-    pick_sound = "__space-age__/sound/item/rock-inventory-pickup.ogg",
-    drop_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
-    stack_size = 1,
-    weight = 100 * kg,
-    flags = {"always-show"},
-  },
-  {--crystalline asteroid chunk
-    type = "item",
-    name = "crystalline-asteroid-chunk",
-    icon = "__TFMG__/graphics/icons/crystalline-asteroid-chunk.png",
-    subgroup = "raw-materials",
-    order = "a[chunk]-b[crystalline]",
-    inventory_move_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
-    pick_sound = "__space-age__/sound/item/rock-inventory-pickup.ogg",
-    drop_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
-    stack_size = 1,
-    weight = 100 * kg,
-    flags = {"always-show"},
-  },
-
 ---Base intermediates (Things we make other intermediates out of)
   {
     type = "item",
