@@ -1100,9 +1100,7 @@ data:extend({
   {--Micro assembler
     type = "assembling-machine",
     name = "micro-assembler",
-    icon = "__base__/graphics/icons/assembling-machine-3.png",
-    custom_tooltip_fields = {
-    },
+    icon = "__base__/graphics/icons/assembling-machine-2.png",
     flags = {"placeable-neutral","placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "micro-assembler"},
     max_health = 400,
@@ -1123,18 +1121,26 @@ data:extend({
     {
       {
         production_type = "input",
-        pipe_picture = assembler3pipepictures(),
+        pipe_picture = assembler2pipepictures(),
         pipe_covers = pipecoverspictures(),
         volume = 1000,
-        pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {0, -1} }},
+        pipe_connections = {
+          { flow_direction="input", direction = defines.direction.north, position = {0, -0.5} },
+          { flow_direction="input", direction = defines.direction.east, position = {0, -0.5} },
+          { flow_direction="input", direction = defines.direction.west, position = {0, -0.5} },
+        },
         secondary_draw_orders = { north = -1 }
       },
       {
         production_type = "output",
-        pipe_picture = assembler3pipepictures(),
+        pipe_picture = assembler2pipepictures(),
         pipe_covers = pipecoverspictures(),
         volume = 1000,
-        pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {0, 1} }},
+        pipe_connections = {
+          { flow_direction="output", direction = defines.direction.south, position = {0, 0.5} },
+          { flow_direction="output", direction = defines.direction.east, position = {0, 0.5} },
+          { flow_direction="output", direction = defines.direction.west, position = {0, 0.5} },
+      },
         secondary_draw_orders = { north = -1 }
       }
     },
@@ -1148,43 +1154,122 @@ data:extend({
       fade_in_ticks = 4,
       fade_out_ticks = 20
     },
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.4, -1.4}, {1.4, 1.4}},
+    collision_box = {{-0.3, -0.8}, {0.3, 0.8}},
+    selection_box = {{-0.4, -0.9}, {0.4, 0.9}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.2,
     graphics_set =
     {
       animation_progress = 0.5,
-      animation =
-      {
-        layers =
-        {
+      animation = {
+        north = {
+          layers =
           {
-            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3.png",
-            priority = "high",
-            width = 214,
-            height = 237,
-            frame_count = 32,
-            line_length = 8,
-            shift = util.by_pixel(0, -0.75),
-            scale = 0.5
-          },
-          {
-            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-shadow.png",
-            priority = "high",
-            width = 260,
-            height = 162,
-            frame_count = 32,
-            line_length = 8,
-            draw_as_shadow = true,
-            shift = util.by_pixel(28, 4),
-            scale = 0.5
+            {
+              filename = "__TFMG__/graphics/buildings/micro-assembler/micro-assembler-vertical.png",
+              priority = "high",
+              width = 71,
+              height = 145,
+              frame_count = 32,
+              line_length = 8,
+              shift = util.by_pixel(0, -0.75),
+              scale = 0.5
+            },
+            {
+              filename = "__TFMG__/graphics/buildings/micro-assembler/micro-assembler-vertical-shadow.png",
+              priority = "high",
+              width = 65,
+              height = 108,
+              frame_count = 32,
+              line_length = 8,
+              draw_as_shadow = true,
+              shift = util.by_pixel(28, 4),
+              scale = 0.5
+            }
           }
-        }
+        },
+        east = {
+          layers =
+          {
+            {
+              filename = "__TFMG__/graphics/buildings/micro-assembler/micro-assembler-horizontal.png",
+              priority = "high",
+              width = 142,
+              height = 72,
+              frame_count = 32,
+              line_length = 8,
+              shift = util.by_pixel(0, -0.75),
+              scale = 0.5
+            },
+            {
+              filename = "__TFMG__/graphics/buildings/micro-assembler/micro-assembler-horizontal-shadow.png",
+              priority = "high",
+              width = 130,
+              height = 54,
+              frame_count = 32,
+              line_length = 8,
+              draw_as_shadow = true,
+              shift = util.by_pixel(28, 4),
+              scale = 0.5
+            }
+          }
+        },
+        south = {
+          layers =
+          {
+            {
+              filename = "__TFMG__/graphics/buildings/micro-assembler/micro-assembler-vertical.png",
+              priority = "high",
+              width = 71,
+              height = 145,
+              frame_count = 32,
+              line_length = 8,
+              shift = util.by_pixel(0, -0.75),
+              scale = 0.5
+            },
+            {
+              filename = "__TFMG__/graphics/buildings/micro-assembler/micro-assembler-vertical-shadow.png",
+              priority = "high",
+              width = 65,
+              height = 108,
+              frame_count = 32,
+              line_length = 8,
+              draw_as_shadow = true,
+              shift = util.by_pixel(28, 4),
+              scale = 0.5
+            }
+          }
+        },
+        west = {
+          layers =
+          {
+            {
+              filename = "__TFMG__/graphics/buildings/micro-assembler/micro-assembler-horizontal.png",
+              priority = "high",
+              width = 142,
+              height = 72,
+              frame_count = 32,
+              line_length = 8,
+              shift = util.by_pixel(0, -0.75),
+              scale = 0.5
+            },
+            {
+              filename = "__TFMG__/graphics/buildings/micro-assembler/micro-assembler-horizontal-shadow.png",
+              priority = "high",
+              width = 130,
+              height = 54,
+              frame_count = 32,
+              line_length = 8,
+              draw_as_shadow = true,
+              shift = util.by_pixel(28, 4),
+              scale = 0.5
+            }
+          }
+        },
       }
     },
     crafting_categories = {
-      "assembling-machine","assembling-machine-pure"
+      "micro-assembler",
     },
     crafting_speed = 1,
     energy_source =
@@ -1193,7 +1278,7 @@ data:extend({
       usage_priority = "secondary-input",
       emissions_per_minute = { pollution = 2 },
     },
-    energy_usage = "1MW",
+    energy_usage = "1.5MW",
     --module_slots = 2,
     --allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
   },

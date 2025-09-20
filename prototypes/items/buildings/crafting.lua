@@ -96,4 +96,17 @@ data:extend({
     place_result = "refinery",
     stack_size = 10
   },
+  {
+    type = "item",
+    name = "micro-assembler",
+    icon = "__base__/graphics/icons/assembling-machine-2.png",
+    subgroup = "production-machine",
+    order = "a-a",
+    inventory_move_sound = item_sounds.mechanical_inventory_move,
+    pick_sound = item_sounds.mechanical_inventory_pickup,
+    drop_sound = item_sounds.mechanical_inventory_move,
+    place_result = "micro-assembler",
+    stack_size = 50,
+    weight = 40*kg,
+  },
 })

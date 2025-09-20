@@ -1,0 +1,18 @@
+data:extend({
+{--Micro assembler debug
+    type = "recipe",
+    category = "micro-assembler",
+    name = "micro-assembler-debug",
+    icon = "__base__/graphics/icons/signal/signal-science-pack.png",
+    energy_required = 1,
+    enabled = true,
+    ingredients = {
+      { type = "item", name = "ferric-plate", amount = 2 },
+      { type = "fluid", name = "water", amount = 100 },
+    },
+    results = { 
+      { type = "item", name = "general-purpose-structure", amount = 1 },
+      { type = "fluid", name = "hydrocarbon-slush", amount = 100 },
+    },
+  },
+})
