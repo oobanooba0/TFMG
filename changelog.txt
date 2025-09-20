@@ -3,7 +3,11 @@ Version: 0.3.0
 Date: ????
   Features:
     - Achievements added
+    - Refinery added
+    - Chemistry plant added
   Changes:
+  Bugfixes:
+    - Nauvis no longer appears in planet list. Though the bugfix is dubious.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.6
 Date: 2025-09-17

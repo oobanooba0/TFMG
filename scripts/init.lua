@@ -1,5 +1,3 @@
-
-
 script.on_init(function(e)--Code shamelessly plagerised from Platformer by Corlin and Xiroc
   disable_cutsceene()--Necessary for player to be teleported and imprisoned    
   create_self()--Create starting space platform
@@ -11,6 +9,7 @@ end)
 script.on_configuration_changed(function()
   refresh_data_storage()
   game.forces.player.set_surface_hidden(game.surfaces.nauvis, true)
+  game.forces.player.lock_space_location("nauvis")
 end)
 
 
@@ -24,7 +23,7 @@ end
 
 function create_self()--self is the name of the space platform, I just thought it was funny.
   local force = game.forces["player"]
-platform = force.create_space_platform({
+  platform = force.create_space_platform({
   name = "Self",
   planet = "arrival",
   starter_pack = "space-platform-starter-pack"

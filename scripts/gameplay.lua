@@ -8,16 +8,16 @@ function gameplay.deploy_scout_o_tron(event)
   if hub_location == nil then--make sure we orbit a planet
     game.print("platform must be in orbit of a planet to deploy spidertron")
   return end
+  local spider = player_storage.hub.get_inventory(1).find_item_stack("scout-o-tron-pod")
+  if spider == nil then -- check if no spider
+    game.print("Space platform contains no scout'o'tron pod to deploy")--turn this into one of those floating text errors, or grey out the box somehow.
+  return end
   if game.get_surface(hub_location.name) == nil then
     game.planets['arrival'].create_surface() -- this is important, because arrival isnt generated before now.
   end
   local surface = game.get_surface(hub_location.name) --this has to be done after we make sure a surface actually exists.
   if surface == nil then
     game.print("deployment surface is nil, this shouldnt happen, report bug to oobanooba.")
-  return end
-  local spider = player_storage.hub.get_inventory(1).find_item_stack("scout-o-tron-pod")
-  if spider == nil then -- check if no spider
-    game.print("Space platform contains no scout'o'tron pod to deploy")--turn this into one of those floating text errors, or grey out the box somehow.
   return end
   local spider_entity = surface.create_entity({name = "scout-o-tron", position = { math.random(-10,10) , math.random(-10,10) }, force = "player"})--adding item = spider allows it to deploy with inventory contents but unfortunately i lack a means to actually load its inventory properly
   spider.clear()
