@@ -2,7 +2,10 @@ data:extend({
   {
     type = "recipe",
     name = "ferric-chunk-crushing",
-    icon = "__space-age__/graphics/icons/metallic-asteroid-chunk.png",
+    icons ={
+      {icon = "__space-age__/graphics/icons/metallic-asteroid-chunk.png"},
+      {icon = "__Krastorio2Assets__/icons/recipes/crushing-overlay.png"},
+    },
     category = "small-crusher",
     auto_recycle = false,
     energy_required = 4,
@@ -19,7 +22,10 @@ data:extend({
   {
     type = "recipe",
     name = "crystalline-chunk-crushing",
-    icon = "__space-age__/graphics/icons/promethium-asteroid-chunk.png",
+    icons ={
+      {icon = "__space-age__/graphics/icons/promethium-asteroid-chunk.png"},
+      {icon = "__Krastorio2Assets__/icons/recipes/crushing-overlay.png"},
+    },
     category = "small-crusher",
     auto_recycle = false,
     energy_required = 4,
