@@ -168,7 +168,7 @@ data:extend({
   {--mechatronic components
     type = "item",
     name = "mechatronic-components",
-    icon = "__Krastorio2Assets__/icons/items/ai-core.png"},
+    icon = "__Krastorio2Assets__/icons/items/ai-core.png",
     pictures = {
       layers = {
         {
