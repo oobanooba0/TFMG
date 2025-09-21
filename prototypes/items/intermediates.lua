@@ -133,11 +133,23 @@ data:extend({
     name = "general-purpose-structure",
     icon = "__Krastorio2Assets__/icons/items/iron-beam.png",
     subgroup = "structural-intermediates",
-    order = "a[general-purpose-structure]",
+    order = "a[general-purpose-structures]",
     inventory_move_sound = item_sounds.low_density_inventory_move,
     pick_sound = item_sounds.low_density_inventory_pickup,
     drop_sound = item_sounds.low_density_inventory_move,
     stack_size = 100,
+    random_tint_color = item_tints.iron_rust
+  },
+  {--high performance structure
+    type = "item",
+    name = "high-performance-structure",
+    icon = "__base__/graphics/icons/low-density-structure.png",
+    subgroup = "structural-intermediates",
+    order = "b[high-performacne-structures]",
+    inventory_move_sound = item_sounds.low_density_inventory_move,
+    pick_sound = item_sounds.low_density_inventory_pickup,
+    drop_sound = item_sounds.low_density_inventory_move,
+    stack_size = 50,
     random_tint_color = item_tints.iron_rust
   },
 ---mechanical intermediates (things that make other things move)
@@ -146,7 +158,22 @@ data:extend({
     name = "mechanical-components",
     icon = "__Krastorio2Assets__/icons/items/automation-core.png",
     subgroup = "mechanical-intermediates",
-    order = "a[mechanical-components]",
+    order = "a",
+    inventory_move_sound = item_sounds.metal_large_inventory_move,
+    pick_sound = item_sounds.metal_large_inventory_pickup,
+    drop_sound = item_sounds.metal_large_inventory_move,
+    stack_size = 100,
+    random_tint_color = item_tints.iron_rust
+  },
+  {--mechatronic components
+    type = "item",
+    name = "mechatronic-components",
+    icons = {
+      {icon = "__Krastorio2Assets__/icons/items/ai-core.png"},
+      {icon = "__Krastorio2Assets__/icons/items/ai-core-light.png", draw_as_light = true,},
+    },
+    subgroup = "mechanical-intermediates",
+    order = "b",
     inventory_move_sound = item_sounds.metal_large_inventory_move,
     pick_sound = item_sounds.metal_large_inventory_pickup,
     drop_sound = item_sounds.metal_large_inventory_move,
@@ -176,18 +203,18 @@ data:extend({
     drop_sound = item_sounds.electric_small_inventory_move,
     stack_size = 200,
   },
----advanced intermediates. (things that are complex i guess. I will likely subdivide this futher)
   {--Ai processor
     type = "item",
     name = "ai-processor",
     icon = "__space-age__/graphics/icons/quantum-processor.png",
-    subgroup = "advanced-intermediates",
-    order = "a[ai]-a[ai-processor]",
+    subgroup = "electronic-intermediates",
+    order = "d[ai-processor]",
     inventory_move_sound = item_sounds.electric_small_inventory_move,
     pick_sound = item_sounds.electric_small_inventory_pickup,
     drop_sound = item_sounds.electric_small_inventory_move,
     stack_size = 100,
   },
+---advanced intermediates. (things that are complex I guess. I will likely subdivide this futher)
   {
     type = "item",
     name = "spidertron-frame",

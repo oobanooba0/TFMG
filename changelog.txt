@@ -13,6 +13,7 @@ Date: ????
     - Titanium added.
     - More advanced ore processing added
     - Scout radar added, to make exploring distant chunks easier.
+    - Arrival now has a planet icon
   Changes:
     - Asteroid chunks now stack to 20
     - Asteroid chunks are now collected in batches of 10
