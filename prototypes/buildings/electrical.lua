@@ -316,7 +316,7 @@ data:extend({
     selection_box = {{-1, -1}, {1, 1}},
     damaged_trigger_effect = hit_effects.entity({{-0.5, -2.5},{0.5, 0.5}}),
     drawing_box_vertical_extension = 3,
-    maximum_wire_distance = 24,
+    maximum_wire_distance = 64,
     supply_area_distance = 2,
     impact_category = "metal",
     open_sound = sounds.electric_network_open,
