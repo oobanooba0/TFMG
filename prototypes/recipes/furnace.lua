@@ -1,4 +1,5 @@
   data:extend({
+    --ferric recipes
   {
     type = "recipe",
     name = "ferric-plate",
@@ -10,6 +11,42 @@
     results = {{type="item", name="ferric-plate", amount=1}},
     allow_productivity = true,
   },
+  {
+    type = "recipe",
+    name = "ferric-ore-smelting",
+    category = "furnace",
+    auto_recycle = false,
+    energy_required = 2,
+    enabled = false,
+    ingredients = {{type = "item", name = "ferric-ore", amount = 2}},
+    results = {{type="item", name="ferric-plate", amount=1}},
+    allow_productivity = true,
+  },
+  {
+    type = "recipe",
+    name = "pure-iron-ore-smelting",
+    category = "furnace",
+    auto_recycle = false,
+    energy_required = 6,
+    enabled = true,
+    ingredients = {{type = "item", name = "pure-iron-ore", amount = 3}},
+    results = {{type="item", name="ferric-plate", amount=2}},
+    allow_productivity = true,
+  },
+  --titanium recipes
+  {
+    type = "recipe",
+    name = "titanium-ore-smelting",
+    category = "furnace",
+    auto_recycle = false,
+    energy_required = 8,
+    enabled = true,
+    ingredients = {{type = "item", name = "titanium-ore", amount = 2}},
+    results = {{type="item", name="titanium-plate", amount=1}},
+    allow_productivity = true,
+  },
+
+  --mineral recipes
   {
     type = "recipe",
     name = "hot-mineral-plate",
@@ -35,17 +72,6 @@
     enabled = false,
     ingredients = {{type = "item", name = "crystalline-asteroid-chunk", amount = 1}},
     results = {{type="item", name="mineral-glass", amount=1}},
-    allow_productivity = true,
-  },
-  {
-    type = "recipe",
-    name = "ferric-ore-smelting",
-    category = "furnace",
-    auto_recycle = false,
-    energy_required = 2,
-    enabled = false,
-    ingredients = {{type = "item", name = "ferric-ore", amount = 2}},
-    results = {{type="item", name="ferric-plate", amount=1}},
     allow_productivity = true,
   },
   {

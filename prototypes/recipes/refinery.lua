@@ -60,4 +60,22 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     allow_productivity = false,
   },
+  {--ferric solution reduction
+    type = "recipe",
+    category = "refinery",
+    name = "ferric-solution-reduction",
+    icons = {
+      { icon = "__base__/graphics/icons/fluid/sulfuric-acid.png"},
+      { icon = "__Krastorio2Assets__/icons/items/enriched-copper.png", shift = {0,7}, scale = 0.3,}
+    },
+    energy_required = 1,
+    enabled = true,
+    ingredients = {
+      { type = "fluid", name = "ferric-solution", amount = 100 },
+    },
+    results = { 
+      { type = "item", name = "pure-iron-ore", amount = 2 },
+    },
+    allow_productivity = true,
+  },
 })

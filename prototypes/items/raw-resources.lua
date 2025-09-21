@@ -46,6 +46,26 @@ data:extend({
     default_import_location = "arrival",
     weight = 1*kg,
   },
+  {--titanium ore
+    type = "item",
+    name = "titanium-ore",
+    icon = "__base__/graphics/icons/iron-ore.png",
+    pictures =
+    {
+      { size = 64, filename = "__base__/graphics/icons/iron-ore.png",   scale = 0.5, mipmap_count = 4},
+      { size = 64, filename = "__base__/graphics/icons/iron-ore-1.png",   scale = 0.5, mipmap_count = 4},
+      { size = 64, filename = "__base__/graphics/icons/iron-ore-2.png",   scale = 0.5, mipmap_count = 4},
+      { size = 64, filename = "__base__/graphics/icons/iron-ore-3.png",   scale = 0.5, mipmap_count = 4},
+    },
+    subgroup = "raw-materials",
+    order = "b[ore]-b[titanium]",
+    inventory_move_sound = item_sounds.resource_inventory_move,
+    pick_sound = item_sounds.resource_inventory_pickup,
+    drop_sound = item_sounds.resource_inventory_move,
+    stack_size = 50,
+    default_import_location = "arrival",
+    weight = 1*kg,
+  },
   {--mineral ore
     type = "item",
     name = "mineral-ore",
@@ -58,7 +78,7 @@ data:extend({
       { size = 64, filename = "__space-age__/graphics/icons/calcite-3.png",   scale = 0.5, mipmap_count = 4 },
     },
     subgroup = "raw-materials",
-    order = "b[ore]-b[mineral]",
+    order = "b[ore]-c[mineral]",
     inventory_move_sound = item_sounds.resource_inventory_move,
     pick_sound = item_sounds.resource_inventory_pickup,
     drop_sound = item_sounds.resource_inventory_move,
@@ -66,5 +86,23 @@ data:extend({
     default_import_location = "arrival",
     weight = 1*kg,
   },
-
+  {--purified iron ore
+    type = "item",
+    name = "pure-iron-ore",
+    icon = "__Krastorio2Assets__/icons/items/enriched-copper.png",
+    pictures =
+    {
+      { size = 64, filename = "__Krastorio2Assets__/icons/items/enriched-copper.png",   scale = 0.5},
+      { size = 64, filename = "__Krastorio2Assets__/icons/items/enriched-copper-1.png",   scale = 0.5},
+      { size = 64, filename = "__Krastorio2Assets__/icons/items/enriched-copper-2.png",   scale = 0.5},
+    },
+    subgroup = "raw-materials",
+    order = "c[pure]-a[ferric]",
+    inventory_move_sound = item_sounds.resource_inventory_move,
+    pick_sound = item_sounds.resource_inventory_pickup,
+    drop_sound = item_sounds.resource_inventory_move,
+    stack_size = 50,
+    default_import_location = "arrival",
+    weight = 1*kg,
+  },
 })
