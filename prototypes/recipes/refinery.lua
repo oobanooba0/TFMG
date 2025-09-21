@@ -2,6 +2,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   {--Hydrocarbon slush seperation
     type = "recipe",
     category = "refinery",
+    subgroup = "fluid-recipes",
     name = "hydrocarbon-slush-distillation",
     icons = {
       { icon = "__space-age__/graphics/icons/fluid/lithium-brine.png"},
@@ -21,6 +22,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   {--water filtration
     type = "recipe",
     category = "refinery",
+    subgroup = "fluid-recipes",
     name = "water-filtration",
     icons = {
       { icon = "__base__/graphics/icons/fluid/water.png"},
@@ -42,6 +44,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   {--sludge cultivation
     type = "recipe",
     category = "refinery",
+    subgroup = "fluid-recipes",
     name = "organic-sludge-cultivation",
     icons = {
       { icon = "__base__/graphics/icons/fluid/lubricant.png"},
@@ -63,6 +66,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   {--ferric solution reduction
     type = "recipe",
     category = "refinery",
+    subgroup = "fluid-recipes",
     name = "ferric-solution-reduction",
     icons = {
       { icon = "__base__/graphics/icons/fluid/sulfuric-acid.png"},
@@ -71,10 +75,11 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     energy_required = 1,
     enabled = true,
     ingredients = {
-      { type = "fluid", name = "ferric-solution", amount = 100 },
+      { type = "fluid", name = "ferric-solution", amount = 160 },
     },
     results = { 
       { type = "item", name = "pure-iron-ore", amount = 2 },
+      { type = "fluid", name = "water", amount = 20 },
     },
     allow_productivity = true,
   },

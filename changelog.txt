@@ -10,8 +10,12 @@ Date: ????
     - Recipes for trains and rails added
     - Recipes for pipes and related items added
     - some power pylons added.
-    - Titanium added. 
+    - Titanium added.
+    - More advanced ore processing added
   Changes:
+    - Asteroid chunks now stack to 20
+    - Asteroid chunks are now collected in batches of 10
+    - Asteroid chunks now smelt to 1 plate
   Bugfixes:
     - Nauvis no longer appears in planet list. Though the bugfix is dubious.
 ---------------------------------------------------------------------------------------------------

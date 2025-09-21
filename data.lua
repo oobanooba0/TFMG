@@ -1,6 +1,7 @@
 --this is the part where I murder the game, Thanks to Rseding91's fourm comments which helped me do this.
 local tile_collision_masks = require("__base__/prototypes/tile/tile-collision-masks")
 
+
 data.raw ["technology"] = {}
 data.raw ["tips-and-tricks-item"] = {}
 data.raw ["utility-constants"]["default"].main_menu_simulations = {}
@@ -43,9 +44,15 @@ data.raw.recipe ["rail-chain-signal"] = nil
 data.raw.recipe ["train-stop"] = nil
 data.raw.recipe ["locomotive"] = nil
 
-
+local KMH = 216
 
 data.raw ["locomotive"]["locomotive"].energy_source.fuel_categories = {"chemical"}
+data.raw ["locomotive"]["locomotive"].max_speed = 100 / KMH
+data.raw ["locomotive"]["locomotive"].max_power = "1MW"
+data.raw ["locomotive"]["locomotive"].weight = 10000
+data.raw ["cargo-wagon"]["cargo-wagon"].weight = 5000
+data.raw ["fluid-wagon"]["fluid-wagon"].weight = 5000
+
 data.raw.tile ["ice-smooth"].collision_mask = tile_collision_masks.ground()
 data.raw["mining-drill"]["electric-mining-drill"].mining_speed = 1
 data.raw["mining-drill"]["electric-mining-drill"].energy_usage = "0.5MW"

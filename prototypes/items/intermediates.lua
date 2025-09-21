@@ -1,4 +1,7 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
+local space_age_item_sounds = require("__space-age__.prototypes.item_sounds")
+local second = 60
+local minute = 3600
 
 --Intermediates
 data:extend({
@@ -26,7 +29,7 @@ data:extend({
     drop_sound = item_sounds.metal_small_inventory_move,
     stack_size = 100,
     spoil_result = "crystalline-plate",
-    spoil_ticks = 3600
+    spoil_ticks = 60 * second
   },
   {
     type = "item",
@@ -61,8 +64,69 @@ data:extend({
     drop_sound = item_sounds.metal_small_inventory_move,
     stack_size = 100,
   },
-
-
+  {
+    type = "item",
+    name = "microbe-culture",
+    icon = "__space-age__/graphics/icons/copper-bacteria.png",
+    pictures =
+    {
+      { size = 64, filename = "__space-age__/graphics/icons/copper-bacteria.png", scale = 0.5, mipmap_count = 4 },
+      { size = 64, filename = "__space-age__/graphics/icons/copper-bacteria-1.png", scale = 0.5, mipmap_count = 4 },
+      { size = 64, filename = "__space-age__/graphics/icons/copper-bacteria-2.png", scale = 0.5, mipmap_count = 4 },
+      { size = 64, filename = "__space-age__/graphics/icons/copper-bacteria-3.png", scale = 0.5, mipmap_count = 4 },
+    },
+    subgroup = "basic-intermediates",
+    order = "d[polymers]-a[polymer]",
+    inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
+    pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
+    drop_sound = space_age_item_sounds.agriculture_inventory_move,
+    stack_size = 100,
+    default_import_location = "gleba",
+    weight = 1 * kg,
+    spoil_ticks = 1 * minute,
+    spoil_result = "organic-carbon"
+  },
+  {
+    type = "item",
+    name = "organic-carbon",
+    icons = {{icon = "__base__/graphics/icons/solid-fuel.png", tint = {0.5,1,0.5}}},
+    subgroup = "basic-intermediates",
+    order = "d[polymers]-bb[polymer]",
+    inventory_move_sound = item_sounds.plastic_inventory_move,
+    pick_sound = item_sounds.plastic_inventory_pickup,
+    drop_sound = item_sounds.plastic_inventory_move,
+    stack_size = 100,
+    fuel_value = "10MJ",
+    fuel_category = "chemical",
+    fuel_acceleration_multiplier = 1,
+    fuel_top_speed_multiplier = 1,
+  },
+  {
+    type = "item",
+    name = "active-bio-polymers",
+    icons = {{icon = "__base__/graphics/icons/plastic-bar.png", tint = {0.5,1,0.5}}},
+    subgroup = "basic-intermediates",
+    order = "d[polymers]-b[polymer]",
+    inventory_move_sound = item_sounds.plastic_inventory_move,
+    pick_sound = item_sounds.plastic_inventory_pickup,
+    drop_sound = item_sounds.plastic_inventory_move,
+    stack_size = 100,
+    random_tint_color = item_tints.plastic,
+    spoil_result = "polymer",
+    spoil_ticks = 60 * minute
+  },
+  {
+    type = "item",
+    name = "polymer",
+    icon = "__base__/graphics/icons/plastic-bar.png",
+    subgroup = "basic-intermediates",
+    order = "d[polymers]-c[polymer]",
+    inventory_move_sound = item_sounds.plastic_inventory_move,
+    pick_sound = item_sounds.plastic_inventory_pickup,
+    drop_sound = item_sounds.plastic_inventory_move,
+    stack_size = 100,
+    random_tint_color = item_tints.plastic,
+  },
 ---structural intermediates (things which hold everything together)
     {--general purpose structure
     type = "item",
