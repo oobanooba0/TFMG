@@ -13,7 +13,7 @@ data:extend({
     place_result = "tiny-electric-pylon",
     stack_size = 100
   },
-    {
+  {
     type = "item",
     name = "small-electric-pylon",
     icon = "__base__/graphics/icons/medium-electric-pole.png",
@@ -24,6 +24,19 @@ data:extend({
     drop_sound = item_sounds.electric_large_inventory_move,
     place_result = "small-electric-pylon",
     stack_size = 100
+  },
+  {
+    type = "item",
+    name = "large-electric-pylon",
+    icon = "__base__/graphics/icons/big-electric-pole.png",
+    subgroup = "energy-pipe-distribution",
+    order = "a-d",
+    inventory_move_sound = item_sounds.electric_large_inventory_move,
+    pick_sound = item_sounds.electric_large_inventory_pickup,
+    drop_sound = item_sounds.electric_large_inventory_move,
+    place_result = "large-electric-pylon",
+    stack_size = 50,
+    random_tint_color = item_tints.iron_rust
   },
 
 
