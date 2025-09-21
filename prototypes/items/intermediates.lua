@@ -168,9 +168,21 @@ data:extend({
   {--mechatronic components
     type = "item",
     name = "mechatronic-components",
-    icons = {
-      {icon = "__Krastorio2Assets__/icons/items/ai-core.png"},
-      {icon = "__Krastorio2Assets__/icons/items/ai-core-light.png", draw_as_light = true,},
+    icon = "__Krastorio2Assets__/icons/items/ai-core.png"},
+    pictures = {
+      layers = {
+        {
+          size = 64,
+          filename = "__Krastorio2Assets__/icons/items/ai-core.png",
+          scale = 0.5,
+        },
+        {
+          draw_as_light = true,
+          size = 64,
+          filename = "__Krastorio2Assets__/icons/items/ai-core-light.png",
+          scale = 0.5,
+        },
+      },
     },
     subgroup = "mechanical-intermediates",
     order = "b",
