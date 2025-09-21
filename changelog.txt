@@ -10,6 +10,7 @@ Date: ????
     - Recipes for trains and rails added
     - Recipes for pipes and related items added
     - some power pylons added.
+    - Titanium added. 
   Changes:
   Bugfixes:
     - Nauvis no longer appears in planet list. Though the bugfix is dubious.

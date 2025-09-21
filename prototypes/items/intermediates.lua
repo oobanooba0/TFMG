@@ -50,6 +50,17 @@ data:extend({
     drop_sound = item_sounds.metal_small_inventory_move,
     stack_size = 100,
   },
+  {
+    type = "item",
+    name = "titanium-plate",
+    icon = "__TFMG__/graphics/icons/titanium-plate.png",
+    subgroup = "basic-intermediates",
+    order = "c[titanium]-a[titanium-plate]",
+    inventory_move_sound = item_sounds.metal_small_inventory_move,
+    pick_sound = item_sounds.metal_small_inventory_pickup,
+    drop_sound = item_sounds.metal_small_inventory_move,
+    stack_size = 100,
+  },
 
 
 ---structural intermediates (things which hold everything together)

@@ -17,6 +17,8 @@ Krastorio team - Krastorio 2 graphics
 
 Solar Array wings - LordMiguel
 
+Unused Renders - MalcolmRiley
+
 
 People who have helped me out:
 
