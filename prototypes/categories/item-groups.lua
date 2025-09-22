@@ -68,4 +68,11 @@ data:extend({
     group = "debug",
     order = "b"
   },
+--virtual signals
+{
+    type = "item-subgroup",
+    name = "supercomputer-signals",
+    group = "signals",
+    order = "k"
+  },
 })

@@ -156,6 +156,9 @@ require("prototypes.entity.spiders")
 require("prototypes.equipment")
 require("prototypes.equipment-grids")
 
+--virtual signals
+require("prototypes.virtual-signals")
+
 --items
 ---buildings
 require("prototypes.items.buildings.belts")

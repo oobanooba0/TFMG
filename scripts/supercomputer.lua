@@ -62,14 +62,13 @@ function supercomputer.on_supercomputer_built(entity)
   else
     interface = nil
   end
-  game.print(interface)
   supercomputer_input.destructible = false
   supercomputer_output.destructible = false
   entity.disabled_by_script = true
   if storage.supercomputer == nil then
 	  storage.supercomputer = {}
 	end
-  table.insert(storage.supercomputer, unit_number, {machine = entity, interface = interface, input = supercomputer_input, output = supercomputer_output, recipe = nil, problem_a = nil, problem_b = nil, problem_operator = nil, solution_x = nil})--bigass table lol
+  table.insert(storage.supercomputer, unit_number, {machine = entity, interface = interface, input = supercomputer_input, output = supercomputer_output, recipe = nil, solution_x = nil})--bigass table lol
 end
 function supercomputer.on_supercomputer_rotated(entity)
     local v = storage.supercomputer[entity.unit_number]
@@ -135,36 +134,47 @@ function supercomputer.on_supercomputer_tick()
         v.machine.disabled_by_script = false
       end
 
-      if v.machine.status ~= 1 then
+      if v.machine.status ~= 1 then --if the machine isn't able to run for any reason, end the script.
       return end
 
       local recipe = v.machine.get_recipe()
-      if recipe == nil then --atm no point in running any script unless theres a recipe
+
+      if recipe == nil then --No point in running any script if theres no recipe
       return end
       
       if recipe ~= v.recipe then--check if the recipe has changed, so we know to generate a new problem
         if recipe.name == "introspection-science" then
           supercomputer.create_new_problem_introspection(v)
         end
+        if recipe.name == "exploration-science" then
+          supercomputer.create_new_problem_exploration(v)
+        end
         v.recipe = recipe
       end
 
-      local input_green_signal_x = v.input.get_signal({type = "virtual", name = "signal-X"},defines.wire_connector_id.circuit_green)
-      local input_red_signal_x = v.input.get_signal({type = "virtual", name = "signal-X"},defines.wire_connector_id.circuit_red)
-      if recipe.name == "introspection-science" then
-        if input_green_signal_x == v.solution_x or input_red_signal_x == v.solution_x then--first check if we've solved the current problem
-          v.machine.disabled_by_script = false
-          supercomputer.create_new_problem_introspection(v)
-        else
-          v.machine.disabled_by_script = true
-          v.machine.custom_status = {
-					  diode = defines.entity_status_diode.yellow,
-					  label = "Incorrect signal x"
-					  }
-        end 
+      if recipe.name == "introspection-science" then--we need to check different signals for each science. so this needs a seperate script for each, to keep each as lightweight as possible.
+        supercomputer.introspection_solution(v)
+      elseif recipe.name == "exploration-science" then
+        supercomputer.exploration_solution(v)
       end
     end
   )
+end
+---introspection recipes
+function supercomputer.introspection_solution(v)
+  local input_green_signal_x = v.input.get_signal({type = "virtual", name = "signal-X"},defines.wire_connector_id.circuit_green)
+  local input_red_signal_x = v.input.get_signal({type = "virtual", name = "signal-X"},defines.wire_connector_id.circuit_red)
+
+  if input_green_signal_x == v.solution_x or input_red_signal_x == v.solution_x then--first check if we've solved the current problem
+    v.machine.disabled_by_script = false
+    supercomputer.create_new_problem_introspection(v)
+  else
+    v.machine.disabled_by_script = true
+    v.machine.custom_status = {
+		  diode = defines.entity_status_diode.yellow,
+		  label = "Incorrect signal x"
+		  }
+  end 
 end
 
 function supercomputer.create_new_problem_introspection(v)--introspection recipe mechanics
@@ -173,30 +183,76 @@ function supercomputer.create_new_problem_introspection(v)--introspection recipe
   end
   local output_control = v.output.get_control_behavior().get_section(1)
 
-  v.problem_a = math.random(100)
-  v.problem_b = math.random(100)
-  operator_select = math.random(4)
+  local problem_a = math.random(100)
+  local problem_b = math.random(100)
+  local operator_select = math.random(4)
   
   if operator_select == 1 then
-  v.solution_x = v.problem_a + v.problem_b
-  v.problem_operator = "signal-plus"
+  v.solution_x = problem_a + problem_b
+  problem_operator = "signal-plus"
   elseif operator_select == 2 then
-  v.solution_x = v.problem_a - v.problem_b
-  v.problem_operator = "signal-minus"
+  v.solution_x = problem_a - problem_b
+  problem_operator = "signal-minus"
   elseif operator_select == 3 then
-  v.solution_x = v.problem_a * v.problem_b
-  v.problem_operator = "signal-multiplication"
+  v.solution_x = problem_a * problem_b
+  problem_operator = "signal-multiplication"
   elseif operator_select == 4 then
-  v.solution_x = math.floor(v.problem_a / v.problem_b)
-  v.problem_operator = "signal-division"
+  v.solution_x = math.floor(problem_a / problem_b)
+  problem_operator = "signal-division"
   end
 
 
   output_control.filters = {
-    {value = {type = "virtual", name = "signal-A", quality = "normal"}, min = v.problem_a},
-    {value = {type = "virtual", name = "signal-B", quality = "normal"}, min = v.problem_b},
-    {value = {type = "virtual", name = v.problem_operator, quality = "normal"}, min = 1},
-  }
+    {value = {type = "virtual", name = "signal-A", quality = "normal"}, min = problem_a},
+    {value = {type = "virtual", name = "signal-B", quality = "normal"}, min = problem_b},
+    {value = {type = "virtual", name = problem_operator, quality = "normal"}, min = 1},
+    }
+  output_control.group = ""
+end
+
+---exploration recipes
+
+function supercomputer.exploration_solution(v)
+  local green_distance = v.input.get_signal({type = "virtual", name = "signal-distance"},defines.wire_connector_id.circuit_green)
+  local red_distance = v.input.get_signal({type = "virtual", name = "signal-distance"},defines.wire_connector_id.circuit_red)
+  local tolerance = 1
+  local green_difference = math.abs(green_distance - v.solution_x)
+  local red_difference = math.abs(red_distance - v.solution_x)
+
+  if green_difference <= 1 or red_difference <= 1 then--first check if we've solved the current problem
+    --game.print("red:"..red_difference.."green:"..green_difference)
+    v.machine.disabled_by_script = false
+    supercomputer.create_new_problem_exploration(v)
+  else
+    v.machine.disabled_by_script = true
+    v.machine.custom_status = {
+		  diode = defines.entity_status_diode.yellow,
+		  label = "Incorrect distance"
+		  }
+  end 
+end
+
+function supercomputer.create_new_problem_exploration(v)--introspection recipe mechanics
+  if v.output.get_control_behavior().get_section(1) == nil then
+    v.output.get_control_behavior().add_section(nil)
+  end
+  local output_control = v.output.get_control_behavior().get_section(1)
+  local range = 10000
+  local x_0 = math.random(-range,range)
+  local y_0 = math.random(-range,range)
+  local x_1 = math.random(-range,range)
+  local y_1 = math.random(-range,range)
+
+  v.solution_x = ((x_0+x_1)^2 + (y_0+y_1)^2)^0.5
+  --game.print(v.solution_x)
+
+
+  output_control.filters = {
+    {value = {type = "virtual", name = "signal-x-0", quality = "normal"}, min = x_0},
+    {value = {type = "virtual", name = "signal-y-0", quality = "normal"}, min = y_0},
+    {value = {type = "virtual", name = "signal-x-1", quality = "normal"}, min = x_1},
+    {value = {type = "virtual", name = "signal-y-1", quality = "normal"}, min = y_1},
+    }
   output_control.group = ""
   --game.print(v.problem_a..v.problem_operator..v.problem_b.."="..v.solution_x)
 end
