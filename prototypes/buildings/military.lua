@@ -26,8 +26,8 @@ data:extend({
     collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     damaged_trigger_effect = hit_effects.entity(),
-    energy_per_sector = "100MJ",
-    max_distance_of_sector_revealed = 20,
+    energy_per_sector = "50MJ",
+    max_distance_of_sector_revealed = 25,
     max_distance_of_nearby_sector_revealed = 0,
     energy_per_nearby_scan = "10MJ",
     energy_source =
