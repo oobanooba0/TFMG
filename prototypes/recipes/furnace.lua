@@ -73,16 +73,40 @@
     ingredients = {{type = "item", name = "crystalline-asteroid-chunk", amount = 1}},
     results = {{type="item", name="mineral-glass", amount=1}},
     allow_productivity = true,
+    surface_conditions = {{
+      property = "pressure",
+      min = 1,
+    }}
   },
   {
     type = "recipe",
-    name = "mineral-ore-smelting",
+    name = "hot-mineral-plate-smelting",
     category = "furnace",
     auto_recycle = false,
-    energy_required = 2,
+    energy_required = 3,
+    enabled = false,
+    ingredients = {{type = "item", name = "mineral-ore", amount = 2}},
+    results = {{type="item", name="hot-mineral-plate", amount=1}},
+    allow_productivity = true,
+    surface_conditions = {{
+      property = "pressure",
+      min = 0,
+      max = 0
+    }}
+  },
+  {
+    type = "recipe",
+    name = "mineral-glass-smelting",
+    category = "furnace",
+    auto_recycle = false,
+    energy_required = 3,
     enabled = false,
     ingredients = {{type = "item", name = "mineral-ore", amount = 2}},
     results = {{type="item", name="mineral-glass", amount=1}},
     allow_productivity = true,
+    surface_conditions = {{
+      property = "pressure",
+      min = 1,
+    }}
   },
 })

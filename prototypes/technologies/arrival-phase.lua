@@ -47,7 +47,11 @@ data:extend({
       },
       {
         type = "unlock-recipe",
-        recipe = "mineral-ore-smelting"
+        recipe = "hot-mineral-plate-smelting"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "mineral-glass-smelting"
       },
       {
         type = "unlock-recipe",

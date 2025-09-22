@@ -28,6 +28,21 @@ data:extend({
       { type = "item", name = "general-purpose-structure", amount = 1 }
     },
   },
+  {--High performance structure
+    type = "recipe",
+    category = "assembling-machine",
+    name = "high-performance-structure",
+    energy_required = 2,
+    enabled = true,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 1 },
+      { type = "item", name = "titanium-plate", amount = 2 },
+      { type = "item", name = "polymer-bar", amount = 2 },
+    },
+    results = { 
+      { type = "item", name = "high-performance-structure", amount = 2 }
+    },
+  },
   {--mechanical components
     type = "recipe",
     category = "assembling-machine-pure",
@@ -42,6 +57,22 @@ data:extend({
       { type = "item", name = "mechanical-components", amount = 2 }
     },
   },
+  {--mechatronic-components
+    type = "recipe",
+    category = "assembling-machine",
+    name = "mechatronic-components",
+    energy_required = 4,
+    enabled = true,
+    ingredients = {
+      { type = "item", name = "high-performance-structure", amount = 1 },
+      { type = "item", name = "mechanical-components", amount = 2 },
+      { type = "item", name = "modular-circuit", amount = 2 },
+      { type = "fluid", name = "mineral-lubricant", amount = 40 },
+    },
+    results = { 
+      { type = "item", name = "mechatronic-components", amount = 2 }
+    },
+  },
   {--conductive-coil
     type = "recipe",
     category = "assembling-machine-pure",
@@ -53,6 +84,20 @@ data:extend({
     },
     results = { 
         { type = "item", name = "conductive-coil", amount = 4 }
+    },
+  },
+  {--optical coil
+    type = "recipe",
+    category = "assembling-machine",
+    name = "optical-coil",
+    energy_required = 2,
+    enabled = true,
+    ingredients = {
+      { type = "item", name = "mineral-glass", amount = 4 },
+      { type = "item", name = "polymer-bar", amount = 1 },
+    },
+    results = { 
+        { type = "item", name = "optical-coil", amount = 4 }
     },
   },
   {--modular circuit
@@ -81,9 +126,25 @@ data:extend({
       { type = "item", name = "modular-circuit", amount = 1 },
       { type = "item", name = "mechanical-components", amount = 1 },
       { type = "item", name = "crystalline-plate", amount = 1 },
+
     },
     results = { 
       { type = "item", name = "introspection-science-unverified", amount = 1 }
+    },
+  },
+  {--exploration science
+    type = "recipe",
+    category = "assembling-machine",
+    name = "exploration-science-unverified",
+    energy_required = 10,
+    enabled = true,
+    ingredients = {
+      { type = "item", name = "high-performance-structure", amount = 2 },
+      { type = "item", name = "optical-coil", amount = 8 },
+      { type = "fluid", name = "organic-sludge", amount = 50 },
+    },
+    results = { 
+      { type = "item", name = "exploration-science-unverified", amount = 1 }
     },
   },
 

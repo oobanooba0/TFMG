@@ -46,4 +46,15 @@ data:extend({
     flow_color = {0.43, 0.75, 0.31},
     auto_barrel = false
   },
+  {
+    type = "fluid",
+    name = "mineral-lubricant",
+    icon = "__base__/graphics/icons/fluid/light-oil.png",
+    subgroup = "fluid",
+    order = "b[intermediate-fluid]-d",
+    default_temperature = 95,
+    base_color = {0.15, 0.32, 0.03},
+    flow_color = {0.43, 0.75, 0.31},
+    auto_barrel = false
+  },
 })

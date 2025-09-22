@@ -11,7 +11,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     energy_required = 4,
     enabled = true,
     ingredients = {
-      { type = "fluid", name = "hydrocarbon-slush", amount = 100 },
+      { type = "fluid", name = "hydrocarbon-slush", amount = 50 },
     },
     results = { 
       { type = "fluid", name = "water", amount = 150 },
@@ -80,6 +80,24 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     results = { 
       { type = "item", name = "pure-iron-ore", amount = 2 },
       { type = "fluid", name = "water", amount = 20 },
+    },
+    allow_productivity = true,
+  },
+  {--refined concrete
+    type = "recipe",
+    category = "refinery",
+    subgroup = "fluid-recipes",
+    name = "refined-concrete",
+    energy_required = 1,
+    enabled = true,
+    ingredients = {
+      { type = "item", name = "mineral-ore", amount = 2 },
+      { type = "item", name = "general-purpose-structure", amount = 1 },
+      { type = "fluid", name = "water", amount = 10 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 10 },
+    },
+    results = { 
+      { type = "item", name = "refined-concrete", amount = 1 },
     },
     allow_productivity = true,
   },

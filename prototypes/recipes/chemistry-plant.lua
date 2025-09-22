@@ -76,6 +76,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     enabled = true,
     ingredients = {
       { type = "fluid", name = "organic-sludge", amount = 10 },
+      { type = "item", name = "mineral-ore", amount = 1 },
     },
     results = { 
       { type = "item", name = "microbe-culture", amount = 1 }
@@ -98,12 +99,21 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     allow_productivity = true,
   },
-
-
-
-
-
-
-
-
+  {--mineral lubricant
+    type = "recipe",
+    category = "chemistry-plant",
+    subgroup = "fluid-recipes",
+    name = "mineral-lubricant",
+    energy_required = 2,
+    enabled = true,
+    ingredients = {
+      { type = "item", name = "organic-carbon", amount = 2 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 5 },
+      { type = "item", name = "mineral-ore", amount = 8},
+    },
+    results = { 
+      { type = "fluid", name = "mineral-lubricant", amount = 20 }
+    },
+    allow_productivity = true,
+  },
 })
