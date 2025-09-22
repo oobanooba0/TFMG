@@ -437,7 +437,7 @@ data:extend({
       },
       {
       name = {"thermal-system.damage-temperature"},
-      value = {"thermal-system.supercomputer-temperature"},
+      value = {"thermal-system.supercomputer-damage-temperature"},
       order = 254,
       },
       {
@@ -594,6 +594,23 @@ data:extend({
     type = "assembling-machine",
     name = "chemistry-plant",
     icon = "__base__/graphics/icons/chemical-plant.png",
+    custom_tooltip_fields = {
+      {
+      name = {"thermal-system.max-temperature"},
+      value = {"thermal-system.chemistry-plant-max-temperature"},
+      order = 253,
+      },
+      {
+      name = {"thermal-system.damage-temperature"},
+      value = {"thermal-system.chemistry-plant-damage-temperature"},
+      order = 254,
+      },
+      {
+      name = {"thermal-system.efficiency"},
+      value = {"thermal-system.chemistry-plant-efficiency"},
+      order = 255,
+      },
+    },
     flags = {"placeable-neutral","placeable-player", "player-creation"},
     minable = {mining_time = 0.1, result = "chemistry-plant"},
     max_health = 300,
@@ -603,7 +620,7 @@ data:extend({
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["chemical-plant"],
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    selection_box = {{-1.4, -1.4}, {1.4, 1.4}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.4,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
@@ -882,6 +899,23 @@ data:extend({
     type = "assembling-machine",
     name = "refinery",
     icon = "__base__/graphics/icons/oil-refinery.png",
+    custom_tooltip_fields = {
+      {
+      name = {"thermal-system.max-temperature"},
+      value = {"thermal-system.refinery-max-temperature"},
+      order = 253,
+      },
+      {
+      name = {"thermal-system.damage-temperature"},
+      value = {"thermal-system.refinery-damage-temperature"},
+      order = 254,
+      },
+      {
+      name = {"thermal-system.efficiency"},
+      value = {"thermal-system.refinery-efficiency"},
+      order = 255,
+      },
+    },
     flags = {"placeable-neutral","player-creation"},
     minable = {mining_time = 0.2, result = "refinery"},
     max_health = 350,
@@ -892,7 +926,7 @@ data:extend({
     circuit_connector = circuit_connector_definitions["oil-refinery"],
     collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
     collision_mask = {layers={item=true, object=true, player=true, water_tile=true, elevated_rail=true, is_object=true, is_lower_object=true, meltable=true}},
-    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    selection_box = {{-2.4, -2.4}, {2.4, 2.4}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.3,
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
@@ -1097,6 +1131,23 @@ data:extend({
     type = "assembling-machine",
     name = "micro-assembler",
     icon = "__base__/graphics/icons/assembling-machine-2.png",
+    custom_tooltip_fields = {
+      {
+      name = {"thermal-system.max-temperature"},
+      value = {"thermal-system.assembling-machine-max-temperature"},
+      order = 253,
+      },
+      {
+      name = {"thermal-system.damage-temperature"},
+      value = {"thermal-system.assembling-machine-damage-temperature"},
+      order = 254,
+      },
+      {
+      name = {"thermal-system.efficiency"},
+      value = {"thermal-system.assembling-machine-efficiency"},
+      order = 255,
+      },
+    },
     flags = {"placeable-neutral","placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "micro-assembler"},
     max_health = 400,
@@ -1282,6 +1333,23 @@ data:extend({
     type = "assembling-machine",
     name = "small-crusher",
     icon = "__space-age__/graphics/icons/crusher.png",
+    custom_tooltip_fields = {
+      {
+      name = {"thermal-system.max-temperature"},
+      value = {"thermal-system.small-crusher-max-temperature"},
+      order = 253,
+      },
+      {
+      name = {"thermal-system.damage-temperature"},
+      value = {"thermal-system.small-crusher-damage-temperature"},
+      order = 254,
+      },
+      {
+      name = {"thermal-system.efficiency"},
+      value = {"thermal-system.small-crusher-efficiency"},
+      order = 255,
+      },
+    },
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "small-crusher"},
     max_health = 350,
@@ -1297,7 +1365,7 @@ data:extend({
       }
     },
     collision_box = {{-0.7, -1.2}, {0.7, 1.2}},
-    selection_box = {{-1, -1.5}, {1, 1.5}},
+    selection_box = {{-0.9, -1.4}, {0.9, 1.4}},
     damaged_trigger_effect = hit_effects.entity(),
     module_slots = 0,
     icons_positioning =

@@ -67,7 +67,15 @@ function refresh_data_storage()--This should allow new storages to be added with
     storage.players = {} end
   if storage.supercomputer == nil then
     storage.supercomputer = {} end
-    if storage.neural_node_thermal == nil then
-  storage.neural_node_thermal = {} end
+  if storage.neural_node_thermal == nil then
+    storage.neural_node_thermal = {} end
+  if storage.micro_assembler_thermal == nil then
+    storage.micro_assembler_thermal = {} end
+  if storage.small_crusher_thermal == nil then
+    storage.small_crusher_thermal = {} end
+  if storage.refinery_thermal == nil then
+    storage.refinery_thermal = {} end
+  if storage.chemistry_plant_thermal == nil then
+    storage.chemistry_plant_thermal = {} end
 end
 

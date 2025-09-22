@@ -558,3 +558,345 @@ data:extend({
     circuit_connector = circuit_connector_definitions["heating-tower"]
   },
 })
+local micro_assembler_temperature_limit = 450
+local micro_assembler_specific_heat = "1MJ"
+data:extend({--micro assemblers
+  {--micro assembler heat interface v
+    type = "reactor",
+    name = "micro-assembler-heat-interface-v",
+    icon  = "__space-age__/graphics/icons/heating-tower.png",
+    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable","not-deconstructable","no-automated-item-insertion","no-automated-item-removal"},
+    max_health = 250,
+    corpse = "heating-tower-remnants",
+    dying_explosion = "heating-tower-explosion",
+    surface_conditions =
+    {
+      {
+        property = "pressure",
+        max = 0,
+        min = 0,
+      }
+    },
+    collision_mask = {layers ={}},
+    collision_box = {{-0.3, -0.8}, {0.3, 0.8}},
+    selection_box = {{-0.5, -1}, {0.5, 1}},
+    selection_priority = 40,
+    damaged_trigger_effect = hit_effects.entity(),
+    drawing_box_vertical_extension = 1,
+    --selectable_in_game = false,
+    allow_copy_paste = false,
+    gui_mode = "none",
+    consumption = "1MW",
+    neighbour_bonus = 0,
+    energy_source = {
+      type = "void",
+    },
+    heat_buffer = {
+      max_temperature = micro_assembler_temperature_limit,
+      minimum_glow_temperature = 50,
+      specific_heat = micro_assembler_specific_heat,
+      max_transfer = "100GW",
+      connections = {
+        { position = {0, 0.5}, direction = defines.direction.east },
+        { position = {0, -0.5}, direction = defines.direction.east },
+        { position = {0, 0.5}, direction = defines.direction.west },
+        { position = {0, -0.5}, direction = defines.direction.west },
+      },
+    },
+    connection_patches_connected = { HP_EW, HP_EW, HP_EW, HP_EW },
+    connection_patches_disconnected = { HP_E_big, HP_E_big, HP_W_big, HP_W_big },
+    heat_connection_patches_connected ={ HP_EW_Hot, HP_EW_Hot, HP_EW_Hot, HP_EW_Hot },
+    heat_connection_patches_disconnected ={ HP_E_Hot_big, HP_E_Hot_big, HP_W_Hot_big, HP_W_Hot_big },
+    default_temperature_signal = {type = "virtual", name = "signal-T"},
+    circuit_wire_max_distance = reactor_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["heating-tower"]
+  },
+  {--micro assembler heat interface h
+    type = "reactor",
+    name = "micro-assembler-heat-interface-h",
+    icon  = "__space-age__/graphics/icons/heating-tower.png",
+    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable","not-deconstructable","no-automated-item-insertion","no-automated-item-removal"},
+    max_health = 250,
+    corpse = "heating-tower-remnants",
+    dying_explosion = "heating-tower-explosion",
+    surface_conditions =
+    {
+      {
+        property = "pressure",
+        max = 0,
+        min = 0,
+      }
+    },
+    collision_mask = {layers ={}},
+    collision_box = {{-0.8, -0.3}, {0.8, 0.3}},
+    selection_box = {{-1, -0.5}, {1, 0.5}},
+    selection_priority = 40,
+    damaged_trigger_effect = hit_effects.entity(),
+    drawing_box_vertical_extension = 1,
+    --selectable_in_game = false,
+    allow_copy_paste = false,
+    gui_mode = "none",
+    consumption = "1MW",
+    neighbour_bonus = 0,
+    energy_source = {
+      type = "void",
+    },
+    heat_buffer = {
+      max_temperature = micro_assembler_temperature_limit,
+      minimum_glow_temperature = 50,
+      specific_heat = micro_assembler_specific_heat,
+      max_transfer = "100GW",
+      connections = {
+        { position = {0.5, 0}, direction = defines.direction.north },
+        { position = {-0.5, 0}, direction = defines.direction.north },
+        { position = {0.5, 0}, direction = defines.direction.south },
+        { position = {-0.5, 0}, direction = defines.direction.south },
+      },
+    },
+    connection_patches_connected = { HP_NS, HP_NS, HP_NS, HP_NS },
+    connection_patches_disconnected = { HP_N_big, HP_N_big, HP_S_big, HP_S_big },
+    heat_connection_patches_connected ={ HP_NS_Hot, HP_NS_Hot, HP_NS_Hot, HP_NS_Hot },
+    heat_connection_patches_disconnected ={ HP_N_Hot_big, HP_N_Hot_big, HP_S_Hot_big, HP_S_Hot_big },
+    default_temperature_signal = {type = "virtual", name = "signal-T"},
+    circuit_wire_max_distance = reactor_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["heating-tower"]
+  },
+})
+local small_crusher_temperature_limit = 500
+local small_crusher_specific_heat = "1MJ"
+data:extend({--small crushers
+  {--small crusher heat interface v
+    type = "reactor",
+    name = "small-crusher-heat-interface-v",
+    icon  = "__space-age__/graphics/icons/heating-tower.png",
+    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable","not-deconstructable","no-automated-item-insertion","no-automated-item-removal"},
+    max_health = 250,
+    corpse = "heating-tower-remnants",
+    dying_explosion = "heating-tower-explosion",
+    surface_conditions =
+    {
+      {
+        property = "pressure",
+        max = 0,
+        min = 0,
+      }
+    },
+    collision_mask = {layers ={}},
+    collision_box = {{-0.7, -1.2}, {0.7, 1.2}},
+    selection_box = {{-1, -1.5}, {1, 1.5}},
+    selection_priority = 40,
+    damaged_trigger_effect = hit_effects.entity(),
+    drawing_box_vertical_extension = 1,
+    --selectable_in_game = false,
+    allow_copy_paste = false,
+    gui_mode = "none",
+    consumption = "1MW",
+    neighbour_bonus = 0,
+    energy_source = {
+      type = "void",
+    },
+    heat_buffer = {
+      max_temperature = small_crusher_temperature_limit,
+      minimum_glow_temperature = 50,
+      specific_heat = small_crusher_specific_heat,
+      max_transfer = "100GW",
+      connections = {
+        { position = {0.5, 1}, direction = defines.direction.east },
+        { position = {0.5, -1}, direction = defines.direction.east },
+        { position = {-0.5, 1}, direction = defines.direction.west },
+        { position = {-0.5, -1}, direction = defines.direction.west },
+      },
+    },
+    connection_patches_connected = { HP_EW, HP_EW, HP_EW, HP_EW },
+    connection_patches_disconnected = { HP_E_big, HP_E_big, HP_W_big, HP_W_big },
+    heat_connection_patches_connected ={ HP_EW_Hot, HP_EW_Hot, HP_EW_Hot, HP_EW_Hot },
+    heat_connection_patches_disconnected ={ HP_E_Hot_big, HP_E_Hot_big, HP_W_Hot_big, HP_W_Hot_big },
+    default_temperature_signal = {type = "virtual", name = "signal-T"},
+    circuit_wire_max_distance = reactor_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["heating-tower"]
+  },
+  {--small crusher heat interface h
+    type = "reactor",
+    name = "small-crusher-heat-interface-h",
+    icon  = "__space-age__/graphics/icons/heating-tower.png",
+    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable","not-deconstructable","no-automated-item-insertion","no-automated-item-removal"},
+    max_health = 250,
+    corpse = "heating-tower-remnants",
+    dying_explosion = "heating-tower-explosion",
+    surface_conditions =
+    {
+      {
+        property = "pressure",
+        max = 0,
+        min = 0,
+      }
+    },
+    collision_mask = {layers ={}},
+    collision_box = {{-1.2, -0.7}, {1.2, 0.7}},
+    selection_box = {{-1.5, -1}, {1.5, 1}},
+    selection_priority = 40,
+    damaged_trigger_effect = hit_effects.entity(),
+    drawing_box_vertical_extension = 1,
+    --selectable_in_game = false,
+    allow_copy_paste = false,
+    gui_mode = "none",
+    consumption = "1MW",
+    neighbour_bonus = 0,
+    energy_source = {
+      type = "void",
+    },
+    heat_buffer = {
+      max_temperature = small_crusher_temperature_limit,
+      minimum_glow_temperature = 50,
+      specific_heat = small_crusher_specific_heat,
+      max_transfer = "100GW",
+      connections = {
+        { position = {1, -0.5}, direction = defines.direction.north },
+        { position = {-1, -0.5}, direction = defines.direction.north },
+        { position = {1, 0.5}, direction = defines.direction.south },
+        { position = {-1, 0.5}, direction = defines.direction.south },
+      },
+    },
+    connection_patches_connected = { HP_NS, HP_NS, HP_NS, HP_NS },
+    connection_patches_disconnected = { HP_N_big, HP_N_big, HP_S_big, HP_S_big },
+    heat_connection_patches_connected ={ HP_NS_Hot, HP_NS_Hot, HP_NS_Hot, HP_NS_Hot },
+    heat_connection_patches_disconnected ={ HP_N_Hot_big, HP_N_Hot_big, HP_S_Hot_big, HP_S_Hot_big },
+    default_temperature_signal = {type = "virtual", name = "signal-T"},
+    circuit_wire_max_distance = reactor_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["heating-tower"]
+  },
+})
+local refinery_temperature_limit = 550
+local refinery_specific_heat = "1MJ"
+data:extend({--refinery
+  {--refinery heat interface
+    type = "reactor",
+    name = "refinery-heat-interface",
+    icon  = "__space-age__/graphics/icons/heating-tower.png",
+    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable","not-deconstructable","no-automated-item-insertion","no-automated-item-removal"},
+    max_health = 250,
+    corpse = "heating-tower-remnants",
+    dying_explosion = "heating-tower-explosion",
+    surface_conditions =
+    {
+      {
+        property = "pressure",
+        max = 0,
+        min = 0,
+      }
+    },
+    collision_mask = {layers ={}},
+    collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
+    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    selection_priority = 40,
+    damaged_trigger_effect = hit_effects.entity(),
+    drawing_box_vertical_extension = 1,
+    --selectable_in_game = false,
+    allow_copy_paste = false,
+    gui_mode = "none",
+    consumption = "1MW",
+    neighbour_bonus = 0,
+    energy_source = {
+      type = "void",
+    },
+    heat_buffer =
+    {
+      max_temperature = refinery_temperature_limit,--200 degrees above max temperature.
+      minimum_glow_temperature = 150,
+      specific_heat = refinery_specific_heat,
+      max_transfer = "100GW",
+      connections ={
+        {position = {-2, -2}, direction = defines.direction.north},
+        {position = {2, -2}, direction = defines.direction.north},
+        {position = {2, -2}, direction = defines.direction.east},
+        {position = {2, 2}, direction = defines.direction.east},
+        {position = {2, 2}, direction = defines.direction.south},
+        {position = {-2, 2}, direction = defines.direction.south},
+        {position = {-2, 2}, direction = defines.direction.west},
+        {position = {-2, -2}, direction = defines.direction.west},
+      },
+    },
+    connection_patches_connected = {
+      HP_NS,HP_NS,
+      HP_EW,HP_EW,
+      HP_NS,HP_NS,
+      HP_EW,HP_EW,
+      },
+    connection_patches_disconnected = {
+      HP_N_big,HP_N_big,
+      HP_E_big,HP_E_big,
+      HP_S_big,HP_S_big,
+      HP_W_big,HP_W_big,
+      },
+    heat_connection_patches_connected ={
+      HP_NS_Hot,HP_NS_Hot,
+      HP_EW_Hot,HP_EW_Hot,
+      HP_NS_Hot,HP_NS_Hot,
+      HP_EW_Hot,HP_EW_Hot,
+      },
+    heat_connection_patches_disconnected ={
+      HP_N_Hot_big,HP_N_Hot_big,
+      HP_E_Hot_big,HP_E_Hot_big,
+      HP_S_Hot_big,HP_S_Hot_big,
+      HP_W_Hot_big,HP_W_Hot_big,
+    },
+  }
+})
+local chemistry_plant_temperature_limit = 455
+local chemistry_plant_specific_heat = "1MJ"
+data:extend({--chemistry plant
+  {--chemistry plant heat interface. I yearn for the rotatable
+    type = "reactor",
+    name = "chemistry-plant-heat-interface",
+    icon  = "__space-age__/graphics/icons/heating-tower.png",
+    flags = {"placeable-neutral", "player-creation","not-on-map","not-blueprintable","not-deconstructable","no-automated-item-insertion","no-automated-item-removal"},
+    max_health = 250,
+    corpse = "heating-tower-remnants",
+    dying_explosion = "heating-tower-explosion",
+    surface_conditions =
+    {
+      {
+        property = "pressure",
+        max = 0,
+        min = 0,
+      }
+    },
+    collision_mask = {layers ={}},
+    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    selection_priority = 40,
+    damaged_trigger_effect = hit_effects.entity(),
+    drawing_box_vertical_extension = 1,
+    --selectable_in_game = false,
+    allow_copy_paste = false,
+    gui_mode = "none",
+    consumption = "1MW",
+    neighbour_bonus = 0,
+    energy_source = {
+      type = "void",
+    },
+    heat_buffer = {
+      max_temperature = chemistry_plant_temperature_limit,
+      minimum_glow_temperature = 50,
+      specific_heat = chemistry_plant_specific_heat,
+      max_transfer = "100GW",
+      connections = {
+        { position = {1, -1}, direction = defines.direction.north },
+        { position = {-1, -1}, direction = defines.direction.north },
+        { position = {1, 1}, direction = defines.direction.east },
+        { position = {1, -1}, direction = defines.direction.east },
+        { position = {1, 1}, direction = defines.direction.south },
+        { position = {-1, 1}, direction = defines.direction.south },
+        { position = {-1, 1}, direction = defines.direction.west },
+        { position = {-1, -1}, direction = defines.direction.west },
+      },
+    },
+    connection_patches_connected = { HP_NS, HP_NS, HP_EW, HP_EW, HP_NS, HP_NS, HP_EW, HP_EW},
+    connection_patches_disconnected = { HP_N_big, HP_N_big, HP_E_big, HP_E_big, HP_S_big, HP_S_big, HP_W_big, HP_W_big},
+    heat_connection_patches_connected ={ HP_NS_Hot, HP_NS_Hot, HP_EW_Hot, HP_EW_Hot, HP_NS_Hot, HP_NS_Hot, HP_EW_Hot, HP_EW_Hot},
+    heat_connection_patches_disconnected ={ HP_N_Hot_big, HP_N_Hot_big, HP_E_Hot_big, HP_E_Hot_big, HP_S_Hot_big, HP_S_Hot_big, HP_W_Hot_big, HP_W_Hot_big},
+    default_temperature_signal = {type = "virtual", name = "signal-T"},
+    circuit_wire_max_distance = reactor_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["heating-tower"]
+  },
+})

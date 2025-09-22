@@ -45,7 +45,26 @@ filters = {
 		name = "neural-node",
 		mode = "or"
 	},
-
+	{
+		filter = "name",
+		name = "micro-assembler",
+		mode = "or"
+	},
+	{
+		filter = "name",
+		name = "chemistry-plant",
+		mode = "or"
+	},
+	{
+		filter = "name",
+		name = "refinery",
+		mode = "or"
+	},
+	{
+		filter = "name",
+		name = "small-crusher",
+		mode = "or"
+	},
 
 }
 --- on events
@@ -78,8 +97,11 @@ script.on_event(
 	defines.events.on_player_rotated_entity,
 		function(event)
 			local entity = event.entity
+			if entity.valid == false then return end
 			if entity.name == "supercomputer" then
 				supercomputer.on_supercomputer_rotated(entity)
+			--elseif entity.name == "chemistry-plant" then
+			--	thermal_system.on_chemistry_plant_rotated(entity)
 			end
 		end
 )
@@ -111,6 +133,14 @@ function handle_build_event(event)
 		supercomputer.on_supercomputer_built(entity)
 	elseif entity.name == "neural-node" then
 		thermal_system.on_neural_node_built(entity)
+	elseif entity.name == "micro-assembler" then
+		thermal_system.on_micro_assembler_built(entity)
+	elseif entity.name == "small-crusher" then
+		thermal_system.on_small_crusher_built(entity)
+	elseif entity.name == "chemistry-plant" then
+		thermal_system.on_chemistry_plant_built(entity)
+	elseif entity.name == "refinery" then
+		thermal_system.on_refinery_built(entity)
 	end
 end
 
@@ -128,6 +158,10 @@ script.on_event(
 		thermal_system.on_assembling_machine_tick()
 		thermal_system.on_furnace_tick()
 		thermal_system.on_neural_node_tick()
+		thermal_system.on_micro_assembler_tick()
+		thermal_system.on_small_crusher_tick()
+		thermal_system.on_chemistry_plant_tick()
+		thermal_system.on_refinery_tick()
 		supercomputer.on_supercomputer_tick()
 	end
 )
