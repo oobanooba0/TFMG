@@ -3,6 +3,7 @@ data:extend({
     type = "recipe",
     category = "supercomputer",
     name = "introspection-science",
+    localised_name = {"recipe-name.introspection-science"},
     energy_required = 5,
     enabled = false,
     ingredients = {
@@ -16,6 +17,7 @@ data:extend({
     type = "recipe",
     category = "supercomputer",
     name = "exploration-science",
+    localised_name = {"recipe-name.exploration-science"},
     energy_required = 5,
     enabled = true,
     ingredients = {

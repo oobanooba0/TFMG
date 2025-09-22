@@ -24,7 +24,7 @@ end
 function create_self()--self is the name of the space platform, I just thought it was funny.
   local force = game.forces["player"]
   platform = force.create_space_platform({
-  name = "Self",
+  name = "SELF",
   planet = "arrival",
   starter_pack = "space-platform-starter-pack"
   })

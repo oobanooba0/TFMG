@@ -215,11 +215,11 @@ end
 function supercomputer.exploration_solution(v)
   local green_distance = v.input.get_signal({type = "virtual", name = "signal-distance"},defines.wire_connector_id.circuit_green)
   local red_distance = v.input.get_signal({type = "virtual", name = "signal-distance"},defines.wire_connector_id.circuit_red)
-  local tolerance = 1
   local green_difference = math.abs(green_distance - v.solution_x)
   local red_difference = math.abs(red_distance - v.solution_x)
+  local tolerance = 1
 
-  if green_difference <= 1 or red_difference <= 1 then--first check if we've solved the current problem
+  if green_difference <= tolerance or red_difference <= tolerance then--first check if we've solved the current problem
     --game.print("red:"..red_difference.."green:"..green_difference)
     v.machine.disabled_by_script = false
     supercomputer.create_new_problem_exploration(v)
