@@ -8,7 +8,9 @@ function supercomputer.on_supercomputer_destroyed(event)
       local entry = storage.supercomputer[event.useful_id]
       entry.input.destroy()
       entry.output.destroy()--byebye!
-      entry.interface.destroy()
+      if entry.interface ~= nil then
+        entry.interface.destroy()
+      end
   		storage.supercomputer[event.useful_id] = nil
 	  end
 	end
@@ -52,11 +54,17 @@ function supercomputer.on_supercomputer_built(entity)
   end
   local supercomputer_input = surface.create_entity({ name = "supercomputer-input", position = inputxy, force = force, direction = direction, fast_replace = true })
   local supercomputer_output = surface.create_entity({ name = "supercomputer-output", position = outputxy, force = force, direction = direction, fast_replace = true})
-  local interface = surface.create_entity({ name = "supercomputer-heat-interface", position = entity.position, force = force })
+  if surface.get_property("gravity") == 0 then
+    interface = surface.create_entity({ name = "supercomputer-heat-interface", position = entity.position, force = force })
+    interface.temperature = 80
+    interface.destructible = false
+    interface.disabled_by_script = true
+  else
+    interface = nil
+  end
+  game.print(interface)
   supercomputer_input.destructible = false
   supercomputer_output.destructible = false
-  interface.destructible = false
-  interface.disabled_by_script = true
   entity.disabled_by_script = true
   if storage.supercomputer == nil then
 	  storage.supercomputer = {}
@@ -114,14 +122,18 @@ function supercomputer.on_supercomputer_tick()
 		function(v)
       if v.machine.valid == false then--checks for machine validity, preventing a game crash if the machine is destroyed instantly.
 		  return end
-			local max_working_temperature = 90
-			local max_safe_temperature = 120
-			local specific_heat = 5
-			local heat_ratio = 1
-			local base_energy_consumption = 25--25MW is alot, but this machine never runs continuously
-			thermal_update(v,max_working_temperature,max_safe_temperature,specific_heat,heat_ratio,base_energy_consumption)
-      if v.interface.temperature >= max_working_temperature then
-      return end
+      if v.interface ~= nil then --specifically for the supercomputer, we need to handle the case when its built on the surface, and doesnt have a heat interface.
+			  local max_working_temperature = 90
+			  local max_safe_temperature = 120
+			  local specific_heat = 5
+			  local heat_ratio = 1
+			  local base_energy_consumption = 25--25MW is alot, but this machine never runs continuously
+			  thermal_update(v,max_working_temperature,max_safe_temperature,specific_heat,heat_ratio,base_energy_consumption)
+        if v.interface.temperature >= max_working_temperature then
+        return end
+      else
+        v.machine.disabled_by_script = false
+      end
 
       if v.machine.status ~= 1 then
       return end
@@ -146,9 +158,9 @@ function supercomputer.on_supercomputer_tick()
         else
           v.machine.disabled_by_script = true
           v.machine.custom_status = {
-					diode = defines.entity_status_diode.yellow,
-					label = "Incorrect signal x"
-					}
+					  diode = defines.entity_status_diode.yellow,
+					  label = "Incorrect signal x"
+					  }
         end 
       end
     end
