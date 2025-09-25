@@ -43,6 +43,7 @@ data.raw.recipe ["rail-signal"] = nil
 data.raw.recipe ["rail-chain-signal"] = nil
 data.raw.recipe ["train-stop"] = nil
 data.raw.recipe ["locomotive"] = nil
+data.raw.recipe ["radar"] = nil
 
 local KMH = 216
 

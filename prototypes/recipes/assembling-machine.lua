@@ -534,6 +534,37 @@ data:extend({
       { type = "item", name = "asteroid-collector", amount = 1 }
     },
   },
+  {--vision radar
+    type = "recipe",
+    category = "assembling-machine",
+    name = "radar",
+    energy_required = 16,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 12 },
+      { type = "item", name = "modular-circuit", amount = 16 },
+      { type = "item", name = "crystalline-plate", amount = 8 },
+
+    },
+    results = { 
+      { type = "item", name = "radar", amount = 1 }
+    },
+  },
+  {--scout radar
+    type = "recipe",
+    category = "assembling-machine",
+    name = "scout-radar",
+    energy_required = 16,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "radar", amount = 2 },
+      { type = "item", name = "optical-coil", amount = 32 },
+      { type = "item", name = "crystalline-plate", amount = 16 },
+    },
+    results = { 
+      { type = "item", name = "scout-radar", amount = 1 }
+    },
+  },
   {--small crusher
     type = "recipe",
     category = "assembling-machine",

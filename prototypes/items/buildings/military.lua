@@ -4,9 +4,9 @@ data:extend({
   {--scout radar
     type = "item",
     name = "scout-radar",
-    icon = "__base__/graphics/icons/radar.png",
+    icons = {{icon = "__base__/graphics/icons/radar.png", tint = {1,1,0.8}}},
     subgroup = "defensive-structure",
-    order = "d[radar]-a[radar]",
+    order = "d[radar]-b[radar]",
     inventory_move_sound = item_sounds.metal_large_inventory_move,
     pick_sound = item_sounds.metal_large_inventory_pickup,
     drop_sound = item_sounds.metal_large_inventory_move,

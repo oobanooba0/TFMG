@@ -458,5 +458,42 @@ data:extend({
       time = 24
     },
   },
-
+  {--radars
+    type = "technology",
+    name = "radars",
+    icon = "__base__/graphics/technology/radar.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "radar"
+      },
+    },
+    prerequisites = {"energy-distribution-2"},
+    unit = {
+      count = 64,
+      ingredients = {{"introspection-science", 1}},
+      time = 16
+    },
+  },
+  {--scout radar
+    type = "technology",
+    name = "scout-radar",
+    icon = "__base__/graphics/technology/radar.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "scout-radar"
+      },
+    },
+    prerequisites = {"radars","optical-coil"},
+    unit = {
+      count = 128,
+      ingredients = {{"introspection-science", 1}},
+      time = 24
+    },
+  },
 })

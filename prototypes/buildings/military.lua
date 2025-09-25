@@ -1,6 +1,11 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 
+data.raw['radar']['radar'].energy_usage = "1MW"
+data.raw['radar']['radar'].energy_per_nearby_scan = "1MJ"
+data.raw['radar']['radar'].max_distance_of_nearby_sector_revealed = 4
+data.raw['radar']['radar'].max_distance_of_sector_revealed = 4
+
 data:extend({
   {
     type = "radar",
