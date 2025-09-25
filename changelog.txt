@@ -21,9 +21,10 @@ Date: ????
     - Asteroid chunks now smelt to 1 plate
     - Ore patches now result in chunks. This set of changes helps me reduce the number of redundant intermediates, which in turn should save the player time on boring crafting steps.
     - Roboport connection range extended
-    - Heat pipes now require mineral glass (This is primarily because Mineral glass was somewhat underutilised.
+    - Heat pipes now require mineral glass (Mineral glass is actually more useful now!)
+    - Arrival pressure increased, due it affecting robots. (Wube, why couldn't this have just been a seperate hidden property?)
   Bugfixes:
-    - Nauvis no longer appears in planet list. Though the bugfix is dubious.
+    - Nauvis should no longer appears in planet list.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.6
 Date: 2025-09-17

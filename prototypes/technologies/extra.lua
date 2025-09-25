@@ -40,7 +40,6 @@ data:extend({
     upgrade = true
   },
 --inserter bonus
-
   {--inserter-capacity-bonus 1
     type = "technology",
     name = "inserter-capacity-bonus-1",
@@ -61,6 +60,127 @@ data:extend({
       count = 64
     },
     prerequisites = {"logistics-1"},
+    upgrade = true
+  },
+  {--inserter-capacity-bonus 2
+    type = "technology",
+    name = "inserter-capacity-bonus-2",
+    icons = util.technology_icon_constant_stack_size("__base__/graphics/technology/inserter-capacity.png"),
+    localised_name = {"technology-name.inserter-capacity-bonus-1"},
+    localised_description = {"technology-description.inserter-capacity-bonus-1"},
+    effects =
+    {
+      {
+        type = "inserter-stack-size-bonus",
+        modifier = 1
+      },
+    },
+    prerequisites = {"inserter-capacity-bonus-1","introspection-science-pack"},
+    unit = {
+    count = 256,
+    ingredients = {
+      {"introspection-science", 1}
+      },
+    time = 24
+    },
+    upgrade = true
+  },
+  {--inserter-capacity-bonus 3
+    type = "technology",
+    name = "inserter-capacity-bonus-3",
+    icons = util.technology_icon_constant_stack_size("__base__/graphics/technology/inserter-capacity.png"),
+    localised_name = {"technology-name.inserter-capacity-bonus-1"},
+    localised_description = {"technology-description.inserter-capacity-bonus-1"},
+    effects =
+    {
+      {
+        type = "inserter-stack-size-bonus",
+        modifier = 1
+      },
+    },
+    prerequisites = {"inserter-capacity-bonus-2","exploration-science"},
+    unit = {
+    count = 512,
+    ingredients = {
+      {"introspection-science", 1},
+      {"exploration-science", 1}
+      },
+    time = 32
+    },
+    upgrade = true
+  },
+--robot
+---robot speed
+  {--robot speed 1
+    type = "technology",
+    name = "robot-speed-1",
+    icons = util.technology_icon_constant_movement_speed("__base__/graphics/technology/worker-robots-speed.png"),
+    localised_name = {"technology-name.robot-speed-1"},
+    localised_description = {"technology-description.robot-speed-1"},
+    effects =
+    {
+      {
+        type = "worker-robot-speed",
+        modifier = 0.35
+      }
+    },
+    prerequisites = {"basic-bots"},
+    unit = {
+    count = 256,
+    ingredients = {
+      {"introspection-science", 1},
+      },
+    time = 24
+    },
+    upgrade = true
+  },
+  {--robot speed 2
+    type = "technology",
+    name = "robot-speed-2",
+    icons = util.technology_icon_constant_movement_speed("__base__/graphics/technology/worker-robots-speed.png"),
+    localised_name = {"technology-name.robot-speed-1"},
+    localised_description = {"technology-description.robot-speed-1"},
+    effects =
+    {
+      {
+        type = "worker-robot-speed",
+        modifier = 0.35
+      }
+    },
+    prerequisites = {"robot-speed-1","exploration-science"},
+    unit = {
+    count = 512,
+    ingredients = {
+      {"introspection-science", 1},
+      {"exploration-science", 1},
+      },
+    time = 32
+    },
+    upgrade = true
+  },
+---robot capacity
+  {--robot capacity 1
+    type = "technology",
+    name = "robot-capacity-1",
+    icons = util.technology_icon_constant_capacity("__base__/graphics/technology/worker-robots-storage.png"),
+    localised_name = {"technology-name.robot-capacity-1"},
+    localised_description = {"technology-description.robot-capacity-1"},
+    effects =
+    {
+      {
+        type = "worker-robot-storage",
+        modifier = 1
+      }
+    },
+    prerequisites = {"basic-bots","exploration-science"},
+    unit = {
+    count = 256,
+    ingredients = {
+      {"introspection-science", 1},
+      {"exploration-science", 1},
+      },
+    time = 24
+    },
     upgrade = true
   },
 })

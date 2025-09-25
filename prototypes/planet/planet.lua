@@ -36,7 +36,7 @@ data:extend({
     {
       ["day-night-cycle"] = 85 * minute,
       ["solar-power"] = 10,
-      pressure = 2,
+      pressure = 135,
       gravity = 1.35,
     },
     surface_render_parameters =

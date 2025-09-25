@@ -289,7 +289,7 @@ data:extend({
       time = 24
     },
   },
---side techs
+  --side techs
   {--energy distribution 2
     type = "technology",
     name = "energy-distribution-2",
