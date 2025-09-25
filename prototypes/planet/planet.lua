@@ -42,7 +42,6 @@ data:extend({
     surface_render_parameters =
     {
       clouds = effects.default_clouds_effect_properties(),
-      shadow_opacity = 1,
     },
     --Asteroid code
     asteroid_spawn_influence = 1,
