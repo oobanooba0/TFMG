@@ -1,3 +1,5 @@
+data.raw ['ambient-sound']['main-menu'] = nil--to boldly delete the vanilla main menu music
+
 data:extend({
 --main menu
   {
