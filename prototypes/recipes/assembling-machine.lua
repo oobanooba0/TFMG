@@ -14,6 +14,7 @@ data:extend({
     results = { 
       { type = "item", name = "mineral-glass", amount = 1 }
     },
+    allow_decomposition = false,
   },
   {--General purpose structure
     type = "recipe",

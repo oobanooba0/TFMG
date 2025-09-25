@@ -11,6 +11,7 @@ data:extend({
     results = { 
         { type = "item", name = "general-purpose-structure", amount = 32 }
     },
+    allow_decomposition = false,
   },
   {--mechanical components simple recipe
     type = "recipe",
@@ -24,6 +25,7 @@ data:extend({
     results = { 
         { type = "item", name = "mechanical-components", amount = 16 }
     },
+    allow_decomposition = false,
   },
   {--conductive coil simple recipe
     type = "recipe",
@@ -37,6 +39,7 @@ data:extend({
     results = { 
         { type = "item", name = "conductive-coil", amount = 40 }
     },
+    allow_decomposition = false,
   },
   {--modular circuit simple recipe
     type = "recipe",
@@ -51,6 +54,7 @@ data:extend({
     results = { 
         { type = "item", name = "modular-circuit", amount = 16 }
     },
+    allow_decomposition = false,
   },
   {--Ai Processor printing
     type = "recipe",
@@ -67,5 +71,6 @@ data:extend({
     results = { 
         { type = "item", name = "ai-processor", amount = 1 }
     },
+    allow_decomposition = false,
   },
 })

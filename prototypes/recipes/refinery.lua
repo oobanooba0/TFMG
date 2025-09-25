@@ -81,6 +81,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "pure-iron-ore", amount = 2 },
       { type = "fluid", name = "water", amount = 20 },
     },
+    allow_decomposition = false,
     allow_productivity = true,
   },
   {--refined concrete

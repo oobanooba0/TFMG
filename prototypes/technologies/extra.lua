@@ -7,6 +7,7 @@ data:extend({
     icon = ("__core__/graphics/icons/space-age.png"),
     icon_size = 64,
     effects = {},
+    essential = true,
     prerequisites = {"exploration-science"},
     unit =
     {

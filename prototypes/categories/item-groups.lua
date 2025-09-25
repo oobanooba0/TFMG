@@ -10,7 +10,13 @@ data:extend({
     type = "item-subgroup",
     name = "basic-intermediates",
     group = "intermediate-products",
-    order = "b"
+    order = "b-a"
+  },
+  {
+    type = "item-subgroup",
+    name = "hydrocarbons",
+    group = "intermediate-products",
+    order = "b-b"
   },
   {
     type = "item-subgroup",

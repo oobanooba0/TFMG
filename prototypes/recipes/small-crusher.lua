@@ -17,6 +17,7 @@ data:extend({
       {type="item", name="ferric-ore", amount=5},
       {type="item", name="mineral-ore", amount=1},
     },
+    allow_decomposition = false,
     allow_productivity = true,
   },
   {
@@ -37,6 +38,7 @@ data:extend({
       {type="item", name="mineral-ore", amount=5},
       {type="item", name="ferric-ore", amount=1},
     },
+    allow_decomposition = false,
     allow_productivity = true,
   },
 })

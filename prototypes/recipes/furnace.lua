@@ -9,7 +9,9 @@
     enabled = false,
     ingredients = {{type = "item", name = "ferric-asteroid-chunk", amount = 1}},
     results = {{type="item", name="ferric-plate", amount=1}},
+    allow_decomposition = false,
     allow_productivity = true,
+
   },
   {
     type = "recipe",
@@ -20,6 +22,7 @@
     enabled = false,
     ingredients = {{type = "item", name = "ferric-ore", amount = 2}},
     results = {{type="item", name="ferric-plate", amount=1}},
+    allow_decomposition = false,
     allow_productivity = true,
   },
   {
@@ -31,6 +34,7 @@
     enabled = false,
     ingredients = {{type = "item", name = "pure-iron-ore", amount = 3}},
     results = {{type="item", name="ferric-plate", amount=2}},
+    allow_decomposition = false,
     allow_productivity = true,
   },
   --titanium recipes
@@ -43,6 +47,7 @@
     enabled = false,
     ingredients = {{type = "item", name = "titanium-ore", amount = 2}},
     results = {{type="item", name="titanium-plate", amount=1}},
+    allow_decomposition = false,
     allow_productivity = true,
   },
 
@@ -56,6 +61,7 @@
     enabled = false,
     ingredients = {{type = "item", name = "crystalline-asteroid-chunk", amount = 1}},
     results = {{type="item", name="hot-mineral-plate", amount=1}},
+    allow_decomposition = false,
     allow_productivity = true,
     surface_conditions = {{
       property = "pressure",
@@ -72,6 +78,7 @@
     enabled = false,
     ingredients = {{type = "item", name = "crystalline-asteroid-chunk", amount = 1}},
     results = {{type="item", name="mineral-glass", amount=1}},
+    allow_decomposition = false,
     allow_productivity = true,
     surface_conditions = {{
       property = "pressure",
@@ -87,6 +94,7 @@
     enabled = false,
     ingredients = {{type = "item", name = "mineral-ore", amount = 2}},
     results = {{type="item", name="hot-mineral-plate", amount=1}},
+    allow_decomposition = false,
     allow_productivity = true,
     surface_conditions = {{
       property = "pressure",
@@ -103,6 +111,7 @@
     enabled = false,
     ingredients = {{type = "item", name = "mineral-ore", amount = 2}},
     results = {{type="item", name="mineral-glass", amount=1}},
+    allow_decomposition = false,
     allow_productivity = true,
     surface_conditions = {{
       property = "pressure",

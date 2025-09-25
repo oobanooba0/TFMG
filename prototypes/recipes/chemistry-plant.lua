@@ -65,6 +65,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "titanium-ore", amount = 1 },
       { type = "fluid", name = "ferric-solution", amount = 60 }
     },
+    allow_decomposition = false,
     allow_productivity = true,
   },
   {--microbe-culture
