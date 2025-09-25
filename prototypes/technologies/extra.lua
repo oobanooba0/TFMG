@@ -67,8 +67,8 @@ data:extend({
     type = "technology",
     name = "inserter-capacity-bonus-2",
     icons = util.technology_icon_constant_stack_size("__base__/graphics/technology/inserter-capacity.png"),
-    localised_name = {"technology-name.inserter-capacity-bonus-1"},
-    localised_description = {"technology-description.inserter-capacity-bonus-1"},
+    localised_name = {"technology-name.inserter-capacity-bonus-2"},
+    localised_description = {"technology-description.inserter-capacity-bonus-2"},
     effects =
     {
       {
@@ -90,8 +90,8 @@ data:extend({
     type = "technology",
     name = "inserter-capacity-bonus-3",
     icons = util.technology_icon_constant_stack_size("__base__/graphics/technology/inserter-capacity.png"),
-    localised_name = {"technology-name.inserter-capacity-bonus-1"},
-    localised_description = {"technology-description.inserter-capacity-bonus-1"},
+    localised_name = {"technology-name.inserter-capacity-bonus-3"},
+    localised_description = {"technology-description.inserter-capacity-bonus-3"},
     effects =
     {
       {
@@ -116,8 +116,8 @@ data:extend({
     type = "technology",
     name = "robot-speed-1",
     icons = util.technology_icon_constant_movement_speed("__base__/graphics/technology/worker-robots-speed.png"),
-    localised_name = {"technology-name.robot-speed-1"},
-    localised_description = {"technology-description.robot-speed-1"},
+    localised_name = {"technology-name.robot-speed-4"},
+    localised_description = {"technology-description.robot-speed-4"},
     effects =
     {
       {

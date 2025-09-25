@@ -102,7 +102,6 @@ for name, item in pairs(data.raw.item) do
 	for _, hideName in ipairs(hidden_items) do
 		if item.name == hideName then
 		item.hidden = true
-		item.hidden_in_factoriopedia = true
 		end
 	end
 end
