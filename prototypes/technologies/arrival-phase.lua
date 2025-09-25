@@ -426,5 +426,37 @@ data:extend({
       time = 24
     },
   },
+  {--logistics 2
+    type = "technology",
+    name = "logistics-2",
+    icon = "__base__/graphics/technology/logistics-2.png",
+    localised_name = {"technology-name.logistics-2"},
+    localised_description = {"technology-description.logistics-2"},
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "transport-belt-2"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "underground-belt-2"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "splitter-2"
+      },
+    },
+    prerequisites = {"mechatronic-components"},
+    unit = {
+      count = 256,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1}
+      },
+      time = 24
+    },
+  },
 
 })

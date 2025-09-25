@@ -273,6 +273,22 @@ data:extend({
       { type = "item", name = "transport-belt-1", amount = 1 }
     },
   },
+  {--transport belt 2
+    type = "recipe",
+    category = "assembling-machine",
+    name = "transport-belt-2",
+    energy_required = 4,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "transport-belt-1", amount = 1 },
+      { type = "item", name = "high-performance-structure", amount = 1 },
+      { type = "item", name = "mechatronic-components", amount = 2 },
+      { type = "fluid", name = "mineral-lubricant", amount = 16 },
+    },
+    results = { 
+      { type = "item", name = "transport-belt-2", amount = 1 }
+    },
+  },
   {--underground belt 1
     type = "recipe",
     category = "assembling-machine",
@@ -281,10 +297,26 @@ data:extend({
     enabled = false,
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 2 },
-      { type = "item", name = "transport-belt-1", amount = 5 },
+      { type = "item", name = "transport-belt-1", amount = 4 },
     },
     results = { 
       { type = "item", name = "underground-belt-1", amount = 2 }
+    },
+  },
+  {--underground belt 2
+    type = "recipe",
+    category = "assembling-machine",
+    name = "underground-belt-2",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "underground-belt-1", amount = 2 },
+      { type = "item", name = "transport-belt-2", amount = 6 },
+      { type = "item", name = "high-performance-structure", amount = 4 },
+      { type = "fluid", name = "mineral-lubricant", amount = 16 },
+    },
+    results = { 
+      { type = "item", name = "underground-belt-2", amount = 2 }
     },
   },
   {--splitter-1
@@ -300,6 +332,23 @@ data:extend({
     },
     results = { 
       { type = "item", name = "splitter-1", amount = 1 }
+    },
+  },
+  {--splitter-2
+    type = "recipe",
+    category = "assembling-machine",
+    name = "splitter-2",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "splitter-1", amount = 1 },
+      { type = "item", name = "high-performance-structure", amount = 2 },
+      { type = "item", name = "mechatronic-components", amount = 4 },
+      { type = "item", name = "optical-coil", amount = 8 },
+      { type = "fluid", name = "mineral-lubricant", amount = 16 },
+    },
+    results = { 
+      { type = "item", name = "splitter-2", amount = 1 }
     },
   },
   {--inserter-1
