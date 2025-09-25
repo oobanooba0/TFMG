@@ -1,8 +1,8 @@
----assembling machine recipes,
+---assembling machine recipes.
 ---assembling-machine-pure for recipes that should only appear in the assembling machine, and not the matter reconstructor.
   
 data:extend({
-  {--General purpose structure
+  {--Mineral Glass (in space)
     type = "recipe",
     category = "assembling-machine-pure",
     name = "mineral-glass-cooling",

@@ -84,4 +84,27 @@ data:extend({
     time = 16
     },
   },
+  {--EXPLORE your options
+    type = "technology",
+    name = "explore-your-options",
+    icon = "__base__/graphics/technology/advanced-oil-processing.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "refinery"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "chemistry-plant"
+      },
+    },
+    prerequisites = {"fluid-extraction"},
+    research_trigger =
+    {
+      type = "build-entity",
+      entity = "pumpjack",
+    },
+  },
 })
