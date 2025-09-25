@@ -9,7 +9,8 @@ data:extend({
       volume = 1,
     }
   },
---arrival
+})
+data:extend({--arrival
 ---main
   {
     type = "ambient-sound",
@@ -45,5 +46,4 @@ data:extend({
     },
     weight = 10
   },
----
 })
