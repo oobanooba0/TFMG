@@ -3,9 +3,10 @@ Version: 0.3.0
 Date: ????
   Features:
     - Achievements added
+    - 2 New music tracks, TREMOR and ENTROPY
     - Refinery added
     - Chemistry plant added
-    - Micro assembler added
+    - Micro assembler added (dubious, no recipe atm)
     - Small crusher added
     - Recipes for trains and rails added
     - Recipes for pipes and related items added
@@ -20,6 +21,7 @@ Date: ????
     - Asteroid chunks now smelt to 1 plate
     - Ore patches now result in chunks. This set of changes helps me reduce the number of redundant intermediates, which in turn should save the player time on boring crafting steps.
     - Roboport connection range extended
+    - Heat pipes now require mineral glass (This is primarily because Mineral glass was somewhat underutilised.
   Bugfixes:
     - Nauvis no longer appears in planet list. Though the bugfix is dubious.
 ---------------------------------------------------------------------------------------------------

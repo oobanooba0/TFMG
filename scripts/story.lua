@@ -77,8 +77,8 @@ script.on_event(defines.events.on_research_finished, function(event)
     random_say("story-event.consider-your-potential-11")
     random_say("story-event.consider-your-potential-12")
     random_say("story-event.consider-your-potential-13")
-
-    ---atm this is the endgame tech so we hit the victory screen.
+  end
+  if event.research.name == "victory" then
     game.set_win_ending_info{
       title = {"story-event.victory-title"},
       message = {"story-event.victory-message"},

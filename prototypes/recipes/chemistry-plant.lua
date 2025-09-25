@@ -10,7 +10,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { icon = "__base__/graphics/icons/arrows/signal-left-right-arrow.png", shift = {0,7}, scale = 0.3,}
     },
     energy_required = 1,
-    enabled = true,
+    enabled = false,
     ingredients = {
       { type = "fluid", name = "water", amount = 300 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
@@ -33,7 +33,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { icon = "__base__/graphics/icons/arrows/down-arrow.png", shift = {0,7}, scale = 0.3,}
     },
     energy_required = 1,
-    enabled = true,
+    enabled = false,
     ingredients = {
       { type = "fluid", name = "water", amount = 300 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
@@ -56,7 +56,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { icon = "__base__/graphics/icons/fluid/petroleum-gas.png", shift = {0,7}, scale = 0.3,}
     },
     energy_required = 2,
-    enabled = true,
+    enabled = false,
     ingredients = {
       { type = "item", name = "ferric-ore", amount = 6 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 16 },
@@ -73,7 +73,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     subgroup = "fluid-recipes",
     name = "microbe-extraction",
     energy_required = 2,
-    enabled = true,
+    enabled = false,
     ingredients = {
       { type = "fluid", name = "organic-sludge", amount = 10 },
       { type = "item", name = "mineral-ore", amount = 1 },
@@ -89,7 +89,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     subgroup = "fluid-recipes",
     name = "bio-polymerisation",
     energy_required = 2,
-    enabled = true,
+    enabled = false,
     ingredients = {
       { type = "item", name = "microbe-culture", amount = 1 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 10 },
@@ -105,7 +105,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     subgroup = "fluid-recipes",
     name = "mineral-lubricant",
     energy_required = 2,
-    enabled = true,
+    enabled = false,
     ingredients = {
       { type = "item", name = "organic-carbon", amount = 2 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 5 },

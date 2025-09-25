@@ -1,5 +1,5 @@
 data:extend({--6:4:1 Water, Hydrocarbon, Organic
-  {--Hydrocarbon slush seperation
+  {--Hydrocarbon slush distillation
     type = "recipe",
     category = "refinery",
     subgroup = "fluid-recipes",
@@ -9,7 +9,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { icon = "__base__/graphics/icons/signal/signal-fire.png", shift = {0,7}, scale = 0.3, tint = {1,0.2,0.2,0.5}}
     },
     energy_required = 4,
-    enabled = true,
+    enabled = false,
     ingredients = {
       { type = "fluid", name = "hydrocarbon-slush", amount = 50 },
     },
@@ -29,7 +29,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { icon = "__base__/graphics/icons/arrows/signal-shuffle.png", shift = {0,7}, scale = 0.3,}
     },
     energy_required = 1,
-    enabled = true,
+    enabled = false,
     ingredients = {
       { type = "fluid", name = "water", amount = 300 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
@@ -51,7 +51,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { icon = "__base__/graphics/icons/arrows/signal-shuffle.png", shift = {0,7}, scale = 0.3,}
     },
     energy_required = 1,
-    enabled = true,
+    enabled = false,
     ingredients = {
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
       { type = "fluid", name = "organic-sludge", amount = 50 },  
@@ -73,7 +73,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { icon = "__Krastorio2Assets__/icons/items/enriched-copper.png", shift = {0,7}, scale = 0.3,}
     },
     energy_required = 1,
-    enabled = true,
+    enabled = false,
     ingredients = {
       { type = "fluid", name = "ferric-solution", amount = 160 },
     },
@@ -88,10 +88,10 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     category = "refinery",
     subgroup = "fluid-recipes",
     name = "refined-concrete",
-    energy_required = 1,
-    enabled = true,
+    energy_required = 2,
+    enabled = false,
     ingredients = {
-      { type = "item", name = "mineral-ore", amount = 2 },
+      { type = "item", name = "mineral-ore", amount = 4 },
       { type = "item", name = "general-purpose-structure", amount = 1 },
       { type = "fluid", name = "water", amount = 10 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 10 },

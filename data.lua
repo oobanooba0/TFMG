@@ -205,3 +205,4 @@ require("sound.ambient.ambient-sounds")
 --technolgoies
 require("prototypes.technologies.platform-phase")
 require("prototypes.technologies.arrival-phase")
+require("prototypes.technologies.extra")

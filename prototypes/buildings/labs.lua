@@ -132,7 +132,7 @@
     researching_speed = 1,
     inputs =
     {
-      "introspection-science",
+      "introspection-science","exploration-science"
     },
     --module_slots = 2,
     icons_positioning =

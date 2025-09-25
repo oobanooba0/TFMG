@@ -56,7 +56,12 @@ data:extend({
   {
     type = "item",
     name = "titanium-plate",
-    icon = "__TFMG__/graphics/icons/titanium-plate.png",
+    icon = "__TFMG__/graphics/icons/items/titanium-plate.png",
+    pictures =
+    {
+      { size = 64, filename = "__TFMG__/graphics/icons/items/titanium-plate.png", scale = 0.5, mipmap_count = 4 },
+    },
+    random_tint_color = item_tints.iron_rust,
     subgroup = "basic-intermediates",
     order = "c[titanium]-a[titanium-plate]",
     inventory_move_sound = item_sounds.metal_small_inventory_move,
@@ -143,7 +148,7 @@ data:extend({
   {--high performance structure
     type = "item",
     name = "high-performance-structure",
-    icon = "__base__/graphics/icons/low-density-structure.png",
+    icon = "__TFMG__/graphics/icons/items/high-performance-structure.png",
     subgroup = "structural-intermediates",
     order = "b[high-performacne-structures]",
     inventory_move_sound = item_sounds.low_density_inventory_move,
@@ -207,7 +212,11 @@ data:extend({
   {--optical coil
     type = "item",
     name = "optical-coil",
-    icon = "__TFMG__/graphics/icons/optical-coil.png",
+    icon = "__TFMG__/graphics/icons/items/optical-coil.png",
+    pictures =
+    {
+      { size = 64, filename = "__TFMG__/graphics/icons/items/optical-coil.png", scale = 0.5, mipmap_count = 4 },
+    },
     subgroup = "electronic-intermediates",
     order = "a[conductive-coil]-b",
     inventory_move_sound = item_sounds.electric_small_inventory_move,
@@ -226,7 +235,7 @@ data:extend({
     drop_sound = item_sounds.electric_small_inventory_move,
     stack_size = 200,
   },
-  {--Ai processor
+  {--ai processor
     type = "item",
     name = "ai-processor",
     icon = "__space-age__/graphics/icons/quantum-processor.png",

@@ -33,7 +33,7 @@ data:extend({
     category = "assembling-machine",
     name = "high-performance-structure",
     energy_required = 2,
-    enabled = true,
+    enabled = false,
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 1 },
       { type = "item", name = "titanium-plate", amount = 2 },
@@ -62,7 +62,7 @@ data:extend({
     category = "assembling-machine",
     name = "mechatronic-components",
     energy_required = 4,
-    enabled = true,
+    enabled = false,
     ingredients = {
       { type = "item", name = "high-performance-structure", amount = 1 },
       { type = "item", name = "mechanical-components", amount = 2 },
@@ -91,7 +91,7 @@ data:extend({
     category = "assembling-machine",
     name = "optical-coil",
     energy_required = 2,
-    enabled = true,
+    enabled = false,
     ingredients = {
       { type = "item", name = "mineral-glass", amount = 4 },
       { type = "item", name = "polymer-bar", amount = 1 },
@@ -137,7 +137,7 @@ data:extend({
     category = "assembling-machine",
     name = "exploration-science-unverified",
     energy_required = 10,
-    enabled = true,
+    enabled = false,
     ingredients = {
       { type = "item", name = "high-performance-structure", amount = 2 },
       { type = "item", name = "optical-coil", amount = 8 },
@@ -147,7 +147,6 @@ data:extend({
       { type = "item", name = "exploration-science-unverified", amount = 1 }
     },
   },
-
   {--spidertron frame
     type = "recipe",
     category = "assembling-machine",
@@ -178,7 +177,6 @@ data:extend({
       { type = "item", name = "mechanical-leg", amount = 1 }
     },
   },
-
   ---spider hell
   {--Scout'o'tron
     type = "recipe",
@@ -195,7 +193,6 @@ data:extend({
       { type = "item", name = "scout-o-tron", amount = 1 }
     },
   },
-
   {--Scout'o'tron pod
     type = "recipe",
     category = "assembling-machine",
@@ -478,13 +475,29 @@ data:extend({
     energy_required = 16,
     enabled = false,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 5 },
-      { type = "item", name = "mechanical-components", amount = 10 },
-      { type = "item", name = "modular-circuit", amount = 5 },
+      { type = "item", name = "general-purpose-structure", amount = 4 },
+      { type = "item", name = "mechanical-components", amount = 12 },
+      { type = "item", name = "modular-circuit", amount = 6 },
 
     },
     results = { 
       { type = "item", name = "asteroid-collector", amount = 1 }
+    },
+  },
+  {--small crusher
+    type = "recipe",
+    category = "assembling-machine",
+    name = "small-crusher",
+    energy_required = 12,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 16 },
+      { type = "item", name = "mechanical-components", amount = 8 },
+      { type = "item", name = "modular-circuit", amount = 4 },
+
+    },
+    results = { 
+      { type = "item", name = "small-crusher", amount = 1 }
     },
   },
   {--heavy space platform
@@ -508,6 +521,7 @@ data:extend({
     enabled = false,
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 1 },
+      { type = "item", name = "mineral-glass", amount = 4 },
       { type = "item", name = "conductive-coil", amount = 8 },
     },
     results = { 
@@ -618,7 +632,70 @@ data:extend({
       { type = "item", name = "small-electric-pylon", amount = 1 }
     },
   },
-  {--Constant combinator
+  {--large electric pylon
+    type = "recipe",
+    category = "assembling-machine",
+    name = "large-electric-pylon",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "small-electric-pylon", amount = 1 },
+      { type = "item", name = "high-performance-structure", amount = 2 },
+      { type = "item", name = "mineral-glass", amount = 6 },
+      { type = "item", name = "conductive-coil", amount = 12 },
+    },
+    results = { 
+      { type = "item", name = "large-electric-pylon", amount = 1 }
+    },
+  },
+  {--small turbine
+    type = "recipe",
+    category = "assembling-machine",
+    name = "small-turbine",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 8 },
+      { type = "item", name = "mechanical-components", amount = 8 },
+      { type = "item", name = "pipe", amount = 8 },
+      { type = "item", name = "conductive-coil", amount = 16 },
+    },
+    results = { 
+      { type = "item", name = "small-turbine", amount = 1 }
+    },
+  },
+  {--heat exchanger
+    type = "recipe",
+    category = "assembling-machine",
+    name = "small-heat-exchanger",
+    energy_required = 12,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 12 },
+      { type = "item", name = "heat-pipe", amount = 8 },
+      { type = "item", name = "pipe", amount = 8 },
+    },
+    results = { 
+      { type = "item", name = "small-heat-exchanger", amount = 1 }
+    },
+  },
+  {--chemical reactor
+    type = "recipe",
+    category = "assembling-machine",
+    name = "chemical-reactor",
+    energy_required = 24,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 12 },
+      { type = "item", name = "titanium-plate", amount = 8 },
+      { type = "item", name = "heat-pipe", amount = 8 },
+      { type = "item", name = "pipe", amount = 8 },
+    },
+    results = { 
+      { type = "item", name = "chemical-reactor", amount = 1 }
+    },
+  },
+  {--constant combinator
     type = "recipe",
     category = "assembling-machine",
     name = "constant-combinator",
@@ -733,7 +810,6 @@ data:extend({
       { type = "item", name = "solar-cell", amount = 1 }
     },
   },
-
   {--container-1
     type = "recipe",
     category = "assembling-machine",
@@ -799,7 +875,8 @@ data:extend({
     energy_required = 16,
     enabled = false,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 2 },
+      { type = "item", name = "high-performance-structure", amount = 16 },
+      { type = "item", name = "mechanical-components", amount = 8 },
     },
     results = { 
       { type = "item", name = "locomotive", amount = 1 }
@@ -812,7 +889,9 @@ data:extend({
     energy_required = 16,
     enabled = false,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 2 },
+      { type = "item", name = "high-performance-structure", amount = 8 },
+      { type = "item", name = "mechanical-components", amount = 8 },
+      { type = "item", name = "container-1", amount = 12 },
     },
     results = { 
       { type = "item", name = "cargo-wagon", amount = 1 }
@@ -825,7 +904,9 @@ data:extend({
     energy_required = 16,
     enabled = false,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 2 },
+      { type = "item", name = "high-performance-structure", amount = 8 },
+      { type = "item", name = "mechanical-components", amount = 8 },
+      { type = "item", name = "storage-tank", amount = 3 },
     },
     results = { 
       { type = "item", name = "fluid-wagon", amount = 1 }
@@ -838,7 +919,8 @@ data:extend({
     energy_required = 1,
     enabled = false,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 1 },
+      { type = "item", name = "titanium-plate", amount = 1 },
+      { type = "item", name = "mineral-ore", amount = 2 },
     },
     results = { 
       { type = "item", name = "rail", amount = 1 }
@@ -851,7 +933,8 @@ data:extend({
     energy_required = 1,
     enabled = false,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 1 },
+      { type = "item", name = "small-lamp", amount = 1 },
+      { type = "item", name = "modular-circuit", amount = 1 },
     },
     results = { 
       { type = "item", name = "rail-signal", amount = 1 }
@@ -864,7 +947,8 @@ data:extend({
     energy_required = 1,
     enabled = false,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 1 },
+      { type = "item", name = "small-lamp", amount = 1 },
+      { type = "item", name = "modular-circuit", amount = 1 },
     },
     results = { 
       { type = "item", name = "rail-chain-signal", amount = 1 }
@@ -877,7 +961,8 @@ data:extend({
     energy_required = 1,
     enabled = false,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 1 },
+      { type = "item", name = "small-lamp", amount = 1 },
+      { type = "item", name = "general-purpose-structure", amount = 2 },
     },
     results = { 
       { type = "item", name = "train-stop", amount = 1 }

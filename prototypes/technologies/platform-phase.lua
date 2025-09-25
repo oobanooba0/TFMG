@@ -272,6 +272,45 @@ data:extend({
     time = 16
     },
   },
+  {--small crusher
+    type = "technology",
+    name = "small-crusher",
+    icon = "__space-age__/graphics/technology/asteroid-reprocessing.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "small-crusher"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "ferric-chunk-crushing"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "crystalline-chunk-crushing"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "ferric-ore-smelting"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "hot-mineral-plate-smelting"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "mineral-glass-smelting"
+      },
+    },
+    prerequisites = {"introspection-science-pack"},
+    unit = {
+    count = 128,
+    ingredients = {{"introspection-science", 1}},
+    time = 16
+    },
+  },
   {--small-lamp
     type = "technology",
     name = "small-lamp",
@@ -462,50 +501,5 @@ data:extend({
     },
     prerequisites = {"scout-o-tron-drop-pods"},
     essential = true
-  },
-
----extra techs
-
-  {--inserter-capacity-bonus 1
-    type = "technology",
-    name = "inserter-capacity-bonus-1",
-    icons = util.technology_icon_constant_stack_size("__base__/graphics/technology/inserter-capacity.png"),
-    localised_name = {"technology-name.inserter-capacity-bonus-1"},
-    localised_description = {"technology-description.inserter-capacity-bonus-1"},
-    effects =
-    {
-      {
-        type = "inserter-stack-size-bonus",
-        modifier = 1
-      },
-    },
-    research_trigger =
-    {
-      type = "craft-item",
-      item = "inserter-1",
-      count = 64
-    },
-    prerequisites = {"logistics-1"},
-    upgrade = true
-  },
-
-  {
-    type = "technology",
-    name = "infinite-technology-1",
-    icon = ("__base__/graphics/icons/signal/signal-speed.png"),
-    icon_size = 64,
-    effects = {},
-    prerequisites = {"consider-your-potential"},
-    unit =
-    {
-      count_formula = "1000*(L)",
-      ingredients =
-      {
-        {"introspection-science", 1},
-      },
-      time = 60
-    },
-    max_level = "infinite",
-    upgrade = true
   },
 })

@@ -9,7 +9,7 @@ data:extend({
     category = "small-crusher",
     auto_recycle = false,
     energy_required = 4,
-    enabled = true,
+    enabled = false,
     ingredients = {
       {type = "item", name = "ferric-asteroid-chunk", amount = 2}
     },
@@ -29,7 +29,7 @@ data:extend({
     category = "small-crusher",
     auto_recycle = false,
     energy_required = 4,
-    enabled = true,
+    enabled = false,
     ingredients = {
       {type = "item", name = "crystalline-asteroid-chunk", amount = 2}
     },

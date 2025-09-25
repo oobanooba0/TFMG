@@ -19,12 +19,12 @@ data:extend({
     name = "exploration-science",
     localised_name = {"recipe-name.exploration-science"},
     energy_required = 5,
-    enabled = true,
+    enabled = false,
     ingredients = {
-      { type = "item", name = "exploration-science-unverified", amount = 2},
+      { type = "item", name = "exploration-science-unverified", amount = 1 },
     },
     results = {
-      { type = "item", name = "exploration-science", amount = 2 },
+      { type = "item", name = "exploration-science", amount = 1 },
     },
   },
 })
