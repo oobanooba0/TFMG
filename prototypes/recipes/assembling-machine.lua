@@ -904,6 +904,21 @@ data:extend({
       { type = "item", name = "container-1", amount = 1 }
     },
   },
+  {--cargo-landing-pad
+    type = "recipe",
+    category = "assembling-machine",
+    name = "cargo-landing-pad",
+    energy_required = 32,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 16 },
+      { type = "item", name = "modular-circuit", amount = 16 },
+      { type = "item", name = "container-1", amount = 16 },
+    },
+    results = { 
+      { type = "item", name = "cargo-landing-pad", amount = 1 }
+    },
+  },
   {--passive-provider-container-1
     type = "recipe",
     category = "assembling-machine",

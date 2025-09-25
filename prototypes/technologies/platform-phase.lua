@@ -492,6 +492,10 @@ data:extend({
         space_location = "arrival",
         use_icon_overlay_constant = true
       },
+      {
+        type = "unlock-recipe",
+        recipe = "cargo-landing-pad"
+      },
     },
     research_trigger =
     {
