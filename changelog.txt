@@ -25,6 +25,7 @@ Date: ????
     - Heat pipes now require mineral glass (Mineral glass is actually more useful now!)
     - Arrival pressure increased, due it affecting robots. (Wube, why couldn't this have just been a seperate hidden property?)
     - Small Radiator are now placed off the space platform, and can no longer be abused.
+    - Underground Belt 1 reaches 6 tiles instaid of 5.
   Bugfixes:
     - Nauvis should no longer appears in planet list.
 ---------------------------------------------------------------------------------------------------
