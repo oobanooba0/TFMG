@@ -270,7 +270,7 @@ data:extend({
       type = "build-entity",
       entity = "supercomputer",
     },
-    prerequisites = {"consider-the-self"},
+    prerequisites = {"consider-the-self","constant-combinator"},
     essential = true
   },
   {--energy distribution 1

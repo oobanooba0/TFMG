@@ -77,5 +77,7 @@ function refresh_data_storage()--This should allow new storages to be added with
     storage.refinery_thermal = {} end
   if storage.chemistry_plant_thermal == nil then
     storage.chemistry_plant_thermal = {} end
+  if storage.story == nil then
+    storage.story = {} end
 end
 
