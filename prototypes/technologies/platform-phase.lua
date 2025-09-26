@@ -144,6 +144,26 @@ data:extend({
     },
     prerequisites = {"assembling"},
   },
+  {--constant combinator
+    type = "technology",
+    name = "constant-combinator",
+    icon = "__base__/graphics/technology/circuit-network.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "constant-combinator"
+      },
+    },
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "modular-circuit",
+      count = 16
+    },
+    prerequisites = {"assembling"},
+  },
   {--heat management
     type = "technology",
     name = "heat-management",
