@@ -10,7 +10,7 @@ data.raw ["utility-constants"]["default"].main_menu_simulations = {}
 local hidden_items = {"wood","coal","stone","iron-ore","copper-ore","uranium-ore","spoilage","pistol",}
 local hidden_recipes = {}
 local disabled_recipes = {"wooden-chest","iron-chest","transport-belt","burner-inserter","stone-brick","burner-mining-drill","stone-furnace","iron-plate","copper-plate","iron-gear-wheel","firearm-magazine","light-armor",}
---i'd like to also hide entites from the factoriopedia, but i'm not sure how.
+--i'd like to also hide entites from the factoriopedia.
 --raw fish and the pistol are under a different type, so they have to be handled seperately.
 data.raw.capsule ["raw-fish"].hidden = true
 data.raw.gun ["pistol"].hidden = true
