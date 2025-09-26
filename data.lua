@@ -17,6 +17,7 @@ data.raw.gun ["pistol"].hidden = true
 
 data.raw.item ["asteroid-collector"].flags = {"always-show"}
 data.raw.item ["space-platform-foundation"].flags = {"always-show"}
+data.raw.item ["space-platform-foundation"].stack_size = 250
 data.raw.item ["heat-pipe"].flags = {"always-show"}
 data.raw.recipe ["space-platform-foundation"] = nil
 data.raw.recipe ["small-lamp"] = nil

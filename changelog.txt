@@ -26,6 +26,8 @@ Date: ????
     - Arrival pressure increased, due it affecting robots. (Wube, why couldn't this have just been a seperate hidden property?)
     - Small Radiator are now placed off the space platform, and can no longer be abused.
     - Underground Belt 1 reaches 6 tiles instaid of 5.
+    - space platform foundation is even cheaper. I hate crafting it so much.
+    - space platform foundation stacks to 250.
   Bugfixes:
     - Nauvis should no longer appears in planet list.
 ---------------------------------------------------------------------------------------------------
