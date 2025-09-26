@@ -1,6 +1,6 @@
 --this is the part where I murder the game, Thanks to Rseding91's fourm comments which helped me do this.
 local tile_collision_masks = require("__base__/prototypes/tile/tile-collision-masks")
-
+data:extend({{ type = "collision-layer", name = "platform" }})--quick, we have to add an entire collision layer just to unfuck our radiators.
 
 data.raw ["technology"] = {}
 data.raw ["tips-and-tricks-item"] = {}
@@ -54,8 +54,8 @@ data.raw ["locomotive"]["locomotive"].max_power = "1MW"
 data.raw ["locomotive"]["locomotive"].weight = 10000
 data.raw ["cargo-wagon"]["cargo-wagon"].weight = 5000
 data.raw ["fluid-wagon"]["fluid-wagon"].weight = 5000
-
 data.raw.tile ["ice-smooth"].collision_mask = tile_collision_masks.ground()
+data.raw.tile ["space-platform-foundation"].collision_mask = {layers={ground_tile=true,platform=true}}
 data.raw["mining-drill"]["electric-mining-drill"].mining_speed = 1
 data.raw["mining-drill"]["electric-mining-drill"].energy_usage = "0.5MW"
 data.raw["mining-drill"]["pumpjack"].energy_usage = "1MW"

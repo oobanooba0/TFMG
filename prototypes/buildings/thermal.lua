@@ -40,8 +40,8 @@ data:extend({
     dying_explosion = "offshore-pump-explosion",
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["assembling-machine"],
-    collision_box = {{-0.6, -4.05}, {0.6, 0.3}},
-    selection_box = {{-0.6, -4.49}, {0.6, 0.49}},
+    collision_box = {{-0.9, -4.2}, {0.9, 0.3}},
+    selection_box = {{-1, -4.5}, {1, 0.5}},
     tile_height = 1,
     tile_width = 1,
     surface_conditions =
@@ -52,12 +52,7 @@ data:extend({
         max = 0
       }
     },
-    collision_mask = {layers={train=true, is_object=true, is_lower_object=true}}, -- collide just with object-layer and train-layer which don't collide with water, this allows us to build on 1 tile wide ground
-    tile_buildability_rules =--build on the edge of space.
-    {
-      {area = {{-0.4, -0.4}, {0.4, 0.4}}, required_tiles = {layers={ground_tile=true}}, colliding_tiles = {layers={empty_space=true}}, remove_on_collision = true},
-      {area = {{-0.4, -4}, {0.4, -1}}, required_tiles = {layers={empty_space=true}}, colliding_tiles = {layers={}}},--all those braces and its empty.
-    },
+    collision_mask = {layers={is_object = true, is_lower_object = true, transport_belt = true, platform = true}},
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
     impact_category = "metal",
@@ -86,7 +81,7 @@ data:extend({
               height = 960,
               shift = util.by_pixel(0, -75),
               scale = 0.15
-            },HP_S_big,HP_E_big,HP_W_big
+            },HP_S_big
           }
         },
         east =
@@ -103,7 +98,7 @@ data:extend({
               height = 480,
               shift = util.by_pixel(75, 0),
               scale = 0.15
-            },HP_W_big,HP_N_big,HP_S_big
+            },HP_W_big
           }
         },
         south =
@@ -120,7 +115,7 @@ data:extend({
               height = 960,
               shift = util.by_pixel(0, 75),
               scale = 0.15,
-            },HP_N_big,HP_E_big,HP_W_big
+            },HP_N_big
           }
         },
         west =
@@ -137,7 +132,7 @@ data:extend({
               height = 480,
               shift = util.by_pixel(-75, 0),
               scale = 0.15
-            },HP_E_big,HP_N_big,HP_S_big
+            },HP_E_big
           }
         }
       },
@@ -230,19 +225,11 @@ data:extend({
       {--north connection is not real and cannot hurt me.
         {
           position = {0, 0},
-          direction = defines.direction.east
-        },
-        {
-          position = {0, 0},
           direction = defines.direction.south
-        },
-        {
-          position = {0, 0},
-          direction = defines.direction.west
         },
       },
     },
-    energy_usage = "5000kW",--5mw should be enough for assembling machines per radiator. I do wonder if this will be a bit tight with more advanced machines/beacons.
+    energy_usage = "5000kW",--5mw should be enough for 5 assembling machines per radiator. I do wonder if this will be a bit tight with more advanced machines/beacons.
     placeable_position_visualization =
     {
       filename = "__core__/graphics/cursor-boxes-32x32.png",
