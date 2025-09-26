@@ -602,7 +602,7 @@ data:extend({
     enabled = false,
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 1 },
-      { type = "item", name = "mineral-glass", amount = 4 },
+      { type = "item", name = "mineral-glass", amount = 2 },
       { type = "item", name = "conductive-coil", amount = 8 },
     },
     results = { 
