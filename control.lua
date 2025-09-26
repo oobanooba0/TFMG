@@ -166,8 +166,8 @@ script.on_event(
 	end
 )
 script.on_nth_tick(100,
-	function(event)
-		gameplay.softlock_detection(event)
+	function()
+		gameplay.softlock_detection()
 	end
 )
 

@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.0
-Date: ????
+Date: 2025-09-26
   Features:
     - THIS UPDATE REQUIRES A NEW SAVE. ARRIVAL WORLD GEN WILL NOT WORK PROPERLY OTHERWISE.
     - Achievements added
