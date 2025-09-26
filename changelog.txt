@@ -2,6 +2,7 @@
 Version: 0.3.0
 Date: ????
   Features:
+    - THIS UPDATE REQUIRES A NEW SAVE. ARRIVAL WORLD GEN WILL NOT WORK PROPERLY OTHERWISE.
     - Achievements added
     - 2 New music tracks, TREMOR and ENTROPY
     - Refinery added
@@ -23,6 +24,7 @@ Date: ????
     - Roboport connection range extended
     - Heat pipes now require mineral glass (Mineral glass is actually more useful now!)
     - Arrival pressure increased, due it affecting robots. (Wube, why couldn't this have just been a seperate hidden property?)
+    - Small Radiator are now placed off the space platform, and can no longer be abused.
   Bugfixes:
     - Nauvis should no longer appears in planet list.
 ---------------------------------------------------------------------------------------------------

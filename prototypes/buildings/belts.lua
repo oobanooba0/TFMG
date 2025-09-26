@@ -23,6 +23,7 @@ local underground_1 = table.deepcopy(data.raw["underground-belt"]["underground-b
 underground_1.name = "underground-belt-1"
 underground_1.minable.result = "underground-belt-1"
 underground_1.speed = belt_1_speed
+underground_1.max_distance = 6
 underground_1.next_upgrade = "underground-belt-2"
 data.extend{underground_1}
 
@@ -30,6 +31,7 @@ local underground_2 = table.deepcopy(data.raw["underground-belt"]["fast-undergro
 underground_2.name = "underground-belt-2"
 underground_2.minable.result = "underground-belt-2"
 underground_2.speed = belt_2_speed
+underground_2.max_distance = 8
 underground_2.next_upgrade = nil
 data.extend{underground_2}
 
