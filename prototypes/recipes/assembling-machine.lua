@@ -585,10 +585,10 @@ data:extend({
     type = "recipe",
     category = "assembling-machine",
     name = "heavy-space-platform",
-    energy_required = 6,
+    energy_required = 2,
     enabled = true,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 4 },
+      { type = "item", name = "general-purpose-structure", amount = 2 },
     },
     results = { 
       { type = "item", name = "space-platform-foundation", amount = 1 }
