@@ -116,8 +116,8 @@ data:extend({
     type = "technology",
     name = "robot-speed-1",
     icons = util.technology_icon_constant_movement_speed("__base__/graphics/technology/worker-robots-speed.png"),
-    localised_name = {"technology-name.robot-speed-4"},
-    localised_description = {"technology-description.robot-speed-4"},
+    localised_name = {"technology-name.robot-speed-1"},
+    localised_description = {"technology-description.robot-speed-1"},
     effects =
     {
       {
