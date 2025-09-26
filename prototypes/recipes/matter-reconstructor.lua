@@ -34,7 +34,7 @@ data:extend({
     energy_required = 10,
     enabled = false,
     ingredients = {
-      { type = "item", name = "crystalline-asteroid-chunk", amount = 10 },
+      { type = "item", name = "ferric-asteroid-chunk", amount = 10 },
     },
     results = { 
         { type = "item", name = "conductive-coil", amount = 40 }

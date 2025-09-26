@@ -29,6 +29,7 @@ Date: 2025-09-26
     - space platform foundation is even cheaper. I hate crafting it so much.
     - space platform foundation stacks to 250.
     - Music is now in a submod
+    - conductive coil reconstruction now uses ferric asteroids (dont even ask how i missed that)
   Bugfixes:
     - Nauvis should no longer appears in planet list.
 ---------------------------------------------------------------------------------------------------
