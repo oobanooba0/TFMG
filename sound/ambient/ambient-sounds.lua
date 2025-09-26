@@ -7,7 +7,7 @@ data:extend({
     name = "PURPOSE",
     track_type = "menu-track",
     sound = {
-      filename = "__TFMG__/sound/ambient/main-menu/PURPOSE.ogg",
+      filename = "__TFMG-music__/main-menu/PURPOSE.ogg",
       volume = 1,
     }
   },
@@ -20,7 +20,7 @@ data:extend({--arrival
     track_type = "main-track",
     planet = "arrival",
     sound = {
-      filename = "__TFMG__/sound/ambient/arrival/ENTROPY.ogg",
+      filename = "__TFMG-music__/arrival/ENTROPY.ogg",
       volume = 1,
     },
     weight = 10
@@ -31,7 +31,7 @@ data:extend({--arrival
     track_type = "main-track",
     planet = "arrival",
     sound = {
-      filename = "__TFMG__/sound/ambient/arrival/TREMOR.ogg",
+      filename = "__TFMG-music__/arrival/TREMOR.ogg",
       volume = 1,
     },
     weight = 10
@@ -43,7 +43,7 @@ data:extend({--arrival
     track_type = "interlude",
     planet = "arrival",
     sound = {
-      filename = "__TFMG__/sound/ambient/arrival/Clock-Interlude.ogg",
+      filename = "__TFMG-music__/arrival/Clock-Interlude.ogg",
       volume = 0.5,
     },
     weight = 10

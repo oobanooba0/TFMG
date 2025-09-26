@@ -28,6 +28,7 @@ Date: 2025-09-26
     - Underground Belt 1 reaches 6 tiles instaid of 5.
     - space platform foundation is even cheaper. I hate crafting it so much.
     - space platform foundation stacks to 250.
+    - Music is now in a submod
   Bugfixes:
     - Nauvis should no longer appears in planet list.
 ---------------------------------------------------------------------------------------------------
