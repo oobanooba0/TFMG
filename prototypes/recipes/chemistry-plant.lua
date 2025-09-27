@@ -117,4 +117,23 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     allow_productivity = true,
   },
+   {--organic carbon liquefaction
+    type = "recipe",
+    category = "chemistry-plant",
+    subgroup = "fluid-recipes",
+    name = "organic-carbon-liquefaction",
+    icons = {
+      {icon = "__base__/graphics/icons/solid-fuel.png", tint = {0.5,1,0.5}},
+      {icon = "__base__/graphics/icons/fluid/lubricant.png", shift = {-10,0},scale = 0.7},
+    },
+    energy_required = 2,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "organic-carbon", amount = 5 },
+    },
+    results = { 
+      { type = "fluid", name = "organic-sludge", amount = 25 }
+    },
+    allow_productivity = false,
+  },
 })

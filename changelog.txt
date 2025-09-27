@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.1
+Date: ????
+  Features:
+    - organic carbon liquefaction allows for disposal of organic carbon.
+  Bugfixes:
+    - Achivements now have proper locale
+    - Ferric solution has proper locale
+
+---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 2025-09-26
   Features:

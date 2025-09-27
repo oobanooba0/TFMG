@@ -124,6 +124,11 @@ data:extend({
         type = "unlock-recipe",
         recipe = "bio-polymerisation"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "organic-carbon-liquefaction"
+      },
+      
     },
     prerequisites = {"hydrocarbon-processing"},
     research_trigger = {
