@@ -260,10 +260,10 @@ data:extend({
     },
   },
 ---building recipes
-  {--transport belt 1
+  {--transport belt
     type = "recipe",
     category = "assembling-machine",
-    name = "transport-belt-1",
+    name = "transport-belt",
     energy_required = 2,
     enabled = false,
     ingredients = {
@@ -271,85 +271,85 @@ data:extend({
       { type = "item", name = "mechanical-components", amount = 1 },
     },
     results = { 
-      { type = "item", name = "transport-belt-1", amount = 1 }
+      { type = "item", name = "transport-belt", amount = 1 }
     },
   },
-  {--transport belt 2
+  {--fast transport belt
     type = "recipe",
     category = "assembling-machine",
-    name = "transport-belt-2",
+    name = "fast-transport-belt",
     energy_required = 4,
     enabled = false,
     ingredients = {
-      { type = "item", name = "transport-belt-1", amount = 1 },
+      { type = "item", name = "transport-belt", amount = 1 },
       { type = "item", name = "high-performance-structure", amount = 1 },
       { type = "item", name = "mechatronic-components", amount = 2 },
       { type = "fluid", name = "mineral-lubricant", amount = 16 },
     },
     results = { 
-      { type = "item", name = "transport-belt-2", amount = 1 }
+      { type = "item", name = "fast-transport-belt", amount = 1 }
     },
   },
-  {--underground belt 1
+  {--underground belt
     type = "recipe",
     category = "assembling-machine",
-    name = "underground-belt-1",
+    name = "underground-belt",
     energy_required = 4,
     enabled = false,
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 2 },
-      { type = "item", name = "transport-belt-1", amount = 4 },
+      { type = "item", name = "transport-belt", amount = 4 },
     },
     results = { 
-      { type = "item", name = "underground-belt-1", amount = 2 }
+      { type = "item", name = "underground-belt", amount = 2 }
     },
   },
-  {--underground belt 2
+  {--fast underground belt
     type = "recipe",
     category = "assembling-machine",
-    name = "underground-belt-2",
+    name = "fast-underground-belt",
     energy_required = 8,
     enabled = false,
     ingredients = {
-      { type = "item", name = "underground-belt-1", amount = 2 },
-      { type = "item", name = "transport-belt-2", amount = 6 },
+      { type = "item", name = "underground-belt", amount = 2 },
+      { type = "item", name = "fast-transport-belt", amount = 6 },
       { type = "item", name = "high-performance-structure", amount = 4 },
       { type = "fluid", name = "mineral-lubricant", amount = 16 },
     },
     results = { 
-      { type = "item", name = "underground-belt-2", amount = 2 }
+      { type = "item", name = "fast-underground-belt", amount = 2 }
     },
   },
-  {--splitter-1
+  {--splitter
     type = "recipe",
     category = "assembling-machine",
-    name = "splitter-1",
+    name = "splitter",
     energy_required = 4,
     enabled = false,
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 2 },
       { type = "item", name = "modular-circuit", amount = 2 },
-      { type = "item", name = "transport-belt-1", amount = 2 },
+      { type = "item", name = "transport-belt", amount = 2 },
     },
     results = { 
-      { type = "item", name = "splitter-1", amount = 1 }
+      { type = "item", name = "splitter", amount = 1 }
     },
   },
   {--splitter-2
     type = "recipe",
     category = "assembling-machine",
-    name = "splitter-2",
+    name = "fast-splitter",
     energy_required = 8,
     enabled = false,
     ingredients = {
-      { type = "item", name = "splitter-1", amount = 1 },
+      { type = "item", name = "splitter", amount = 1 },
       { type = "item", name = "high-performance-structure", amount = 2 },
       { type = "item", name = "mechatronic-components", amount = 4 },
       { type = "item", name = "optical-coil", amount = 8 },
       { type = "fluid", name = "mineral-lubricant", amount = 16 },
     },
     results = { 
-      { type = "item", name = "splitter-2", amount = 1 }
+      { type = "item", name = "fast-splitter", amount = 1 }
     },
   },
   {--inserter-1

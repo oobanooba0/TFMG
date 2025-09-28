@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.2
-Date: ????
+Date: 2025-09-28
   Changes:
+    - Transport belt 1 and transport belt 2 have been removed in favour of modifying their vanilla counterparts. This change should be seamless, as existing belts are magically transformed to their vanilla counterparts. This should mean your balancer blueprints work happily now!
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.1
 Date: 2025-09-27

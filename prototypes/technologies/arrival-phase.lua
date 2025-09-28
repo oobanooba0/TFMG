@@ -442,15 +442,15 @@ data:extend({
     {
       {
         type = "unlock-recipe",
-        recipe = "transport-belt-2"
+        recipe = "fast-transport-belt"
       },
       {
         type = "unlock-recipe",
-        recipe = "underground-belt-2"
+        recipe = "fast-underground-belt"
       },
       {
         type = "unlock-recipe",
-        recipe = "splitter-2"
+        recipe = "fast-splitter"
       },
     },
     prerequisites = {"mechatronic-components"},

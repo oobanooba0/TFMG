@@ -1,0 +1,18 @@
+{
+  "entity" : [
+  ["transport-belt-1", "transport-belt"],
+  ["underground-belt-1", "underground-belt"],
+  ["splitter-1", "splitter"],
+  ["transport-belt-2", "fast-transport-belt"],
+  ["underground-belt-2", "fast-underground-belt"],
+  ["splitter-2", "fast-splitter"]
+  ],
+  "item" : [
+  ["transport-belt-1", "transport-belt"],
+  ["underground-belt-1", "underground-belt"],
+  ["splitter-1", "splitter"],
+  ["transport-belt-2", "fast-transport-belt"],
+  ["underground-belt-2", "fast-underground-belt"],
+  ["splitter-2", "fast-splitter"]
+  ]
+}

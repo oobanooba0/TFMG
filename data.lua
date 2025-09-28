@@ -47,6 +47,13 @@ data.raw.recipe ["locomotive"] = nil
 data.raw.recipe ["radar"] = nil
 data.raw.recipe ["cargo-landing-pad"] = nil
 
+data.raw.recipe ["transport-belt"] = nil
+data.raw.recipe ["fast-transport-belt"] = nil
+data.raw.recipe ["underground-belt"] = nil
+data.raw.recipe ["fast-underground-belt"] = nil
+data.raw.recipe ["splitter"] = nil
+data.raw.recipe ["fast-splitter"] = nil
+
 local KMH = 216
 
 data.raw ["locomotive"]["locomotive"].energy_source.fuel_categories = {"chemical"}
@@ -163,7 +170,6 @@ require("prototypes.virtual-signals")
 
 --items
 ---buildings
-require("prototypes.items.buildings.belts")
 require("prototypes.items.buildings.containers")
 require("prototypes.items.buildings.crafting")
 require("prototypes.items.buildings.electrical")

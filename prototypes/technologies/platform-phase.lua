@@ -117,15 +117,15 @@ data:extend({
     {
       {
         type = "unlock-recipe",
-        recipe = "transport-belt-1"
+        recipe = "transport-belt"
       },
       {
         type = "unlock-recipe",
-        recipe = "underground-belt-1"
+        recipe = "underground-belt"
       },
       {
         type = "unlock-recipe",
-        recipe = "splitter-1"
+        recipe = "splitter"
       },
       {
         type = "unlock-recipe",
