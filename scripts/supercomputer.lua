@@ -243,7 +243,7 @@ function supercomputer.create_new_problem_exploration(v)--introspection recipe m
   local x_1 = math.random(-range,range)
   local y_1 = math.random(-range,range)
 
-  v.solution_x = ((x_0+x_1)^2 + (y_0+y_1)^2)^0.5
+  v.solution_x = ((x_0-x_1)^2 + (y_0-y_1)^2)^0.5
   --game.print(v.solution_x)
 
 
