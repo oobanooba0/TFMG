@@ -1,11 +1,12 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.4
-Date: ????
+Date: 2025-09-28
   Changes:
     - Ferric ore washing yeilds slightly less ferric solution, and costs slightly less ferric ore. This should mean a factory producing only exploration science doesn't jam up if don't make titanium with every signgle peice of ferric ore you produce. This also makes titanium slightly cheaper.
     - Technologies have more descriptive descriptions. Still need quotes for many (PLS suggest me quotes!)
   Bugfixes:
     - repeatable techs now share the same description locale.
+    - fix migration of belt recipes
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.3
 Date: 2025-09-28
