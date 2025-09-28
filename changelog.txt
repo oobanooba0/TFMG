@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.4
+Date: ????
+  Changes:
+    - Ferric ore washing yeilds slightly less ferric solution, and costs slightly less ferric ore. This should mean a factory producing only exploration science doesn't jam up if don't make titanium with every signgle peice of ferric ore you produce. This also makes titanium slightly cheaper.
+---------------------------------------------------------------------------------------------------
 Version: 0.3.3
 Date: 2025-09-28
   Bugfixes:

@@ -58,12 +58,12 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     energy_required = 2,
     enabled = false,
     ingredients = {
-      { type = "item", name = "ferric-ore", amount = 6 },
+      { type = "item", name = "ferric-ore", amount = 5 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 16 },
     },
     results = { 
       { type = "item", name = "titanium-ore", amount = 1 },
-      { type = "fluid", name = "ferric-solution", amount = 60 }
+      { type = "fluid", name = "ferric-solution", amount = 45 }
     },
     allow_decomposition = false,
     allow_productivity = true,
