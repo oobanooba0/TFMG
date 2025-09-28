@@ -24,6 +24,8 @@ People who have helped me out:
 
 Allison - For helping me make compound entities work for the thermal system
 
+Daragknir - For giving lots and lots of useful feedback.
+
 Dobberoonski - For teaching me about compound entities
 
 Louloubichou - Bug catching and feedback.
