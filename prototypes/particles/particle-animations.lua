@@ -7,7 +7,7 @@ particle_animations.get_ferric_asteroid_particle_small_pictures = function(optio
   local options = options or {}
   return {
     sheet = {
-      filename = "__TFMG__/graphics/particle/asteroid-particle/ferric-asteroid-particle-small.png",
+      filename = "__TFMG-assets-0__/particle/asteroid-particle/ferric-asteroid-particle-small.png",
       priority = "extra-high",
       width = 14,
       height = 16,
@@ -25,7 +25,7 @@ particle_animations.get_ferric_asteroid_particle_medium_pictures = function(opti
   local options = options or {}
   return {
     sheet = {
-      filename = "__TFMG__/graphics/particle/asteroid-particle/ferric-asteroid-particle-medium.png",
+      filename = "__TFMG-assets-0__/particle/asteroid-particle/ferric-asteroid-particle-medium.png",
       priority = "extra-high",
       width = 22,
       height = 20,
@@ -43,7 +43,7 @@ particle_animations.get_ferric_asteroid_particle_big_pictures = function(options
   local options = options or {}
   return {
     sheet = {
-      filename = "__TFMG__/graphics/particle/asteroid-particle/ferric-asteroid-particle-big.png",
+      filename = "__TFMG-assets-0__/particle/asteroid-particle/ferric-asteroid-particle-big.png",
       priority = "extra-high",
       width = 36,
       height = 36,
@@ -61,7 +61,7 @@ particle_animations.get_ferric_asteroid_particle_top_small_pictures = function(o
   local options = options or {}
   return {
     sheet = {
-      filename = "__TFMG__/graphics/particle/asteroid-particle/ferric-asteroid-particle-top-small.png",
+      filename = "__TFMG-assets-0__/particle/asteroid-particle/ferric-asteroid-particle-top-small.png",
       priority = "extra-high",
       width = 62,
       height = 56,
@@ -79,7 +79,7 @@ particle_animations.get_ferric_asteroid_particle_top_big_pictures = function(opt
   local options = options or {}
   return {
     sheet = {
-      filename = "__TFMG__/graphics/particle/asteroid-particle/ferric-asteroid-particle-top-big.png",
+      filename = "__TFMG-assets-0__/particle/asteroid-particle/ferric-asteroid-particle-top-big.png",
       priority = "extra-high",
       width = 82,
       height = 86,
@@ -99,7 +99,7 @@ particle_animations.get_crystalline_asteroid_particle_small_pictures = function(
   local options = options or {}
   return {
     sheet = {
-      filename = "__TFMG__/graphics/particle/asteroid-particle/crystalline-asteroid-particle-small.png",
+      filename = "__TFMG-assets-0__/particle/asteroid-particle/crystalline-asteroid-particle-small.png",
       priority = "extra-high",
       width = 12,
       height = 12,
@@ -117,7 +117,7 @@ particle_animations.get_crystalline_asteroid_particle_medium_pictures = function
   local options = options or {}
   return {
     sheet = {
-      filename = "__TFMG__/graphics/particle/asteroid-particle/crystalline-asteroid-particle-medium.png",
+      filename = "__TFMG-assets-0__/particle/asteroid-particle/crystalline-asteroid-particle-medium.png",
       priority = "extra-high",
       width = 18,
       height = 16,
@@ -135,7 +135,7 @@ particle_animations.get_crystalline_asteroid_particle_big_pictures = function(op
   local options = options or {}
   return {
     sheet = {
-      filename = "__TFMG__/graphics/particle/asteroid-particle/crystalline-asteroid-particle-big.png",
+      filename = "__TFMG-assets-0__/particle/asteroid-particle/crystalline-asteroid-particle-big.png",
       priority = "extra-high",
       width = 38,
       height = 36,
@@ -153,7 +153,7 @@ particle_animations.get_crystalline_asteroid_particle_top_small_pictures = funct
   local options = options or {}
   return {
     sheet = {
-      filename = "__TFMG__/graphics/particle/asteroid-particle/crystalline-asteroid-particle-top-small.png",
+      filename = "__TFMG-assets-0__/particle/asteroid-particle/crystalline-asteroid-particle-top-small.png",
       priority = "extra-high",
       width = 32,
       height = 36,
@@ -171,7 +171,7 @@ particle_animations.get_crystalline_asteroid_particle_top_big_pictures = functio
   local options = options or {}
   return {
     sheet = {
-      filename = "__TFMG__/graphics/particle/asteroid-particle/crystalline-asteroid-particle-top-big.png",
+      filename = "__TFMG-assets-0__/particle/asteroid-particle/crystalline-asteroid-particle-top-big.png",
       priority = "extra-high",
       width = 82,
       height = 84,

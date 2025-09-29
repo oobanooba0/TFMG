@@ -191,7 +191,7 @@ data:extend({
   {--high performance structure
     type = "technology",
     name = "high-performance-structure",
-    icon = "__TFMG__/graphics/technology/high-performance-structure.png",
+    icon = "__TFMG-assets-0__/technology/high-performance-structure.png",
     icon_size = 1024,
     effects =
     {
@@ -210,7 +210,7 @@ data:extend({
   {--optical coil
     type = "technology",
     name = "optical-coil",
-    icon = "__TFMG__/graphics/technology/optical-coil.png",
+    icon = "__TFMG-assets-0__/technology/optical-coil.png",
     icon_size = 1024,
     effects =
     {

@@ -41,7 +41,7 @@ function gameplay.softlock_detection()
         title = {"story-event.reject-purpose-ending-title"},
         message = {"story-event.reject-purpose-ending-message"},
         final_message = {"story-event.reject-purpose-ending-final-message"},
-        image_path = "__TFMG__/graphics/ui/victory-screen/ultrathumbsup.png"
+        image_path = "__TFMG-assets-0__/ui/victory-screen/ultrathumbsup.png"
       }
       game.set_game_state{
         game_finished= true,

@@ -14,8 +14,8 @@ data:extend({
   {
     type = "planet",
     name = "arrival",
-    icon = "__TFMG__/graphics/icons/planets/arrival.png",
-    starmap_icon = "__TFMG__/graphics/icons/planets/arrival-starmap.png",
+    icon = "__TFMG-assets-0__/icons/planets/arrival.png",
+    starmap_icon = "__TFMG-assets-0__/icons/planets/arrival-starmap.png",
     starmap_icon_size = 512,
     gravity_pull = 10,
     distance = 30,

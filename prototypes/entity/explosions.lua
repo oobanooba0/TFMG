@@ -10,7 +10,7 @@ data:extend({
   {
     type = "explosion",
     name = "ferric-asteroid-explosion-1",
-    icon = "__TFMG__/graphics/icons/ferric-asteroid-chunk.png",
+    icon = "__TFMG-assets-0__/icons/ferric-asteroid-chunk.png",
     flags = {"not-on-map"},
     hidden = true,
     height = 0,
@@ -65,7 +65,7 @@ data:extend({
   {
     type = "explosion",
     name = "ferric-asteroid-explosion-2",
-    icon = "__TFMG__/graphics/icons/small-ferric-asteroid.png",
+    icon = "__TFMG-assets-0__/icons/small-ferric-asteroid.png",
     flags = {"not-on-map"},
     hidden = true,
     height = 0,
@@ -163,7 +163,7 @@ data:extend({
   {
     type = "explosion",
     name = "ferric-asteroid-explosion-3",
-    icon = "__TFMG__/graphics/icons/medium-ferric-asteroid.png",
+    icon = "__TFMG-assets-0__/icons/medium-ferric-asteroid.png",
     flags = {"not-on-map"},
     hidden = true,
     height = 0,
@@ -261,7 +261,7 @@ data:extend({
   {
     type = "explosion",
     name = "ferric-asteroid-explosion-4",
-    icon = "__TFMG__/graphics/icons/big-ferric-asteroid.png",
+    icon = "__TFMG-assets-0__/icons/big-ferric-asteroid.png",
     flags = {"not-on-map"},
     hidden = true,
     height = 0,
@@ -368,7 +368,7 @@ data:extend({
   {
     type = "explosion",
     name = "ferric-asteroid-explosion-5",
-    icon = "__TFMG__/graphics/icons/huge-ferric-asteroid.png",
+    icon = "__TFMG-assets-0__/icons/huge-ferric-asteroid.png",
     flags = {"not-on-map"},
     hidden = true,
     height = 0,
@@ -492,7 +492,7 @@ data:extend({
   {
     type = "explosion",
     name = "crystalline-asteroid-explosion-1",
-    icon = "__TFMG__/graphics/icons/crystalline-asteroid-chunk.png",
+    icon = "__TFMG-assets-0__/icons/crystalline-asteroid-chunk.png",
     flags = {"not-on-map"},
     hidden = true,
     height = 0,
@@ -547,7 +547,7 @@ data:extend({
   {
     type = "explosion",
     name = "crystalline-asteroid-explosion-2",
-    icon = "__TFMG__/graphics/icons/small-crystalline-asteroid.png",
+    icon = "__TFMG-assets-0__/icons/small-crystalline-asteroid.png",
     flags = {"not-on-map"},
     hidden = true,
     height = 0,
@@ -645,7 +645,7 @@ data:extend({
   {
     type = "explosion",
     name = "crystalline-asteroid-explosion-3",
-    icon = "__TFMG__/graphics/icons/medium-crystalline-asteroid.png",
+    icon = "__TFMG-assets-0__/icons/medium-crystalline-asteroid.png",
     flags = {"not-on-map"},
     hidden = true,
     height = 0,
@@ -743,7 +743,7 @@ data:extend({
   {
     type = "explosion",
     name = "crystalline-asteroid-explosion-4",
-    icon = "__TFMG__/graphics/icons/big-crystalline-asteroid.png",
+    icon = "__TFMG-assets-0__/icons/big-crystalline-asteroid.png",
     flags = {"not-on-map"},
     hidden = true,
     height = 0,
@@ -850,7 +850,7 @@ data:extend({
   {
     type = "explosion",
     name = "crystalline-asteroid-explosion-5",
-    icon = "__TFMG__/graphics/icons/huge-crystalline-asteroid.png",
+    icon = "__TFMG-assets-0__/icons/huge-crystalline-asteroid.png",
     flags = {"not-on-map"},
     hidden = true,
     height = 0,

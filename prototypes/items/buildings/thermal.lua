@@ -4,7 +4,7 @@ data:extend({
   {--small radiator
     type = "item",
     name = "small-radiator",
-    icon = "__TFMG__/graphics/buildings/small-radiator/panel_icon.png",
+    icon = "__TFMG-assets-0__/buildings/small-radiator/panel_icon.png",
     icon_size = 256,
     subgroup = "space-related",
     order = "d[radiator]",

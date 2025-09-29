@@ -32,7 +32,7 @@ data:extend({
   {--small radiator
     type = "assembling-machine",
     name = "small-radiator",
-    icon = "__TFMG__/graphics/buildings/small-radiator/panel_icon.png",
+    icon = "__TFMG-assets-0__/buildings/small-radiator/panel_icon.png",
     flags = {"placeable-neutral","placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "small-radiator"},
     max_health = 400,
@@ -72,7 +72,7 @@ data:extend({
           layers =
           {
             {
-              filename = "__TFMG__/graphics/buildings/small-radiator/panel_north.png",
+              filename = "__TFMG-assets-0__/buildings/small-radiator/panel_north.png",
               priority = "high",
               line_length = 1,
               frame_count = 1,
@@ -89,7 +89,7 @@ data:extend({
           layers =
           {
             {
-              filename = "__TFMG__/graphics/buildings/small-radiator/panel_east.png",
+              filename = "__TFMG-assets-0__/buildings/small-radiator/panel_east.png",
               priority = "high",
               line_length = 1,
               frame_count = 1,
@@ -106,7 +106,7 @@ data:extend({
           layers =
           {
             {
-              filename = "__TFMG__/graphics/buildings/small-radiator/panel_south.png",
+              filename = "__TFMG-assets-0__/buildings/small-radiator/panel_south.png",
               priority = "high",
               line_length = 1,
               frame_count = 1,
@@ -123,7 +123,7 @@ data:extend({
           layers =
           {
             {
-              filename = "__TFMG__/graphics/buildings/small-radiator/panel_west.png",
+              filename = "__TFMG-assets-0__/buildings/small-radiator/panel_west.png",
               priority = "high",
               line_length = 1,
               frame_count = 1,
@@ -143,7 +143,7 @@ data:extend({
         north_animation = {
           layers = {
             {
-              filename = "__TFMG__/graphics/buildings/small-radiator/panel_north_glow.png",
+              filename = "__TFMG-assets-0__/buildings/small-radiator/panel_north_glow.png",
               priority = "high",
               line_length = 1,
               frame_count = 1,
@@ -160,7 +160,7 @@ data:extend({
         east_animation = {
           layers = {
             {
-              filename = "__TFMG__/graphics/buildings/small-radiator/panel_east_glow.png",
+              filename = "__TFMG-assets-0__/buildings/small-radiator/panel_east_glow.png",
               priority = "high",
               line_length = 1,
               frame_count = 1,
@@ -177,7 +177,7 @@ data:extend({
         south_animation = {
           layers = {
             {
-              filename = "__TFMG__/graphics/buildings/small-radiator/panel_south_glow.png",
+              filename = "__TFMG-assets-0__/buildings/small-radiator/panel_south_glow.png",
               priority = "high",
               line_length = 1,
               frame_count = 1,
@@ -194,7 +194,7 @@ data:extend({
         west_animation = {
           layers = {
             {
-              filename = "__TFMG__/graphics/buildings/small-radiator/panel_west_glow.png",
+              filename = "__TFMG-assets-0__/buildings/small-radiator/panel_west_glow.png",
               priority = "high",
               line_length = 1,
               frame_count = 1,

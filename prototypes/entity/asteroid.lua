@@ -104,7 +104,7 @@ local function asteroid_variation(asteroid_type, suffix, scale, size)
   {
     color_texture =
     {
-      filename = "__TFMG__/graphics/entity/asteroid/".. asteroid_type .."/"..asteroid_sizes[size].."/".."asteroid-" .. asteroid_type .. "-" .. asteroid_sizes[size] .. "-colour-" .. suffix .. ".png",
+      filename = "__TFMG-assets-0__/entity/asteroid/".. asteroid_type .."/"..asteroid_sizes[size].."/".."asteroid-" .. asteroid_type .. "-" .. asteroid_sizes[size] .. "-colour-" .. suffix .. ".png",
       size =  sizes_resolution[size][1],
       scale = scale
     },
@@ -113,7 +113,7 @@ local function asteroid_variation(asteroid_type, suffix, scale, size)
 
     normal_map =
     {
-      filename = "__TFMG__/graphics/entity/asteroid/".. asteroid_type .."/"..asteroid_sizes[size].."/".."asteroid-" .. asteroid_type .. "-" .. asteroid_sizes[size] .. "-normal-" .. suffix .. ".png",
+      filename = "__TFMG-assets-0__/entity/asteroid/".. asteroid_type .."/"..asteroid_sizes[size].."/".."asteroid-" .. asteroid_type .. "-" .. asteroid_sizes[size] .. "-normal-" .. suffix .. ".png",
       premul_alpha = false,
       size = sizes_resolution[size][1],
       scale = scale
@@ -121,7 +121,7 @@ local function asteroid_variation(asteroid_type, suffix, scale, size)
 
     roughness_map =
     {
-      filename = "__TFMG__/graphics/entity/asteroid/".. asteroid_type .."/"..asteroid_sizes[size].."/".."asteroid-" .. asteroid_type .. "-" .. asteroid_sizes[size] .. "-roughness-" .. suffix .. ".png",
+      filename = "__TFMG-assets-0__/entity/asteroid/".. asteroid_type .."/"..asteroid_sizes[size].."/".."asteroid-" .. asteroid_type .. "-" .. asteroid_sizes[size] .. "-roughness-" .. suffix .. ".png",
       premul_alpha = false,
       size = sizes_resolution[size][1],
       scale = scale
@@ -240,7 +240,7 @@ for asteroid_size, asteroid_size_name in pairs(asteroid_sizes) do
         name = asteroid_name,
         overkill_fraction = asteroid_size_name ~= "chunk" and 0.01 or nil,
         localised_description = {"entity-description."..asteroid_type.."-asteroid"},
-        icon = "__TFMG__/graphics/icons/"..asteroid_name..".png",
+        icon = "__TFMG-assets-0__/icons/"..asteroid_name..".png",
         icon_size = 64,
         selection_box = asteroid_size_name ~= "chunk" and {{-selection_radius, -selection_radius}, {selection_radius, selection_radius}} or nil,
         collision_box = asteroid_size_name ~= "chunk" and {{-collision_radius, -collision_radius}, {collision_radius, collision_radius}} or nil,

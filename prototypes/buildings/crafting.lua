@@ -1213,7 +1213,7 @@ data:extend({
           layers =
           {
             {
-              filename = "__TFMG__/graphics/buildings/micro-assembler/micro-assembler-vertical.png",
+              filename = "__TFMG-assets-0__/buildings/micro-assembler/micro-assembler-vertical.png",
               priority = "high",
               width = 71,
               height = 145,
@@ -1223,7 +1223,7 @@ data:extend({
               scale = 0.5
             },
             {
-              filename = "__TFMG__/graphics/buildings/micro-assembler/micro-assembler-vertical-shadow.png",
+              filename = "__TFMG-assets-0__/buildings/micro-assembler/micro-assembler-vertical-shadow.png",
               priority = "high",
               width = 65,
               height = 108,
@@ -1239,7 +1239,7 @@ data:extend({
           layers =
           {
             {
-              filename = "__TFMG__/graphics/buildings/micro-assembler/micro-assembler-horizontal.png",
+              filename = "__TFMG-assets-0__/buildings/micro-assembler/micro-assembler-horizontal.png",
               priority = "high",
               width = 142,
               height = 72,
@@ -1249,7 +1249,7 @@ data:extend({
               scale = 0.5
             },
             {
-              filename = "__TFMG__/graphics/buildings/micro-assembler/micro-assembler-horizontal-shadow.png",
+              filename = "__TFMG-assets-0__/buildings/micro-assembler/micro-assembler-horizontal-shadow.png",
               priority = "high",
               width = 130,
               height = 54,
@@ -1265,7 +1265,7 @@ data:extend({
           layers =
           {
             {
-              filename = "__TFMG__/graphics/buildings/micro-assembler/micro-assembler-vertical.png",
+              filename = "__TFMG-assets-0__/buildings/micro-assembler/micro-assembler-vertical.png",
               priority = "high",
               width = 71,
               height = 145,
@@ -1275,7 +1275,7 @@ data:extend({
               scale = 0.5
             },
             {
-              filename = "__TFMG__/graphics/buildings/micro-assembler/micro-assembler-vertical-shadow.png",
+              filename = "__TFMG-assets-0__/buildings/micro-assembler/micro-assembler-vertical-shadow.png",
               priority = "high",
               width = 65,
               height = 108,
@@ -1291,7 +1291,7 @@ data:extend({
           layers =
           {
             {
-              filename = "__TFMG__/graphics/buildings/micro-assembler/micro-assembler-horizontal.png",
+              filename = "__TFMG-assets-0__/buildings/micro-assembler/micro-assembler-horizontal.png",
               priority = "high",
               width = 142,
               height = 72,
@@ -1301,7 +1301,7 @@ data:extend({
               scale = 0.5
             },
             {
-              filename = "__TFMG__/graphics/buildings/micro-assembler/micro-assembler-horizontal-shadow.png",
+              filename = "__TFMG-assets-0__/buildings/micro-assembler/micro-assembler-horizontal-shadow.png",
               priority = "high",
               width = 130,
               height = 54,

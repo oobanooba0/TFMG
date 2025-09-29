@@ -3,7 +3,7 @@ data:extend({
   {--ferric asteroid chunk
     type = "item",
     name = "ferric-asteroid-chunk",
-    icon = "__TFMG__/graphics/icons/ferric-asteroid-chunk.png",
+    icon = "__TFMG-assets-0__/icons/ferric-asteroid-chunk.png",
     subgroup = "raw-materials",
     order = "a[chunk]-a[ferric]",
     inventory_move_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
@@ -16,7 +16,7 @@ data:extend({
   {--crystalline asteroid chunk
     type = "item",
     name = "crystalline-asteroid-chunk",
-    icon = "__TFMG__/graphics/icons/crystalline-asteroid-chunk.png",
+    icon = "__TFMG-assets-0__/icons/crystalline-asteroid-chunk.png",
     subgroup = "raw-materials",
     order = "a[chunk]-b[crystalline]",
     inventory_move_sound = "__space-age__/sound/item/rock-inventory-move.ogg",

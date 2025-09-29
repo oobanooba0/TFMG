@@ -56,10 +56,10 @@ data:extend({
   {
     type = "item",
     name = "titanium-plate",
-    icon = "__TFMG__/graphics/icons/items/titanium-plate.png",
+    icon = "__TFMG-assets-0__/icons/items/titanium-plate.png",
     pictures =
     {
-      { size = 64, filename = "__TFMG__/graphics/icons/items/titanium-plate.png", scale = 0.5, mipmap_count = 4 },
+      { size = 64, filename = "__TFMG-assets-0__/icons/items/titanium-plate.png", scale = 0.5, mipmap_count = 4 },
     },
     random_tint_color = item_tints.iron_rust,
     subgroup = "basic-intermediates",
@@ -148,7 +148,7 @@ data:extend({
   {--high performance structure
     type = "item",
     name = "high-performance-structure",
-    icon = "__TFMG__/graphics/icons/items/high-performance-structure.png",
+    icon = "__TFMG-assets-0__/icons/items/high-performance-structure.png",
     subgroup = "structural-intermediates",
     order = "b[high-performacne-structures]",
     inventory_move_sound = item_sounds.low_density_inventory_move,
@@ -212,10 +212,10 @@ data:extend({
   {--optical coil
     type = "item",
     name = "optical-coil",
-    icon = "__TFMG__/graphics/icons/items/optical-coil.png",
+    icon = "__TFMG-assets-0__/icons/items/optical-coil.png",
     pictures =
     {
-      { size = 64, filename = "__TFMG__/graphics/icons/items/optical-coil.png", scale = 0.5, mipmap_count = 4 },
+      { size = 64, filename = "__TFMG-assets-0__/icons/items/optical-coil.png", scale = 0.5, mipmap_count = 4 },
     },
     subgroup = "electronic-intermediates",
     order = "a[conductive-coil]-b",
