@@ -1,5 +1,11 @@
 The Factory Must Grow is intended to be a total overhaul mod for Factorio, which utilises and expands on the newly introduced mechanics in Space Age. It's intended to be provide unique and difficult chalanges for the veteran Factorio player, without being too grindy.
 
+--submod repos--
+[TFMG music](https://github.com/oobanooba0/TFMG-music)
+[TFMG assets 0](https://github.com/oobanooba0/TFMG-assets-0)
+[TFMG Simulations](https://github.com/oobanooba0/TFMG-simulations)
+
+
 
 ---Credits---
 
