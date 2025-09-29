@@ -72,13 +72,13 @@ data:extend({
   {
     type = "item",
     name = "microbe-culture",
-    icon = "__space-age__/graphics/icons/copper-bacteria.png",
+    icon = "__TFMG-assets-0__/icons/items/microbe-culture-0.png",
     pictures =
     {
-      { size = 64, filename = "__space-age__/graphics/icons/copper-bacteria.png", scale = 0.5, mipmap_count = 4 },
-      { size = 64, filename = "__space-age__/graphics/icons/copper-bacteria-1.png", scale = 0.5, mipmap_count = 4 },
-      { size = 64, filename = "__space-age__/graphics/icons/copper-bacteria-2.png", scale = 0.5, mipmap_count = 4 },
-      { size = 64, filename = "__space-age__/graphics/icons/copper-bacteria-3.png", scale = 0.5, mipmap_count = 4 },
+      { size = 64, filename = "__TFMG-assets-0__/icons/items/microbe-culture-0.png", scale = 0.5, mipmap_count = 4 },
+      { size = 64, filename = "__TFMG-assets-0__/icons/items/microbe-culture-1.png", scale = 0.5, mipmap_count = 4 },
+      { size = 64, filename = "__TFMG-assets-0__/icons/items/microbe-culture-2.png", scale = 0.5, mipmap_count = 4 },
+      { size = 64, filename = "__TFMG-assets-0__/icons/items/microbe-culture-3.png", scale = 0.5, mipmap_count = 4 },
     },
     subgroup = "hydrocarbons",
     order = "a[polymers]-a[culture]",
