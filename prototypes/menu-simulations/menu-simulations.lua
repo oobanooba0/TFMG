@@ -6,7 +6,7 @@ local make_simulation = function(duration, planet, filename, zoom, volume, scrip
   return
   {
     checkboard = false,
-    save = "__TFMG__/prototypes/menu-simulations/" .. filename,
+    save = "__TFMG-simulations__/menu-simulations/" .. filename,
     length = duration*60,
     volume_modifier = volume,
     mods = {"TFMG"},

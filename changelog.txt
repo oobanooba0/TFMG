@@ -2,6 +2,8 @@
 Version: 0.3.5
 Date: ????
   Changes:
+    - Assets have been moved to submod
+    - Menu simulations have been moved to submod
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.4
 Date: 2025-09-28
