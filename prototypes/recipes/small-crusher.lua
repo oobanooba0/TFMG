@@ -24,7 +24,7 @@ data:extend({
     type = "recipe",
     name = "crystalline-chunk-crushing",
     icons ={
-      {icon = "__space-age__/graphics/icons/promethium-asteroid-chunk.png"},
+      {icon = "__TFMG-assets-0__/icons/items/crystalline-chunk.png"},
       {icon = "__Krastorio2Assets__/icons/recipes/crushing-overlay.png"},
     },
     category = "small-crusher",

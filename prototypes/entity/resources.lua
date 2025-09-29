@@ -94,7 +94,7 @@ data:extend({
     {
       name = "mineral-ore",
       order = "b",
-      map_color = {0.4, 0.6, 0.4},
+      map_color = {0.7, 0.4, 0.7},
       mining_time = 2,
       result = "crystalline-asteroid-chunk",
       walking_sound = sounds.ore,

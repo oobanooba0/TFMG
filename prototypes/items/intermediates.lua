@@ -201,7 +201,7 @@ data:extend({
   {--Conductive Coil
     type = "item",
     name = "conductive-coil",
-    icon = "__base__/graphics/icons/copper-cable.png",
+    icon = "__TFMG-assets-0__/icons/items/conductive-coil.png",
     subgroup = "electronic-intermediates",
     order = "a[conductive-coil]",
     inventory_move_sound = item_sounds.electric_small_inventory_move,

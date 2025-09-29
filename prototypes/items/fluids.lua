@@ -38,12 +38,12 @@ data:extend({
   {
     type = "fluid",
     name = "ferric-solution",
-    icon = "__base__/graphics/icons/fluid/sulfuric-acid.png",
+    icon = "__TFMG-assets-0__/icons/fluids/ferric-solution.png",
     subgroup = "fluid",
     order = "b[intermediate-fluid]-c",
     default_temperature = 95,
-    base_color = {0.15, 0.32, 0.03},
-    flow_color = {0.43, 0.75, 0.31},
+    base_color = {0.5, 0.1, 0.0},
+    flow_color = {0.7, 0.2, 0.0},
     auto_barrel = false
   },
   {

@@ -1,9 +1,14 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.5
-Date: ????
+Date: 2025-09-29
   Changes:
     - Assets have been moved to submod (this should make updating easier)
     - Menu simulations have been moved to submod (this should make updating easier)
+    - Microbe cultures are now green to match their related organic intermediates
+    - Crystalline asteroids, crystalline chunks and mineral ore are now purple.
+    - conductive coil is now white, as they are made of ferric metal (which is light grey when refined)
+    - ferric solution now no longer looks like sulfuric acid. Instaid has a red drop icon. from unused renders asset pack.
+    - ferric solution is orange/red in pipes to be in line with other forms of unrefined iron.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.4
 Date: 2025-09-28

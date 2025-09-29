@@ -69,7 +69,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     subgroup = "fluid-recipes",
     name = "ferric-solution-reduction",
     icons = {
-      { icon = "__base__/graphics/icons/fluid/sulfuric-acid.png"},
+      { icon = "__TFMG-assets-0__/icons/fluids/ferric-solution.png"},
       { icon = "__Krastorio2Assets__/icons/items/enriched-copper.png", shift = {0,7}, scale = 0.3,}
     },
     energy_required = 1,

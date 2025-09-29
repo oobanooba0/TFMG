@@ -16,7 +16,7 @@ data:extend({
   {--crystalline asteroid chunk
     type = "item",
     name = "crystalline-asteroid-chunk",
-    icon = "__TFMG-assets-0__/icons/crystalline-asteroid-chunk.png",
+    icon = "__TFMG-assets-0__/icons/items/crystalline-chunk.png",
     subgroup = "raw-materials",
     order = "a[chunk]-b[crystalline]",
     inventory_move_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
@@ -69,13 +69,13 @@ data:extend({
   {--mineral ore
     type = "item",
     name = "mineral-ore",
-    icon = "__space-age__/graphics/icons/calcite.png",
+    icon = "__TFMG-assets-0__/icons/items/mineral-ore-0.png",
     pictures =
     {
-      { size = 64, filename = "__space-age__/graphics/icons/calcite.png",   scale = 0.5, mipmap_count = 4 },
-      { size = 64, filename = "__space-age__/graphics/icons/calcite-1.png",   scale = 0.5, mipmap_count = 4 },
-      { size = 64, filename = "__space-age__/graphics/icons/calcite-2.png",   scale = 0.5, mipmap_count = 4 },
-      { size = 64, filename = "__space-age__/graphics/icons/calcite-3.png",   scale = 0.5, mipmap_count = 4 },
+      { size = 64, filename = "__TFMG-assets-0__/icons/items/mineral-ore-0.png",   scale = 0.5, mipmap_count = 4 },
+      { size = 64, filename = "__TFMG-assets-0__/icons/items/mineral-ore-1.png",   scale = 0.5, mipmap_count = 4 },
+      { size = 64, filename = "__TFMG-assets-0__/icons/items/mineral-ore-2.png",   scale = 0.5, mipmap_count = 4 },
+      { size = 64, filename = "__TFMG-assets-0__/icons/items/mineral-ore-3.png",   scale = 0.5, mipmap_count = 4 },
     },
     subgroup = "raw-materials",
     order = "b[ore]-c[mineral]",
