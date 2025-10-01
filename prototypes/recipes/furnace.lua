@@ -63,6 +63,7 @@
     results = {{type="item", name="hot-mineral-plate", amount=1}},
     allow_decomposition = false,
     allow_productivity = true,
+    result_is_always_fresh = true,
     surface_conditions = {{
       property = "pressure",
       min = 0,
@@ -96,6 +97,7 @@
     results = {{type="item", name="hot-mineral-plate", amount=1}},
     allow_decomposition = false,
     allow_productivity = true,
+    result_is_always_fresh = true,
     surface_conditions = {{
       property = "pressure",
       min = 0,

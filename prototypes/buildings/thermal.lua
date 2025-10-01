@@ -79,9 +79,9 @@ data:extend({
               animation_speed = 0.25,
               width = 480,
               height = 960,
-              shift = util.by_pixel(0, -75),
+              shift = util.by_pixel(0, -56),
               scale = 0.15
-            },HP_S_big
+            }
           }
         },
         east =
@@ -96,9 +96,9 @@ data:extend({
               animation_speed = 0.25,
               width = 960,
               height = 480,
-              shift = util.by_pixel(75, 0),
+              shift = util.by_pixel(56, 0),
               scale = 0.15
-            },HP_W_big
+            }
           }
         },
         south =
@@ -113,9 +113,9 @@ data:extend({
               animation_speed = 0.25,
               width = 480,
               height = 960,
-              shift = util.by_pixel(0, 75),
+              shift = util.by_pixel(0, 56),
               scale = 0.15,
-            },HP_N_big
+            }
           }
         },
         west =
@@ -130,9 +130,9 @@ data:extend({
               animation_speed = 0.25,
               width = 960,
               height = 480,
-              shift = util.by_pixel(-75, 0),
+              shift = util.by_pixel(-56, 0),
               scale = 0.15
-            },HP_E_big
+            }
           }
         }
       },
@@ -150,7 +150,7 @@ data:extend({
               animation_speed = 0.25, 
               width = 480,
               height = 960,
-              shift = util.by_pixel(0, -75),
+              shift = util.by_pixel(0, -56),
               scale = 0.15,
               draw_as_glow = true,
               tint = {1,1,1,0.5}
@@ -167,7 +167,7 @@ data:extend({
               animation_speed = 0.25,
               width = 960,
               height = 480,
-              shift = util.by_pixel(75, 0),
+              shift = util.by_pixel(56, 0),
               scale = 0.15,
               draw_as_glow = true,
               tint = {1,1,1,0.5}
@@ -184,7 +184,7 @@ data:extend({
               animation_speed = 0.25,
               width = 480,
               height = 960,
-              shift = util.by_pixel(0, 75),
+              shift = util.by_pixel(0, 56),
               scale = 0.15,
               draw_as_glow = true,
               tint = {1,1,1,0.5}
@@ -201,7 +201,7 @@ data:extend({
               animation_speed = 0.25,
               width = 960,
               height = 480,
-              shift = util.by_pixel(-75, 0),
+              shift = util.by_pixel(-56, 0),
               scale = 0.15,
               draw_as_glow = true,
               tint = {1,1,1,0.5}

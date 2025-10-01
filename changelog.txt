@@ -1,8 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.9
+Date: 2025-10-02
+  Changes:
+    - thermal efficiency is now waste heat output percentage. Which makes heat output easier to figure out.
+    - janky radiator graphics are now slightly less janky
+  Bugfixes:
+    - Proton decay thermolectric generator is now called that
+---------------------------------------------------------------------------------------------------
 Version: 0.3.8
 Date: 2025-10-01
   Bugfixes:
-    - Fixed on_gui_closed event.
+    - Fixed crash from on_gui_closed event.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.7
 Date: 2025-10-01

@@ -463,7 +463,7 @@ data:extend({
           width = 462,
           height = 500,
           shift = { -0.1, -0.2 },
-          scale = 0.5,
+          scale = 0.55,
         },
         {
           filename = "__Krastorio2Assets__/buildings/matter-plant/matter-plant-sh.png",
@@ -472,7 +472,7 @@ data:extend({
           height = 444,
           draw_as_shadow = true,
           shift = { 0.23, 0.24 },
-          scale = 0.5,
+          scale = 0.55,
         }
       }
     },
