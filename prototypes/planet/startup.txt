@@ -1,0 +1,1 @@
+--generate-map-preview "C:\Users\***\AppData\Roaming\Factorio\mods\TFMG\prv.png" --map-preview-planet "arrival" --map-gen-seed 1 --map-preview-size 3096 

@@ -18,7 +18,7 @@ planet_map_gen.arrival = function()
     cliff_settings =
     {
       name = "cliff",
-      cliff_elevation_interval = 1000,
+      cliff_elevation_interval = 2000,
       cliff_elevation_0 = 150,
       cliff_smoothing = 0,
       richness = 1

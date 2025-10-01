@@ -95,7 +95,7 @@ data:extend({
       name = "mineral-ore",
       order = "b",
       map_color = {0.7, 0.4, 0.7},
-      mining_time = 2,
+      mining_time = 4,
       result = "crystalline-asteroid-chunk",
       walking_sound = sounds.ore,
       mining_visualisation_tint = {r = 0.99, g = 1.0, b = 0.92, a = 1.000},
@@ -144,9 +144,7 @@ data:extend({
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     autoplace = {
-      --control = "lithium-brine",
       order="a[resources]-c[ice-geyser]",
-      --default_enabled = false,
       probability_expression = "ice_geyser_probability",
       richness_expression = "ice_geyser_richness"
     },
