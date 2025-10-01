@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.6
-Date: ????
+Date: 2025-10-01
   Changes:
     - Ice worms now spawn less significantly less frequently.
   Balancing:
