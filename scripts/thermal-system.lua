@@ -57,6 +57,8 @@ function thermal_system.on_gui_open(event)
 end
 
 function thermal_system.on_gui_close(event)
+	if player_storage.gui == nil then return end
+	if player_storage.gui.valid ~= true then return end
 	local player = game.players[event.player_index]
 	local player_storage = storage.players[event.player_index]
 	local gui_entity = player_storage.gui_entity
