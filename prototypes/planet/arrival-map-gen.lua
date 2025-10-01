@@ -203,7 +203,7 @@ data:extend({--arrival ore generations.
   {--ferric ore expression
     type = "noise-expression",
     name = "ferric_ore_richness",
-    expression = "(distance_from_center*3+1000) * max(10*starting_ferric , (arrival_simple_spot(1, 12 * size ^ 0.5, 220 / frequency ^ 0.5,1))* richness / size)",
+    expression = "(distance_from_center*3+1000) * max(8*starting_ferric , (arrival_simple_spot(1, 12 * size ^ 0.5, 220 / frequency ^ 0.5,1))* richness / size)",
     local_expressions =
     {
       richness = "control:ferric_ore:richness",
@@ -220,7 +220,7 @@ data:extend({--arrival ore generations.
 	{--mineral ore expression
     type = "noise-expression",
     name = "mineral_ore_richness",
-    expression = "(distance_from_center*2+600) * max(3*starting_mineral , (arrival_simple_spot(1000, 40 * size ^ 0.5, 600 / frequency ^ 0.5,1)) * richness / size)",
+    expression = "(distance_from_center*2+600) * max(4*starting_mineral , (arrival_simple_spot(1000, 40 * size ^ 0.5, 600 / frequency ^ 0.5,1)) * richness / size)",
     local_expressions =
     {
       richness = "control:mineral_ore:richness",
