@@ -18,12 +18,12 @@ data:extend{--arrival height (main biome map)
 		+ arrival_trenches(xx,yy,100)
 		+ arrival_trenches(xx,yy,200)
 		),0,1)
-		* clamp(-starting_ferric-0.3,0,1) 
-		* clamp(-starting_mineral-0.3,0,1)
-		* clamp(-starting_ice-0.3,0,1) 
-		+ 1 * ceil(starting_ferric+0.3 >0)
-		+ 0.5 * ceil(starting_mineral+0.3 >0)
-		- 1 * ceil(starting_ice+0.3 >0)
+		* clamp(-starting_ferric/2-0.2,0,1) 
+		* clamp(-starting_mineral/2-0.3,0,1)
+		* clamp(-starting_ice/2-0.3,0,1) 
+		+ 1 * clamp((starting_ferric/2+0.3 >0),0,1)
+		+ 0.5 * clamp((starting_mineral/2+0.3 >0),0,1)
+		- 0.6 * clamp((starting_ice/2+0.3 >0),0,1)
 	]],
 	parameters = {"xx", "yy"}
   }
@@ -145,8 +145,8 @@ data:extend({--starting ore patches
     type = "noise-expression",
     name = "starting_ferric",
     expression = "starting_spot_at_angle{\z
-			angle = 0,\z
-    	distance = 50,\z
+			angle = map_seed_normalized * 3600,\z
+    	distance = 70,\z
     	radius = 12,\z
     	x_distortion =  arrival_wobble_x*4,\z
     	y_distortion =  arrival_wobble_y*4\z
@@ -156,9 +156,9 @@ data:extend({--starting ore patches
     type = "noise-expression",
     name = "starting_mineral",
     expression = "starting_spot_at_angle{\z
-			angle = 120,\z
+			angle = (map_seed_normalized * 3600)+120,\z
     	distance = 70,\z
-    	radius = 20,\z
+    	radius = 18,\z
     	x_distortion =  arrival_wobble_x*4,\z
     	y_distortion =  arrival_wobble_y*4\z
 			}"
@@ -167,9 +167,9 @@ data:extend({--starting ore patches
     type = "noise-expression",
     name = "starting_ice",
     expression = "starting_spot_at_angle{\z
-			angle = 240,\z
-    	distance = 50,\z
-    	radius = 20,\z
+			angle = (map_seed_normalized * 3600)+240,\z
+    	distance = 70,\z
+    	radius = 17,\z
     	x_distortion =  arrival_wobble_x*4,\z
     	y_distortion =  arrival_wobble_y*4\z
 			}"
@@ -203,7 +203,7 @@ data:extend({--arrival ore generations.
   {--ferric ore expression
     type = "noise-expression",
     name = "ferric_ore_richness",
-    expression = "(distance_from_center*3+1000) * max(starting_ferric , (arrival_simple_spot(1, 12 * size ^ 0.5, 200 / frequency ^ 0.5,1))* richness / size)",
+    expression = "(distance_from_center*3+1000) * max(10*starting_ferric , (arrival_simple_spot(1, 12 * size ^ 0.5, 220 / frequency ^ 0.5,1))* richness / size)",
     local_expressions =
     {
       richness = "control:ferric_ore:richness",
@@ -220,7 +220,7 @@ data:extend({--arrival ore generations.
 	{--mineral ore expression
     type = "noise-expression",
     name = "mineral_ore_richness",
-    expression = "(distance_from_center*2+600) * max(starting_mineral , (arrival_simple_spot(1000, 40 * size ^ 0.5, 600 / frequency ^ 0.5,1)) * richness / size)",
+    expression = "(distance_from_center*2+600) * max(3*starting_mineral , (arrival_simple_spot(1000, 40 * size ^ 0.5, 600 / frequency ^ 0.5,1)) * richness / size)",
     local_expressions =
     {
       richness = "control:mineral_ore:richness",
@@ -262,7 +262,7 @@ data:extend({--arrival ore generations.
 			seed = 3000,\z
       count = 1,\z
       skip_offset = 0,\z
-      region_size = 80 / control:ice_geyser:frequency,\z
+      region_size = 100 / control:ice_geyser:frequency,\z
       density = 1,\z
       radius = 25 * sqrt(control:ice_geyser:size),\z
       favorability = 1}"
@@ -270,12 +270,12 @@ data:extend({--arrival ore generations.
 	{
     type = "noise-expression",
     name = "ice_geyser_richness",
-    expression = "distance_from_center+1000 * max(starting_ice, ice_geyser_spots) * control:ice_geyser:richness * 1000"
+    expression = "distance_from_center*2+500 * max(starting_ice, ice_geyser_spots) * control:ice_geyser:richness * 1000"
   },
   {
     type = "noise-expression",
     name = "ice_geyser_probability",
-    expression = "max((starting_ice/10),(control:ice_geyser:size > 0) * (ice_geyser_spots * 0.020) * ceil(arrival_ice_noise(x,y) < -0.1))"
+    expression = "max((starting_ice/25),(control:ice_geyser:size > 0) * (ice_geyser_spots * 0.020) * ceil(arrival_ice_noise(x,y) < -0.1))"
   },
 
 })

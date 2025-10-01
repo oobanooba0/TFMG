@@ -4,9 +4,10 @@ Date: ????
   Changes:
     - Ice worms now spawn less significantly less frequently.
   Balancing:
+    - Arrival now has guaranteed starting patches
     - Crystalline/mineral ore now spawns less frequently, You'll really need a rail system on this planet.
     - Ore patches now scale with distance faster.
-    - Mineral ore patches are smaller, but more frequent, trenches should yeild viable ore patches more frequently now.
+    - Mineral ore patches are slightly smaller, and slightly more frequent.
     - Crystaline ore now has a 400% mining time. Those patches are large for a reason.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.5
