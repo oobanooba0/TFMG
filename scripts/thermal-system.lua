@@ -32,6 +32,121 @@ function thermal_update(v,max_working_temperature,max_safe_temperature,specific_
 		end
 end
 
+--Gui 
+
+function thermal_system.on_gui_open(event)
+	local player = game.players[event.player_index]
+	local player_storage = storage.players[event.player_index]
+	local entity = player_storage.gui_entity
+
+	thermal_system.gui_anchor(entity)--
+	local interface = thermal_system.find_associated_interface(entity)
+	if interface == nil then return end
+	player_storage.gui_interface = interface
+  local frame = player.gui.relative.add{type="frame", anchor=anchor,direction="vertical"}
+	player_storage.gui = frame
+	
+	frame.add{type="flow",name = "1"}
+	frame["1"].add{type = "label", name = "temperature-reading"}
+	frame["1"].add{type = "progressbar", name = "heat-bar"}
+	frame["1"].add{type = "progressbar", name = "heat-bar2"}
+	frame.add{type = "label", name = "working"}
+	frame.add{type = "label", name = "damage"}
+	
+	
+end
+
+function thermal_system.on_gui_close(event)
+	local player = game.players[event.player_index]
+	local player_storage = storage.players[event.player_index]
+	local gui_entity = player_storage.gui_entity
+ 	player_storage.gui.destroy()
+end
+
+function thermal_system.on_gui_tick()
+	local players = game.connected_players
+  for _ , v in pairs(players) do
+	player_storage = storage.players[1]
+	if player_storage.gui == nil then return end
+	if player_storage.gui.valid == true then
+		local interface = player_storage.gui_interface
+		player_storage.gui["1"]["temperature-reading"].caption = "Temperature: "..string.format("%.2f",interface.temperature).."°C"
+		player_storage.gui["1"]["heat-bar"].value = interface.temperature/max_working_temperature
+		player_storage.gui["1"]["heat-bar2"].value = (interface.temperature-max_working_temperature)/(max_safe_temperature-max_working_temperature)
+		player_storage.gui["working"].caption = "Maximum working temperature: "..max_working_temperature.."°C"
+		player_storage.gui["damage"].caption = "Maximum safe temperature: "..max_safe_temperature.."°C"
+	end
+	end
+end
+
+function thermal_system.gui_anchor(entity)--Gets the anchor for the entities gui type.
+	if entity.type == "furnace" then
+		anchor = {gui=defines.relative_gui_type.furnace_gui, position=defines.relative_gui_position.bottom}
+	elseif entity.type== "assembling-machine" then
+		anchor = {gui=defines.relative_gui_type.assembling_machine_gui, position=defines.relative_gui_position.bottom}
+	elseif entity.type== "lab" then
+		anchor = {gui=defines.relative_gui_type.lab_gui, position=defines.relative_gui_position.bottom}
+	else
+		anchor = nil
+	end
+	return anchor
+end
+
+function thermal_system.find_associated_interface(entity)--this is awful. Full thermal system rewrite is looking more and more necessary
+	if entity.name == "assembling-machine" then
+		if storage.assembling_machine_thermal[entity.unit_number] == nil then return end
+		interface = storage.assembling_machine_thermal[entity.unit_number]
+		max_working_temperature = 250
+		max_safe_temperature = 350
+	elseif entity.name == "furnace" then
+		if storage.furnace_thermal[entity.unit_number] == nil then return end
+		interface = storage.furnace_thermal[entity.unit_number]
+		max_working_temperature = 400
+		max_safe_temperature = 500
+	elseif entity.name == "matter-reconstructor" then
+		if storage.matter_reconstructor_thermal[entity.unit_number] == nil then return end
+		interface = storage.matter_reconstructor_thermal[entity.unit_number]
+		max_working_temperature = 900
+		max_safe_temperature = 1337
+	elseif entity.name == "neural-node" then
+		if storage.neural_node_thermal[entity.unit_number] == nil then return end
+		interface = storage.neural_node_thermal[entity.unit_number]
+		max_working_temperature = 90
+		max_safe_temperature = 130
+	elseif entity.name == "micro-assembler" then
+		if storage.micro_assembler_thermal[entity.unit_number] == nil then return end
+		interface = storage.micro_assembler_thermal[entity.unit_number]
+		max_working_temperature = 250
+		max_safe_temperature = 350
+	elseif entity.name == "small-crusher" then
+		if storage.small_crusher_thermal[entity.unit_number] == nil then return end
+		interface = storage.small_crusher_thermal[entity.unit_number]
+		max_working_temperature = 300
+		max_safe_temperature = 400
+	elseif entity.name == "refinery" then
+		if storage.refinery_thermal[entity.unit_number] == nil then return end
+		interface = storage.refinery_thermal[entity.unit_number]
+		max_working_temperature = 400
+		max_safe_temperature = 450
+	elseif entity.name == "chemistry-plant" then
+		if storage.chemistry_plant_thermal[entity.unit_number] == nil then return end
+		interface = storage.chemistry_plant_thermal[entity.unit_number]
+		max_working_temperature = 320
+		max_safe_temperature = 355
+	elseif entity.name == "supercomputer" then
+		if storage.supercomputer[entity.unit_number].interface == nil then return end
+		interface = storage.supercomputer[entity.unit_number]
+		max_working_temperature = 90
+		max_safe_temperature = 130
+	else
+		interface = nil
+		max_safe_temperature = nil
+		max_working_temperature = nil
+		return interface
+	end
+	return interface.interface
+end
+
 --machine destruction
 function thermal_system.on_machine_destroyed(event)--fuck this. Works somehow.
 	if event.type == defines.target_type.entity then--this elseif stack feels like it belongs in a programming gore video.

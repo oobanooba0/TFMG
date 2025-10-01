@@ -163,6 +163,7 @@ script.on_event(
 		thermal_system.on_chemistry_plant_tick()
 		thermal_system.on_refinery_tick()
 		supercomputer.on_supercomputer_tick()
+		thermal_system.on_gui_tick()
 	end
 )
 script.on_nth_tick(100,
@@ -175,7 +176,7 @@ script.on_nth_tick(100,
 
 script.on_event(defines.events.on_player_created, function(e)--Ngl I have no idea what the e means, but the code doesn't work without it.\
 	local player = game.players[e.player_index]
-	storage.players[player.index] = {hub = {}}--initialise player storage
+	storage.players[player.index] = {}--initialise player storage
 
   player.teleport({ x = 0, y = 0 }, storage.platform.surface.name)
 	--player.teleport({x=0,y=0}, "arrival")--for debug
@@ -190,12 +191,23 @@ script.on_event(defines.events.on_player_created, function(e)--Ngl I have no ide
 		frame.add{type="button", name="deploy_scout_o_tron", caption={"spider-ui.deploy-scout-o-tron"}}
 end)
 
----On open hub gui
+---On open gui
 script.on_event(defines.events.on_gui_opened, function(event)
-  if event.gui_type == defines.gui_type.entity and event.entity.type == "space-platform-hub" then
-		local player_storage = storage.players[event.player_index]
-		player_storage.hub = event.entity--we're gonna store the location, which is always 0,0
+	local player_storage = storage.players[event.player_index]
+  if event.gui_type == defines.gui_type.entity then
+		player_storage.gui_entity = event.entity
+		thermal_system.on_gui_open(event)
+		if event.entity.type == "space-platform-hub" then 
+			player_storage.hub = event.entity--we're gonna store the location, which is always 0,0
+		end
   end
+	
+end)
+
+script.on_event(defines.events.on_gui_closed, function(event)
+	if event.gui_type == defines.gui_type.entity then
+		thermal_system.on_gui_close(event)
+	end
 end)
 
 script.on_event(defines.events.on_gui_click, function(event)
