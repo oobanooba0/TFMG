@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.10
+Date: 2025-10-02
+  Bugfixes:
+    - Thermal Gui now no longer causes crashes in multiplayer
+    - thermal Gui now properly clears itself out when the machine associated with an active gui is destroyed while the gui is open.
+    - I hate gui modding.
+---------------------------------------------------------------------------------------------------
 Version: 0.3.9
 Date: 2025-10-02
   Changes:

@@ -32,17 +32,16 @@ function thermal_update(v,max_working_temperature,max_safe_temperature,specific_
 		end
 end
 
---Gui 
+--Gui (god help me)
 
 function thermal_system.on_gui_open(event)
 	local player = game.players[event.player_index]
 	local player_storage = storage.players[event.player_index]
-	local entity = player_storage.gui_entity
+	local entity = event.entity
 
-	thermal_system.gui_anchor(entity)--
-	local interface = thermal_system.find_associated_interface(entity)
-	if interface == nil then return end
-	player_storage.gui_interface = interface
+	thermal_system.find_associated_interface(entity,player_storage)
+	if player_storage.gui_interface == nil then return end
+	local anchor = thermal_system.gui_anchor(entity)
   local frame = player.gui.relative.add{type="frame", anchor=anchor,direction="vertical"}
 	player_storage.gui = frame
 	
@@ -52,32 +51,48 @@ function thermal_system.on_gui_open(event)
 	frame["1"].add{type = "progressbar", name = "heat-bar2"}
 	frame.add{type = "label", name = "working"}
 	frame.add{type = "label", name = "damage"}
-	
-	
 end
 
 function thermal_system.on_gui_close(event)
-	if player_storage.gui == nil then return end
-	if player_storage.gui.valid ~= true then return end
-	local player = game.players[event.player_index]
 	local player_storage = storage.players[event.player_index]
-	local gui_entity = player_storage.gui_entity
- 	player_storage.gui.destroy()
+	if player_storage.gui == nil then return end
+	if player_storage.gui.valid == false then return end
+	player_storage.gui.destroy()
+	player_storage.gui = nil
+	player_storage.gui_interface = nil
+	player_storage.max_working_temperature = nil
+	player_storage.max_safe_temperature = nil
+end
+
+function thermal_system.gui_cleanup(event)
+	local players = game.connected_players
+	for _ , v in pairs(players) do
+		local player_storage = storage.players[v.index]
+		if player_storage.gui ~= nil and player_storage.gui.valid == true and player_storage.gui_interface ~= nil and player_storage.gui_interface.interface.valid == false then
+			player_storage.gui.destroy()
+			player_storage.gui = nil
+			player_storage.gui_interface = nil
+			player_storage.max_working_temperature = nil
+			player_storage.max_safe_temperature = nil
+		end
+	end
 end
 
 function thermal_system.on_gui_tick()
 	local players = game.connected_players
   for _ , v in pairs(players) do
-	player_storage = storage.players[1]
-	if player_storage.gui == nil then return end
-	if player_storage.gui.valid == true then
-		local interface = player_storage.gui_interface
-		player_storage.gui["1"]["temperature-reading"].caption = "Temperature: "..string.format("%.2f",interface.temperature).."°C"
-		player_storage.gui["1"]["heat-bar"].value = interface.temperature/max_working_temperature
-		player_storage.gui["1"]["heat-bar2"].value = (interface.temperature-max_working_temperature)/(max_safe_temperature-max_working_temperature)
-		player_storage.gui["working"].caption = "Maximum working temperature: "..max_working_temperature.."°C"
-		player_storage.gui["damage"].caption = "Maximum safe temperature: "..max_safe_temperature.."°C"
-	end
+		local player_storage = storage.players[v.index]
+		if player_storage.gui ~= nil and player_storage.gui.valid == true and player_storage.gui_interface ~= nil and player_storage.gui_interface.interface.valid == true then --holy stack batman
+			local interface = player_storage.gui_interface
+			local max_working_temperature = player_storage.max_working_temperature
+			local max_safe_temperature = player_storage.max_safe_temperature
+			local temperature = interface.interface.temperature
+			player_storage.gui["1"]["temperature-reading"].caption = "Temperature: "..string.format("%.2f",temperature).."°C"
+			player_storage.gui["1"]["heat-bar"].value = temperature/max_working_temperature
+			player_storage.gui["1"]["heat-bar2"].value = (temperature-max_working_temperature)/(max_safe_temperature-max_working_temperature)
+			player_storage.gui["working"].caption = "Maximum working temperature: "..max_working_temperature.."°C"
+			player_storage.gui["damage"].caption = "Maximum safe temperature: "..max_safe_temperature.."°C"
+		end
 	end
 end
 
@@ -94,59 +109,57 @@ function thermal_system.gui_anchor(entity)--Gets the anchor for the entities gui
 	return anchor
 end
 
-function thermal_system.find_associated_interface(entity)--this is awful. Full thermal system rewrite is looking more and more necessary
+function thermal_system.find_associated_interface(entity,player_storage)--this is awful. Full thermal system rewrite is looking more and more necessary
 	if entity.name == "assembling-machine" then
 		if storage.assembling_machine_thermal[entity.unit_number] == nil then return end
-		interface = storage.assembling_machine_thermal[entity.unit_number]
-		max_working_temperature = 250
-		max_safe_temperature = 350
+		player_storage.gui_interface = storage.assembling_machine_thermal[entity.unit_number]
+		player_storage.max_working_temperature = 250
+		player_storage.max_safe_temperature = 350
 	elseif entity.name == "furnace" then
 		if storage.furnace_thermal[entity.unit_number] == nil then return end
-		interface = storage.furnace_thermal[entity.unit_number]
-		max_working_temperature = 400
-		max_safe_temperature = 500
+		player_storage.gui_interface = storage.furnace_thermal[entity.unit_number]
+		player_storage.max_working_temperature = 400
+		player_storage.max_safe_temperature = 500
 	elseif entity.name == "matter-reconstructor" then
 		if storage.matter_reconstructor_thermal[entity.unit_number] == nil then return end
-		interface = storage.matter_reconstructor_thermal[entity.unit_number]
-		max_working_temperature = 900
-		max_safe_temperature = 1337
+		player_storage.gui_interface = storage.matter_reconstructor_thermal[entity.unit_number]
+		player_storage.max_working_temperature = 900
+		player_storage.max_safe_temperature = 1337
 	elseif entity.name == "neural-node" then
 		if storage.neural_node_thermal[entity.unit_number] == nil then return end
-		interface = storage.neural_node_thermal[entity.unit_number]
-		max_working_temperature = 90
-		max_safe_temperature = 130
+		player_storage.gui_interface = storage.neural_node_thermal[entity.unit_number]
+		player_storage.max_working_temperature = 90
+		player_storage.max_safe_temperature = 130
 	elseif entity.name == "micro-assembler" then
 		if storage.micro_assembler_thermal[entity.unit_number] == nil then return end
-		interface = storage.micro_assembler_thermal[entity.unit_number]
-		max_working_temperature = 250
-		max_safe_temperature = 350
+		player_storage.gui_interface = storage.micro_assembler_thermal[entity.unit_number]
+		player_storage.max_working_temperature = 250
+		player_storage.max_safe_temperature = 350
 	elseif entity.name == "small-crusher" then
 		if storage.small_crusher_thermal[entity.unit_number] == nil then return end
-		interface = storage.small_crusher_thermal[entity.unit_number]
-		max_working_temperature = 300
-		max_safe_temperature = 400
+		player_storage.gui_interface = storage.small_crusher_thermal[entity.unit_number]
+		player_storage.max_working_temperature = 300
+		player_storage.max_safe_temperature = 400
 	elseif entity.name == "refinery" then
 		if storage.refinery_thermal[entity.unit_number] == nil then return end
-		interface = storage.refinery_thermal[entity.unit_number]
-		max_working_temperature = 400
-		max_safe_temperature = 450
+		player_storage.gui_interface = storage.refinery_thermal[entity.unit_number]
+		player_storage.max_working_temperature = 400
+		player_storage.max_safe_temperature = 450
 	elseif entity.name == "chemistry-plant" then
 		if storage.chemistry_plant_thermal[entity.unit_number] == nil then return end
-		interface = storage.chemistry_plant_thermal[entity.unit_number]
-		max_working_temperature = 320
-		max_safe_temperature = 355
+		player_storage.gui_interface = storage.chemistry_plant_thermal[entity.unit_number]
+		player_storage.max_working_temperature = 320
+		player_storage.max_safe_temperature = 355
 	elseif entity.name == "supercomputer" then
 		if storage.supercomputer[entity.unit_number].interface == nil then return end
-		interface = storage.supercomputer[entity.unit_number]
-		max_working_temperature = 90
-		max_safe_temperature = 130
+		player_storage.gui_interface = storage.supercomputer[entity.unit_number]
+		player_storage.max_working_temperature = 90
+		player_storage.max_safe_temperature = 130
 	else
-		interface = nil
-		max_safe_temperature = nil
-		max_working_temperature = nil
-		return interface
+		player_storage.gui_interface = nil
+		player_storage.max_safe_temperature = nil
+		player_storage.max_working_temperature = nil
 	end
-	return interface.interface
 end
 
 --machine destruction

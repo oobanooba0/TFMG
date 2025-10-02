@@ -149,6 +149,7 @@ script.on_event(
 	function(event)
 		thermal_system.on_machine_destroyed(event)
 		supercomputer.on_supercomputer_destroyed(event)
+		thermal_system.gui_cleanup(event)
 	end
 )
 script.on_event(
