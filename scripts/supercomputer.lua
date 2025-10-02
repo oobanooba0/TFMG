@@ -172,7 +172,7 @@ function supercomputer.introspection_solution(v)
     v.machine.disabled_by_script = true
     v.machine.custom_status = {
 		  diode = defines.entity_status_diode.yellow,
-		  label = "Incorrect signal x"
+		  label = "Ready for signal X"
 		  }
   end 
 end
@@ -227,7 +227,7 @@ function supercomputer.exploration_solution(v)
     v.machine.disabled_by_script = true
     v.machine.custom_status = {
 		  diode = defines.entity_status_diode.yellow,
-		  label = "Incorrect distance"
+		  label = "Ready for distance solution"
 		  }
   end 
 end
