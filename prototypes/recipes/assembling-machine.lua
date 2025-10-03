@@ -676,9 +676,9 @@ data:extend({
     energy_required = 12,
     enabled = false,
     ingredients = {
-      { type = "item", name = "high-performance-structure", amount = 4 },
+      { type = "item", name = "general-purpose-structure", amount = 12 },
       { type = "item", name = "modular-circuit", amount = 8 },
-      { type = "item", name = "capacitor-discharged", amount = 8 },
+      { type = "item", name = "mineral-glass", amount = 8 },
     },
     results = { 
       { type = "item", name = "charger", amount = 1 }
@@ -693,7 +693,7 @@ data:extend({
     ingredients = {
       { type = "item", name = "high-performance-structure", amount = 16 },
       { type = "item", name = "modular-circuit", amount = 8 },
-      { type = "item", name = "capacitor-charged", amount = 16 },
+      { type = "item", name = "capacitor-discharged", amount = 16 },
     },
     results = { 
       { type = "item", name = "discharger", amount = 1 }

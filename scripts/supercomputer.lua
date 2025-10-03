@@ -133,16 +133,19 @@ function supercomputer.on_supercomputer_tick()
       else
         v.machine.disabled_by_script = false
       end
+      
+      local recipe = v.machine.get_recipe()
+      if recipe == nil then--If no recipe then only the reset script needs to run and we can skip all else.
+        if v.recipe == recipe then return end
+          v.output.get_control_behavior().remove_section(1)
+          v.recipe = nil
+      return end
 
       if v.machine.status ~= 1 then --if the machine isn't able to run for any reason, end the script.
       return end
 
-      local recipe = v.machine.get_recipe()
-
-      if recipe == nil then --No point in running any script if theres no recipe
-      return end
-      
       if recipe ~= v.recipe then--check if the recipe has changed, so we know to generate a new problem
+
         if recipe.name == "introspection-science" then
           supercomputer.create_new_problem_introspection(v)
         end

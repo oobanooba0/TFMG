@@ -19,6 +19,8 @@ Date: ????
     - Locomotives have 2 fuel slots and 2 fuel waste slots, range limitations can be a real concern in the early game.
     - Locomotives are heavier. Cargo wagons remain the same, Longer trains should make more sense.
     - Ferric solution is now produced in half the quantity, and consumed in half the quantity.
+  Bugfixes:
+    - Supercomputer now properly resets recipe when unsetting recipe. This should reduce confusion when players accidentally tamper with the supercomputer output terminal.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.10
 Date: 2025-10-02
