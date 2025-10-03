@@ -3,6 +3,7 @@ Version: 0.3.11
 Date: ????
   Changes:
     - Changed super computer status indicator to better reflect its condition.
+    - Thermal system explainer updated for current version.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.10
 Date: 2025-10-02
