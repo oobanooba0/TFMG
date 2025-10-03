@@ -1083,23 +1083,6 @@ data:extend({
     type = "furnace",
     name = "charger",
     icon = "__Krastorio2Assets__/icons/entities/singularity-beacon.png",
-    custom_tooltip_fields = {
-      {
-      name = {"thermal-system.max-temperature"},
-      value = {"thermal-system.charger-max-temperature"},
-      order = 253,
-      },
-      {
-      name = {"thermal-system.damage-temperature"},
-      value = {"thermal-system.charger-damage-temperature"},
-      order = 254,
-      },
-      {
-      name = {"thermal-system.efficiency"},
-      value = {"thermal-system.charger-efficiency"},
-      order = 255,
-      },
-    },
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "charger"},
     circuit_wire_max_distance = furnace_circuit_wire_max_distance,
