@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.11
-Date: ????
+Date: 2025-10-04
   Features:
     - All intermediates now have a description.
     - Many more recipes have a description.
