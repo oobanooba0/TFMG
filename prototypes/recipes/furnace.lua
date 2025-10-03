@@ -65,7 +65,7 @@
     allow_productivity = true,
     result_is_always_fresh = true,
     surface_conditions = {{
-      property = "pressure",
+      property = "gravity",
       min = 0,
       max = 0
     }}
@@ -82,8 +82,8 @@
     allow_decomposition = false,
     allow_productivity = true,
     surface_conditions = {{
-      property = "pressure",
-      min = 1,
+      property = "gravity",
+      min = 0.01,
     }}
   },
   {
@@ -99,7 +99,7 @@
     allow_productivity = true,
     result_is_always_fresh = true,
     surface_conditions = {{
-      property = "pressure",
+      property = "gravity",
       min = 0,
       max = 0
     }}
@@ -116,8 +116,8 @@
     allow_decomposition = false,
     allow_productivity = true,
     surface_conditions = {{
-      property = "pressure",
-      min = 1,
+      property = "gravity",
+      min = 0.01,
     }}
   },
 })
