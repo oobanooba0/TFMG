@@ -328,6 +328,54 @@ data:extend({
       time = 24
     },
   },
+  {--crystal excitation
+    type = "technology",
+    name = "crystal-excitation",
+    icons = {
+      {icon = "__TFMG-assets-0__/icons/items/excited-crystalline-chunk-red.png",shift = {-64,0}},
+      {icon = "__TFMG-assets-0__/icons/items/excited-crystalline-chunk-blue.png",shift = {64, 0}},
+    },
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "excited-crystalline-chunk-red"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "excited-crystal-quenching"
+      }     
+    },
+    prerequisites = {"capacitors"},
+    unit = {
+      count = 64,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1}
+      },
+      time = 24
+    },
+  },
+  {--contemplate mind
+    type = "technology",
+    name = "contemplate-mind",
+    icon = "__base__/graphics/icons/signal/signal_pink.png",
+    icon_size = 64,
+    essential = true,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "ai-processor"
+      },
+    },
+    prerequisites = {"crystal-excitation"},
+    research_trigger = {
+      type = "craft-item",
+      item = "fused-crystalline-chunk",
+      count = 8
+    },
+  },
   --side techs
   {--energy distribution 2
     type = "technology",

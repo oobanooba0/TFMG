@@ -154,5 +154,23 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     allow_productivity = false,
   },
-
+  {--Excited crystal quenching
+    type = "recipe",
+    category = "chemistry-plant",
+    subgroup = "fluid-recipes",
+    name = "excited-crystal-quenching",
+    icon = "__TFMG-assets-0__/icons/items/fused-crystalline-chunk.png",
+    energy_required = 1,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "excited-crystalline-chunk-red", amount = 1 },
+      { type = "item", name = "excited-crystalline-chunk-blue", amount = 1 },
+      { type = "fluid", name = "water", amount = 100 },
+    },
+    results = { 
+      { type = "item", name = "fused-crystalline-chunk", amount = 1 },
+      { type = "fluid", name = "steam", amount = 1000, temperature = 1000},
+    },
+    allow_productivity = false,
+  },
 })

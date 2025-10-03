@@ -8,7 +8,7 @@ data:extend({
     icon_size = 64,
     effects = {},
     essential = true,
-    prerequisites = {"exploration-science"},
+    prerequisites = {"contemplate-mind"},
     unit =
     {
       count = 1024,

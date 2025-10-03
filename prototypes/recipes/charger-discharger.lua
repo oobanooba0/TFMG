@@ -15,4 +15,17 @@ data:extend({
     allow_decomposition = false,
     allow_productivity = false,
   },
+---Crafting recipes
+  {
+    type = "recipe",
+    name = "excited-crystalline-chunk-red",
+    category = "charger",
+    auto_recycle = false,
+    energy_required = 16,
+    enabled = false,
+    ingredients = {{type = "item", name = "crystalline-asteroid-chunk", amount = 1}},
+    results = {{type="item", name="excited-crystalline-chunk-red", amount=1}},
+    allow_decomposition = false,
+    allow_productivity = false,
+  },
 })

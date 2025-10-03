@@ -336,7 +336,7 @@ data:extend({
   {--excited crystalline chunk red
     type = "item",
     name = "excited-crystalline-chunk-red",
-    icon = "__TFMG-assets-0__/icons/items/crystalline-chunk.png",
+    icon = "__TFMG-assets-0__/icons/items/excited-crystalline-chunk-red.png",
     subgroup = "advanced-intermediates",
     order = "a[excited-chunk]-a",
     inventory_move_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
@@ -345,12 +345,12 @@ data:extend({
     stack_size = 1,
     weight = 100 * kg,
     spoil_result = "excited-crystalline-chunk-blue",
-    spoil_ticks = 12 * second
+    spoil_ticks = 8 * second
   },
   {--excited crystalline chunk blue
     type = "item",
     name = "excited-crystalline-chunk-blue",
-    icon = "__TFMG-assets-0__/icons/items/crystalline-chunk.png",
+    icon = "__TFMG-assets-0__/icons/items/excited-crystalline-chunk-blue.png",
     subgroup = "advanced-intermediates",
     order = "a[excited-chunk]-b",
     inventory_move_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
@@ -359,7 +359,19 @@ data:extend({
     stack_size = 1,
     weight = 100 * kg,
     spoil_result = "excited-crystalline-chunk-red",
-    spoil_ticks = 12 * second
+    spoil_ticks = 8 * second
+  },
+  {--fused crystalline chunk
+    type = "item",
+    name = "fused-crystalline-chunk",
+    icon = "__TFMG-assets-0__/icons/items/fused-crystalline-chunk.png",
+    subgroup = "advanced-intermediates",
+    order = "a[excited-chunk]-c",
+    inventory_move_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
+    pick_sound = "__space-age__/sound/item/rock-inventory-pickup.ogg",
+    drop_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
+    stack_size = 20,
+    weight = 100 * kg,
   },
 })
 
