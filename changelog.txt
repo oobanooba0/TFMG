@@ -4,12 +4,16 @@ Date: ????
   Features:
     - All intermediates now have a description.
     - Many more recipes have a description.
+    - Capacitors added. Capacitors can be used as superior fuel for trains, In equipment grids.
   Changes:
     - Changed super computer status indicator to better reflect its condition.
     - Thermal system explainer updated for current version.
     - container 1 is renamed to container I
     - Logistics containers now have I appended to their name to indicate their tier.
     - Conditions for mineral plate/hot mineral plate recipes have been changed to gravity instaid of pressure to be more in line with item and recipe descriptions.
+  Balancing:
+    - organic carbon is now a much weaker fuel. It will get your trains moving.
+    - Locomotives have 2 fuel slots and 2 fuel waste slots, range limitations can be a real concern in the early game.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.10
 Date: 2025-10-02

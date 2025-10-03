@@ -107,4 +107,30 @@ data:extend({
     movement_bonus = 0.25,
     categories = {"spider"}
   },
+  {--capacitor
+    type = "battery-equipment",
+    name = "capacitor-equipment",
+    take_result = "capacitor-discharged",
+    sprite =
+    {
+      filename = "__TFMG-assets-0__/icons/items/capacitor-charged.png",
+      width = 64,
+      height = 64,
+      priority = "medium",
+      scale = 0.5
+    },
+    shape =
+    {
+      width = 1,
+      height = 2,
+      type = "full"
+    },
+    energy_source =
+    {
+      type = "electric",
+      buffer_capacity = "16MJ",
+      usage_priority = "tertiary"
+    },
+    categories = {"spider"}
+  },
 })

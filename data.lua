@@ -56,7 +56,9 @@ data.raw.recipe ["fast-splitter"] = nil
 
 local KMH = 216
 
-data.raw ["locomotive"]["locomotive"].energy_source.fuel_categories = {"chemical"}
+data.raw ["locomotive"]["locomotive"].energy_source.fuel_categories = {"chemical","electric"}
+data.raw ["locomotive"]["locomotive"].energy_source.fuel_inventory_size = 2
+data.raw ["locomotive"]["locomotive"].energy_source.burnt_inventory_size = 2
 data.raw ["locomotive"]["locomotive"].max_speed = 100 / KMH
 data.raw ["locomotive"]["locomotive"].max_power = "1MW"
 data.raw ["locomotive"]["locomotive"].weight = 10000
@@ -149,9 +151,10 @@ require("prototypes.buildings.roboports")
 require("prototypes.buildings.thermal")
 
 --categories
+require("prototypes.categories.equipment-grid")
+require("prototypes.categories.fuel")
 require("prototypes.categories.item-groups")
 require("prototypes.categories.recipe")
-require("prototypes.categories.equipment-grid")
 
 --entities
 require("prototypes.entity.asteroid")
