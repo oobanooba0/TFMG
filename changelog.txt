@@ -18,6 +18,7 @@ Date: ????
     - Logistics containers now have I appended to their name to indicate their tier.
     - Conditions for mineral plate/hot mineral plate recipes have been changed to gravity instaid of pressure to be more in line with item and recipe descriptions.
     - AI processors are now a standard intermediate.
+    - Victory tech has been moved back to after contemplate mind.
   Balancing:
     - organic carbon is now a much weaker fuel, has 0.5 acceleration and 0.8 top speed multiplier. It will get your trains moving. (though it benefits from a higher energy density than capacitors, so trains using it will go futher)
     - Locomotives have 2 fuel slots and 2 fuel waste slots, range limitations can be a real concern in the early game.
