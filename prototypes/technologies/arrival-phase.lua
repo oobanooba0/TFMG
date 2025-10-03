@@ -294,6 +294,28 @@ data:extend({
       time = 24
     },
   },
+  {--capacitors
+    type = "technology",
+    name = "capacitors",
+    icon = "__base__/graphics/technology/battery-equipment.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "capacitor-discharged"
+      },
+    },
+    prerequisites = {"exploration-science"},
+    unit = {
+      count = 64,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1}
+      },
+      time = 24
+    },
+  },
   --side techs
   {--energy distribution 2
     type = "technology",

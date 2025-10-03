@@ -122,13 +122,13 @@ data:extend({
     shape =
     {
       width = 1,
-      height = 2,
+      height = 1,
       type = "full"
     },
     energy_source =
     {
       type = "electric",
-      buffer_capacity = "15MJ",
+      buffer_capacity = "10MJ",
       usage_priority = "tertiary"
     },
     categories = {"spider"}

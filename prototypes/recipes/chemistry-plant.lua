@@ -63,7 +63,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     results = { 
       { type = "item", name = "titanium-ore", amount = 1 },
-      { type = "fluid", name = "ferric-solution", amount = 45 }--was originally 60.
+      { type = "fluid", name = "ferric-solution", amount = 25 }--was originally 30.
     },
     allow_decomposition = false,
     allow_productivity = true,
@@ -117,7 +117,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     allow_productivity = true,
   },
-   {--organic carbon liquefaction
+  {--organic carbon liquefaction
     type = "recipe",
     category = "chemistry-plant",
     subgroup = "fluid-recipes",
@@ -136,4 +136,23 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     allow_productivity = false,
   },
+  {--capacitor
+    type = "recipe",
+    category = "chemistry-plant",
+    subgroup = "fluid-recipes",
+    name = "capacitor-discharged",
+    energy_required = 1,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "conductive-coil", amount = 4 },
+      { type = "item", name = "crystalline-plate", amount = 1 },
+      { type = "item", name = "polymer-bar", amount = 2 },
+      { type = "fluid", name = "ferric-solution", amount = 5 },
+    },
+    results = { 
+      { type = "item", name = "capacitor-discharged", amount = 2 }
+    },
+    allow_productivity = false,
+  },
+
 })

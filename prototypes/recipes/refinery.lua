@@ -75,7 +75,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     energy_required = 1,
     enabled = false,
     ingredients = {
-      { type = "fluid", name = "ferric-solution", amount = 160 },
+      { type = "fluid", name = "ferric-solution", amount = 80 },
     },
     results = { 
       { type = "item", name = "pure-iron-ore", amount = 2 },

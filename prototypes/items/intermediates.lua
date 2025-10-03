@@ -228,6 +228,8 @@ data:extend({
   {--capacitor discharged
     type = "item",
     name = "capacitor-discharged",
+    localised_name = {"item-name.capacitor-discharged"},
+    localised_description = {"item-description.capacitor-discharged"},
     icon = "__TFMG-assets-0__/icons/items/capacitor-discharged.png",
     subgroup = "electronic-intermediates",
     order = "b[capacitor]-a[discharged]",
@@ -263,7 +265,7 @@ data:extend({
     drop_sound = item_sounds.electric_small_inventory_move,
     --place_as_equipment_result = "capacitor-equipment",
     stack_size = 10,
-    fuel_value = "15MJ",
+    fuel_value = "10MJ",
     fuel_category = "electric",
     fuel_acceleration_multiplier = 1,
     fuel_top_speed_multiplier = 1,

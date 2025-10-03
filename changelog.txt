@@ -15,6 +15,7 @@ Date: ????
     - organic carbon is now a much weaker fuel, has 0.5 acceleration and 0.8 top speed multiplier. It will get your trains moving. (though it benefits from a higher energy density than capacitors, so trains using it will go futher)
     - Locomotives have 2 fuel slots and 2 fuel waste slots, range limitations can be a real concern in the early game.
     - Locomotives are heavier. Cargo wagons remain the same, Longer trains should make more sense.
+    - Ferric solution is now produced in half the quantity, and consumed in half the quantity.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.10
 Date: 2025-10-02
