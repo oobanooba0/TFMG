@@ -104,4 +104,23 @@ data:extend({
     order = "c[heat]-a[chemical]",
     place_result = "chemical-reactor",
   },
+---Discharge-charge
+  {
+    type = "item",
+    name = "charger",
+    icon = "__Krastorio2Assets__/icons/entities/singularity-beacon.png",
+    subgroup = "energy",
+    order = "d[charger]-a[recharge]",
+    place_result = "charger",
+    stack_size = 50,
+  },
+  {
+    type = "item",
+    name = "discharger",
+    icon = "__Krastorio2Assets__/icons/entities/tesla-coil.png",
+    subgroup = "energy",
+    order = "d[charger]-b[decharge]",
+    place_result = "discharger",
+    stack_size = 50,
+  },
 })

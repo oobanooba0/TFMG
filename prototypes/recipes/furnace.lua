@@ -11,7 +11,6 @@
     results = {{type="item", name="ferric-plate", amount=1}},
     allow_decomposition = false,
     allow_productivity = true,
-
   },
   {
     type = "recipe",

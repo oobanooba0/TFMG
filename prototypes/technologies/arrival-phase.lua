@@ -305,6 +305,18 @@ data:extend({
         type = "unlock-recipe",
         recipe = "capacitor-discharged"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "capacitor-charged"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "charger"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "discharger"
+      },
     },
     prerequisites = {"exploration-science"},
     unit = {

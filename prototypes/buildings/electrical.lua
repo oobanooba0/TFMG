@@ -1078,5 +1078,227 @@ data:extend({
     circuit_wire_max_distance = reactor_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["nuclear-reactor"],
   },
-
+---Charger discharger
+  {--Charger
+    type = "furnace",
+    name = "charger",
+    icon = "__Krastorio2Assets__/icons/entities/singularity-beacon.png",
+    custom_tooltip_fields = {
+      {
+      name = {"thermal-system.max-temperature"},
+      value = {"thermal-system.charger-max-temperature"},
+      order = 253,
+      },
+      {
+      name = {"thermal-system.damage-temperature"},
+      value = {"thermal-system.charger-damage-temperature"},
+      order = 254,
+      },
+      {
+      name = {"thermal-system.efficiency"},
+      value = {"thermal-system.charger-efficiency"},
+      order = 255,
+      },
+    },
+    flags = {"placeable-neutral", "placeable-player", "player-creation"},
+    minable = {mining_time = 0.2, result = "charger"},
+    circuit_wire_max_distance = furnace_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["electric-furnace"],
+    max_health = 350,
+    corpse = "electric-furnace-remnants",
+    dying_explosion = "electric-furnace-explosion",
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 80
+      }
+    },
+    collision_box = { { -0.75, -0.75 }, { 0.75, 0.75 } },
+    selection_box = { { -0.9, -0.9 }, { 0.9, 0.9 } },
+    damaged_trigger_effect = hit_effects.entity(),
+    icon_draw_specification = {shift = {0, -0.1}},
+    icons_positioning =
+    {
+      {inventory_index = defines.inventory.crafter_modules, shift = {0, 0.8}}
+    },
+    crafting_categories = {"charger"},
+    result_inventory_size = 1,
+    crafting_speed = 1,
+    energy_usage = "10MW",
+    passive_energy_usage = "0MW",
+    --quality_affects_energy_usage = true,
+    source_inventory_size = 1,
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions_per_minute = { pollution = 1 }
+    },
+    impact_category = "metal",
+    open_sound = { filename = "__Krastorio2Assets__/sounds/buildings/open.ogg", volume = 1 },
+    close_sound = { filename = "__Krastorio2Assets__/sounds/buildings/close.ogg", volume = 1 },
+    working_sound = {
+      sound = {
+        filename = "__Krastorio2Assets__/sounds/buildings/tesla-coil.ogg",
+        volume = 0.5,
+        aggregation = {
+          max_count = 2,
+          remove = false,
+          count_already_playing = true,
+        },
+      },
+      persistent = false,
+    },
+    graphics_set = {
+      animation = {
+        layers =
+        {
+          {
+            filename = "__Krastorio2Assets__/buildings/singularity-beacon/singularity-beacon.png",
+            width = 360,
+            height = 360,
+            shift = util.by_pixel(0, -5),
+            scale = 0.25,
+          },
+        },
+      },
+      working_visualisations =
+      {
+        {
+          fadeout = true,
+          animation =
+          {
+            layers = {
+            {
+              filename = "__Krastorio2Assets__/buildings/singularity-beacon/singularity-beacon-w-light.png",
+              width = 190,
+              height = 214,
+              frame_count = 10,
+              line_length = 5,
+              shift = util.by_pixel(0, -11.5),
+              draw_as_light = true,
+              flags = { "light" },
+              scale = 0.25,
+              animation_speed = 0.5,
+            },
+            {
+              filename = "__Krastorio2Assets__/buildings/singularity-beacon/singularity-beacon-w.png",
+              width = 190,
+              height = 214,
+              frame_count = 10,
+              line_length = 5,
+              shift = util.by_pixel(0, -11.5),
+              scale = 0.25,
+              animation_speed = 0.5,
+            },
+          },
+          },
+        },
+      },
+      water_reflection = {
+        pictures = {
+          filename = "__Krastorio2Assets__/buildings/singularity-beacon/singularity-beacon-reflection.png",
+          priority = "extra-high",
+          width = 20,
+          height = 25,
+          shift = util.by_pixel(0, 40),
+          variation_count = 1,
+          scale = 5,
+        },
+        rotate = false,
+        orientation_to_variation = false,
+      },
+    },
+  },
+  {--discharger
+    type = "burner-generator",
+    name = "discharger",
+    icon = "__Krastorio2Assets__/icons/entities/tesla-coil.png",
+    collision_box = { { -1.25, -1.25 }, { 1.25, 1.25 } },
+    selection_box = { { -1.45, -1.45 }, { 1.45, 1.45 } },
+    flags = {"placeable-neutral", "placeable-player", "player-creation"},
+    minable = { mining_time = 0.2, result = "discharger" },
+    drawing_box_vertical_extension = 1,
+    energy_source = {
+      type = "electric",
+      usage_priority = "secondary-output",
+    },
+    burner = {
+      type = "burner",
+      fuel_inventory_size = 1,
+      burnt_inventory_size = 1,
+      effectivity = 1,
+      fuel_categories = {"electric"}
+    },
+    max_power_output = "20MW",
+    max_health = 200,
+    damaged_trigger_effect = hit_effects.entity(),
+    resistances = {
+      { type = "fire", percent = 60 },
+    },
+    vehicle_impact_sound = sounds.generic_impact,
+    working_sound = {
+      sound = {
+        filename = "__Krastorio2Assets__/sounds/buildings/tesla-coil.ogg",
+        volume = 0.5,
+        aggregation = {
+          max_count = 2,
+          remove = false,
+          count_already_playing = true,
+        },
+      },
+      persistent = false,
+    },
+    animation = {
+      layers = {
+        {
+          filename = "__Krastorio2Assets__/buildings/tesla-coil/tesla-coil-animation-light.png",
+          priority = "high",
+          width = 194,
+          height = 232,
+          scale = 0.5,
+          frame_count = 60,
+          line_length = 10,
+          animation_speed = 1,
+          run_mode = "forward",
+          shift = { 0, -0.75 },
+          draw_as_light = true,
+          blend_mode = "additive-soft",
+        },
+        {
+          filename = "__Krastorio2Assets__/buildings/tesla-coil/tesla-coil-base.png",
+          priority = "high",
+          width = 194,
+          height = 232,
+          scale = 0.5,
+          repeat_count = 60,
+          run_mode = "forward",
+          shift = { 0, -0.75 },
+        },
+        {
+          filename = "__Krastorio2Assets__/buildings/tesla-coil/tesla-coil-animation.png",
+          priority = "high",
+          width = 194,
+          height = 232,
+          scale = 0.5,
+          frame_count = 60,
+          line_length = 10,
+          run_mode = "forward",
+          shift = { 0, -0.75 },
+        },
+        {
+          filename = "__Krastorio2Assets__/buildings/tesla-coil/tesla-coil-shadow.png",
+          priority = "medium",
+          width = 250,
+          height = 150,
+          scale = 0.5,
+          repeat_count = 60,
+          frame_count = 1,
+          shift = { 0.37, -0.01 },
+          draw_as_shadow = true,
+        },
+      },
+    },
+  },
 })

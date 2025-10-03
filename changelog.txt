@@ -4,7 +4,10 @@ Date: ????
   Features:
     - All intermediates now have a description.
     - Many more recipes have a description.
-    - Capacitors added. Capacitors can be used as superior fuel for trains, In equipment grids, as an intermediate, or as a form of energy storage.
+    - Capacitors (item) added. Capacitors can be used as superior fuel for trains, In equipment grids, as an intermediate, or as a form of energy storage.
+    - Capacitor charging added. Capacitors store energy at 60% efficiency. (No accumulators for you, sorry. Use chargers and dischargers.)
+    - Charger added. Chargers can charge chargable items like capacitors. Useful for power storage. Will have many more functions in the future.
+    - Discharger added, however, Expect its unlock and recipe to change in the future.
   Changes:
     - Changed super computer status indicator to better reflect its condition.
     - Thermal system explainer updated for current version.

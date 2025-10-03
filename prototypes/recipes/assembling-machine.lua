@@ -669,6 +669,36 @@ data:extend({
       { type = "item", name = "neural-node", amount = 1 }
     },
   },
+  {--charger
+    type = "recipe",
+    category = "assembling-machine",
+    name = "charger",
+    energy_required = 12,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "high-performance-structure", amount = 4 },
+      { type = "item", name = "modular-circuit", amount = 8 },
+      { type = "item", name = "capacitor-discharged", amount = 8 },
+    },
+    results = { 
+      { type = "item", name = "charger", amount = 1 }
+    },
+  },
+  {--discharger
+    type = "recipe",
+    category = "assembling-machine",
+    name = "discharger",
+    energy_required = 24,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "high-performance-structure", amount = 16 },
+      { type = "item", name = "modular-circuit", amount = 8 },
+      { type = "item", name = "capacitor-charged", amount = 16 },
+    },
+    results = { 
+      { type = "item", name = "discharger", amount = 1 }
+    },
+  },
   {--lamp
     type = "recipe",
     category = "assembling-machine",
