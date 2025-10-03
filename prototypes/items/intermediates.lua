@@ -101,7 +101,7 @@ data:extend({
     pick_sound = item_sounds.plastic_inventory_pickup,
     drop_sound = item_sounds.plastic_inventory_move,
     stack_size = 100,
-    fuel_value = "4MJ",
+    fuel_value = "2.5MJ",
     fuel_category = "chemical",
     fuel_acceleration_multiplier = 0.5,
     fuel_top_speed_multiplier = 0.8,
@@ -235,7 +235,7 @@ data:extend({
     pick_sound = item_sounds.electric_small_inventory_pickup,
     drop_sound = item_sounds.electric_small_inventory_move,
     place_as_equipment_result = "capacitor-equipment",
-    stack_size = 20,
+    stack_size = 10,
     pictures = {
       layers = {
         {
@@ -262,8 +262,8 @@ data:extend({
     pick_sound = item_sounds.electric_small_inventory_pickup,
     drop_sound = item_sounds.electric_small_inventory_move,
     --place_as_equipment_result = "capacitor-equipment",
-    stack_size = 20,
-    fuel_value = "16MJ",
+    stack_size = 10,
+    fuel_value = "15MJ",
     fuel_category = "electric",
     fuel_acceleration_multiplier = 1,
     fuel_top_speed_multiplier = 1,

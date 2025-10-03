@@ -128,7 +128,7 @@ data:extend({
     energy_source =
     {
       type = "electric",
-      buffer_capacity = "16MJ",
+      buffer_capacity = "15MJ",
       usage_priority = "tertiary"
     },
     categories = {"spider"}
