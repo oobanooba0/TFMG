@@ -117,7 +117,7 @@ data:extend({
         modifier = 0.35
       }
     },
-    prerequisites = {"basic-bots"},
+    prerequisites = {"basic-bots","consider-your-potential"},
     unit = {
     count = 256,
     ingredients = {

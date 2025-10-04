@@ -141,7 +141,7 @@ data:extend({
       { type = "item", name = "ai-processor", amount = 1 }
     },
   },
-  --Science packs
+--Science packs
   {--introspection science
     type = "recipe",
     category = "assembling-machine",
@@ -207,7 +207,7 @@ data:extend({
       { type = "item", name = "mechanical-leg", amount = 1 }
     },
   },
-  ---spider hell
+---spider hell
   {--Scout'o'tron
     type = "recipe",
     category = "assembling-machine",
@@ -291,6 +291,44 @@ data:extend({
     },
     results = { 
       { type = "item", name = "roboport-1", amount = 1 }
+    },
+  },
+---modules
+  {--efficiency module
+    type = "recipe",
+    category = "assembling-machine",
+    name = "efficiency-module",
+    icon = "__base__/graphics/icons/efficiency-module-3.png",
+    energy_required = 16,
+    enabled = false,
+    allow_productivity = false,
+    ingredients = {
+      { type = "item", name = "ai-processor", amount = 1 },
+      { type = "item", name = "capacitor-charged", amount = 8 },
+      { type = "fluid", name = "mineral-lubricant", amount = 40 },
+    },
+    results = { 
+      { type = "item", name = "efficiency-module", amount = 1 },
+      { type = "item", name = "capacitor-discharged", amount = 8 },
+    },
+  },
+  {--speed module
+    type = "recipe",
+    category = "assembling-machine",
+    name = "speed-module",
+    icon = "__base__/graphics/icons/speed-module-3.png",
+    energy_required = 16,
+    enabled = false,
+    allow_productivity = false,
+    ingredients = {
+      { type = "item", name = "ai-processor", amount = 1 },
+      { type = "item", name = "capacitor-charged", amount = 8 },
+      { type = "item", name = "mechatronic-components", amount = 2 },
+      { type = "item", name = "heat-pipe", amount = 2 },
+    },
+    results = { 
+      { type = "item", name = "efficiency-module", amount = 1 },
+      { type = "item", name = "capacitor-discharged", amount = 8 },
     },
   },
 ---building recipes

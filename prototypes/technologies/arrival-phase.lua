@@ -603,11 +603,60 @@ data:extend({
         recipe = "scout-radar"
       },
     },
-    prerequisites = {"radars","optical-coil"},
+    prerequisites = {"radars","exploration-science"},
     unit = {
       count = 128,
-      ingredients = {{"introspection-science", 1}},
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1}
+      },
       time = 24
+    },
+  },
+  {--speed module
+    type = "technology",
+    name = "speed-module",
+    icon = "__base__/graphics/technology/speed-module-3.png",
+    icon_size = 256,
+    localised_description = {"technology-description.speed-module-1"},
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "speed-module"
+      },
+    },
+    prerequisites = {"contemplate-mind","mechatronics"},
+    unit = {
+      count = 196,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1},
+      },
+      time = 32
+    },
+  },
+  {--efficiency module
+    type = "technology",
+    name = "efficiency-module",
+    icon = "__base__/graphics/technology/efficiency-module-3.png",
+    icon_size = 256,
+    localised_description = {"technology-description.efficiency-module-1"},
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "efficiency-module"
+      },
+    },
+    prerequisites = {"contemplate-mind","mineral-lubricant"},
+    unit = {
+      count = 128,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1},
+      },
+      time = 32
     },
   },
   {--Mineral glass singing

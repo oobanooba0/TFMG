@@ -28,9 +28,11 @@ Date: ????
     - Module icon positioning and scaling adjusted for all machines
     - Recipe icons are now double size in refineries
     - Recipe icons are now double size in supercomputers
+    - Robot speed 1 requires consider your potential
   Balancing:
     - productivity modules are allowed on most intermediates where it makes sense. (No prod modules in the game yet, just prepping)
     - Ai processor printing recipe now takes twice as long.
+    - scout radar now requires exploration science
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.11
 Date: 2025-10-04
