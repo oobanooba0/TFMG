@@ -1,16 +1,10 @@
 --this is the part where I murder the game, Thanks to Rseding91's fourm comments which helped me do this.
-local tile_collision_masks = require("__base__/prototypes/tile/tile-collision-masks")
-data:extend({{ type = "collision-layer", name = "platform" }})--quick, we have to add an entire collision layer just to unfuck our radiators.
 
 data.raw ["technology"] = {}
 data.raw ["tips-and-tricks-item"] = {}
 data.raw ["utility-constants"]["default"].main_menu_simulations = {}
 
-
---i'd like to also hide entites from the factoriopedia.
---raw fish and the pistol are under a different type, so they have to be handled seperately.
-data.raw.capsule ["raw-fish"].hidden = true
-data.raw.gun ["pistol"].hidden = true
+--vanila recipe deletions
 
 data.raw.item ["asteroid-collector"].flags = {"always-show"}
 data.raw.item ["space-platform-foundation"].flags = {"always-show"}
@@ -45,26 +39,12 @@ data.raw.recipe ["radar"] = nil
 data.raw.recipe ["cargo-landing-pad"] = nil
 data.raw.recipe ["speed-module"] = nil
 data.raw.recipe ["efficiency-module"] = nil
-
 data.raw.recipe ["transport-belt"] = nil
 data.raw.recipe ["fast-transport-belt"] = nil
 data.raw.recipe ["underground-belt"] = nil
 data.raw.recipe ["fast-underground-belt"] = nil
 data.raw.recipe ["splitter"] = nil
 data.raw.recipe ["fast-splitter"] = nil
-
-local KMH = 216
-
-data.raw ["locomotive"]["locomotive"].energy_source.fuel_categories = {"chemical","electric"}
-data.raw ["locomotive"]["locomotive"].energy_source.fuel_inventory_size = 2
-data.raw ["locomotive"]["locomotive"].energy_source.burnt_inventory_size = 2
-data.raw ["locomotive"]["locomotive"].max_speed = 100 / KMH
-data.raw ["locomotive"]["locomotive"].max_power = "1MW"
-data.raw ["locomotive"]["locomotive"].weight = 25000
-data.raw ["cargo-wagon"]["cargo-wagon"].weight = 5000
-data.raw ["fluid-wagon"]["fluid-wagon"].weight = 5000
-data.raw.tile ["ice-smooth"].collision_mask = tile_collision_masks.ground()
-data.raw.tile ["space-platform-foundation"].collision_mask = {layers={ground_tile=true,platform=true}}
 
 
 --Due to the removal of vanilla techs, shortcuts dependant on them must be modified.
@@ -106,7 +86,6 @@ data.raw ["shortcut"]["give-artillery-targeting-remote"].unavailable_until_unloc
 -- hide vanilla content from game, this seems easier than outright removing certain things due to dependancies.
 -- expand brain.png if this works.
 
---adjust vanilla content
 local hidden_items = {"wood","coal","stone","iron-ore","copper-ore","uranium-ore","spoilage","pistol",}
 local hidden_recipes = {}
 local disabled_recipes = {"wooden-chest","iron-chest","transport-belt","burner-inserter","stone-brick","burner-mining-drill","stone-furnace","iron-plate","copper-plate","iron-gear-wheel","firearm-magazine","light-armor",}
@@ -134,6 +113,29 @@ for name, recipe in pairs(data.raw.recipe) do
 		end
 	end
 end
+
+--i'd like to also hide entites from the factoriopedia.
+--raw fish and the pistol are under a different type, so they have to be handled seperately.
+data.raw.capsule ["raw-fish"].hidden = true
+data.raw.gun ["pistol"].hidden = true
+
+--adjust vanilla content
+
+local tile_collision_masks = require("__base__/prototypes/tile/tile-collision-masks")
+data:extend({{ type = "collision-layer", name = "platform" }})--quick, we have to add an entire collision layer just to unfuck our radiators.
+
+local KMH = 216
+
+data.raw ["locomotive"]["locomotive"].energy_source.fuel_categories = {"chemical","electric"}
+data.raw ["locomotive"]["locomotive"].energy_source.fuel_inventory_size = 2
+data.raw ["locomotive"]["locomotive"].energy_source.burnt_inventory_size = 2
+data.raw ["locomotive"]["locomotive"].max_speed = 100 / KMH
+data.raw ["locomotive"]["locomotive"].max_power = "1MW"
+data.raw ["locomotive"]["locomotive"].weight = 25000
+data.raw ["cargo-wagon"]["cargo-wagon"].weight = 5000
+data.raw ["fluid-wagon"]["fluid-wagon"].weight = 5000
+data.raw.tile ["ice-smooth"].collision_mask = tile_collision_masks.ground()
+data.raw.tile ["space-platform-foundation"].collision_mask = {layers={ground_tile=true,platform=true}}
 
 --this is the part where I add stuff into the game again
 
