@@ -15,6 +15,26 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
   supercomputer_input.collision_mask = {layers = {},not_colliding_with_itself = true}
   supercomputer_input.minable = nil
   supercomputer_input.selection_priority = 51
+  supercomputer_input.sprites =
+    make_4way_animation_from_spritesheet({ layers =
+      {
+        {
+          scale = 0.5,
+          filename = "__TFMG-assets-0__/buildings/supercomputer/supercomputer-input.png",
+          width = 114,
+          height = 102,
+          shift = util.by_pixel(0, 5)
+        },
+        {
+          scale = 0.5,
+          filename = "__base__/graphics/entity/combinator/constant-combinator-shadow.png",
+          width = 98,
+          height = 66,
+          shift = util.by_pixel(8.5, 5.5),
+          draw_as_shadow = true
+        }
+      }
+    })
   data:extend{supercomputer_input}
   
   local supercomputer_output = table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
@@ -22,6 +42,26 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
   supercomputer_output.collision_mask = {layers = {},not_colliding_with_itself = true}
   supercomputer_output.minable = nil
   supercomputer_output.selection_priority = 51
+  supercomputer_output.sprites =
+    make_4way_animation_from_spritesheet({ layers =
+      {
+        {
+          scale = 0.5,
+          filename = "__TFMG-assets-0__/buildings/supercomputer/supercomputer-output.png",
+          width = 114,
+          height = 102,
+          shift = util.by_pixel(0, 5)
+        },
+        {
+          scale = 0.5,
+          filename = "__base__/graphics/entity/combinator/constant-combinator-shadow.png",
+          width = 98,
+          height = 66,
+          shift = util.by_pixel(8.5, 5.5),
+          draw_as_shadow = true
+        }
+      }
+    })
   data:extend{supercomputer_output}
 --TFMG buildings
   data:extend({
@@ -526,7 +566,7 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
             frame_count = 48,
             line_length = 8,
             animation_speed = 0.25,
-            scale = 0.4,
+            scale = 0.35,
           },
           {
             filename = "__Krastorio2Assets__/buildings/quantum-computer/quantum-computer-sh.png",
@@ -538,7 +578,7 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
             repeat_count = 48,
             draw_as_shadow = true,
             animation_speed = 0.25,
-            scale = 0.4,
+            scale = 0.35,
           },
         },
       },
@@ -554,7 +594,7 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
             frame_count = 48,
             line_length = 8,
             animation_speed = 0.25,
-            scale = 0.4,
+            scale = 0.35,
           },
         },
         {
@@ -569,7 +609,7 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
             frame_count = 48,
             line_length = 8,
             animation_speed = 0.25,
-            scale = 0.4,
+            scale = 0.35,
           },
         },
         {

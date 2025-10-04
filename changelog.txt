@@ -4,6 +4,8 @@ Date: ????
   Features:
     - Speed and efficiency modules introduced, they have stats comparable to the MKI modules from vanilla, but most buildings have more module slots than their vanilla counterparts, so these modules are pretty powerful.
   Changes:
+    - Supercomputer input and output are now blue and green respectively.
+    - Supercomputer is visually shrunken down slightly to make input/output terminals more visible in all rotations.
     - most machines have module slots now, numbers are kind of arbitrary and will change.
     - Matter reconstructor has a whopping 12 module slots. Go ham.
     - Assembling machine has 6 module slots.
