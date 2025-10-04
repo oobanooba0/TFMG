@@ -454,6 +454,27 @@ data:extend({
     time = 16
     },
   },
+  {--toolbelt equipment
+    type = "technology",
+    name = "toolbelt-equipment",
+    localised_name = {"technology-name.toolbelt-equipment-tfmg"},
+    localised_description = {"technology-description.toolbelt-equipment-tfmg"},
+    icon = "__space-age__/graphics/technology/toolbelt-equipment.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "toolbelt-equipment"
+      },
+    },
+    prerequisites = {"introspection-science-pack"},
+    unit = {
+    count = 96,
+    ingredients = {{"introspection-science", 1}},
+    time = 24
+    },
+  },
   {--Scout-o-tron
     type = "technology",
     name = "scout-o-tron",

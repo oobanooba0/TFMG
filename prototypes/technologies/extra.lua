@@ -161,7 +161,7 @@ data:extend({
         modifier = 1
       }
     },
-    prerequisites = {"basic-bots","exploration-science"},
+    prerequisites = {"basic-bots","exploration-science","toolbelt-equipment"},
     unit = {
     count = 256,
     ingredients = {

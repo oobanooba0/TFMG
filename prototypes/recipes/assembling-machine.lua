@@ -207,6 +207,22 @@ data:extend({
       { type = "item", name = "mechanical-leg", amount = 1 }
     },
   },
+  {--toolbelt equipment
+    type = "recipe",
+    category = "assembling-machine",
+    name = "toolbelt-equipment",
+    energy_required = 12,
+    enabled = false,
+    allow_productivity = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 4 },
+      { type = "item", name = "mechanical-components", amount = 8 },
+      { type = "item", name = "storage-container-1", amount = 4 },
+    },
+    results = { 
+      { type = "item", name = "toolbelt-equipment", amount = 1 }
+    },
+  },
 ---spider hell
   {--Scout'o'tron
     type = "recipe",
@@ -297,6 +313,7 @@ data:extend({
   {--efficiency module
     type = "recipe",
     category = "assembling-machine",
+    subgroup = "module",
     name = "efficiency-module",
     icon = "__base__/graphics/icons/efficiency-module-3.png",
     energy_required = 16,
@@ -315,6 +332,7 @@ data:extend({
   {--speed module
     type = "recipe",
     category = "assembling-machine",
+    subgroup = "module",
     name = "speed-module",
     icon = "__base__/graphics/icons/speed-module-3.png",
     energy_required = 16,

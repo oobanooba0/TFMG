@@ -91,10 +91,10 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     max_health = 1000,
     corpse = "assembling-machine-1-remnants",
     dying_explosion = "assembling-machine-1-remnants",
-    icon_draw_specification = {shift = {0, -0.3}},
+    icon_draw_specification = {shift = {0, -0.5}},
     icons_positioning =
     {
-      {inventory_index = defines.inventory.crafter_modules, max_icons_per_row = 4, scale = 0.3}
+      {inventory_index = defines.inventory.crafter_modules, shift = {0,0.2}, max_icons_per_row = 4, scale = 0.3}
     },
     resistances =
     {

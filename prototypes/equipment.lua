@@ -1,3 +1,6 @@
+local toolbelt = data.raw["inventory-bonus-equipment"]["toolbelt-equipment"]
+toolbelt.categories = {"spider"}
+
 data:extend({
     {--roboport 1
     type = "roboport-equipment",

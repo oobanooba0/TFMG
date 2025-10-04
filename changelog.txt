@@ -1,11 +1,12 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.12
-Date: ????
+Date: 2025-10-04
   Features:
     - Speed and efficiency modules introduced, they have stats comparable to the MKI modules from vanilla, but most buildings have more module slots than their vanilla counterparts, so these modules are pretty powerful.
     - Micro assembler added
     - Mineral glass singing alt recipe added
     - Conductive coil anti-winding alt recipe added
+    - toolbelt equipment added.
   Changes:
     - Supercomputer input and output are now blue and green respectively.
     - Supercomputer is visually shrunken down slightly to make input/output terminals more visible in all rotations.
@@ -31,6 +32,7 @@ Date: ????
     - Ai processor printing recipe now takes twice as long.
     - scout radar now requires exploration science
     - Robot speed 1 requires consider your potential
+    - robot capacity 1 requires toolbelt equipment, dont ask me to explain.
     - AI processor costs slightly more optical coil.
     - discharger recipe changed to require tier 2 components
 ---------------------------------------------------------------------------------------------------
