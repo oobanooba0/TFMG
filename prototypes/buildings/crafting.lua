@@ -1174,7 +1174,7 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
       orientation_to_variation = true
     }
   },
-  {--Micro assembler
+  {--micro assembler
     type = "assembling-machine",
     name = "micro-assembler",
     icon = "__base__/graphics/icons/assembling-machine-2.png",

@@ -11,6 +11,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     energy_required = 1,
     enabled = false,
+    allow_productivity = false,
     ingredients = {
       { type = "fluid", name = "water", amount = 300 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
@@ -21,7 +22,6 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 120 },
       { type = "fluid", name = "organic-sludge", amount = 60 }
     },
-    allow_productivity = false,
   },
   {--Hydrocarbon concentration
     type = "recipe",
@@ -34,6 +34,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     energy_required = 1,
     enabled = false,
+    allow_productivity = false,
     ingredients = {
       { type = "fluid", name = "water", amount = 300 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
@@ -44,7 +45,6 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 280 },
       { type = "fluid", name = "organic-sludge", amount = 40 }
     },
-    allow_productivity = false,
   },
   {--Ferric ore washing
     type = "recipe",
@@ -57,6 +57,8 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     energy_required = 2,
     enabled = false,
+    allow_decomposition = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "ferric-ore", amount = 5 },--was originally 6
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 16 },
@@ -65,8 +67,6 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "titanium-ore", amount = 1 },
       { type = "fluid", name = "ferric-solution", amount = 25 }--was originally 30.
     },
-    allow_decomposition = false,
-    allow_productivity = true,
   },
   {--microbe-culture
     type = "recipe",
@@ -75,6 +75,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     name = "microbe-extraction",
     energy_required = 2,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "fluid", name = "organic-sludge", amount = 10 },
       { type = "item", name = "mineral-ore", amount = 1 },
@@ -82,7 +83,6 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     results = { 
       { type = "item", name = "microbe-culture", amount = 1 }
     },
-    allow_productivity = true,
   },
   {--bio polymerisation
     type = "recipe",
@@ -91,6 +91,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     name = "bio-polymerisation",
     energy_required = 2,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "microbe-culture", amount = 1 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 10 },
@@ -98,7 +99,6 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     results = { 
       { type = "item", name = "active-bio-polymers", amount = 1 }
     },
-    allow_productivity = true,
   },
   {--mineral lubricant
     type = "recipe",
@@ -107,6 +107,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     name = "mineral-lubricant",
     energy_required = 2,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "organic-carbon", amount = 2 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 5 },
@@ -115,7 +116,6 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     results = { 
       { type = "fluid", name = "mineral-lubricant", amount = 20 }
     },
-    allow_productivity = true,
   },
   {--organic carbon liquefaction
     type = "recipe",
@@ -128,13 +128,13 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     energy_required = 2,
     enabled = false,
+    allow_productivity = false,
     ingredients = {
       { type = "item", name = "organic-carbon", amount = 5 },
     },
     results = { 
       { type = "fluid", name = "organic-sludge", amount = 25 }
     },
-    allow_productivity = false,
   },
   {--capacitor
     type = "recipe",
@@ -143,6 +143,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     name = "capacitor-discharged",
     energy_required = 1,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "conductive-coil", amount = 4 },
       { type = "item", name = "crystalline-plate", amount = 1 },
@@ -152,7 +153,6 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     results = { 
       { type = "item", name = "capacitor-discharged", amount = 2 }
     },
-    allow_productivity = false,
   },
   {--Excited crystal quenching
     type = "recipe",
@@ -162,6 +162,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     icon = "__TFMG-assets-0__/icons/items/fused-crystalline-chunk.png",
     energy_required = 1,
     enabled = false,
+    allow_productivity = false,
     ingredients = {
       { type = "item", name = "excited-crystalline-chunk-red", amount = 1 },
       { type = "item", name = "excited-crystalline-chunk-blue", amount = 1 },
@@ -171,6 +172,5 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "fused-crystalline-chunk", amount = 1 },
       { type = "fluid", name = "steam", amount = 1000, temperature = 1000},
     },
-    allow_productivity = false,
   },
 })

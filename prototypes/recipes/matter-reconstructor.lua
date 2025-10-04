@@ -5,6 +5,7 @@ data:extend({
     name = "general-purpose-structure-reconstruction",
     energy_required = 10,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "ferric-asteroid-chunk", amount = 10 },
     },
@@ -19,6 +20,7 @@ data:extend({
     name = "mechanical-components-reconstruction",
     energy_required = 10,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "ferric-asteroid-chunk", amount = 10 },
     },
@@ -33,6 +35,7 @@ data:extend({
     name = "conductive-coil-reconstruction",
     energy_required = 10,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "ferric-asteroid-chunk", amount = 10 },
     },
@@ -47,6 +50,7 @@ data:extend({
     name = "modular-circuit-reconstruction",
     energy_required = 10,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "ferric-asteroid-chunk", amount = 10 },
       { type = "item", name = "crystalline-asteroid-chunk", amount = 10 },
@@ -60,8 +64,9 @@ data:extend({
     type = "recipe",
     category = "matter-reconstructor",
     name = "print-ai-processor",
-    energy_required = 64,
+    energy_required = 128,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "modular-circuit", amount = 2},
       { type = "item", name = "conductive-coil", amount = 5},

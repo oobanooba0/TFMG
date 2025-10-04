@@ -10,6 +10,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     energy_required = 4,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "fluid", name = "hydrocarbon-slush", amount = 50 },
     },
@@ -30,6 +31,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     energy_required = 1,
     enabled = false,
+    allow_productivity = false,
     ingredients = {
       { type = "fluid", name = "water", amount = 300 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
@@ -39,7 +41,6 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 80 },
       { type = "fluid", name = "organic-sludge", amount = 5 }
     },
-    allow_productivity = false,
   },
   {--sludge cultivation
     type = "recipe",
@@ -52,6 +53,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     energy_required = 1,
     enabled = false,
+    allow_productivity = false,
     ingredients = {
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
       { type = "fluid", name = "organic-sludge", amount = 50 },  
@@ -61,7 +63,6 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 80 },
       { type = "fluid", name = "organic-sludge", amount = 75 }
     },
-    allow_productivity = false,
   },
   {--ferric solution reduction
     type = "recipe",
@@ -74,6 +75,8 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     energy_required = 1,
     enabled = false,
+    allow_decomposition = false,
+    allow_productivity = true,
     ingredients = {
       { type = "fluid", name = "ferric-solution", amount = 80 },
     },
@@ -81,8 +84,6 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "pure-iron-ore", amount = 2 },
       { type = "fluid", name = "water", amount = 20 },
     },
-    allow_decomposition = false,
-    allow_productivity = true,
   },
   {--refined concrete
     type = "recipe",
@@ -91,6 +92,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     name = "refined-concrete",
     energy_required = 2,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "mineral-ore", amount = 4 },
       { type = "item", name = "general-purpose-structure", amount = 1 },
@@ -100,6 +102,5 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     results = { 
       { type = "item", name = "refined-concrete", amount = 1 },
     },
-    allow_productivity = true,
   },
 })

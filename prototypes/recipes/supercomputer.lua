@@ -6,6 +6,7 @@ data:extend({
     localised_name = {"recipe-name.introspection-science"},
     energy_required = 5,
     enabled = false,
+    allow_productivity = false,
     ingredients = {
       { type = "item", name = "introspection-science-unverified", amount = 1},
     },
@@ -20,6 +21,7 @@ data:extend({
     localised_name = {"recipe-name.exploration-science"},
     energy_required = 5,
     enabled = false,
+    allow_productivity = false,
     ingredients = {
       { type = "item", name = "exploration-science-unverified", amount = 1 },
     },

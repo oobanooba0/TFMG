@@ -3,6 +3,9 @@ Version: 0.3.12
 Date: ????
   Features:
     - Speed and efficiency modules introduced, they have stats comparable to the MKI modules from vanilla, but most buildings have more module slots than their vanilla counterparts, so these modules are pretty powerful.
+    - Micro assembler added
+    - Mineral glass singing alt recipe added
+    - Conductive coil anti-winding alt recipe added
   Changes:
     - Supercomputer input and output are now blue and green respectively.
     - Supercomputer is visually shrunken down slightly to make input/output terminals more visible in all rotations.
@@ -21,6 +24,9 @@ Date: ????
     - Speed modules incur a slightly higher energy cost than its vanilla counterpart.
     - discharger recipe changed to require tier 2 components
     - AI processor costs slightly more optical coil.
+  Balancing:
+    - productivity modules are allowed on most intermediates where it makes sense. (No prod modules in the game yet, just prepping)
+    - Ai processor printing recipe now takes twice as long.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.11
 Date: 2025-10-04

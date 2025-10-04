@@ -8,13 +8,14 @@ data:extend({
     name = "mineral-glass-cooling",
     energy_required = 1,
     enabled = false,
+    allow_decomposition = false,
+    allow_productivity = false,
     ingredients = {
       { type = "item", name = "hot-mineral-plate", amount = 1 },
     },
     results = { 
       { type = "item", name = "mineral-glass", amount = 1 }
     },
-    allow_decomposition = false,
   },
   {--General purpose structure
     type = "recipe",
@@ -22,6 +23,7 @@ data:extend({
     name = "general-purpose-structure",
     energy_required = 1,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "ferric-plate", amount = 2 },
     },
@@ -35,6 +37,7 @@ data:extend({
     name = "high-performance-structure",
     energy_required = 2,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 1 },
       { type = "item", name = "titanium-plate", amount = 2 },
@@ -50,6 +53,7 @@ data:extend({
     name = "mechanical-components",
     energy_required = 2,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "ferric-plate", amount = 2 },
       { type = "item", name = "general-purpose-structure", amount = 1 },
@@ -64,6 +68,7 @@ data:extend({
     name = "mechatronic-components",
     energy_required = 4,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "high-performance-structure", amount = 1 },
       { type = "item", name = "mechanical-components", amount = 2 },
@@ -80,11 +85,12 @@ data:extend({
     name = "conductive-coil",
     energy_required = 1,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "ferric-plate", amount = 1 },
     },
     results = { 
-        { type = "item", name = "conductive-coil", amount = 4 }
+      { type = "item", name = "conductive-coil", amount = 4 }
     },
   },
   {--optical coil
@@ -93,12 +99,13 @@ data:extend({
     name = "optical-coil",
     energy_required = 2,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "mineral-glass", amount = 4 },
       { type = "item", name = "polymer-bar", amount = 1 },
     },
     results = { 
-        { type = "item", name = "optical-coil", amount = 4 }
+      { type = "item", name = "optical-coil", amount = 4 }
     },
   },
   {--modular circuit
@@ -107,6 +114,7 @@ data:extend({
     name = "modular-circuit",
     energy_required = 2,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "mineral-glass", amount = 1 },
       { type = "item", name = "ferric-plate", amount = 1 },
@@ -122,6 +130,7 @@ data:extend({
     name = "ai-processor",
     energy_required = 12,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "modular-circuit", amount = 2 },
       { type = "item", name = "fused-crystalline-chunk", amount = 1 },
@@ -139,6 +148,7 @@ data:extend({
     name = "introspection-science-unverified",
     energy_required = 5,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "modular-circuit", amount = 1 },
       { type = "item", name = "mechanical-components", amount = 1 },
@@ -155,6 +165,7 @@ data:extend({
     name = "exploration-science-unverified",
     energy_required = 10,
     enabled = false,
+    allow_productivity = true,
     ingredients = {
       { type = "item", name = "high-performance-structure", amount = 2 },
       { type = "item", name = "optical-coil", amount = 8 },
@@ -170,6 +181,7 @@ data:extend({
     name = "spidertron-frame",
     energy_required = 16,
     enabled = false,
+    allow_productivity = false,
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 32 },
       { type = "item", name = "heat-pipe", amount = 16 },
@@ -185,6 +197,7 @@ data:extend({
     name = "mechanical-leg",
     energy_required = 12,
     enabled = false,
+    allow_productivity = false,
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 8 },
       { type = "item", name = "mechanical-components", amount = 8 },
@@ -201,6 +214,7 @@ data:extend({
     name = "scout-o-tron",
     energy_required = 32,
     enabled = false,
+    allow_productivity = false,
     ingredients = {
       { type = "item", name = "spidertron-frame", amount = 1 },
       { type = "item", name = "mechanical-leg", amount = 3 },
@@ -216,6 +230,7 @@ data:extend({
     name = "scout-o-tron-pod",
     energy_required = 32,
     enabled = false,
+    allow_productivity = false,
     ingredients = {
       { type = "item", name = "scout-o-tron", amount = 1 },
       { type = "item", name = "solar-cell", amount = 2 },
@@ -234,6 +249,7 @@ data:extend({
     name = "construction-robot",
     energy_required = 8,
     enabled = false,
+    allow_productivity = false,
     ingredients = {
       { type = "item", name = "mechanical-components", amount = 2 },
       { type = "item", name = "general-purpose-structure", amount = 2 },
@@ -250,6 +266,7 @@ data:extend({
     name = "logistic-robot",
     energy_required = 8,
     enabled = false,
+    allow_productivity = false,
     ingredients = {
       { type = "item", name = "mechanical-components", amount = 2 },
       { type = "item", name = "general-purpose-structure", amount = 2 },
@@ -266,6 +283,7 @@ data:extend({
     name = "roboport-1",
     energy_required = 12,
     enabled = false,
+    allow_productivity = false,
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 8 },
       { type = "item", name = "modular-circuit", amount = 8 },

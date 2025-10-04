@@ -10,6 +10,8 @@ data:extend({
     auto_recycle = false,
     energy_required = 4,
     enabled = false,
+    allow_decomposition = false,
+    allow_productivity = true,
     ingredients = {
       {type = "item", name = "ferric-asteroid-chunk", amount = 2}
     },
@@ -17,8 +19,6 @@ data:extend({
       {type="item", name="ferric-ore", amount=5},
       {type="item", name="mineral-ore", amount=1},
     },
-    allow_decomposition = false,
-    allow_productivity = true,
   },
   {
     type = "recipe",
@@ -31,6 +31,8 @@ data:extend({
     auto_recycle = false,
     energy_required = 4,
     enabled = false,
+    allow_decomposition = false,
+    allow_productivity = true,
     ingredients = {
       {type = "item", name = "crystalline-asteroid-chunk", amount = 2}
     },
@@ -38,7 +40,5 @@ data:extend({
       {type="item", name="mineral-ore", amount=5},
       {type="item", name="ferric-ore", amount=1},
     },
-    allow_decomposition = false,
-    allow_productivity = true,
   },
 })

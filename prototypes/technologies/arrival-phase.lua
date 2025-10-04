@@ -380,27 +380,27 @@ data:extend({
     type = "technology",
     name = "micro-assembly",
     icons = {
-      {icon = "__base__/graphics/technology/automation-2.png", icon_size = 256},
-      {icon = "__base__/graphics/icons/arrows/down-left-arrow.png", icon_size = 64, shift = {48,-48}},
-      {icon = "__base__/graphics/icons/arrows/down-right-arrow.png", icon_size = 64, shift = {-48,-48}},
-      {icon = "__base__/graphics/icons/arrows/up-left-arrow.png", icon_size = 64, shift = {48,48}},
-      {icon = "__base__/graphics/icons/arrows/up-right-arrow.png", icon_size = 64, shift = {-48,48}},
+      {icon = "__base__/graphics/icons/arrows/down-left-arrow.png", icon_size = 64, shift = {64,-64}},
+      {icon = "__base__/graphics/icons/arrows/down-right-arrow.png", icon_size = 64, shift = {-64,-64}},
+      {icon = "__base__/graphics/icons/arrows/up-left-arrow.png", icon_size = 64, shift = {64,64}},
+      {icon = "__base__/graphics/icons/arrows/up-right-arrow.png", icon_size = 64, shift = {-64,64}},
+      {icon = "__base__/graphics/technology/automation-2.png", icon_size = 256, scale = 1.5},
     },
     effects =
     {
       {
         type = "unlock-recipe",
         recipe = "micro-assembler"
-      },    
+      },
     },
     prerequisites = {"mechatronic-components","contemplate-mind"},
     unit = {
-      count = 256,
+      count = 72,
       ingredients = {
         {"introspection-science", 1},
         {"exploration-science", 1}
       },
-      time = 24
+      time = 16
     },
   },
 --side techs
@@ -608,6 +608,60 @@ data:extend({
       count = 128,
       ingredients = {{"introspection-science", 1}},
       time = 24
+    },
+  },
+  {--Mineral glass singing
+    type = "technology",
+    name = "mineral-glass-singing",
+    icons = {
+      {icon = "__base__/graphics/icons/arrows/down-left-arrow.png", icon_size = 64, shift = {64,-64}},
+      {icon = "__base__/graphics/icons/arrows/down-right-arrow.png", icon_size = 64, shift = {-64,-64}},
+      {icon = "__base__/graphics/icons/arrows/up-left-arrow.png", icon_size = 64, shift = {64,64}},
+      {icon = "__base__/graphics/icons/arrows/up-right-arrow.png", icon_size = 64, shift = {-64,64}},
+      {icon = "__Krastorio2Assets__/icons/items/glass.png", icon_size = 64, scale = 2},
+    },
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "mineral-glass-singing"
+      },
+    },
+    prerequisites = {"micro-assembly"},
+    unit = {
+      count = 256,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1}
+      },
+      time = 64
+    },
+  },
+  {--Conductive coil anti winding
+    type = "technology",
+    name = "conductive-coil-anti-winding",
+    icons = {
+      {icon = "__base__/graphics/icons/arrows/down-left-arrow.png", icon_size = 64, shift = {64,-64}},
+      {icon = "__base__/graphics/icons/arrows/down-right-arrow.png", icon_size = 64, shift = {-64,-64}},
+      {icon = "__base__/graphics/icons/arrows/up-left-arrow.png", icon_size = 64, shift = {64,64}},
+      {icon = "__base__/graphics/icons/arrows/up-right-arrow.png", icon_size = 64, shift = {-64,64}},
+      {icon = "__TFMG-assets-0__/icons/items/conductive-coil.png", icon_size = 64, scale = 2},
+    },
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "conductive-coil-anti-winding"
+      },
+    },
+    prerequisites = {"micro-assembly"},
+    unit = {
+      count = 256,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1}
+      },
+      time = 64
     },
   },
 })
