@@ -6,10 +6,7 @@ data.raw ["technology"] = {}
 data.raw ["tips-and-tricks-item"] = {}
 data.raw ["utility-constants"]["default"].main_menu_simulations = {}
 
---adjust vanilla content
-local hidden_items = {"wood","coal","stone","iron-ore","copper-ore","uranium-ore","spoilage","pistol",}
-local hidden_recipes = {}
-local disabled_recipes = {"wooden-chest","iron-chest","transport-belt","burner-inserter","stone-brick","burner-mining-drill","stone-furnace","iron-plate","copper-plate","iron-gear-wheel","firearm-magazine","light-armor",}
+
 --i'd like to also hide entites from the factoriopedia.
 --raw fish and the pistol are under a different type, so they have to be handled seperately.
 data.raw.capsule ["raw-fish"].hidden = true
@@ -70,7 +67,7 @@ data.raw.tile ["ice-smooth"].collision_mask = tile_collision_masks.ground()
 data.raw.tile ["space-platform-foundation"].collision_mask = {layers={ground_tile=true,platform=true}}
 
 
---shortcuts woooooooooo
+--Due to the removal of vanilla techs, shortcuts dependant on them must be modified.
 
 data.raw ["shortcut"]["undo"].technology_to_unlock = nil
 data.raw ["shortcut"]["redo"].technology_to_unlock = nil
@@ -108,6 +105,11 @@ data.raw ["shortcut"]["give-artillery-targeting-remote"].unavailable_until_unloc
 
 -- hide vanilla content from game, this seems easier than outright removing certain things due to dependancies.
 -- expand brain.png if this works.
+
+--adjust vanilla content
+local hidden_items = {"wood","coal","stone","iron-ore","copper-ore","uranium-ore","spoilage","pistol",}
+local hidden_recipes = {}
+local disabled_recipes = {"wooden-chest","iron-chest","transport-belt","burner-inserter","stone-brick","burner-mining-drill","stone-furnace","iron-plate","copper-plate","iron-gear-wheel","firearm-magazine","light-armor",}
 for name, item in pairs(data.raw.item) do
 	for _, hideName in ipairs(hidden_items) do
 		if item.name == hideName then

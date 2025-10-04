@@ -13,7 +13,8 @@ Date: ????
     - refinery has 6 module slots.
     - micro assembler has 3 module slots.
     - small crusher has 3 module slots.
-    - mining drill
+    - mining drill has 4 module slots.
+    - pumpjack has 4 module slots.
     - efficiency modules are slightly stronger than their vanilla counterparts.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.11
