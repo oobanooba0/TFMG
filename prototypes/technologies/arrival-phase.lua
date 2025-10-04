@@ -626,7 +626,7 @@ data:extend({
         recipe = "speed-module"
       },
     },
-    prerequisites = {"contemplate-mind","mechatronics"},
+    prerequisites = {"contemplate-mind","mechatronic-components"},
     unit = {
       count = 196,
       ingredients = {
