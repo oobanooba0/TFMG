@@ -92,6 +92,10 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     corpse = "assembling-machine-1-remnants",
     dying_explosion = "assembling-machine-1-remnants",
     icon_draw_specification = {shift = {0, -0.3}},
+    icons_positioning =
+    {
+      {inventory_index = defines.inventory.crafter_modules, max_icons_per_row = 4, scale = 0.3}
+    },
     resistances =
     {
       {
@@ -341,7 +345,7 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     icon_draw_specification = {shift = {0, -0.1}},
     icons_positioning =
     {
-      {inventory_index = defines.inventory.crafter_modules, shift = {0, 0.8}}
+      {inventory_index = defines.inventory.crafter_modules, shift = {0, 0.8}, max_icons_per_row = 4}
     },
     module_slots = 4,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
@@ -513,7 +517,11 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     max_health = 400,
     corpse = "assembling-machine-2-remnants",
     dying_explosion = "assembling-machine-2-explosion",
-    icon_draw_specification = {shift = {0, -0.3}},
+    icon_draw_specification = {shift = {0, -0.3}, scale = 2},
+    icons_positioning =
+    {
+      {inventory_index = defines.inventory.crafter_modules, shift = {0, 1.2}, max_icons_per_row = 5}
+    },
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["assembling-machine"], --leaving this,since circuit connections may still be useful to the player
     alert_icon_shift = util.by_pixel(0, -12),
@@ -634,7 +642,7 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     },
     energy_usage = "25MW",
     module_slots = 5,
-    allowed_effects = {"productivity", "pollution", "quality"},
+    allowed_effects = {"productivity", "pollution", "quality", "consumption"},
   },
   {--chemistry-plant
     type = "assembling-machine",
@@ -663,6 +671,10 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     corpse = "chemical-plant-remnants",
     dying_explosion = "chemical-plant-explosion",
     icon_draw_specification = {shift = {0, -0.3}},
+    icons_positioning =
+    {
+      {inventory_index = defines.inventory.crafter_modules, max_icons_per_row = 4}
+    },
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["chemical-plant"],
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
@@ -968,6 +980,10 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     corpse = "oil-refinery-remnants",
     dying_explosion = "oil-refinery-explosion",
     icon_draw_specification = {scale = 2, shift = {0, -0.3}},
+    icons_positioning =
+    {
+      {inventory_index = defines.inventory.crafter_modules, shift = {0, 1.2}, max_icons_per_row = 3}
+    },
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["oil-refinery"],
     collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
@@ -986,7 +1002,6 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     energy_usage = "4MW",
     module_slots = 6,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-
     graphics_set =
     {
       animation = make_4way_animation_from_spritesheet(
@@ -1200,7 +1215,11 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     max_health = 400,
     corpse = "assembling-machine-3-remnants",
     dying_explosion = "assembling-machine-3-explosion",
-    icon_draw_specification = {shift = {0, -0.3}},
+    icon_draw_specification = {shift = {0, -0.1}, scale = 0.75},
+    icons_positioning =
+    {
+      {inventory_index = defines.inventory.crafter_modules, shift = {0, 0.4}, max_icons_per_row = 3, scale = 0.3}
+    },
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["assembling-machine"],
     alert_icon_shift = util.by_pixel(0, -12),
@@ -1416,7 +1435,7 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     damaged_trigger_effect = hit_effects.entity(),
     icons_positioning =
     {
-      {inventory_index = defines.inventory.crafter_modules, shift = {0, 0.3}}
+      {inventory_index = defines.inventory.crafter_modules, shift = {0, 0.3}, max_icons_per_row = 3}
     },
     icon_draw_specification = {shift = {0, -0.45}},
     crafting_categories = {"small-crusher"},

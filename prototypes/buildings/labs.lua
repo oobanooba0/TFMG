@@ -134,11 +134,11 @@
     {
       "introspection-science","exploration-science"
     },
-    --module_slots = 2,
+    module_slots = 5,
     icons_positioning =
     {
-      {inventory_index = defines.inventory.lab_modules, shift = {0, 0.9}},
-      {inventory_index = defines.inventory.lab_input, shift = {0, 0}, max_icons_per_row = 4, separation_multiplier = 1/1.1}
+      {inventory_index = defines.inventory.lab_modules, shift = {0, 1.2}, max_icons_per_row = 5,},
+      {inventory_index = defines.inventory.lab_input, shift = {0, 0}, max_icons_per_row = 5, separation_multiplier = 1/1.1}
     },
   },
 })

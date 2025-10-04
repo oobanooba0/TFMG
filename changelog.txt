@@ -20,6 +20,7 @@ Date: ????
     - small crusher has 3 module slots.
     - mining drill has 4 module slots.
     - pumpjack has 4 module slots.
+    - Neural node has 5 module slots.
     - efficiency module is slightly stronger than its vanilla counterpart.
     - Speed modules incur a slightly higher energy cost than its vanilla counterpart.
     - discharger recipe changed to require tier 2 components
