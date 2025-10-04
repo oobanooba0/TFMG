@@ -10,6 +10,11 @@ Date: ????
     - Supercomputer input and output are now blue and green respectively.
     - Supercomputer is visually shrunken down slightly to make input/output terminals more visible in all rotations.
     - most machines have module slots now, numbers are kind of arbitrary and will change.
+    - Module icon positioning and scaling adjusted for all machines
+    - Recipe icons are now double size in refineries
+    - Recipe icons are now double size in supercomputers
+  Balancing:
+    - productivity modules are allowed on most intermediates where it makes sense. (No prod modules in the game yet, just prepping)
     - Matter reconstructor has a whopping 12 module slots. Go ham.
     - Assembling machine has 6 module slots.
     - furnace has 4 module slots
@@ -23,16 +28,11 @@ Date: ????
     - Neural node has 5 module slots.
     - efficiency module is slightly stronger than its vanilla counterpart.
     - Speed modules incur a slightly higher energy cost than its vanilla counterpart.
-    - discharger recipe changed to require tier 2 components
-    - AI processor costs slightly more optical coil.
-    - Module icon positioning and scaling adjusted for all machines
-    - Recipe icons are now double size in refineries
-    - Recipe icons are now double size in supercomputers
-    - Robot speed 1 requires consider your potential
-  Balancing:
-    - productivity modules are allowed on most intermediates where it makes sense. (No prod modules in the game yet, just prepping)
     - Ai processor printing recipe now takes twice as long.
     - scout radar now requires exploration science
+    - Robot speed 1 requires consider your potential
+    - AI processor costs slightly more optical coil.
+    - discharger recipe changed to require tier 2 components
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.11
 Date: 2025-10-04
