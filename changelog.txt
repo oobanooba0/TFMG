@@ -13,7 +13,7 @@ Date: ????
     - Matter reconstructor has a whopping 12 module slots. Go ham.
     - Assembling machine has 6 module slots.
     - furnace has 4 module slots
-    - Supercomputer has 5 module slots, however, due to its nature, only accepts productivity and efficiency modules. I may change this in the future.
+    - Supercomputer has 5 module slots, however, due to its nature, only accepts efficiency and quality modules. I may change this in the future.
     - chemistry plant has 4 module slots.
     - refinery has 6 module slots.
     - micro assembler has 3 module slots.
@@ -25,6 +25,9 @@ Date: ????
     - Speed modules incur a slightly higher energy cost than its vanilla counterpart.
     - discharger recipe changed to require tier 2 components
     - AI processor costs slightly more optical coil.
+    - Module icon positioning and scaling adjusted for all machines
+    - Recipe icons are now double size in refineries
+    - Recipe icons are now double size in supercomputers
   Balancing:
     - productivity modules are allowed on most intermediates where it makes sense. (No prod modules in the game yet, just prepping)
     - Ai processor printing recipe now takes twice as long.

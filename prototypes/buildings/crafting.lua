@@ -642,7 +642,7 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     },
     energy_usage = "25MW",
     module_slots = 5,
-    allowed_effects = {"productivity", "pollution", "quality", "consumption"},
+    allowed_effects = {"pollution", "quality", "consumption"},
   },
   {--chemistry-plant
     type = "assembling-machine",
