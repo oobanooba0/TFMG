@@ -46,6 +46,8 @@ data.raw.recipe ["train-stop"] = nil
 data.raw.recipe ["locomotive"] = nil
 data.raw.recipe ["radar"] = nil
 data.raw.recipe ["cargo-landing-pad"] = nil
+data.raw.recipe ["speed-module"] = nil
+data.raw.recipe ["efficiency-module"] = nil
 
 data.raw.recipe ["transport-belt"] = nil
 data.raw.recipe ["fast-transport-belt"] = nil
@@ -66,9 +68,6 @@ data.raw ["cargo-wagon"]["cargo-wagon"].weight = 5000
 data.raw ["fluid-wagon"]["fluid-wagon"].weight = 5000
 data.raw.tile ["ice-smooth"].collision_mask = tile_collision_masks.ground()
 data.raw.tile ["space-platform-foundation"].collision_mask = {layers={ground_tile=true,platform=true}}
-data.raw["mining-drill"]["electric-mining-drill"].mining_speed = 1
-data.raw["mining-drill"]["electric-mining-drill"].energy_usage = "0.5MW"
-data.raw["mining-drill"]["pumpjack"].energy_usage = "1MW"
 
 
 --shortcuts woooooooooo
@@ -179,6 +178,7 @@ require("prototypes.items.buildings.electrical")
 require("prototypes.items.buildings.inserters")
 require("prototypes.items.buildings.labs")
 require("prototypes.items.buildings.military")
+require("prototypes.items.buildings.modules-beacons")
 require("prototypes.items.buildings.roboports")
 require("prototypes.items.buildings.thermal")
 ---fluids

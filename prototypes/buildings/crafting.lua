@@ -1,8 +1,28 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 local simulations = require("__base__.prototypes.factoriopedia-simulations")
-
-data:extend({
+--vanilla building updates.
+  local mining_drill = data.raw["mining-drill"]["electric-mining-drill"]
+  mining_drill.mining_speed = 1
+  mining_drill.energy_usage = "0.5MW"
+  local pumpjack = data.raw["mining-drill"]["pumpjack"]
+  pumpjack.energy_usage = "1MW"
+--Supercomputer combinators
+  local supercomputer_input = table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
+  supercomputer_input.name = "supercomputer-input"
+  supercomputer_input.collision_mask = {layers = {},not_colliding_with_itself = true}
+  supercomputer_input.minable = nil
+  supercomputer_input.selection_priority = 51
+  data:extend{supercomputer_input}
+  
+  local supercomputer_output = table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
+  supercomputer_output.name = "supercomputer-output"
+  supercomputer_output.collision_mask = {layers = {},not_colliding_with_itself = true}
+  supercomputer_output.minable = nil
+  supercomputer_output.selection_priority = 51
+  data:extend{supercomputer_output}
+--TFMG buildings
+  data:extend({
   {--matter reconstructor
     type = "assembling-machine",
     name = "matter-reconstructor",
@@ -113,7 +133,7 @@ data:extend({
     energy_usage = "0.5MW",
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
-    module_slots = 0,
+    module_slots = 10,
     allowed_effects = { "consumption", "speed", "productivity", "pollution" , "quality"},
     impact_category = "metal",
     working_sound =
@@ -235,8 +255,8 @@ data:extend({
       emissions_per_minute = { pollution = 2 },
     },
     energy_usage = "1MW",
-    --module_slots = 2,
-    --allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
+    module_slots = 6,
+    allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
   },
   {--furnace
     type = "furnace",
@@ -281,8 +301,8 @@ data:extend({
     {
       {inventory_index = defines.inventory.crafter_modules, shift = {0, 0.8}}
     },
-    --module_slots = 2,
-    --allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
+    module_slots = 4,
+    allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
     crafting_categories = {"furnace"},
     result_inventory_size = 1,
     crafting_speed = 1,
@@ -571,25 +591,9 @@ data:extend({
       emissions_per_minute = { pollution = 2 },
     },
     energy_usage = "25MW",
+    module_slots = 5,
+    allowed_effects = {"productivity", "pollution", "quality"},
   },
-})
---make the combinators the lazy way, I have no need to completely overhaul their functionality.
-
-local supercomputer_input = table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
-supercomputer_input.name = "supercomputer-input"
-supercomputer_input.collision_mask = {layers = {},not_colliding_with_itself = true}
-supercomputer_input.minable = nil
-supercomputer_input.selection_priority = 51
-data:extend{supercomputer_input}
-
-local supercomputer_output = table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
-supercomputer_output.name = "supercomputer-output"
-supercomputer_output.collision_mask = {layers = {},not_colliding_with_itself = true}
-supercomputer_output.minable = nil
-supercomputer_output.selection_priority = 51
-data:extend{supercomputer_output}
-
-data:extend({
   {--chemistry-plant
     type = "assembling-machine",
     name = "chemistry-plant",
@@ -623,8 +627,6 @@ data:extend({
     selection_box = {{-1.4, -1.4}, {1.4, 1.4}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.4,
-    allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-
     graphics_set =
     {
       animation = make_4way_animation_from_spritesheet({ layers =
@@ -798,6 +800,8 @@ data:extend({
     },
     energy_usage = "2MW",
     crafting_categories = {"chemistry-plant"},
+    module_slots = 4,
+    allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
     fluid_boxes =
     {
       {
@@ -929,7 +933,6 @@ data:extend({
     selection_box = {{-2.4, -2.4}, {2.4, 2.4}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.3,
-    allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"refinery"},
     crafting_speed = 1,
     energy_source =
@@ -939,6 +942,8 @@ data:extend({
       emissions_per_minute = { pollution = 6 }
     },
     energy_usage = "4MW",
+    module_slots = 6,
+    allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
 
     graphics_set =
     {
@@ -1326,8 +1331,8 @@ data:extend({
       emissions_per_minute = { pollution = 2 },
     },
     energy_usage = "1.5MW",
-    --module_slots = 2,
-    --allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
+    module_slots = 3,
+    allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
   },
   {--Small crusher
     type = "assembling-machine",
@@ -1367,16 +1372,16 @@ data:extend({
     collision_box = {{-0.7, -1.2}, {0.7, 1.2}},
     selection_box = {{-0.9, -1.4}, {0.9, 1.4}},
     damaged_trigger_effect = hit_effects.entity(),
-    module_slots = 0,
     icons_positioning =
     {
       {inventory_index = defines.inventory.crafter_modules, shift = {0, 0.3}}
     },
     icon_draw_specification = {shift = {0, -0.45}},
-    allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
     crafting_categories = {"small-crusher"},
     crafting_speed = 1,
     energy_usage = "1.5MW",
+    module_slots = 3,
+    allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
     energy_source =
     {
       type = "electric",

@@ -1,7 +1,20 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.12
 Date: ????
+  Features:
+    - Speed and efficiency modules introduced, they have stats comparable to the MKI modules from vanilla, but most buildings have more module slots than their vanilla counterparts, so these modules are pretty powerful.
   Changes:
+    - most machines have module slots now, numbers are kind of arbitrary and will change.
+    - Matter reconstructor has a whopping 12 module slots. Go ham.
+    - Assembling machine has 6 module slots.
+    - furnace has 4 module slots
+    - Supercomputer has 5 module slots, however, due to its nature, only accepts productivity and efficiency modules. I may change this in the future.
+    - chemistry plant has 4 module slots.
+    - refinery has 6 module slots.
+    - micro assembler has 3 module slots.
+    - small crusher has 3 module slots.
+    - mining drill
+    - efficiency modules are slightly stronger than their vanilla counterparts.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.11
 Date: 2025-10-04
