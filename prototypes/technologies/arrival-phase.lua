@@ -376,7 +376,34 @@ data:extend({
       count = 8
     },
   },
-  --side techs
+  {--micro assembly
+    type = "technology",
+    name = "micro-assembly",
+    icons = {
+      {icon = "__base__/graphics/technology/automation-2.png", icon_size = 256},
+      {icon = "__base__/graphics/icons/arrows/down-left-arrow.png", icon_size = 64, shift = {48,-48}},
+      {icon = "__base__/graphics/icons/arrows/down-right-arrow.png", icon_size = 64, shift = {-48,-48}},
+      {icon = "__base__/graphics/icons/arrows/up-left-arrow.png", icon_size = 64, shift = {48,48}},
+      {icon = "__base__/graphics/icons/arrows/up-right-arrow.png", icon_size = 64, shift = {-48,48}},
+    },
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "micro-assembler"
+      },    
+    },
+    prerequisites = {"mechatronic-components","contemplate-mind"},
+    unit = {
+      count = 256,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1}
+      },
+      time = 24
+    },
+  },
+--side techs
   {--energy distribution 2
     type = "technology",
     name = "energy-distribution-2",

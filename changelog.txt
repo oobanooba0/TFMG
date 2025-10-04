@@ -19,6 +19,8 @@ Date: ????
     - pumpjack has 4 module slots.
     - efficiency module is slightly stronger than its vanilla counterpart.
     - Speed modules incur a slightly higher energy cost than its vanilla counterpart.
+    - discharger recipe changed to require tier 2 components
+    - AI processor costs slightly more optical coil.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.11
 Date: 2025-10-04

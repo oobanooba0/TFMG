@@ -120,13 +120,13 @@ data:extend({
     type = "recipe",
     category = "assembling-machine-pure",
     name = "ai-processor",
-    energy_required = 8,
+    energy_required = 12,
     enabled = false,
     ingredients = {
       { type = "item", name = "modular-circuit", amount = 2 },
       { type = "item", name = "fused-crystalline-chunk", amount = 1 },
       { type = "item", name = "capacitor-discharged", amount = 2 },
-      { type = "item", name = "optical-coil", amount = 4 },
+      { type = "item", name = "optical-coil", amount = 6 },
     },
     results = { 
       { type = "item", name = "ai-processor", amount = 1 }
@@ -707,12 +707,27 @@ data:extend({
     energy_required = 24,
     enabled = false,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 16 },
-      { type = "item", name = "modular-circuit", amount = 8 },
-      { type = "item", name = "mineral-glass", amount = 16 },
+      { type = "item", name = "high-performance-structure", amount = 16 },
+      { type = "item", name = "modular-circuit", amount = 12 },
+      { type = "item", name = "capacitor-charged", amount = 8 },
     },
     results = { 
       { type = "item", name = "discharger", amount = 1 }
+    },
+  },
+  {--micro assembler
+    type = "recipe",
+    category = "assembling-machine",
+    name = "micro-assembler",
+    energy_required = 24,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "high-performance-structure", amount = 8 },
+      { type = "item", name = "ai-processor", amount = 2 },
+      { type = "item", name = "mechatronic-components", amount = 4 },
+    },
+    results = { 
+      { type = "item", name = "micro-assembler", amount = 1 }
     },
   },
   {--lamp
