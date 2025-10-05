@@ -1,0 +1,38 @@
+name: Publish Factorio Mod
+
+on:
+  workflow_dispatch:
+    # Optional: Define inputs for the manual trigger
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+
+jobs:
+    publish-mod:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+
+            - name: Validate Mod
+              uses: TheBrutalX/factorio-mod-uploader-action@v2
+              with:
+                  action: validate
+
+            - name: Create zip
+              uses: TheBrutalX/factorio-mod-uploader-action@v2
+              with:
+                  action: compress
+
+            - name: Upload Mod
+              uses: TheBrutalX/factorio-mod-uploader-action@v2
+              with:
+                  action: upload
+                  factorio-api-key: ${{ secrets.FACTORIO_API_KEY }}
