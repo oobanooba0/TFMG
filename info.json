@@ -11,7 +11,7 @@
     "quality >= 2.0.66",
     "flib >= 0.16.3",
     "Krastorio2Assets >= 2.0.3",
-    "TFMG-music >= 0.3.0",
+    "TFMG-music >= 0.3.14",
     "TFMG-assets-0 >= 0.3.12",
     "TFMG-simulations >= 0.3.5"
   ],

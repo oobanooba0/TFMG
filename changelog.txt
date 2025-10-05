@@ -1,7 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.14
 Date: 2025-10-05
-  Changes:
+  Features:
+    - thermal system GUI now also shows the exact heat output of a machine.
+    - LIFE - music track added for Arrival.
+    - 5 New interlude tracks added to arrival
   Bugfixes:
     - Excited crystal quenching locale fix
 ---------------------------------------------------------------------------------------------------
