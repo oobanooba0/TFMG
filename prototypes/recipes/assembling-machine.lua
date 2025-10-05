@@ -345,7 +345,7 @@ data:extend({
       { type = "item", name = "heat-pipe", amount = 2 },
     },
     results = { 
-      { type = "item", name = "efficiency-module", amount = 1 },
+      { type = "item", name = "speed-module", amount = 1 },
       { type = "item", name = "capacitor-discharged", amount = 8 },
     },
   },
