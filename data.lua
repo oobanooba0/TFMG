@@ -218,6 +218,7 @@ require("prototypes.recipes.supercomputer")
 
 --sound
 require("sound.ambient.ambient-sounds")
+require("sound.utility.sounds")
 
 --technolgoies
 require("prototypes.technologies.platform-phase")

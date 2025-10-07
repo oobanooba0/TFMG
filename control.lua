@@ -6,6 +6,7 @@ require("scripts.gameplay")
 gameplay = require("scripts.gameplay")
 require("scripts.supercomputer")
 supercomputer = require("scripts.supercomputer")
+story = require("scripts.story")
 
 --i crie everytime i redo several hours of work.
 --stolen from allison
@@ -154,7 +155,8 @@ script.on_event(
 )
 script.on_event(
 	defines.events.on_tick,
-	function()
+	function(event)
+		story.on_story_tick(event)
 		thermal_system.on_matter_reconstructor_tick()
 		thermal_system.on_assembling_machine_tick()
 		thermal_system.on_furnace_tick()
