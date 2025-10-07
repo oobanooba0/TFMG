@@ -28,7 +28,170 @@ local HP_S_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/
 local HP_W_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5}
 local HP_W_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5,shift = {-0.3,-0}}
 
+function energy_monitor_picture(tint, repeat_count)
+  return
+  {
+    layers =
+    {
+      {
+        filename = "__base__/graphics/entity/accumulator/accumulator.png",
+        priority = "high",
+        width = 130,
+        height = 189,
+        repeat_count = repeat_count,
+        shift = util.by_pixel(0, -5.5),
+        tint = tint,
+        scale = 0.25
+      },
+      {
+        filename = "__base__/graphics/entity/accumulator/accumulator-shadow.png",
+        priority = "high",
+        width = 234,
+        height = 106,
+        repeat_count = repeat_count,
+        shift = util.by_pixel(14.5, 3),
+        draw_as_shadow = true,
+        scale = 0.25
+      }
+    }
+  }
+end
+
+function energy_monitor_charge()
+  return
+  {
+    layers =
+    {
+      energy_monitor_picture({1, 1, 1, 1} , 24),
+      {
+        filename = "__base__/graphics/entity/accumulator/accumulator-charge.png",
+        priority = "high",
+        width = 178,
+        height = 210,
+        line_length = 6,
+        frame_count = 24,
+        draw_as_glow = true,
+        shift = util.by_pixel(0.5, -10),
+        scale = 0.25
+      }
+    }
+  }
+end
+
+function energy_monitor_reflection()
+  return
+  {
+    pictures =
+      {
+        filename = "__base__/graphics/entity/accumulator/accumulator-reflection.png",
+        priority = "extra-high",
+        width = 20,
+        height = 24,
+        shift = util.by_pixel(0, 25),
+        variation_count = 1,
+        scale = 2.5
+      },
+      rotate = false,
+      orientation_to_variation = false
+  }
+end
+
+function energy_monitor_discharge()
+  return
+  {
+    layers =
+    {
+      energy_monitor_picture({1, 1, 1, 1} , 24),
+      {
+        filename = "__base__/graphics/entity/accumulator/accumulator-discharge.png",
+        priority = "high",
+        width = 174,
+        height = 214,
+        line_length = 6,
+        frame_count = 24,
+        draw_as_glow = true,
+        shift = util.by_pixel(-0.5, -10.5),
+        scale = 0.25
+      }
+    }
+  }
+end
+
 data:extend({
+  {--energy monitor
+    type = "accumulator",
+    name = "energy-monitor",
+    icon = "__base__/graphics/icons/accumulator.png",
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {mining_time = 0.1, result = "energy-monitor"},
+    max_health = 150,
+    corpse = "accumulator-remnants",
+    dying_explosion = "accumulator-explosion",
+    collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    damaged_trigger_effect = hit_effects.entity(),
+    drawing_box_vertical_extension = 0.5,
+    energy_source =
+    {
+      type = "electric",
+      buffer_capacity = "100J",
+      usage_priority = "tertiary",
+      input_flow_limit = "1W",
+      output_flow_limit = "1W"
+    },
+    chargable_graphics =
+    {
+      picture = energy_monitor_picture(),
+      charge_animation = energy_monitor_charge(),
+      charge_cooldown = 30,
+      discharge_animation = energy_monitor_discharge(),
+      discharge_cooldown = 60
+      --discharge_light = {intensity = 0.7, size = 7, color = {r = 1.0, g = 1.0, b = 1.0}},
+    },
+    water_reflection = energy_monitor_reflection(),
+    impact_category = "metal",
+    open_sound = sounds.electric_large_open,
+    close_sound = sounds.electric_large_close,
+    working_sound =
+    {
+      main_sounds =
+      {
+        {
+          sound =
+          {
+            filename = "__base__/sound/accumulator-working.ogg",
+            volume = 0.4,
+            modifiers = volume_multiplier("main-menu", 1.44),
+            audible_distance_modifier = 0.5
+          },
+          match_volume_to_activity = true,
+          activity_to_volume_modifiers = {offset = 2, inverted = true},
+          fade_in_ticks = 4,
+          fade_out_ticks = 20
+        },
+        {
+          sound =
+          {
+            filename = "__base__/sound/accumulator-discharging.ogg",
+            volume = 0.4,
+            modifiers = volume_multiplier("main-menu", 1.44),
+            audible_distance_modifier = 0.5
+          },
+          match_volume_to_activity = true,
+          activity_to_volume_modifiers = {offset = 1},
+          fade_in_ticks = 4,
+          fade_out_ticks = 20
+        }
+      },
+      idle_sound = {filename = "__base__/sound/accumulator-idle.ogg", volume = 0.35, audible_distance_modifier = 0.5},
+      max_sounds_per_prototype = 3,
+    },
+
+    circuit_connector = circuit_connector_definitions["chest"],
+    circuit_wire_max_distance = default_circuit_wire_max_distance,
+
+    default_output_signal = {type = "virtual", name = "signal-A"}
+  },
   {--tiny electric pole
     type = "electric-pole",
     name = "tiny-electric-pylon",

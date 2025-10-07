@@ -1,5 +1,18 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
 data:extend({
+---energy monitor
+  {
+    type = "item",
+    name = "energy-monitor",
+    icon = "__base__/graphics/icons/accumulator.png",
+    subgroup = "energy",
+    order = "a-z",
+    inventory_move_sound = item_sounds.electric_large_inventory_move,
+    pick_sound = item_sounds.electric_large_inventory_pickup,
+    drop_sound = item_sounds.electric_large_inventory_move,
+    place_result = "energy-monitor",
+    stack_size = 50
+  },
 ---poles
   {
     type = "item",
