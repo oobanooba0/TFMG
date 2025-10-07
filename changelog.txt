@@ -1,13 +1,16 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.16
-Date: ????
+Date: 2025-10-07
   Features:
     - energy monitor added. (Basically a very small accumulator for the purposes of circuit controlled power grids.
     - heat monitor added. (basically a tiny nuclear reactor which produces no heat, for the purposes of reading heat pipe temperatures.)
+    - Story events now no longer occur as massive walls of text
+    - Chat easter egg.
   Changes:
     - Crystal quenching recipe takes 4 seconds now.
     - Organic carbon liquefaction now returns short chain hydrocarbons instaid of organic sludge. Sorry if this broke anything.
     - Radiators cannot be placed free floating anymore, and valid placement spots are highlighted. (they still can become floating if the platform they are connected to is removed, theres no easy fix for that right now)
+    - Contemplate RUST story event is now a little more detailed
   Bugfixes:
     - Recharging recipes can now be decomposed.
 ---------------------------------------------------------------------------------------------------
