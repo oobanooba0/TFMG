@@ -55,6 +55,13 @@ script.on_event(defines.events.on_research_finished, function(event)
   end
 end)
 
+script.on_event(defines.events.on_console_chat, function (event)
+  local message = string.gsub(string.lower(event.message),"[%p%c%s]","")--just obliterate punctuation
+  if string.find(message,"thefactorymustgrow") ~= nil then
+    TFMG_chant()
+  end
+end)
+
 --utility events
 
 ---get a random entry from a table
@@ -201,9 +208,9 @@ function consider_your_purpose()
   local t = 60
   event_queue("print",t,"story-event.consider-your-purpose-0") t = t + 120
   event_queue("change_color",t,nil,{221,127,33}) t = t + 1
-  event_queue("random_say",t,"story-event.consider-your-purpose-1") t = t + 20
-  event_queue("random_say",t,"story-event.consider-your-purpose-2") t = t + 200
-  event_queue("random_say",t,"story-event.consider-your-purpose-3") t = t + 120--a hesitation on the last message just seems to work
+  event_queue("random_say",t,"story-event.consider-your-purpose-1") t = t + 60
+  event_queue("random_say",t,"story-event.consider-your-purpose-2") t = t + 120
+  event_queue("random_say",t,"story-event.consider-your-purpose-3") t = t + 200--a hesitation on the last message just seems to work
   event_queue("chant",t,"story-event.consider-your-purpose-4")
 end
 
@@ -303,4 +310,7 @@ end
 function contemplate_mind()
 end
 
+function TFMG_chant()
+  event_queue("chant",0,"story-event.tfmg-chant")
+end
 return story
