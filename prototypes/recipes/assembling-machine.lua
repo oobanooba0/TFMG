@@ -789,6 +789,22 @@ data:extend({
       { type = "item", name = "discharger", amount = 1 }
     },
   },
+  {--Energy monitor
+    type = "recipe",
+    category = "assembling-machine",
+    name = "energy-monitor",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "high-performance-structure", amount = 2 },
+      { type = "item", name = "modular-circuit", amount = 8 },
+      { type = "item", name = "capacitor-discharged", amount = 1 },
+      { type = "item", name = "capacitor-charged", amount = 1 },
+    },
+    results = { 
+      { type = "item", name = "energy-monitor", amount = 1 }
+    },
+  },
   {--micro assembler
     type = "recipe",
     category = "assembling-machine",

@@ -133,7 +133,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "organic-carbon", amount = 5 },
     },
     results = { 
-      { type = "fluid", name = "organic-sludge", amount = 25 }
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 50 }
     },
   },
   {--capacitor
@@ -160,7 +160,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     subgroup = "fluid-recipes",
     name = "excited-crystal-quenching",
     icon = "__TFMG-assets-0__/icons/items/fused-crystalline-chunk.png",
-    energy_required = 1,
+    energy_required = 4,
     enabled = false,
     allow_productivity = false,
     ingredients = {

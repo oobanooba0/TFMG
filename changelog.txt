@@ -1,7 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.16
 Date: ????
+  Features:
+    - energy monitor added. (Basically a very small accumulator for the purposes of circuit controlled power grids.
   Changes:
+    - Crystal quenching recipe takes 4 seconds now.
+    - Organic carbon liquefaction now returns short chain hydrocarbons instaid of organic sludge. Sorry if this broke anything.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.15
 Date: 2025-10-06
