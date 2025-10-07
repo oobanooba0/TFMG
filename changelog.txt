@@ -7,6 +7,7 @@ Date: ????
   Changes:
     - Crystal quenching recipe takes 4 seconds now.
     - Organic carbon liquefaction now returns short chain hydrocarbons instaid of organic sludge. Sorry if this broke anything.
+    - Radiators cannot be placed free floating anymore, and valid placement spots are highlighted. (they still can become floating if the platform they are connected to is removed, theres no easy fix for that right now)
   Bugfixes:
     - Recharging recipes can now be decomposed.
 ---------------------------------------------------------------------------------------------------

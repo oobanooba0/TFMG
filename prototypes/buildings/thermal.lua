@@ -29,7 +29,7 @@ local HP_W_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat
 local HP_W_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5,shift = {-0.3,-0}}
 
 data:extend({
-    {--heat monitor
+  {--heat monitor
     type = "reactor",
     name = "heat-monitor",
     icon  = "__base__/graphics/icons/heat-interface.png",
@@ -93,7 +93,7 @@ data:extend({
     type = "assembling-machine",
     name = "small-radiator",
     icon = "__TFMG-assets-0__/buildings/small-radiator/panel_icon.png",
-    flags = {"placeable-neutral","placeable-player", "player-creation"},
+    flags = {"placeable-neutral","player-creation","filter-directions"},
     minable = {mining_time = 0.2, result = "small-radiator"},
     max_health = 400,
     corpse = "offshore-pump-remnants",
@@ -104,6 +104,11 @@ data:extend({
     selection_box = {{-1, -4.5}, {1, 0.5}},
     tile_height = 1,
     tile_width = 1,
+    tile_buildability_rules =
+    {
+      {area = {{-0.9, -4.4}, {0.9, 0.4}}, required_tiles = {layers = {empty_space = true}}, remove_on_collision = true},
+      {area = {{-0.4, 0.6}, {0.4, 0.9}}, required_tiles = {layers = {ground_tile = true}}, colliding_tiles = {layers = {empty_space = true}}, remove_on_collision = true},
+    },
     surface_conditions =
     {
       {
