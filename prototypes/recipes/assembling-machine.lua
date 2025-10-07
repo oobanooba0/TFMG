@@ -805,6 +805,21 @@ data:extend({
       { type = "item", name = "energy-monitor", amount = 1 }
     },
   },
+  {--heat monitor
+    type = "recipe",
+    category = "assembling-machine",
+    name = "heat-monitor",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "heat-pipe", amount = 4},
+      { type = "item", name = "high-performance-structure", amount = 2 },
+      { type = "item", name = "modular-circuit", amount = 8 },
+    },
+    results = { 
+      { type = "item", name = "heat-monitor", amount = 1 }
+    },
+  },
   {--micro assembler
     type = "recipe",
     category = "assembling-machine",

@@ -12,7 +12,7 @@ data:extend({
     enabled = false,
     ingredients = {{type = "item", name = "capacitor-discharged", amount = 1}},
     results = {{type="item", name="capacitor-charged", amount=1}},
-    allow_decomposition = false,
+    allow_decomposition = true,
     allow_productivity = false,
   },
 ---Crafting recipes
@@ -25,7 +25,7 @@ data:extend({
     enabled = false,
     ingredients = {{type = "item", name = "crystalline-asteroid-chunk", amount = 1}},
     results = {{type="item", name="excited-crystalline-chunk-red", amount=1}},
-    allow_decomposition = false,
+    allow_decomposition = true,
     allow_productivity = false,
   },
 })

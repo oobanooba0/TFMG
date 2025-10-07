@@ -29,6 +29,66 @@ local HP_W_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heat
 local HP_W_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5,shift = {-0.3,-0}}
 
 data:extend({
+    {--heat monitor
+    type = "reactor",
+    name = "heat-monitor",
+    icon  = "__base__/graphics/icons/heat-interface.png",
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {mining_time = 0.5, result = "heat-monitor"},
+    max_health = 500,
+    corpse = "nuclear-reactor-remnants",
+    dying_explosion = "nuclear-reactor-explosion",
+    {
+      {
+        property = "pressure",
+        min = 1,
+      }
+    },
+    consumption = "1W",
+    neighbour_bonus = 0,
+    energy_source =
+    {
+      type = "burner",
+      fuel_inventory_size = 0,
+      render_no_power_icon = false,
+      fuel_categories = {"nothing"}
+    },
+    collision_box = {{-0.3, -0.3}, {0.3, 0.3}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    damaged_trigger_effect = hit_effects.entity(),
+    picture =
+    {
+      filename = "__base__/graphics/icons/heat-interface.png",
+      height = 64,
+      width = 64,
+      scale = 0.5,
+      flags = {"no-crop"}
+    },
+    heat_buffer =
+    {
+      max_temperature = 1000,
+      specific_heat = "1MJ",
+      max_transfer = "1GW",
+      minimum_glow_temperature = 350,
+      connections =
+      {
+        { position = {0, 0}, direction = defines.direction.north },
+        { position = {0, 0}, direction = defines.direction.east },
+        { position = {0, 0}, direction = defines.direction.south },
+        { position = {0, 0}, direction = defines.direction.west },
+      },
+    },
+    connection_patches_connected = {HP_NS,HP_EW,HP_NS,HP_EW},
+    connection_patches_disconnected = {HP_N_big,HP_E_big,HP_S_big,HP_W_big,},
+    heat_connection_patches_connected ={HP_NS_Hot,HP_EW_Hot,HP_NS_Hot,HP_EW_Hot,},
+    heat_connection_patches_disconnected ={HP_N_Hot_big,HP_E_Hot_big,HP_S_Hot_big,HP_W_Hot_big,},
+    impact_category = "metal-large",
+    open_sound = {filename = "__base__/sound/open-close/nuclear-open.ogg", volume = 0.8},
+    close_sound = {filename = "__base__/sound/open-close/nuclear-close.ogg", volume = 0.8},
+    default_temperature_signal = {type = "virtual", name = "signal-T"},
+    circuit_wire_max_distance = reactor_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["chest"],
+  },
   {--small radiator
     type = "assembling-machine",
     name = "small-radiator",

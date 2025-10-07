@@ -472,6 +472,32 @@ data:extend({
       time = 24
     },
   },
+  {--energy monitoring
+    type = "technology",
+    name = "energy-monitoring",
+    icon = "__base__/graphics/technology/discharge-defense-equipment.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "energy-monitor"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "heat-monitor"
+      },
+    },
+    prerequisites = {"energy-distribution-3","capacitors","combinators"},
+    unit = {
+      count = 256,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1}
+      },
+      time = 24
+    },
+  },
   {--rails
     type = "technology",
     name = "rails",
