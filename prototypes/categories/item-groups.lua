@@ -32,27 +32,39 @@ data:extend({
   },
   {
     type = "item-subgroup",
-    name = "electronic-intermediates",
+    name = "coil-intermediates",
     group = "intermediate-products",
     order = "e"
   },
   {
     type = "item-subgroup",
-    name = "advanced-intermediates",
+    name = "electronic-intermediates",
     group = "intermediate-products",
     order = "f"
   },
   {
     type = "item-subgroup",
-    name = "science-unverified",
+    name = "capacitor-intermediates",
     group = "intermediate-products",
     order = "g"
   },
   {
     type = "item-subgroup",
-    name = "science-verified",
+    name = "advanced-intermediates",
     group = "intermediate-products",
     order = "h"
+  },
+  {
+    type = "item-subgroup",
+    name = "science-unverified",
+    group = "intermediate-products",
+    order = "i"
+  },
+  {
+    type = "item-subgroup",
+    name = "science-verified",
+    group = "intermediate-products",
+    order = "j"
   },
   --debug group
   {

@@ -46,6 +46,8 @@ data.raw.recipe ["fast-underground-belt"] = nil
 data.raw.recipe ["splitter"] = nil
 data.raw.recipe ["fast-splitter"] = nil
 data.raw.recipe ["toolbelt-equipment"] = nil
+data.raw.recipe ["rocket-silo"] = nil
+data.raw.recipe ["rocket-part"] = nil
 
 
 --Due to the removal of vanilla techs, shortcuts dependant on them must be modified.
