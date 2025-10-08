@@ -177,7 +177,7 @@ script.on_nth_tick(100,
 
 -- Upon player joins
 
-script.on_event(defines.events.on_player_created, function(e)--Ngl I have no idea what the e means, but the code doesn't work without it.\
+script.on_event(defines.events.on_player_created, function(e)
 	local player = game.players[e.player_index]
 	storage.players[player.index] = {}--initialise player storage
 
@@ -204,7 +204,6 @@ script.on_event(defines.events.on_gui_opened, function(event)
 			player_storage.hub = event.entity--we're gonna store the location, which is always 0,0
 		end
   end
-	
 end)
 
 script.on_event(defines.events.on_gui_closed, function(event)
