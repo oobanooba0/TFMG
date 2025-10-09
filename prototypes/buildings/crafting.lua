@@ -10,13 +10,51 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
   pumpjack.energy_usage = "1MW"
   pumpjack.module_slots = 4
 --rocket silo updates
+function rocketsilopipes()--borrowed from talander
+	return {
+		north = {
+
+			filename = "__TFMG-assets-0__/buildings/rocket-silo/rocketsilopipe-N.png",
+			priority = "extra-high",
+			width = 71,
+			height = 76,
+			shift = util.by_pixel(2.25, 23),
+			scale = 0.5,
+		},
+		east = {
+			filename = "__TFMG-assets-0__/buildings/rocket-silo/rocketsilopipe-E.png",
+			priority = "extra-high",
+			width = 42,
+			height = 76,
+			shift = util.by_pixel(-24.5, 1),
+			scale = 0.5,
+		},
+		south = {
+			filename = "__TFMG-assets-0__/buildings/rocket-silo/rocketsilopipe-S.png",
+			priority = "extra-high",
+			width = 88,
+			height = 61,
+			shift = util.by_pixel(0, -31.25),
+			scale = 0.5,
+		},
+		west = {
+			filename = "__TFMG-assets-0__/buildings/rocket-silo/rocketsilopipe-W.png",
+			priority = "extra-high",
+			width = 39,
+			height = 73,
+			shift = util.by_pixel(25.75, 1.25),
+			scale = 0.5,
+		},
+	}
+end
+
 local rocket_silo = table.deepcopy(data.raw["rocket-silo"]["rocket-silo"])
 rocket_silo.fixed_recipe = nil
 rocket_silo.rocket_parts_required = 100
 rocket_silo.fluid_boxes = {
   {
     production_type = "input",
-    pipe_picture = assembler3pipepictures(),
+    pipe_picture = rocketsilopipes(),
     pipe_covers = pipecoverspictures(),
     volume = 200,
     pipe_connections = {
@@ -28,7 +66,7 @@ rocket_silo.fluid_boxes = {
   },
   {
     production_type = "input",
-    pipe_picture = assembler3pipepictures(),
+    pipe_picture = rocketsilopipes(),
     pipe_covers = pipecoverspictures(),
     volume = 200,
     pipe_connections = {

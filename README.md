@@ -25,6 +25,8 @@ Solar Array wings - LordMiguel
 
 Unused Renders - MalcolmRiley
 
+Pelagos - Talander
+
 
 People who have helped me out:
 
