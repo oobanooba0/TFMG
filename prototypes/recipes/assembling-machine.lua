@@ -835,6 +835,23 @@ data:extend({
       { type = "item", name = "micro-assembler", amount = 1 }
     },
   },
+  {--rocket silo
+    type = "recipe",
+    category = "assembling-machine",
+    name = "rocket-silo",
+    energy_required = 64,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "high-performance-structure", amount = 64 },
+      { type = "item", name = "mechatronic-components", amount = 64 },
+      { type = "item", name = "ai-processor", amount = 8 },
+      --{ type = "item", name = "concrete", amount = 128 },
+
+    },
+    results = { 
+      { type = "item", name = "rocket-silo", amount = 1 }
+    },
+  },
   {--lamp
     type = "recipe",
     category = "assembling-machine",

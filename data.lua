@@ -10,45 +10,6 @@ data.raw.item ["asteroid-collector"].flags = {"always-show"}
 data.raw.item ["space-platform-foundation"].flags = {"always-show"}
 data.raw.item ["space-platform-foundation"].stack_size = 250
 data.raw.item ["heat-pipe"].flags = {"always-show"}
-data.raw.recipe ["space-platform-foundation"] = nil
-data.raw.recipe ["small-lamp"] = nil
-data.raw.recipe ["constant-combinator"] = nil
-data.raw.recipe ["selector-combinator"] = nil
-data.raw.recipe ["arithmetic-combinator"] = nil
-data.raw.recipe ["decider-combinator"] = nil
-data.raw.recipe ["power-switch"] = nil
-data.raw.recipe ["programmable-speaker"] = nil
-data.raw.recipe ["display-panel"] = nil
-data.raw.recipe ["repair-pack"] = nil
-data.raw.recipe ["construction-robot"] = nil
-data.raw.recipe ["logistic-robot"] = nil
-data.raw.recipe ["electric-mining-drill"] = nil
-data.raw.recipe ["pumpjack"] = nil
-data.raw.recipe ["pipe"] = nil
-data.raw.recipe ["pipe-to-ground"] = nil
-data.raw.recipe ["pump"] = nil
-data.raw.recipe ["storage-tank"] = nil
-data.raw.recipe ["rail"] = nil
-data.raw.recipe ["cargo-wagon"] = nil
-data.raw.recipe ["fluid-wagon"] = nil
-data.raw.recipe ["rail-signal"] = nil
-data.raw.recipe ["rail-chain-signal"] = nil
-data.raw.recipe ["train-stop"] = nil
-data.raw.recipe ["locomotive"] = nil
-data.raw.recipe ["radar"] = nil
-data.raw.recipe ["cargo-landing-pad"] = nil
-data.raw.recipe ["speed-module"] = nil
-data.raw.recipe ["efficiency-module"] = nil
-data.raw.recipe ["transport-belt"] = nil
-data.raw.recipe ["fast-transport-belt"] = nil
-data.raw.recipe ["underground-belt"] = nil
-data.raw.recipe ["fast-underground-belt"] = nil
-data.raw.recipe ["splitter"] = nil
-data.raw.recipe ["fast-splitter"] = nil
-data.raw.recipe ["toolbelt-equipment"] = nil
-data.raw.recipe ["rocket-silo"] = nil
-data.raw.recipe ["rocket-part"] = nil
-
 
 --Due to the removal of vanilla techs, shortcuts dependant on them must be modified.
 
@@ -70,7 +31,6 @@ data.raw ["shortcut"]["give-green-wire"].technology_to_unlock = "consider-the-se
 data.raw ["shortcut"]["give-spidertron-remote"].technology_to_unlock = "consider-your-potential"
 data.raw ["shortcut"]["give-discharge-defense-remote"].technology_to_unlock = nil
 data.raw ["shortcut"]["give-artillery-targeting-remote"].technology_to_unlock = nil
-
 data.raw ["shortcut"]["undo"].unavailable_until_unlocked = nil
 data.raw ["shortcut"]["redo"].unavailable_until_unlocked = nil
 data.raw ["shortcut"]["copy"].unavailable_until_unlocked = nil
@@ -89,35 +49,58 @@ data.raw ["shortcut"]["give-artillery-targeting-remote"].unavailable_until_unloc
 -- hide vanilla content from game, this seems easier than outright removing certain things due to dependancies.
 -- expand brain.png if this works.
 
-local hidden_items = {"wood","coal","stone","iron-ore","copper-ore","uranium-ore","spoilage","pistol",}
-local hidden_recipes = {}
-local disabled_recipes = {"wooden-chest","iron-chest","transport-belt","burner-inserter","stone-brick","burner-mining-drill","stone-furnace","iron-plate","copper-plate","iron-gear-wheel","firearm-magazine","light-armor",}
+local hidden_items = {"wood","coal","stone","iron-ore","copper-ore","uranium-ore","spoilage","pistol","ice","iron-plate","copper-plate","steel-plate","solid-fuel","plastic-bar","sulfur","battery","explosives","carbon","iron-gear-wheel","iron-stick","copper-cable",}
+
+local hidden_fluids = {"crude-oil","petroleum-gas","light-oil","heavy-oil","lubricant","sulfuric-acid","molten-iron","molten-copper","holomium-solution","electrolyte","ammoniacal-solution","ammonia","flourine","flouroketone-hot","flouroketone-cold","lithium-brine"}
+
+local disabled_recipes = {"wooden-chest","burner-inserter","stone-brick","burner-mining-drill","stone-furnace","iron-plate","copper-plate","iron-gear-wheel","firearm-magazine","light-armor",}
+
+local removed_recipes = {"refined-concrete","stone-brick","space-platform-foundation","small-lamp","constant-combinator","selector-combinator","arithmetic-combinator","decider-combinator","decider-combinator","power-switch","programmable-speaker","display-panel","repair-pack","construction-robot","logistic-robot","electric-mining-drill","pumpjack","pipe","pipe-to-ground","pump","storage-tank","rail","cargo-wagon","fluid-wagon","rail-signal","rail-chain-signal","train-stop","locomotive","radar","cargo-landing-pad","speed-module","efficiency-module","transport-belt","fast-transport-belt","underground-belt","fast-underground-belt","splitter","fast-splitter","toolbelt-equipment","rocket-silo","rocket-part","iron-chest","basic-oil-processing","advanced-oil-processing","simple-coal-liquefaction","coal-liquefaction","heavy-oil-cracking","light-oil-cracking","solid-fuel-from-petroleum-gas","solid-fuel-from-light-oil","solid-fuel-from-heavy-oil","acid-neutralisation","steam-condensation","ice-melting","iron-plate","copper-plate","steel-plate","plastic-bar","coal-synthesis","carbon","explosives","battery","sulfur","iron-gear-wheel","iron-stick","copper-cable"}
+
+--hide items
 for name, item in pairs(data.raw.item) do
 	for _, hideName in ipairs(hidden_items) do
 		if item.name == hideName then
 		item.hidden = true
+		item.hidden_in_factoriopedia = true
 		end
 	end
 end
---hide recipies
-for name, recipe in pairs(data.raw.recipe) do
-	for _, hideName in ipairs(hidden_recipes) do
-		if recipe.name == hideName then
-		recipe.hidden = true
-		recipe.hidden_in_factoriopedia = true
+--hide fluids
+for name, fluid in pairs(data.raw.fluid) do
+	for _, hideName in ipairs(hidden_fluids) do
+		if fluid.name == hideName then
+		fluid.hidden = true
+		fluid.hidden_in_factoriopedia = true
 		end
 	end
 end
 --disable recipies
 for name, recipe in pairs(data.raw.recipe) do
-	for _, disableName in ipairs(disabled_recipes) do
-		if recipe.name == disableName then
+	for _, hideName in ipairs(disabled_recipes) do
+		if recipe.name == hideName then
 			recipe.enabled = false
+		end
+	end
+end
+--remove recipies
+for name, recipe in pairs(data.raw.recipe) do
+	for _, hideName in ipairs(removed_recipes) do
+		if recipe.name == hideName then
+			data.raw.recipe[recipe.name] = nil
 		end
 	end
 end
 
 --i'd like to also hide entites from the factoriopedia.
+data.raw.resource["iron-ore"].hidden = true
+data.raw.resource["stone"].hidden = true
+data.raw.resource["coal"].hidden = true
+data.raw.resource["copper-ore"].hidden = true
+data.raw.resource["uranium-ore"].hidden = true
+
+
+
 --raw fish and the pistol are under a different type, so they have to be handled seperately.
 data.raw.capsule ["raw-fish"].hidden = true
 data.raw.gun ["pistol"].hidden = true
