@@ -1,5 +1,5 @@
 data:extend({
-  {--Mineral Glass tempering
+  {--Mineral Glass singing
     type = "recipe",
     category = "micro-assembler",
     name = "mineral-glass-singing",
@@ -13,6 +13,7 @@ data:extend({
       { type = "item", name = "mineral-glass", amount = 1 }
     },
     allow_decomposition = false,
+    factoriopedia_alternative = "mineral-glass",
   },
   {--conductive coil 
     type = "recipe",
@@ -27,5 +28,6 @@ data:extend({
     results = { 
       { type = "item", name = "conductive-coil", amount = 4 }
     },
+    factoriopedia_alternative = "conductive-coil",
   },
 })

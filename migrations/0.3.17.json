@@ -1,0 +1,14 @@
+{
+  "tile": [
+    ["refined-concrete","concrete"]
+  ],
+  "item":[
+    ["refined-concrete","concrete"]
+  ],
+  "recipe":[
+    ["refined-concrete","concrete"]
+  ],
+  "technology": [
+    ["fluid-extraction","fluid-handling"]
+  ]
+}

@@ -10,9 +10,10 @@ data:extend({
       { type = "item", name = "ferric-asteroid-chunk", amount = 10 },
     },
     results = { 
-        { type = "item", name = "general-purpose-structure", amount = 32 }
+      { type = "item", name = "general-purpose-structure", amount = 32 }
     },
     allow_decomposition = false,
+    factoriopedia_alternative = "general-purpose-structure",
   },
   {--mechanical components simple recipe
     type = "recipe",
@@ -25,9 +26,10 @@ data:extend({
       { type = "item", name = "ferric-asteroid-chunk", amount = 10 },
     },
     results = { 
-        { type = "item", name = "mechanical-components", amount = 16 }
+      { type = "item", name = "mechanical-components", amount = 16 }
     },
     allow_decomposition = false,
+    factoriopedia_alternative = "mechanical-components",
   },
   {--conductive coil simple recipe
     type = "recipe",
@@ -40,9 +42,10 @@ data:extend({
       { type = "item", name = "ferric-asteroid-chunk", amount = 10 },
     },
     results = { 
-        { type = "item", name = "conductive-coil", amount = 40 }
+      { type = "item", name = "conductive-coil", amount = 40 }
     },
     allow_decomposition = false,
+    factoriopedia_alternative = "conductive-coil",
   },
   {--modular circuit simple recipe
     type = "recipe",
@@ -56,9 +59,10 @@ data:extend({
       { type = "item", name = "crystalline-asteroid-chunk", amount = 10 },
     },
     results = { 
-        { type = "item", name = "modular-circuit", amount = 16 }
+      { type = "item", name = "modular-circuit", amount = 16 }
     },
     allow_decomposition = false,
+    factoriopedia_alternative = "modular-circuit",
   },
   {--Ai Processor printing
     type = "recipe",
@@ -74,8 +78,9 @@ data:extend({
       { type = "item", name = "crystalline-asteroid-chunk", amount = 10},
     },
     results = { 
-        { type = "item", name = "ai-processor", amount = 1 }
+      { type = "item", name = "ai-processor", amount = 1 }
     },
     allow_decomposition = false,
+    factoriopedia_alternative = "ai-processor",
   },
 })

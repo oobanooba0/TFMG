@@ -1,5 +1,5 @@
-  data:extend({
-    --ferric recipes
+data:extend({
+--ferric recipes
   {
     type = "recipe",
     name = "ferric-plate",
@@ -23,6 +23,7 @@
     results = {{type="item", name="ferric-plate", amount=1}},
     allow_decomposition = false,
     allow_productivity = true,
+    factoriopedia_alternative = "ferric-plate",
   },
   {
     type = "recipe",
@@ -35,8 +36,9 @@
     results = {{type="item", name="ferric-plate", amount=2}},
     allow_decomposition = false,
     allow_productivity = true,
+    factoriopedia_alternative = "ferric-plate",
   },
-  --titanium recipes
+--titanium recipes
   {
     type = "recipe",
     name = "titanium-ore-smelting",
@@ -49,8 +51,7 @@
     allow_decomposition = false,
     allow_productivity = true,
   },
-
-  --mineral recipes
+--mineral recipes
   {
     type = "recipe",
     name = "hot-mineral-plate",
@@ -67,7 +68,7 @@
       property = "gravity",
       min = 0,
       max = 0
-    }}
+    }},
   },
   {
     type = "recipe",
@@ -83,7 +84,7 @@
     surface_conditions = {{
       property = "gravity",
       min = 0.01,
-    }}
+    }},
   },
   {
     type = "recipe",
@@ -97,7 +98,8 @@
     allow_decomposition = false,
     allow_productivity = true,
     result_is_always_fresh = true,
-    surface_conditions = {{
+    factoriopedia_alternative = "hot-mineral-plate",
+    surface_conditions =  {{
       property = "gravity",
       min = 0,
       max = 0
@@ -114,6 +116,7 @@
     results = {{type="item", name="mineral-glass", amount=1}},
     allow_decomposition = false,
     allow_productivity = true,
+    factoriopedia_alternative = "mineral-glass",
     surface_conditions = {{
       property = "gravity",
       min = 0.01,

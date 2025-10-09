@@ -85,11 +85,11 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "water", amount = 20 },
     },
   },
-  {--refined concrete
+  {--concrete
     type = "recipe",
     category = "refinery",
     subgroup = "fluid-recipes",
-    name = "refined-concrete",
+    name = "concrete",
     energy_required = 2,
     enabled = false,
     allow_productivity = true,
@@ -100,7 +100,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 10 },
     },
     results = { 
-      { type = "item", name = "refined-concrete", amount = 1 },
+      { type = "item", name = "concrete", amount = 1 },
     },
   },
 })

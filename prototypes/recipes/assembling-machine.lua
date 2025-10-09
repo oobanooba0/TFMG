@@ -16,6 +16,7 @@ data:extend({
     results = { 
       { type = "item", name = "mineral-glass", amount = 1 }
     },
+    factoriopedia_alternative = "mineral-glass",
   },
   {--General purpose structure
     type = "recipe",
@@ -845,8 +846,7 @@ data:extend({
       { type = "item", name = "high-performance-structure", amount = 64 },
       { type = "item", name = "mechatronic-components", amount = 64 },
       { type = "item", name = "ai-processor", amount = 8 },
-      --{ type = "item", name = "concrete", amount = 128 },
-
+      { type = "item", name = "concrete", amount = 128 },
     },
     results = { 
       { type = "item", name = "rocket-silo", amount = 1 }
@@ -1245,6 +1245,19 @@ data:extend({
     },
     results = { 
       { type = "item", name = "train-stop", amount = 1 }
+    },
+  },
+  {--hazard concrete
+    type = "recipe",
+    category = "assembling-machine",
+    name = "hazard-concrete",
+    energy_required = 1,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "concrete", amount = 1 },
+    },
+    results = { 
+      { type = "item", name = "hazard-concrete", amount = 1 }
     },
   },
 

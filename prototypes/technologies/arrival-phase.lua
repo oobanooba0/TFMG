@@ -1,7 +1,9 @@
 data:extend({
   {--fluid extraction
     type = "technology",
-    name = "fluid-extraction",
+    name = "fluid-handling",--called this so autobarrel should work.
+    localised_name = {"technology-name.fluid-extraction"},
+    localised_description = {"technology-description.fluid-extraction"},
     icon = "__base__/graphics/technology/oil-gathering.png",
     icon_size = 256,
     effects =
@@ -101,7 +103,7 @@ data:extend({
         recipe = "hydrocarbon-seperation"
       },
     },
-    prerequisites = {"fluid-extraction"},
+    prerequisites = {"fluid-handling"},
     unit = {
       count = 64,
       ingredients = {{"introspection-science", 1}},
@@ -155,10 +157,6 @@ data:extend({
       {
         type = "unlock-recipe",
         recipe = "pure-iron-ore-smelting"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "titanium-ore-smelting"
       },
     },
     prerequisites = {"hydrocarbon-processing","small-crusher","solid-extraction"},
@@ -553,7 +551,11 @@ data:extend({
     {
       {
         type = "unlock-recipe",
-        recipe = "refined-concrete"
+        recipe = "concrete"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "hazard-concrete"
       },
     },
     prerequisites = {"energy-distribution-2","exploration-science"},
