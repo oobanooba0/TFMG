@@ -3,6 +3,7 @@ Version: 0.3.17
 Date: 2025-10-10
   Features:
     - Rocket silo added.
+    - Default import location changed
     - barrels and fluid barreling added. Autobarrel2 is a custom script based on the vanilla one, but it allows for barrels with different masses, densities, crafting times, etc.
     - Added a very lazy thruster fuel and thruster fuel recipe. Expect these to change with the next major update.
     - thruster fuel and thruster oxidizer arent meant to go through pipes (theyre LOx and LH2), but they can, because of modding api limitations, This is upsetting me greatly.
