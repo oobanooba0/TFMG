@@ -1,12 +1,22 @@
+--vanilla auto_barrel is no more
 for _, fluid in pairs(data.raw.fluid) do
 	fluid.auto_barrel = false
 end
 
-data.raw.fluid["water"].auto_barrel = true
+--uber_barrel = True to barrel fluid, Uber_barrel is opt in, as I want deliberate choices to be made regarding fluid barreling.
+--default_import_location is used to define the barrels default import location
+--uber_barrel_density can be used to change the quantity of fluid that goes in a barrel. --default 100
+--uber_barrel_thiccness changes the barrel/unbarrel time
+--uber_barrel_crafting_categories sets which machines can craft em
+--uber_barrel_mass sets the mass of a barrel, default is 10
 
+data.raw.fluid["water"].uber_barrel = true
+data.raw.fluid["thruster-fuel"].uber_barrel = true
+data.raw.fluid["thruster-oxidizer"].uber_barrel = true
+--
 
 data:extend({
-    {
+  {
     type = "fluid",
     name = "hydrocarbon-slush",
     icon = "__space-age__/graphics/icons/fluid/lithium-brine.png",
@@ -17,7 +27,7 @@ data:extend({
     heat_capacity = "2kJ",
     base_color = {0.8, 0.85, .8},
     flow_color = {0.6, 0.65, 0.6},
-    auto_barrel = true
+    uber_barrel = true,
   },
   {
     type = "fluid",
@@ -29,7 +39,7 @@ data:extend({
     default_temperature = 15,
     base_color = {0.3, 0.1, 0.3},
     flow_color = {0.8, 0.8, 0.8},
-    auto_barrel = true
+    uber_barrel = true,
   },
   {
     type = "fluid",
@@ -40,7 +50,8 @@ data:extend({
     default_temperature = 37,
     base_color = {0.15, 0.32, 0.03},
     flow_color = {0.43, 0.75, 0.31},
-    auto_barrel = true
+    uber_barrel = true,
+    uber_barrel_density = 10,
   },
   {
     type = "fluid",
@@ -51,7 +62,7 @@ data:extend({
     default_temperature = 95,
     base_color = {0.5, 0.1, 0.0},
     flow_color = {0.7, 0.2, 0.0},
-    auto_barrel = true
+    uber_barrel = true,
   },
   {
     type = "fluid",
@@ -59,9 +70,9 @@ data:extend({
     icon = "__base__/graphics/icons/fluid/light-oil.png",
     subgroup = "fluid",
     order = "b[intermediate-fluid]-d",
-    default_temperature = 95,
+    default_temperature = 15,
     base_color = {0.15, 0.32, 0.03},
     flow_color = {0.43, 0.75, 0.31},
-    auto_barrel = true
+    uber_barrel = true,
   },
 })

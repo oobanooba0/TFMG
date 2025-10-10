@@ -7,8 +7,5 @@
   ],
   "recipe":[
     ["refined-concrete","concrete"]
-  ],
-  "technology": [
-    ["fluid-extraction","fluid-handling"]
   ]
 }

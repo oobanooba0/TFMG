@@ -1260,5 +1260,17 @@ data:extend({
       { type = "item", name = "hazard-concrete", amount = 1 }
     },
   },
-
+  {--barrel
+    type = "recipe",
+    category = "assembling-machine",
+    name = "barrel",
+    energy_required = 1,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "general-purpose-structure", amount = 4 },
+    },
+    results = { 
+      { type = "item", name = "barrel", amount = 1 }
+    },
+  },
 })

@@ -173,4 +173,41 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "steam", amount = 1000, temperature = 1000},
     },
   },
+  {--Thruster oxidizer
+    type = "recipe",
+    category = "chemistry-plant",
+    subgroup = "fluid-recipes",
+    name = "thruster-oxidizer",
+    icon = "__space-age__/graphics/icons/fluid/thruster-oxidizer.png",
+    energy_required = 4,
+    enabled = false,
+    allow_productivity = true,
+    ingredients = {
+      { type = "item", name = "capacitor-charged", amount = 1 },
+      { type = "fluid", name = "water", amount = 100 },
+    },
+    results = { 
+      { type = "item", name = "capacitor-discharged", amount = 1 },
+      { type = "fluid", name = "thruster-oxidizer", amount = 100 },
+      { type = "fluid", name = "thruster-fuel", amount = 10 },
+    },
+  },
+  {--Thruster fuel
+    type = "recipe",
+    category = "chemistry-plant",
+    subgroup = "fluid-recipes",
+    name = "thruster-fuel",
+    icon = "__space-age__/graphics/icons/fluid/thruster-fuel.png",
+    energy_required = 4,
+    enabled = false,
+    allow_productivity = true,
+    ingredients = {
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 60 },
+      { type = "fluid", name = "ferric-solution", amount = 10 },
+    },
+    results = { 
+      { type = "fluid", name = "thruster-fuel", amount = 100 },
+      { type = "fluid", name = "thruster-oxidizer", amount = 10 },
+    },
+  },
 })

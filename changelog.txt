@@ -1,14 +1,18 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.17
-Date: ????
+Date: 2025-10-10
   Features:
     - Rocket silo added.
+    - barrels and fluid barreling added. Autobarrel2 is a custom script based on the vanilla one, but it allows for barrels with different masses, densities, crafting times, etc.
+    - Added a very lazy thruster fuel and thruster fuel recipe. Expect these to change with the next major update.
+    - thruster fuel and thruster oxidizer arent meant to go through pipes (theyre LOx and LH2), but they can, because of modding api limitations, This is upsetting me greatly.
   Changes:
     - Hid a number of vanilla intermediates from factoriopedia
     - Removed a number of vanilla recipes to reduce factoriopedia clutter. Still working on this, some recipes just don't want to cooperate and I don't feel like sorting it out right now.
     - Refined concrete is now replaced with regular concrete.
     - hazard concrete added.
     - items that have multiple alternate recipes, i.e. ferric plates dont show up multiple times in factoriopedia anymore.
+    - Mineral lubricant default temperature is 15 degrees.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.16
 Date: 2025-10-07

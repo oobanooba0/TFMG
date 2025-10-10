@@ -313,7 +313,7 @@ data:extend{rocket_silo}
         volume = 1000,
         pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {0, 1} }},
         secondary_draw_orders = { north = -1 }
-      }
+      },
     },
     fluid_boxes_off_when_no_fluid_recipe = true,
     open_sound = sounds.machine_open,

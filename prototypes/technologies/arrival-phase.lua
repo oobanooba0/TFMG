@@ -1,9 +1,7 @@
 data:extend({
   {--fluid extraction
     type = "technology",
-    name = "fluid-handling",--called this so autobarrel should work.
-    localised_name = {"technology-name.fluid-extraction"},
-    localised_description = {"technology-description.fluid-extraction"},
+    name = "fluid-extraction",
     icon = "__base__/graphics/technology/oil-gathering.png",
     icon_size = 256,
     effects =
@@ -27,6 +25,10 @@ data:extend({
       {
         type = "unlock-recipe",
         recipe = "pumpjack"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "barrel"
       },
     },
     prerequisites = {"consider-your-potential"},
@@ -103,7 +105,7 @@ data:extend({
         recipe = "hydrocarbon-seperation"
       },
     },
-    prerequisites = {"fluid-handling"},
+    prerequisites = {"fluid-extraction"},
     unit = {
       count = 64,
       ingredients = {{"introspection-science", 1}},
