@@ -8,7 +8,7 @@ data:extend({
     icon_size = 64,
     effects = {},
     essential = true,
-    prerequisites = {"contemplate-mind"},
+    prerequisites = {"rocketry"},
     unit =
     {
       count = 1024,

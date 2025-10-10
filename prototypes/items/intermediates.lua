@@ -18,6 +18,7 @@ data:extend({
     stack_size = 100,
     random_tint_color = item_tints.iron_rust,
     default_import_location = "arrival",
+    weight = 2 * kg,
   },
   {
     type = "item",
@@ -32,6 +33,7 @@ data:extend({
     spoil_result = "crystalline-plate",
     spoil_ticks = 60 * second,
     default_import_location = "arrival",
+    weight = 2 * kg,
   },
   {
     type = "item",
@@ -44,6 +46,7 @@ data:extend({
     drop_sound = item_sounds.metal_small_inventory_move,
     stack_size = 100,
     default_import_location = "arrival",
+    weight = 2 * kg,
   },
   {
     type = "item",
@@ -56,6 +59,7 @@ data:extend({
     drop_sound = item_sounds.metal_small_inventory_move,
     stack_size = 100,
     default_import_location = "arrival",
+    weight = 2 * kg,
   },
   {
     type = "item",
@@ -73,6 +77,7 @@ data:extend({
     drop_sound = item_sounds.metal_small_inventory_move,
     stack_size = 100,
     default_import_location = "arrival",
+    weight = 1 * kg,
   },
   {
     type = "item",
@@ -92,7 +97,7 @@ data:extend({
     drop_sound = space_age_item_sounds.agriculture_inventory_move,
     stack_size = 100,
     default_import_location = "gleba",
-    weight = 1 * kg,
+    weight = 5 * kg,
     spoil_ticks = 1 * minute,
     spoil_result = "organic-carbon",
     default_import_location = "arrival",
@@ -127,6 +132,7 @@ data:extend({
     spoil_result = "polymer-bar",
     spoil_ticks = 60 * minute,
     default_import_location = "arrival",
+    weight = 1 * kg,
   },
   {
     type = "item",
@@ -140,6 +146,7 @@ data:extend({
     stack_size = 100,
     random_tint_color = item_tints.plastic,
     default_import_location = "arrival",
+    weight = 1 * kg,
   },
 ---structural intermediates (things which hold everything together)
     {--general purpose structure
@@ -154,6 +161,7 @@ data:extend({
     stack_size = 100,
     random_tint_color = item_tints.iron_rust,
     default_import_location = "arrival",
+    weight = 5 * kg,
   },
   {--high performance structure
     type = "item",
@@ -167,6 +175,7 @@ data:extend({
     stack_size = 50,
     random_tint_color = item_tints.iron_rust,
     default_import_location = "arrival",
+    weight = 2 * kg,
   },
 ---mechanical intermediates (things that make other things move)
   {--mechanical components
@@ -181,6 +190,7 @@ data:extend({
     stack_size = 100,
     random_tint_color = item_tints.iron_rust,
     default_import_location = "arrival",
+    weight = 1 * kg,
   },
   {--mechatronic components
     type = "item",
@@ -209,6 +219,7 @@ data:extend({
     stack_size = 100,
     random_tint_color = item_tints.iron_rust,
     default_import_location = "arrival",
+    weight = 1 * kg,
   },
 ---Electonic intermediates (things that deal with electricity)
   {--Conductive Coil
@@ -222,6 +233,7 @@ data:extend({
     drop_sound = item_sounds.electric_small_inventory_move,
     stack_size = 100,
     default_import_location = "arrival",
+    weight = 0.5 * kg,
   },
   {--optical coil
     type = "item",
@@ -238,6 +250,7 @@ data:extend({
     drop_sound = item_sounds.electric_small_inventory_move,
     stack_size = 100,
     default_import_location = "arrival",
+    weight = 5 * kg,
   },
 --capacitors
   {--capacitor discharged
@@ -269,6 +282,7 @@ data:extend({
         },
       },
     },
+    weight = 10 * kg,
   },
   {--capacitor charged
     type = "item",
@@ -302,6 +316,7 @@ data:extend({
         },
       },
     },
+    weight = 10 * kg,
   },
   --computers
   {--modular circuit
@@ -315,6 +330,7 @@ data:extend({
     drop_sound = item_sounds.electric_small_inventory_move,
     stack_size = 200,
     default_import_location = "arrival",
+    weight = 4 * kg,
   },
   {--ai processor
     type = "item",
@@ -327,6 +343,7 @@ data:extend({
     drop_sound = item_sounds.electric_small_inventory_move,
     stack_size = 100,
     default_import_location = "arrival",
+    weight = 10 * kg,
   },
 ---advanced intermediates. (things that are complex I guess. I will likely subdivide this futher)
   {

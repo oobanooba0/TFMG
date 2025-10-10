@@ -447,7 +447,7 @@ data:extend({
         recipe = "rocket-part"
       },
     },
-    prerequisites = {"rocket-propellant"},
+    prerequisites = {"rocket-propellant","mineral-concrete"},
     unit = {
       count = 512,
       ingredients = {
@@ -789,6 +789,28 @@ data:extend({
       },
     },
     prerequisites = {"micro-assembly"},
+    unit = {
+      count = 256,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1}
+      },
+      time = 64
+    },
+  },
+  {--cliff explosives
+    type = "technology",
+    name = "cliff-explosive",
+    icon = "__base__/graphics/technology/cliff-explosives.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "cliff-explosives"
+      },
+    },
+    prerequisites = {"crystal-excitation"},
     unit = {
       count = 256,
       ingredients = {

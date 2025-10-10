@@ -1273,4 +1273,21 @@ data:extend({
       { type = "item", name = "barrel", amount = 1 }
     },
   },
+  {--cliff explosives
+    type = "recipe",
+    category = "assembling-machine",
+    subgroup = "fluid-recipes",
+    name = "cliff-explosives",
+    energy_required = 8,
+    enabled = false,
+    allow_productivity = true,
+    ingredients = {
+      { type = "item", name = "excited-crystalline-chunk-red", amount = 2 },
+      { type = "item", name = "excited-crystalline-chunk-blue", amount = 2 },
+      { type = "item", name = "barrel", amount = 1 },
+    },
+    results = { 
+      { type = "item", name = "cliff-explosives", amount = 1 },
+    },
+  },
 })
