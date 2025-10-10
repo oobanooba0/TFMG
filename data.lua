@@ -57,6 +57,11 @@ local disabled_recipes = {"wooden-chest","burner-inserter","stone-brick","burner
 
 local removed_recipes = {"stone-brick","space-platform-foundation","small-lamp","constant-combinator","selector-combinator","arithmetic-combinator","decider-combinator","decider-combinator","power-switch","programmable-speaker","display-panel","repair-pack","construction-robot","logistic-robot","electric-mining-drill","pumpjack","pipe","pipe-to-ground","pump","storage-tank","rail","cargo-wagon","fluid-wagon","rail-signal","rail-chain-signal","train-stop","locomotive","radar","cargo-landing-pad","speed-module","efficiency-module","transport-belt","fast-transport-belt","underground-belt","fast-underground-belt","splitter","fast-splitter","toolbelt-equipment","rocket-silo","rocket-part","iron-chest","basic-oil-processing","advanced-oil-processing","simple-coal-liquefaction","coal-liquefaction","heavy-oil-cracking","light-oil-cracking","solid-fuel-from-petroleum-gas","solid-fuel-from-light-oil","solid-fuel-from-heavy-oil","acid-neutralisation","steam-condensation","ice-melting","iron-plate","copper-plate","steel-plate","plastic-bar","coal-synthesis","carbon","explosives","battery","sulfur","iron-gear-wheel","iron-stick","copper-cable","sulfuric-acid","thruster-fuel","advanced-thruster-fuel","thruster-oxidizer","advanced-thruster-oxidizer","concrete","concrete-from-molten-iron","hazard-concrete","refined-concrete","refined-hazard-concrete","barrel"}
 
+for _, item in pairs(data.raw.item) do
+	item.default_import_location = "arrival"
+end
+
+
 --hide items
 for name, item in pairs(data.raw.item) do
 	for _, hideName in ipairs(hidden_items) do
