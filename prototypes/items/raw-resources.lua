@@ -12,6 +12,7 @@ data:extend({
     stack_size = 20,
     weight = 100 * kg,
     flags = {"always-show"},
+    default_import_location = "arrival",
   },
   {--crystalline asteroid chunk
     type = "item",
@@ -25,6 +26,7 @@ data:extend({
     stack_size = 20,
     weight = 100 * kg,
     flags = {"always-show"},
+    default_import_location = "arrival",
   },
   {--ferric ore
     type = "item",
@@ -45,6 +47,7 @@ data:extend({
     stack_size = 50,
     default_import_location = "arrival",
     weight = 1*kg,
+    default_import_location = "arrival",
   },
   {--titanium ore
     type = "item",
@@ -65,6 +68,7 @@ data:extend({
     stack_size = 50,
     default_import_location = "arrival",
     weight = 1*kg,
+    default_import_location = "arrival",
   },
   {--mineral ore
     type = "item",
@@ -85,6 +89,7 @@ data:extend({
     stack_size = 50,
     default_import_location = "arrival",
     weight = 1*kg,
+    default_import_location = "arrival",
   },
   {--purified iron ore
     type = "item",
@@ -104,5 +109,6 @@ data:extend({
     stack_size = 50,
     default_import_location = "arrival",
     weight = 1*kg,
+    default_import_location = "arrival",
   },
 })

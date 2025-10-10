@@ -14,6 +14,7 @@ data:extend({
     place_result = "inserter-1",
     stack_size = 50,
     flags = {"always-show"},
+    default_import_location = "arrival",
   },
   {
     type = "item",
@@ -28,5 +29,6 @@ data:extend({
     place_result = "long-inserter-1",
     stack_size = 50,
     flags = {"always-show"},
+    default_import_location = "arrival",
   },
 })

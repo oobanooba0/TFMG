@@ -13,6 +13,7 @@ data:extend({
     pick_sound = item_sounds.lab_inventory_pickup,
     drop_sound = item_sounds.lab_inventory_move,
     place_result = "neural-node",
-    stack_size = 10
+    stack_size = 10,
+    default_import_location = "arrival",
   },
 })

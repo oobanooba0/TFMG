@@ -12,6 +12,7 @@ data:extend({
     drop_sound = item_sounds.metal_large_inventory_move,
     place_result = "scout-radar",
     stack_size = 10,
-    random_tint_color = item_tints.iron_rust
+    random_tint_color = item_tints.iron_rust,
+    default_import_location = "arrival",
   },
 })

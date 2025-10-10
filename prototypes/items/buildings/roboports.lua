@@ -13,6 +13,7 @@ data:extend({
     inventory_move_sound = item_sounds.roboport_inventory_move,
     pick_sound = item_sounds.roboport_inventory_pickup,
     drop_sound = item_sounds.roboport_inventory_move,
-    stack_size = 10
+    stack_size = 10,
+    default_import_location = "arrival",
   },
 })

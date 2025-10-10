@@ -12,7 +12,8 @@ data.extend({
     drop_sound = item_sounds.metal_chest_inventory_move,
     place_result = "container-1",
     stack_size = 50,
-    random_tint_color = item_tints.iron_rust
+    random_tint_color = item_tints.iron_rust,
+    default_import_location = "arrival",
   },
   {--passive provider container 1
     type = "item",
@@ -25,7 +26,8 @@ data.extend({
     pick_sound = item_sounds.metal_chest_inventory_pickup,
     drop_sound = item_sounds.metal_chest_inventory_move,
     place_result = "passive-provider-container-1",
-    stack_size = 50
+    stack_size = 50,
+    default_import_location = "arrival",
   },
   {--storage container 1
     type = "item",
@@ -38,6 +40,7 @@ data.extend({
     pick_sound = item_sounds.metal_chest_inventory_pickup,
     drop_sound = item_sounds.metal_chest_inventory_move,
     place_result = "storage-container-1",
-    stack_size = 50
+    stack_size = 50,
+    default_import_location = "arrival",
   },
 })

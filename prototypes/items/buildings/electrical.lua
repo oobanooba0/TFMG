@@ -11,7 +11,8 @@ data:extend({
     pick_sound = item_sounds.electric_large_inventory_pickup,
     drop_sound = item_sounds.electric_large_inventory_move,
     place_result = "energy-monitor",
-    stack_size = 50
+    stack_size = 50,
+    default_import_location = "arrival",
   },
 ---poles
   {
@@ -24,7 +25,8 @@ data:extend({
     pick_sound = item_sounds.electric_large_inventory_pickup,
     drop_sound = item_sounds.electric_large_inventory_move,
     place_result = "tiny-electric-pylon",
-    stack_size = 100
+    stack_size = 100,
+    default_import_location = "arrival",
   },
   {
     type = "item",
@@ -36,7 +38,8 @@ data:extend({
     pick_sound = item_sounds.electric_large_inventory_pickup,
     drop_sound = item_sounds.electric_large_inventory_move,
     place_result = "small-electric-pylon",
-    stack_size = 100
+    stack_size = 100,
+    default_import_location = "arrival",
   },
   {
     type = "item",
@@ -49,7 +52,8 @@ data:extend({
     drop_sound = item_sounds.electric_large_inventory_move,
     place_result = "large-electric-pylon",
     stack_size = 50,
-    random_tint_color = item_tints.iron_rust
+    random_tint_color = item_tints.iron_rust,
+    default_import_location = "arrival",
   },
 
 
@@ -67,6 +71,7 @@ data:extend({
     weight = 1000 * tons,
     stack_size = 1,
     flags = {"always-show"},
+    default_import_location = "arrival",
   },
   {
     type = "item",
@@ -79,7 +84,8 @@ data:extend({
     pick_sound = item_sounds.electric_large_inventory_pickup,
     drop_sound = item_sounds.electric_large_inventory_move,
     place_result = "solar-cell",
-    stack_size = 50
+    stack_size = 50,
+    default_import_location = "arrival",
   },
   {
     type = "item",
@@ -92,7 +98,8 @@ data:extend({
     drop_sound = item_sounds.steam_inventory_move,
     place_result = "small-turbine",
     stack_size = 10,
-    random_tint_color = item_tints.iron_rust
+    random_tint_color = item_tints.iron_rust,
+    default_import_location = "arrival",
   },
   {
     type = "item",
@@ -106,7 +113,8 @@ data:extend({
     place_result = "small-heat-exchanger",
     stack_size = 50,
     weight = 40*kg,
-    random_tint_color = item_tints.iron_rust
+    random_tint_color = item_tints.iron_rust,
+    default_import_location = "arrival",
   },
   {
     type = "item",
@@ -116,6 +124,7 @@ data:extend({
     subgroup = "energy",
     order = "c[heat]-a[chemical]",
     place_result = "chemical-reactor",
+    default_import_location = "arrival",
   },
 ---Discharge-charge
   {
@@ -126,6 +135,7 @@ data:extend({
     order = "d[charger]-a[recharge]",
     place_result = "charger",
     stack_size = 50,
+    default_import_location = "arrival",
   },
   {
     type = "item",
@@ -135,5 +145,6 @@ data:extend({
     order = "d[charger]-b[decharge]",
     place_result = "discharger",
     stack_size = 50,
+    default_import_location = "arrival",
   },
 })

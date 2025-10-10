@@ -13,6 +13,7 @@ data:extend({
     place_result = "matter-reconstructor",
     stack_size = 50,
     flags = {"always-show"},
+    default_import_location = "arrival",
   },
   {-- assembling machine
     type = "item",
@@ -26,6 +27,7 @@ data:extend({
     place_result = "assembling-machine",
     stack_size = 50,
     weight = 40*kg,
+    default_import_location = "arrival",
   },
   {-- furnace
     type = "item",
@@ -38,7 +40,8 @@ data:extend({
     drop_sound = item_sounds.electric_large_inventory_move,
     place_result = "furnace",
     stack_size = 50,
-    weight = 20*kg
+    weight = 20*kg,
+    default_import_location = "arrival",
   },
   {--supercomputer
     type = "item",
@@ -51,6 +54,7 @@ data:extend({
     drop_sound = item_sounds.mechanical_inventory_move,
     place_result = "supercomputer",
     stack_size = 50,
+    default_import_location = "arrival",
   },
   {--supercomputer input
     type = "item",
@@ -84,7 +88,8 @@ data:extend({
     pick_sound = item_sounds.fluid_inventory_pickup,
     drop_sound = item_sounds.fluid_inventory_move,
     place_result = "chemistry-plant",
-    stack_size = 10
+    stack_size = 10,
+    default_import_location = "arrival",
   },
   {-- refinery
     type = "item",
@@ -96,7 +101,8 @@ data:extend({
     pick_sound = item_sounds.fluid_inventory_pickup,
     drop_sound = item_sounds.fluid_inventory_move,
     place_result = "refinery",
-    stack_size = 10
+    stack_size = 10,
+    default_import_location = "arrival",
   },
   {-- micro assembler
     type = "item",
@@ -110,6 +116,7 @@ data:extend({
     place_result = "micro-assembler",
     stack_size = 50,
     weight = 40*kg,
+    default_import_location = "arrival",
   },
   {--small crusher
     type = "item",
@@ -122,6 +129,7 @@ data:extend({
     drop_sound = item_sounds.drill_inventory_move,
     place_result = "small-crusher",
     stack_size = 10,
-    weight = 100*kg
+    weight = 100*kg,
+    default_import_location = "arrival",
   },
 })
