@@ -18,8 +18,8 @@ data:extend({
     ingredients = {
       { type = "item", name = "high-performance-structure", amount = 2 },
       { type = "item", name = "ai-processor", amount = 1 },
-      { type = "fluid", name = "thruster-fuel", amount = 10},
-      { type = "fluid", name = "thruster-oxidizer", amount = 10},
+      { type = "fluid", name = "thruster-fuel", amount = 32},
+      { type = "fluid", name = "thruster-oxidizer", amount = 32},
     },
     results = {
       { type = "item", name = "rocket-part", amount = 1 }

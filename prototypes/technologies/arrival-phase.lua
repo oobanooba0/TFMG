@@ -403,6 +403,61 @@ data:extend({
       time = 16
     },
   },
+  {--rocket propellant
+    type = "technology",
+    name = "rocket-propellant",
+    icons = {
+      {icon = "__space-age__/graphics/icons/fluid/thruster-fuel.png", icon_size = 64, shift = {64,0}},
+      {icon = "__space-age__/graphics/icons/fluid/thruster-oxidizer.png", icon_size = 64, shift = {-64,0}},
+    },
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "thruster-fuel"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "thruster-oxidizer"
+      },
+    },
+    prerequisites = {"capacitors","micro-assembly"},
+    unit = {
+      count = 256,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1}
+      },
+      time = 32
+    },
+  },
+  {--rockets
+    type = "technology",
+    name = "rocketry",
+    icon = "__base__/graphics/technology/rocket-silo.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "rocket-silo"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "rocket-part"
+      },
+    },
+    prerequisites = {"rocket-propellant"},
+    unit = {
+      count = 512,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1}
+      },
+      time = 32
+    },
+  },
+
 --side techs
   {--energy distribution 2
     type = "technology",

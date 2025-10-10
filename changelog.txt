@@ -3,6 +3,7 @@ Version: 0.3.17
 Date: 2025-10-10
   Features:
     - Rocket silo added.
+    - Rocket part recipe added.
     - Default import location changed
     - barrels and fluid barreling added. Autobarrel2 is a custom script based on the vanilla one, but it allows for barrels with different masses, densities, crafting times, etc.
     - Added a very lazy thruster fuel and thruster fuel recipe. Expect these to change with the next major update.
@@ -14,6 +15,7 @@ Date: 2025-10-10
     - hazard concrete added.
     - items that have multiple alternate recipes, i.e. ferric plates dont show up multiple times in factoriopedia anymore.
     - Mineral lubricant default temperature is 15 degrees.
+    - Victory tech is now gated behind rockets.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.16
 Date: 2025-10-07
