@@ -6,23 +6,6 @@
     type = "lab",
     name = "neural-node",
     icon = "__base__/graphics/icons/lab.png",
-    custom_tooltip_fields = {
-      {
-      name = {"thermal-system.max-temperature"},
-      value = {"thermal-system.neural-node-max-temperature"},
-      order = 254,
-      },
-      {
-      name = {"thermal-system.damage-temperature"},
-      value = {"thermal-system.neural-node-damage-temperature"},
-      order = 254,
-      },
-      {
-      name = {"thermal-system.efficiency"},
-      value = {"thermal-system.neural-node-efficiency"},
-      order = 255,
-      },
-    },
     flags = {"placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "neural-node"},
     max_health = 150,
@@ -140,5 +123,10 @@
       {inventory_index = defines.inventory.lab_modules, shift = {0, 1.2}, max_icons_per_row = 5,},
       {inventory_index = defines.inventory.lab_input, shift = {0, 0}, max_icons_per_row = 5, separation_multiplier = 1/1.1}
     },
+    thermal_system = {
+      max_working_temperature = 90,
+      max_safe_temperature = 130,
+      heat_ratio = 1,
+    }
   },
 })

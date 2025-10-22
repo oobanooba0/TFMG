@@ -118,17 +118,10 @@ script.on_event(defines.events.on_gui_opened, function(event)
 	local player_storage = storage.players[event.player_index]
   if event.gui_type == defines.gui_type.entity then
 		player_storage.gui_entity = event.entity
-		thermal_system.on_gui_open(event)
 		if event.entity.type == "space-platform-hub" then 
 			player_storage.hub = event.entity--we're gonna store the location, which is always 0,0
 		end
   end
-end)
-
-script.on_event(defines.events.on_gui_closed, function(event)
-	if event.gui_type == defines.gui_type.entity then
-		thermal_system.on_gui_close(event)
-	end
 end)
 
 script.on_event(defines.events.on_gui_click, function(event)

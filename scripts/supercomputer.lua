@@ -54,14 +54,6 @@ function supercomputer.on_supercomputer_built(entity)
   end
   local supercomputer_input = surface.create_entity({ name = "supercomputer-input", position = inputxy, force = force, direction = direction, fast_replace = true })
   local supercomputer_output = surface.create_entity({ name = "supercomputer-output", position = outputxy, force = force, direction = direction, fast_replace = true})
-  if surface.get_property("gravity") == 0 then
-    interface = surface.create_entity({ name = "supercomputer-heat-interface", position = entity.position, force = force })
-    interface.temperature = 80
-    interface.destructible = false
-    interface.disabled_by_script = true
-  else
-    interface = nil
-  end
   supercomputer_input.destructible = false
   supercomputer_output.destructible = false
   entity.disabled_by_script = true
@@ -119,23 +111,11 @@ function supercomputer.on_supercomputer_tick()
  storage.machine_from_k = flib_table.for_n_of(
 		storage.supercomputer, storage.machine_from_k, 100000000,
 		function(v)
-      if v.machine.valid == false then--checks for machine validity, preventing a game crash if the machine is destroyed instantly.
-		  return end
-      if v.interface ~= nil then --specifically for the supercomputer, we need to handle the case when its built on the surface, and doesnt have a heat interface.
-			  local max_working_temperature = 90
-			  local max_safe_temperature = 120
-			  local specific_heat = 5
-			  local heat_ratio = 1
-			  local base_energy_consumption = 25--25MW is alot, but this machine never runs continuously
-			  --thermal_update(v,max_working_temperature,max_safe_temperature,specific_heat,heat_ratio,base_energy_consumption) -- commenting this out because this script wont exist soon enough
-        if v.interface.temperature >= max_working_temperature then
-        return end
-      else
-        v.machine.disabled_by_script = false
-      end
+      if not v.machine.valid then return end --checks for machine validity, preventing a game crash if the machine is destroyed instantly.
+      if v.machine.disabled_by_script then return end --If the machine has been disabled at the start of the tick, we dont have to run anything else.
       
       local recipe = v.machine.get_recipe()
-      if recipe == nil then--If no recipe then only the reset script needs to run and we can skip all else.
+      if not recipe then--If no recipe then only the reset script needs to run and we can skip all else.
         if v.recipe == recipe then return end
           v.output.get_control_behavior().remove_section(1)
           v.recipe = nil

@@ -2,6 +2,12 @@
 Version: 0.4.0
 Date: ????
   Changes:
+    - old saves broken. Sorry. Not breaking them would have taken months out of my life.
+    - All machines are ported over to the new TFMG Thermal thermal system, which is a significantly improved version of the old thermal system, Its infinitely easier for me to dev with as well as being massively more performant at scale. (It took me over a week to do this, but its genuinely huge)
+    - Machines no longer have damage resistances (For now, while theres no meaningful sorces of damage in the game)
+    - Super computer now has a lower damage temperature, and slightly higher max temperature. (making it slightly riskier to use)
+    - Computer type buildings (super computer, and neural nodes) always have the thermal system, regardless of surface. Theres now no reason to do science on the surface.
+    - supercomputers now use 100MW (which in practice, is much lower, due to how much downtime a machine has)
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.17
 Date: 2025-10-10

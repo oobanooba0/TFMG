@@ -134,28 +134,11 @@ data:extend{rocket_silo}
     })
   data:extend{supercomputer_output}
 --TFMG buildings
-  data:extend({
+data:extend({
   {--matter reconstructor
     type = "assembling-machine",
     name = "matter-reconstructor",
     icon = "__Krastorio2Assets__/icons/entities/stabilizer-charging-station.png",
-    custom_tooltip_fields = {
-      {
-      name = {"thermal-system.max-temperature"},
-      value = {"thermal-system.matter-reassembler-max-temperature"},
-      order = 253,
-      },
-      {
-      name = {"thermal-system.damage-temperature"},
-      value = {"thermal-system.matter-reassembler-damage-temperature"},
-      order = 254,
-      },
-      {
-      name = {"thermal-system.efficiency"},
-      value = {"thermal-system.matter-reassembler-efficiency"},
-      order = 255,
-      },
-    },
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "matter-reconstructor"},
     max_health = 1000,
@@ -165,13 +148,6 @@ data:extend{rocket_silo}
     icons_positioning =
     {
       {inventory_index = defines.inventory.crafter_modules, shift = {0,0.2}, max_icons_per_row = 4, scale = 0.3}
-    },
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 70
-      }
     },
     collision_box = {{-0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{-0.9, -0.9}, {0.9, 0.9}},
@@ -257,29 +233,24 @@ data:extend{rocket_silo}
       sound = {filename = "__base__/sound/assembling-machine-t1-1.ogg", volume = 0.5, audible_distance_modifier = 0.5},
       fade_in_ticks = 4,
       fade_out_ticks = 20
+    },
+    thermal_system = {
+      max_working_temperature = 1024,
+      max_safe_temperature = 1337,
+      heat_ratio = 0.01,
+      surface_conditions = {
+        {
+        property = "pressure",
+        min = 0,
+        max = 0,
+        }
+      }
     }
   },
   {--Assembling machine
     type = "assembling-machine",
     name = "assembling-machine",
     icon = "__base__/graphics/icons/assembling-machine-3.png",
-    custom_tooltip_fields = {
-      {
-      name = {"thermal-system.max-temperature"},
-      value = {"thermal-system.assembling-machine-max-temperature"},
-      order = 253,
-      },
-      {
-      name = {"thermal-system.damage-temperature"},
-      value = {"thermal-system.assembling-machine-damage-temperature"},
-      order = 254,
-      },
-      {
-      name = {"thermal-system.efficiency"},
-      value = {"thermal-system.assembling-machine-efficiency"},
-      order = 255,
-      },
-    },
     flags = {"placeable-neutral","placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "assembling-machine"},
     max_health = 400,
@@ -289,13 +260,6 @@ data:extend{rocket_silo}
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["assembling-machine"],
     alert_icon_shift = util.by_pixel(0, -12),
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 70
-      }
-    },
     fluid_boxes =
     {
       {
@@ -373,28 +337,23 @@ data:extend{rocket_silo}
     energy_usage = "1MW",
     module_slots = 6,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
+    thermal_system = {
+      max_working_temperature = 250,
+      max_safe_temperature = 350,
+      heat_ratio = 0.5,
+      surface_conditions = {
+        {
+        property = "pressure",
+        min = 0,
+        max = 0,
+        }
+      }
+    }
   },
   {--furnace
     type = "furnace",
     name = "furnace",
     icon = "__base__/graphics/icons/electric-furnace.png",
-    custom_tooltip_fields = {
-      {
-      name = {"thermal-system.max-temperature"},
-      value = {"thermal-system.furnace-max-temperature"},
-      order = 253,
-      },
-      {
-      name = {"thermal-system.damage-temperature"},
-      value = {"thermal-system.furnace-damage-temperature"},
-      order = 254,
-      },
-      {
-      name = {"thermal-system.efficiency"},
-      value = {"thermal-system.furnace-efficiency"},
-      order = 255,
-      },
-    },
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "furnace"},
     circuit_wire_max_distance = furnace_circuit_wire_max_distance,
@@ -402,13 +361,6 @@ data:extend{rocket_silo}
     max_health = 350,
     corpse = "electric-furnace-remnants",
     dying_explosion = "electric-furnace-explosion",
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 80
-      }
-    },
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.4, -1.4}, {1.4, 1.4}},
     damaged_trigger_effect = hit_effects.entity(),
@@ -559,29 +511,24 @@ data:extend{rocket_silo}
         rotate = false,
         orientation_to_variation = false
       }
+    },
+    thermal_system = {
+      max_working_temperature = 400,
+      max_safe_temperature = 500,
+      heat_ratio = 0.8,
+      surface_conditions = {
+        {
+        property = "pressure",
+        min = 0,
+        max = 0,
+        }
+      }
     }
   },
   {--supercomputer
     type = "assembling-machine",
     name = "supercomputer",
     icon = "__Krastorio2Assets__/icons/entities/quantum-computer.png",
-    custom_tooltip_fields = {
-      {
-      name = {"thermal-system.max-temperature"},
-      value = {"thermal-system.supercomputer-max-temperature"},
-      order = 253,
-      },
-      {
-      name = {"thermal-system.damage-temperature"},
-      value = {"thermal-system.supercomputer-damage-temperature"},
-      order = 254,
-      },
-      {
-      name = {"thermal-system.efficiency"},
-      value = {"thermal-system.supercomputer-efficiency"},
-      order = 255,
-      },
-    },
     flags = {"placeable-neutral","placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "supercomputer"},
     max_health = 400,
@@ -710,31 +657,19 @@ data:extend{rocket_silo}
       usage_priority = "secondary-input",
       emissions_per_minute = { pollution = 2 },
     },
-    energy_usage = "25MW",
+    energy_usage = "100MW",
     module_slots = 5,
     allowed_effects = {"pollution", "quality", "consumption"},
+    thermal_system = {
+      max_working_temperature = 105,
+      max_safe_temperature = 120,
+      heat_ratio = 1,
+    },
   },
   {--chemistry-plant
     type = "assembling-machine",
     name = "chemistry-plant",
     icon = "__base__/graphics/icons/chemical-plant.png",
-    custom_tooltip_fields = {
-      {
-      name = {"thermal-system.max-temperature"},
-      value = {"thermal-system.chemistry-plant-max-temperature"},
-      order = 253,
-      },
-      {
-      name = {"thermal-system.damage-temperature"},
-      value = {"thermal-system.chemistry-plant-damage-temperature"},
-      order = 254,
-      },
-      {
-      name = {"thermal-system.efficiency"},
-      value = {"thermal-system.chemistry-plant-efficiency"},
-      order = 255,
-      },
-    },
     flags = {"placeable-neutral","placeable-player", "player-creation"},
     minable = {mining_time = 0.1, result = "chemistry-plant"},
     max_health = 300,
@@ -1021,29 +956,24 @@ data:extend{rocket_silo}
       },
       rotate = false,
       orientation_to_variation = true
+    },
+    thermal_system = {
+      max_working_temperature = 320,
+      max_safe_temperature = 355,
+      heat_ratio = 0.45,
+      surface_conditions = {
+        {
+        property = "pressure",
+        min = 0,
+        max = 0,
+        }
+      }
     }
   },
   {--refinery
     type = "assembling-machine",
     name = "refinery",
     icon = "__base__/graphics/icons/oil-refinery.png",
-    custom_tooltip_fields = {
-      {
-      name = {"thermal-system.max-temperature"},
-      value = {"thermal-system.refinery-max-temperature"},
-      order = 253,
-      },
-      {
-      name = {"thermal-system.damage-temperature"},
-      value = {"thermal-system.refinery-damage-temperature"},
-      order = 254,
-      },
-      {
-      name = {"thermal-system.efficiency"},
-      value = {"thermal-system.refinery-efficiency"},
-      order = 255,
-      },
-    },
     flags = {"placeable-neutral","player-creation"},
     minable = {mining_time = 0.2, result = "refinery"},
     max_health = 350,
@@ -1257,29 +1187,24 @@ data:extend{rocket_silo}
       },
       rotate = false,
       orientation_to_variation = true
+    },
+    thermal_system = {
+      max_working_temperature = 400,
+      max_safe_temperature = 450,
+      heat_ratio = 0.7,
+      surface_conditions = {
+        {
+        property = "pressure",
+        min = 0,
+        max = 0,
+        }
+      }
     }
   },
   {--micro assembler
     type = "assembling-machine",
     name = "micro-assembler",
     icon = "__base__/graphics/icons/assembling-machine-2.png",
-    custom_tooltip_fields = {
-      {
-      name = {"thermal-system.max-temperature"},
-      value = {"thermal-system.assembling-machine-max-temperature"},
-      order = 253,
-      },
-      {
-      name = {"thermal-system.damage-temperature"},
-      value = {"thermal-system.assembling-machine-damage-temperature"},
-      order = 254,
-      },
-      {
-      name = {"thermal-system.efficiency"},
-      value = {"thermal-system.assembling-machine-efficiency"},
-      order = 255,
-      },
-    },
     flags = {"placeable-neutral","placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "micro-assembler"},
     max_health = 400,
@@ -1293,13 +1218,6 @@ data:extend{rocket_silo}
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["assembling-machine"],
     alert_icon_shift = util.by_pixel(0, -12),
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 70
-      }
-    },
     fluid_boxes =
     {
       {
@@ -1464,28 +1382,23 @@ data:extend{rocket_silo}
     energy_usage = "1.5MW",
     module_slots = 3,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
+    thermal_system = {
+      max_working_temperature = 250,
+      max_safe_temperature = 350,
+      heat_ratio = 0.5,
+      surface_conditions = {
+        {
+        property = "pressure",
+        min = 0,
+        max = 0,
+        }
+      }
+    }
   },
   {--Small crusher
     type = "assembling-machine",
     name = "small-crusher",
     icon = "__space-age__/graphics/icons/crusher.png",
-    custom_tooltip_fields = {
-      {
-      name = {"thermal-system.max-temperature"},
-      value = {"thermal-system.small-crusher-max-temperature"},
-      order = 253,
-      },
-      {
-      name = {"thermal-system.damage-temperature"},
-      value = {"thermal-system.small-crusher-damage-temperature"},
-      order = 254,
-      },
-      {
-      name = {"thermal-system.efficiency"},
-      value = {"thermal-system.small-crusher-efficiency"},
-      order = 255,
-      },
-    },
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "small-crusher"},
     max_health = 350,
@@ -1493,13 +1406,6 @@ data:extend{rocket_silo}
     dying_explosion = "electric-furnace-explosion",
     circuit_wire_max_distance = 9,
     circuit_connector = circuit_connector_definitions["crusher"],
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 80
-      }
-    },
     collision_box = {{-0.7, -1.2}, {0.7, 1.2}},
     selection_box = {{-0.9, -1.4}, {0.9, 1.4}},
     damaged_trigger_effect = hit_effects.entity(),
@@ -1548,6 +1454,18 @@ data:extend{rocket_silo}
       },
       rotate = false,
       orientation_to_variation = false
+    },
+    thermal_system = {
+      max_working_temperature = 300,
+      max_safe_temperature = 450,
+      heat_ratio = 0.7,
+      surface_conditions = {
+        {
+        property = "pressure",
+        min = 0,
+        max = 0,
+        }
+      }
     }
   },
 })
