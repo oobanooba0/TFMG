@@ -290,7 +290,7 @@ data:extend({
       fade_out_ticks = 20
     },
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.4, -1.4}, {1.4, 1.4}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.2,
     graphics_set =
@@ -362,7 +362,7 @@ data:extend({
     corpse = "electric-furnace-remnants",
     dying_explosion = "electric-furnace-explosion",
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.4, -1.4}, {1.4, 1.4}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     damaged_trigger_effect = hit_effects.entity(),
     icon_draw_specification = {shift = {0, -0.1}},
     icons_positioning =
@@ -576,7 +576,7 @@ data:extend({
     --id love a working sound, but its awful.
     impact_category = "metal",
     collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
-    selection_box = {{-2.4, -2.4}, {2.4, 2.4}},
+    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.2,
     graphics_set = {
@@ -683,7 +683,7 @@ data:extend({
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["chemical-plant"],
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.4, -1.4}, {1.4, 1.4}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.4,
     graphics_set =
@@ -988,7 +988,7 @@ data:extend({
     circuit_connector = circuit_connector_definitions["oil-refinery"],
     collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
     collision_mask = {layers={item=true, object=true, player=true, water_tile=true, elevated_rail=true, is_object=true, is_lower_object=true, meltable=true}},
-    selection_box = {{-2.4, -2.4}, {2.4, 2.4}},
+    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.3,
     crafting_categories = {"refinery"},
@@ -1256,7 +1256,7 @@ data:extend({
       fade_out_ticks = 20
     },
     collision_box = {{-0.3, -0.8}, {0.3, 0.8}},
-    selection_box = {{-0.4, -0.9}, {0.4, 0.9}},
+    selection_box = {{-0.5, -1}, {0.5, 1}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.2,
     graphics_set =
@@ -1407,7 +1407,7 @@ data:extend({
     circuit_wire_max_distance = 9,
     circuit_connector = circuit_connector_definitions["crusher"],
     collision_box = {{-0.7, -1.2}, {0.7, 1.2}},
-    selection_box = {{-0.9, -1.4}, {0.9, 1.4}},
+    selection_box = {{-1, -1.5}, {1, 1.5}},
     damaged_trigger_effect = hit_effects.entity(),
     icons_positioning =
     {

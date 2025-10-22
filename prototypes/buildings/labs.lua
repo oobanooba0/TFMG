@@ -12,7 +12,7 @@
     corpse = "lab-remnants",
     dying_explosion = "lab-explosion",
     collision_box = {{-1.9, -1.9}, {1.9, 1.9}},
-    selection_box = {{-1.9, -1.9}, {1.9, 1.9}},
+    selection_box = {{-2, -2}, {2, 2}},
     damaged_trigger_effect = hit_effects.entity(),
     on_animation =
     {
