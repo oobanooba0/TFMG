@@ -8,6 +8,7 @@ Date: ????
     - Super computer now has a lower damage temperature, and slightly higher max temperature. (making it slightly riskier to use)
     - Computer type buildings (super computer, and neural nodes) always have the thermal system, regardless of surface. Theres now no reason to do science on the surface.
     - supercomputers now use 100MW (which in practice, is much lower, due to how much downtime a machine has)
+    - Supercomputers now have the inputs on the south side when in north rotation. This will mess up your blueprints.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.17
 Date: 2025-10-10

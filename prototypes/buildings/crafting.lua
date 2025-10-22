@@ -347,7 +347,13 @@ data:extend({
         min = 0,
         max = 0,
         }
-      }
+      },
+      connections = {
+        { position = {0, -1}, direction = 0},
+        { position = {1, 0}, direction = 4},
+        { position = {0, 1}, direction = 8},
+        { position = {-1, 0}, direction = 12},
+      },
     }
   },
   {--furnace
@@ -522,7 +528,17 @@ data:extend({
         min = 0,
         max = 0,
         }
-      }
+      },
+      connections = {--totally pointless, as this is the default connection set in TFMG_thermal, but it feels wrong not to define it explicitly
+        { position = {1, -1}, direction = 0},
+        { position = {-1, -1}, direction = 0},
+        { position = {1, 1}, direction = 4},
+        { position = {1, -1}, direction = 4},
+        { position = {1, 1}, direction = 8},
+        { position = {-1, 1}, direction = 8},
+        { position = {-1, 1}, direction = 12},
+        { position = {-1, -1}, direction = 12},
+      },
     }
   },
   {--supercomputer
@@ -553,19 +569,19 @@ data:extend({
     {
       {
         production_type = "input",
-        pipe_picture = assembler2pipepictures(),
+        --pipe_picture = assembler2pipepictures(),
         --pipe_covers = pipecoverspictures(),
         volume = 1000,
-        pipe_connections = {{ flow_direction="input", direction = defines.direction.south, position = {1, -2} }},
+        pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {1, 2} }},
         secondary_draw_orders = { north = -1 },
         draw_only_when_connected = true,
       },
       {
         production_type = "output",
-        pipe_picture = assembler2pipepictures(),
+        --pipe_picture = assembler2pipepictures(),
         --pipe_covers = pipecoverspictures(),
         volume = 1000,
-        pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {-1, -2} }},
+        pipe_connections = {{ flow_direction="output", direction = defines.direction.north, position = {-1, 2} }},
         secondary_draw_orders = { north = -1 },
         draw_only_when_connected = true,
       }

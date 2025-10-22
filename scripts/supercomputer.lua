@@ -23,44 +23,46 @@ function supercomputer.on_supercomputer_built(entity)
 	local position_x = entity.position.x
   local position_y = entity.position.y
   local direction = entity.direction--no idea if i can get things supporting orientations, but i need to. worst case this requires an additional proxy entity.
+  local interface_direction = direction + 8
+  if interface_direction >= 16 then interface_direction = interface_direction - 8 end
   if entity.mirroring == false then
     if direction == 0 then
-      inputxy = {position_x-1,position_y-2}
-      outputxy = {position_x+1,position_y-2}
-    elseif direction == 4 then
-      inputxy = {position_x+2,position_y-1}
-      outputxy = {position_x+2,position_y+1}
-    elseif direction == 8 then
-      inputxy = {position_x+1,position_y+2}
+      inputxy  = {position_x+1,position_y+2}
       outputxy = {position_x-1,position_y+2}
-    elseif direction == 12 then
-      inputxy = {position_x-2,position_y+1}
+    elseif direction == 4 then
+      inputxy  = {position_x-2,position_y+1}
       outputxy = {position_x-2,position_y-1}
+    elseif direction == 8 then
+      inputxy  = {position_x-1,position_y-2}
+      outputxy = {position_x+1,position_y-2}
+    elseif direction == 12 then
+      inputxy  = {position_x+2,position_y-1}
+      outputxy = {position_x+2,position_y+1}
     end
   else
     if direction == 0 then
-      outputxy = {position_x-1,position_y-2}
-      inputxy = {position_x+1,position_y-2}
-    elseif direction == 4 then
-      outputxy = {position_x+2,position_y-1}
-      inputxy = {position_x+2,position_y+1}
-    elseif direction == 8 then
+      inputxy  = {position_x-1,position_y+2}
       outputxy = {position_x+1,position_y+2}
-      inputxy = {position_x-1,position_y+2}
-    elseif direction == 12 then
+    elseif direction == 4 then
+      inputxy  = {position_x-2,position_y-1}
       outputxy = {position_x-2,position_y+1}
-      inputxy = {position_x-2,position_y-1}
+    elseif direction == 8 then
+      inputxy  = {position_x+1,position_y-2}
+      outputxy = {position_x-1,position_y-2}
+    elseif direction == 12 then
+      inputxy  = {position_x+2,position_y+1}
+      outputxy = {position_x+2,position_y-1}
     end
   end
-  local supercomputer_input = surface.create_entity({ name = "supercomputer-input", position = inputxy, force = force, direction = direction, fast_replace = true })
-  local supercomputer_output = surface.create_entity({ name = "supercomputer-output", position = outputxy, force = force, direction = direction, fast_replace = true})
+  local supercomputer_input = surface.create_entity({ name = "supercomputer-input", position = inputxy, force = force, direction = interface_direction, fast_replace = true })
+  local supercomputer_output = surface.create_entity({ name = "supercomputer-output", position = outputxy, force = force, direction = interface_direction, fast_replace = true})
   supercomputer_input.destructible = false
   supercomputer_output.destructible = false
   entity.disabled_by_script = true
   if storage.supercomputer == nil then
 	  storage.supercomputer = {}
 	end
-  table.insert(storage.supercomputer, unit_number, {machine = entity, interface = interface, input = supercomputer_input, output = supercomputer_output, recipe = nil, solution_x = nil})--bigass table lol
+  table.insert(storage.supercomputer, unit_number, {machine = entity, input = supercomputer_input, output = supercomputer_output, recipe = nil, solution_x = nil})--bigass table lol
 end
 function supercomputer.on_supercomputer_rotated(entity)
     local v = storage.supercomputer[entity.unit_number]
@@ -78,31 +80,31 @@ function supercomputer.relocate(v)--this saves us from doing this twice.
     local direction = v.machine.direction
     if v.machine.mirroring == false then
       if direction == 0 then
-        v.input.teleport{position_x-1,position_y-2}
-        v.output.teleport{position_x+1,position_y-2}
-      elseif direction == 4 then
-        v.input.teleport{position_x+2,position_y-1}
-        v.output.teleport{position_x+2,position_y+1}
-      elseif direction == 8 then
         v.input.teleport{position_x+1,position_y+2}
         v.output.teleport{position_x-1,position_y+2}
-      elseif direction == 12 then
+      elseif direction == 4 then
         v.input.teleport{position_x-2,position_y+1}
         v.output.teleport{position_x-2,position_y-1}
+      elseif direction == 8 then
+        v.input.teleport{position_x-1,position_y-2}
+        v.output.teleport{position_x+1,position_y-2}
+      elseif direction == 12 then
+        v.input.teleport{position_x+2,position_y-1}
+        v.output.teleport{position_x+2,position_y+1}
       end
     else
       if direction == 0 then
-        v.output.teleport{position_x-1,position_y-2}
-        v.input.teleport{position_x+1,position_y-2}
-      elseif direction == 4 then
-        v.output.teleport{position_x+2,position_y-1}
-        v.input.teleport{position_x+2,position_y+1}
-      elseif direction == 8 then
-        v.output.teleport{position_x+1,position_y+2}
         v.input.teleport{position_x-1,position_y+2}
-      elseif direction == 12 then
-        v.output.teleport{position_x-2,position_y+1}
+        v.output.teleport{position_x+1,position_y+2}
+      elseif direction == 4 then
         v.input.teleport{position_x-2,position_y-1}
+        v.output.teleport{position_x-2,position_y+1}
+      elseif direction == 8 then
+        v.input.teleport{position_x+1,position_y-2}
+        v.output.teleport{position_x-1,position_y-2}
+      elseif direction == 12 then
+        v.input.teleport{position_x+2,position_y+1}
+        v.output.teleport{position_x+2,position_y-1}
       end
     end
 end
