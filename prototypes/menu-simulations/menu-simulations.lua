@@ -1,4 +1,3 @@
--- hard stolen from K2 since I can't really figure out any other way to remove the vanilla menu simulations, and this seems the most workable.
 local menu_sims = data.raw["utility-constants"]["default"].main_menu_simulations
 
 
@@ -9,7 +8,7 @@ local make_simulation = function(duration, planet, filename, zoom, volume, scrip
     save = "__TFMG-simulations__/menu-simulations/" .. filename,
     length = duration*60,
     volume_modifier = volume,
-    mods = {"TFMG"},
+    mods = {},--normally "TFMG" but the stuff inside aint working rn.
     init =
     [[
       local sim_planet = game.surfaces["]] .. planet .. [["]
@@ -41,5 +40,5 @@ local timeline_tools =
 
 
 --note that the leading part is handle
-menu_sims.platform_1 = make_simulation(20, "platform-1", "platform-1.zip", 1, 0.5, [[]])
+--menu_sims.platform_1 = make_simulation(20, "platform-1", "platform-1.zip", 1, 0.5, [[]])
 menu_sims.arrival_1 = make_simulation(20, "arrival", "arrival-1.zip", 1, 1, [[]])

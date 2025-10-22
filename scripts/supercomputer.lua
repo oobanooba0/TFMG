@@ -127,7 +127,7 @@ function supercomputer.on_supercomputer_tick()
 			  local specific_heat = 5
 			  local heat_ratio = 1
 			  local base_energy_consumption = 25--25MW is alot, but this machine never runs continuously
-			  thermal_update(v,max_working_temperature,max_safe_temperature,specific_heat,heat_ratio,base_energy_consumption)
+			  --thermal_update(v,max_working_temperature,max_safe_temperature,specific_heat,heat_ratio,base_energy_consumption) -- commenting this out because this script wont exist soon enough
         if v.interface.temperature >= max_working_temperature then
         return end
       else

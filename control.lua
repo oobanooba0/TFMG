@@ -1,7 +1,5 @@
 require("scripts.init")
 require("scripts.story")
-require("scripts.thermal-system")
-thermal_system = require("scripts.thermal-system")
 require("scripts.gameplay")
 gameplay = require("scripts.gameplay")
 require("scripts.supercomputer")
@@ -13,60 +11,9 @@ story = require("scripts.story")
 filters = {
 	{
 		filter = "name",
-		name = "matter-reconstructor",
-		mode = "or"
-	},
-	{
-		filter = "name",
-		name = "assembling-machine",
-		mode = "or"
-	},
-	{
-		filter = "name",
-		name = "furnace",
-		mode = "or"
-	},
-	{
-		filter = "name",
-		name = "matter-reconstructor",
-		mode = "or"
-	},
-	{
-		filter = "name",
-		name = "proton-decay-thermoelectric-generator",
-		mode = "or"
-	},
-	{
-		filter = "name",
 		name = "supercomputer",
 		mode = "or"
 	},
-	{
-		filter = "name",
-		name = "neural-node",
-		mode = "or"
-	},
-	{
-		filter = "name",
-		name = "micro-assembler",
-		mode = "or"
-	},
-	{
-		filter = "name",
-		name = "chemistry-plant",
-		mode = "or"
-	},
-	{
-		filter = "name",
-		name = "refinery",
-		mode = "or"
-	},
-	{
-		filter = "name",
-		name = "small-crusher",
-		mode = "or"
-	},
-
 }
 --- on events
 
@@ -101,8 +48,6 @@ script.on_event(
 			if entity.valid == false then return end
 			if entity.name == "supercomputer" then
 				supercomputer.on_supercomputer_rotated(entity)
-			--elseif entity.name == "chemistry-plant" then
-			--	thermal_system.on_chemistry_plant_rotated(entity)
 			end
 		end
 )
@@ -121,52 +66,26 @@ script.on_event(
 
 function handle_build_event(event)
 	local entity = event.entity
-	if entity.name == "assembling-machine" then
-		thermal_system.on_assembling_machine_built(entity)
-	elseif entity.name == "furnace" then
-		thermal_system.on_furnace_built(entity)
-	elseif entity.name == "matter-reconstructor" then
+	if entity.name == "matter-reconstructor" then
 		gameplay.on_vital_building_built(entity)
-		thermal_system.on_matter_reconstructor_built(entity)
 	elseif entity.name == "proton-decay-thermoelectric-generator" then
 		gameplay.on_vital_building_built(entity)
 	elseif entity.name == "supercomputer" then
 		supercomputer.on_supercomputer_built(entity)
-	elseif entity.name == "neural-node" then
-		thermal_system.on_neural_node_built(entity)
-	elseif entity.name == "micro-assembler" then
-		thermal_system.on_micro_assembler_built(entity)
-	elseif entity.name == "small-crusher" then
-		thermal_system.on_small_crusher_built(entity)
-	elseif entity.name == "chemistry-plant" then
-		thermal_system.on_chemistry_plant_built(entity)
-	elseif entity.name == "refinery" then
-		thermal_system.on_refinery_built(entity)
 	end
 end
 
 script.on_event(
 	defines.events.on_object_destroyed,
 	function(event)
-		thermal_system.on_machine_destroyed(event)
 		supercomputer.on_supercomputer_destroyed(event)
-		thermal_system.gui_cleanup(event)
 	end
 )
 script.on_event(
 	defines.events.on_tick,
 	function(event)
 		story.on_story_tick(event)
-		thermal_system.on_matter_reconstructor_tick()
-		thermal_system.on_assembling_machine_tick()
-		thermal_system.on_furnace_tick()
-		thermal_system.on_neural_node_tick()
-		thermal_system.on_micro_assembler_tick()
-		thermal_system.on_small_crusher_tick()
-		thermal_system.on_chemistry_plant_tick()
-		thermal_system.on_refinery_tick()
 		supercomputer.on_supercomputer_tick()
-		thermal_system.on_gui_tick()
 	end
 )
 script.on_nth_tick(100,

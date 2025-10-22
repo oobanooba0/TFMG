@@ -57,26 +57,10 @@ function create_permission_group()--hopefully prevents players from goign to sur
 end
 
 function refresh_data_storage()--This should allow new storages to be added without the creation of a new world
-  if storage.matter_reconstructor_thermal == nil then
-    storage.matter_reconstructor_thermal = {} end
-  if storage.assembling_machine_thermal == nil then
-    storage.assembling_machine_thermal = {} end
-  if storage.furnace_thermal == nil then
-    storage.furnace_thermal = {} end
   if storage.players == nil then
     storage.players = {} end
   if storage.supercomputer == nil then
     storage.supercomputer = {} end
-  if storage.neural_node_thermal == nil then
-    storage.neural_node_thermal = {} end
-  if storage.micro_assembler_thermal == nil then
-    storage.micro_assembler_thermal = {} end
-  if storage.small_crusher_thermal == nil then
-    storage.small_crusher_thermal = {} end
-  if storage.refinery_thermal == nil then
-    storage.refinery_thermal = {} end
-  if storage.chemistry_plant_thermal == nil then
-    storage.chemistry_plant_thermal = {} end
   if storage.story == nil then
     storage.story = {} end
 end
