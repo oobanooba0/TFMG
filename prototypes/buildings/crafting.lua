@@ -234,7 +234,7 @@ data:extend({
       fade_in_ticks = 4,
       fade_out_ticks = 20
     },
-    thermal_system = {
+    TFMG_thermal = {
       max_working_temperature = 1024,
       max_safe_temperature = 1337,
       heat_ratio = 0.01,
@@ -337,7 +337,7 @@ data:extend({
     energy_usage = "1MW",
     module_slots = 6,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-    thermal_system = {
+    TFMG_thermal = {
       max_working_temperature = 250,
       max_safe_temperature = 350,
       heat_ratio = 0.5,
@@ -512,7 +512,7 @@ data:extend({
         orientation_to_variation = false
       }
     },
-    thermal_system = {
+    TFMG_thermal = {
       max_working_temperature = 400,
       max_safe_temperature = 500,
       heat_ratio = 0.8,
@@ -660,7 +660,7 @@ data:extend({
     energy_usage = "100MW",
     module_slots = 5,
     allowed_effects = {"pollution", "quality", "consumption"},
-    thermal_system = {
+    TFMG_thermal = {
       max_working_temperature = 105,
       max_safe_temperature = 120,
       heat_ratio = 1,
@@ -957,7 +957,7 @@ data:extend({
       rotate = false,
       orientation_to_variation = true
     },
-    thermal_system = {
+    TFMG_thermal = {
       max_working_temperature = 320,
       max_safe_temperature = 355,
       heat_ratio = 0.45,
@@ -1188,7 +1188,7 @@ data:extend({
       rotate = false,
       orientation_to_variation = true
     },
-    thermal_system = {
+    TFMG_thermal = {
       max_working_temperature = 400,
       max_safe_temperature = 450,
       heat_ratio = 0.7,
@@ -1382,7 +1382,7 @@ data:extend({
     energy_usage = "1.5MW",
     module_slots = 3,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-    thermal_system = {
+    TFMG_thermal = {
       max_working_temperature = 250,
       max_safe_temperature = 350,
       heat_ratio = 0.5,
@@ -1455,7 +1455,7 @@ data:extend({
       rotate = false,
       orientation_to_variation = false
     },
-    thermal_system = {
+    TFMG_thermal = {
       max_working_temperature = 300,
       max_safe_temperature = 450,
       heat_ratio = 0.7,

@@ -123,7 +123,7 @@
       {inventory_index = defines.inventory.lab_modules, shift = {0, 1.2}, max_icons_per_row = 5,},
       {inventory_index = defines.inventory.lab_input, shift = {0, 0}, max_icons_per_row = 5, separation_multiplier = 1/1.1}
     },
-    thermal_system = {
+    TFMG_thermal = {
       max_working_temperature = 90,
       max_safe_temperature = 130,
       heat_ratio = 1,
