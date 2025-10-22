@@ -127,6 +127,12 @@
       max_working_temperature = 90,
       max_safe_temperature = 130,
       heat_ratio = 1,
+      connections = {
+        { position = {-0.5, -1.5}, direction = 0},
+        { position = {1.5, 0.5}, direction = 4},
+        { position = {0.5, 1.5}, direction = 8},
+        { position = {-1.5, -0.5}, direction = 12},
+      },
     }
   },
 })

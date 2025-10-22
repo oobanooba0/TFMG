@@ -244,7 +244,13 @@ data:extend({
         min = 0,
         max = 0,
         }
-      }
+      },
+      connections = {
+        { position = {-0.5, -0.5}, direction = 0},
+        { position = {0.5, -0.5}, direction = 4},
+        { position = {0.5, 0.5}, direction = 8},
+        { position = {-0.5, 0.5}, direction = 12},
+      },
     }
   },
   {--Assembling machine
@@ -680,6 +686,11 @@ data:extend({
       max_working_temperature = 105,
       max_safe_temperature = 120,
       heat_ratio = 1,
+      connections = {
+        { position = {-2, -2}, direction = 0},
+        { position = {0, -2}, direction = 0},
+        { position = {2, -2}, direction = 0},
+      },
     },
   },
   {--chemistry-plant
@@ -983,7 +994,13 @@ data:extend({
         min = 0,
         max = 0,
         }
-      }
+      },
+      connections = {--totally pointless, as this is the default connection set in TFMG_thermal, but it feels wrong not to define it explicitly
+        { position = {1, 1}, direction = 4},
+        { position = {1, -1}, direction = 4},
+        { position = {-1, 1}, direction = 12},
+        { position = {-1, -1}, direction = 12},
+      },
     }
   },
   {--refinery
@@ -1214,7 +1231,14 @@ data:extend({
         min = 0,
         max = 0,
         }
-      }
+      },
+      connections = {
+        { position = {-1, -2}, direction = 0},
+        { position = {1, -2}, direction = 0},
+        { position = {-2, 2}, direction = 8},
+        { position = {0, 2}, direction = 8},
+        { position = {2, 2}, direction = 8},
+      },
     }
   },
   {--micro assembler
@@ -1408,7 +1432,13 @@ data:extend({
         min = 0,
         max = 0,
         }
-      }
+      },
+      connections = {
+        { position = {0, -0.5}, direction = 0},
+        { position = {0, -0.5}, direction = 4},
+        { position = {0, 0.5}, direction = 8},
+        { position = {0, 0.5}, direction = 12},
+      },
     }
   },
   {--Small crusher
@@ -1481,7 +1511,13 @@ data:extend({
         min = 0,
         max = 0,
         }
-      }
+      },
+      connections = {
+        { position = {0.5, 1}, direction = 4},
+        { position = {0.5, -1}, direction = 4},
+        { position = {-0.5, 1}, direction = 12},
+        { position = {-0.5, -1}, direction = 12},
+      },
     }
   },
 })
