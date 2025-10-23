@@ -968,6 +968,103 @@ data:extend({
           }
         }
       },
+      --- special connections of doom
+      {
+        production_type = "input",
+        pipe_covers = pipecoverspictures(),
+        volume = 200,
+        pipe_connections =
+        {
+          {
+            flow_direction="input",
+            direction = defines.direction.north,
+            position = {-1, -1},
+            connection_type = "underground",
+            connection_category = "no-pipe",
+            max_underground_distance = 0
+          }
+        }
+      },
+      {
+        production_type = "input",
+        pipe_covers = pipecoverspictures(),
+        volume = 200,
+        pipe_connections =
+        {
+          {
+            flow_direction="input",
+            direction = defines.direction.north,
+            position = {1, -1},
+            connection_type = "underground",
+            connection_category = "no-pipe",
+            max_underground_distance = 0
+          }
+        }
+      },
+      {
+        production_type = "input",
+        pipe_covers = pipecoverspictures(),
+        volume = 200,
+        pipe_connections =
+        {
+          {
+            flow_direction="input",
+            direction = defines.direction.west,
+            position = {-1, 0},
+            connection_type = "underground",
+            connection_category = "no-pipe",
+            max_underground_distance = 0
+          }
+        }
+      },
+      {
+        production_type = "output",
+        pipe_covers = pipecoverspictures(),
+        volume = 200,
+        pipe_connections =
+        {
+          {
+            flow_direction = "output",
+            direction = defines.direction.south,
+            position = {-1, 1},
+            connection_type = "underground",
+            connection_category = "no-pipe",
+            max_underground_distance = 0
+          }
+        }
+      },
+      {
+        production_type = "output",
+        pipe_covers = pipecoverspictures(),
+        volume = 100,
+        pipe_connections =
+        {
+          {
+            flow_direction = "output",
+            direction = defines.direction.south,
+            position = {1, 1},
+            connection_type = "underground",
+            connection_category = "no-pipe",
+            max_underground_distance = 0
+          }
+        }
+      },
+      {
+        production_type = "output",
+        pipe_covers = pipecoverspictures(),
+        volume = 100,
+        pipe_connections =
+        {
+          {
+            flow_direction = "output",
+            direction = defines.direction.east,
+            position = {1, 0},
+            connection_type = "underground",
+            connection_category = "no-pipe",
+            max_underground_distance = 0
+          }
+        }
+      },
     },
     water_reflection =
     {
@@ -1281,6 +1378,48 @@ data:extend({
           { flow_direction="output", direction = defines.direction.south, position = {0, 0.5} },
           { flow_direction="output", direction = defines.direction.east, position = {0, 0.5} },
           { flow_direction="output", direction = defines.direction.west, position = {0, 0.5} },
+      },
+        secondary_draw_orders = { north = -1 }
+      },
+      {
+        production_type = "input",
+        pipe_picture = assembler2pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 1000,
+        pipe_connections = {
+          { flow_direction="input", direction = defines.direction.north, position = {0, -0.5},
+          connection_type = "underground",
+            connection_category = "no-pipe",
+            max_underground_distance = 1 },
+          { flow_direction="input", direction = defines.direction.east, position = {0, -0.5},
+          connection_type = "underground",
+            connection_category = "no-pipe",
+            max_underground_distance = 1 },
+          { flow_direction="input", direction = defines.direction.west, position = {0, -0.5},
+            connection_type = "underground",
+            connection_category = "no-pipe",
+            max_underground_distance = 1 },
+        },
+        secondary_draw_orders = { north = -1 }
+      },
+      {
+        production_type = "output",
+        pipe_picture = assembler2pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 1000,
+        pipe_connections = {
+          { flow_direction="output", direction = defines.direction.south, position = {0, 0.5},
+            connection_type = "underground",
+            connection_category = "no-pipe",
+            max_underground_distance = 1 },
+          { flow_direction="output", direction = defines.direction.east, position = {0, 0.5},
+            connection_type = "underground",
+            connection_category = "no-pipe",
+            max_underground_distance = 1 },
+          { flow_direction="output", direction = defines.direction.west, position = {0, 0.5},
+            connection_type = "underground",
+            connection_category = "no-pipe",
+            max_underground_distance = 1 },
       },
         secondary_draw_orders = { north = -1 }
       }
