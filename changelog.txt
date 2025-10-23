@@ -9,6 +9,8 @@ Date: ????
     - Computer type buildings (super computer, and neural nodes) always have the thermal system, regardless of surface. Theres now no reason to do science on the surface.
     - supercomputers now use 100MW (which in practice, is much lower, due to how much downtime a machine has)
     - Supercomputers now have the inputs on the south side when in north rotation. This will mess up your blueprints.
+    - Supercomputers are now 11x11
+    - Supercomputer terminals are now visible in blueprints before placing, and always above the supercomputer base. (so that theyre always visible)
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.17
 Date: 2025-10-10

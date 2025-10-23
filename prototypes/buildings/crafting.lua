@@ -80,6 +80,7 @@ rocket_silo.fluid_boxes = {
 data:extend{rocket_silo}
 
 --Supercomputer combinators
+  local pixel = 1/32
   local supercomputer_input = table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
   supercomputer_input.name = "supercomputer-input"
   supercomputer_input.collision_mask = {layers = {},not_colliding_with_itself = true}
@@ -93,14 +94,13 @@ data:extend{rocket_silo}
           filename = "__TFMG-assets-0__/buildings/supercomputer/supercomputer-input.png",
           width = 114,
           height = 102,
-          shift = util.by_pixel(0, 5)
         },
         {
           scale = 0.5,
           filename = "__base__/graphics/entity/combinator/constant-combinator-shadow.png",
           width = 98,
           height = 66,
-          shift = util.by_pixel(8.5, 5.5),
+          shift = util.by_pixel(8.5, 1.5),
           draw_as_shadow = true
         }
       }
@@ -120,19 +120,130 @@ data:extend{rocket_silo}
           filename = "__TFMG-assets-0__/buildings/supercomputer/supercomputer-output.png",
           width = 114,
           height = 102,
-          shift = util.by_pixel(0, 5)
         },
         {
           scale = 0.5,
           filename = "__base__/graphics/entity/combinator/constant-combinator-shadow.png",
           width = 98,
           height = 66,
-          shift = util.by_pixel(8.5, 5.5),
+          shift = util.by_pixel(8.5, 1.5),
           draw_as_shadow = true
         }
       }
     })
   data:extend{supercomputer_output}
+--supercomputer graphics definition
+  local function rotate(coordinate)--rotate a pair of coordinates 90 degrees around 0,0
+    local rotated_coordinate = {-coordinate[2],coordinate[1]}
+  return rotated_coordinate end
+
+  local function mirror(coordinate)--flip a pair of coordinates along the x axis
+      local mirrored_coordinate = {-coordinate[1],coordinate[2]}
+  return mirrored_coordinate end
+
+  local function supercomputer_graphics(direction,flip)
+    local computer_base = {
+        filename = "__Krastorio2Assets__/buildings/quantum-computer/quantum-computer.png",
+        priority = "high",
+        width = 400,
+        height = 420,
+        shift = { 0, -0.2 },
+        frame_count = 48,
+        line_length = 8,
+        animation_speed = 0.25,
+        scale = 0.90,
+      }
+    local computer_shadow = {
+        filename = "__Krastorio2Assets__/buildings/quantum-computer/quantum-computer-sh.png",
+        priority = "medium",
+        width = 402,
+        height = 362,
+        shift = { 0.19, 0.315 },
+        frame_count = 1,
+        repeat_count = 48,
+        draw_as_shadow = true,
+        animation_speed = 0.25,
+        scale = 0.90,
+      }
+    local width = 114
+    local height = 102
+    local input_shift = {3, 5}
+    local output_shift = {-3, 5}
+    if flip then
+      input_shift = mirror(input_shift)
+      output_shift = mirror(output_shift)
+    end
+    for i = 1,direction do
+      input_shift = rotate(input_shift)
+      output_shift = rotate(output_shift)
+    end
+    direction = direction + 2
+    if direction >= 4 then direction = direction - 4 end
+    return {
+      computer_base,
+      {
+        scale = 0.5,
+        filename = "__TFMG-assets-0__/buildings/supercomputer/supercomputer-input.png",
+        width = width,
+        x = width * direction,
+        height = height,
+        shift = input_shift,
+        frame_count = 1,
+        repeat_count = 48,
+      },
+      {
+        scale = 0.5,
+        filename = "__TFMG-assets-0__/buildings/supercomputer/supercomputer-output.png",
+        width = width,
+        x = width * direction,
+        height = height,
+        shift = output_shift,
+        frame_count = 1,
+        repeat_count = 48,
+      },
+      computer_shadow,
+    }
+  end
+  local supercomputer_working_visualisations = {
+    {
+      draw_as_light = true,
+      animation = {
+        filename = "__Krastorio2Assets__/buildings/quantum-computer/quantum-computer-light.png",
+        priority = "extra-high",
+        width = 400,
+        height = 420,
+        shift = { 0, -0.2 },
+        frame_count = 48,
+        line_length = 8,
+        animation_speed = 0.25,
+        scale = 0.90,
+      },
+    },
+    {
+      draw_as_glow = true,
+      blend_mode = "additive-soft",
+      animation = {
+        filename = "__Krastorio2Assets__/buildings/quantum-computer/quantum-computer-glow.png",
+        priority = "extra-high",
+        width = 400,
+        height = 420,
+        shift = { 0, -0.2 },
+        frame_count = 48,
+        line_length = 8,
+        animation_speed = 0.25,
+        scale = 0.90,
+      },
+    },
+    {
+      light = {
+        intensity = 0.85,
+        size = 5,
+        shift = { 0.0, 0.0 },
+        color = { r = 0.35, g = 0.75, b = 1 },
+      },
+    },
+  }
+
 --TFMG buildings
 data:extend({
   {--matter reconstructor
@@ -578,7 +689,7 @@ data:extend({
         --pipe_picture = assembler2pipepictures(),
         --pipe_covers = pipecoverspictures(),
         volume = 1000,
-        pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {1, 2} }},
+        pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {3, 5} }},
         secondary_draw_orders = { north = -1 },
         draw_only_when_connected = true,
       },
@@ -587,7 +698,7 @@ data:extend({
         --pipe_picture = assembler2pipepictures(),
         --pipe_covers = pipecoverspictures(),
         volume = 1000,
-        pipe_connections = {{ flow_direction="output", direction = defines.direction.north, position = {-1, 2} }},
+        pipe_connections = {{ flow_direction="output", direction = defines.direction.north, position = {-3, 5} }},
         secondary_draw_orders = { north = -1 },
         draw_only_when_connected = true,
       }
@@ -597,77 +708,27 @@ data:extend({
     close_sound = { filename = "__Krastorio2Assets__/sounds/buildings/close.ogg", volume = 1 },
     --id love a working sound, but its awful.
     impact_category = "metal",
-    collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
-    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    collision_box = {{-5.2, -5.2}, {5.2, 5.2}},
+    selection_box = {{-5.5, -5.5}, {5.5, 5.5}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.2,
-    graphics_set = {
+    graphics_set = {--this is a pain in the ass, but whatever
       animation = {
-        layers = {
-          {
-            filename = "__Krastorio2Assets__/buildings/quantum-computer/quantum-computer.png",
-            priority = "high",
-            width = 400,
-            height = 420,
-            shift = { 0, -0.2 },
-            frame_count = 48,
-            line_length = 8,
-            animation_speed = 0.25,
-            scale = 0.35,
-          },
-          {
-            filename = "__Krastorio2Assets__/buildings/quantum-computer/quantum-computer-sh.png",
-            priority = "medium",
-            width = 402,
-            height = 362,
-            shift = { 0.19, 0.315 },
-            frame_count = 1,
-            repeat_count = 48,
-            draw_as_shadow = true,
-            animation_speed = 0.25,
-            scale = 0.35,
-          },
-        },
+        north = { layers = supercomputer_graphics(0,false), },
+        east = { layers = supercomputer_graphics(1,false), },
+        south = { layers = supercomputer_graphics(2,false), },
+        west = { layers = supercomputer_graphics(3,false), },
       },
-      working_visualisations = {
-        {
-          draw_as_light = true,
-          animation = {
-            filename = "__Krastorio2Assets__/buildings/quantum-computer/quantum-computer-light.png",
-            priority = "extra-high",
-            width = 400,
-            height = 420,
-            shift = { 0, -0.2 },
-            frame_count = 48,
-            line_length = 8,
-            animation_speed = 0.25,
-            scale = 0.35,
-          },
-        },
-        {
-          draw_as_glow = true,
-          blend_mode = "additive-soft",
-          animation = {
-            filename = "__Krastorio2Assets__/buildings/quantum-computer/quantum-computer-glow.png",
-            priority = "extra-high",
-            width = 400,
-            height = 420,
-            shift = { 0, -0.2 },
-            frame_count = 48,
-            line_length = 8,
-            animation_speed = 0.25,
-            scale = 0.35,
-          },
-        },
-        {
-          light = {
-            intensity = 0.85,
-            size = 5,
-            shift = { 0.0, 0.0 },
-            color = { r = 0.35, g = 0.75, b = 1 },
-          },
-        },
+      working_visualisations = supercomputer_working_visualisations
+    },
+    graphics_set_flipped = {
+      animation = {
+        north = { layers = supercomputer_graphics(0,true), },
+        east = { layers = supercomputer_graphics(1,true), },
+        south = { layers = supercomputer_graphics(2,true), },
+        west = { layers = supercomputer_graphics(3,true), },
       },
+      working_visualisations = supercomputer_working_visualisations
     },
     crafting_categories = {
       "supercomputer"
@@ -687,9 +748,11 @@ data:extend({
       max_safe_temperature = 120,
       heat_ratio = 1,
       connections = {
-        { position = {-2, -2}, direction = 0},
-        { position = {0, -2}, direction = 0},
-        { position = {2, -2}, direction = 0},
+        { position = {-4, -5}, direction = 0},
+        { position = {-2, -5}, direction = 0},
+        { position = {0, -5}, direction = 0},
+        { position = {2, -5}, direction = 0},
+        { position = {4, -5}, direction = 0},
       },
     },
   },
