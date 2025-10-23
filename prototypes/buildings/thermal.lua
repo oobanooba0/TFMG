@@ -28,6 +28,12 @@ local HP_S_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/
 local HP_W_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5}
 local HP_W_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5,shift = {-0.3,-0}}
 
+local pixel = 1/32
+local radiator_shift_n = {0,-2-pixel*16}
+local radiator_shift_e = {2+pixel*16,0}
+local radiator_shift_s = {0,2+pixel*16}
+local radiator_shift_w = {-2-pixel*16,0}
+
 data:extend({
   {--heat monitor
     type = "reactor",
@@ -100,8 +106,8 @@ data:extend({
     dying_explosion = "offshore-pump-explosion",
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["assembling-machine"],
-    collision_box = {{-0.9, -4.2}, {0.9, 0.3}},
-    selection_box = {{-1, -4.5}, {1, 0.5}},
+    collision_box = {{-0.9, -5.4}, {0.9, 0.4}},
+    selection_box = {{-1, -5.5}, {1, 0.5}},
     tile_height = 1,
     tile_width = 1,
     tile_buildability_rules =
@@ -128,151 +134,32 @@ data:extend({
       fade_out_ticks = 20
     },
     damaged_trigger_effect = hit_effects.entity(),
-    graphics_set =--solarcore
-    {
-      animation =
-      {
-        north =
-        {
-          layers =
-          {
-            {
-              filename = "__TFMG-assets-0__/buildings/small-radiator/panel_north.png",
-              priority = "high",
-              line_length = 1,
-              frame_count = 1,
-              animation_speed = 0.25,
-              width = 480,
-              height = 960,
-              shift = util.by_pixel(0, -56),
-              scale = 0.15
-            }
-          }
-        },
-        east =
-        {
-          layers =
-          {
-            {
-              filename = "__TFMG-assets-0__/buildings/small-radiator/panel_east.png",
-              priority = "high",
-              line_length = 1,
-              frame_count = 1,
-              animation_speed = 0.25,
-              width = 960,
-              height = 480,
-              shift = util.by_pixel(56, 0),
-              scale = 0.15
-            }
-          }
-        },
-        south =
-        {
-          layers =
-          {
-            {
-              filename = "__TFMG-assets-0__/buildings/small-radiator/panel_south.png",
-              priority = "high",
-              line_length = 1,
-              frame_count = 1,
-              animation_speed = 0.25,
-              width = 480,
-              height = 960,
-              shift = util.by_pixel(0, 56),
-              scale = 0.15,
-            }
-          }
-        },
-        west =
-        {
-          layers =
-          {
-            {
-              filename = "__TFMG-assets-0__/buildings/small-radiator/panel_west.png",
-              priority = "high",
-              line_length = 1,
-              frame_count = 1,
-              animation_speed = 0.25,
-              width = 960,
-              height = 480,
-              shift = util.by_pixel(-56, 0),
-              scale = 0.15
-            }
-          }
-        }
+    graphics_set = { animation = {
+      north = { layers = {
+        {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-1.png",size = 512, scale = 0.5,shift = radiator_shift_n},
+        {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-shadow-1.png",size = 512, scale = 0.5,draw_as_shadow = true,shift = radiator_shift_n},
+        }},
+      east = { layers = {
+        {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-2.png",size = 512, scale = 0.5,shift = radiator_shift_e},
+        {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-shadow-2.png",size = 512, scale = 0.5,draw_as_shadow = true,shift = radiator_shift_e},
+        }},
+      south = { layers = {
+        {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-3.png",size = 512, scale = 0.5,shift = radiator_shift_s},
+        {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-shadow-3.png",size = 512, scale = 0.5,draw_as_shadow = true,shift = radiator_shift_s},
+        }},
+      west = { layers = {
+        {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-4.png",size = 512, scale = 0.5,shift = radiator_shift_w},
+        {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-shadow-4.png",size = 512, scale = 0.5,draw_as_shadow = true,shift = radiator_shift_w},
+        }},
       },
       working_visualisations = {{
         fadeout = true,
         effect = "uranium-glow",
-        light = {intensity = 1, size = 9.9, shift = {0, 0}, color = {1, 0.2, 0.2}},
-        north_animation = {
-          layers = {
-            {
-              filename = "__TFMG-assets-0__/buildings/small-radiator/panel_north_glow.png",
-              priority = "high",
-              line_length = 1,
-              frame_count = 1,
-              animation_speed = 0.25, 
-              width = 480,
-              height = 960,
-              shift = util.by_pixel(0, -56),
-              scale = 0.15,
-              draw_as_glow = true,
-              tint = {1,1,1,0.5}
-            },
-          }
-        },
-        east_animation = {
-          layers = {
-            {
-              filename = "__TFMG-assets-0__/buildings/small-radiator/panel_east_glow.png",
-              priority = "high",
-              line_length = 1,
-              frame_count = 1,
-              animation_speed = 0.25,
-              width = 960,
-              height = 480,
-              shift = util.by_pixel(56, 0),
-              scale = 0.15,
-              draw_as_glow = true,
-              tint = {1,1,1,0.5}
-            },
-          }
-        },
-        south_animation = {
-          layers = {
-            {
-              filename = "__TFMG-assets-0__/buildings/small-radiator/panel_south_glow.png",
-              priority = "high",
-              line_length = 1,
-              frame_count = 1,
-              animation_speed = 0.25,
-              width = 480,
-              height = 960,
-              shift = util.by_pixel(0, 56),
-              scale = 0.15,
-              draw_as_glow = true,
-              tint = {1,1,1,0.5}
-            },
-          }
-        },
-        west_animation = {
-          layers = {
-            {
-              filename = "__TFMG-assets-0__/buildings/small-radiator/panel_west_glow.png",
-              priority = "high",
-              line_length = 1,
-              frame_count = 1,
-              animation_speed = 0.25,
-              width = 960,
-              height = 480,
-              shift = util.by_pixel(-56, 0),
-              scale = 0.15,
-              draw_as_glow = true,
-              tint = {1,1,1,0.5}
-            },
-          }
-        },
+        light = {intensity = 2, size = 4.5, shift = {0, 0}, color = {1, 0.2, 0.2}},
+        north_animation = {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-working-1.png",size = 512, scale = 0.5,blend_mode = "additive",draw_as_glow = true,tint = {0.4,0.4,0.4}, shift = radiator_shift_n},
+        east_animation = {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-working-2.png",size = 512, scale = 0.5,blend_mode = "additive",draw_as_glow = true,tint = {0.4,0.4,0.4}, shift = radiator_shift_e},
+        south_animation = {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-working-3.png",size = 512, scale = 0.5,blend_mode = "additive",draw_as_glow = true,tint = {0.4,0.4,0.4}, shift = radiator_shift_s},
+        west_animation = {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-working-4.png",size = 512, scale = 0.5,blend_mode = "additive",draw_as_glow = true,tint = {0.4,0.4,0.4}, shift = radiator_shift_w},
       }}
     },
     crafting_categories = {"special"},
@@ -293,6 +180,12 @@ data:extend({
           direction = defines.direction.south
         },
       },
+      heat_picture = {
+        north = {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-heat-1.png",size = 512, scale = 0.5,blend_mode = "additive",draw_as_glow = true,tint = {0.6,0.6,0.6}, shift = radiator_shift_n},
+        east = {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-heat-2.png",size = 512, scale = 0.5,blend_mode = "additive",draw_as_glow = true,tint = {0.6,0.6,0.6}, shift = radiator_shift_e},
+        south = {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-heat-3.png",size = 512, scale = 0.5,blend_mode = "additive",draw_as_glow = true,tint = {0.6,0.6,0.6}, shift = radiator_shift_s},
+        west = {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-heat-4.png",size = 512, scale = 0.5,blend_mode = "additive",draw_as_glow = true,tint = {0.6,0.6,0.6}, shift = radiator_shift_w},
+      }
     },
     energy_usage = "5000kW",--5mw should be enough for 5 assembling machines per radiator. I do wonder if this will be a bit tight with more advanced machines/beacons.
     placeable_position_visualization =
