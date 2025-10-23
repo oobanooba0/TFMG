@@ -4,13 +4,6 @@ data.raw ["technology"] = {}
 data.raw ["tips-and-tricks-item"] = {}
 data.raw ["utility-constants"]["default"].main_menu_simulations = {}
 
---vanila recipe deletions
-
-data.raw.item ["asteroid-collector"].flags = {"always-show"}
-data.raw.item ["space-platform-foundation"].flags = {"always-show"}
-data.raw.item ["space-platform-foundation"].stack_size = 250
-data.raw.item ["heat-pipe"].flags = {"always-show"}
-
 --Due to the removal of vanilla techs, shortcuts dependant on them must be modified.
 
 data.raw ["shortcut"]["undo"].technology_to_unlock = nil
@@ -127,6 +120,12 @@ data.raw ["cargo-wagon"]["cargo-wagon"].weight = 5000
 data.raw ["fluid-wagon"]["fluid-wagon"].weight = 5000
 data.raw.tile ["ice-smooth"].collision_mask = tile_collision_masks.ground()
 data.raw.tile ["space-platform-foundation"].collision_mask = {layers={ground_tile=true,platform=true}}
+
+data.raw.item ["asteroid-collector"].flags = {"always-show"}
+data.raw.item ["space-platform-foundation"].flags = {"always-show"}
+data.raw.item ["space-platform-foundation"].stack_size = 250
+data.raw.item ["heat-pipe"].flags = {"always-show"}
+data.raw["heat-pipe"]["heat-pipe"].heat_buffer.specific_heat = "250kJ"
 
 --this is the part where I add stuff into the game again
 
