@@ -28,12 +28,71 @@ local HP_S_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/
 local HP_W_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5}
 local HP_W_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5,shift = {-0.3,-0}}
 
+local underground_pipe_picture = {
+    north =
+    {
+      filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-up.png",
+      priority = "extra-high",
+      width = 128,
+      height = 128,
+      scale = 0.5,
+      shift = {0,1}
+    },
+    east =
+    {
+      filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-right.png",
+      priority = "extra-high",
+      width = 128,
+      height = 128,
+      scale = 0.5,
+      shift = {-1,0}
+    },
+    south =
+    {
+      filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-down.png",
+      priority = "extra-high",
+      width = 128,
+      height = 128,
+      scale = 0.5,
+      shift = {0,-1}
+    },
+    west =
+    {
+      filename = "__base__/graphics/entity/pipe-to-ground/pipe-to-ground-left.png",
+      priority = "extra-high",
+      width = 128,
+      height = 128,
+      scale = 0.5,
+      shift = {1,0}
+    },
+  }
+
 --small radiator
 local small_radiator = data.raw["assembling-machine"]["small-radiator"]
   small_radiator.hidden = false
   small_radiator.energy_source.specific_heat = "250kJ"
   small_radiator.energy_usage = "2MW"
-  small_radiator.surface_conditions ={{property = "pressure",min = 0,max = 0}}
+  small_radiator.surface_conditions ={{property = "gravity",min = 0,max = 0}}
+--ground radiator
+local ground_radiator = data.raw["assembling-machine"]["ground-radiator"]
+  ground_radiator.hidden = false
+  ground_radiator.energy_source.specific_heat = "250kJ"
+  ground_radiator.energy_usage = "6MW"
+  --ground_radiator.surface_conditions ={{property = "gravity",min = 0.01}}
+  ground_radiator.fluid_boxes = {{
+    production_type = "input",
+    pipe_picture = underground_pipe_picture,
+    pipe_covers = pipecoverspictures(),
+    volume = 100,
+    pipe_connections = {
+      { flow_direction = "input-output", direction = defines.direction.north, position = {1, -1} },
+      { flow_direction = "input-output", direction = defines.direction.south, position = {-1, 1} },
+    },
+    render_layer = "object",
+    secondary_draw_orders = { north = -1, west = -1, east = -1}
+  }}
+  ground_radiator.fixed_recipe = "evaporation-cooling"
+  ground_radiator.forced_symmetry = "horizontal"
 
 data:extend({
   {--heat monitor

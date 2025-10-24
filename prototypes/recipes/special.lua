@@ -1,13 +1,17 @@
 data:extend({
   {
     type = "recipe",
-    category = "special",
-    name = "small-radiator-radiation",
-    icon = "__base__/graphics/icons/signal/signal-fire.png",
-    energy_required = 100,
-    enabled = true,
-    ingredients = {},
-    results = {},--possible that i could use a spoiling output of a heat item to make a thermal efficiency mechanic?
+    category = "radiator",
+    name = "evaporation-cooling",
+    icons = {
+      {icon = "__base__/graphics/icons/fluid/steam.png", shift = {0,-8}},
+      {icon = "__base__/graphics/icons/signal/signal-fire.png",shift = {0,8}},
+    },
+    energy_required = 1,
+    enabled = false,
+    hidden = true,
+    ingredients = {{type = "fluid", name = "water", amount = 10}},
+    results = {},
   },
   {
     type = "recipe",

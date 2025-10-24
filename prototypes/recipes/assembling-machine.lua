@@ -707,8 +707,8 @@ data:extend({
     energy_required = 12,
     enabled = false,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 8 },
-      { type = "item", name = "heat-pipe", amount = 4 },
+      { type = "item", name = "general-purpose-structure", amount = 4 },
+      { type = "item", name = "heat-pipe", amount = 2 },
     },
     results = { 
       { type = "item", name = "small-radiator", amount = 1 }
@@ -834,6 +834,21 @@ data:extend({
     },
     results = { 
       { type = "item", name = "micro-assembler", amount = 1 }
+    },
+  },
+  {--ground radiator
+    type = "recipe",
+    category = "assembling-machine",
+    name = "ground-radiator",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "high-performance-structure", amount = 8 },
+      { type = "item", name = "pipe", amount = 8 },
+      { type = "item", name = "heat-pipe", amount = 8 },
+    },
+    results = { 
+      { type = "item", name = "ground-radiator", amount = 1 }
     },
   },
   {--rocket silo

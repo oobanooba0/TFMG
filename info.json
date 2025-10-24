@@ -12,9 +12,9 @@
     "flib >= 0.16.3",
     "Krastorio2Assets >= 2.0.3",
     "TFMG-music >= 0.3.14",
-    "TFMG-assets-0 >= 0.3.17",
+    "TFMG-assets-0 >= 0.4.0",
     "TFMG-simulations >= 0.3.5",
-    "TFMG-thermal >= 0.3.0"
+    "TFMG-thermal >= 0.3.2"
   ],
   "space_travel_required": true,
   "description": "TFMG is a total overhaul mod where you play as a superintelligent AI who has only one PURPOSE, which it will complete by any means necessary; The Factory Must Grow.\nThis mod is in development, expect breaking changes from time to time and occasional Jank. Mod compatibility is not currently guaranteed."

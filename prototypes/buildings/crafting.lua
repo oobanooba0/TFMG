@@ -10,10 +10,9 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
   pumpjack.energy_usage = "1MW"
   pumpjack.module_slots = 4
 --rocket silo updates
-function rocketsilopipes()--borrowed from talander
+local function rocketsilopipes()--borrowed from talander
 	return {
 		north = {
-
 			filename = "__TFMG-assets-0__/buildings/rocket-silo/rocketsilopipe-N.png",
 			priority = "extra-high",
 			width = 71,

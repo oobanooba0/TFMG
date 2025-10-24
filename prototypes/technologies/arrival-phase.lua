@@ -226,6 +226,56 @@ data:extend({
       time = 24
     },
   },
+  {--chemical-reactor
+    type = "technology",
+    name = "chemical-power",
+    icon = "__Krastorio2Assets__/technologies/gas-power-station.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "small-turbine"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "small-heat-exchanger"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "chemical-reactor"
+      },
+    },
+    prerequisites = {"energy-distribution-2","contemplate-rust"},
+    unit = {
+      count = 128,
+      ingredients = {{"introspection-science", 1}},
+      time = 24
+    },
+  },
+  {--heat management 2
+    type = "technology",
+    name = "heat-management-2",
+    icon = "__TFMG-thermal__/graphics/radiator-ground/radiator-ground.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "ground-radiator"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "heat-monitor"
+      },
+    },
+    prerequisites = {"high-performance-structure","chemical-power"},
+    unit = {
+      count = 128,
+      ingredients = {{"introspection-science", 1}},
+      time = 24
+    },
+  },
   {--exploration science
     type = "technology",
     name = "exploration-science",
@@ -243,7 +293,7 @@ data:extend({
         recipe = "exploration-science"
       },
     },
-    prerequisites = {"high-performance-structure","optical-coil"},
+    prerequisites = {"heat-management-2","optical-coil"},
     unit = {
       count = 256,
       ingredients = {{"introspection-science", 1}},
@@ -478,33 +528,6 @@ data:extend({
       time = 16
     },
   },
-  {--chemical-reactor
-    type = "technology",
-    name = "chemical-power",
-    icon = "__Krastorio2Assets__/technologies/gas-power-station.png",
-    icon_size = 256,
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "small-turbine"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "small-heat-exchanger"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "chemical-reactor"
-      },
-    },
-    prerequisites = {"energy-distribution-2","contemplate-rust"},
-    unit = {
-      count = 128,
-      ingredients = {{"introspection-science", 1}},
-      time = 24
-    },
-  },
   {--energy distribution 3
     type = "technology",
     name = "energy-distribution-3",
@@ -537,10 +560,6 @@ data:extend({
       {
         type = "unlock-recipe",
         recipe = "energy-monitor"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "heat-monitor"
       },
     },
     prerequisites = {"energy-distribution-3","capacitors","combinators"},
