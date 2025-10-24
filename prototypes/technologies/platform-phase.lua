@@ -167,8 +167,8 @@ data:extend({
   {--heat management
     type = "technology",
     name = "heat-management",
-    icon = "__base__/graphics/icons/heat-pipe.png",
-    icon_size = 64,
+    icon = "__TFMG-thermal__/graphics/small-radiator/radiator-tech-icon.png",
+    icon_size = 384,
     effects =
     {
       {

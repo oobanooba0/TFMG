@@ -28,11 +28,12 @@ local HP_S_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/
 local HP_W_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5}
 local HP_W_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5,shift = {-0.3,-0}}
 
-local pixel = 1/32
-local radiator_shift_n = {0,-2-pixel*16}
-local radiator_shift_e = {2+pixel*16,0}
-local radiator_shift_s = {0,2+pixel*16}
-local radiator_shift_w = {-2-pixel*16,0}
+--small radiator
+local small_radiator = data.raw["assembling-machine"]["small-radiator"]
+  small_radiator.hidden = false
+  small_radiator.energy_source.specific_heat = "250kJ"
+  small_radiator.energy_usage = "2MW"
+  small_radiator.surface_conditions ={{property = "pressure",min = 0,max = 0}}
 
 data:extend({
   {--heat monitor
@@ -94,108 +95,5 @@ data:extend({
     default_temperature_signal = {type = "virtual", name = "signal-T"},
     circuit_wire_max_distance = reactor_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["chest"],
-  },
-  {--small radiator
-    type = "assembling-machine",
-    name = "small-radiator",
-    icon = "__TFMG-assets-0__/buildings/small-radiator/panel_icon.png",
-    flags = {"placeable-neutral","player-creation","filter-directions"},
-    minable = {mining_time = 0.2, result = "small-radiator"},
-    max_health = 400,
-    corpse = "offshore-pump-remnants",
-    dying_explosion = "offshore-pump-explosion",
-    circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
-    circuit_connector = circuit_connector_definitions["assembling-machine"],
-    collision_box = {{-0.9, -5.4}, {0.9, 0.4}},
-    selection_box = {{-1, -5.5}, {1, 0.5}},
-    tile_height = 1,
-    tile_width = 1,
-    tile_buildability_rules =
-    {
-      {area = {{-0.9, -4.4}, {0.9, 0.4}}, required_tiles = {layers = {empty_space = true}}, remove_on_collision = true},
-      {area = {{-0.4, 0.6}, {0.4, 0.9}}, required_tiles = {layers = {ground_tile = true}}, colliding_tiles = {layers = {empty_space = true}}, remove_on_collision = true},
-    },
-    surface_conditions =
-    {
-      {
-        property = "pressure",
-        min = 0,
-        max = 0
-      }
-    },
-    collision_mask = {layers={is_object = true, is_lower_object = true, transport_belt = true, platform = true}},
-    open_sound = sounds.machine_open,
-    close_sound = sounds.machine_close,
-    impact_category = "metal",
-    working_sound =
-    {
-      sound = {filename = "__base__/sound/nuclear-reactor-1.ogg", volume = 0.45, audible_distance_modifier = 0.5},
-      fade_in_ticks = 4,
-      fade_out_ticks = 20
-    },
-    damaged_trigger_effect = hit_effects.entity(),
-    graphics_set = { animation = {
-      north = { layers = {
-        {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-1.png",size = 512, scale = 0.5,shift = radiator_shift_n},
-        {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-shadow-1.png",size = 512, scale = 0.5,draw_as_shadow = true,shift = radiator_shift_n},
-        }},
-      east = { layers = {
-        {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-2.png",size = 512, scale = 0.5,shift = radiator_shift_e},
-        {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-shadow-2.png",size = 512, scale = 0.5,draw_as_shadow = true,shift = radiator_shift_e},
-        }},
-      south = { layers = {
-        {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-3.png",size = 512, scale = 0.5,shift = radiator_shift_s},
-        {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-shadow-3.png",size = 512, scale = 0.5,draw_as_shadow = true,shift = radiator_shift_s},
-        }},
-      west = { layers = {
-        {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-4.png",size = 512, scale = 0.5,shift = radiator_shift_w},
-        {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-shadow-4.png",size = 512, scale = 0.5,draw_as_shadow = true,shift = radiator_shift_w},
-        }},
-      },
-      working_visualisations = {{
-        fadeout = true,
-        effect = "uranium-glow",
-        light = {intensity = 2, size = 4.5, shift = {0, 0}, color = {1, 0.2, 0.2}},
-        north_animation = {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-working-1.png",size = 512, scale = 0.5,blend_mode = "additive",draw_as_glow = true,tint = {0.4,0.4,0.4}, shift = radiator_shift_n},
-        east_animation = {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-working-2.png",size = 512, scale = 0.5,blend_mode = "additive",draw_as_glow = true,tint = {0.4,0.4,0.4}, shift = radiator_shift_e},
-        south_animation = {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-working-3.png",size = 512, scale = 0.5,blend_mode = "additive",draw_as_glow = true,tint = {0.4,0.4,0.4}, shift = radiator_shift_s},
-        west_animation = {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-working-4.png",size = 512, scale = 0.5,blend_mode = "additive",draw_as_glow = true,tint = {0.4,0.4,0.4}, shift = radiator_shift_w},
-      }}
-    },
-    crafting_categories = {"special"},
-    fixed_recipe = "small-radiator-radiation",
-    crafting_speed = 1,
-    energy_source =
-    {
-      type = "heat",
-      max_temperature = 1000, --this has to be a big number or a thermal system could lock up and be unable to cool down
-      min_working_temperature = 15,
-      default_temperature = 15,
-      specific_heat = "1MJ",
-      max_transfer = "1GW",
-      connections =
-      {--north connection is not real and cannot hurt me.
-        {
-          position = {0, 0},
-          direction = defines.direction.south
-        },
-      },
-      heat_picture = {
-        north = {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-heat-1.png",size = 512, scale = 0.5,blend_mode = "additive",draw_as_glow = true,tint = {0.6,0.6,0.6}, shift = radiator_shift_n},
-        east = {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-heat-2.png",size = 512, scale = 0.5,blend_mode = "additive",draw_as_glow = true,tint = {0.6,0.6,0.6}, shift = radiator_shift_e},
-        south = {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-heat-3.png",size = 512, scale = 0.5,blend_mode = "additive",draw_as_glow = true,tint = {0.6,0.6,0.6}, shift = radiator_shift_s},
-        west = {filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-heat-4.png",size = 512, scale = 0.5,blend_mode = "additive",draw_as_glow = true,tint = {0.6,0.6,0.6}, shift = radiator_shift_w},
-      }
-    },
-    energy_usage = "5000kW",--5mw should be enough for 5 assembling machines per radiator. I do wonder if this will be a bit tight with more advanced machines/beacons.
-    placeable_position_visualization =
-    {
-      filename = "__core__/graphics/cursor-boxes-32x32.png",
-      priority = "extra-high-no-scale",
-      width = 64,
-      height = 64,
-      scale = 0.5,
-      x = 3*64
-    },
   },
 })

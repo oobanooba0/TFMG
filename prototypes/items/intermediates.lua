@@ -96,7 +96,6 @@ data:extend({
     pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
     drop_sound = space_age_item_sounds.agriculture_inventory_move,
     stack_size = 100,
-    default_import_location = "gleba",
     weight = 5 * kg,
     spoil_ticks = 1 * minute,
     spoil_result = "organic-carbon",

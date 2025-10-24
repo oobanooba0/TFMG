@@ -1,8 +1,13 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.0
 Date: ????
+  Features:
+    - Radiators now have a hot new custom graphic.
   Changes:
-    - old saves broken. Sorry. Not breaking them would have taken months out of my life.
+    - old saves broken. Just not realistic to fix that.
+    - Small radiators are now 1x5. They now only radiate 2MW of heat, down from 5MW. (still means a 1.5x increase in radiation:surface area so technically a buff.)
+    - Small radiators stack to 50
+    - Small radiators internals ported to TFMG thermal mod.
     - All machines are ported over to the new TFMG Thermal thermal system, which is a significantly improved version of the old thermal system, Its infinitely easier for me to dev with as well as being massively more performant at scale. (It took me over a week to do this, but its genuinely huge)
     - Computer type buildings (super computer, and neural nodes) always have the thermal system, regardless of surface. Theres now no reason to do science on the surface.
     - Supercomputers now have the inputs on the south side when in north rotation. This will mess up your blueprints.

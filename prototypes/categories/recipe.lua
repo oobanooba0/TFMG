@@ -19,7 +19,7 @@ data:extend({
         type = "recipe-category",
         name = "furnace"
     },
-    {--thermal and other secret recipes live here.
+    {--secret recipes live here.
         type = "recipe-category",
         name = "special"
     },
