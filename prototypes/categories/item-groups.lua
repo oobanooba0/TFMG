@@ -71,20 +71,19 @@ data:extend({
     type = "item-group",
     name = "debug",
     icon = "__base__/graphics/icons/signal/signal-science-pack.png",
-    group = "unsorted",
-    order = "z"
+    order = "z",
   },
   {
     type = "item-subgroup",
     name = "debug",
     group = "debug",
-    order = "a"
+    order = "a",
   },
   {
     type = "item-subgroup",
     name = "unobtainable",
     group = "debug",
-    order = "b"
+    order = "b",
   },
 --virtual signals
 {

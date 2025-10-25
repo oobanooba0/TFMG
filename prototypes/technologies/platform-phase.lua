@@ -129,7 +129,7 @@ data:extend({
       },
       {
         type = "unlock-recipe",
-        recipe = "inserter-1"
+        recipe = "inserter"
       },
       {
         type = "unlock-recipe",
@@ -409,7 +409,7 @@ data:extend({
     {
       {
         type = "unlock-recipe",
-        recipe = "long-inserter-1"
+        recipe = "long-handed-inserter"
       },
     },
     prerequisites = {"introspection-science-pack"},

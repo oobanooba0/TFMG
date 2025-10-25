@@ -446,7 +446,7 @@ data:extend({
   {--inserter-1
     type = "recipe",
     category = "assembling-machine",
-    name = "inserter-1",
+    name = "inserter",
     energy_required = 4,
     enabled = false,
     ingredients = {
@@ -455,7 +455,7 @@ data:extend({
       { type = "item", name = "mechanical-components", amount = 2 },
     },
     results = { 
-      { type = "item", name = "inserter-1", amount = 1 }
+      { type = "item", name = "inserter", amount = 1 }
     },
   },
   {--pipe
@@ -1151,15 +1151,15 @@ data:extend({
   {--long-inserter-1
     type = "recipe",
     category = "assembling-machine",
-    name = "long-inserter-1",
+    name = "long-handed-inserter",
     energy_required = 4,
     enabled = false,
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 2 },
-      { type = "item", name = "inserter-1", amount = 1 },
+      { type = "item", name = "inserter", amount = 1 },
     },
     results = { 
-      { type = "item", name = "long-inserter-1", amount = 1 }
+      { type = "item", name = "long-handed-inserter", amount = 1 }
     },
   },
   {--locomotive

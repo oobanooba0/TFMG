@@ -55,7 +55,7 @@ data:extend({
     research_trigger =
     {
       type = "craft-item",
-      item = "inserter-1",
+      item = "inserter",
       count = 64
     },
     prerequisites = {"logistics-1"},

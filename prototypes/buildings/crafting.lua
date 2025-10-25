@@ -84,6 +84,8 @@ data:extend{rocket_silo}
   supercomputer_input.name = "supercomputer-input"
   supercomputer_input.collision_mask = {layers = {},not_colliding_with_itself = true}
   supercomputer_input.minable = nil
+  supercomputer_input.hidden = true
+  supercomputer_input.hidden_in_factoriopedia = true
   supercomputer_input.selection_priority = 51
   supercomputer_input.sprites =
     make_4way_animation_from_spritesheet({ layers =
@@ -110,6 +112,8 @@ data:extend{rocket_silo}
   supercomputer_output.name = "supercomputer-output"
   supercomputer_output.collision_mask = {layers = {},not_colliding_with_itself = true}
   supercomputer_output.minable = nil
+  supercomputer_output.hidden = true
+  supercomputer_output.hidden_in_factoriopedia = true
   supercomputer_output.selection_priority = 51
   supercomputer_output.sprites =
     make_4way_animation_from_spritesheet({ layers =

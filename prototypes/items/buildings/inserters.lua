@@ -1,34 +1,5 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
 
-data:extend({
-  {
-    type = "item",
-    name = "inserter-1",
-    icon = "__base__/graphics/icons/inserter.png",
-    subgroup = "inserter",
-    color_hint = { text = "Y" },
-    order = "b[inserter]-a",
-    inventory_move_sound = item_sounds.inserter_inventory_move,
-    pick_sound = item_sounds.inserter_inventory_pickup,
-    drop_sound = item_sounds.inserter_inventory_move,
-    place_result = "inserter-1",
-    stack_size = 50,
-    flags = {"always-show"},
-    default_import_location = "arrival",
-  },
-  {
-    type = "item",
-    name = "long-inserter-1",
-    icon = "__base__/graphics/icons/long-handed-inserter.png",
-    subgroup = "inserter",
-    color_hint = { text = "Y" },
-    order = "c[long-inserter]-a",
-    inventory_move_sound = item_sounds.inserter_inventory_move,
-    pick_sound = item_sounds.inserter_inventory_pickup,
-    drop_sound = item_sounds.inserter_inventory_move,
-    place_result = "long-inserter-1",
-    stack_size = 50,
-    flags = {"always-show"},
-    default_import_location = "arrival",
-  },
-})
+local inserter_1 = data.raw.item["inserter"]
+
+inserter_1.flags = {"always-show"}
