@@ -16,6 +16,7 @@ require("prototypes.vanilla-content-obliterator")
 	require("prototypes.buildings.military")
 	require("prototypes.buildings.roboports")
 	require("prototypes.buildings.thermal")
+	require("prototypes.buildings.thrusters")
 
 --categories
 	require("prototypes.categories.equipment-grid")

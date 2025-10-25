@@ -61,11 +61,11 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     allow_productivity = true,
     ingredients = {
       { type = "item", name = "ferric-ore", amount = 5 },--was originally 6
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 16 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 16, fluidbox_index = 0 },
     },
     results = { 
       { type = "item", name = "titanium-ore", amount = 1 },
-      { type = "fluid", name = "ferric-solution", amount = 25 }--was originally 30.
+      { type = "fluid", name = "ferric-solution", amount = 25, fluidbox_index = 0 }--was originally 30.
     },
   },
   {--microbe-culture
@@ -77,7 +77,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     enabled = false,
     allow_productivity = true,
     ingredients = {
-      { type = "fluid", name = "organic-sludge", amount = 10 },
+      { type = "fluid", name = "organic-sludge", amount = 10, fluidbox_index = 0 },
       { type = "item", name = "mineral-ore", amount = 1 },
     },
     results = { 
@@ -94,7 +94,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     allow_productivity = true,
     ingredients = {
       { type = "item", name = "microbe-culture", amount = 1 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 10 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 10, fluidbox_index = 0 },
     },
     results = { 
       { type = "item", name = "active-bio-polymers", amount = 1 }
@@ -110,11 +110,11 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     allow_productivity = true,
     ingredients = {
       { type = "item", name = "organic-carbon", amount = 2 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 5 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 5, fluidbox_index = 0 },
       { type = "item", name = "mineral-ore", amount = 8},
     },
     results = { 
-      { type = "fluid", name = "mineral-lubricant", amount = 20 }
+      { type = "fluid", name = "mineral-lubricant", amount = 20, fluidbox_index = 0 }
     },
   },
   {--organic carbon liquefaction
@@ -133,7 +133,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "organic-carbon", amount = 5 },
     },
     results = { 
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 50 }
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 50, fluidbox_index = 0 }
     },
   },
   {--capacitor
@@ -148,7 +148,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "conductive-coil", amount = 4 },
       { type = "item", name = "crystalline-plate", amount = 1 },
       { type = "item", name = "polymer-bar", amount = 2 },
-      { type = "fluid", name = "ferric-solution", amount = 5 },
+      { type = "fluid", name = "ferric-solution", amount = 5, fluidbox_index = 0 },
     },
     results = { 
       { type = "item", name = "capacitor-discharged", amount = 2 }
@@ -166,11 +166,11 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     ingredients = {
       { type = "item", name = "excited-crystalline-chunk-red", amount = 1 },
       { type = "item", name = "excited-crystalline-chunk-blue", amount = 1 },
-      { type = "fluid", name = "water", amount = 100 },
+      { type = "fluid", name = "water", amount = 100, fluidbox_index = 0 },
     },
     results = { 
       { type = "item", name = "fused-crystalline-chunk", amount = 1 },
-      { type = "fluid", name = "steam", amount = 1000, temperature = 1000},
+      { type = "fluid", name = "steam", amount = 1000, temperature = 1000, fluidbox_index = 0},
     },
   },
   {--Thruster oxidizer
@@ -184,7 +184,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     allow_productivity = true,
     ingredients = {
       { type = "item", name = "capacitor-charged", amount = 1 },
-      { type = "fluid", name = "water", amount = 128 },
+      { type = "fluid", name = "water", amount = 128, fluidbox_index = 0 },
     },
     results = { 
       { type = "item", name = "capacitor-discharged", amount = 1 },

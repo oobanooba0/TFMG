@@ -12,7 +12,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     enabled = false,
     allow_productivity = true,
     ingredients = {
-      { type = "fluid", name = "hydrocarbon-slush", amount = 50 },
+      { type = "fluid", name = "hydrocarbon-slush", amount = 50, fluidbox_index = 0 },
     },
     results = { 
       { type = "fluid", name = "water", amount = 150 },
@@ -78,11 +78,11 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     allow_decomposition = false,
     allow_productivity = true,
     ingredients = {
-      { type = "fluid", name = "ferric-solution", amount = 80 },
+      { type = "fluid", name = "ferric-solution", amount = 80, fluidbox_index = 0 },
     },
     results = { 
       { type = "item", name = "pure-iron-ore", amount = 2 },
-      { type = "fluid", name = "water", amount = 20 },
+      { type = "fluid", name = "water", amount = 20, fluidbox_index = 0 },
     },
   },
   {--concrete

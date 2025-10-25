@@ -12,8 +12,11 @@ end
 
 data.raw.fluid["water"].uber_barrel = {}
 data.raw.fluid["thruster-fuel"].uber_barrel = {}
+data.raw.fluid["thruster-fuel"].pipent = true
 data.raw.fluid["thruster-oxidizer"].uber_barrel = {}
---
+data.raw.fluid["thruster-oxidizer"].pipent = true
+
+--pipent = true to remove fluid from pipes
 
 data:extend({
   {
@@ -25,7 +28,7 @@ data:extend({
     default_temperature = 0,
     max_temperature = 100,
     heat_capacity = "2kJ",
-    base_color = {0.8, 0.85, .8},
+    base_color = {0.8, 0.85, 0.8},
     flow_color = {0.6, 0.65, 0.6},
     uber_barrel = {},
     default_import_location = "arrival",
