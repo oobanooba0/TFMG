@@ -5,14 +5,14 @@ end
 
 --uber_barrel = True to barrel fluid, Uber_barrel is opt in, as I want deliberate choices to be made regarding fluid barreling.
 --default_import_location is used to define the barrels default import location
---uber_barrel_density can be used to change the quantity of fluid that goes in a barrel. --default 100
---uber_barrel_thiccness changes the barrel/unbarrel time
---uber_barrel_crafting_categories sets which machines can craft em
---uber_barrel_mass sets the mass of a barrel, default is 10
+--density can be used to change the quantity of fluid that goes in a barrel. --default 100
+--thiccness changes the barrel/unbarrel time
+--crafting_categories sets which machines can craft em
+--mass sets the mass of a barrel, default is 10
 
-data.raw.fluid["water"].uber_barrel = true
-data.raw.fluid["thruster-fuel"].uber_barrel = true
-data.raw.fluid["thruster-oxidizer"].uber_barrel = true
+data.raw.fluid["water"].uber_barrel = {}
+data.raw.fluid["thruster-fuel"].uber_barrel = {}
+data.raw.fluid["thruster-oxidizer"].uber_barrel = {}
 --
 
 data:extend({
@@ -27,7 +27,7 @@ data:extend({
     heat_capacity = "2kJ",
     base_color = {0.8, 0.85, .8},
     flow_color = {0.6, 0.65, 0.6},
-    uber_barrel = true,
+    uber_barrel = {},
     default_import_location = "arrival",
   },
   {
@@ -40,7 +40,7 @@ data:extend({
     default_temperature = 15,
     base_color = {0.3, 0.1, 0.3},
     flow_color = {0.8, 0.8, 0.8},
-    uber_barrel = true,
+    uber_barrel = {},
     default_import_location = "arrival",
   },
   {
@@ -52,7 +52,7 @@ data:extend({
     default_temperature = 37,
     base_color = {0.15, 0.32, 0.03},
     flow_color = {0.43, 0.75, 0.31},
-    uber_barrel = true,
+    uber_barrel = {},
     default_import_location = "arrival",
   },
   {
@@ -64,7 +64,7 @@ data:extend({
     default_temperature = 95,
     base_color = {0.5, 0.1, 0.0},
     flow_color = {0.7, 0.2, 0.0},
-    uber_barrel = true,
+    uber_barrel = {},
     default_import_location = "arrival",
   },
   {
@@ -76,7 +76,7 @@ data:extend({
     default_temperature = 15,
     base_color = {0.15, 0.32, 0.03},
     flow_color = {0.43, 0.75, 0.31},
-    uber_barrel = true,
+    uber_barrel = {},
     default_import_location = "arrival",
   },
 })

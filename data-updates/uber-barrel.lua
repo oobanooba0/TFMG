@@ -84,7 +84,7 @@ local function create_barrel_item(name, fluid, empty_barrel_item)
     icon_size = empty_barrel_item.icon_size or defines.default_icon_size,
     subgroup = "barrel",
     order = fluid.order,
-    weight = (fluid.uber_barrel_mass or 10)*kg,
+    weight = (fluid.uber_barrel.mass or 10)*kg,
     inventory_move_sound = item_sounds.metal_barrel_inventory_move,
     pick_sound = item_sounds.metal_barrel_inventory_pickup,
     drop_sound = item_sounds.metal_barrel_inventory_move,
@@ -127,8 +127,8 @@ end
 -- Creates a recipe to fill the provided barrel item with the provided fluid
 local function create_fill_barrel_recipe(item, fluid)
   local recipe_name = item.name
-  local fluid_density = fluid.uber_barrel_density or fluid_per_barrel
-  local categories = fluid.uber_barrel_crafting_categories or {"assembling-machine-pure","micro-assembler"}
+  local fluid_density = fluid.uber_barrel.density or fluid_per_barrel
+  local categories = fluid.uber_barrel.crafting_categories or {"assembling-machine-pure","micro-assembler"}
   local recipe =
   {
     type = "recipe",
@@ -136,7 +136,7 @@ local function create_fill_barrel_recipe(item, fluid)
     localised_name = {"recipe-name.fill-barrel", fluid.localised_name or {"fluid-name." .. fluid.name}},
     category = categories[1],
     additional_categories = categories,
-    energy_required = fluid.uber_barrel_thiccness or energy_per_fill,
+    energy_required = fluid.uber_barrel.thiccness or energy_per_fill,
     subgroup = "fill-barrel",
     order = fluid.order,
     enabled = false,
@@ -164,8 +164,8 @@ end
 -- Creates a recipe to empty the provided full barrel item producing the provided fluid
 local function create_empty_barrel_recipe(item, fluid)
   local recipe_name = "empty-" .. item.name
-  local fluid_density = fluid.uber_barrel_density or fluid_per_barrel
-  local categories = fluid.uber_barrel_crafting_categories or {"assembling-machine-pure","micro-assembler"}
+  local fluid_density = fluid.uber_barrel.density or fluid_per_barrel
+  local categories = fluid.uber_barrel.crafting_categories or {"assembling-machine-pure","micro-assembler"}
   local recipe =
   {
     type = "recipe",
@@ -173,7 +173,7 @@ local function create_empty_barrel_recipe(item, fluid)
     localised_name = {"recipe-name.empty-filled-barrel", fluid.localised_name or {"fluid-name." .. fluid.name}},
     category = categories[1],
     additional_categories = categories,
-    energy_required = fluid.uber_barrel_thiccness or energy_per_empty,
+    energy_required = fluid.uber_barrel.thiccness or energy_per_empty,
     subgroup = "empty-barrel",
     order = fluid.order,
     enabled = false,
@@ -275,7 +275,7 @@ end
 local function process_fluid(fluid, technology, empty_barrel_item)
 
   -- Allow fluids to opt-out
-  if fluid.uber_barrel ~= true then return end
+  if not fluid.uber_barrel then return end
 
   if not (fluid.icon or fluid.icons) then
     log("Can't make barrel recipe for "..fluid.name..", it doesn't have any icon or icons.")
@@ -316,8 +316,8 @@ ETFB.results = {
   {
     type = "fluid",
     name = "thruster-fuel",
-    amount = data.raw.fluid["thruster-fuel"].uber_barrel_density or fluid_per_barrel,
-    ignored_by_stats =  data.raw.fluid["thruster-fuel"].uber_barrel_density or fluid_per_barrel,
+    amount = data.raw.fluid["thruster-fuel"].uber_barrel.density or fluid_per_barrel,
+    ignored_by_stats =  data.raw.fluid["thruster-fuel"].uber_barrel.density or fluid_per_barrel,
     fluidbox_index = 2,
   },
   {
@@ -334,8 +334,8 @@ ETOB.results = {
   {
     type = "fluid",
     name = "thruster-oxidizer",
-    amount = data.raw.fluid["thruster-oxidizer"].uber_barrel_density or fluid_per_barrel,
-    ignored_by_stats = data.raw.fluid["thruster-oxidizer"].uber_barrel_density or fluid_per_barrel,
+    amount = data.raw.fluid["thruster-oxidizer"].uber_barrel.density or fluid_per_barrel,
+    ignored_by_stats = data.raw.fluid["thruster-oxidizer"].uber_barrel.density or fluid_per_barrel,
     fluidbox_index = 2,
   },
   {
