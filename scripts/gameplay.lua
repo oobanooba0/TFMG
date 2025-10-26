@@ -1,4 +1,3 @@
-
 ---Scout'o'tron deploy script. (hopefully)
 local gameplay = {}
 
@@ -51,4 +50,33 @@ function gameplay.softlock_detection()
     end
   end
 end
+
+function gameplay.research_finished(event)
+  if event.research.name == "contemplate-mind" then --basically, we're gonna stop doing the softlock detection once we can make AI processors
+    script.on_nth_tick(256,nil)
+  elseif event.research.name == "consider-your-potential" then
+    gameplay.self_arrive()
+  end
+  storage.story.tech_progress = storage.story.tech_progress + 1
+end
+
+function gameplay.research_removed(event) --remove our tech progress incase techs have been removed
+  storage.story.tech_progress = storage.story.tech_progress - 1
+end
+
+function gameplay.self_control()--this script runs in the platform phase to make sure we do not arrive too early.
+  local SELF = storage.platform
+  local progression = storage.story.tech_progress
+  if SELF.distance <= 0.0005 then SELF.distance = 0.01 end
+  SELF.speed = (progression + 1)/3
+end
+
+function gameplay.self_arrive()
+  local SELF = storage.platform
+  script.on_nth_tick(1,nil)
+  SELF.speed = 10
+  SELF.distance = 0.0001
+end
+
+
 return gameplay

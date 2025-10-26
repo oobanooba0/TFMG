@@ -91,7 +91,7 @@ local function create_barrel_item(name, fluid, empty_barrel_item)
     stack_size = empty_barrel_item.stack_size,
     factoriopedia_alternative = "barrel"
   }
-  result.default_import_location = fluid.default_import_location or "arrival"
+  result.default_import_location = fluid.uber_barrel.default_import_location or "nauvis"
 
   data:extend({result})
   return result

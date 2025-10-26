@@ -88,9 +88,29 @@ script.on_event(
 		supercomputer.on_supercomputer_tick()
 	end
 )
-script.on_nth_tick(100,
+script.on_nth_tick(256,
 	function()
 		gameplay.softlock_detection()
+	end
+)
+
+script.on_nth_tick(1,
+	function()
+		gameplay.self_control()
+	end
+)
+
+---on research
+script.on_event(defines.events.on_research_finished,
+	function(event)
+		story.trigger_story_event(event)
+		gameplay.research_finished(event)
+	end
+)
+
+script.on_event(defines.events.on_research_reversed,
+	function(event)
+		gameplay.research_removed(event)
 	end
 )
 
@@ -101,7 +121,6 @@ script.on_event(defines.events.on_player_created, function(e)
 	storage.players[player.index] = {}--initialise player storage
 
   player.teleport({ x = 0, y = 0 }, storage.platform.surface.name)
-	--player.teleport({x=0,y=0}, "arrival")--for debug
   player.enter_space_platform (storage.platform)
   local group = game.permissions.get_group("players")
     if group then

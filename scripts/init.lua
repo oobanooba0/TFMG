@@ -8,8 +8,6 @@ end)
 
 script.on_configuration_changed(function()
   refresh_data_storage()
-  game.forces.player.set_surface_hidden(game.surfaces.nauvis, true)
-  game.forces.player.lock_space_location("nauvis")
 end)
 
 
@@ -25,21 +23,27 @@ function create_self()--self is the name of the space platform, I just thought i
   local force = game.forces["player"]
   platform = force.create_space_platform({
   name = "SELF",
-  planet = "arrival",
+  planet = "nauvis",
   starter_pack = "space-platform-starter-pack"
   })
   platform.apply_starter_pack()
+  platform.space_location = "near-void"
+  platform.space_connection = "nauvis-near-void"
+  platform.paused = false
+  platform.schedule = {current = 1, records = {{station = "nauvis"}}}
+  platform.distance = 0.314159
   storage.platform = platform
+  
 	force.lock_space_location("nauvis")--Locks nauvis lol.
-  game.forces.player.set_surface_hidden(game.surfaces.nauvis, true)
-	--game.planets['arrival'].create_surface()
+  force.lock_space_location("near-void")
+	--force.unlock_space_location("vulcanus")--Locks nauvis lol.
 end
 
 function give_starting_items()
   if storage.platform.hub then
     storage.platform.hub.insert({ name = "asteroid-collector", count = 2})
     storage.platform.hub.insert({ name = "proton-decay-thermoelectric-generator", count = 1})
-    storage.platform.hub.insert({ name = "inserter-1", count = 10})
+    storage.platform.hub.insert({ name = "inserter", count = 10})
     storage.platform.hub.insert({ name = "matter-reconstructor", count = 1})
     storage.platform.hub.insert({ name = "small-radiator", count = 2})
     storage.platform.hub.insert({ name = "heat-pipe", count = 50})
@@ -63,5 +67,7 @@ function refresh_data_storage()--This should allow new storages to be added with
     storage.supercomputer = {} end
   if storage.story == nil then
     storage.story = {} end
+  if storage.story.tech_progress == nil then
+    storage.story.tech_progress = 0 end
 end
 

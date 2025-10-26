@@ -16,7 +16,7 @@ data:extend({
     place_result = "scout-o-tron",
     weight = 100 * tons,
     stack_size = 1,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
 })
 
@@ -35,6 +35,6 @@ data:extend({
     place_result = "scout-o-tron",
     weight = 200 * tons,
     stack_size = 1,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
 })

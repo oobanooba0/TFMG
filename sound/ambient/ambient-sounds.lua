@@ -18,7 +18,7 @@ data:extend({--arrival
     type = "ambient-sound",
     name = "ENTROPY",
     track_type = "main-track",
-    planet = "arrival",
+    planet = "nauvis",
     sound = {
       filename = "__TFMG-music__/arrival/ENTROPY.ogg",
       volume = 1,
@@ -29,7 +29,7 @@ data:extend({--arrival
     type = "ambient-sound",
     name = "LIFE",
     track_type = "main-track",
-    planet = "arrival",
+    planet = "nauvis",
     sound = {
       filename = "__TFMG-music__/arrival/LIFE.ogg",
       volume = 1,
@@ -40,7 +40,7 @@ data:extend({--arrival
     type = "ambient-sound",
     name = "TREMOR",
     track_type = "main-track",
-    planet = "arrival",
+    planet = "nauvis",
     sound = {
       filename = "__TFMG-music__/arrival/TREMOR.ogg",
       volume = 1,
@@ -52,7 +52,7 @@ data:extend({--arrival
     type = "ambient-sound",
     name = "Clock-Interlude",
     track_type = "interlude",
-    planet = "arrival",
+    planet = "nauvis",
     sound = {
       filename = "__TFMG-music__/arrival/Clock-Interlude.ogg",
       volume = 0.7,
@@ -63,7 +63,7 @@ data:extend({--arrival
     type = "ambient-sound",
     name = "Count-Interlude",
     track_type = "interlude",
-    planet = "arrival",
+    planet = "nauvis",
     sound = {
       filename = "__TFMG-music__/arrival/Count-Interlude.ogg",
       volume = 0.7,
@@ -74,7 +74,7 @@ data:extend({--arrival
     type = "ambient-sound",
     name = "Spider-Steps-Interlude",
     track_type = "interlude",
-    planet = "arrival",
+    planet = "nauvis",
     sound = {
       filename = "__TFMG-music__/arrival/Spider-Steps-Interlude.ogg",
       volume = 0.7,
@@ -85,7 +85,7 @@ data:extend({--arrival
     type = "ambient-sound",
     name = "Wyrms-Interlude",
     track_type = "interlude",
-    planet = "arrival",
+    planet = "nauvis",
     sound = {
       filename = "__TFMG-music__/arrival/Wyrms-Interlude.ogg",
       volume = 0.7,
@@ -96,7 +96,7 @@ data:extend({--arrival
     type = "ambient-sound",
     name = "Reflections-Interlude",
     track_type = "interlude",
-    planet = "arrival",
+    planet = "nauvis",
     sound = {
       filename = "__TFMG-music__/arrival/Reflections-Interlude.ogg",
       volume = 0.7,
@@ -107,7 +107,7 @@ data:extend({--arrival
     type = "ambient-sound",
     name = "Decomposition-Interlude",
     track_type = "interlude",
-    planet = "arrival",
+    planet = "nauvis",
     sound = {
       filename = "__TFMG-music__/arrival/Decomposition-Interlude.ogg",
       volume = 0.7,

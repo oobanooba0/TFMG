@@ -2,7 +2,7 @@ local sounds = require "__base__.prototypes.entity.sounds"
 local base_tile_sounds = require("__base__.prototypes.tile.tile-sounds")
 local resource_autoplace = require("resource-autoplace")
 
-resource_autoplace.initialize_patch_set("ice-geyser", false, "arrival")
+resource_autoplace.initialize_patch_set("ice-geyser", false, "nauvis")
 
 local function resource(resource_parameters, autoplace_parameters)
   return

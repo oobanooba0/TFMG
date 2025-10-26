@@ -16,7 +16,7 @@ data:extend({
     drop_sound = item_sounds.science_inventory_move,
     stack_size = 100,
     weight = 1 * kg,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
   {--introspection
     type = "tool",
@@ -34,7 +34,7 @@ data:extend({
     factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
     durability_description_value = "description.science-pack-remaining-amount-value",
     random_tint_color = item_tints.bluish_science,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     pictures = {
       layers = {
         {
@@ -65,7 +65,7 @@ data:extend({
     drop_sound = item_sounds.science_inventory_move,
     stack_size = 100,
     weight = 1 * kg,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
   {--exploration
     type = "tool",
@@ -83,7 +83,7 @@ data:extend({
     factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
     durability_description_value = "description.science-pack-remaining-amount-value",
     random_tint_color = item_tints.bluish_science,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     pictures = {
       layers = {
         {

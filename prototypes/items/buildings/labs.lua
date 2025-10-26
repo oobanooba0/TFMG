@@ -14,6 +14,6 @@ data:extend({
     drop_sound = item_sounds.lab_inventory_move,
     place_result = "neural-node",
     stack_size = 10,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
 })
