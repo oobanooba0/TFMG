@@ -65,8 +65,9 @@ require("prototypes.vanilla-content-obliterator")
 	require("prototypes.particles.asteroid-particles")
 
 --planets
-	require("prototypes.planet.planet")
 	require("prototypes.planet.arrival-map-gen")
+	require("prototypes.planet.planet")
+	require("prototypes.planet.map-gen-presets")
 
 --recipes
 	require("prototypes.recipes.assembling-machine")
