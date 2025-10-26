@@ -1,10 +1,9 @@
 local function unpipe_prototype(machine)--replace the old machine fluid box with a new one
-  local fluid_boxes = table.deepcopy(machine.fluid_boxes)--we must copy, else we edit the original while we refrence it
+  local fluid_boxes = table.deepcopy(machine.fluid_boxes)--we must copy, else we edit the original while we reference it which is bad
   local new_fluid_boxes = {}
   for _,fluid_box in pairs(fluid_boxes) do
     table.insert(new_fluid_boxes,fluid_box)
     local unpipe_fluid_box = table.deepcopy(fluid_box)
-    unpipe_fluid_box.max_pipeline_extent = 0
     --unpipe_fluid_box.pipe_covers = nil
     --unpipe_fluid_box.pipe_picture = nil
     for _,unpipe_connection in pairs(unpipe_fluid_box.pipe_connections) do
@@ -28,7 +27,7 @@ unpipe_prototype(data.raw["rocket-silo"]["rocket-silo"])
 local function fluid_ingredient_declare_index(ingredient,index)
   if ingredient.fluidbox_index then return end
   if data.raw.fluid[ingredient.name].pipent then ingredient.fluidbox_index = index*2
-  else ingredient.fluidbox_index = index*2-1
+    else ingredient.fluidbox_index = index*2-1
   end
 end
 
