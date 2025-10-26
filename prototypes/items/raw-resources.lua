@@ -12,7 +12,7 @@ data:extend({
     stack_size = 20,
     weight = 100 * kg,
     flags = {"always-show"},
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
   {--crystalline asteroid chunk
     type = "item",
@@ -26,7 +26,7 @@ data:extend({
     stack_size = 20,
     weight = 100 * kg,
     flags = {"always-show"},
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
   {--ferric ore
     type = "item",
@@ -45,9 +45,8 @@ data:extend({
     pick_sound = item_sounds.resource_inventory_pickup,
     drop_sound = item_sounds.resource_inventory_move,
     stack_size = 50,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     weight = 1*kg,
-    default_import_location = "arrival",
   },
   {--titanium ore
     type = "item",
@@ -66,9 +65,8 @@ data:extend({
     pick_sound = item_sounds.resource_inventory_pickup,
     drop_sound = item_sounds.resource_inventory_move,
     stack_size = 50,
-    default_import_location = "arrival",
     weight = 1*kg,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
   {--mineral ore
     type = "item",
@@ -87,9 +85,8 @@ data:extend({
     pick_sound = item_sounds.resource_inventory_pickup,
     drop_sound = item_sounds.resource_inventory_move,
     stack_size = 50,
-    default_import_location = "arrival",
     weight = 1*kg,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
   {--purified iron ore
     type = "item",
@@ -107,8 +104,7 @@ data:extend({
     pick_sound = item_sounds.resource_inventory_pickup,
     drop_sound = item_sounds.resource_inventory_move,
     stack_size = 50,
-    default_import_location = "arrival",
     weight = 1*kg,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
 })

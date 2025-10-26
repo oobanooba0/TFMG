@@ -530,7 +530,7 @@ data:extend({
     {
       {
         type = "unlock-space-location",
-        space_location = "arrival",
+        space_location = "nauvis",
         use_icon_overlay_constant = true
       },
       {

@@ -69,10 +69,6 @@
 			end
 		end
 	end
---change the default import location of every remaining item
-	for _, item in pairs(data.raw.item) do
-		item.default_import_location = "arrival"
-	end
 
 --hide water nauvis autoplace control
 	data.raw["autoplace-control"]["water"].hidden = true

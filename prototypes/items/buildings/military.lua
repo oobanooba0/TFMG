@@ -13,6 +13,6 @@ data:extend({
     place_result = "scout-radar",
     stack_size = 10,
     random_tint_color = item_tints.iron_rust,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
 })

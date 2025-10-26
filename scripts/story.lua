@@ -1,5 +1,15 @@
 
 local story = {}
+--event queue 
+local function event_queue(type,ticks,message,color)
+  local target_tick = game.tick + ticks + 1
+  local event_stack = storage.story.event_queue[target_tick]
+  if not event_stack then
+    event_stack = {}
+    storage.story.event_queue[target_tick] = event_stack
+  end
+  table.insert(event_stack,{type = type, message = message, color = color,ticks = ticks})
+end
 
 ---story tick triggers
 function story.on_story_tick(event)
@@ -31,19 +41,12 @@ function story.on_story_tick(event)
   end
 end
 
-function event_queue(type,ticks,message,color)
-  local target_tick = game.tick + ticks + 1
-  local event_stack = storage.story.event_queue[target_tick]
-  if not event_stack then
-    event_stack = {}
-    storage.story.event_queue[target_tick] = event_stack
-  end
-  table.insert(event_stack,{type = type, message = message, color = color,ticks = ticks})
-end
+
+
 
 ---Story event triggers
 
-script.on_event(defines.events.on_research_finished, function(event)
+function story.trigger_story_event(event)
   if event.research.name == "consider-your-purpose" then consider_your_purpose()
   elseif event.research.name == "assembling" then thermal_explainer()
   elseif event.research.name == "consider-the-self" then consider_the_self()
@@ -53,7 +56,7 @@ script.on_event(defines.events.on_research_finished, function(event)
   elseif event.research.name == "contemplate-rust" then contemplate_rust()
   elseif event.research.name == "contemplate-mind" then contemplate_mind()
   end
-end)
+end
 
 script.on_event(defines.events.on_console_chat, function (event)
   local message = string.gsub(string.lower(event.message),"[%p%c%s]","")--just obliterate punctuation

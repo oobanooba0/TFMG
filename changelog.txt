@@ -15,6 +15,7 @@ Date: ????
     - Supercomputers are now 11x11
     - Supercomputer terminals are now visible in blueprints before placing, and always above the supercomputer base. (so that theyre always visible)
     - Heat monitor now unlocked by heat management 2
+    - Nauvis, well and truely, no longer exists.
   Balancing:
     - Small radiators stack to 50
     - Small radiators now cost half to craft

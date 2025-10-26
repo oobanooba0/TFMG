@@ -17,7 +17,7 @@ data:extend({
     drop_sound = item_sounds.metal_small_inventory_move,
     stack_size = 100,
     random_tint_color = item_tints.iron_rust,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     weight = 2 * kg,
   },
   {
@@ -32,7 +32,7 @@ data:extend({
     stack_size = 100,
     spoil_result = "crystalline-plate",
     spoil_ticks = 60 * second,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     weight = 2 * kg,
   },
   {
@@ -45,7 +45,7 @@ data:extend({
     pick_sound = item_sounds.metal_small_inventory_pickup,
     drop_sound = item_sounds.metal_small_inventory_move,
     stack_size = 100,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     weight = 2 * kg,
   },
   {
@@ -58,7 +58,7 @@ data:extend({
     pick_sound = item_sounds.metal_small_inventory_pickup,
     drop_sound = item_sounds.metal_small_inventory_move,
     stack_size = 100,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     weight = 2 * kg,
   },
   {
@@ -76,7 +76,7 @@ data:extend({
     pick_sound = item_sounds.metal_small_inventory_pickup,
     drop_sound = item_sounds.metal_small_inventory_move,
     stack_size = 100,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     weight = 1 * kg,
   },
   {
@@ -99,7 +99,7 @@ data:extend({
     weight = 5 * kg,
     spoil_ticks = 1 * minute,
     spoil_result = "organic-carbon",
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
   {
     type = "item",
@@ -115,7 +115,7 @@ data:extend({
     fuel_category = "chemical",
     fuel_acceleration_multiplier = 0.5,
     fuel_top_speed_multiplier = 0.8,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
   {
     type = "item",
@@ -130,7 +130,7 @@ data:extend({
     random_tint_color = item_tints.plastic,
     spoil_result = "polymer-bar",
     spoil_ticks = 60 * minute,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     weight = 1 * kg,
   },
   {
@@ -144,7 +144,7 @@ data:extend({
     drop_sound = item_sounds.plastic_inventory_move,
     stack_size = 100,
     random_tint_color = item_tints.plastic,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     weight = 1 * kg,
   },
 ---structural intermediates (things which hold everything together)
@@ -159,7 +159,7 @@ data:extend({
     drop_sound = item_sounds.low_density_inventory_move,
     stack_size = 100,
     random_tint_color = item_tints.iron_rust,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     weight = 5 * kg,
   },
   {--high performance structure
@@ -173,7 +173,7 @@ data:extend({
     drop_sound = item_sounds.low_density_inventory_move,
     stack_size = 50,
     random_tint_color = item_tints.iron_rust,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     weight = 2 * kg,
   },
 ---mechanical intermediates (things that make other things move)
@@ -188,7 +188,7 @@ data:extend({
     drop_sound = item_sounds.metal_large_inventory_move,
     stack_size = 100,
     random_tint_color = item_tints.iron_rust,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     weight = 1 * kg,
   },
   {--mechatronic components
@@ -217,7 +217,7 @@ data:extend({
     drop_sound = item_sounds.metal_large_inventory_move,
     stack_size = 100,
     random_tint_color = item_tints.iron_rust,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     weight = 1 * kg,
   },
 ---Electonic intermediates (things that deal with electricity)
@@ -231,7 +231,7 @@ data:extend({
     pick_sound = item_sounds.electric_small_inventory_pickup,
     drop_sound = item_sounds.electric_small_inventory_move,
     stack_size = 100,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     weight = 0.5 * kg,
   },
   {--optical coil
@@ -248,7 +248,7 @@ data:extend({
     pick_sound = item_sounds.electric_small_inventory_pickup,
     drop_sound = item_sounds.electric_small_inventory_move,
     stack_size = 100,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     weight = 5 * kg,
   },
 --capacitors
@@ -265,7 +265,7 @@ data:extend({
     drop_sound = item_sounds.electric_small_inventory_move,
     place_as_equipment_result = "capacitor-equipment",
     stack_size = 10,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     pictures = {
       layers = {
         {
@@ -299,7 +299,7 @@ data:extend({
     fuel_acceleration_multiplier = 1,
     fuel_top_speed_multiplier = 1,
     burnt_result = "capacitor-discharged",
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     pictures = {
       layers = {
         {
@@ -328,7 +328,7 @@ data:extend({
     pick_sound = item_sounds.electric_small_inventory_pickup,
     drop_sound = item_sounds.electric_small_inventory_move,
     stack_size = 200,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     weight = 4 * kg,
   },
   {--ai processor
@@ -341,7 +341,7 @@ data:extend({
     pick_sound = item_sounds.electric_small_inventory_pickup,
     drop_sound = item_sounds.electric_small_inventory_move,
     stack_size = 100,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
     weight = 10 * kg,
   },
 ---advanced intermediates. (things that are complex I guess. I will likely subdivide this futher)
@@ -355,7 +355,7 @@ data:extend({
     pick_sound = item_sounds.electric_small_inventory_pickup,
     drop_sound = item_sounds.electric_small_inventory_move,
     stack_size = 5,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
   {
     type = "item",
@@ -368,7 +368,7 @@ data:extend({
     drop_sound = item_sounds.electric_small_inventory_move,
     stack_size = 5,
     place_as_equipment_result = "mechanical-leg-equipment",
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
   {--excited crystalline chunk red
     type = "item",
@@ -383,7 +383,7 @@ data:extend({
     weight = 100 * kg,
     spoil_result = "excited-crystalline-chunk-blue",
     spoil_ticks = 8 * second,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
   {--excited crystalline chunk blue
     type = "item",
@@ -398,7 +398,7 @@ data:extend({
     weight = 100 * kg,
     spoil_result = "excited-crystalline-chunk-red",
     spoil_ticks = 8 * second,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
   {--fused crystalline chunk
     type = "item",
@@ -411,7 +411,7 @@ data:extend({
     drop_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
     stack_size = 20,
     weight = 100 * kg,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
 })
 

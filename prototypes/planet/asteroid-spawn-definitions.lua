@@ -7,10 +7,14 @@ asteroid_functions.weighted_average = function(A, B, weight)
   return result
 end
 
-asteroid_functions.arrival_ratio      = {0.8 , 0.2}
 
-asteroid_functions.arrival_chunks      = 0.04
+asteroid_functions.arrival_ratio      = {0.8 , 0.2}
+asteroid_functions.arrival_chunks      = 0.02
 asteroid_functions.arrival_medium      = 0
+
+asteroid_functions.near_void_ratio      = {0.5 , 0.5}
+asteroid_functions.near_void_chunks      = 0
+asteroid_functions.near_void_medium      = 0
 
 asteroid_functions.chunk_angle = 1
 asteroid_functions.small_angle = 0.7
@@ -18,23 +22,17 @@ asteroid_functions.medium_angle = 0.6
 asteroid_functions.big_angle = 0.5
 asteroid_functions.huge_angle = 0.4
 
-asteroid_functions.arrival_arrival =
+asteroid_functions.arrival_near_void =
 {
   probability_on_range_chunk =
   {
     {position = 0.1, probability = asteroid_functions.arrival_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
-    {position = 0.9, probability = asteroid_functions.arrival_chunks, angle_when_stopped = asteroid_functions.chunk_angle}
-  },
-  probability_on_range_medium =
-  {
-    {position = 0.1, probability = 0, angle_when_stopped = asteroid_functions.medium_angle},
-    {position = 0.5, probability = asteroid_functions.arrival_medium * 3, angle_when_stopped = asteroid_functions.medium_angle},
-    {position = 0.9, probability = asteroid_functions.arrival_medium, angle_when_stopped = asteroid_functions.medium_angle}
+    {position = 0.9, probability = asteroid_functions.near_void_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
   },
   type_ratios =
   {
     {position = 0.1, ratios = asteroid_functions.arrival_ratio},
-    {position = 0.9, ratios = asteroid_functions.arrival_ratio},
+    {position = 0.9, ratios = asteroid_functions.near_void_ratio},
   }
 }
 

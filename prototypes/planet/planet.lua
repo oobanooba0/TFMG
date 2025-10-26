@@ -8,17 +8,15 @@ data:extend({--surface properties
     name = "spacetime-flow-viscosity",
     default_value = 1
   },
-})
-
-data:extend({
+--planets
   {
     type = "planet",
-    name = "arrival",
+    name = "nauvis",
     icon = "__TFMG-assets-0__/icons/planets/arrival.png",
     starmap_icon = "__TFMG-assets-0__/icons/planets/arrival-starmap.png",
     starmap_icon_size = 512,
     gravity_pull = 10,
-    distance = 30,
+    distance = 100,
     orientation = 0.275,
     magnitude = 1,
     order = "a[arrival]",
@@ -45,7 +43,7 @@ data:extend({
     },
     --Asteroid code
     asteroid_spawn_influence = 1,
-    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.arrival_arrival, 0.1),
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.arrival_near_void, 0.1),
     persistent_ambient_sounds =
     {
       base_ambience = {filename = "__space-age__/sound/wind/base-wind-aquilo.ogg", volume = 0.5},
@@ -114,5 +112,38 @@ data:extend({
         })
       }
     }
-  }
+  },
+--space locations
+  {
+    type = "space-location",
+    name = "near-void",
+    icon = "__core__/graphics/entity-info-dark-background.png",
+    icon_size = 53,
+    order = "b[near-void]",
+    subgroup = "planets",
+    draw_orbit = false,
+    gravity_pull = 0,
+    distance = 100,
+    orientation = 0.45,
+    magnitude = 1.0,
+    label_orientation = 0.15,
+    asteroid_spawn_influence = 0.9,
+    solar_power_in_space = 0,
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.arrival_near_void, 0.9),
+    hidden = true,
+    hidden_in_factoriopedia = true,
+  },
+--connections
+  {
+    type = "space-connection",
+    name = "nauvis-near-void",
+    subgroup = "planet-connections",
+    from = "nauvis",
+    to = "near-void",
+    order = "a",
+    length = 10000000,
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.arrival_near_void),
+    hidden = true,
+    --hidden_in_factoriopedia = true,
+  },
 })

@@ -13,7 +13,7 @@ data.extend({
     place_result = "container-1",
     stack_size = 50,
     random_tint_color = item_tints.iron_rust,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
   {--passive provider container 1
     type = "item",
@@ -27,7 +27,7 @@ data.extend({
     drop_sound = item_sounds.metal_chest_inventory_move,
     place_result = "passive-provider-container-1",
     stack_size = 50,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
   {--storage container 1
     type = "item",
@@ -41,6 +41,6 @@ data.extend({
     drop_sound = item_sounds.metal_chest_inventory_move,
     place_result = "storage-container-1",
     stack_size = 50,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
 })

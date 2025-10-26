@@ -14,6 +14,6 @@ data:extend({
     pick_sound = item_sounds.roboport_inventory_pickup,
     drop_sound = item_sounds.roboport_inventory_move,
     stack_size = 10,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
 })

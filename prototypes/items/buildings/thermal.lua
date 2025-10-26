@@ -3,14 +3,14 @@ local item_sounds = require("__base__.prototypes.item_sounds")
 --small radiator
   local small_radiator = data.raw.item["small-radiator"]
   small_radiator.flags = {"always-show"}
-  small_radiator.default_import_location = "arrival"
+  small_radiator.default_import_location = "nauvis"
   small_radiator.weight = 20 * kg
   small_radiator.hidden = false
 --ground radiator
   local ground_radiator = data.raw.item["ground-radiator"]
   ground_radiator.hidden = false
   ground_radiator.weight = 20 * kg
-  ground_radiator.default_import_location = "arrival"
+  ground_radiator.default_import_location = "nauvis"
 
 data:extend({
   {--heat monitor
@@ -24,6 +24,6 @@ data:extend({
     drop_sound = item_sounds.mechanical_inventory_move,
     place_result = "heat-monitor",
     stack_size = 50,
-    default_import_location = "arrival",
+    default_import_location = "nauvis",
   },
 })
