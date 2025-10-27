@@ -68,6 +68,8 @@ function refresh_data_storage()--This should allow new storages to be added with
   if storage.story == nil then
     storage.story = {} end
   if storage.story.tech_progress == nil then
-    storage.story.tech_progress = 0 end
+    storage.story.tech_progress = 0
+  end
 end
+
 
