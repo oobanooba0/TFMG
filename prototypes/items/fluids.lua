@@ -31,7 +31,6 @@ data:extend({
     base_color = {0.8, 0.85, 0.8},
     flow_color = {0.6, 0.65, 0.6},
     uber_barrel = {},
-    default_import_location = "arrival",
   },
   {
     type = "fluid",
@@ -44,7 +43,6 @@ data:extend({
     base_color = {0.3, 0.1, 0.3},
     flow_color = {0.8, 0.8, 0.8},
     uber_barrel = {},
-    default_import_location = "arrival",
   },
   {
     type = "fluid",
@@ -56,7 +54,6 @@ data:extend({
     base_color = {0.15, 0.32, 0.03},
     flow_color = {0.43, 0.75, 0.31},
     uber_barrel = {},
-    default_import_location = "arrival",
   },
   {
     type = "fluid",
@@ -68,7 +65,6 @@ data:extend({
     base_color = {0.5, 0.1, 0.0},
     flow_color = {0.7, 0.2, 0.0},
     uber_barrel = {},
-    default_import_location = "arrival",
   },
   {
     type = "fluid",
@@ -80,6 +76,5 @@ data:extend({
     base_color = {0.15, 0.32, 0.03},
     flow_color = {0.43, 0.75, 0.31},
     uber_barrel = {},
-    default_import_location = "arrival",
   },
 })

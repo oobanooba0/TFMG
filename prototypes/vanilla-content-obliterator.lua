@@ -2,6 +2,13 @@
 	data.raw ["technology"] = {}
 	data.raw ["tips-and-tricks-item"] = {}
 	data.raw ["utility-constants"]["default"].main_menu_simulations = {}
+	--remove planets.
+	for id, name in pairs(data.raw["space-connection"]) do
+		data.raw["space-connection"][id].hidden = true
+		data.raw["space-connection"][id].hidden_in_factoriopedia = true
+	end
+	
+
 
 --Due to the removal of vanilla techs, shortcuts dependant on them must be modified.
 	data.raw ["shortcut"]["undo"].technology_to_unlock = nil
@@ -69,6 +76,7 @@
 			end
 		end
 	end
+
 
 --hide water nauvis autoplace control
 	data.raw["autoplace-control"]["water"].hidden = true
