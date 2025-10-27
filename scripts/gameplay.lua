@@ -58,12 +58,12 @@ local gameplay = {}
         storage.platform.hub.insert({ name = "scout-o-tron-pod", count = 2})
       else--do normal items
         storage.platform.hub.insert({ name = "asteroid-collector", count = 2})
-        storage.platform.hub.insert({ name = "electric-energy-interface", count = 1})
+        storage.platform.hub.insert({ name = "proton-decay-thermoelectric-generator", count = 1})
         storage.platform.hub.insert({ name = "inserter", count = 10})
         storage.platform.hub.insert({ name = "matter-reconstructor", count = 1})
         storage.platform.hub.insert({ name = "small-radiator", count = 2})
         storage.platform.hub.insert({ name = "heat-pipe", count = 50})
-        storage.platform.hub.insert({ name = "space-platform-foundation", count = 500})
+        storage.platform.hub.insert({ name = "space-platform-foundation", count = 490})
       end
     end
   end
