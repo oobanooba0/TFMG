@@ -2,12 +2,15 @@
 Version: 0.4.0
 Date: ????
   Features:
-    - You now start the game on course to arrival. This means you get significantly more asteroids in the early phase of the game.
+    - Unpipable fluid mechanic introduced, some fluids like thruster fuel and oxidizer cannot be transported via pipe, instaid you must directly transfer the fluid through machines.
+    - You now start the game on course to arrival. This means you get significantly more asteroids in the early phase of the game, but their avalability will drop sharply once you reach arrival.
     - Radiators now have a hot new custom graphic.
     - Heat management 2 added, now a prerequisite of exploration science
     - Evaporation radiator added, a ground placed radiator for heat removal on planets. where normal radiators can't be placed. Unlocked by heat management 2
   Changes:
     - old saves broken. Just not realistic to fix that.
+    - old menu simulations are removed :(
+    - Most irrelevant vanilla content is hidden from the game, GUI clutter is no more.
     - Small radiators are now 1x5. They now only radiate 2MW of heat, down from 5MW. (still means a 1.5x increase in radiation:surface area so technically a buff.)
     - Small radiators internals ported to TFMG thermal mod.
     - All machines are ported over to the new TFMG Thermal thermal system, which is a significantly improved version of the old thermal system, Its infinitely easier for me to dev with as well as being massively more performant at scale. (It took me over a week to do this, but its genuinely huge)
