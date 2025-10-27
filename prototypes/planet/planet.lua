@@ -23,7 +23,7 @@ data:extend({--surface properties
     subgroup = "planets",
     map_seed_offset = 0,
     map_gen_settings = planet_map_gen.arrival(),
-    pollutant_type = nil,
+    pollutant_type = "tremors",
     solar_power_in_space = 100,
     planet_procession_set =
     {
@@ -146,4 +146,21 @@ data:extend({--surface properties
     hidden = true,
     --hidden_in_factoriopedia = true,
   },
+--pollution types
+  {
+    type = "airborne-pollutant",
+    name = "tremors",
+    chart_color = {r = 140, g = 50, b = 0, a = 149},
+    icon =
+    {
+      filename = "__core__/graphics/icons/mip/side-map-menu-buttons.png",
+      priority = "high",
+      size = 64,
+      mipmap_count = 2,
+      y = 3 * 64,
+      flags = {"gui-icon"}
+    },
+    affects_evolution = true,
+    affects_water_tint = true,
+  }
 })

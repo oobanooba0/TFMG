@@ -63,6 +63,22 @@ local ice_worm_cloud_repeats = 2
 local ice_worm_expanding_cloud_steps = 30
 local ice_worm_expanding_cloud_interval = 10
 
+local ice_worm_map_colour = {0.5,0.5,0.8,0.02}
+
+local ice_worm_enraged_attack = {{
+  time_cooldown = 5,
+  effect = {
+    {
+      type = "create-explosion",
+      entity_name = "crawler-explosion",
+      offset_deviation = {{-20,-20},{20,20}},
+      non_colliding_search_precision = 1,
+      non_colliding_search_radius = 10,
+      only_when_visible = false,
+      probability = 0.03
+    },
+  }
+  }}
 
 function make_segment_name(base_name, scale)
   return base_name.."-x"..string.gsub(tostring(scale), "%.", "_")
@@ -134,6 +150,14 @@ function make_ice_worm_head(base_name, order, scale, damage_multiplier, health, 
     icon = "__space-age__/graphics/icons/big-demolisher.png",
     flags = {"placeable-player", "placeable-neutral", "placeable-off-grid", "not-repairable"},
     selectable_in_game = false,
+    created_effect = {--pain in the ass, but the trigger needs to be delayed so we can get the segmented unit. Which doesnt exist until after the trigger happens normally.
+      type = "direct",
+      action_delivery = {
+        type = "delayed",
+        delayed_trigger = "ice-worm-created-delay"
+      }
+    },
+    map_color = ice_worm_map_colour,
     max_health = health,
     order = order,
     subgroup = "enemies",
@@ -146,15 +170,15 @@ function make_ice_worm_head(base_name, order, scale, damage_multiplier, health, 
     drawing_box_vertical_extension = 4.0 * scale,
     is_military_target = true,
     overkill_fraction = ice_worm_overkill_fraction,
-    vision_distance = 0,
+    vision_distance = 64,
     territory_radius = (1.5*scale)+1,
-    enraged_duration = 30 * 60, -- 30 seconds
-    patrolling_speed = 2.0 * speed_multiplier / 60, -- 1.5 tiles per second
-    investigating_speed = 4.0 * speed_multiplier / 60, -- 2.25 tiles per second
-    attacking_speed = 7.0 * speed_multiplier / 60, -- 3.0 tiles per second
-    enraged_speed = 10.0 * speed_multiplier / 60, -- 4.0 tiles per second
+    enraged_duration = 30 * 60, 
+    patrolling_speed = 2.0 * speed_multiplier / 60,
+    investigating_speed = 12.0 * speed_multiplier / 60, 
+    attacking_speed = 6.0 * speed_multiplier / 60, 
+    enraged_speed = 6.0 * speed_multiplier / 60, 
     acceleration_rate = 1 * speed_multiplier / 60 / 60, -- 1 tile per second per second
-    turn_radius = 12 * scale, -- tiles
+    turn_radius = (18 * scale) + 30 , -- tiles
     patrolling_turn_radius = (32*scale)+60, -- tiles--current result great
     turn_smoothing = 0, -- fraction of the total turning range (based on turning radius)
     roar = sounds.roar,
@@ -181,29 +205,15 @@ function make_ice_worm_head(base_name, order, scale, damage_multiplier, health, 
     --},
     backward_padding = -2.5 * scale, -- tiles
     render_layer = "higher-object-under",
-    update_effects =
-    {
-      {
-        distance_cooldown = 4 * scale,
-        effect =
-        {
-          {
-            type = "create-smoke",
-            entity_name = "big-demolisher-ash-cloud-trail",
-            show_in_tooltip = false
-          }
-        }
-      },
-      --{--DEBUG: traces their path on a map to see how they move
-      --  distance_cooldown = 4 * scale,
-      --  effect = 
-      --    {
-      --      type = "set-tile",
-      --      radius = 2,
-      --      tile_name = "grass-1"
-      --    }
-      --}
-    },
+    update_effects ={{
+      distance_cooldown = 4 * scale,
+      effect ={{
+          type = "create-smoke",
+          entity_name = "big-demolisher-ash-cloud-trail",
+          show_in_tooltip = false
+        }}
+      }},
+    update_effects_while_enraged = ice_worm_enraged_attack,
     segment_engine =
     {
       segments = make_ice_worm_segment_specifications(base_name, ice_worm_segment_scales, scale)
@@ -220,7 +230,7 @@ function make_ice_worm_segment(base_name, scale, damage_multiplier, health, soun
     name = make_segment_name(base_name.."-segment", scale),
     type = "segment",
     selectable_in_game = false,
-    map_color = {0.5,0.5,0.8,0.02},
+    map_color = ice_worm_map_colour,
     --map_color = {0,0,0,0.5},--this ones for debug
     localised_name = {"entity-name.ice_worm-segment", {"entity-name."..base_name}},
     hidden = true,
@@ -297,6 +307,7 @@ function make_ice_worm_segment(base_name, scale, damage_multiplier, health, soun
         }
       },
     },
+    update_effects_while_enraged = ice_worm_enraged_attack,
   }
 end
 
@@ -309,6 +320,7 @@ function make_ice_worm_tail(base_name, scale, damage_multiplier, health, sounds)
     localised_name = {"entity-name.ice_worm-tail", {"entity-name."..base_name}},
     hidden = true,
     flags = {"not-repairable", "not-in-kill-statistics"},
+    map_color = ice_worm_map_colour,
     collision_mask = {layers = {}},
     max_health = health,
     impact_category = "organic",
@@ -367,10 +379,6 @@ function make_ice_worm_segments(base_name, segment_scales, scale, damage_multipl
   return prototypes
 end
 
-
-
-
-
 function make_ice_worm(base_name, order, scale, damage_multiplier, health, regen, speed_multiplier, sounds)
   data:extend({make_ice_worm_head(base_name, order, scale, damage_multiplier, health, regen, speed_multiplier, sounds)})
   data:extend(make_ice_worm_segments(base_name, ice_worm_segment_scales, scale, damage_multiplier, health, sounds))
@@ -380,3 +388,23 @@ end
 make_ice_worm("small-ice-worm", "a-a", 0.8, 1, 8000000, 1000, 0.5, space_age_sounds.demolisher.small)
 make_ice_worm("medium-ice-worm", "a-b", 2, 1.5, 50000000, 1000, 0.7, space_age_sounds.demolisher.medium)
 make_ice_worm("big-ice-worm", "a-c", 5, 2.5, 1000000000, 1000, 1, space_age_sounds.demolisher.big)
+
+data:extend({
+  {--ice worm creation delayed trigger
+    type = "delayed-active-trigger",
+    name = "ice-worm-created-delay",
+    action = {
+      type = "direct",
+      action_delivery = {
+        type = "instant",
+        target_effects = {
+          type = "script",
+          effect_id = "ice-worm-created"
+        }
+      }
+    },
+    delay = 1,
+    cancel_when_source_is_destroyed = true,
+  },
+
+})

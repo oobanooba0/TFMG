@@ -4,8 +4,114 @@ local explosion_animations = require("__space-age__.prototypes.entity.explosion-
 local ferric_asteroids_sounds = require ("__TFMG__.prototypes.entity.sounds")
 local crystalline_asteroids_sounds = require ("__TFMG__.prototypes.entity.sounds")
 
---asteroid explosions
+--explosion ice worm
 data:extend({
+  {
+    type = "explosion",
+    name = "crawler-explosion",
+    icon = "__TFMG-assets-0__/icons/medium-crystalline-asteroid.png",
+    flags = {"not-on-map"},
+    hidden = true,
+    height = 0,
+    animations = explosion_animations.asteroid_explosion_small({tint = {0.6118, 0.4980, 0.4745, 1}}),
+    sound = crystalline_asteroids_sounds.asteroid_damage_crystalline_medium,
+    delay_deviation = 5,
+    created_effect = {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          {
+            type = "script",
+            effect_id = "spawn-hatchling"
+          },
+          {
+            type = "create-trivial-smoke",
+            repeat_count = 25,
+            smoke_name = "asteroid-smoke-crystalline-medium",
+            offset_deviation = { { -0.8, -0.8 }, { 0.8, 0.8 } },
+            initial_height = 0,
+            speed_from_center = 0.011,
+            speed_from_center_deviation = 0.05
+          },
+          {
+            type = "create-particle",
+            repeat_count = 10,
+            particle_name = "crystalline-asteroid-particle-small",
+            offset_deviation = { { -1.5, -1.5 }, { 1.5, 1.5 } },
+            initial_height = 0,
+            initial_height_deviation = 0.49,
+            initial_vertical_speed = 0.088,
+            initial_vertical_speed_deviation = 0.05,
+            speed_from_center = 0.03,
+            speed_from_center_deviation = 0.07,
+            movement_multiplier = 1,
+            only_when_visible = true
+          },
+          {
+            type = "create-particle",
+            repeat_count = 8,
+            particle_name = "crystalline-asteroid-particle-medium",
+            offset_deviation = { { -1.5, -1.5 }, { 1.5, 1.5 } },
+            initial_height = 0,
+            initial_height_deviation = 0.49,
+            initial_vertical_speed = 0.088,
+            initial_vertical_speed_deviation = 0.05,
+            speed_from_center = 0.03,
+            speed_from_center_deviation = 0.07,
+            movement_multiplier = 1,
+            only_when_visible = true
+          },
+          {
+            type = "create-particle",
+            repeat_count = 10,
+            particle_name = "ferric-asteroid-particle-small",
+            offset_deviation = { { -1.5, -1.5 }, { 1.5, 1.5 } },
+            initial_height = 0,
+            initial_height_deviation = 0.49,
+            initial_vertical_speed = 0.088,
+            initial_vertical_speed_deviation = 0.05,
+            speed_from_center = 0.03,
+            speed_from_center_deviation = 0.07,
+            movement_multiplier = 1,
+            only_when_visible = true
+          },
+          {
+            type = "create-particle",
+            repeat_count = 8,
+            particle_name = "ferric-asteroid-particle-medium",
+            offset_deviation = { { -1.5, -1.5 }, { 1.5, 1.5 } },
+            initial_height = 0,
+            initial_height_deviation = 0.49,
+            initial_vertical_speed = 0.088,
+            initial_vertical_speed_deviation = 0.05,
+            speed_from_center = 0.03,
+            speed_from_center_deviation = 0.07,
+            movement_multiplier = 1,
+            only_when_visible = true
+          },
+          {
+            type = "create-particle",
+            repeat_count = 4,
+            particle_name = "crystalline-asteroid-particle-top-small",
+            offset_deviation = { { -0.45, -0.45 }, { 0.45, 0.45 } },
+            initial_height = 0.1,
+            initial_height_deviation = 0.49,
+            initial_vertical_speed = 0.02,
+            initial_vertical_speed_deviation = 0.05,
+            speed_from_center = 0.01,
+            speed_from_center_deviation = 0.01,
+            only_when_visible = true
+          },
+        }
+      }
+    }
+  },
+
+  --asteroid explosions
+
   --ferric asteroid explosions
   {
     type = "explosion",

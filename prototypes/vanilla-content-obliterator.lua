@@ -36,7 +36,7 @@
 	data.raw ["shortcut"]["give-discharge-defense-remote"].unavailable_until_unlocked = true
 	data.raw ["shortcut"]["give-artillery-targeting-remote"].unavailable_until_unlocked = true
 
--- hide vanilla content from game, this seems easier than outright removing certain things due to dependancies.
+--hide vanilla content from game, this seems easier than outright removing certain things due to dependancies.
 
 	local removed_recipes = {"stone-brick","space-platform-foundation","small-lamp","constant-combinator","selector-combinator","arithmetic-combinator","decider-combinator","decider-combinator","power-switch","programmable-speaker","display-panel","repair-pack","construction-robot","logistic-robot","electric-mining-drill","pumpjack","pipe","pipe-to-ground","pump","storage-tank","rail","cargo-wagon","fluid-wagon","rail-signal","rail-chain-signal","train-stop","locomotive","radar","cargo-landing-pad","speed-module","efficiency-module","transport-belt","fast-transport-belt","underground-belt","fast-underground-belt","splitter","fast-splitter","toolbelt-equipment","rocket-silo","rocket-part","iron-chest","basic-oil-processing","advanced-oil-processing","simple-coal-liquefaction","coal-liquefaction","heavy-oil-cracking","light-oil-cracking","solid-fuel-from-petroleum-gas","solid-fuel-from-light-oil","solid-fuel-from-heavy-oil","acid-neutralisation","steam-condensation","ice-melting","iron-plate","copper-plate","steel-plate","plastic-bar","coal-synthesis","carbon","explosives","battery","sulfur","iron-gear-wheel","iron-stick","copper-cable","sulfuric-acid","thruster-fuel","advanced-thruster-fuel","thruster-oxidizer","advanced-thruster-oxidizer","concrete","concrete-from-molten-iron","hazard-concrete","refined-concrete","refined-hazard-concrete","barrel","cliff-explosives","inserter","long-handed-inserter","beacon","thruster","productivity-module","space-platform-starter-pack"}
 
@@ -86,6 +86,20 @@
 	data.raw.item ["space-platform-foundation"].stack_size = 250
 	data.raw.recipe ["space-platform-foundation"].hidden = true
 	data.raw.recipe ["space-platform-foundation"].hidden_in_factoriopedia = true
+	--tile pollution handling
+	for _, tile in pairs(data.raw.tile) do
+		tile.absorptions_per_second = nil
+	end
+	local per_chunk_per_min = 61440
+	local tremor_low = {"dust-crests","dust-lumpy","dust-patchy","dust-flat"}
+	for _, tile in pairs(tremor_low) do
+		data.raw.tile[tile].absorptions_per_second = {tremors = 1/per_chunk_per_min}
+	end
+	local tremor_high = {"fulgoran-dust","fulgoran-dunes","fulgoran-sand","fulgoran-rock"}
+	for _, tile in pairs(tremor_high) do
+		data.raw.tile[tile].absorptions_per_second = {tremors = 5/per_chunk_per_min}
+	end
+
 
 --train wagons
 	local KMH = 216
