@@ -2,7 +2,7 @@
 Version: 0.4.0
 Date: ????
   Features:
-    - You now start the game on course to arrival.
+    - You now start the game on course to arrival. This means you get significantly more asteroids in the early phase of the game.
     - Radiators now have a hot new custom graphic.
     - Heat management 2 added, now a prerequisite of exploration science
     - Evaporation radiator added, a ground placed radiator for heat removal on planets. where normal radiators can't be placed. Unlocked by heat management 2
@@ -24,6 +24,7 @@ Date: ????
     - Machines no longer have damage resistances (For now, while theres no meaningful sorces of damage in the game)
     - Supercomputer now has a lower damage temperature, and slightly higher max temperature. (making it slightly riskier to use)
     - Supercomputers now use 100MW (which in practice, is much lower, due to how much downtime a machine has)
+    - Arrival orbit has fewer chunks. (this is compensated by the fact that you will be moving at a high speed during the platform phase.)
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.17
 Date: 2025-10-10

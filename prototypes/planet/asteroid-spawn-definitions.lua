@@ -9,7 +9,7 @@ end
 
 
 asteroid_functions.arrival_ratio      = {0.8 , 0.2}
-asteroid_functions.arrival_chunks      = 0.02
+asteroid_functions.arrival_chunks      = 0.01
 asteroid_functions.arrival_medium      = 0
 
 asteroid_functions.near_void_ratio      = {0.5 , 0.5}
