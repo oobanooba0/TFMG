@@ -41,4 +41,3 @@ local timeline_tools =
 
 --note that the leading part is handle
 --menu_sims.platform_1 = make_simulation(20, "platform-1", "platform-1.zip", 1, 0.5, [[]])
-menu_sims.arrival_1 = make_simulation(20, "nauvis", "arrival-1.zip", 1, 1, [[]])
