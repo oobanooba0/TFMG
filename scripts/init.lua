@@ -1,8 +1,11 @@
 script.on_init(function(e)--Code shamelessly plagerised from Platformer by Corlin and Xiroc
-  disable_cutsceene()--Necessary for player to be teleported and imprisoned    
-  create_self()--Create starting space platform
-  give_starting_items()
+  disable_cutsceene()--Necessary for player to be teleported and imprisoned
   refresh_data_storage()
+
+  if settings.global["start-as-SELF"].value then
+    create_self()--Create starting space platform
+    give_starting_items()
+  end
   create_permission_group()
 end)
 

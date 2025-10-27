@@ -88,17 +88,18 @@ script.on_event(
 		supercomputer.on_supercomputer_tick()
 	end
 )
-script.on_nth_tick(256,
-	function()
-		gameplay.softlock_detection()
-	end
-)
-
-script.on_nth_tick(1,
-	function()
-		gameplay.self_control()
-	end
-)
+if settings.global["start-as-SELF"].value then --these scripts shouldnt run if we dont have self.
+	script.on_nth_tick(256,
+		function()
+			gameplay.softlock_detection()
+		end
+	)
+	script.on_nth_tick(1,
+		function()
+			gameplay.self_control()
+		end
+	)
+end
 
 ---on research
 script.on_event(defines.events.on_research_finished,
@@ -119,9 +120,10 @@ script.on_event(defines.events.on_research_reversed,
 script.on_event(defines.events.on_player_created, function(e)
 	local player = game.players[e.player_index]
 	storage.players[player.index] = {}--initialise player storage
-
-  player.teleport({ x = 0, y = 0 }, storage.platform.surface.name)
-  player.enter_space_platform (storage.platform)
+	if settings.global["start-as-SELF"].value then
+  	player.teleport({ x = 0, y = 0 }, storage.platform.surface.name)
+  	player.enter_space_platform (storage.platform)
+	end
   local group = game.permissions.get_group("players")
     if group then
     	group.add_player(player)
