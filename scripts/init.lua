@@ -78,7 +78,7 @@
 
 function deal_with_stupid_handlers()
   if settings.global["start-as-SELF"].value then --these scripts shouldnt run if we dont have self.
-			if not storage.story.handlers.no_more_softlock then
+		if not storage.story.handlers.no_more_softlock then
   		script.on_nth_tick(256,--be aware this gets unregistered later
   			function()
   				gameplay.softlock_detection()

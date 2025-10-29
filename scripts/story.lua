@@ -37,6 +37,9 @@ function story.on_story_tick(event)
       change_saved_color(v.color[1],v.color[2],v.color[3])
     elseif v.type == "save" then
       storage.story.saved_r_player = storage.story.last_r_player
+    elseif v.type == "self_arrive" then
+      local SELF = storage.platform
+      SELF.distance = 0.0000005
     end
   end
 end
@@ -253,8 +256,13 @@ function consider_your_potential()
   event_queue("random_say",t,"story-event.consider-your-potential-9") t = t + 20
   event_queue("random_say",t,"story-event.consider-your-potential-10") t = t + 120
   event_queue("random_say",t,"story-event.consider-your-potential-11") t = t + 120
+  if not storage.story.handlers.no_more_self_control then
+    event_queue("self_arrive",t)
+  end
   event_queue("random_say",t,"story-event.consider-your-potential-12") t = t + 220
+
   event_queue("random_say",t,"story-event.consider-your-potential-13")
+  
 end
 
 function contemplate_life()

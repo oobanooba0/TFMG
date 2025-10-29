@@ -126,7 +126,7 @@ function gameplay.self_arrive()
   local SELF = storage.platform
   if not SELF then return end
   script.on_nth_tick(1,nil)
-  SELF.speed = 10
+  SELF.speed = 6
   SELF.distance = 0.0001
   storage.story.handlers.no_more_self_control = true
 end
