@@ -17,6 +17,8 @@
       storage.story = {} end
     if storage.story.tech_progress == nil then
       storage.story.tech_progress = 0 end
+		if storage.story.handlers == nil then
+			storage.story.handlers = {} end
 		if storage.worms == nil then
 			storage.worms = {} end
 		if storage.worms.recent_launch_count == nil then
@@ -30,6 +32,7 @@
   script.on_init(function(e)--Code shamelessly plagerised from Platformer by Corlin and Xiroc
     disable_cutsceene()--Necessary for player to be teleported and imprisoned
     refresh_data_storage()
+		deal_with_stupid_handlers()
 
     if settings.global["start-as-SELF"].value then
       gameplay.create_self()--Create starting space platform
@@ -41,6 +44,10 @@
   script.on_configuration_changed(function()
     refresh_data_storage()
   end)
+
+	script.on_load(function()
+		deal_with_stupid_handlers()
+	end)
 
 --Upon player joins
   script.on_event(defines.events.on_player_created, function(e)
@@ -68,18 +75,25 @@
   		supercomputer.on_supercomputer_tick()
   	end
   )
+
+function deal_with_stupid_handlers()
   if settings.global["start-as-SELF"].value then --these scripts shouldnt run if we dont have self.
-  	script.on_nth_tick(256,--be aware this gets unregistered later
-  		function()
-  			gameplay.softlock_detection()
-  		end
-  	)
-  	script.on_nth_tick(1,
-  		function()
-  			gameplay.self_control()
-  		end
-  	)
-  end
+			if not storage.story.handlers.no_more_softlock then
+  		script.on_nth_tick(256,--be aware this gets unregistered later
+  			function()
+  				gameplay.softlock_detection()
+  			end
+  		)
+		end
+	if not storage.story.handlers.no_more_self_control then
+  		script.on_nth_tick(1,
+  			function()
+  				gameplay.self_control()
+  			end
+  		)
+  	end
+	end
+end
 
 	script.on_nth_tick(3600,
 		function()

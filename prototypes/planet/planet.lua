@@ -14,7 +14,7 @@ data:extend({--surface properties
     name = "nauvis",
     icon = "__TFMG-assets-0__/icons/planets/arrival.png",
     starmap_icon = "__TFMG-assets-0__/icons/planets/arrival-starmap.png",
-    starmap_icon_size = 512,
+    starmap_icon_size = 4096,
     gravity_pull = 10,
     distance = 100,
     orientation = 0.275,

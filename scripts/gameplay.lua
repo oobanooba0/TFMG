@@ -103,6 +103,7 @@ end
 function gameplay.research_finished(event)
   if event.research.name == "contemplate-mind" then --basically, we're gonna stop doing the softlock detection once we can make AI processors
     script.on_nth_tick(256,nil)
+    storage.story.handlers.no_more_softlock = true
   elseif event.research.name == "consider-your-potential" then
     gameplay.self_arrive()
   end
@@ -127,6 +128,7 @@ function gameplay.self_arrive()
   script.on_nth_tick(1,nil)
   SELF.speed = 10
   SELF.distance = 0.0001
+  storage.story.handlers.no_more_self_control = true
 end
 
 return gameplay
