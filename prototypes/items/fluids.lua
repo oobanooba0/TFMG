@@ -13,8 +13,10 @@ end
 data.raw.fluid["water"].uber_barrel = {}
 data.raw.fluid["thruster-fuel"].uber_barrel = {}
 data.raw.fluid["thruster-fuel"].pipent = true
+data.raw.fluid["thruster-fuel"].default_temperature = -183
 data.raw.fluid["thruster-oxidizer"].uber_barrel = {}
 data.raw.fluid["thruster-oxidizer"].pipent = true
+data.raw.fluid["thruster-oxidizer"].default_temperature = -253
 
 --pipent = true to remove fluid from pipes
 

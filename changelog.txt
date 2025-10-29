@@ -7,6 +7,7 @@ Date: ????
     - Radiators now have a hot new custom graphic.
     - Heat management 2 added, now a prerequisite of exploration science
     - Evaporation radiator added, a ground placed radiator for heat removal on planets. where normal radiators can't be placed. Unlocked by heat management 2
+    - Constructron introduced
     - they move below.
   Changes:
     - old saves broken. Just not realistic to fix that.
@@ -30,6 +31,7 @@ Date: ????
     - Supercomputer now has a lower damage temperature, and slightly higher max temperature. (making it slightly riskier to use)
     - Supercomputers now use 100MW (which in practice, is much lower, due to how much downtime a machine has)
     - Arrival orbit has fewer chunks. (this is compensated by the fact that you will be moving at a high speed during the platform phase.)
+    - there is now less water in hydrocarbon slush
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.17
 Date: 2025-10-10
