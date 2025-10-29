@@ -32,6 +32,7 @@
   script.on_init(function(e)--Code shamelessly plagerised from Platformer by Corlin and Xiroc
     disable_cutsceene()--Necessary for player to be teleported and imprisoned
     refresh_data_storage()
+		set_starting_flags()--sets certain flags based on starting settings
 		deal_with_stupid_handlers()
 
     if settings.global["start-as-SELF"].value then
@@ -84,7 +85,7 @@ function deal_with_stupid_handlers()
   				gameplay.softlock_detection()
   			end
   		)
-		end
+	end
 	if not storage.story.handlers.no_more_self_control then
   		script.on_nth_tick(1,
   			function()
@@ -94,6 +95,14 @@ function deal_with_stupid_handlers()
   	end
 	end
 end
+
+function set_starting_flags()
+	if not settings.global["start-as-SELF"].value then
+		storage.story.handlers.no_more_self_control = true
+		storage.story.handlers.no_more_softlock = true
+	end
+end
+
 
 	script.on_nth_tick(3600,
 		function()
