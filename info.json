@@ -14,7 +14,7 @@
     "TFMG-music >= 0.3.14",
     "TFMG-assets-0 >= 0.4.0",
     "TFMG-simulations >= 0.4.0",
-    "TFMG-thermal >= 0.4.0",
+    "TFMG-thermal >= 0.4.2",
     "?visible-planets >= 1.5.7"
   ],
   "space_travel_required": true,
