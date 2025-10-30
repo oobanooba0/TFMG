@@ -32,6 +32,7 @@ Date: ????
     - Supercomputers now use 100MW (which in practice, is much lower, due to how much downtime a machine has)
     - Arrival orbit has fewer chunks. (this is compensated by the fact that you will be moving at a high speed during the platform phase.)
     - first pre science inserter capacity bonus has been removed- You just dont need it.
+    - long handed inserters are now half as fast as their regular inserter counterpart.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.17
 Date: 2025-10-10
