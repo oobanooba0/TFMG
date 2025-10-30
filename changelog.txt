@@ -8,6 +8,7 @@ Date: ????
     - Heat management 2 added, now a prerequisite of exploration science
     - Evaporation radiator added, a ground placed radiator for heat removal on planets. where normal radiators can't be placed. Unlocked by heat management 2
     - Constructron introduced
+    - optional compatibility with visible planets added.
     - they move below.
   Changes:
     - old saves broken. Just not realistic to fix that.
