@@ -91,15 +91,6 @@
 		tile.absorptions_per_second = nil
 	end
 	local per_chunk_per_min = 61440
-	local tremor_low = {"dust-crests","dust-lumpy","dust-patchy","dust-flat"}
-	for _, tile in pairs(tremor_low) do
-		data.raw.tile[tile].absorptions_per_second = {tremors = 1/per_chunk_per_min}
-	end
-	local tremor_high = {"fulgoran-dust","fulgoran-dunes","fulgoran-sand","fulgoran-rock"}
-	for _, tile in pairs(tremor_high) do
-		data.raw.tile[tile].absorptions_per_second = {tremors = 5/per_chunk_per_min}
-	end
-
 
 --train wagons
 	local KMH = 216

@@ -23,7 +23,7 @@ data:extend({--surface properties
     subgroup = "planets",
     map_seed_offset = 0,
     map_gen_settings = planet_map_gen.arrival(),
-    pollutant_type = "tremors",
+    pollutant_type = nil,
     solar_power_in_space = 100,
     planet_procession_set =
     {
