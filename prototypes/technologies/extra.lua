@@ -52,13 +52,14 @@ data:extend({
         modifier = 1
       },
     },
-    research_trigger =
-    {
-      type = "craft-item",
-      item = "inserter",
-      count = 64
+    prerequisites = {"introspection-science-pack"},
+    unit = {
+    count = 128,
+    ingredients = {
+      {"introspection-science", 1}
+      },
+    time = 16
     },
-    prerequisites = {"logistics-1"},
     upgrade = true
   },
   {--inserter-capacity-bonus 2
@@ -72,28 +73,7 @@ data:extend({
         modifier = 1
       },
     },
-    prerequisites = {"inserter-capacity-bonus-1","introspection-science-pack"},
-    unit = {
-    count = 256,
-    ingredients = {
-      {"introspection-science", 1}
-      },
-    time = 24
-    },
-    upgrade = true
-  },
-  {--inserter-capacity-bonus 3
-    type = "technology",
-    name = "inserter-capacity-bonus-3",
-    icons = util.technology_icon_constant_stack_size("__base__/graphics/technology/inserter-capacity.png"),
-    effects =
-    {
-      {
-        type = "inserter-stack-size-bonus",
-        modifier = 1
-      },
-    },
-    prerequisites = {"inserter-capacity-bonus-2","exploration-science"},
+    prerequisites = {"inserter-capacity-bonus-1","exploration-science"},
     unit = {
     count = 512,
     ingredients = {

@@ -22,7 +22,7 @@ Date: ????
     - Supercomputer terminals are now visible in blueprints before placing, and always above the supercomputer base. (so that theyre always visible)
     - Heat monitor now unlocked by heat management 2
     - Nauvis, well and truely, no longer exists.
-    - Rocket silo is a military target
+    - Rocket silo is a military target now.
   Balancing:
     - Small radiators stack to 50
     - Small radiators now cost half to craft
@@ -31,7 +31,7 @@ Date: ????
     - Supercomputer now has a lower damage temperature, and slightly higher max temperature. (making it slightly riskier to use)
     - Supercomputers now use 100MW (which in practice, is much lower, due to how much downtime a machine has)
     - Arrival orbit has fewer chunks. (this is compensated by the fact that you will be moving at a high speed during the platform phase.)
-    - there is now less water in hydrocarbon slush
+    - first pre science inserter capacity bonus has been removed- You just dont need it.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.17
 Date: 2025-10-10
