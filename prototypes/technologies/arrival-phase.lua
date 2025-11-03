@@ -527,7 +527,8 @@ data:extend({
         recipe = "light-space-platform-foundation"
       },
       {
-        type = "unlock-space-platforms"
+        type = "unlock-space-platforms",
+        modifier = true,
       },
     },
     prerequisites = {"rocketry"},
