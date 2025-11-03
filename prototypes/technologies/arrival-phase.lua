@@ -522,6 +522,10 @@ data:extend({
         type = "unlock-recipe",
         recipe = "space-platform-starter-pack"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "light-space-platform-foundation"
+      },
     },
     prerequisites = {"rocketry"},
     unit = {

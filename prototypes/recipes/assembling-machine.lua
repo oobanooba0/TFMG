@@ -675,7 +675,7 @@ data:extend({
   {--heavy space platform
     type = "recipe",
     category = "assembling-machine",
-    name = "heavy-space-platform",
+    name = "space-platform-foundation",
     energy_required = 2,
     enabled = true,
     ingredients = {
@@ -683,6 +683,20 @@ data:extend({
     },
     results = { 
       { type = "item", name = "space-platform-foundation", amount = 1 }
+    },
+  },
+  {--light space platform
+    type = "recipe",
+    category = "assembling-machine",
+    name = "light-space-platform-foundation",
+    energy_required = 12,
+    enabled = true,
+    ingredients = {
+      { type = "item", name = "high-performance-structure", amount = 4 },
+      { type = "item", name = "optical-coil", amount = 10 },
+    },
+    results = { 
+      { type = "item", name = "light-space-platform-foundation", amount = 1 }
     },
   },
   {--heat pipe

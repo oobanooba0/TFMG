@@ -11,6 +11,7 @@ Date: ????
     - optional compatibility with visible planets added.
     - some achivements added
     - they move below.
+    - Light and heavy space platform added: light space platform is expensive, but light (and good for space ships) heavy space platform is cheap but heavy (good for stationary platforms)
   Changes:
     - old saves broken. Just not realistic to fix that.
     - old menu simulations are removed :(
