@@ -860,11 +860,42 @@ data:extend({
     ingredients = {
       { type = "item", name = "high-performance-structure", amount = 64 },
       { type = "item", name = "mechatronic-components", amount = 64 },
-      { type = "item", name = "ai-processor", amount = 8 },
+      { type = "item", name = "ai-processor", amount = 16 },
       { type = "item", name = "concrete", amount = 128 },
     },
     results = { 
       { type = "item", name = "rocket-silo", amount = 1 }
+    },
+  },
+  {--platform thruster
+    type = "recipe",
+    category = "assembling-machine",
+    name = "thruster",
+    energy_required = 64,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "high-performance-structure", amount = 32 },
+      { type = "item", name = "mechatronic-components", amount = 16 },
+      { type = "item", name = "heat-pipe", amount = 32 },
+      { type = "item", name = "pipe", amount = 32 },
+    },
+    results = { 
+      { type = "item", name = "thruster", amount = 1 }
+    },
+  },
+  {--platform starter pack
+    type = "recipe",
+    category = "assembling-machine",
+    name = "space-platform-starter-pack",
+    energy_required = 64,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "high-performance-structure", amount = 32 },
+      { type = "item", name = "mechatronic-components", amount = 16 },
+      { type = "item", name = "ai-processor", amount = 16 },
+    },
+    results = { 
+      { type = "item", name = "space-platform-starter-pack", amount = 1 }
     },
   },
   {--lamp

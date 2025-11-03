@@ -507,6 +507,32 @@ data:extend({
       time = 32
     },
   },
+  {--rockets
+    type = "technology",
+    name = "space-ships",
+    icon = "__space-age__/graphics/technology/space-platform-thruster.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "thruster"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "space-platform-starter-pack"
+      },
+    },
+    prerequisites = {"rocketry"},
+    unit = {
+      count = 512,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1}
+      },
+      time = 32
+    },
+  },
 
 --side techs
   {--energy distribution 2
