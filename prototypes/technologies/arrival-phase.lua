@@ -507,9 +507,9 @@ data:extend({
       time = 32
     },
   },
-  {--rockets
+  {--space flight
     type = "technology",
-    name = "space-ships",
+    name = "space-flight",
     icon = "__space-age__/graphics/technology/space-platform-thruster.png",
     icon_size = 256,
     effects =
@@ -525,6 +525,9 @@ data:extend({
       {
         type = "unlock-recipe",
         recipe = "light-space-platform-foundation"
+      },
+      {
+        type = "unlock-space-platforms"
       },
     },
     prerequisites = {"rocketry"},
