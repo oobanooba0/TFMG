@@ -17,6 +17,7 @@ require("prototypes.vanilla-content-obliterator")
 	require("prototypes.buildings.roboports")
 	require("prototypes.buildings.thermal")
 	require("prototypes.buildings.thrusters")
+	require("prototypes.buildings.tiles")
 
 --categories
 	require("prototypes.categories.equipment-grid")
@@ -50,6 +51,7 @@ require("prototypes.vanilla-content-obliterator")
 	require("prototypes.items.buildings.modules-beacons")
 	require("prototypes.items.buildings.roboports")
 	require("prototypes.items.buildings.thermal")
+	require("prototypes.items.buildings.tiles")
 ---fluids
 	require("prototypes.items.fluids")
 ---inventory items

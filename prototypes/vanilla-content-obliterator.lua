@@ -82,8 +82,6 @@
 --tile adjust
 	local tile_collision_masks = require("__base__/prototypes/tile/tile-collision-masks")
 	data.raw.tile ["ice-smooth"].collision_mask = tile_collision_masks.ground()
-	data.raw.item ["space-platform-foundation"].flags = {"always-show"}
-	data.raw.item ["space-platform-foundation"].stack_size = 250
 	data.raw.recipe ["space-platform-foundation"].hidden = true
 	data.raw.recipe ["space-platform-foundation"].hidden_in_factoriopedia = true
 	--tile pollution handling
