@@ -77,6 +77,15 @@
 	data.raw["planet"]["nauvis"].map_gen_settings.moisture_climate_control = false
 
 --adjust vanilla content
+--utility constants --be careful
+	local utility_constants = data.raw["utility-constants"]["default"]
+	  -- drag_coefficient = width * 0.5
+    -- drag = ((1500 * speed * speed + 1500 * abs(speed)) * drag_coefficient + 10000) * sign(speed)
+    -- final_thrust = thrust / (1 + weight / 10000000)
+    -- acceleration = (final_thrust - drag) / weight / 60
+		--"(thrust / (1 + weight / 10000000) - ((1500 * speed * speed + 1500 * abs(speed)) * (width * 0.5) + 10000) * sign(speed)) / weight / 60"
+  utility_constants.space_platform_acceleration_expression = "(thrust / (1 + weight / 10000000) - ((1500 * speed * speed + 1500 * abs(speed)) * (width * 0.05) + 10000) * sign(speed)) / weight / 60"
+
 --remove character icon
 	data.raw["character"]["character"].icon = "__core__/graphics/empty.png"
 

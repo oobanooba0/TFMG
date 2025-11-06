@@ -11,8 +11,8 @@ Date: ????
     - Constructron introduced
     - optional compatibility with visible planets added.
     - some achivements added
-    - they move below.
     - Light and heavy space platform added: light space platform is expensive, but light (and good for space ships) heavy space platform is cheap but heavy (good for stationary platforms)
+    - they move below.
   Changes:
     - old saves broken. Just not realistic to fix that.
     - old menu simulations are removed :(
@@ -27,6 +27,7 @@ Date: ????
     - Heat monitor now unlocked by heat management 2
     - Nauvis, well and truely, no longer exists.
     - Rocket silo is a military target now.
+    - Space platform drag and thrust has been heavily changed. Drag is much less of a factor, thrusters produce less thrust.
   Balancing:
     - Small radiators stack to 50
     - Small radiators now cost half to craft

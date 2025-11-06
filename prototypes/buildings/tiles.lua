@@ -25,7 +25,7 @@
 
 --heavy space platform
   local HSP = data.raw.tile["space-platform-foundation"]
-  HSP.weight = 5000
+  HSP.weight = 50000
   HSP.allows_being_covered = true
 
 data:extend({
@@ -40,7 +40,7 @@ data:extend({
     allows_being_covered = true,
     tint = {0.8,1,1},
     max_health = 50,
-    weight = 500,
+    weight = 5000,
     collision_mask = platform_foundation_collision_mask,
     layer = 15,
     dying_explosion = "space-platform-foundation-explosion",

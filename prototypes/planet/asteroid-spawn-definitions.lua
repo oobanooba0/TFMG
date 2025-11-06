@@ -25,7 +25,7 @@ asteroid_functions.huge_angle = 0.4
   --limit
     asteroid_functions.limit_ratio = {0.6 , 0.4}
     asteroid_functions.limit_chunks = 0.012
-    asteroid_functions.limit_small = 0.005
+    asteroid_functions.limit_small = 0.006
 
 
 
