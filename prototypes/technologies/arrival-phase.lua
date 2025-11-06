@@ -530,6 +530,11 @@ data:extend({
         type = "unlock-space-platforms",
         modifier = true,
       },
+      {
+        type = "unlock-space-location",
+        space_location = "limit",
+        use_icon_overlay_constant = true
+      },
     },
     prerequisites = {"rocketry"},
     unit = {

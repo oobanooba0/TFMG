@@ -7,20 +7,27 @@ asteroid_functions.weighted_average = function(A, B, weight)
   return result
 end
 
-
-asteroid_functions.arrival_ratio      = {0.8 , 0.2}
-asteroid_functions.arrival_chunks      = 0.01
-asteroid_functions.arrival_medium      = 0
-
-asteroid_functions.near_void_ratio      = {0.5 , 0.5}
-asteroid_functions.near_void_chunks      = 0
-asteroid_functions.near_void_medium      = 0
-
 asteroid_functions.chunk_angle = 1
 asteroid_functions.small_angle = 0.7
 asteroid_functions.medium_angle = 0.6
 asteroid_functions.big_angle = 0.5
 asteroid_functions.huge_angle = 0.4
+
+--locational asteroid definitions
+  --arrival
+    asteroid_functions.arrival_ratio = {0.8 , 0.2}
+    asteroid_functions.arrival_chunks = 0.01
+    asteroid_functions.arrival_small = 0
+  --near void
+    asteroid_functions.near_void_ratio = {0.5 , 0.5}
+    asteroid_functions.near_void_chunks = 0
+    asteroid_functions.near_void_small = 0
+  --limit
+    asteroid_functions.limit_ratio = {0.6 , 0.4}
+    asteroid_functions.limit_chunks = 0.02
+    asteroid_functions.limit_small = 0.01
+
+
 
 asteroid_functions.arrival_near_void =
 {
@@ -33,6 +40,25 @@ asteroid_functions.arrival_near_void =
   {
     {position = 0.1, ratios = asteroid_functions.arrival_ratio},
     {position = 0.9, ratios = asteroid_functions.near_void_ratio},
+  }
+}
+
+asteroid_functions.arrival_limit =
+{
+  probability_on_range_chunk =
+  {
+    {position = 0.1, probability = asteroid_functions.arrival_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
+    {position = 0.9, probability = asteroid_functions.limit_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
+  },
+  probability_on_range_small =
+  {
+    {position = 0.1, probability = asteroid_functions.arrival_small, angle_when_stopped = asteroid_functions.small_angle},
+    {position = 0.9, probability = asteroid_functions.limit_small, angle_when_stopped = asteroid_functions.small_angle},
+  },
+  type_ratios =
+  {
+    {position = 0.1, ratios = asteroid_functions.arrival_ratio},
+    {position = 0.9, ratios = asteroid_functions.limit_ratio},
   }
 }
 

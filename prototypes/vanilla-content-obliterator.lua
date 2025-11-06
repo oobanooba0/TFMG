@@ -2,6 +2,7 @@
 	data.raw ["technology"] = {}
 	data.raw ["tips-and-tricks-item"] = {}
 	data.raw ["utility-constants"]["default"].main_menu_simulations = {}
+	data.raw ["space-connection"] = {}
 --Due to the removal of vanilla techs, shortcuts dependant on them must be modified.
 	data.raw ["shortcut"]["undo"].technology_to_unlock = nil
 	data.raw ["shortcut"]["redo"].technology_to_unlock = nil

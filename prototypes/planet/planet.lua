@@ -2,6 +2,8 @@ local planet_map_gen = require("__TFMG__.prototypes.planet.planet_map_gen")
 local asteroid_util = require("__TFMG__.prototypes.planet.asteroid-spawn-definitions")
 local effects = require("__core__/lualib/surface-render-parameter-effects")
 local procession_graphic_catalogue_types = require("__base__/prototypes/planet/procession-graphic-catalogue-types")
+local arrival_distance = 100
+local arrival_orientation = 0.275
 data:extend({--surface properties
     {
     type = "surface-property",
@@ -16,8 +18,8 @@ data:extend({--surface properties
     starmap_icon = "__TFMG-assets-0__/icons/planets/arrival-starmap.png",
     starmap_icon_size = 4096,
     gravity_pull = 10,
-    distance = 100,
-    orientation = 0.275,
+    distance = arrival_distance,
+    orientation = arrival_orientation,
     magnitude = 1,
     order = "a[arrival]",
     subgroup = "planets",
@@ -119,11 +121,11 @@ data:extend({--surface properties
     name = "near-void",
     icon = "__core__/graphics/entity-info-dark-background.png",
     icon_size = 53,
-    order = "b[near-void]",
+    order = "z[near-void]",
     subgroup = "planets",
     draw_orbit = false,
     gravity_pull = 0,
-    distance = 100,
+    distance = 300,
     orientation = 0.45,
     magnitude = 1.0,
     label_orientation = 0.15,
@@ -133,6 +135,23 @@ data:extend({--surface properties
     hidden = true,
     hidden_in_factoriopedia = true,
   },
+  {
+    type = "space-location",
+    name = "limit",
+    icon = "__core__/graphics/entity-info-dark-background.png",
+    icon_size = 53,
+    order = "b[limit]",
+    subgroup = "planets",
+    draw_orbit = false,
+    gravity_pull = 0,
+    distance = arrival_distance,
+    orientation = arrival_orientation - 0.01,
+    magnitude = 2.5,
+    label_orientation = 0.15,
+    asteroid_spawn_influence = 0.9,
+    solar_power_in_space = 0,
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.arrival_limit, 0.9),
+  },
 --connections
   {
     type = "space-connection",
@@ -140,11 +159,20 @@ data:extend({--surface properties
     subgroup = "planet-connections",
     from = "nauvis",
     to = "near-void",
-    order = "a",
+    order = "z",
     length = 10000000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.arrival_near_void),
     hidden = true,
-    --hidden_in_factoriopedia = true,
+  },
+  {
+    type = "space-connection",
+    name = "nauvis-limit",
+    subgroup = "planet-connections",
+    from = "nauvis",
+    to = "limit",
+    order = "a",
+    length = 100000,
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.arrival_limit),
   },
 --pollution types
 })
