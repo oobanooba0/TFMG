@@ -446,6 +446,10 @@ data:extend({
         type = "unlock-recipe",
         recipe = "storage-container-1"
       },
+      {
+        type = "create-ghost-on-entity-death",
+        modifier = true,
+      },
     },
     prerequisites = {"introspection-science-pack"},
     unit = {
