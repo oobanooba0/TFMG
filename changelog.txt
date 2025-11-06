@@ -4,6 +4,7 @@ Date: ????
   Features:
     - Unpipable fluid mechanic introduced, some fluids like thruster fuel and oxidizer cannot be transported via pipe, instaid you must directly transfer the fluid through machines.
     - You now start the game on course to arrival. This means you get significantly more asteroids in the early phase of the game, but their avalability will drop sharply once you reach arrival.
+    - Void space location added, you cant go there a the moment, its just for the intro
     - Radiators now have a hot new custom graphic.
     - Heat management 2 added, now a prerequisite of exploration science
     - Evaporation radiator added, a ground placed radiator for heat removal on planets. where normal radiators can't be placed. Unlocked by heat management 2

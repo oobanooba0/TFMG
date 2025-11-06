@@ -76,7 +76,6 @@ rocket_silo.fluid_boxes = {
       },
     }
   }
-rocket_silo.energy_source.emissions_per_minute = {tremors = 500}
 rocket_silo.is_military_target = true
 data:extend{rocket_silo}
 
