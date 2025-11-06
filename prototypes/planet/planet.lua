@@ -2,7 +2,7 @@ local planet_map_gen = require("__TFMG__.prototypes.planet.planet_map_gen")
 local asteroid_util = require("__TFMG__.prototypes.planet.asteroid-spawn-definitions")
 local effects = require("__core__/lualib/surface-render-parameter-effects")
 local procession_graphic_catalogue_types = require("__base__/prototypes/planet/procession-graphic-catalogue-types")
-local arrival_distance = 100
+local arrival_distance = 70
 local arrival_orientation = 0.275
 data:extend({--surface properties
     {
