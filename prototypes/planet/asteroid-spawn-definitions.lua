@@ -23,9 +23,10 @@ asteroid_functions.huge_angle = 0.4
     asteroid_functions.near_void_chunks = 0
     asteroid_functions.near_void_small = 0
   --limit
-    asteroid_functions.limit_ratio = {0.6 , 0.4 , 0.5}
-    asteroid_functions.limit_chunks = 0.012
-    asteroid_functions.limit_small = 0.006
+    asteroid_functions.limit_ratio = {0.6 , 0.4 , 0.6}
+    asteroid_functions.arrival_limit_halfway = {0.7 , 0.3 , 0.1}
+    asteroid_functions.limit_chunks = 0.005
+    asteroid_functions.limit_small = 0.008
 
 
 
@@ -45,6 +46,7 @@ asteroid_functions.arrival_near_void =
 
 asteroid_functions.arrival_limit =
 {
+  route_level = 2,
   probability_on_range_chunk =
   {
     {position = 0.1, probability = asteroid_functions.arrival_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
@@ -58,6 +60,7 @@ asteroid_functions.arrival_limit =
   type_ratios =
   {
     {position = 0.1, ratios = asteroid_functions.arrival_ratio},
+    {position = 0.5, ratios = asteroid_functions.arrival_limit_halfway},
     {position = 0.9, ratios = asteroid_functions.limit_ratio},
   }
 }
@@ -194,7 +197,10 @@ end
 asteroid_functions.spawn_definitions = function(data, planet)
   local asteroid_spawn_definitions = {}
   local asteroid_sizes = {"chunk", "small", "medium", "big", "huge"}
-  local asteroid_types = {"ferric","crystalline","volatile"}
+  local asteroid_types = {"ferric","crystalline"}
+  if data.route_level == 2 then --if its a level two route, we should introduce volatile asteroids.
+    asteroid_types = {"ferric", "crystalline", "volatile"}
+  end
   for k, asteroid_size in pairs(asteroid_sizes) do
     for k, asteroid_type in pairs(asteroid_types) do
       local asteroid_name = ""
