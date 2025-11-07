@@ -69,6 +69,30 @@ local asteroids_data =
       ambient_light = {0.0, 0.0, 0.0},
     }
   },
+  volatile =
+  {
+    order = "c",
+    mass = shared_mass,
+    max_health = shared_health,
+    resistances = shared_resistances,
+    shading_data =
+    {
+      normal_strength = 1,
+      light_width = 0,
+      brightness = 0.5,
+      specular_strength = 3.5,
+      specular_power = 2,
+      specular_purity = 0.6,
+      sss_contrast = 1,
+      sss_amount = 0.25,
+      lights = {
+        { color = {1,1,1}, direction = {0.7,0.4,-1} },
+        { color = {0.05,0.3,0.3}, direction = {-1,-1,0} },
+        { color = {0.05,0.2,0.25}, direction = {-0.4,-0.1,-1} },
+      },
+      ambient_light = {0.01, 0.020, 0.027},
+    }
+  },
 }
 
 local collision_radiuses =
@@ -232,6 +256,18 @@ for asteroid_size, asteroid_size_name in pairs(asteroid_sizes) do
       elseif  (asteroid_size_name == "huge") then
         table.insert(variations, asteroid_variation(asteroid_type, "01", graphics_scale, asteroid_size))
       end
+    elseif (asteroid_type == "volatile") then
+      if (asteroid_size_name == "chunk") then
+        table.insert(variations, asteroid_variation(asteroid_type, "01", graphics_scale, asteroid_size))
+      elseif (asteroid_size_name == "small") then
+        table.insert(variations, asteroid_variation(asteroid_type, "01", graphics_scale, asteroid_size))
+      elseif  (asteroid_size_name == "medium") then
+        table.insert(variations, asteroid_variation(asteroid_type, "01", graphics_scale, asteroid_size))
+      elseif (asteroid_size_name == "big") then
+        table.insert(variations, asteroid_variation(asteroid_type, "01", graphics_scale, asteroid_size))
+      elseif  (asteroid_size_name == "huge") then
+        table.insert(variations, asteroid_variation(asteroid_type, "01", graphics_scale, asteroid_size))
+      end
     end
 
     data:extend({
@@ -266,3 +302,4 @@ for asteroid_size, asteroid_size_name in pairs(asteroid_sizes) do
 end
 -- chunk backlight overrides
 data.raw["asteroid-chunk"]["ferric-asteroid-chunk"].graphics_set.lights[2] = { color = {0.85,0.5,0.4}, direction = {-1,-45,0.1} }
+data.raw["asteroid-chunk"]["volatile-asteroid-chunk"].graphics_set.lights[2] = { color = {0.0,0.55,0.65}, direction = {-1,-1,0.1} }

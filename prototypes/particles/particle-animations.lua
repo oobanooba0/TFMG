@@ -5,9 +5,11 @@ local particle_animations = {}
 
 particle_animations.get_ferric_asteroid_particle_small_pictures = function(options)
   local options = options or {}
-  return {
-    sheet = {
-      filename = "__TFMG-assets-0__/particle/asteroid-particle/ferric-asteroid-particle-small.png",
+  return
+  {
+    sheet =
+    {
+      filename = "__space-age__/graphics/particle/asteroid-particle/metallic-asteroid-particle-small.png",
       priority = "extra-high",
       width = 14,
       height = 16,
@@ -23,9 +25,11 @@ end
 
 particle_animations.get_ferric_asteroid_particle_medium_pictures = function(options)
   local options = options or {}
-  return {
-    sheet = {
-      filename = "__TFMG-assets-0__/particle/asteroid-particle/ferric-asteroid-particle-medium.png",
+  return
+  {
+    sheet =
+    {
+      filename = "__space-age__/graphics/particle/asteroid-particle/metallic-asteroid-particle-medium.png",
       priority = "extra-high",
       width = 22,
       height = 20,
@@ -41,9 +45,11 @@ end
 
 particle_animations.get_ferric_asteroid_particle_big_pictures = function(options)
   local options = options or {}
-  return {
-    sheet = {
-      filename = "__TFMG-assets-0__/particle/asteroid-particle/ferric-asteroid-particle-big.png",
+  return
+  {
+    sheet =
+    {
+      filename = "__space-age__/graphics/particle/asteroid-particle/metallic-asteroid-particle-big.png",
       priority = "extra-high",
       width = 36,
       height = 36,
@@ -59,9 +65,11 @@ end
 
 particle_animations.get_ferric_asteroid_particle_top_small_pictures = function(options)
   local options = options or {}
-  return {
-    sheet = {
-      filename = "__TFMG-assets-0__/particle/asteroid-particle/ferric-asteroid-particle-top-small.png",
+  return
+  {
+    sheet =
+    {
+      filename = "__space-age__/graphics/particle/asteroid-particle/metallic-asteroid-particle-top-small.png",
       priority = "extra-high",
       width = 62,
       height = 56,
@@ -77,9 +85,11 @@ end
 
 particle_animations.get_ferric_asteroid_particle_top_big_pictures = function(options)
   local options = options or {}
-  return {
-    sheet = {
-      filename = "__TFMG-assets-0__/particle/asteroid-particle/ferric-asteroid-particle-top-big.png",
+  return
+  {
+    sheet =
+    {
+      filename = "__space-age__/graphics/particle/asteroid-particle/metallic-asteroid-particle-top-big.png",
       priority = "extra-high",
       width = 82,
       height = 86,
@@ -99,7 +109,7 @@ particle_animations.get_crystalline_asteroid_particle_small_pictures = function(
   local options = options or {}
   return {
     sheet = {
-      filename = "__TFMG-assets-0__/particle/asteroid-particle/crystalline-asteroid-particle-small.png",
+      filename = "__TFMG-assets-0__/particle/asteroid-particle/crystalline-asteroid/crystalline-asteroid-particle-small.png",
       priority = "extra-high",
       width = 12,
       height = 12,
@@ -117,7 +127,7 @@ particle_animations.get_crystalline_asteroid_particle_medium_pictures = function
   local options = options or {}
   return {
     sheet = {
-      filename = "__TFMG-assets-0__/particle/asteroid-particle/crystalline-asteroid-particle-medium.png",
+      filename = "__TFMG-assets-0__/particle/asteroid-particle/crystalline-asteroid/crystalline-asteroid-particle-medium.png",
       priority = "extra-high",
       width = 18,
       height = 16,
@@ -135,7 +145,7 @@ particle_animations.get_crystalline_asteroid_particle_big_pictures = function(op
   local options = options or {}
   return {
     sheet = {
-      filename = "__TFMG-assets-0__/particle/asteroid-particle/crystalline-asteroid-particle-big.png",
+      filename = "__TFMG-assets-0__/particle/asteroid-particle/crystalline-asteroid/crystalline-asteroid-particle-big.png",
       priority = "extra-high",
       width = 38,
       height = 36,
@@ -153,7 +163,7 @@ particle_animations.get_crystalline_asteroid_particle_top_small_pictures = funct
   local options = options or {}
   return {
     sheet = {
-      filename = "__TFMG-assets-0__/particle/asteroid-particle/crystalline-asteroid-particle-top-small.png",
+      filename = "__TFMG-assets-0__/particle/asteroid-particle/crystalline-asteroid/crystalline-asteroid-particle-top-small.png",
       priority = "extra-high",
       width = 32,
       height = 36,
@@ -171,7 +181,7 @@ particle_animations.get_crystalline_asteroid_particle_top_big_pictures = functio
   local options = options or {}
   return {
     sheet = {
-      filename = "__TFMG-assets-0__/particle/asteroid-particle/crystalline-asteroid-particle-top-big.png",
+      filename = "__TFMG-assets-0__/particle/asteroid-particle/crystalline-asteroid/crystalline-asteroid-particle-top-big.png",
       priority = "extra-high",
       width = 82,
       height = 84,
@@ -180,6 +190,105 @@ particle_animations.get_crystalline_asteroid_particle_top_big_pictures = functio
       variation_count = 6,
       tint = options.tint,
       shift = util.add_shift(util.by_pixel(2.0, 2.5), options.shift),
+      scale = options.scale or 0.5
+    }
+  }
+end
+
+--volatile particles
+particle_animations.get_volatile_asteroid_particle_small_pictures = function(options)
+  local options = options or {}
+  return
+  {
+    sheet =
+    {
+      filename = "__space-age__/graphics/particle/asteroid-particle/oxide-asteroid-particle-small.png",
+      priority = "extra-high",
+      width = 16,
+      height = 18,
+      frame_count = 12,
+      animation_speed = 0.3,
+      variation_count = 10,
+      tint = options.tint,
+      shift = util.add_shift(util.by_pixel(0.0,0.5), options.shift),
+      scale = 0.6
+    }
+  }
+end
+
+particle_animations.get_volatile_asteroid_particle_medium_pictures = function(options)
+  local options = options or {}
+  return
+  {
+    sheet =
+    {
+      filename = "__space-age__/graphics/particle/asteroid-particle/oxide-asteroid-particle-medium.png",
+      priority = "extra-high",
+      width = 28,
+      height = 22,
+      frame_count = 12,
+      animation_speed = 0.3,
+      variation_count = 10,
+      tint = options.tint,
+      shift = util.add_shift(util.by_pixel(0.0,0.5), options.shift),
+      scale = 0.5
+    }
+  }
+end
+
+particle_animations.get_volatile_asteroid_particle_big_pictures = function(options)
+  local options = options or {}
+  return
+  {
+    sheet =
+    {
+      filename = "__space-age__/graphics/particle/asteroid-particle/oxide-asteroid-particle-big.png",
+      priority = "extra-high",
+      width = 44,
+      height = 38,
+      frame_count = 12,
+      animation_speed = 0.3,
+      variation_count = 10,
+      tint = options.tint,
+      shift = util.add_shift(util.by_pixel(0.0,0.5), options.shift),
+      scale = 0.6
+    }
+  }
+end
+particle_animations.get_volatile_asteroid_particle_top_small_pictures = function(options)
+  local options = options or {}
+  return
+  {
+    sheet =
+    {
+      filename = "__space-age__/graphics/particle/asteroid-particle/oxide-asteroid-particle-top-small.png",
+      priority = "extra-high",
+      width = 70,
+      height = 52,
+      frame_count = 16,
+      animation_speed = 0.2,
+      variation_count = 6,
+      tint = options.tint,
+      shift = util.add_shift(util.by_pixel(0.0, 0.0), options.shift),
+      scale = 0.5
+    }
+  }
+end
+particle_animations.get_volatile_asteroid_particle_top_big_pictures = function(options)
+  local options = options or {}
+  return
+  {
+    sheet =
+    {
+      filename = "__space-age__/graphics/particle/asteroid-particle/oxide-asteroid-particle-top-big.png",
+      priority = "extra-high",
+      width = 90,
+      height = 88,
+      frame_count = 16,
+      animation_speed = 0.2,
+      variation_count = 6,
+      tint = options.tint,
+      shift = util.add_shift(util.by_pixel(0.0, 1.0), options.shift),
       scale = options.scale or 0.5
     }
   }

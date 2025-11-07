@@ -15,7 +15,7 @@ asteroid_functions.huge_angle = 0.4
 
 --locational asteroid definitions
   --arrival
-    asteroid_functions.arrival_ratio = {0.8 , 0.2}
+    asteroid_functions.arrival_ratio = {0.8 , 0.2, 0}
     asteroid_functions.arrival_chunks = 0.01
     asteroid_functions.arrival_small = 0
   --near void
@@ -23,7 +23,7 @@ asteroid_functions.huge_angle = 0.4
     asteroid_functions.near_void_chunks = 0
     asteroid_functions.near_void_small = 0
   --limit
-    asteroid_functions.limit_ratio = {0.6 , 0.4}
+    asteroid_functions.limit_ratio = {0.6 , 0.4 , 0.5}
     asteroid_functions.limit_chunks = 0.012
     asteroid_functions.limit_small = 0.006
 
@@ -194,7 +194,7 @@ end
 asteroid_functions.spawn_definitions = function(data, planet)
   local asteroid_spawn_definitions = {}
   local asteroid_sizes = {"chunk", "small", "medium", "big", "huge"}
-  local asteroid_types = {"ferric","crystalline"}
+  local asteroid_types = {"ferric","crystalline","volatile"}
   for k, asteroid_size in pairs(asteroid_sizes) do
     for k, asteroid_type in pairs(asteroid_types) do
       local asteroid_name = ""
@@ -209,6 +209,8 @@ asteroid_functions.spawn_definitions = function(data, planet)
         asteroid_id = 1
       elseif asteroid_type == "crystalline" then
         asteroid_id = 2
+      elseif asteroid_type == "volatile" then
+        asteroid_id = 3
       end
 
       local probability_data = {}
