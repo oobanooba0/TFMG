@@ -1,9 +1,11 @@
 --local functions
 
-  local function disable_cutsceene()--apparently, the cutscene prevents the player from being teleported.
-    if remote.interfaces.freeplay then
-      if remote.interfaces.freeplay.set_disable_crashsite then
-        remote.call("freeplay", "set_disable_crashsite", true)
+  local function modify_game_start_scripts()--apparently, the cutscene prevents the player from being teleported.
+		local freeplay = remote.interfaces.freeplay
+    if freeplay then
+			remote.call("freeplay", "set_skip_intro", true) --No intro message
+      if freeplay.set_disable_crashsite then
+        remote.call("freeplay", "set_disable_crashsite", true) --No crashsite cutscene nor ship.
       end
     end
   end
@@ -30,7 +32,7 @@
 
 --init events
   script.on_init(function(e)--Code shamelessly plagerised from Platformer by Corlin and Xiroc
-    disable_cutsceene()--Necessary for player to be teleported and imprisoned
+    modify_game_start_scripts()--Necessary for player to be teleported and imprisoned
     refresh_data_storage()
 		set_starting_flags()--sets certain flags based on starting settings
 		deal_with_stupid_handlers()
