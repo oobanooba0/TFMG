@@ -138,13 +138,14 @@ data:extend({--surface properties
   {
     type = "space-location",
     name = "limit",
-    icon = "__core__/graphics/entity-info-dark-background.png",
-    icon_size = 53,
+    icon = "__TFMG-assets-0__/icons/planets/limit.png",
+    starmap_icon = "__TFMG-assets-0__/icons/planets/limit-starmap.png",
+    starmap_icon_size = 4096,
     order = "b[limit]",
     subgroup = "planets",
     draw_orbit = false,
     gravity_pull = 0,
-    distance = arrival_distance,
+    distance = arrival_distance,--use a location relative to arrival.
     orientation = arrival_orientation - 0.01,
     magnitude = 2.5,
     label_orientation = 0.15,
