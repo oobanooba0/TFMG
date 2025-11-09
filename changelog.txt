@@ -31,6 +31,7 @@ Date: ????
     - Rocket silo is a military target now.
     - Space platform drag and thrust has been heavily changed. Drag is much less of a factor, platforms are heavier and accelerate slowly, but will over time reach high speeds.
     - Starting intro message has been changed.
+    - old tutorial popup removed, we don't need it.
   Balancing:
     - Small radiators stack to 50
     - Small radiators now cost half to craft

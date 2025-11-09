@@ -53,7 +53,6 @@ end
 
 function story.trigger_story_event(event)
   if event.research.name == "consider-your-purpose" then consider_your_purpose()
-  elseif event.research.name == "assembling" then thermal_explainer()
   elseif event.research.name == "consider-the-self" then consider_the_self()
   elseif event.research.name == "consider-your-potential" then consider_your_potential()
   elseif event.research.name == "victory" then victory()
@@ -186,14 +185,6 @@ function chant(message)
       }
     )
     game.play_sound({path = "story-ticker"})
-  end
-end
-
---tutorial
-
-function thermal_explainer()
-  if game.is_multiplayer() == false then
-    game.show_message_dialog{text = {"tutorial-popup.thermal-system-explainer"}}
   end
 end
 

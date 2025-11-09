@@ -690,7 +690,7 @@ data:extend({
     category = "assembling-machine",
     name = "light-space-platform-foundation",
     energy_required = 12,
-    enabled = true,
+    enabled = false,
     ingredients = {
       { type = "item", name = "high-performance-structure", amount = 4 },
       { type = "item", name = "optical-coil", amount = 10 },
