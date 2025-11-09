@@ -39,7 +39,9 @@ function story.on_story_tick(event)
       storage.story.saved_r_player = storage.story.last_r_player
     elseif v.type == "self_arrive" then
       local SELF = storage.platform
-      SELF.distance = 0.0000005
+      if SELF.space_connection then
+        SELF.distance = 0.0000005
+      end
     end
   end
 end
