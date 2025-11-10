@@ -109,25 +109,30 @@ function supercomputer.relocate(v)--this saves us from doing this twice.
     end
 end
 
+local function supercomputer_passive_draw(v) --controls passive power draw of supercomputers
+  v.machine.disabled_by_script = true
+  v.machine.energy = v.machine.energy*(1/10)
+end
+
 function supercomputer.on_supercomputer_tick()
+  --game.print(serpent.block(storage.supercomputer))
  storage.machine_from_k = flib_table.for_n_of(
 		storage.supercomputer, storage.machine_from_k, 100000000,
 		function(v)
       if not v.machine.valid then return end --checks for machine validity, preventing a game crash if the machine is destroyed instantly.
       if v.machine.disabled_by_script then return end --If the machine has been disabled at the start of the tick, we dont have to run anything else.
-      
       local recipe = v.machine.get_recipe()
+
       if not recipe then--If no recipe then only the reset script needs to run and we can skip all else.
-        if v.recipe == recipe then return end
-          v.output.get_control_behavior().remove_section(1)
-          v.recipe = nil
+        if not v.recipe then return end
+        v.output.get_control_behavior().remove_section(1)
+        v.recipe = nil
       return end
 
-      if v.machine.status ~= 1 then --if the machine isn't able to run for any reason, end the script.
+      if v.machine.status ~= 1 and v.machine.status ~= 14 then --if the machine isn't able to run for any reason, end the script.
       return end
 
       if recipe ~= v.recipe then--check if the recipe has changed, so we know to generate a new problem
-
         if recipe.name == "introspection-science" then
           supercomputer.create_new_problem_introspection(v)
         end
@@ -136,7 +141,6 @@ function supercomputer.on_supercomputer_tick()
         end
         v.recipe = recipe
       end
-
       if recipe.name == "introspection-science" then--we need to check different signals for each science. so this needs a seperate script for each, to keep each as lightweight as possible.
         supercomputer.introspection_solution(v)
       elseif recipe.name == "exploration-science" then
@@ -151,15 +155,14 @@ function supercomputer.introspection_solution(v)
   local input_red_signal_x = v.input.get_signal({type = "virtual", name = "signal-X"},defines.wire_connector_id.circuit_red)
 
   if input_green_signal_x == v.solution_x or input_red_signal_x == v.solution_x then--first check if we've solved the current problem
-    v.machine.disabled_by_script = false
     supercomputer.create_new_problem_introspection(v)
   else
-    v.machine.disabled_by_script = true
+    supercomputer_passive_draw(v)
     v.machine.custom_status = {
 		  diode = defines.entity_status_diode.yellow,
 		  label = "Ready for signal X"
 		  }
-  end 
+  end
 end
 
 function supercomputer.create_new_problem_introspection(v)--introspection recipe mechanics
@@ -206,10 +209,10 @@ function supercomputer.exploration_solution(v)
 
   if green_difference <= tolerance or red_difference <= tolerance then--first check if we've solved the current problem
     --game.print("red:"..red_difference.."green:"..green_difference)
-    v.machine.disabled_by_script = false
+    --v.machine.disabled_by_script = false
     supercomputer.create_new_problem_exploration(v)
   else
-    v.machine.disabled_by_script = true
+    supercomputer_passive_draw(v)
     v.machine.custom_status = {
 		  diode = defines.entity_status_diode.yellow,
 		  label = "Ready for distance solution"

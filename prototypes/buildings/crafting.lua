@@ -742,7 +742,6 @@ data:extend({
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = { pollution = 2 },
     },
     energy_usage = "100MW",
     module_slots = 5,
@@ -751,6 +750,7 @@ data:extend({
       max_working_temperature = 105,
       max_safe_temperature = 120,
       heat_ratio = 1,
+      heat_when_disabled_by_script = true,
       connections = {
         { position = {-4, -5}, direction = 0},
         { position = {-2, -5}, direction = 0},
