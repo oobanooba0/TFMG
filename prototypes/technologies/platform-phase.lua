@@ -133,7 +133,7 @@ data:extend({
       },
       {
         type = "unlock-recipe",
-        recipe = "container-1"
+        recipe = "steel-chest"
       },
     },
     research_trigger =
@@ -436,15 +436,15 @@ data:extend({
       },
       {
         type = "unlock-recipe",
-        recipe = "roboport-1"
+        recipe = "roboport"
       },
       {
         type = "unlock-recipe",
-        recipe = "passive-provider-container-1"
+        recipe = "passive-provider-chest"
       },
       {
         type = "unlock-recipe",
-        recipe = "storage-container-1"
+        recipe = "storage-chest"
       },
       {
         type = "create-ghost-on-entity-death",

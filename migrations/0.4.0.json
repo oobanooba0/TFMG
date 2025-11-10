@@ -1,0 +1,14 @@
+{
+  "entity" : [
+  ["container-1", "steel-chest"],
+  ["storage-container-1", "storage-chest"],
+  ["passive-provider-container-1", "passive-provider-chest"],
+  ["roboport-1","roboport"]
+  ],
+  "item" : [
+  ["container-1", "steel-chest"],
+  ["storage-container-1", "storage-chest"],
+  ["passive-provider-container-1", "passive-provider-chest"],
+  ["roboport-1","roboport"]
+  ]
+}

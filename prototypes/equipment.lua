@@ -5,7 +5,7 @@ data:extend({
     {--roboport 1
     type = "roboport-equipment",
     name = "roboport-1-equipment",
-    take_result = "roboport-1",
+    take_result = "roboport",
     sprite =
     {
       filename = "__base__/graphics/equipment/personal-roboport-equipment.png",

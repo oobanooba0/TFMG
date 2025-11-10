@@ -218,7 +218,7 @@ data:extend({
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 4 },
       { type = "item", name = "mechanical-components", amount = 8 },
-      { type = "item", name = "storage-container-1", amount = 4 },
+      { type = "item", name = "steel-chest", amount = 4 },
     },
     results = { 
       { type = "item", name = "toolbelt-equipment", amount = 1 }
@@ -251,7 +251,7 @@ data:extend({
     ingredients = {
       { type = "item", name = "scout-o-tron", amount = 1 },
       { type = "item", name = "solar-cell", amount = 2 },
-      { type = "item", name = "roboport-1", amount = 1 },
+      { type = "item", name = "roboport", amount = 1 },
       { type = "item", name = "construction-robot", amount = 8 },
       { type = "item", name = "general-purpose-structure", amount = 24 },
     },
@@ -297,7 +297,7 @@ data:extend({
   {--roboport 1
     type = "recipe",
     category = "assembling-machine",
-    name = "roboport-1",
+    name = "roboport",
     energy_required = 12,
     enabled = false,
     allow_productivity = false,
@@ -307,7 +307,7 @@ data:extend({
       { type = "item", name = "conductive-coil", amount = 8 },
     },
     results = { 
-      { type = "item", name = "roboport-1", amount = 1 }
+      { type = "item", name = "roboport", amount = 1 }
     },
   },
 ---modules
@@ -1134,17 +1134,17 @@ data:extend({
       { type = "item", name = "solar-cell", amount = 1 }
     },
   },
-  {--container-1
+  {--chest-1
     type = "recipe",
     category = "assembling-machine",
-    name = "container-1",
+    name = "steel-chest",
     energy_required = 4,
     enabled = false,
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 12 },
     },
     results = { 
-      { type = "item", name = "container-1", amount = 1 }
+      { type = "item", name = "steel-chest", amount = 1 }
     },
   },
   {--cargo-landing-pad
@@ -1156,41 +1156,41 @@ data:extend({
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 16 },
       { type = "item", name = "modular-circuit", amount = 16 },
-      { type = "item", name = "container-1", amount = 16 },
+      { type = "item", name = "steel-chest", amount = 16 },
     },
     results = { 
       { type = "item", name = "cargo-landing-pad", amount = 1 }
     },
   },
-  {--passive-provider-container-1
+  {--passive-provider-chest-1
     type = "recipe",
     category = "assembling-machine",
-    name = "passive-provider-container-1",
+    name = "passive-provider-chest",
     energy_required = 4,
     enabled = false,
     ingredients = {
-      { type = "item", name = "container-1", amount = 1 },
+      { type = "item", name = "steel-chest", amount = 1 },
       { type = "item", name = "mechanical-components", amount = 4 },
       { type = "item", name = "modular-circuit", amount = 4 },
 
     },
     results = { 
-      { type = "item", name = "passive-provider-container-1", amount = 1 }
+      { type = "item", name = "passive-provider-chest", amount = 1 }
     },
   },
-  {--storage-container-1
+  {--storage-chest-1
     type = "recipe",
     category = "assembling-machine",
-    name = "storage-container-1",
+    name = "storage-chest",
     energy_required = 4,
     enabled = false,
     ingredients = {
-      { type = "item", name = "container-1", amount = 1 },
+      { type = "item", name = "steel-chest", amount = 1 },
       { type = "item", name = "mechanical-components", amount = 4 },
       { type = "item", name = "modular-circuit", amount = 4 },
     },
     results = { 
-      { type = "item", name = "storage-container-1", amount = 1 }
+      { type = "item", name = "storage-chest", amount = 1 }
     },
   },
   {--long-inserter-1
@@ -1230,7 +1230,7 @@ data:extend({
     ingredients = {
       { type = "item", name = "high-performance-structure", amount = 8 },
       { type = "item", name = "mechanical-components", amount = 8 },
-      { type = "item", name = "container-1", amount = 12 },
+      { type = "item", name = "steel-chest", amount = 12 },
     },
     results = { 
       { type = "item", name = "cargo-wagon", amount = 1 }
