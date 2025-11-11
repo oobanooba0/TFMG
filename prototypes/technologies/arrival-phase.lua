@@ -867,6 +867,10 @@ data:extend({
         type = "unlock-recipe",
         recipe = "cliff-explosives"
       },
+      {
+        type = "cliff-deconstruction-enabled",
+        modifier = true
+      },  
     },
     prerequisites = {"crystal-excitation"},
     unit = {
