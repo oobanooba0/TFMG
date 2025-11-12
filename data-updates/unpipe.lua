@@ -36,8 +36,8 @@ for _,recipe in pairs(data.raw.recipe) do
     local ingredient_i = 1
     for _,ingredient in pairs(recipe.ingredients) do
       if ingredient.type == "fluid" then
-      fluid_ingredient_declare_index(ingredient,ingredient_i)
-      ingredient_i = ingredient_i + 1
+        fluid_ingredient_declare_index(ingredient,ingredient_i)
+        ingredient_i = ingredient_i + 1
       end
     end
   end
@@ -45,9 +45,51 @@ for _,recipe in pairs(data.raw.recipe) do
     local ingredient_i = 1
     for _,ingredient in pairs(recipe.results) do
       if ingredient.type == "fluid" then
-      fluid_ingredient_declare_index(ingredient,ingredient_i)
-      ingredient_i = ingredient_i + 1
+        fluid_ingredient_declare_index(ingredient,ingredient_i)
+        ingredient_i = ingredient_i + 1
       end
     end
   end
 end
+
+--- pipe connection category handler
+--- 
+local function handle_fluid_box_cat(fluid_box)
+  for _,connection in pairs(fluid_box.pipe_connections) do
+    if connection.connection_type ~= "linked" then
+      local category = connection.connection_category
+      if not category then 
+        connection.connection_category = {"normal","pipe-2"}
+      elseif category[1] == "normal" then
+        table.insert(connection.connection_category,"pipe-2")
+      end
+    end
+  end
+end
+
+local function pipe_2_cat_add(prototype_class)
+  for _,building in pairs(prototype_class) do
+    if building.fluid_boxes then--recursively for buildings with many fluid boxes,
+      for _,fluid_box in pairs(building.fluid_boxes) do handle_fluid_box_cat(fluid_box) end
+      elseif building.fluid_box then do --singularly for buildings with just the one
+        handle_fluid_box_cat(building.fluid_box)
+      end
+    end
+  end
+end
+
+pipe_2_cat_add(data.raw["assembling-machine"])
+pipe_2_cat_add(data.raw["boiler"])
+pipe_2_cat_add(data.raw["pump"])
+pipe_2_cat_add(data.raw["fluid-turret"])
+pipe_2_cat_add(data.raw["furnace"])
+pipe_2_cat_add(data.raw["fusion-generator"])
+pipe_2_cat_add(data.raw["fusion-reactor"])
+pipe_2_cat_add(data.raw["thruster"])
+pipe_2_cat_add(data.raw["infinity-pipe"])
+pipe_2_cat_add(data.raw["mining-drill"])
+pipe_2_cat_add(data.raw["offshore-pump"])
+pipe_2_cat_add(data.raw["reactor"])
+pipe_2_cat_add(data.raw["rocket-silo"])
+pipe_2_cat_add(data.raw["storage-tank"])
+pipe_2_cat_add(data.raw["valve"])
