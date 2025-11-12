@@ -54,42 +54,60 @@ end
 
 --- pipe connection category handler
 --- 
-local function handle_fluid_box_cat(fluid_box)
+local function fluid_box_add_pipe2_category(fluid_box) --add pipe 2 connection category to any connections in the fluid box which connect to pipes
   for _,connection in pairs(fluid_box.pipe_connections) do
     if connection.connection_type ~= "linked" then
-      local category = connection.connection_category
-      if not category then 
-        connection.connection_category = {"normal","pipe-2"}
-      elseif category[1] == "normal" then
-        table.insert(connection.connection_category,"pipe-2")
+      local categories = connection.connection_category
+      if not categories or categories == "default" then --if no categories defined or is a simple string then we need to add pipe 2
+        connection.connection_category = {"default","pipe-2"}
+      elseif type(categories) == "table" then--if categories is a table, we need to check each string within it to see if it has a default connection category.
+        for _,category in pairs(categories) do
+          if category == "default" then
+            table.insert(connection.connection_category,"pipe-2")
+          break end --ooh look at that, its a break! if we find default, we skip checking the rest of that table.
+        end
       end
     end
   end
 end
 
-local function pipe_2_cat_add(prototype_class)
+local function handle_pipe_2_category(prototype_class) --generic script for prootypes which could have some combination of fluid boxes
   for _,building in pairs(prototype_class) do
-    if building.fluid_boxes then--recursively for buildings with many fluid boxes,
-      for _,fluid_box in pairs(building.fluid_boxes) do handle_fluid_box_cat(fluid_box) end
-      elseif building.fluid_box then do --singularly for buildings with just the one
-        handle_fluid_box_cat(building.fluid_box)
-      end
+    if building.fluid_boxes then--recursively for buildings with many fluid boxes.
+      for _,fluid_box in pairs(building.fluid_boxes) do fluid_box_add_pipe2_category(fluid_box) end
     end
+    --theres alot of different kinds of fluid boxes buildings might have, I think i've got them all.
+    if building.fluid_box then fluid_box_add_pipe2_category(building.fluid_box) end--singularly for buildings with just the one
+    if building.output_fluid_box then fluid_box_add_pipe2_category(building.output_fluid_box) end
+    if building.input_fluid_box then fluid_box_add_pipe2_category(building.input_fluid_box) end
   end
 end
 
-pipe_2_cat_add(data.raw["assembling-machine"])
-pipe_2_cat_add(data.raw["boiler"])
-pipe_2_cat_add(data.raw["pump"])
-pipe_2_cat_add(data.raw["fluid-turret"])
-pipe_2_cat_add(data.raw["furnace"])
-pipe_2_cat_add(data.raw["fusion-generator"])
-pipe_2_cat_add(data.raw["fusion-reactor"])
-pipe_2_cat_add(data.raw["thruster"])
-pipe_2_cat_add(data.raw["infinity-pipe"])
-pipe_2_cat_add(data.raw["mining-drill"])
-pipe_2_cat_add(data.raw["offshore-pump"])
-pipe_2_cat_add(data.raw["reactor"])
-pipe_2_cat_add(data.raw["rocket-silo"])
-pipe_2_cat_add(data.raw["storage-tank"])
-pipe_2_cat_add(data.raw["valve"])
+local function handle_pipe_2_category_simple(prototype_class) --for entities that can only have one fluid box
+  for _,building in pairs(prototype_class) do
+    if building.fluid_box then fluid_box_add_pipe2_category(building.fluid_box) end
+  end
+end
+
+local function handle_pipe_2_category_thruster(prototype_class) --only thrusters can have these anyway.
+  for _,building in pairs(prototype_class) do
+    fluid_box_add_pipe2_category(building.fuel_fluid_box)
+    fluid_box_add_pipe2_category(building.oxidizer_fluid_box)
+  end
+end
+
+handle_pipe_2_category(data.raw["assembling-machine"])
+handle_pipe_2_category(data.raw["boiler"])
+handle_pipe_2_category(data.raw["furnace"])
+handle_pipe_2_category(data.raw["fusion-generator"])
+handle_pipe_2_category(data.raw["fusion-reactor"])
+handle_pipe_2_category(data.raw["mining-drill"])
+handle_pipe_2_category(data.raw["reactor"])
+handle_pipe_2_category(data.raw["rocket-silo"])
+handle_pipe_2_category_simple(data.raw["infinity-pipe"])
+handle_pipe_2_category_simple(data.raw["offshore-pump"])
+handle_pipe_2_category_simple(data.raw["storage-tank"])
+handle_pipe_2_category_simple(data.raw["valve"])
+handle_pipe_2_category_simple(data.raw["fluid-turret"])
+handle_pipe_2_category_simple(data.raw["pump"])
+handle_pipe_2_category_thruster(data.raw["thruster"])

@@ -207,6 +207,29 @@ data:extend({
       time = 24
     },
   },
+  {--titanium pipes
+    type = "technology",
+    name = "titanium-pipes",
+    icon = "__Krastorio2Assets__/technologies/steel-fluid-handling.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "pipe-2"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "pipe-to-ground-2"
+      },
+    },
+    prerequisites = {"high-performance-structure"},
+    unit = {
+      count = 128,
+      ingredients = {{"introspection-science", 1}},
+      time = 24
+    },
+  },
   {--optical coil
     type = "technology",
     name = "optical-coil",
@@ -378,6 +401,67 @@ data:extend({
       time = 24
     },
   },
+  {--micro assembly
+    type = "technology",
+    name = "micro-assembly",
+    icons = {
+      {icon = "__base__/graphics/icons/arrows/down-left-arrow.png", icon_size = 64, shift = {64,-64}},
+      {icon = "__base__/graphics/icons/arrows/down-right-arrow.png", icon_size = 64, shift = {-64,-64}},
+      {icon = "__base__/graphics/icons/arrows/up-left-arrow.png", icon_size = 64, shift = {64,64}},
+      {icon = "__base__/graphics/icons/arrows/up-right-arrow.png", icon_size = 64, shift = {-64,64}},
+      {icon = "__base__/graphics/technology/automation-2.png", icon_size = 256, scale = 1.5},
+    },
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "micro-assembler"
+      },
+    },
+    prerequisites = {"mechatronic-components","capacitors"},
+    unit = {
+      count = 72,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1}
+      },
+      time = 16
+    },
+  },
+  {--rockets
+    type = "technology",
+    name = "rocketry",
+    icon = "__base__/graphics/technology/rocket-silo.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "thruster-fuel"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "thruster-oxidizer"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "rocket-silo"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "rocket-part"
+      },
+    },
+    prerequisites = {"capacitors","mineral-concrete","mechatronic-components"},
+    unit = {
+      count = 512,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1}
+      },
+      time = 32
+    },
+  },
   {--crystal excitation
     type = "technology",
     name = "crystal-excitation",
@@ -394,11 +478,11 @@ data:extend({
       {
         type = "unlock-recipe",
         recipe = "excited-crystal-quenching"
-      }     
+      }
     },
-    prerequisites = {"capacitors"},
+    prerequisites = {"rocketry"},
     unit = {
-      count = 64,
+      count = 256,
       ingredients = {
         {"introspection-science", 1},
         {"exploration-science", 1}
@@ -424,87 +508,6 @@ data:extend({
       type = "craft-item",
       item = "fused-crystalline-chunk",
       count = 8
-    },
-  },
-  {--micro assembly
-    type = "technology",
-    name = "micro-assembly",
-    icons = {
-      {icon = "__base__/graphics/icons/arrows/down-left-arrow.png", icon_size = 64, shift = {64,-64}},
-      {icon = "__base__/graphics/icons/arrows/down-right-arrow.png", icon_size = 64, shift = {-64,-64}},
-      {icon = "__base__/graphics/icons/arrows/up-left-arrow.png", icon_size = 64, shift = {64,64}},
-      {icon = "__base__/graphics/icons/arrows/up-right-arrow.png", icon_size = 64, shift = {-64,64}},
-      {icon = "__base__/graphics/technology/automation-2.png", icon_size = 256, scale = 1.5},
-    },
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "micro-assembler"
-      },
-    },
-    prerequisites = {"mechatronic-components","contemplate-mind"},
-    unit = {
-      count = 72,
-      ingredients = {
-        {"introspection-science", 1},
-        {"exploration-science", 1}
-      },
-      time = 16
-    },
-  },
-  {--rocket propellant
-    type = "technology",
-    name = "rocket-propellant",
-    icons = {
-      {icon = "__space-age__/graphics/icons/fluid/thruster-fuel.png", icon_size = 64, shift = {64,0}},
-      {icon = "__space-age__/graphics/icons/fluid/thruster-oxidizer.png", icon_size = 64, shift = {-64,0}},
-    },
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "thruster-fuel"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "thruster-oxidizer"
-      },
-    },
-    prerequisites = {"capacitors","micro-assembly"},
-    unit = {
-      count = 256,
-      ingredients = {
-        {"introspection-science", 1},
-        {"exploration-science", 1}
-      },
-      time = 32
-    },
-  },
-  {--rockets
-    type = "technology",
-    name = "rocketry",
-    icon = "__base__/graphics/technology/rocket-silo.png",
-    icon_size = 256,
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "rocket-silo"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "rocket-part"
-      },
-    },
-    prerequisites = {"rocket-propellant","mineral-concrete"},
-    unit = {
-      count = 512,
-      ingredients = {
-        {"introspection-science", 1},
-        {"exploration-science", 1}
-      },
-      time = 32
     },
   },
   {--space flight

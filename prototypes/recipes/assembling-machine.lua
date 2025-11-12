@@ -494,6 +494,34 @@ data:extend({
       { type = "item", name = "pipe-to-ground", amount = 2 }
     },
   },
+  {--pipe-2
+    type = "recipe",
+    category = "assembling-machine",
+    name = "pipe-2",
+    energy_required = 2,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "high-performance-structure", amount = 1 },
+      { type = "item", name = "pipe", amount = 2 },
+    },
+    results = { 
+      { type = "item", name = "pipe-2", amount = 2 }
+    },
+  },
+  {--pipe-to-ground-2
+    type = "recipe",
+    category = "assembling-machine",
+    name = "pipe-to-ground-2",
+    energy_required = 4,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "high-performance-structure", amount = 2 },
+      { type = "item", name = "pipe-to-ground", amount = 2 }
+    },
+    results = { 
+      { type = "item", name = "pipe-to-ground-2", amount = 2 }
+    },
+  },
   {--pump
     type = "recipe",
     category = "assembling-machine",
@@ -851,8 +879,8 @@ data:extend({
     enabled = false,
     ingredients = {
       { type = "item", name = "high-performance-structure", amount = 8 },
-      { type = "item", name = "ai-processor", amount = 2 },
-      { type = "item", name = "mechatronic-components", amount = 4 },
+      { type = "item", name = "capacitor-discharged", amount = 6 },
+      { type = "item", name = "mechatronic-components", amount = 6 },
     },
     results = { 
       { type = "item", name = "micro-assembler", amount = 1 }
