@@ -44,6 +44,14 @@ Date: ????
     - Arrival orbit has fewer chunks. (this is compensated by the fact that you will be moving at a high speed during the platform phase.)
     - first pre science inserter capacity bonus has been removed- You just dont need it.
     - long handed inserters are now half as fast as their regular inserter counterpart.
+    - Small electric pylon now reaches 13 tiles.
+    - Titanium plates now arent used in any end product, being exclusively an intermediate. This should make malls easier.
+    - Chemical reactors no longer require titanium, using only general purpose structures.
+    - Chemical reactor technology now has contemplate life as a prerequisite instaid of contemplate rust
+    - Rails use high performance structures instaid of titanium.
+    - Ferric solution reduction is now slower
+    - Introspection data card can only be crafted in space.
+    - Exploration science can only be crafted on arrival
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.17
 Date: 2025-10-10

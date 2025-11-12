@@ -159,6 +159,9 @@ data:extend({
     results = { 
       { type = "item", name = "introspection-science-unverified", amount = 1 }
     },
+    surface_conditions = {
+      { property = "pressure", min = 0, max = 0 }
+    },
   },
   {--exploration science
     type = "recipe",
@@ -174,6 +177,11 @@ data:extend({
     },
     results = { 
       { type = "item", name = "exploration-science-unverified", amount = 1 }
+    },
+    surface_conditions = {
+      { property = "gravity", min = 1, max = 10 },
+      { property = "pressure", min = 100, max = 1000 },
+
     },
   },
   {--spidertron frame
@@ -1010,9 +1018,8 @@ data:extend({
     energy_required = 24,
     enabled = false,
     ingredients = {
-      { type = "item", name = "general-purpose-structure", amount = 12 },
-      { type = "item", name = "titanium-plate", amount = 8 },
-      { type = "item", name = "heat-pipe", amount = 8 },
+      { type = "item", name = "general-purpose-structure", amount = 16 },
+      { type = "item", name = "heat-pipe", amount = 16 },
       { type = "item", name = "pipe", amount = 8 },
     },
     results = { 
@@ -1258,11 +1265,11 @@ data:extend({
     energy_required = 1,
     enabled = false,
     ingredients = {
-      { type = "item", name = "titanium-plate", amount = 1 },
-      { type = "item", name = "mineral-ore", amount = 2 },
+      { type = "item", name = "high-performance-structure", amount = 1 },
+      { type = "item", name = "mineral-ore", amount = 8 },
     },
     results = { 
-      { type = "item", name = "rail", amount = 1 }
+      { type = "item", name = "rail", amount = 2 }
     },
   },
   {--rail signal

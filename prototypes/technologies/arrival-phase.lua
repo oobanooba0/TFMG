@@ -246,7 +246,7 @@ data:extend({
         recipe = "chemical-reactor"
       },
     },
-    prerequisites = {"energy-distribution-2","contemplate-rust"},
+    prerequisites = {"energy-distribution-2","contemplate-life"},
     unit = {
       count = 128,
       ingredients = {{"introspection-science", 1}},

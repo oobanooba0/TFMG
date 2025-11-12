@@ -10,6 +10,7 @@ local chest_1_slots = 5
 
 local chest_1 = data.raw["container"]["steel-chest"]
 chest_1.inventory_size = chest_1_slots
+chest_1.surface_conditions = nil
 
 local storage_chest_1 = data.raw["logistic-container"]["storage-chest"]
 storage_chest_1.inventory_size = chest_1_slots

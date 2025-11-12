@@ -73,7 +73,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { icon = "__TFMG-assets-0__/icons/fluids/ferric-solution.png"},
       { icon = "__Krastorio2Assets__/icons/items/enriched-copper.png", shift = {0,7}, scale = 0.3,}
     },
-    energy_required = 1,
+    energy_required = 3,
     enabled = false,
     allow_decomposition = false,
     allow_productivity = true,
@@ -82,7 +82,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     results = { 
       { type = "item", name = "pure-iron-ore", amount = 2 },
-      { type = "fluid", name = "water", amount = 20, fluidbox_index = 0 },
+      { type = "fluid", name = "water", amount = 50, fluidbox_index = 0 },
     },
   },
   {--concrete
