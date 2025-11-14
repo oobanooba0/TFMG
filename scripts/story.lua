@@ -69,14 +69,6 @@ script.on_event(defines.events.on_console_chat, function (event)
   end
 end)
 
---utility events
-
----get a random entry from a table
-function random_table_entry(table)
-  local random_table_entry = table[math.random(1,#table)]
-  return random_table_entry
-end
-
 --scripts which allow me to fuck with players by pretending to be them.
 
 ---game print basic
@@ -115,7 +107,7 @@ end
 ---say a message as a random online player
 function random_say(message)
   local players = game.connected_players
-  local r_player = random_table_entry(players)
+  local r_player = TFMG.random_table_entry(players)
   local saved_player = storage.story.saved_r_player or r_player
   game.print(
     {

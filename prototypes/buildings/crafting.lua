@@ -49,7 +49,7 @@ end
 
 local rocket_silo = table.deepcopy(data.raw["rocket-silo"]["rocket-silo"])
 rocket_silo.fixed_recipe = nil
-rocket_silo.rocket_parts_required = 128
+rocket_silo.rocket_parts_required = 64
 rocket_silo.fluid_boxes = {
   {
     production_type = "input",

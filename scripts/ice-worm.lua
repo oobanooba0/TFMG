@@ -16,47 +16,56 @@ function ice_worm.find_close_worm(silo)
   if not worms[1] then return end --if there are no worms in the game, end the script
   --set up some variables to help us find the closest worm.
   local silo_position = silo.position
-  local closest = 100000 --max distance to search.
-  local worm_index
+  local max_distance = 2000 --max distance to search.
+  local close_worms = {}
   for index , worm in pairs(worms) do
     local wormai = worm.get_ai_state()
     if wormai.type == 0 then
-      local worm_distance = util.distance(worm.segments[1].position,silo_position)
-      if worm_distance < closest then
-        closest = worm_distance
-        worm_index = index
+      if util.distance(worm.segments[1].position,silo_position) <= max_distance then
+        table.insert(close_worms,worm)
       end
     end
   end
-  if worm_index == nil then game.print("no close worms") return end --no worm index
-  local closest_worm = worms[worm_index]
-  --local closest_worm = random_table_entry(worms)
-  ice_worm.send_to_silo(closest_worm,silo)
+  if #close_worms == 0 then game.print("no close worms") return end --no worm index
+  local worm_to_send = TFMG.random_table_entry(close_worms)
+  ice_worm.send_to_silo(worm_to_send,silo)
 end
 
-function ice_worm.send_to_silo(closest_worm,silo)
-  TFMG.block(closest_worm)
+function ice_worm.send_to_silo(worm_to_send,silo)
   local ai_state = {
     type = defines.segmented_unit_ai_state.investigating,
     destination = silo.position,
   }
-  closest_worm.set_ai_state(ai_state)
-  table.insert(storage.worms.active_worms,{worm = closest_worm,silo = silo,order = "find silo"})
-  --TFMG.block(storage.worms.active_worms)
+  worm_to_send.set_ai_state(ai_state)
+  table.insert(storage.worms.active_worms,{worm = worm_to_send,silo = silo,order = "find silo"})
 end
 
 function ice_worm.attack_silo(active_worm,_)
   local silo = active_worm.silo
   if not silo.valid then ice_worm.forget_worm(_) return end --if the silo is gone, we forget the worm, theyll eventually make their way back home.
-  
+  local order_end_tick = game.tick + 2*3600
   local worm = active_worm.worm
   local ai_state = {
     type = defines.segmented_unit_ai_state.enraged_at_nothing,
     destination = silo.position,
-    last_damage_time = game.tick + 2*3600 --hang around for this long
+    last_damage_time = order_end_tick, --hang around for this long
   }
   worm.set_ai_state(ai_state)
   active_worm.order = "attack silo"
+  active_worm.order_end_tick = order_end_tick
+end
+
+function ice_worm.continue_attack_silo(active_worm,_)--idk why ice worms randomly decide to deviate from their target
+  local silo = active_worm.silo
+  if not silo.valid then ice_worm.forget_worm(_) return end --if the silo is gone, we forget the worm, theyll eventually make their way back home.
+  local worm = active_worm.worm
+  local order_end_tick = active_worm.order_end_tick
+  local ai_state = {
+    type = defines.segmented_unit_ai_state.enraged_at_nothing,
+    destination = silo.position,
+    last_damage_time = order_end_tick, --hang around for this long
+  }
+  worm.set_ai_state(ai_state)
 end
 
 function ice_worm.forget_worm(_)
@@ -71,6 +80,9 @@ function ice_worm.check_active_worms()
     if active_worm.order == "find silo" and ai_state == 0 then
       ice_worm.attack_silo(active_worm,_)
     elseif active_worm.order == "attack silo" then
+      if ai_state == 4 then
+        ice_worm.continue_attack_silo(active_worm)
+      end
       if ai_state == 0 then --we're done, lets forget about this worm
         ice_worm.forget_worm(_)
       end
@@ -85,7 +97,7 @@ function ice_worm.spawn_hatchling(event)
     position.x + math.random(-10,10),
     position.y + math.random(-10,10)
   }
-  local spawn_position = surface.find_non_colliding_position("crawler-explosion",rand_position,16,1,true)
+  local spawn_position = surface.find_non_colliding_position("crawler-explosion",rand_position,24,1,true)
   if not spawn_position then --if we cant find a safe spot, we spawn our entity anyway. (maybe destroy the concrete? is that possible)
     spawn_position = rand_position
   end 

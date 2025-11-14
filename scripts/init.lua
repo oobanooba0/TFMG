@@ -112,7 +112,7 @@ end
 		end
 	)
 
-	script.on_nth_tick(500,
+	script.on_nth_tick(300,
 		function()
 			ice_worm.check_active_worms()
 		end

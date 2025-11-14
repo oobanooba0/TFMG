@@ -12,4 +12,9 @@ function TFMG.parse_chunk_area(chunk_area) --convert the stupidly indexed chunk_
 local area = {{chunk_area["left_top"]["x"],chunk_area["left_top"]["y"]},{chunk_area["right_bottom"]["x"],chunk_area["right_bottom"]["y"]}}
 return area end
 
+function TFMG.random_table_entry(table)--get random entry from table
+  local random_table_entry = table[math.random(1,#table)]
+  return random_table_entry
+end
+
 return TFMG

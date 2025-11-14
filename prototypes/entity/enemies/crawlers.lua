@@ -37,7 +37,7 @@ data:extend({
     subgroup = "enemies",
     --factoriopedia_simulation = simulations.factoriopedia_small_biter,
     resistances = {},
-    --healing_per_tick = -0.01,
+    healing_per_tick = -0.002,
     collision_box = {{-0.2, -0.2}, {0.2, 0.2}},
     selection_box = {{-0.4, -0.7}, {0.4, 0.4}},
     damaged_trigger_effect = hit_effects.biter(),

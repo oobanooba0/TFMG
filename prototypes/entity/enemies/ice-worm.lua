@@ -171,11 +171,11 @@ function make_ice_worm_head(base_name, order, scale, damage_multiplier, health, 
     territory_radius = (1.5*scale)+1,
     enraged_duration = 0,--must be zero since this messes with attack scripts
     patrolling_speed = 2.0 * speed_multiplier / 60,
-    investigating_speed = 4.0 * speed_multiplier / 60, 
-    attacking_speed = 4.0 * speed_multiplier / 60, 
-    enraged_speed = 4.0 * speed_multiplier / 60, 
+    investigating_speed = 6.0 * speed_multiplier / 60, 
+    attacking_speed = 5.0 * speed_multiplier / 60, 
+    enraged_speed = 5.0 * speed_multiplier / 60, 
     acceleration_rate = 1 * speed_multiplier / 60 / 60, -- 1 tile per second per second
-    turn_radius = (18 * scale) + 30 , -- tiles
+    turn_radius = (12 * scale) + 20 , -- tiles
     patrolling_turn_radius = (32*scale)+60, -- tiles--current result great
     turn_smoothing = 0, -- fraction of the total turning range (based on turning radius)
     roar = sounds.roar,
