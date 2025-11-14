@@ -474,6 +474,14 @@ data:extend({
         type = "unlock-recipe",
         recipe = "laser-turret"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "stone-wall"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "gate"
+      },
     },
     prerequisites = {"rocketry"},
     research_trigger = {

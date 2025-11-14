@@ -1,14 +1,20 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
+--radar
+  local radar = data.raw['radar']['radar']
+  radar.energy_usage = "1MW"
+  radar.energy_per_nearby_scan = "1MJ"
+  radar.max_distance_of_nearby_sector_revealed = 4
+  radar.max_distance_of_sector_revealed = 4
+--laser turret
+  local laser_turret = data.raw["electric-turret"]["laser-turret"]
+  laser_turret.max_health = 1000
+  laser_turret.rotation_speed = 0.05--laser turret should be very quick and nimble, but have low damage output.
+  laser_turret.attack_parameters.cooldown = 5
 
-local radar = data.raw['radar']['radar']
-radar.energy_usage = "1MW"
-radar.energy_per_nearby_scan = "1MJ"
-radar.max_distance_of_nearby_sector_revealed = 4
-radar.max_distance_of_sector_revealed = 4
 
 data:extend({
-  {
+  {--scout radar
     type = "radar",
     name = "scout-radar",
     icon = "__base__/graphics/icons/radar.png",

@@ -1198,6 +1198,33 @@ data:extend({
       { type = "item", name = "steel-chest", amount = 1 }
     },
   },
+  {--stone wall
+    type = "recipe",
+    category = "assembling-machine",
+    name = "stone-wall",
+    energy_required = 4,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "concrete", amount = 4 },
+    },
+    results = { 
+      { type = "item", name = "stone-wall", amount = 1 }
+    },
+  },
+  {--gate
+    type = "recipe",
+    category = "assembling-machine",
+    name = "gate",
+    energy_required = 4,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "stone-wall", amount = 1 },
+      { type = "item", name = "modular-circuit", amount = 2 },
+    },
+    results = { 
+      { type = "item", name = "gate", amount = 1 }
+    },
+  },
   {--cargo-landing-pad
     type = "recipe",
     category = "assembling-machine",

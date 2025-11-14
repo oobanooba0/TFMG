@@ -15,7 +15,8 @@ Date: ????
     - Light and heavy space platform added: light space platform is expensive, but light (and good for space ships) heavy space platform is cheap but heavy (good for stationary platforms)
     - Volatile asteroids added, These will provide access to water and hydrocarbons for space platforms.
     - 1 music track added to space.
-    - pipe
+    - titanium pipes added, which allow for pipe weaving.
+    - Walls and gates added.
     - they move below.
   Changes:
     - old saves broken. Just not realistic to fix that.
@@ -57,6 +58,8 @@ Date: ????
     - Exploration science can only be crafted on arrival
     - AI processor printing recipe now costs 2 crystalline plates, to make building the first rockets easier, but requires 6 modular circuits and 12 conductive coils.
     - Rocket part cost rebalanced.
+  Bugfixes:
+    - many more likely unmentioned.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.17
 Date: 2025-10-10
