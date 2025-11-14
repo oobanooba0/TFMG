@@ -68,13 +68,13 @@ data:extend({
     type = "recipe",
     category = "matter-reconstructor",
     name = "print-ai-processor",
-    energy_required = 128,
+    energy_required = 64,
     enabled = false,
     allow_productivity = true,
     ingredients = {
-      { type = "item", name = "modular-circuit", amount = 2},
-      { type = "item", name = "conductive-coil", amount = 5},
-      { type = "item", name = "crystalline-plate", amount = 5},
+      { type = "item", name = "modular-circuit", amount = 6},
+      { type = "item", name = "conductive-coil", amount = 12},
+      { type = "item", name = "crystalline-plate", amount = 2},
       { type = "item", name = "crystalline-asteroid-chunk", amount = 10},
     },
     results = { 

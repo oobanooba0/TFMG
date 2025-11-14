@@ -17,16 +17,16 @@ data:extend({
     type = "recipe",
     category = "rocket-building",
     name = "rocket-part",
-    energy_required = 10,
+    energy_required = 16,
     enabled = true,
     ingredients = {
-      { type = "item", name = "high-performance-structure", amount = 2 },
+      { type = "item", name = "high-performance-structure", amount = 4 },
       { type = "item", name = "ai-processor", amount = 1 },
-      { type = "fluid", name = "thruster-fuel", amount = 32},
-      { type = "fluid", name = "thruster-oxidizer", amount = 32},
+      { type = "fluid", name = "thruster-fuel", amount = 64},
+      { type = "fluid", name = "thruster-oxidizer", amount = 64},
     },
     results = {
-      { type = "item", name = "rocket-part", amount = 1 }
+      { type = "item", name = "rocket-part", amount = 2 }
     },
   },
 })

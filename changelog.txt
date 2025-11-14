@@ -35,6 +35,8 @@ Date: ????
     - Starting intro message has been changed.
     - old tutorial popup removed, we don't need it.
     - small chests now have 5 slots, with 1 stack per slot.
+    - Conetemplate mind and crystal excitation is now unlocked after rockets, and requires a rocket to be launched to research.
+    - Crystal excitation and fused crystals can only be crafted in space.
   Balancing:
     - Small radiators stack to 50
     - Small radiators now cost half to craft
@@ -53,6 +55,8 @@ Date: ????
     - Ferric solution reduction is now slower
     - Introspection data card can only be crafted in space.
     - Exploration science can only be crafted on arrival
+    - AI processor printing recipe now costs 2 crystalline plates, to make building the first rockets easier, but requires 6 modular circuits and 12 conductive coils.
+    - Rocket part cost rebalanced.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.17
 Date: 2025-10-10

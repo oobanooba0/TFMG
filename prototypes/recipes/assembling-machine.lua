@@ -1169,6 +1169,22 @@ data:extend({
       { type = "item", name = "solar-cell", amount = 1 }
     },
   },
+  {--laser turret cell
+    type = "recipe",
+    category = "assembling-machine",
+    name = "laser-turret",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "high-performance-structure", amount = 8 },
+      { type = "item", name = "mechatronic-components", amount = 8 },
+      { type = "item", name = "capacitor-discharged", amount = 4 },
+      { type = "item", name = "optical-coil", amount = 24 },
+    },
+    results = { 
+      { type = "item", name = "laser-turret", amount = 1 }
+    },
+  },
   {--chest-1
     type = "recipe",
     category = "assembling-machine",

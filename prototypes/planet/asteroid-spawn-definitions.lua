@@ -15,7 +15,7 @@ asteroid_functions.huge_angle = 0.4
 
 --locational asteroid definitions
   --arrival
-    asteroid_functions.arrival_ratio = {0.8 , 0.2, 0}
+    asteroid_functions.arrival_ratio = {0.7 , 0.3, 0}
     asteroid_functions.arrival_chunks = 0.01
     asteroid_functions.arrival_small = 0
   --near void
@@ -23,8 +23,8 @@ asteroid_functions.huge_angle = 0.4
     asteroid_functions.near_void_chunks = 0
     asteroid_functions.near_void_small = 0
   --limit
-    asteroid_functions.limit_ratio = {0.6 , 0.4 , 0.6}
-    asteroid_functions.arrival_limit_halfway = {0.7 , 0.3 , 0.1}
+    asteroid_functions.limit_ratio = {0.4 , 0.5 , 0.6}
+    asteroid_functions.arrival_limit_halfway = {0.6 , 0.4 , 0.1}
     asteroid_functions.limit_chunks = 0.005
     asteroid_functions.limit_small = 0.008
 

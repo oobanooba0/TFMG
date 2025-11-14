@@ -409,7 +409,7 @@ data:extend({
       {icon = "__base__/graphics/icons/arrows/down-right-arrow.png", icon_size = 64, shift = {-64,-64}},
       {icon = "__base__/graphics/icons/arrows/up-left-arrow.png", icon_size = 64, shift = {64,64}},
       {icon = "__base__/graphics/icons/arrows/up-right-arrow.png", icon_size = 64, shift = {-64,64}},
-      {icon = "__base__/graphics/technology/automation-2.png", icon_size = 256, scale = 1.5},
+      {icon = "__base__/graphics/technology/automation-2.png", icon_size = 256, scale = 1},
     },
     effects =
     {
@@ -420,7 +420,7 @@ data:extend({
     },
     prerequisites = {"mechatronic-components","capacitors"},
     unit = {
-      count = 72,
+      count = 256,
       ingredients = {
         {"introspection-science", 1},
         {"exploration-science", 1}
@@ -452,7 +452,7 @@ data:extend({
         recipe = "rocket-part"
       },
     },
-    prerequisites = {"capacitors","mineral-concrete","mechatronic-components"},
+    prerequisites = {"mineral-concrete","micro-assembly"},
     unit = {
       count = 512,
       ingredients = {
@@ -460,6 +460,26 @@ data:extend({
         {"exploration-science", 1}
       },
       time = 32
+    },
+  },
+  {--contemplate void
+    type = "technology",
+    name = "contemplate-void",
+    icon = "__base__/graphics/icons/signal/signal_black.png",
+    icon_size = 64,
+    essential = true,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "laser-turret"
+      },
+    },
+    prerequisites = {"rocketry"},
+    research_trigger = {
+      type = "craft-item",
+      item = "rocket-part",
+      count = (data.raw["rocket-silo"]["rocket-silo"].rocket_parts_required*data.raw.recipe["rocket-part"].results[1].amount) --always = to the number of rocket parts required to launch a rocket
     },
   },
   {--crystal excitation
@@ -480,7 +500,7 @@ data:extend({
         recipe = "excited-crystal-quenching"
       }
     },
-    prerequisites = {"rocketry"},
+    prerequisites = {"contemplate-void"},
     unit = {
       count = 256,
       ingredients = {
@@ -539,7 +559,7 @@ data:extend({
         use_icon_overlay_constant = true
       },
     },
-    prerequisites = {"rocketry"},
+    prerequisites = {"contemplate-void"},
     unit = {
       count = 512,
       ingredients = {
@@ -772,7 +792,7 @@ data:extend({
         recipe = "speed-module"
       },
     },
-    prerequisites = {"contemplate-mind","mechatronic-components"},
+    prerequisites = {"capacitors","mechatronic-components"},
     unit = {
       count = 196,
       ingredients = {
@@ -795,7 +815,7 @@ data:extend({
         recipe = "efficiency-module"
       },
     },
-    prerequisites = {"contemplate-mind","mineral-lubricant"},
+    prerequisites = {"capacitors","mineral-lubricant"},
     unit = {
       count = 128,
       ingredients = {
