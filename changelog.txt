@@ -17,6 +17,7 @@ Date: ????
     - 1 music track added to space.
     - titanium pipes added, which allow for pipe weaving.
     - Walls and gates added.
+    - Crawlers enemy added.
     - they move below.
   Changes:
     - old saves broken. Just not realistic to fix that.

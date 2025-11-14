@@ -59,16 +59,6 @@ function ice_worm.attack_silo(active_worm,_)
   active_worm.order = "attack silo"
 end
 
-function ice_worm.order_units(active_worm,_)
-  local silo = active_worm.silo
-  if not silo.valid then ice_worm.forget_worm(_) return end
-  game.surfaces["nauvis"].set_multi_command{
-    command = {type = defines.command.attack,target = silo},
-    unit_count = 999,
-    unit_search_distance = 400,
-  }
-end
-
 function ice_worm.forget_worm(_)
   --game.print("done")
   storage.worms.active_worms[_] = nil
@@ -81,7 +71,6 @@ function ice_worm.check_active_worms()
     if active_worm.order == "find silo" and ai_state == 0 then
       ice_worm.attack_silo(active_worm,_)
     elseif active_worm.order == "attack silo" then
-      ice_worm.order_units(active_worm,_)
       if ai_state == 0 then --we're done, lets forget about this worm
         ice_worm.forget_worm(_)
       end
@@ -92,8 +81,25 @@ end
 function ice_worm.spawn_hatchling(event)
   local surface = game.surfaces[event.surface_index]
   local position = event.source_entity.position
-  surface.create_entity{name = "small-wriggler-pentapod-premature", position = position}
-  --TFMG.block(event)
+  local rand_position = {
+    position.x + math.random(-10,10),
+    position.y + math.random(-10,10)
+  }
+  local spawn_position = surface.find_non_colliding_position("crawler-explosion",rand_position,16,1,true)
+  if not spawn_position then --if we cant find a safe spot, we spawn our entity anyway. (maybe destroy the concrete? is that possible)
+    spawn_position = rand_position
+  end 
+  local segment = event.source_entity
+  local worm = segment.segmented_unit
+  local target = worm.get_ai_state().destination
+  local distance = util.distance(spawn_position,target)
+  if 64 > distance and distance > 16 then
+    local hatchling = surface.create_entity{name = "small-crawler", position = spawn_position}
+    if not hatchling then return end
+    surface.create_entity{name = "crawler-explosion", position = spawn_position}
+    --I cant yet decide what order makes the most sense, so whatever.
+    hatchling.commandable.set_command({type = defines.command.go_to_location, destination = target, distraction = defines.distraction.none, pathfind_flags = {cache = true}})
+  end
 end
 
 return ice_worm

@@ -28,7 +28,8 @@ require("prototypes.vanilla-content-obliterator")
 
 --entities
 	require("prototypes.entity.asteroid")
-	require("prototypes.entity.enemies")
+	require("prototypes.entity.enemies.ice-worm")
+	require("prototypes.entity.enemies.crawlers")
 	require("prototypes.entity.explosions")
 	require("prototypes.entity.resources")
 	require("prototypes.entity.smoke")

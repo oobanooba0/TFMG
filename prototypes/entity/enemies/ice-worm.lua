@@ -69,13 +69,9 @@ local ice_worm_enraged_attack = {{
   time_cooldown = 5,
   effect = {
     {
-      type = "create-explosion",
-      entity_name = "crawler-explosion",
-      offset_deviation = {{-20,-20},{20,20}},
-      non_colliding_search_precision = 1,
-      non_colliding_search_radius = 10,
-      only_when_visible = false,
-      probability = 0.03
+      type = "script",
+      effect_id = "spawn-hatchling",
+      probability = 0.05,
     },
   }
   }}
@@ -170,13 +166,14 @@ function make_ice_worm_head(base_name, order, scale, damage_multiplier, health, 
     drawing_box_vertical_extension = 4.0 * scale,
     is_military_target = true,
     overkill_fraction = ice_worm_overkill_fraction,
-    vision_distance = 64,
+    vision_distance = 0,
+    ticks_per_scan = 99999,
     territory_radius = (1.5*scale)+1,
-    enraged_duration = 30 * 60, 
+    enraged_duration = 0,--must be zero since this messes with attack scripts
     patrolling_speed = 2.0 * speed_multiplier / 60,
-    investigating_speed = 12.0 * speed_multiplier / 60, 
-    attacking_speed = 6.0 * speed_multiplier / 60, 
-    enraged_speed = 6.0 * speed_multiplier / 60, 
+    investigating_speed = 4.0 * speed_multiplier / 60, 
+    attacking_speed = 4.0 * speed_multiplier / 60, 
+    enraged_speed = 4.0 * speed_multiplier / 60, 
     acceleration_rate = 1 * speed_multiplier / 60 / 60, -- 1 tile per second per second
     turn_radius = (18 * scale) + 30 , -- tiles
     patrolling_turn_radius = (32*scale)+60, -- tiles--current result great
@@ -196,13 +193,6 @@ function make_ice_worm_head(base_name, order, scale, damage_multiplier, health, 
       max_sounds_per_prototype = 1,
       match_volume_to_activity = true
     },
-    --animation =
-    --{
-    --  layers =
-    --  {
-    --    ice_worm_spritesheet("head-shadow", true, 0.5 * scale),
-    --  }
-    --},
     backward_padding = -2.5 * scale, -- tiles
     render_layer = "higher-object-under",
     update_effects ={{
@@ -244,13 +234,6 @@ function make_ice_worm_segment(base_name, scale, damage_multiplier, health, soun
     drawing_box_vertical_extension = 4.0 * scale,
     is_military_target = true,
     overkill_fraction = ice_worm_overkill_fraction,
-    --animation =
-    --{
-    --  layers =
-    --  {
-    --    ice_worm_spritesheet("segment-shadow", true, 0.5 * scale),
-    --  },
-    --},
     forward_overlap = 2,
     forward_padding = -0.5 * scale, -- tiles
     backward_padding = 1.5 * scale, -- tiles

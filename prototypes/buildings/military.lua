@@ -8,10 +8,41 @@ local sounds = require("__base__.prototypes.entity.sounds")
   radar.max_distance_of_sector_revealed = 4
 --laser turret
   local laser_turret = data.raw["electric-turret"]["laser-turret"]
-  laser_turret.max_health = 1000
+  laser_turret.max_health = 500
   laser_turret.rotation_speed = 0.05--laser turret should be very quick and nimble, but have low damage output.
-  laser_turret.attack_parameters.cooldown = 5
-
+  laser_turret.energy_source = {
+      type = "electric",
+      buffer_capacity = "1MJ",
+      input_flow_limit = "10MW",
+      drain = "24kW",
+      usage_priority = "primary-input"
+    }
+  laser_turret.attack_parameters = {
+    type = "beam",
+    cooldown = 8,
+    range = 24,
+    range_mode = "center-to-bounding-box",
+    source_direction_count = 64,
+    source_offset = {0, -3.423489 / 4},
+    damage_modifier = 4,
+    ammo_category = "laser",
+    ammo_type =
+    {
+      energy_consumption = "800kJ",
+      action =
+      {
+        type = "direct",
+        action_delivery =
+        {
+          type = "beam",
+          beam = "laser-beam",
+          max_length = 24,
+          duration = 8,
+          source_offset = {0, -1.31439 }
+        }
+      }
+    }
+  }
 
 data:extend({
   {--scout radar

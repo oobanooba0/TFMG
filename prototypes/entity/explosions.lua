@@ -16,7 +16,8 @@ data:extend({
     height = 0,
     animations = explosion_animations.asteroid_explosion_small({tint = {0.6118, 0.4980, 0.4745, 1}}),
     sound = crystalline_asteroids_sounds.asteroid_damage_crystalline_medium,
-    delay_deviation = 5,
+    collision_box = {{-0.1,-0.1},{0.1,0.1}},
+    collision_mask = {layers = {water_tile = true, artificial_ground = true}}, --we avoid spawning on concrete and such
     created_effect = {
       type = "direct",
       action_delivery =
@@ -25,17 +26,14 @@ data:extend({
         target_effects =
         {
           {
-            type = "script",
-            effect_id = "spawn-hatchling"
-          },
-          {
             type = "create-trivial-smoke",
             repeat_count = 25,
             smoke_name = "asteroid-smoke-crystalline-medium",
             offset_deviation = { { -0.8, -0.8 }, { 0.8, 0.8 } },
             initial_height = 0,
             speed_from_center = 0.011,
-            speed_from_center_deviation = 0.05
+            speed_from_center_deviation = 0.05,
+            only_when_visible = true
           },
           {
             type = "create-particle",

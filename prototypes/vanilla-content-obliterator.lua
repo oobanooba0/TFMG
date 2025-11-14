@@ -89,12 +89,19 @@
 --remove character icon
 	data.raw["character"]["character"].icon = "__core__/graphics/empty.png"
 
+--add tile collision mask
+	data:extend({{ type = "collision-layer", name = "artificial_ground" }}) --For ice worms and other shenanigans
 --tile adjust
 	local tile_collision_masks = require("__base__/prototypes/tile/tile-collision-masks")
+
+
 	data.raw.tile ["ice-smooth"].collision_mask = tile_collision_masks.ground()
-	--tile pollution handling
+	--tile adjustments
 	for _, tile in pairs(data.raw.tile) do
 		tile.absorptions_per_second = nil
+		if tile.subgroup == "artificial-tiles" then
+			tile.collision_mask.layers.artificial_ground = true
+		end
 	end
 	local per_chunk_per_min = 61440
 
