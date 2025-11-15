@@ -144,13 +144,13 @@ data:extend({--surface properties
     order = "b[limit]",
     subgroup = "planets",
     draw_orbit = false,
-    gravity_pull = 0,
+    gravity_pull = 10,
     distance = arrival_distance,--use a location relative to arrival.
     orientation = arrival_orientation - 0.01,
     magnitude = 2.5,
     label_orientation = 0.15,
     asteroid_spawn_influence = 0.9,
-    solar_power_in_space = 0,
+    solar_power_in_space = 100,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.arrival_limit, 0.9),
   },
 --connections

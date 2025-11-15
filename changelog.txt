@@ -60,6 +60,7 @@ Date: ????
     - AI processor printing recipe now costs 2 crystalline plates, to make building the first rockets easier, but requires 6 modular circuits and 12 conductive coils.
     - Rocket part cost rebalanced.
   Bugfixes:
+    - Cliff explosives now also unlock exploding cliffs with deconstruction planner.
     - many more likely unmentioned.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.17
