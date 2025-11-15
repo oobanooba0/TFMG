@@ -173,6 +173,21 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "steam", amount = 1000, temperature = 1000, fluidbox_index = 0},
     },
   },
+  {--Steam condensation
+    type = "recipe",
+    category = "chemistry-plant",
+    subgroup = "fluid-recipes",
+    name = "steam-condensation",
+    energy_required = 1,
+    enabled = false,
+    allow_productivity = false,
+    ingredients = {
+      { type = "fluid", name = "steam", amount = 200, fluidbox_index = 0},
+    },
+    results = { 
+      { type = "fluid", name = "water", amount = 19, fluidbox_index = 0},
+    },
+  },
   {--Thruster oxidizer
     type = "recipe",
     category = "chemistry-plant",

@@ -184,6 +184,23 @@ data:extend({
 
     },
   },
+  {--exploitation science
+    type = "recipe",
+    category = "assembling-machine",
+    name = "exploitation-science-unverified",
+    energy_required = 16,
+    enabled = false,
+    allow_productivity = true,
+    ingredients = {
+      { type = "item", name = "fused-crystalline-chunk", amount = 1 },
+      { type = "item", name = "active-bio-polymers", amount = 1 },
+      { type = "item", name = "organic-carbon", amount = 1 },
+      { type = "item", name = "volatile-asteroid-chunk", amount = 1 },
+    },
+    results = { 
+      { type = "item", name = "exploitation-science-unverified", amount = 1 }
+    },
+  },
   {--spidertron frame
     type = "recipe",
     category = "assembling-machine",

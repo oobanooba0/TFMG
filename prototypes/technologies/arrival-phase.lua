@@ -506,6 +506,10 @@ data:extend({
       {
         type = "unlock-recipe",
         recipe = "excited-crystal-quenching"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "steam-condensation"
       }
     },
     prerequisites = {"contemplate-void"},
@@ -577,7 +581,33 @@ data:extend({
       time = 32
     },
   },
-
+  {--exploitation science
+    type = "technology",
+    name = "exploitation-science",
+    icon = "__Krastorio2Assets__/technologies/production-tech-card.png",
+    icon_size = 256,
+    essential = true,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "exploitation-science-unverified"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "exploitation-science"
+      },
+    },
+    prerequisites = {"contemplate-mind","space-flight"},
+    unit = {
+      count = 512,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1}
+      },
+      time = 32
+    },
+  },
 --side techs
   {--energy distribution 2
     type = "technology",

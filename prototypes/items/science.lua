@@ -100,5 +100,54 @@ data:extend({
       },
     },
   },
+  {--exploration unverified
+    type = "item",
+    name = "exploitation-science-unverified",
+    icons = {
+      {icon = "__Krastorio2Assets__/icons/cards/production-tech-card.png"},
+      {icon = "__Krastorio2Assets__/icons/cards/production-tech-card-light.png",tint = {1,0,0,0.1}}
+    },
+    subgroup = "science-unverified",
+    order = "c[exploitation]",
+    inventory_move_sound = item_sounds.science_inventory_move,
+    pick_sound = item_sounds.science_inventory_pickup,
+    drop_sound = item_sounds.science_inventory_move,
+    stack_size = 100,
+    weight = 1 * kg,
+    default_import_location = "nauvis",
+  },
+  {--exploitation science
+    type = "tool",
+    name = "exploitation-science",
+    icon = "__Krastorio2Assets__/icons/cards/production-tech-card.png",
+    subgroup = "science-verified",
+    order = "c[exploitation]",
+    inventory_move_sound = item_sounds.science_inventory_move,
+    pick_sound = item_sounds.science_inventory_pickup,
+    drop_sound = item_sounds.science_inventory_move,
+    stack_size = 100,
+    weight = 1 * kg,
+    durability = 1,
+    durability_description_key = "description.science-pack-remaining-amount-key",
+    factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
+    durability_description_value = "description.science-pack-remaining-amount-value",
+    random_tint_color = item_tints.bluish_science,
+    default_import_location = "nauvis",
+    pictures = {
+      layers = {
+        {
+          filename = "__Krastorio2Assets__/icons/cards/production-tech-card.png",
+          size = 64,
+          scale = 0.5,
+        },
+        {
+          filename = "__Krastorio2Assets__/icons/cards/production-tech-card-light.png",
+          size = 64,
+          scale = 0.5,
+          draw_as_light = true,
+        },
+      },
+    },
+  },
 
 })
