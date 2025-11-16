@@ -204,8 +204,6 @@ end
   		gameplay.on_vital_building_built(entity)
   	elseif entity.name == "supercomputer" then
   		supercomputer.on_supercomputer_built(entity)
-		elseif entity.name == "docking-port" then
-			docking.on_docking_port_created(entity)
   	end
   end
 
@@ -213,7 +211,6 @@ end
   	defines.events.on_object_destroyed,
   	function(event)
   		supercomputer.on_supercomputer_destroyed(event)
-			docking.on_docking_port_destroyed(event)
   	end
   )
 
