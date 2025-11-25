@@ -1,8 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.0
 Date: ????
-  Features:
+  Major Features:
     - Unpipable fluid mechanic introduced, some fluids like thruster fuel and oxidizer cannot be transported via pipe, instaid you must directly transfer the fluid through machines.
+    - Platform docking added. platforms can be docked.
+    - they move below.
+  Features:
     - You now start the game on course to arrival. This means you get significantly more asteroids in the early phase of the game, but their avalability will drop sharply once you reach arrival.
     - Void space location added, you cant go there a the moment, its just for the intro
     - Limit space location added, as a gas giant, you cant land there, but limit will act as a connection point for future planets.
@@ -18,7 +21,6 @@ Date: ????
     - titanium pipes added, which allow for pipe weaving.
     - Walls and gates added.
     - Crawlers enemy added.
-    - they move below.
   Changes:
     - old saves broken. Just not realistic to fix that.
     - old menu simulations are removed :(
