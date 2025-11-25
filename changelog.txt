@@ -61,6 +61,7 @@ Date: ????
     - Exploration science can only be crafted on arrival
     - AI processor printing recipe now costs 2 crystalline plates, to make building the first rockets easier, but requires 6 modular circuits and 12 conductive coils.
     - Rocket part cost rebalanced.
+    - Hydrocarbon slush now has much lower yield.
   Bugfixes:
     - Cliff explosives now also unlock exploding cliffs with deconstruction planner.
     - many more likely unmentioned.

@@ -7,12 +7,14 @@ local docking_port = data.raw.recipe["TFMG-docking-port"]
     { type = "item", name = "high-performance-structure", amount = 8 },
     { type = "item", name = "ai-processor", amount = 2 },
   }
+  docking_port.category = "assembling-machine"
 
 local docking_belt = data.raw.recipe["TFMG-docking-belt"]
   docking_belt.ingredients = {
     { type = "item", name = "high-performance-structure", amount = 8 },
     { type = "item", name = "mechatronic-components", amount = 12 },
   }
+  docking_belt.category = "assembling-machine"
 
 local docking_pipe = data.raw.recipe["TFMG-docking-pipe"]
   docking_pipe.ingredients = {
@@ -20,6 +22,7 @@ local docking_pipe = data.raw.recipe["TFMG-docking-pipe"]
     { type = "item", name = "mineral-glass", amount = 8 },
     { type = "item", name = "mechatronic-components", amount = 12 },
   }
+  docking_pipe.category = "assembling-machine"
 
 
   
