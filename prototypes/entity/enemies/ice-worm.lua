@@ -63,7 +63,7 @@ local ice_worm_cloud_repeats = 2
 local ice_worm_expanding_cloud_steps = 30
 local ice_worm_expanding_cloud_interval = 10
 
-local ice_worm_map_colour = {0.5,0.5,0.8,0.02}
+local ice_worm_map_colour = {0.5,0.5,0.8,0.1}
 
 local ice_worm_enraged_attack = {{
   time_cooldown = 5,

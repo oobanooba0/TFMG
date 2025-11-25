@@ -1,5 +1,7 @@
 
 require("prototypes.vanilla-content-obliterator")
+require("util.TFMG")
+TFMG = ("util.TFMG")
 
 --this is the part where I add stuff into the game again
 

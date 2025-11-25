@@ -131,9 +131,3 @@
 
 --heat pipe adjust
 	data.raw["heat-pipe"]["heat-pipe"].heat_buffer.specific_heat = "250kJ"
-
---adjust belts
-
---adjust docking content
-
-
