@@ -1,5 +1,27 @@
 ---assembling machine recipes.
 ---assembling-machine-pure for recipes that should only appear in the assembling machine, and not the matter reconstructor.
+
+--adjust docking port recipes.
+local docking_port = data.raw.recipe["TFMG-docking-port"]
+  docking_port.ingredients = {
+    { type = "item", name = "high-performance-structure", amount = 8 },
+    { type = "item", name = "ai-processor", amount = 2 },
+  }
+
+local docking_belt = data.raw.recipe["TFMG-docking-belt"]
+  docking_belt.ingredients = {
+    { type = "item", name = "high-performance-structure", amount = 8 },
+    { type = "item", name = "mechatronic-components", amount = 12 },
+  }
+
+local docking_pipe = data.raw.recipe["TFMG-docking-pipe"]
+  docking_pipe.ingredients = {
+    { type = "item", name = "high-performance-structure", amount = 8 },
+    { type = "item", name = "mineral-glass", amount = 8 },
+    { type = "item", name = "mechatronic-components", amount = 12 },
+  }
+
+
   
 data:extend({
   {--Mineral Glass (in space)

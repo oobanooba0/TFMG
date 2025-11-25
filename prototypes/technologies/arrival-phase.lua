@@ -1,3 +1,15 @@
+--platform docking tech unlock
+local docking_tech = data.raw["technology"]["TFMG-platform-docking"]
+  docking_tech.prerequisites = {"rocketry"}
+  docking_tech.unit = {
+    count = 512,
+    ingredients = {
+      {"introspection-science", 1},
+      {"exploration-science", 1}
+    },
+    time = 32
+  }
+
 data:extend({
   {--fluid extraction
     type = "technology",

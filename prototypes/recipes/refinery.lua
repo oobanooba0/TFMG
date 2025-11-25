@@ -8,16 +8,16 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { icon = "__space-age__/graphics/icons/fluid/lithium-brine.png"},
       { icon = "__base__/graphics/icons/signal/signal-fire.png", shift = {0,7}, scale = 0.3, tint = {1,0.2,0.2,0.5}}
     },
-    energy_required = 4,
+    energy_required = 3,
     enabled = false,
     allow_productivity = true,
     ingredients = {
-      { type = "fluid", name = "hydrocarbon-slush", amount = 50, fluidbox_index = 0 },
+      { type = "fluid", name = "hydrocarbon-slush", amount = 64, fluidbox_index = 0 },
     },
     results = { 
-      { type = "fluid", name = "water", amount = 150 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 60 },
-      { type = "fluid", name = "organic-sludge", amount = 10 }
+      { type = "fluid", name = "water", amount = 64 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 32 },
+      { type = "fluid", name = "organic-sludge", amount = 4 }
     },
   },
   {--water filtration
