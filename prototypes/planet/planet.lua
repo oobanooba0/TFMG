@@ -172,7 +172,7 @@ data:extend({--surface properties
     from = "nauvis",
     to = "limit",
     order = "a",
-    length = 100000,
+    length = 50000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.arrival_limit),
   },
 --pollution types
