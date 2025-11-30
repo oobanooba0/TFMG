@@ -11,6 +11,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     energy_required = 1,
     enabled = false,
+    allow_decomposition = false,
     allow_productivity = false,
     ingredients = {
       { type = "fluid", name = "water", amount = 300 },
@@ -35,6 +36,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     energy_required = 1,
     enabled = false,
     allow_productivity = false,
+    allow_decomposition = false,
     ingredients = {
       { type = "fluid", name = "water", amount = 300 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
@@ -57,8 +59,8 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     energy_required = 2,
     enabled = false,
-    allow_decomposition = false,
     allow_productivity = true,
+    allow_decomposition = false,
     ingredients = {
       { type = "item", name = "ferric-ore", amount = 5 },--was originally 6
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 16, fluidbox_index = 0 },
@@ -128,6 +130,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     energy_required = 2,
     enabled = false,
+    allow_decomposition = false,
     allow_productivity = false,
     ingredients = {
       { type = "item", name = "organic-carbon", amount = 5 },
@@ -180,6 +183,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     name = "steam-condensation",
     energy_required = 1,
     enabled = false,
+    allow_decomposition = false,
     allow_productivity = false,
     ingredients = {
       { type = "fluid", name = "steam", amount = 200, fluidbox_index = 0},

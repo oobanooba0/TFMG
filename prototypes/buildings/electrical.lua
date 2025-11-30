@@ -603,6 +603,7 @@ data:extend({
     corpse = "nuclear-reactor-remnants",
     dying_explosion = "nuclear-reactor-explosion",
     subgroup = "other",
+    friendly_map_color = {150,0,150},
     collision_box = {{-3.7, -3.7}, {3.7, 3.7}},
     selection_box = {{-4, -4}, {4, 4}},
     damaged_trigger_effect = hit_effects.entity(),

@@ -11,6 +11,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     energy_required = 3,
     enabled = false,
     allow_productivity = true,
+    allow_decomposition = false,
     ingredients = {
       { type = "fluid", name = "hydrocarbon-slush", amount = 64, fluidbox_index = 0 },
     },
@@ -32,6 +33,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     energy_required = 1,
     enabled = false,
     allow_productivity = false,
+    allow_decomposition = false,
     ingredients = {
       { type = "fluid", name = "water", amount = 300 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
@@ -54,6 +56,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     energy_required = 1,
     enabled = false,
     allow_productivity = false,
+    allow_decomposition = false,
     ingredients = {
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
       { type = "fluid", name = "organic-sludge", amount = 50 },  
@@ -75,8 +78,8 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     energy_required = 3,
     enabled = false,
-    allow_decomposition = false,
     allow_productivity = true,
+    allow_decomposition = false,
     ingredients = {
       { type = "fluid", name = "ferric-solution", amount = 80, fluidbox_index = 0 },
     },

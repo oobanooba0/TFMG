@@ -1,5 +1,7 @@
+data.raw.recipe["TFMG-heat-radiation"].enabled = true
+
 data:extend({
-  {
+  {--evaporation cooling
     type = "recipe",
     category = "radiator",
     name = "evaporation-cooling",
@@ -8,8 +10,9 @@ data:extend({
       {icon = "__base__/graphics/icons/signal/signal-fire.png",shift = {0,8}},
     },
     energy_required = 1,
-    enabled = false,
+    enabled = true,
     hidden = true,
+    allow_decomposition = false,
     ingredients = {{type = "fluid", name = "water", amount = 10}},
     results = {},
   },

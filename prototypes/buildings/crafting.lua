@@ -264,6 +264,7 @@ data:extend({
     {
       {inventory_index = defines.inventory.crafter_modules, shift = {0,0.2}, max_icons_per_row = 4, scale = 0.3}
     },
+    friendly_map_color = {150,0,150},
     collision_box = {{-0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{-0.9, -0.9}, {0.9, 0.9}},
     damaged_trigger_effect = hit_effects.entity(),

@@ -90,13 +90,38 @@ local TFMG = require("util.TFMG")
 
 --adjust vanilla content
 --utility constants --be careful
-	local utility_constants = data.raw["utility-constants"]["default"]
+	local util_constant = data.raw["utility-constants"]["default"]
 	  -- drag_coefficient = width * 0.5
     -- drag = ((1500 * speed * speed + 1500 * abs(speed)) * drag_coefficient + 10000) * sign(speed)
     -- final_thrust = thrust / (1 + weight / 10000000)
     -- acceleration = (final_thrust - drag) / weight / 60
 		--"(thrust / (1 + weight / 10000000) - ((1500 * speed * speed + 1500 * abs(speed)) * (width * 0.5) + 10000) * sign(speed)) / weight / 60"
-  utility_constants.space_platform_acceleration_expression = "(thrust / (1 + weight / 10000000) - ((1500 * speed * speed + 1500 * abs(speed)) * (width * 0.05) + 10000) * sign(speed)) / weight / 60"
+  util_constant.space_platform_acceleration_expression = "(thrust / (1 + weight / 10000000) - ((1500 * speed * speed + 1500 * abs(speed)) * (width * 0.05) + 10000) * sign(speed)) / weight / 60"
+	--chart colours
+	local chart_rgb = util_constant.chart.default_friendly_color_by_type
+	-- heat related
+	if settings.startup["map-improved-contrast-mode"].value ~= "off" then
+		chart_rgb["heat-pipe"] = {210,100,30}
+		chart_rgb["reactor"] = {200,40,50}
+		chart_rgb["boiler"] = {200,80,0}
+		chart_rgb["generator"] = {200,60,20}
+		chart_rgb["fusion-reactor"] = {200,40,50}
+		chart_rgb["fusion-generator"] = {200,60,20}
+		--adjust muh radiators
+		data.raw["assembling-machine"]["ground-radiator"].friendly_map_color = {220,110,0}
+		data.raw["assembling-machine"]["small-radiator"].friendly_map_color = {220,110,0}
+		--others
+		if settings.startup["map-improved-contrast-mode"].value == "full" then
+			chart_rgb["pipe"] = {169, 70, 165}
+			chart_rgb["pipe-to-ground"] = {125, 53, 150}
+			chart_rgb["pump"] = {209, 104, 181}
+			chart_rgb["storage-tank"] = {231, 116, 188}
+			util_constant.chart.rail_color = {130, 130, 130}
+			util_constant.chart.rail_ramp_color = {110, 110, 110}
+			util_constant.chart.elevated_rail_color = {90, 90, 90}
+		end
+
+	end
 
 --remove character icon
 	data.raw["character"]["character"].icon = "__core__/graphics/empty.png"

@@ -23,7 +23,6 @@ Date: ????
     - Walls and gates added.
     - Crawlers enemy added.
     - containers added, they have a 2x2 footprint, only have one slot, but have a capacity of 24 stacks, making them denser than chests.
-    - heat related entities are now red on maps for clarity.
   Changes:
     - old saves broken. Just not realistic to fix that.
     - old menu simulations are removed :(
@@ -45,6 +44,8 @@ Date: ????
     - Contemplate MIND is renamed to Evaluate MIND.
     - Evaluate MIND and crystal excitation is now unlocked after rockets, and requires a rocket to be launched to research.
     - Crystal excitation and fused crystals can only be crafted in space.
+    - Small electric pylons dont need tiny pylons anymore.
+    - heat related entities are now red on maps for clarity.
   Balancing:
     - Small radiators stack to 50
     - Small radiators now cost half to craft

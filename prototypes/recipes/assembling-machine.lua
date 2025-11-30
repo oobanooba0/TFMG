@@ -1014,7 +1014,7 @@ data:extend({
     ingredients = {
       { type = "item", name = "general-purpose-structure", amount = 1 },
       { type = "item", name = "conductive-coil", amount = 4 },
-      { type = "item", name = "mineral-glass", amount = 2 },
+      { type = "item", name = "mineral-glass", amount = 1 },
     },
     results = { 
       { type = "item", name = "tiny-electric-pylon", amount = 1 }
@@ -1027,8 +1027,9 @@ data:extend({
     energy_required = 4,
     enabled = false,
     ingredients = {
-      { type = "item", name = "tiny-electric-pylon", amount = 1 },
       { type = "item", name = "general-purpose-structure", amount = 2 },
+      { type = "item", name = "conductive-coil", amount = 6 },
+      { type = "item", name = "mineral-glass", amount = 2 },
     },
     results = { 
       { type = "item", name = "small-electric-pylon", amount = 1 }
