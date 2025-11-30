@@ -966,6 +966,14 @@ data:extend({
         type = "unlock-recipe",
         recipe = "chest-2"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "storage-chest-2"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "passive-provider-chest-2"
+      },
     },
     prerequisites = {"logistics-2","rails"},
     unit = {

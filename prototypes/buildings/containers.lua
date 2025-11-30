@@ -7,6 +7,7 @@ local chest_1_slots = 5
 
 local chest_2_slots = 1
 local chest_2_stacks = 24
+local chest_2_trash_inventory_size = 10
 
 
 --vanilla chest modifications
@@ -27,7 +28,7 @@ data:extend({
     name = "chest-2",
     icon = "__Krastorio2Assets__/icons/entities/strongbox.png",
     flags = { "placeable-player", "player-creation" },
-    fast_replaceable_group = "container",
+    fast_replaceable_group = "chest-2",
     minable = { mining_time = 0.5, result = "chest-2" },
     collision_box = { { -0.8, -0.8 }, { 0.8, 0.8 } },
     selection_box = { { -1, -1 }, { 1, 1 } },
@@ -51,6 +52,199 @@ data:extend({
     },
     circuit_connector = circuit_connector_definitions["chest"],
     circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
+    custom_tooltip_fields = {{
+      name = {"TFMG.multislot-tooltip"},
+      value = tostring(chest_2_stacks),
+      order = 250,
+    }}
+  },
+  {--passive-provider-chest 2
+    type = "logistic-container",
+    name = "passive-provider-chest-2",
+    icon = "__Krastorio2Assets__/icons/entities/passive-provider-strongbox.png",
+    flags = { "placeable-player", "player-creation" },
+    fast_replaceable_group = "chest-2",
+    minable = { mining_time = 0.5, result = "passive-provider-chest-2" },
+    collision_box = { { -0.8, -0.8 }, { 0.8, 0.8 } },
+    selection_box = { { -1, -1 }, { 1, 1 } },
+    inventory_type = "with_custom_stack_size",
+    inventory_properties = {
+      stack_size_multiplier = chest_2_stacks
+    },
+    inventory_size = chest_2_slots,
+    logistic_mode = "passive-provider",
+    max_health = 1000,
+    corpse = "big-remnants",
+    damaged_trigger_effect = hit_effects.entity(),
+    open_sound = sounds.machine_open,
+    close_sound = sounds.machine_close,
+    vehicle_impact_sound = sounds.generic_impact,
+    picture = {
+      filename = "__Krastorio2Assets__/buildings/passive-provider-strongbox/passive-provider-strongbox.png",
+      priority = "extra-high",
+      width = 340,
+      height = 340,
+      scale = 0.25,
+    },
+    opened_duration = logistic_chest_opened_duration,
+    circuit_connector = circuit_connector_definitions["chest"],
+    circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
+    custom_tooltip_fields = {{
+      name = {"TFMG.multislot-tooltip"},
+      value = tostring(chest_2_stacks),
+      order = 250,
+    }}
+  },
+  {--active-provider-chest 2
+    type = "logistic-container",
+    name = "active-provider-chest-2",
+    icon = "__Krastorio2Assets__/icons/entities/active-provider-strongbox.png",
+    flags = { "placeable-player", "player-creation" },
+    fast_replaceable_group = "chest-2",
+    minable = { mining_time = 0.5, result = "active-provider-chest-2" },
+    collision_box = { { -0.8, -0.8 }, { 0.8, 0.8 } },
+    selection_box = { { -1, -1 }, { 1, 1 } },
+    inventory_type = "with_custom_stack_size",
+    inventory_properties = {
+      stack_size_multiplier = chest_2_stacks
+    },
+    inventory_size = chest_2_slots,
+    logistic_mode = "active-provider",
+    max_health = 1000,
+    corpse = "big-remnants",
+    damaged_trigger_effect = hit_effects.entity(),
+    open_sound = sounds.machine_open,
+    close_sound = sounds.machine_close,
+    vehicle_impact_sound = sounds.generic_impact,
+    picture = {
+      filename = "__Krastorio2Assets__/buildings/active-provider-strongbox/active-provider-strongbox.png",
+      priority = "extra-high",
+      width = 340,
+      height = 340,
+      scale = 0.25,
+    },
+    opened_duration = logistic_chest_opened_duration,
+    circuit_connector = circuit_connector_definitions["chest"],
+    circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
+    custom_tooltip_fields = {{
+      name = {"TFMG.multislot-tooltip"},
+      value = tostring(chest_2_stacks),
+      order = 250,
+    }}
+  },
+  {--storage-chest 2
+    type = "logistic-container",
+    name = "storage-chest-2",
+    icon = "__Krastorio2Assets__/icons/entities/storage-strongbox.png",
+    flags = { "placeable-player", "player-creation" },
+    fast_replaceable_group = "chest-2",
+    minable = { mining_time = 0.5, result = "storage-chest-2" },
+    collision_box = { { -0.8, -0.8 }, { 0.8, 0.8 } },
+    selection_box = { { -1, -1 }, { 1, 1 } },
+    inventory_type = "with_custom_stack_size",
+    inventory_properties = {
+      stack_size_multiplier = chest_2_stacks
+    },
+    inventory_size = chest_2_slots,
+    logistic_mode = "storage",
+    max_logistic_slots = 1,
+    max_health = 1000,
+    corpse = "big-remnants",
+    damaged_trigger_effect = hit_effects.entity(),
+    open_sound = sounds.machine_open,
+    close_sound = sounds.machine_close,
+    vehicle_impact_sound = sounds.generic_impact,
+    picture = {
+      filename = "__Krastorio2Assets__/buildings/storage-strongbox/storage-strongbox.png",
+      priority = "extra-high",
+      width = 340,
+      height = 340,
+      scale = 0.25,
+    },
+    opened_duration = logistic_chest_opened_duration,
+    circuit_connector = circuit_connector_definitions["chest"],
+    circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
+    custom_tooltip_fields = {{
+      name = {"TFMG.multislot-tooltip"},
+      value = tostring(chest_2_stacks),
+      order = 250,
+    }}
+  },
+  {--buffer-chest 2
+    type = "logistic-container",
+    name = "buffer-chest-2",
+    icon = "__Krastorio2Assets__/icons/entities/buffer-strongbox.png",
+    flags = { "placeable-player", "player-creation" },
+    fast_replaceable_group = "chest-2",
+    minable = { mining_time = 0.5, result = "buffer-chest-2" },
+    collision_box = { { -0.8, -0.8 }, { 0.8, 0.8 } },
+    selection_box = { { -1, -1 }, { 1, 1 } },
+    inventory_type = "with_custom_stack_size",
+    inventory_properties = {
+      stack_size_multiplier = chest_2_stacks
+    },
+    inventory_size = chest_2_slots,
+    trash_inventory_size = chest_2_trash_inventory_size,
+    logistic_mode = "buffer",
+    max_health = 1000,
+    corpse = "big-remnants",
+    damaged_trigger_effect = hit_effects.entity(),
+    open_sound = sounds.machine_open,
+    close_sound = sounds.machine_close,
+    vehicle_impact_sound = sounds.generic_impact,
+    picture = {
+      filename = "__Krastorio2Assets__/buildings/buffer-strongbox/buffer-strongbox.png",
+      priority = "extra-high",
+      width = 340,
+      height = 340,
+      scale = 0.25,
+    },
+    opened_duration = logistic_chest_opened_duration,
+    circuit_connector = circuit_connector_definitions["chest"],
+    circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
+    custom_tooltip_fields = {{
+      name = {"TFMG.multislot-tooltip"},
+      value = tostring(chest_2_stacks),
+      order = 250,
+    }}
+  },
+  {--requester-chest 2
+    type = "logistic-container",
+    name = "requester-chest-2",
+    icon = "__Krastorio2Assets__/icons/entities/requester-strongbox.png",
+    flags = { "placeable-player", "player-creation" },
+    fast_replaceable_group = "chest-2",
+    minable = { mining_time = 0.5, result = "requester-chest-2" },
+    collision_box = { { -0.8, -0.8 }, { 0.8, 0.8 } },
+    selection_box = { { -1, -1 }, { 1, 1 } },
+    inventory_type = "with_custom_stack_size",
+    inventory_properties = {
+      stack_size_multiplier = chest_2_stacks
+    },
+    inventory_size = chest_2_slots,
+    logistic_mode = "requester",
+    trash_inventory_size = chest_2_trash_inventory_size,
+    max_health = 1000,
+    corpse = "big-remnants",
+    damaged_trigger_effect = hit_effects.entity(),
+    open_sound = sounds.machine_open,
+    close_sound = sounds.machine_close,
+    vehicle_impact_sound = sounds.generic_impact,
+    picture = {
+      filename = "__Krastorio2Assets__/buildings/requester-strongbox/requester-strongbox.png",
+      priority = "extra-high",
+      width = 340,
+      height = 340,
+      scale = 0.25,
+    },
+    opened_duration = logistic_chest_opened_duration,
+    circuit_connector = circuit_connector_definitions["chest"],
+    circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
+    custom_tooltip_fields = {{
+      name = {"TFMG.multislot-tooltip"},
+      value = tostring(chest_2_stacks),
+      order = 250,
+    }}
   },
 
 })

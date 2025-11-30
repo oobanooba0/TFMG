@@ -1240,6 +1240,82 @@ data:extend({
       { type = "item", name = "steel-chest", amount = 1 }
     },
   },
+  {--passive-provider-chest-1
+    type = "recipe",
+    category = "assembling-machine",
+    name = "passive-provider-chest",
+    energy_required = 4,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "steel-chest", amount = 1 },
+      { type = "item", name = "mechanical-components", amount = 4 },
+      { type = "item", name = "modular-circuit", amount = 4 },
+
+    },
+    results = { 
+      { type = "item", name = "passive-provider-chest", amount = 1 }
+    },
+  },
+  {--storage-chest-1
+    type = "recipe",
+    category = "assembling-machine",
+    name = "storage-chest",
+    energy_required = 4,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "steel-chest", amount = 1 },
+      { type = "item", name = "mechanical-components", amount = 4 },
+      { type = "item", name = "modular-circuit", amount = 4 },
+    },
+    results = { 
+      { type = "item", name = "storage-chest", amount = 1 }
+    },
+  },
+  {--active-provider-chest-1
+    type = "recipe",
+    category = "assembling-machine",
+    name = "active-provider-chest",
+    energy_required = 4,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "steel-chest", amount = 1 },
+      { type = "item", name = "mechanical-components", amount = 4 },
+      { type = "item", name = "modular-circuit", amount = 4 },
+    },
+    results = { 
+      { type = "item", name = "active-provider-chest", amount = 1 }
+    },
+  },
+  {--buffer-chest-1
+    type = "recipe",
+    category = "assembling-machine",
+    name = "buffer-chest",
+    energy_required = 4,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "steel-chest", amount = 1 },
+      { type = "item", name = "mechanical-components", amount = 4 },
+      { type = "item", name = "modular-circuit", amount = 4 },
+    },
+    results = { 
+      { type = "item", name = "buffer-chest", amount = 1 }
+    },
+  },
+  {--requester-chest-1
+    type = "recipe",
+    category = "assembling-machine",
+    name = "requester-chest",
+    energy_required = 4,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "steel-chest", amount = 1 },
+      { type = "item", name = "mechanical-components", amount = 4 },
+      { type = "item", name = "modular-circuit", amount = 4 },
+    },
+    results = { 
+      { type = "item", name = "requester-chest", amount = 1 }
+    },
+  },
   {--chest-2
     type = "recipe",
     category = "assembling-machine",
@@ -1252,6 +1328,81 @@ data:extend({
     },
     results = { 
       { type = "item", name = "chest-2", amount = 1 }
+    },
+  },
+  {--storage-chest-2
+    type = "recipe",
+    category = "assembling-machine",
+    name = "storage-chest-2",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "chest-2", amount = 1 },
+      { type = "item", name = "mechatronic-components", amount = 4 },
+      { type = "item", name = "ai-processor", amount = 1 },
+    },
+    results = { 
+      { type = "item", name = "storage-chest-2", amount = 1 }
+    },
+  },
+  {--passive-provider-chest-2
+    type = "recipe",
+    category = "assembling-machine",
+    name = "passive-provider-chest-2",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "chest-2", amount = 1 },
+      { type = "item", name = "mechatronic-components", amount = 4 },
+      { type = "item", name = "ai-processor", amount = 1 },
+    },
+    results = { 
+      { type = "item", name = "passive-provider-chest-2", amount = 1 }
+    },
+  },
+  {--active-provider-chest-2
+    type = "recipe",
+    category = "assembling-machine",
+    name = "active-provider-chest-2",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "chest-2", amount = 1 },
+      { type = "item", name = "mechatronic-components", amount = 4 },
+      { type = "item", name = "ai-processor", amount = 1 },
+    },
+    results = { 
+      { type = "item", name = "active-provider-chest-2", amount = 1 }
+    },
+  },
+  {--buffer-chest-2
+    type = "recipe",
+    category = "assembling-machine",
+    name = "buffer-chest-2",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "chest-2", amount = 1 },
+      { type = "item", name = "mechatronic-components", amount = 4 },
+      { type = "item", name = "ai-processor", amount = 1 },
+    },
+    results = { 
+      { type = "item", name = "buffer-chest-2", amount = 1 }
+    },
+  },
+  {--requester-chest-2
+    type = "recipe",
+    category = "assembling-machine",
+    name = "requester-chest-2",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "chest-2", amount = 1 },
+      { type = "item", name = "mechatronic-components", amount = 4 },
+      { type = "item", name = "ai-processor", amount = 1 },
+    },
+    results = { 
+      { type = "item", name = "requester-chest-2", amount = 1 }
     },
   },
   {--stone wall
@@ -1293,10 +1444,7 @@ data:extend({
       { type = "item", name = "steel-chest", amount = 16 },
     },
     results = { 
-      { type = "item", name = "cargo-landing-pad", amount = 1 }
-    },
-  },
-  {--passive-provider-chest-1
+      { type = "item",   {--passive-provider-chest-1
     type = "recipe",
     category = "assembling-machine",
     name = "passive-provider-chest",
@@ -1325,6 +1473,8 @@ data:extend({
     },
     results = { 
       { type = "item", name = "storage-chest", amount = 1 }
+    },
+  },name = "cargo-landing-pad", amount = 1 }
     },
   },
   {--long-inserter-1
