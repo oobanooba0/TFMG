@@ -2,15 +2,16 @@
 Version: 0.4.0
 Date: ????
   Major Features:
+    - Exploitation science added + related content(see more below)
     - Unpipable fluid mechanic introduced, some fluids like thruster fuel and oxidizer cannot be transported via pipe, instaid you must directly transfer the fluid through machines.
     - Platform docking added. platforms can be docked.
     - they move below.
   Features:
     - You now start the game on course to arrival. This means you get significantly more asteroids in the early phase of the game, but their avalability will drop sharply once you reach arrival.
-    - Void space location added, you cant go there a the moment, its just for the intro
-    - Limit space location added, as a gas giant, you cant land there, but limit will act as a connection point for future planets.
+    - (near) Void space location added, you cant go there a the moment, it's just for the intro.
+    - Limit space location added, as a gas giant, you cant land there, but Limit will act as a connection point for future planets.
     - Radiators now have a hot new custom graphic.
-    - Heat management 2 added, now a prerequisite of exploration science
+    - Heat management 2 added, now a prerequisite of exploration science.
     - Evaporation radiator added, a ground placed radiator for heat removal on planets. where normal radiators can't be placed. Unlocked by heat management 2
     - Constructron introduced
     - optional compatibility with visible planets mod added. I think its pretty.
@@ -22,6 +23,7 @@ Date: ????
     - Walls and gates added.
     - Crawlers enemy added.
     - containers added, they have a 2x2 footprint, only have one slot, but have a capacity of 24 stacks, making them denser than chests.
+    - heat related entities are now red on maps for clarity.
   Changes:
     - old saves broken. Just not realistic to fix that.
     - old menu simulations are removed :(
@@ -36,11 +38,12 @@ Date: ????
     - Heat monitor now unlocked by heat management 2
     - Nauvis, well and truely, no longer exists.
     - Rocket silo is a military target now.
-    - Space platform drag and thrust has been heavily changed. Drag is much less of a factor, platforms are heavier and accelerate slowly, but will over time reach high speeds.
+    - Space platform drag and thrust has been heavily changed. Platform Width is removed, Drag still exists (otherwise platforms cannot slow down), but its primarily a function of speed, platforms are heavier and accelerate slowly, but will over time reach high speeds.
     - Starting intro message has been changed.
     - old tutorial popup removed, we don't need it.
     - small chests now have 5 slots, with 1 stack per slot.
-    - Conetemplate mind and crystal excitation is now unlocked after rockets, and requires a rocket to be launched to research.
+    - Contemplate MIND is renamed to Evaluate MIND.
+    - Evaluate MIND and crystal excitation is now unlocked after rockets, and requires a rocket to be launched to research.
     - Crystal excitation and fused crystals can only be crafted in space.
   Balancing:
     - Small radiators stack to 50
@@ -63,6 +66,7 @@ Date: ????
     - AI processor printing recipe now costs 2 crystalline plates, to make building the first rockets easier, but requires 6 modular circuits and 12 conductive coils.
     - Rocket part cost rebalanced.
     - Hydrocarbon slush now has much lower yield.
+    - Proton decay thermoelectric generator now produces only 250MW of energy. Enough for bootstrapping, but it wont carry your base like it used to.
   Bugfixes:
     - Cliff explosives now also unlock exploding cliffs with deconstruction planner.
     - many more likely unmentioned.

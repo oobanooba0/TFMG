@@ -614,7 +614,7 @@ data:extend({
       type = "electric",
       usage_priority = "solar"
     },
-    production = "1GW",
+    production = "250MW",
     performance_at_day = 1,
     performance_at_night =1,
     solar_coefficient_property = "spacetime-flow-viscosity",
