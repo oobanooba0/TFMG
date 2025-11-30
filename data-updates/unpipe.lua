@@ -96,6 +96,14 @@ local function handle_pipe_2_category_thruster(prototype_class) --only thrusters
   end
 end
 
+local function handle_pipe_2_category_energy_source(prototype_class)--for prototypes which can have a fluid energy source
+  for _,building in pairs(prototype_class) do
+    if building.energy_source and building.energy_source.fluid_box then
+      fluid_box_add_pipe2_category(building.energy_source.fluid_box)
+    end
+  end
+end
+
 handle_pipe_2_category(data.raw["assembling-machine"])
 handle_pipe_2_category(data.raw["boiler"])
 handle_pipe_2_category(data.raw["furnace"])
@@ -104,6 +112,7 @@ handle_pipe_2_category(data.raw["fusion-reactor"])
 handle_pipe_2_category(data.raw["mining-drill"])
 handle_pipe_2_category(data.raw["reactor"])
 handle_pipe_2_category(data.raw["rocket-silo"])
+handle_pipe_2_category_simple(data.raw["generator"])
 handle_pipe_2_category_simple(data.raw["infinity-pipe"])
 handle_pipe_2_category_simple(data.raw["offshore-pump"])
 handle_pipe_2_category_simple(data.raw["storage-tank"])
@@ -111,3 +120,4 @@ handle_pipe_2_category_simple(data.raw["valve"])
 handle_pipe_2_category_simple(data.raw["fluid-turret"])
 handle_pipe_2_category_simple(data.raw["pump"])
 handle_pipe_2_category_thruster(data.raw["thruster"])
+handle_pipe_2_category_energy_source(data.raw["reactor"])

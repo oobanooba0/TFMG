@@ -134,7 +134,7 @@ data:extend({
     energy_source =
     {
       type = "electric",
-      buffer_capacity = "100J",
+      buffer_capacity = "10J",
       usage_priority = "tertiary",
       input_flow_limit = "1W",
       output_flow_limit = "1W"
@@ -857,20 +857,7 @@ data:extend({
     impact_category = "metal",
     mode = "output-to-separate-pipe",
     resistances =
-    {
-      {
-        type = "fire",
-        percent = 90
-      },
-      {
-        type = "explosion",
-        percent = 30
-      },
-      {
-        type = "impact",
-        percent = 30
-      }
-    },
+    {},
     collision_box = {{-1.29, -0.79}, {1.29, 0.79}},
     selection_box = {{-1.5, -1}, {1.5, 1}},
     damaged_trigger_effect = hit_effects.entity(),

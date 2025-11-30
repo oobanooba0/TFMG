@@ -52,6 +52,7 @@ data:extend({
     },
     circuit_connector = circuit_connector_definitions["chest"],
     circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
+    circuit_wire_max_distance = default_circuit_wire_max_distance,
     custom_tooltip_fields = {{
       name = {"TFMG.multislot-tooltip"},
       value = tostring(chest_2_stacks),
@@ -89,6 +90,7 @@ data:extend({
     opened_duration = logistic_chest_opened_duration,
     circuit_connector = circuit_connector_definitions["chest"],
     circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
+    circuit_wire_max_distance = default_circuit_wire_max_distance,
     custom_tooltip_fields = {{
       name = {"TFMG.multislot-tooltip"},
       value = tostring(chest_2_stacks),
@@ -126,6 +128,7 @@ data:extend({
     opened_duration = logistic_chest_opened_duration,
     circuit_connector = circuit_connector_definitions["chest"],
     circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
+    circuit_wire_max_distance = default_circuit_wire_max_distance,
     custom_tooltip_fields = {{
       name = {"TFMG.multislot-tooltip"},
       value = tostring(chest_2_stacks),
@@ -164,6 +167,7 @@ data:extend({
     opened_duration = logistic_chest_opened_duration,
     circuit_connector = circuit_connector_definitions["chest"],
     circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
+    circuit_wire_max_distance = default_circuit_wire_max_distance,
     custom_tooltip_fields = {{
       name = {"TFMG.multislot-tooltip"},
       value = tostring(chest_2_stacks),
@@ -202,6 +206,7 @@ data:extend({
     opened_duration = logistic_chest_opened_duration,
     circuit_connector = circuit_connector_definitions["chest"],
     circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
+    circuit_wire_max_distance = default_circuit_wire_max_distance,
     custom_tooltip_fields = {{
       name = {"TFMG.multislot-tooltip"},
       value = tostring(chest_2_stacks),
@@ -240,6 +245,7 @@ data:extend({
     opened_duration = logistic_chest_opened_duration,
     circuit_connector = circuit_connector_definitions["chest"],
     circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
+    circuit_wire_max_distance = default_circuit_wire_max_distance,
     custom_tooltip_fields = {{
       name = {"TFMG.multislot-tooltip"},
       value = tostring(chest_2_stacks),

@@ -1,24 +1,36 @@
 --vanilla auto_barrel is no more
-for _, fluid in pairs(data.raw.fluid) do
-	fluid.auto_barrel = false
-end
+  for _, fluid in pairs(data.raw.fluid) do
+  	fluid.auto_barrel = false
+  end
 
---uber_barrel = True to barrel fluid, Uber_barrel is opt in, as I want deliberate choices to be made regarding fluid barreling.
+--uber_barrel = {} to barrel fluid, Uber_barrel is opt in, as I want deliberate choices to be made regarding fluid barreling.
 --default_import_location is used to define the barrels default import location
 --density can be used to change the quantity of fluid that goes in a barrel. --default 100
 --thiccness changes the barrel/unbarrel time
 --crafting_categories sets which machines can craft em
 --mass sets the mass of a barrel, default is 10
 
-data.raw.fluid["water"].uber_barrel = {}
-data.raw.fluid["thruster-fuel"].uber_barrel = {}
-data.raw.fluid["thruster-fuel"].pipent = true
-data.raw.fluid["thruster-fuel"].default_temperature = -183
-data.raw.fluid["thruster-oxidizer"].uber_barrel = {}
-data.raw.fluid["thruster-oxidizer"].pipent = true
-data.raw.fluid["thruster-oxidizer"].default_temperature = -253
-
 --pipent = true to remove fluid from pipes
+
+--vanilla fluid updates
+  local water = data.raw.fluid["water"]
+  water.uber_barrel = {}
+  water.default_temperature = 0
+
+  local steam = data.raw.fluid["steam"]
+  steam.default_temperature = 0
+
+  local thruster_fuel = data.raw.fluid["thruster-fuel"]
+  thruster_fuel.uber_barrel = {}
+  thruster_fuel.pipent = true
+  thruster_fuel.default_temperature = -183
+
+  local thruster_oxidizer = data.raw.fluid["thruster-oxidizer"]
+  thruster_oxidizer.uber_barrel = {}
+  thruster_oxidizer.pipent = true
+  thruster_oxidizer.default_temperature = -253
+
+
 
 data:extend({
   {
@@ -29,15 +41,14 @@ data:extend({
     order = "a[raw-fluid]-a[arrival]",
     default_temperature = 0,
     max_temperature = 100,
-    heat_capacity = "2kJ",
     base_color = {0.8, 0.85, 0.8},
     flow_color = {0.6, 0.65, 0.6},
-    uber_barrel = {},
+    --uber_barrel = {},
   },
   {
     type = "fluid",
     name = "short-chain-hydrocarbons",
-    fuel_value = "5MJ",
+    fuel_value = "1.5MJ",
     icon = "__base__/graphics/icons/fluid/petroleum-gas.png",
     subgroup = "fluid",
     order = "b[intermediate-fluid]-a",
@@ -55,7 +66,7 @@ data:extend({
     default_temperature = 37,
     base_color = {0.15, 0.32, 0.03},
     flow_color = {0.43, 0.75, 0.31},
-    uber_barrel = {},
+    --uber_barrel = {},
   },
   {
     type = "fluid",

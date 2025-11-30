@@ -46,6 +46,7 @@ Date: ????
     - Crystal excitation and fused crystals can only be crafted in space.
     - Small electric pylons dont need tiny pylons anymore.
     - heat related entities are now red on maps for clarity.
+    - Energy monitor now has 10j of storage, so it will discharge and charge 10x faster
   Balancing:
     - Small radiators stack to 50
     - Small radiators now cost half to craft
@@ -66,7 +67,11 @@ Date: ????
     - Exploration science can only be crafted on arrival
     - AI processor printing recipe now costs 2 crystalline plates, to make building the first rockets easier, but requires 6 modular circuits and 12 conductive coils.
     - Rocket part cost rebalanced.
-    - Hydrocarbon slush now has much lower yield.
+    - Ice geysers contains less fluid now. (roughly 1/3rd of old quantities) Old value was extremely high.
+    - Ice geysers has lower yield when pumped. (10 from 100)
+    - Ice geysers are pumped faster. (0.5s from 1s)
+    - Hydrocarbon slush distilation now has much lower yield.
+    - Short chain hydrocarbon energy value is now only 1.5kj
     - Proton decay thermoelectric generator now produces only 250MW of energy. Enough for bootstrapping, but it wont carry your base like it used to.
   Bugfixes:
     - Cliff explosives now also unlock exploding cliffs with deconstruction planner.

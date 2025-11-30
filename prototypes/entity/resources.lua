@@ -128,14 +128,14 @@ data:extend({
     tree_removal_max_distance = 32 * 32,
     minable =
     {
-      mining_time = 1,
+      mining_time = 0.5,
       results =
       {
         {
           type = "fluid",
           name = "hydrocarbon-slush",
-          amount_min = 100,
-          amount_max = 100,
+          amount_min = 10,
+          amount_max = 10,
           probability = 1
         }
       }

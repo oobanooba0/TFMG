@@ -270,7 +270,7 @@ data:extend({--arrival ore generations.
 	{
     type = "noise-expression",
     name = "ice_geyser_richness",
-    expression = "distance_from_center*2+500 * max(starting_ice, ice_geyser_spots) * control:ice_geyser:richness * 1000"
+    expression = "distance_from_center*2+500 * max(starting_ice, ice_geyser_spots) * control:ice_geyser:richness * 300"
   },
   {
     type = "noise-expression",

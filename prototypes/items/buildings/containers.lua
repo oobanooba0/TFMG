@@ -1,8 +1,8 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
+local TFMG = require("util.TFMG")
 
---empy
 local chest_2_stack_size = 10
-local chest_2_weight = 20*kg
+local chest_2_weight = TFMG.rocket_capacity(10)
 
 data:extend({
   {
