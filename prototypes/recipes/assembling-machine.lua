@@ -217,10 +217,10 @@ data:extend({
     enabled = false,
     allow_productivity = true,
     ingredients = {
-      { type = "item", name = "fused-crystalline-chunk", amount = 1 },
-      { type = "item", name = "active-bio-polymers", amount = 1 },
-      { type = "item", name = "organic-carbon", amount = 1 },
       { type = "item", name = "volatile-asteroid-chunk", amount = 1 },
+      { type = "item", name = "active-bio-polymers", amount = 2 },
+      { type = "item", name = "ai-processor", amount = 1 },
+      { type = "item", name = "organic-carbon", amount = 2 },
     },
     results = { 
       { type = "item", name = "exploitation-science-unverified", amount = 1 }
@@ -1238,6 +1238,20 @@ data:extend({
     },
     results = { 
       { type = "item", name = "steel-chest", amount = 1 }
+    },
+  },
+  {--chest-2
+    type = "recipe",
+    category = "assembling-machine",
+    name = "chest-2",
+    energy_required = 8,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "steel-chest", amount = 4 },
+      { type = "item", name = "high-performance-structure", amount = 4 },
+    },
+    results = { 
+      { type = "item", name = "chest-2", amount = 1 }
     },
   },
   {--stone wall

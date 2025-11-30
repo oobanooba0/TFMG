@@ -955,4 +955,26 @@ data:extend({
       time = 64
     },
   },
+  {--advanced-chest
+    type = "technology",
+    name = "advanced-storage",
+    icon = "__Krastorio2Assets__/technologies/containers.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "chest-2"
+      },
+    },
+    prerequisites = {"logistics-2","rails"},
+    unit = {
+      count = 256,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1}
+      },
+      time = 64
+    },
+  },
 })

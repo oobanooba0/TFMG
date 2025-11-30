@@ -5,6 +5,5 @@ local TFMG = {}
     local rocket_capacity = data.raw["utility-constants"]["default"].rocket_lift_weight
     local weight = rocket_capacity/capacity
 	return weight end
-
-
+    
 return TFMG

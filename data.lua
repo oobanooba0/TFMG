@@ -1,7 +1,9 @@
+-- my utility functions
+	require("util.TFMG")
+	TFMG = ("util.TFMG")
 
-require("prototypes.vanilla-content-obliterator")
-require("util.TFMG")
-TFMG = ("util.TFMG")
+--end of vanilla
+	require("prototypes.vanilla-content-obliterator")
 
 --this is the part where I add stuff into the game again
 

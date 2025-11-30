@@ -1,3 +1,5 @@
+local TFMG = require("util.TFMG")
+
 --this is the part where I murder the game, Thanks to Rseding91's fourm comments which helped me do this.
 	data.raw ["tips-and-tricks-item"] = {}
 	data.raw ["utility-constants"]["default"].main_menu_simulations = {}
