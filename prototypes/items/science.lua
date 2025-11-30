@@ -100,7 +100,7 @@ data:extend({
       },
     },
   },
-  {--exploration unverified
+  {--exploitation unverified
     type = "item",
     name = "exploitation-science-unverified",
     icons = {

@@ -21,7 +21,7 @@ Graphics Sources:
 
 Krastorio team - Krastorio 2 graphics
 
-Solar Array wings - LordMiguel
+Solar Array wings - LordMiguel (formerly, thanks anyway.)
 
 Unused Renders - MalcolmRiley
 
@@ -46,6 +46,7 @@ Mr.SmoothieHuman - for pointing me to the runtime docs, which i somehow missed b
 
 notnotmelon - for helping me with the spidertron deployment mechanic.
 
+Every creator on the foundry and factorio discords not already mentioned. You've all been such big helps, its hard to keep track of yall!
 
 People who I never talked to but I'd like to thank anyway:
 

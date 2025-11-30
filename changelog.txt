@@ -21,6 +21,7 @@ Date: ????
     - titanium pipes added, which allow for pipe weaving.
     - Walls and gates added.
     - Crawlers enemy added.
+    - containers added, they have a 2x2 footprint, only have one slot, but have a capacity of 24 stacks, making them denser than chests.
   Changes:
     - old saves broken. Just not realistic to fix that.
     - old menu simulations are removed :(

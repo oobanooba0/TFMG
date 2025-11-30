@@ -8,7 +8,7 @@ data:extend({
     icon_size = 64,
     effects = {},
     essential = true,
-    prerequisites = {"rocketry"},
+    prerequisites = {"exploitation-science"},
     unit =
     {
       count = 1024,
@@ -16,10 +16,12 @@ data:extend({
       {
         {"introspection-science", 1},
         {"exploration-science", 1},
+        {"exploitation-science", 1},
       },
-      time = 32
+      time = 64
     },
   },
+--infinite tech
   {
     type = "technology",
     name = "infinite-technology-1",
@@ -34,6 +36,7 @@ data:extend({
       {
         {"introspection-science", 1},
         {"exploration-science", 1},
+        {"exploitation-science", 1},
       },
       time = 64
     },
