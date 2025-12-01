@@ -5,6 +5,9 @@
 --end of vanilla
 	require("prototypes.vanilla-content-obliterator")
 
+--other mod compat
+	require("compat.spider-launcher.prototypes")
+
 --this is the part where I add stuff into the game again
 
 --achievements

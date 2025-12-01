@@ -10,5 +10,8 @@
   ["storage-container-1", "storage-chest"],
   ["passive-provider-container-1", "passive-provider-chest"],
   ["roboport-1","roboport"]
+  ],
+  "technology": [
+    ["scout-o-tron","spidertron"]
   ]
 }

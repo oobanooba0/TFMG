@@ -16,6 +16,7 @@
     "TFMG-simulations >= 0.4.0",
     "TFMG-thermal >= 0.4.2",
     "TFMG-platform-docking >= 0.1.1",
+    "spider-launcher>= 2.8.0",
     "?visible-planets >= 1.5.7"
   ],
   "space_travel_required": true,

@@ -481,7 +481,7 @@ data:extend({
   },
   {--Scout-o-tron
     type = "technology",
-    name = "scout-o-tron",
+    name = "spidertron",
     icon = "__base__/graphics/technology/spidertron.png",
     icon_size = 256,
     effects =
@@ -518,7 +518,7 @@ data:extend({
         recipe = "scout-o-tron-pod"
       },
     },
-    prerequisites = {"scout-o-tron","solar-power","basic-bots"},
+    prerequisites = {"spidertron","solar-power","basic-bots"},
     unit = {
     count = 64,
     ingredients = {{"introspection-science", 1}},
