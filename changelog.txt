@@ -38,7 +38,7 @@ Date: ????
     - Heat monitor now unlocked by heat management 2
     - Nauvis, well and truely, no longer exists.
     - Rocket silo is a military target now.
-    - Space platform drag and thrust has been heavily changed. Platform Width is removed, Drag still exists (otherwise platforms cannot slow down), but its primarily a function of speed, platforms are heavier and accelerate slowly, but will over time reach high speeds.
+    - Space platform drag and thrust has been heavily changed. Platform Width is removed, Drag still exists (otherwise platforms cannot slow down), but its small, and grows exponentially with speed, platforms are heavier and accelerate slowly, but will over time reach high speeds.
     - Starting intro message has been changed.
     - old tutorial popup removed, we don't need it.
     - small chests now have 5 slots, with 1 stack per slot.
