@@ -5,7 +5,7 @@ data:extend({
     name = "start-as-SELF",
     setting_type = "runtime-global",
     default_value = true,
-    forced_value = false,
+    forced_value = true,
     hidden = true,
   },
   {--weather or not to do the whole starting sequence.
