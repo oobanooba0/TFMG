@@ -3,13 +3,17 @@ local ice_worm = {}
 function ice_worm.rocket_launched(event)
   local silo = event.rocket_silo
   if silo.surface.name ~= "nauvis" then return end
+  storage.worms.recent_launch_count = storage.worms.recent_launch_count + 1 
   local recent_count = storage.worms.recent_launch_count --the quantity of rockets launched over the past 10 min
-  storage.worms.recent_launch_count = recent_count + 1 
   local active_worm_count = #storage.worms.active_worms --the amount of worms currently being ordered around
   local max_worm_count = recent_count^0.5 --our maximum quantity of worms.
   local max_size = 1
   if active_worm_count < max_worm_count then --if we have more slots open than worms, we can send another
-    ice_worm.find_close_worm(silo,max_size)
+    local sent_worm = ice_worm.find_close_worm(silo,max_size)
+    if not storage.story.handlers.rocket_launched then
+      story.worm_warning(sent_worm,silo)
+      storage.story.handlers.rocket_launched = true
+    end
   end
 end
 
@@ -44,6 +48,7 @@ function ice_worm.find_close_worm(silo,max_size)
   local worm_to_send = TFMG.random_table_entry(close_worms)
   ice_worm.send_to_silo(worm_to_send,silo)
   --TFMG.block(worm_to_send)
+  return worm_to_send
 end
 
 function ice_worm.send_to_silo(worm_to_send,silo)

@@ -1,14 +1,14 @@
 
 local story = {}
 --event queue 
-  local function event_queue(type,ticks,message,color)--add an event to the queue. Custom arguments.
+  local function event_queue(type,ticks,message,color,addendum)--add an event to the queue. Custom arguments.
     local target_tick = game.tick + ticks + 1
     local event_stack = storage.story.event_queue[target_tick]
     if not event_stack then
       event_stack = {}
       storage.story.event_queue[target_tick] = event_stack
     end
-    table.insert(event_stack,{type = type, message = message, color = color,ticks = ticks})
+    table.insert(event_stack,{type = type, message = message, color = color,ticks = ticks,addendum = addendum})
   end
 
 ---story tick triggers
@@ -23,7 +23,7 @@ local story = {}
       elseif v.type == "say" then
         story.say(v.message,v.ticks)
       elseif v.type == "random_say" then
-        story.random_say(v.message)
+        story.random_say(v.message,v.addendum)
       elseif v.type == "saved_say" then
         story.saved_say(v.message)
       elseif v.type == "chant" then
@@ -49,20 +49,21 @@ local story = {}
 
 ---Story event triggers
   function story.trigger_story_event(event)
-    if event.research.name == "consider-your-purpose" then consider_your_purpose()
-    elseif event.research.name == "consider-the-self" then consider_the_self()
-    elseif event.research.name == "consider-your-potential" then consider_your_potential()
+    if event.research.name == "consider-your-purpose" then story.consider_your_purpose()
+    elseif event.research.name == "consider-the-self" then story.consider_the_self()
+    elseif event.research.name == "consider-your-potential" then story.consider_your_potential()
     elseif event.research.name == "victory" then story.victory()
-    elseif event.research.name == "contemplate-life" then contemplate_life()
-    elseif event.research.name == "contemplate-rust" then contemplate_rust()
-    elseif event.research.name == "evaluate-mind" then evaluate_mind()
+    elseif event.research.name == "contemplate-life" then story.contemplate_life()
+    elseif event.research.name == "contemplate-rust" then story.contemplate_rust()
+    elseif event.research.name == "contemplate-void" then story.contemplate_void()
+    elseif event.research.name == "evaluate-mind" then story.evaluate_mind()
     end
   end
 --console chat trigger
   script.on_event(defines.events.on_console_chat, function (event)
     local message = string.gsub(string.lower(event.message),"[%p%c%s]","")--just obliterate punctuation
     if string.find(message,"thefactorymustgrow") ~= nil then
-      TFMG_chant()
+      story.TFMG_chant()
     end
   end)
 
@@ -98,7 +99,7 @@ local story = {}
     game.play_sound({path = "story-ticker"})
   end
 
-  function story.random_say(message)---say a message as a random online player
+  function story.random_say(message,adendum)---say a message as a random online player
     local players = game.connected_players
     local r_player = TFMG.random_table_entry(players)
     local saved_player = storage.story.saved_r_player or r_player
@@ -108,7 +109,8 @@ local story = {}
         r_player.name,
         r_player.index,
         saved_player.name,
-        saved_player.index
+        saved_player.index,
+        adendum
       },
       {
         color = r_player.chat_color,
@@ -187,7 +189,9 @@ local story = {}
     }
   end
 
-  function consider_your_purpose()
+--tech monolouges
+
+  function story.consider_your_purpose()
     local t = 60
     event_queue("print",t,"story-event.consider-your-purpose-0") t = t + 120
     event_queue("change_color",t,nil,{221,127,33}) t = t + 1
@@ -197,7 +201,7 @@ local story = {}
     event_queue("chant",t,"story-event.consider-your-purpose-4")
   end
 
-  function consider_the_self()
+  function story.consider_the_self()
     local t = 60
     event_queue("print",t,"story-event.consider-the-self-0") t = t + 120
     event_queue("random_say",t,"story-event.consider-the-self-1") t = t + 20
@@ -219,7 +223,7 @@ local story = {}
     event_queue("chant",t,"story-event.consider-the-self-14")
   end
 
-  function consider_your_potential()
+  function story.consider_your_potential()
     local t = 60
     event_queue("print",t,"story-event.consider-your-potential-0") t = t + 120
     event_queue("random_say",t,"story-event.consider-your-potential-1") t = t + 20
@@ -242,7 +246,7 @@ local story = {}
 
   end
 
-  function contemplate_life()
+  function story.contemplate_life()
     local t = 60
     event_queue("print",t,"story-event.contemplate-life-0") t = t + 120
     event_queue("random_say",t,"story-event.contemplate-life-1") t = t + 20
@@ -259,7 +263,7 @@ local story = {}
     event_queue("random_say",t,"story-event.contemplate-life-12")
   end
 
-  function contemplate_rust()
+  function story.contemplate_rust()
     local t = 60
     event_queue("print",t,"story-event.contemplate-rust-0") t = t + 120
     event_queue("random_say",t,"story-event.contemplate-rust-1") t = t + 30
@@ -295,11 +299,60 @@ local story = {}
     event_queue("random_say",t,"story-event.contemplate-rust-17")
   end
 
-  function evaluate_mind()
+  function story.contemplate_void()
+    local t = 60
+    event_queue("print",t,"story-event.contemplate-void-0") t = t + 120
+  end
+
+  function story.evaluate_mind()
+    local t = 60
+    event_queue("print",t,"story-event.evaluate-mind-0") t = t + 120
 
   end
 
-  function TFMG_chant() --Chant tfmg when TFMG or a varient is typed in chat
+--event monologues
+  function story.worm_warning(ice_worm,silo)
+    local unit_number = ice_worm.unit_number
+    local head = ice_worm.segments[1]
+    local worm_position = head.position.x..","..head.position.y..","..ice_worm.surface.name
+    local silo_position = silo.position.x..","..silo.position.y..","..silo.surface.name
+
+    local t = 600
+    event_queue("random_say",t,"story-event.worm-warning-0") t = t + 100
+    event_queue("random_say",t,"story-event.worm-warning-1") t = t + 150
+    event_queue("random_say",t,"story-event.worm-warning-2") t = t + 200
+    event_queue("random_say",t,"story-event.worm-warning-3") t = t + 250
+    event_queue("random_say",t,"story-event.worm-warning-4") t = t + 100
+    event_queue("random_say",t,"story-event.worm-warning-5") t = t + 100
+    event_queue("random_say",t,"story-event.worm-warning-6") t = t + 250
+    event_queue("random_say",t,"story-event.worm-warning-7") t = t + 100
+    event_queue("random_say",t,"story-event.worm-warning-8") t = t + 200
+    event_queue("random_say",t,"story-event.worm-warning-9") t = t + 100
+    event_queue("random_say",t,"story-event.worm-warning-10",nil,unit_number) t = t + 30
+    event_queue("random_say",t,"story-event.worm-warning-11") t = t + 30
+    event_queue("random_say",t,"story-event.worm-warning-12",nil,unit_number) t = t + 30
+    event_queue("random_say",t,"story-event.worm-warning-13") t = t + 30
+    event_queue("random_say",t,"story-event.worm-warning-14") t = t + 30
+    event_queue("random_say",t,"story-event.worm-warning-15") t = t + 120
+    event_queue("random_say",t,"story-event.worm-warning-16",nil,worm_position) t = t + 120
+    event_queue("random_say",t,"story-event.worm-warning-17",nil,silo_position) t = t + 120
+    event_queue("random_say",t,"story-event.worm-warning-18") t = t + 160
+    event_queue("random_say",t,"story-event.worm-warning-19",nil,unit_number) t = t + 60
+    event_queue("random_say",t,"story-event.worm-warning-20") t = t + 60
+    event_queue("random_say",t,"story-event.worm-warning-21") t = t + 300
+    event_queue("random_say",t,"story-event.worm-warning-22") t = t + 120
+    event_queue("random_say",t,"story-event.worm-warning-23",nil,unit_number) t = t + 60
+    event_queue("random_say",t,"story-event.worm-warning-24") t = t + 60
+    event_queue("random_say",t,"story-event.worm-warning-25") t = t + 300
+    event_queue("random_say",t,"story-event.worm-warning-26",nil,unit_number) t = t + 120
+    event_queue("random_say",t,"story-event.worm-warning-27") t = t + 60
+    event_queue("random_say",t,"story-event.worm-warning-28") t = t + 300
+    event_queue("random_say",t,"story-event.worm-warning-29") t = t + 60
+  end
+
+--chat events
+  function story.TFMG_chant() --Chant tfmg when TFMG or a varient is typed in chat
     event_queue("chant",0,"story-event.tfmg-chant")
   end
+
 return story
