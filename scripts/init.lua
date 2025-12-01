@@ -106,9 +106,9 @@ function set_starting_flags()
 end
 
 
-	script.on_nth_tick(3600,
+	script.on_nth_tick(36000,--past 10 min
 		function()
-			ice_worm.recent_launch_count = 0
+			storage.worms.recent_launch_count = 0
 		end
 	)
 

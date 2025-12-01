@@ -3,15 +3,27 @@ local ice_worm = {}
 function ice_worm.rocket_launched(event)
   local silo = event.rocket_silo
   if silo.surface.name ~= "nauvis" then return end
-  local recent_count = storage.worms.recent_launch_count
-  recent_count = recent_count + 1
-  --game.print(recent_count)
-  if recent_count == 1 then --if we have one recently launched rocket, we send a worm.
-    ice_worm.find_close_worm(silo)
+  local recent_count = storage.worms.recent_launch_count --the quantity of rockets launched over the past 10 min
+  storage.worms.recent_launch_count = recent_count + 1 
+  local active_worm_count = #storage.worms.active_worms --the amount of worms currently being ordered around
+  local max_worm_count = recent_count^0.5 --our maximum quantity of worms.
+  local max_size = 1
+  if active_worm_count < max_worm_count then --if we have more slots open than worms, we can send another
+    ice_worm.find_close_worm(silo,max_size)
   end
 end
 
-function ice_worm.find_close_worm(silo)
+function ice_worm.meets_size_requirement(worm,max_size)
+  
+  if 2 >= max_size then
+    if worm.prototype.name == "big-ice-worm" then return false end
+  end
+  if
+   1 >= max_size then if worm.prototype.name == "medium-ice-worm" then return false end 
+  end
+return true end
+
+function ice_worm.find_close_worm(silo,max_size)
   local worms = game.surfaces["nauvis"].get_segmented_units()
   if not worms[1] then return end --if there are no worms in the game, end the script
   --set up some variables to help us find the closest worm.
@@ -21,14 +33,17 @@ function ice_worm.find_close_worm(silo)
   for index , worm in pairs(worms) do
     local wormai = worm.get_ai_state()
     if wormai.type == 0 then
-      if util.distance(worm.segments[1].position,silo_position) <= max_distance then
-        table.insert(close_worms,worm)
+      if ice_worm.meets_size_requirement(worm,max_size) then
+        if util.distance(worm.segments[1].position,silo_position) <= max_distance then
+          table.insert(close_worms,worm)
+        end
       end
     end
   end
   if #close_worms == 0 then game.print("no close worms") return end --no worm index
   local worm_to_send = TFMG.random_table_entry(close_worms)
   ice_worm.send_to_silo(worm_to_send,silo)
+  --TFMG.block(worm_to_send)
 end
 
 function ice_worm.send_to_silo(worm_to_send,silo)
