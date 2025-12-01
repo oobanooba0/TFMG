@@ -9,6 +9,8 @@ local thruster = data.raw["thruster"]["thruster"]
     },
     heat_per_unit_fluid = "250kJ",
   }
+  thruster.min_performance = {fluid_volume = 0.1, fluid_usage = 0.1, effectivity = 1}
+  thruster.max_performance = {fluid_volume = 0.8, fluid_usage = 2, effectivity = 0.5}
   thruster.fuel_fluid_box = {
       filter = "thruster-fuel",
       production_type = "input",
