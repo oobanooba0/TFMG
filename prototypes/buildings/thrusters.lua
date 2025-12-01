@@ -6,7 +6,8 @@ local thruster = data.raw["thruster"]["thruster"]
       { position = {1.5, -2}, direction = 0},
       { position = {1.5, -1}, direction = 4},
       { position = {-1.5, -1}, direction = 12},
-    }
+    },
+    heat_per_unit_fluid = "250kJ",
   }
   thruster.fuel_fluid_box = {
       filter = "thruster-fuel",

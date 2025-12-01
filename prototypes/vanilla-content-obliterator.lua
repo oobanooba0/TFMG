@@ -89,6 +89,7 @@ local TFMG = require("util.TFMG")
 	data.raw["planet"]["nauvis"].map_gen_settings.moisture_climate_control = false
 
 --adjust vanilla content
+	data.raw["space-platform-hub"]["space-platform-hub"].weight = 10000
 --utility constants --be careful
 	local util_constant = data.raw["utility-constants"]["default"]
 	  -- drag_coefficient = width * 0.5
@@ -96,7 +97,18 @@ local TFMG = require("util.TFMG")
     -- final_thrust = thrust / (1 + weight / 10000000)
     -- acceleration = (final_thrust - drag) / weight / 60
 		--"(thrust / (1 + weight / 10000000) - ((1500 * speed * speed + 1500 * abs(speed)) * (width * 0.5) + 10000) * sign(speed)) / weight / 60"
-  util_constant.space_platform_acceleration_expression = "(thrust / (1 + weight / 10000000) - ((1500 * speed * speed + 1500 * abs(speed)) * (width * 0.05) + 10000) * sign(speed)) / weight / 60"
+		local og_expression = "(thrust / (1 + weight / 10000000) - ((1500 * speed * speed + 1500 * abs(speed)) * (width * 0.5) + 10000) * sign(speed)) / weight / 60"
+		
+		local acceleration = "(thrust / (1 + weight))" --the 1+ portion of this prevents a division by 0 on 0 weight.
+		local drag_minimum = "0.5" --the lowest decellaration from drag possible in km/s^2
+		local drag = "(speed^2)/5" --drag increases exponentially with speed, favoring slower ships in terms of efficiency.
+		local combined_drag = "max("..drag..","..drag_minimum..")" --basically, we're using whichever drag is larger, this allows us to stop eventually.
+		local delta_v = "("..acceleration.."-"..combined_drag..")" --the combined expression for acceleration which is accelration from thrusters - drag
+		local conversion_factor = "(1/3600)" --the expression seems to take this as km/tick^2 this compensates for that
+		local v2_expression = delta_v.."*"..conversion_factor
+
+  util_constant.space_platform_acceleration_expression = v2_expression
+
 	--chart colours
 	local chart_rgb = util_constant.chart.default_friendly_color_by_type
 	-- heat related
