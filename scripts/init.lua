@@ -1,5 +1,4 @@
 --local functions
-
   local function modify_game_start_scripts()--apparently, the cutscene prevents the player from being teleported.
 		local freeplay = remote.interfaces.freeplay
     if freeplay then
@@ -42,10 +41,12 @@
       gameplay.give_starting_items()
     end
     gameplay.create_permission_group()
+		register_vehicle_requirements()
   end)
 
   script.on_configuration_changed(function()
     refresh_data_storage()
+		register_vehicle_requirements()
   end)
 
 	script.on_load(function()
@@ -245,6 +246,35 @@ end
   	end
   )
 
+-- Register vehicle deployment requirements with spider-launcher
+function register_vehicle_requirements()
+
+  if remote.interfaces["spider-launcher"] then
+    -- Register scout-o-tron: requires scout-o-tron-pod to deploy
+    if remote.interfaces["spider-launcher"]["register_vehicle_requirements"] then
+      remote.call("spider-launcher", "register_vehicle_requirements", "scout-o-tron", {
+        required_items = {"scout-o-tron-pod"},
+        deploy_item = "scout-o-tron-pod",  -- Deploy the pod, not the vehicle itself
+        entity_name = "scout-o-tron"  -- But create a scout-o-tron entity
+      })
+      --game.print("[TFMG] Registered scout-o-tron deployment requirements")
+    end
+    
+    -- Register default equipment and trunk items for scout-o-tron
+    if remote.interfaces["spider-launcher"]["register_vehicle_defaults"] then
+      remote.call("spider-launcher", "register_vehicle_defaults", "scout-o-tron", {
+        equipment_grid = {
+          {name = "solar-cell-equipment", count = 2},
+          {name = "roboport-1-equipment", count = 1}
+        },
+        trunk_items = {
+          {name = "construction-robot", count = 8}
+        }
+      })
+      --game.print("[TFMG] Registered scout-o-tron default equipment and trunk items")
+    end
+  end
+end
 
 
 

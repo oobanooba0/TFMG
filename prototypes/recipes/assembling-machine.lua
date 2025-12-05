@@ -299,7 +299,7 @@ data:extend({
     enabled = false,
     allow_productivity = false,
     ingredients = {
-      { type = "item", name = "scout-o-tron", amount = 1 },
+      --{ type = "item", name = "scout-o-tron", amount = 1 },
       { type = "item", name = "solar-cell", amount = 2 },
       { type = "item", name = "roboport", amount = 1 },
       { type = "item", name = "construction-robot", amount = 8 },
