@@ -217,9 +217,9 @@ data:extend({
     enabled = false,
     allow_productivity = true,
     ingredients = {
-      { type = "item", name = "volatile-asteroid-chunk", amount = 1 },
+      { type = "item", name = "volatile-asteroid-chunk", amount = 4 },
       { type = "item", name = "active-bio-polymers", amount = 2 },
-      { type = "item", name = "ai-processor", amount = 1 },
+      { type = "item", name = "fused-crystalline-chunk", amount = 1 },
       { type = "item", name = "organic-carbon", amount = 2 },
     },
     results = { 
@@ -1627,8 +1627,7 @@ data:extend({
     enabled = false,
     allow_productivity = true,
     ingredients = {
-      { type = "item", name = "excited-crystalline-chunk-red", amount = 2 },
-      { type = "item", name = "excited-crystalline-chunk-blue", amount = 2 },
+      { type = "item", name = "fused-crystalline-chunk", amount = 2 },
       { type = "item", name = "barrel", amount = 1 },
     },
     results = { 

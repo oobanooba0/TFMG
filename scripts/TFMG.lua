@@ -17,4 +17,19 @@ function TFMG.random_table_entry(table)--get random entry from table
   return random_table_entry
 end
 
+function TFMG.scramble(table)--randomises the order of a list. Does not create a new list.
+  for index = #table, 2, -1 do
+    local newindex = math.random(index)
+    table[index], table[newindex] = table[newindex] , table[index] --Never knew you could do such a thing.
+  end
+end
+
+function TFMG.newscramble(table)
+  local newtable = {}
+  for i = 1, #table do 
+    newtable[i] = table[i]
+  end
+  TFMG.scramble(newtable)
+return newtable end
+
 return TFMG

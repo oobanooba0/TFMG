@@ -5,7 +5,7 @@ local TFMG = require("util.TFMG")
 local HSP = data.raw.item["space-platform-foundation"] --halal snack pack
   HSP.flags = {"always-show"}
   HSP.stack_size = 250
-  HSP.weight = 100*kg
+  HSP.weight = TFMG.rocket_capacity(250)
 
 data:extend({
   {

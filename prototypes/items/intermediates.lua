@@ -2,7 +2,7 @@ local item_sounds = require("__base__.prototypes.item_sounds")
 local space_age_item_sounds = require("__space-age__.prototypes.item_sounds")
 local second = 60
 local minute = 3600
-
+local TFMG = require("util.TFMG")
 --Intermediates
 data:extend({
 ---Base intermediates (Things we make other intermediates out of)
@@ -116,6 +116,7 @@ data:extend({
     fuel_acceleration_multiplier = 0.5,
     fuel_top_speed_multiplier = 0.8,
     default_import_location = "nauvis",
+    weight = TFMG.rocket_capacity(250),
   },
   {
     type = "item",
@@ -131,7 +132,7 @@ data:extend({
     spoil_result = "polymer-bar",
     spoil_ticks = 60 * minute,
     default_import_location = "nauvis",
-    weight = 1 * kg,
+    weight = TFMG.rocket_capacity(250),
   },
   {
     type = "item",
@@ -145,7 +146,7 @@ data:extend({
     stack_size = 100,
     random_tint_color = item_tints.plastic,
     default_import_location = "nauvis",
-    weight = 1 * kg,
+    weight = TFMG.rocket_capacity(250),
   },
 ---structural intermediates (things which hold everything together)
     {--general purpose structure

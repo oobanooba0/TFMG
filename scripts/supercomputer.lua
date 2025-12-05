@@ -62,7 +62,7 @@ function supercomputer.on_supercomputer_built(entity)
   if storage.supercomputer == nil then
 	  storage.supercomputer = {}
 	end
-  table.insert(storage.supercomputer, unit_number, {machine = entity, input = supercomputer_input, output = supercomputer_output, recipe = nil, solution_x = nil})--bigass table lol
+  table.insert(storage.supercomputer, unit_number, {machine = entity, input = supercomputer_input, output = supercomputer_output})--bigass table lol
 end
 function supercomputer.on_supercomputer_rotated(entity)
     local v = storage.supercomputer[entity.unit_number]
@@ -139,12 +139,18 @@ function supercomputer.on_supercomputer_tick()
         if recipe.name == "exploration-science" then
           supercomputer.create_new_problem_exploration(v)
         end
+        if recipe.name == "exploitation-science" then
+          supercomputer.create_new_problem_exploitation(v)
+        end
         v.recipe = recipe
       end
+
       if recipe.name == "introspection-science" then--we need to check different signals for each science. so this needs a seperate script for each, to keep each as lightweight as possible.
         supercomputer.introspection_solution(v)
       elseif recipe.name == "exploration-science" then
         supercomputer.exploration_solution(v)
+      elseif recipe.name == "exploitation-science" then
+        supercomputer.exploitation_solution(v)
       end
     end
   )
@@ -243,6 +249,81 @@ function supercomputer.create_new_problem_exploration(v)--introspection recipe m
     }
   output_control.group = ""
   --game.print(v.problem_a..v.problem_operator..v.problem_b.."="..v.solution_x)
+end
+
+--exploitation science
+
+local exploitation_source = {"0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"}
+
+local function swap(v,a,b)
+  local table = v.scramble_list
+  local size = #table
+  if a ~= 0 and b ~= 0 and a <= size and b <= size then
+    table[a], table[b] = table[b] , table[a]
+  end
+end
+
+local function check_exploitation_solution(v)
+  for index, letter in pairs(v.scramble_list) do
+    if letter ~= exploitation_source[index] then return false end
+  end
+return true end
+
+function supercomputer.exploitation_solution(v)
+
+
+
+  if check_exploitation_solution(v) then --if we solved it
+    supercomputer.create_new_problem_exploitation(v)
+  else
+    --control the thing here
+    local green_swap_a = v.input.get_signal({type = "virtual", name = "signal-input"},defines.wire_connector_id.circuit_green)
+    local green_swap_b = v.input.get_signal({type = "virtual", name = "signal-output"},defines.wire_connector_id.circuit_green)
+    local red_swap_a = v.input.get_signal({type = "virtual", name = "signal-input"},defines.wire_connector_id.circuit_red)
+    local red_swap_b = v.input.get_signal({type = "virtual", name = "signal-output"},defines.wire_connector_id.circuit_red)
+
+    --TFMG.block(v.scramble_list)
+
+    swap(v,green_swap_a,green_swap_b)
+    swap(v,red_swap_a,red_swap_b)
+
+    supercomputer.update_problem_exploitation(v)
+    supercomputer_passive_draw(v)
+    v.machine.custom_status = {
+		  diode = defines.entity_status_diode.yellow,
+		  label = "Ready for sorting"
+		}
+  end
+
+end
+
+function supercomputer.update_problem_exploitation(v) --update the output signals
+
+  if v.output.get_control_behavior().get_section(1) == nil then
+    v.output.get_control_behavior().add_section(nil)
+  end
+
+  local output_control = v.output.get_control_behavior().get_section(1)
+
+  local output_list = {}
+
+  for index,letter in pairs(v.scramble_list) do --build my list of signals from my scramble
+    local signal = {value = {type = "virtual", name = "signal-"..letter, quality = "normal"}, min = index}
+    table.insert(output_list,signal)
+  end
+
+  output_control.filters = output_list
+  output_control.group = ""
+
+end
+
+function supercomputer.create_new_problem_exploitation(v)
+  --TFMG.block("New exploitation problem")
+
+  v.scramble_list = TFMG.newscramble(exploitation_source) --get scrombombled!
+
+  supercomputer.update_problem_exploitation(v)
+
 end
 
 return supercomputer

@@ -172,7 +172,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "water", amount = 100, fluidbox_index = 0 },
     },
     results = { 
-      { type = "item", name = "fused-crystalline-chunk", amount = 1 },
+      { type = "item", name = "fused-crystalline-chunk", amount = 2 },
       { type = "fluid", name = "steam", amount = 1000, temperature = 1000, fluidbox_index = 0},
     },
   },
