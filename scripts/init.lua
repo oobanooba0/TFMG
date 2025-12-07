@@ -51,7 +51,7 @@
 
 	script.on_load(function()
 		deal_with_stupid_handlers()
-		register_vehicle_requirements()
+		--register_vehicle_requirements()
 	end)
 
 --Upon player joins
@@ -243,8 +243,8 @@ function register_vehicle_requirements()
     -- Register scout-o-tron: requires scout-o-tron-pod to deploy
     if remote.interfaces["spider-launcher"]["register_vehicle_requirements"] then
       remote.call("spider-launcher", "register_vehicle_requirements", "scout-o-tron", {
-        required_items = {"scout-o-tron-pod"},
-        deploy_item = "scout-o-tron-pod",  -- Deploy the pod, not the vehicle itself
+        required_items = {"scout-o-tron"},
+        deploy_item = "scout-o-tron",  -- Deploy the pod, not the vehicle itself
         entity_name = "scout-o-tron"  -- But create a scout-o-tron entity
       })
       --game.print("[TFMG] Registered scout-o-tron deployment requirements")
@@ -254,11 +254,11 @@ function register_vehicle_requirements()
     if remote.interfaces["spider-launcher"]["register_vehicle_defaults"] then
       remote.call("spider-launcher", "register_vehicle_defaults", "scout-o-tron", {
         equipment_grid = {
-          {name = "solar-cell-equipment", count = 1},
-          {name = "roboport-1-equipment", count = 1}
+          --{name = "solar-cell-equipment", count = 1},
+          --{name = "roboport-1-equipment", count = 1}
         },
         trunk_items = {
-          {name = "construction-robot", count = 1}
+          --{name = "construction-robot", count = 1}
         }
       })
       --game.print("[TFMG] Registered scout-o-tron default equipment and trunk items")
