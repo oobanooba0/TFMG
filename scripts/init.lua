@@ -51,6 +51,7 @@
 
 	script.on_load(function()
 		deal_with_stupid_handlers()
+		register_vehicle_requirements()
 	end)
 
 --Upon player joins
@@ -66,9 +67,9 @@
       	group.add_player(player)
       end
 
-  		local anchor = {gui=defines.relative_gui_type.space_platform_hub_gui, position=defines.relative_gui_position.bottom}
-    	local frame = player.gui.relative.add{type="frame", anchor=anchor}
-  		frame.add{type="button", name="deploy_scout_o_tron", caption={"spider-ui.deploy-scout-o-tron"}}
+  		--local anchor = {gui=defines.relative_gui_type.space_platform_hub_gui, position=defines.relative_gui_position.bottom}
+    	--local frame = player.gui.relative.add{type="frame", anchor=anchor}
+  		--frame.add{type="button", name="deploy_scout_o_tron", caption={"spider-ui.deploy-scout-o-tron"}}
   end)
 
 --on tick events
@@ -215,20 +216,9 @@ end
   	end
   )
 
---On open gui
-  script.on_event(defines.events.on_gui_opened, function(event)
-  	local player_storage = storage.players[event.player_index]
-    if event.gui_type == defines.gui_type.entity then
-  		player_storage.gui_entity = event.entity
-  		if event.entity.type == "space-platform-hub" then 
-  			player_storage.hub = event.entity--we're gonna store the location, which is always 0,0
-  		end
-    end
-  end)
-
   script.on_event(defines.events.on_gui_click, function(event)
       if event.element.name == "deploy_scout_o_tron" then
-  			gameplay.deploy_scout_o_tron(event)
+				event.element.parent.destroy() --tempoary to remove the old gui
       end
   end)
 
@@ -264,11 +254,11 @@ function register_vehicle_requirements()
     if remote.interfaces["spider-launcher"]["register_vehicle_defaults"] then
       remote.call("spider-launcher", "register_vehicle_defaults", "scout-o-tron", {
         equipment_grid = {
-          {name = "solar-cell-equipment", count = 2},
+          {name = "solar-cell-equipment", count = 1},
           {name = "roboport-1-equipment", count = 1}
         },
         trunk_items = {
-          {name = "construction-robot", count = 8}
+          {name = "construction-robot", count = 1}
         }
       })
       --game.print("[TFMG] Registered scout-o-tron default equipment and trunk items")

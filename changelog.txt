@@ -8,6 +8,7 @@ Date: ????
     - Massive internal code improvements.
     - they move below.
   Features:
+    - Orbital vehichle deployment mod added to replace the old drop spidertron button.
     - You now start the game on course to arrival. This means you get significantly more asteroids in the early phase of the game, but their avalability will drop sharply once you reach arrival.
     - (near) Void space location added, you cant go there a the moment, it's just for the intro.
     - Limit space location added, as a gas giant, you cant land there, but Limit will act as a connection point for future planets.
