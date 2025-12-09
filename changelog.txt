@@ -15,7 +15,7 @@ Date: ????
     - Radiators now have a hot new custom graphic.
     - Heat management 2 added, now a prerequisite of exploration science.
     - Evaporation radiator added, a ground placed radiator for heat removal on planets. where normal radiators can't be placed. Unlocked by heat management 2
-    - Constructron introduced
+    - Constructron introduced -- expect the recipe to change.
     - optional compatibility with visible planets mod added. I think its pretty.
     - some achivements added
     - Light and heavy space platform added: light space platform is expensive, but light (and good for space ships) heavy space platform is cheap but heavy (good for stationary platforms)
@@ -51,6 +51,7 @@ Date: ????
     - Energy monitor now has 10j of storage, so it will discharge and charge 10x faster
     - Chemical plant recipes now have tints, so no more grey smoke for every recipe.
     - Scout'o'tron pods technology and item removed. You can now drop scout'o'trons with equipment using the orbital vehicle deployment button.
+    - spidertron frames now use mechanical components too.
   Balancing:
     - Small radiators stack to 50
     - Small radiators now cost half to craft

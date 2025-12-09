@@ -237,6 +237,7 @@ data:extend({
       { type = "item", name = "general-purpose-structure", amount = 32 },
       { type = "item", name = "heat-pipe", amount = 16 },
       { type = "item", name = "modular-circuit", amount = 16 },
+      { type = "item", name = "mechanical-components", amount = 16 },
     },
     results = { 
       { type = "item", name = "spidertron-frame", amount = 1 }
@@ -289,6 +290,24 @@ data:extend({
     },
     results = { 
       { type = "item", name = "scout-o-tron", amount = 1 }
+    },
+  },
+  {--Constructron
+    type = "recipe",
+    category = "assembling-machine",
+    name = "constructron",
+    energy_required = 64,
+    enabled = false,
+    allow_productivity = false,
+    ingredients = {
+      { type = "item", name = "spidertron-frame", amount = 1 },
+      { type = "item", name = "mechanical-leg", amount = 8 },
+      { type = "item", name = "mechatronic-components", amount = 32 },
+      { type = "item", name = "chest-2", amount = 2 },
+      { type = "item", name = "ai-processor", amount = 8 },
+    },
+    results = { 
+      { type = "item", name = "constructron", amount = 1 }
     },
   },
 ---robots
@@ -970,6 +989,22 @@ data:extend({
     },
     results = { 
       { type = "item", name = "space-platform-starter-pack", amount = 1 }
+    },
+  },
+  {--platform cargo bay
+    type = "recipe",
+    category = "assembling-machine",
+    name = "cargo-bay",
+    energy_required = 32,
+    enabled = false,
+    ingredients = {
+      { type = "item", name = "high-performance-structure", amount = 32 },
+      { type = "item", name = "mechatronic-components", amount = 24 },
+      { type = "item", name = "ai-processor", amount = 4 },
+      { type = "item", name = "chest-2", amount = 4 },
+    },
+    results = { 
+      { type = "item", name = "cargo-bay", amount = 1 }
     },
   },
   {--lamp

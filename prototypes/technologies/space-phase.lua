@@ -130,6 +130,58 @@ data:extend({
       time = 32
     },
   },
+  {--Constructron
+    type = "technology",
+    name = "constructron",
+    icon = "__base__/graphics/technology/spidertron.png",
+    icon_size = 256,
+    essential = true,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "constructron"
+      },
+    },
+    prerequisites = {"exploitation-science","advanced-storage"},
+    unit = {
+      count = 512,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1},
+        {"exploitation-science", 1},
+      },
+      time = 32
+    },
+  },
+  {--hub expansion
+    type = "technology",
+    name = "hub-expansion",
+    icon = "__space-age__/graphics/technology/space-platform.png",
+    icon_size = 256,
+    essential = true,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "cargo-bay",
+      },
+      {
+        type = "nothing",
+        effect_description = {"tech-effect.cargo-bay-max"},
+      }
+    },
+    prerequisites = {"exploitation-science","advanced-storage"},
+    unit = {
+      count = 512,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1},
+        {"exploitation-science", 1},
+      },
+      time = 32
+    },
+  },
 --side researches
   {--cliff explosives
     type = "technology",
