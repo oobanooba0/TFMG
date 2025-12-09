@@ -35,22 +35,3 @@ data:extend({
     default_import_location = "nauvis",
   },
 })
-
-data:extend({
-    {--Scout'o'tron packed
-    type = "item",
-    name = "scout-o-tron-pod",
-    localised_name = {"item-name.scout-o-tron-pod"},
-    localised_description = {"item-description.scout-o-tron-pod"},
-    icon = "__base__/graphics/icons/rocket-part.png",
-    subgroup = "transport",
-    order = "b[personal-transport]-c[spidertron]-z[packed]",
-    inventory_move_sound = item_sounds.spidertron_inventory_move,
-    pick_sound = item_sounds.spidertron_inventory_pickup,
-    drop_sound = item_sounds.spidertron_inventory_move,
-    place_result = "scout-o-tron",
-    weight = 200 * tons,
-    stack_size = 1,
-    default_import_location = "nauvis",
-  },
-})

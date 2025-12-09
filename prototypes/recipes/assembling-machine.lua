@@ -291,24 +291,6 @@ data:extend({
       { type = "item", name = "scout-o-tron", amount = 1 }
     },
   },
-  {--Scout'o'tron pod
-    type = "recipe",
-    category = "assembling-machine",
-    name = "scout-o-tron-pod",
-    energy_required = 32,
-    enabled = false,
-    allow_productivity = false,
-    ingredients = {
-      --{ type = "item", name = "scout-o-tron", amount = 1 },
-      { type = "item", name = "solar-cell", amount = 2 },
-      { type = "item", name = "roboport", amount = 1 },
-      { type = "item", name = "construction-robot", amount = 8 },
-      { type = "item", name = "general-purpose-structure", amount = 24 },
-    },
-    results = { 
-      { type = "item", name = "scout-o-tron-pod", amount = 1 }
-    },
-  },
 ---robots
   {--construction robot
     type = "recipe",

@@ -506,25 +506,6 @@ data:extend({
     time = 16
     },
   },
-  {--scout-o-tron drop pods
-    type = "technology",
-    name = "scout-o-tron-drop-pods",
-    icon = "__base__/graphics/icons/artillery-targeting-remote.png",
-    icon_size = 64,
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "scout-o-tron-pod"
-      },
-    },
-    prerequisites = {"scout-o-tron","solar-power","basic-bots"},
-    unit = {
-    count = 64,
-    ingredients = {{"introspection-science", 1}},
-    time = 16
-    },
-  },
   {--consider your potential. Platform phase end.
     type = "technology",
     name = "consider-your-potential",
@@ -545,10 +526,10 @@ data:extend({
     research_trigger =
     {
       type = "craft-item",
-      item = "scout-o-tron-pod",
+      item = "scout-o-tron",
       count = 1
     },
-    prerequisites = {"scout-o-tron-drop-pods"},
+    prerequisites = {"scout-o-tron","solar-power","basic-bots"},
     essential = true
   },
 })
