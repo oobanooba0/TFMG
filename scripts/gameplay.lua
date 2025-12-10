@@ -82,6 +82,8 @@ function gameplay.research_finished(event)
     storage.story.handlers.no_more_softlock = true
   elseif event.research.name == "consider-your-potential" then
     gameplay.self_arrive()
+  elseif event.research.name == "hub-expansion" then
+    cargo.hub_expansion_researched(event)
   end
   storage.story.tech_progress = storage.story.tech_progress + 1
 end

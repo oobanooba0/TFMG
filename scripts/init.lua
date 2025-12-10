@@ -26,6 +26,9 @@
 		storage.worms.recent_launch_count = 0 end
 		if storage.worms.active_worms == nil then
 		storage.worms.active_worms = {} end
+		if storage.gameplay == nil then
+			storage.gameplay = {}
+		end
   end
 
 
@@ -41,12 +44,12 @@
       gameplay.give_starting_items()
     end
     gameplay.create_permission_group()
-		register_vehicle_requirements()
+		--register_vehicle_requirements()
   end)
 
   script.on_configuration_changed(function()
     refresh_data_storage()
-		register_vehicle_requirements()
+		--register_vehicle_requirements()
   end)
 
 	script.on_load(function()
@@ -73,6 +76,13 @@
   end)
 
 --on tick events
+--taken nth ticks.
+--36000
+--300
+--256
+--1
+--5
+
   script.on_event(
   	defines.events.on_tick,
   	function(event)
@@ -80,6 +90,19 @@
   		supercomputer.on_supercomputer_tick()
   	end
   )
+
+	script.on_nth_tick(36000,--past 10 min, I should do a rolling average but im lazy.
+		function()
+			storage.worms.recent_launch_count = 0
+		end
+	)
+
+	script.on_nth_tick(300,
+		function()
+			ice_worm.check_active_worms()
+		end
+	)
+
 
 function deal_with_stupid_handlers()
   if settings.global["start-as-SELF"].value then --these scripts shouldnt run if we dont have self.
@@ -107,19 +130,6 @@ function set_starting_flags()
 	end
 end
 
-
-	script.on_nth_tick(36000,--past 10 min
-		function()
-			storage.worms.recent_launch_count = 0
-		end
-	)
-
-	script.on_nth_tick(300,
-		function()
-			ice_worm.check_active_worms()
-		end
-	)
-
 --rocket launch
 	script.on_event(
 		defines.events.on_rocket_launch_ordered,
@@ -144,11 +154,12 @@ end
   --i crie everytime i redo several hours of work.
   --stolen from allison
   filters = {
-  	{
-  		filter = "name",
-  		name = "supercomputer",
-  		mode = "or"
-  	},
+  	{filter = "name", name = "supercomputer", mode = "or"},
+  	{filter = "name", name = "matter-reconstructor", mode = "or"},
+  	{filter = "name", name = "proton-decay-thermoelectric-generator", mode = "or"},
+  	{filter = "name", name = "cargo-bay", mode = "or"},
+		{filter = "ghost_name", name = "cargo-bay", mode = "or"},
+
   }
 
   script.on_event(--machines create machines create machines create machines create machines create.venjent.wav
@@ -168,11 +179,35 @@ end
   )
 
   script.on_event(
-      defines.events.on_space_platform_built_entity,
-      function(event)
-          handle_build_event(event)
-      end,
-      filters
+    defines.events.on_space_platform_built_entity,
+    function(event)
+      handle_build_event(event)
+    end,
+    filters
+  )
+
+	script.on_event(
+    defines.events.script_raised_built,
+    function(event)
+      handle_build_event(event)
+    end,
+    filters
+  )
+
+	script.on_event(
+    defines.events.script_raised_revive,
+    function(event)
+      handle_build_event(event)
+    end,
+    filters
+  )
+
+	script.on_event(
+    defines.events.on_entity_cloned,
+    function(event)
+      handle_build_event(event)
+    end,
+    filters
   )
 
   script.on_event(
@@ -206,7 +241,9 @@ end
   		gameplay.on_vital_building_built(entity)
   	elseif entity.name == "supercomputer" then
   		supercomputer.on_supercomputer_built(entity)
-  	end
+		elseif entity.name == "cargo-bay" or entity.type == "entity-ghost" and entity.ghost_name == "cargo-bay" then
+			cargo.on_bay_built(event)
+		end
   end
 
   script.on_event(

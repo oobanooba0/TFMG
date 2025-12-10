@@ -1,3 +1,4 @@
+
 util = require("util")
 require("scripts.TFMG")
 TFMG = require("scripts.TFMG")
@@ -11,3 +12,5 @@ require("scripts.story")
 story = require("scripts.story")
 require("scripts.ice-worm")
 ice_worm = require("scripts.ice-worm")
+require("scripts.cargo")
+cargo = require("scripts.cargo")

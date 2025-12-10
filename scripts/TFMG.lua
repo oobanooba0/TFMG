@@ -32,4 +32,10 @@ function TFMG.newscramble(table)
   TFMG.scramble(newtable)
 return newtable end
 
+function TFMG.append(table_1,table_2) --appends table 2s entries to table 1, doesnt preserve original talbe
+  for _,v in pairs(table_2) do
+    table.insert(table_1,v)
+  end
+end
+
 return TFMG
