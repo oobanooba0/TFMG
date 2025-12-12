@@ -302,12 +302,28 @@ local story = {}
   function story.contemplate_void()
     local t = 60
     event_queue("print",t,"story-event.contemplate-void-0") t = t + 120
+    event_queue("random_say",t,"story-event.contemplate-void-1") t = t + 120
+    event_queue("random_say",t,"story-event.contemplate-void-2") t = t + 90
+    event_queue("random_say",t,"story-event.contemplate-void-3") t = t + 90
+    event_queue("random_say",t,"story-event.contemplate-void-4") t = t + 90
+    event_queue("random_say",t,"story-event.contemplate-void-5") t = t + 80
+    event_queue("random_say",t,"story-event.contemplate-void-6") t = t + 80
+    event_queue("random_say",t,"story-event.contemplate-void-7") t = t + 70
+    event_queue("random_say",t,"story-event.contemplate-void-8") t = t + 70
+    event_queue("random_say",t,"story-event.contemplate-void-9") t = t + 120
+    event_queue("random_say",t,"story-event.contemplate-void-10") t = t + 200
+    event_queue("random_say",t,"story-event.contemplate-void-11") t = t + 120
+    event_queue("random_say",t,"story-event.contemplate-void-12") t = t + 120
+    event_queue("random_say",t,"story-event.contemplate-void-13")
+
   end
 
   function story.evaluate_mind()
     local t = 60
     event_queue("print",t,"story-event.evaluate-mind-0") t = t + 120
-
+    event_queue("random_say",t,"story-event.evaluate-mind-1") t = t + 120
+    event_queue("random_say",t,"story-event.evaluate-mind-2") t = t + 120
+    event_queue("random_say",t,"story-event.evaluate-mind-3") t = t + 120
   end
 
 --event monologues
