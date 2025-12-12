@@ -270,9 +270,6 @@ local function check_exploitation_solution(v)
 return true end
 
 function supercomputer.exploitation_solution(v)
-
-
-
   if check_exploitation_solution(v) then --if we solved it
     supercomputer.create_new_problem_exploitation(v)
   else
@@ -281,12 +278,8 @@ function supercomputer.exploitation_solution(v)
     local green_swap_b = v.input.get_signal({type = "virtual", name = "signal-output"},defines.wire_connector_id.circuit_green)
     local red_swap_a = v.input.get_signal({type = "virtual", name = "signal-input"},defines.wire_connector_id.circuit_red)
     local red_swap_b = v.input.get_signal({type = "virtual", name = "signal-output"},defines.wire_connector_id.circuit_red)
-
-    --TFMG.block(v.scramble_list)
-
     swap(v,green_swap_a,green_swap_b)
     swap(v,red_swap_a,red_swap_b)
-
     supercomputer.update_problem_exploitation(v)
     supercomputer_passive_draw(v)
     v.machine.custom_status = {
@@ -294,36 +287,26 @@ function supercomputer.exploitation_solution(v)
 		  label = "Ready for sorting"
 		}
   end
-
 end
 
 function supercomputer.update_problem_exploitation(v) --update the output signals
-
   if v.output.get_control_behavior().get_section(1) == nil then
     v.output.get_control_behavior().add_section(nil)
   end
-
   local output_control = v.output.get_control_behavior().get_section(1)
-
   local output_list = {}
-
   for index,letter in pairs(v.scramble_list) do --build my list of signals from my scramble
     local signal = {value = {type = "virtual", name = "signal-"..letter, quality = "normal"}, min = index}
     table.insert(output_list,signal)
   end
-
   output_control.filters = output_list
   output_control.group = ""
 
 end
 
 function supercomputer.create_new_problem_exploitation(v)
-  --TFMG.block("New exploitation problem")
-
   v.scramble_list = TFMG.newscramble(exploitation_source) --get scrombombled!
-
   supercomputer.update_problem_exploitation(v)
-
 end
 
 return supercomputer
