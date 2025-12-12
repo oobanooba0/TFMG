@@ -1,4 +1,4 @@
-data:extend({
+data:extend({--lol
   {
     type = "recipe",
     category = "supercomputer",
@@ -38,10 +38,10 @@ data:extend({
     enabled = false,
     allow_productivity = false,
     ingredients = {
-      { type = "item", name = "exploitation-science-unverified", amount = 1 },
+      { type = "item", name = "exploitation-science-unverified", amount = 4 },
     },
     results = {
-      { type = "item", name = "exploitation-science", amount = 1 },
+      { type = "item", name = "exploitation-science", amount = 4 },
     },
   },
 })
