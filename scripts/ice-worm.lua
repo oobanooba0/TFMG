@@ -96,15 +96,17 @@ end
 function ice_worm.check_active_worms()
   local active_worms = storage.worms.active_worms
   for _,active_worm in pairs(active_worms) do
-    local ai_state = active_worm.worm.get_ai_state().type
-    if active_worm.order == "find silo" and ai_state == 0 then
-      ice_worm.attack_silo(active_worm,_)
-    elseif active_worm.order == "attack silo" then
-      if ai_state == 4 then
-        ice_worm.continue_attack_silo(active_worm)
-      end
-      if ai_state == 0 then --we're done, lets forget about this worm
-        ice_worm.forget_worm(_)
+    if active_worm.worm.valid then 
+      local ai_state = active_worm.worm.get_ai_state().type
+      if active_worm.order == "find silo" and ai_state == 0 then
+        ice_worm.attack_silo(active_worm,_)
+      elseif active_worm.order == "attack silo" then
+        if ai_state == 4 then
+          ice_worm.continue_attack_silo(active_worm)
+        end
+        if ai_state == 0 then --we're done, lets forget about this worm
+          ice_worm.forget_worm(_)
+        end
       end
     end
   end

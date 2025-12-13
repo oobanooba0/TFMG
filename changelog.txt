@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.0
-Date: ????
+Date: 2025-12-13
   Major Features:
     - Exploitation science added + related content(see more below)
     - Unpipable fluid mechanic introduced, some fluids like thruster fuel and oxidizer cannot be transported via pipe, instaid you must directly transfer the fluid through machines.
@@ -27,7 +27,7 @@ Date: ????
     - containers added, they have a 2x2 footprint, only have one slot, but have a capacity of 24 stacks, making them denser than chests.
   Changes:
     - old saves broken. Just not realistic to fix that.
-    - old menu simulations are removed :(
+    - old menu simulations are removed :( I added some new ones from my personal save to replace them.
     - Most irrelevant vanilla content is hidden from the game, GUI clutter is no more.
     - Small radiators are now 1x5. They now only radiate 2MW of heat, down from 5MW. (still means a 1.5x increase in radiation:surface area so technically a buff.)
     - Small radiators internals ported to TFMG thermal mod.
@@ -37,7 +37,7 @@ Date: ????
     - Supercomputers are now 11x11
     - Supercomputer terminals are now visible in blueprints before placing, and always above the supercomputer base. (so that theyre always visible)
     - Heat monitor now unlocked by heat management 2
-    - Nauvis, well and truely, no longer exists.
+    - Nauvis, well and truely, no longer exists. (or rather arrival doesnt, and nauvis has been remade in its image)
     - Rocket silo is a military target now.
     - Space platform drag and thrust has been heavily changed. Platform Width is removed, Drag still exists (otherwise platforms cannot slow down), but its small, and grows exponentially with speed, platforms are heavier and accelerate slowly, but will over time reach high speeds.
     - Starting intro message has been changed.
