@@ -3,7 +3,7 @@ data:extend({
     type = "recipe",
     category = "micro-assembler",
     name = "mineral-glass-singing",
-    energy_required = 1.5,
+    energy_required = 1,
     enabled = false,
     allow_productivity = false,
     ingredients = {
@@ -19,7 +19,7 @@ data:extend({
     type = "recipe",
     category = "micro-assembler",
     name = "conductive-coil-anti-winding",
-    energy_required = 1.5,
+    energy_required = 1,
     enabled = false,
     allow_productivity = true,
     ingredients = {

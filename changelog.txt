@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.1
 Date: ????
-  Changes:
+  Balancing:
+    - Micro assembler recipes are now the same speed as regular assemblers.
   Bugfixes:
     - Heat pipes now show up in the cursor picker menu from game start.
     - Productivity modules, beacons, and logistics chests and other unobtainable items are hidden from the factoriopedia until they are implemented properly.
