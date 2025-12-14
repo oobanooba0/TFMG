@@ -133,7 +133,8 @@ data:extend({
       name = {"TFMG.multislot-tooltip"},
       value = tostring(chest_2_stacks),
       order = 250,
-    }}
+    }},
+    hidden = true,
   },
   {--storage-chest 2
     type = "logistic-container",
@@ -211,7 +212,8 @@ data:extend({
       name = {"TFMG.multislot-tooltip"},
       value = tostring(chest_2_stacks),
       order = 250,
-    }}
+    }},
+    hidden = true,
   },
   {--requester-chest 2
     type = "logistic-container",
@@ -250,7 +252,8 @@ data:extend({
       name = {"TFMG.multislot-tooltip"},
       value = tostring(chest_2_stacks),
       order = 250,
-    }}
+    }},
+    hidden = true,
   },
 
 })

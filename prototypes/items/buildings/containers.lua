@@ -24,6 +24,7 @@ data:extend({
     place_result = "active-provider-chest-2",
     stack_size = chest_2_stack_size,
     weight = chest_2_weight,
+    hidden = true,
   },
   {
     type = "item",
@@ -44,6 +45,7 @@ data:extend({
     place_result = "requester-chest-2",
     stack_size = chest_2_stack_size,
     weight = chest_2_weight,
+    hidden = true,
   },
   {
     type = "item",
@@ -64,5 +66,6 @@ data:extend({
     place_result = "buffer-chest-2",
     stack_size = chest_2_stack_size,
     weight = chest_2_weight,
+    hidden = true,
   },
 })

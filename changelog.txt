@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.1
+Date: ????
+  Changes:
+  Bugfixes:
+    - Heat pipes now show up in the cursor picker menu from game start.
+    - Productivity modules, beacons, and logistics chests and other unobtainable items are hidden from the factoriopedia until they are implemented properly.
+    - Many grammatical and spelling errors corrected thanks to
+---------------------------------------------------------------------------------------------------
 Version: 0.4.0
 Date: 2025-12-13
   Major Features:

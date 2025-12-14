@@ -1303,6 +1303,7 @@ data:extend({
     results = { 
       { type = "item", name = "active-provider-chest", amount = 1 }
     },
+    hidden = true,
   },
   {--buffer-chest-1
     type = "recipe",
@@ -1318,6 +1319,7 @@ data:extend({
     results = { 
       { type = "item", name = "buffer-chest", amount = 1 }
     },
+    hidden = true,
   },
   {--requester-chest-1
     type = "recipe",
@@ -1333,6 +1335,7 @@ data:extend({
     results = { 
       { type = "item", name = "requester-chest", amount = 1 }
     },
+    hidden = true,
   },
   {--chest-2
     type = "recipe",
@@ -1392,6 +1395,7 @@ data:extend({
     results = { 
       { type = "item", name = "active-provider-chest-2", amount = 1 }
     },
+    hidden = true,
   },
   {--buffer-chest-2
     type = "recipe",
@@ -1407,6 +1411,7 @@ data:extend({
     results = { 
       { type = "item", name = "buffer-chest-2", amount = 1 }
     },
+    hidden = true,
   },
   {--requester-chest-2
     type = "recipe",
@@ -1422,6 +1427,7 @@ data:extend({
     results = { 
       { type = "item", name = "requester-chest-2", amount = 1 }
     },
+    hidden = true,
   },
   {--stone wall
     type = "recipe",
