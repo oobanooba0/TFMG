@@ -38,10 +38,10 @@ function TFMG.append(table_1,table_2) --appends table 2s entries to table 1, doe
   end
 end
 
-function TFMG.global_achievement(achivement) --unlock an achievement for every player
+function TFMG.global_achievement(achievement) --unlock an achievement for every player
   local players = game.connected_players
   for _,v in pairs(players) do
-    v.unlock_achievement(achivement)
+    v.unlock_achievement(achievement)
   end
 end
 

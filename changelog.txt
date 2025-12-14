@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.2
+Date: 2025-12-14
+  Features:
+    - Added some dialogues to point out some easily missed ui elements (A tempoary fix, while i figure out how to make them less easily missed)
+---------------------------------------------------------------------------------------------------
 Version: 0.4.1
 Date: 2025-12-14
   Features:

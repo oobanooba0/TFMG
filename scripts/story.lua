@@ -57,6 +57,7 @@ local story = {}
     elseif event.research.name == "contemplate-rust" then story.contemplate_rust()
     elseif event.research.name == "contemplate-void" then story.contemplate_void()
     elseif event.research.name == "evaluate-mind" then story.evaluate_mind()
+    elseif event.research.name == "introspection-science-pack" then story.introspection_advice()
     end
   end
 --console chat trigger
@@ -242,8 +243,8 @@ local story = {}
     end
     event_queue("random_say",t,"story-event.consider-your-potential-12") t = t + 220
 
-    event_queue("random_say",t,"story-event.consider-your-potential-13")
-
+    event_queue("random_say",t,"story-event.consider-your-potential-13") t = t + 500
+    event_queue("print",t,"story-event.spidertron-deploy")
   end
 
   function story.contemplate_life()
@@ -364,6 +365,11 @@ local story = {}
     event_queue("random_say",t,"story-event.worm-warning-27") t = t + 60
     event_queue("random_say",t,"story-event.worm-warning-28") t = t + 300
     event_queue("random_say",t,"story-event.worm-warning-29") t = t + 60
+  end
+
+--
+  function story.introspection_advice()
+    event_queue("print",100,"story-event.introspection-advice")
   end
 
 --chat events
