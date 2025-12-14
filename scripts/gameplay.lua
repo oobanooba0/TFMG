@@ -109,4 +109,20 @@ function gameplay.self_arrive()
   storage.story.handlers.no_more_self_control = true
 end
 
+function gameplay.on_spider_built(entity) --For giving the achivements and stuff
+  if entity.name == "scout-o-tron" then
+    TFMG.global_achievement("spiders")
+  elseif entity.name == "constructron" then
+    TFMG.global_achievement("australia-irl")
+  end
+end
+
+function gameplay.on_solar_panel_built(entity)
+  if storage.story.handlers.everyday_darkness then return end --we do not wanna run all this for every single solar panel past the point its necessary
+  if entity.surface.name == "nauvis" then
+    TFMG.global_achievement("everyday-darkness")
+    storage.story.handlers.everyday_darkness = true
+  end
+end
+
 return gameplay

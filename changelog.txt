@@ -1,12 +1,23 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.1
-Date: ????
+Date: 2025-12-14
+  Features:
+    - Australia IRL achievement added
+    - SELF reflection achievement added
+    - Terra Nullius achievement added.
+    - Bogo Sort achivement added
+    - Long road to ruin achievement added.
+    - And i would walk 5 miles achievement added.
+    - Universal paperclips achievement added.
+    - This isnt your average everyday darkness... achievement added.
   Balancing:
     - Micro assembler recipes are now the same speed as regular assemblers.
   Bugfixes:
     - Heat pipes now show up in the cursor picker menu from game start.
     - Productivity modules, beacons, and logistics chests and other unobtainable items are hidden from the factoriopedia until they are implemented properly.
-    - Many grammatical and spelling errors corrected thanks to
+    - Many grammatical and spelling errors corrected thanks to yess
+    - Crawlers now have locale
+    - Spiders achivement can now be earned again (once orbital vehicle deployment updates)
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.0
 Date: 2025-12-13

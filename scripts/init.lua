@@ -159,7 +159,9 @@ end
   	{filter = "name", name = "proton-decay-thermoelectric-generator", mode = "or"},
   	{filter = "name", name = "cargo-bay", mode = "or"},
 		{filter = "ghost_name", name = "cargo-bay", mode = "or"},
-
+		{filter = "name", name = "scout-o-tron", mode = "or"},
+		{filter = "name", name = "constructron", mode = "or"},
+		{filter = "name", name = "solar-cell", mode = "or"},
   }
 
   script.on_event(--machines create machines create machines create machines create machines create.venjent.wav
@@ -232,7 +234,6 @@ end
   		end
   )
 
-
   function handle_build_event(event)
   	local entity = event.entity
   	if entity.name == "matter-reconstructor" then
@@ -243,6 +244,10 @@ end
   		supercomputer.on_supercomputer_built(entity)
 		elseif entity.name == "cargo-bay" or entity.type == "entity-ghost" and entity.ghost_name == "cargo-bay" then
 			cargo.on_bay_built(event)
+		elseif entity.name == "constructron" or entity.name == "scout-o-tron" then
+			gameplay.on_spider_built(entity)
+		elseif entity.name == "solar-cell" then
+			gameplay.on_solar_panel_built(entity)
 		end
   end
 
