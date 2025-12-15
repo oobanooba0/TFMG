@@ -258,7 +258,7 @@ local exploitation_source = {"0","1","2","3","4","5","6","7","8","9","A","B","C"
 local function swap(v,a,b)
   local table = v.scramble_list
   local size = #table
-  if a ~= 0 and b ~= 0 and a <= size and b <= size then
+  if a > 0 and b > 0 and a <= size and b <= size then
     table[a], table[b] = table[b] , table[a]
   end
 end

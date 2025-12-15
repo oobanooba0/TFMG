@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.3
+Date: ????
+  Changes:
+    - Crystal excitation locked to space
+    - Crystal quenching locked to space
+    - Exploitation science locked to space
+  Bugfixes:
+    - Typo fixes
+    - You can no longer move entries into negative positions when verifying exploitation science.
+---------------------------------------------------------------------------------------------------
 Version: 0.4.2
 Date: 2025-12-14
   Features:
