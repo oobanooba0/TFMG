@@ -195,7 +195,7 @@ local story = {}
   function story.consider_your_purpose()
     local t = 60
     event_queue("print",t,"story-event.consider-your-purpose-0") t = t + 120
-    event_queue("change_color",t,nil,{221,127,33}) t = t + 1
+    event_queue("change_color",t,nil,{241,127,66}) t = t + 1
     event_queue("random_say",t,"story-event.consider-your-purpose-1") t = t + 60
     event_queue("random_say",t,"story-event.consider-your-purpose-2") t = t + 120
     event_queue("random_say",t,"story-event.consider-your-purpose-3") t = t + 200--a hesitation on the last message just seems to work
@@ -215,12 +215,12 @@ local story = {}
     event_queue("random_say",t,"story-event.consider-the-self-8") t = t + 60
     event_queue("random_say",t,"story-event.consider-the-self-9") t = t + 100
     event_queue("random_say",t,"story-event.consider-the-self-10") t = t + 220
-    event_queue("change_color",t,nil,{0,100,225}) t = t + 1
+    event_queue("change_color",t,nil,{50,150,225}) t = t + 1
     event_queue("random_say",t,"story-event.consider-the-self-11") t = t + 30
     event_queue("random_say",t,"story-event.consider-the-self-12") t = t + 45
-    event_queue("change_color",t,nil,{221,127,33}) t = t + 1
+    event_queue("change_color",t,nil,{241,127,66}) t = t + 1
     event_queue("random_say",t,"story-event.consider-the-self-13") t = t + 120
-    event_queue("change_color",t,nil,{0,100,225}) t = t + 1
+    event_queue("change_color",t,nil,{50,150,225}) t = t + 1
     event_queue("chant",t,"story-event.consider-the-self-14")
   end
 
@@ -291,7 +291,7 @@ local story = {}
     for i = 1, 10 do
     event_queue("saved_say",t,"story-event.contemplate-rust-10") t = t + 3
     end
-    event_queue("change_saved_color",t,nil,{120,160,220}) t = t + 1
+    event_queue("change_saved_color",t,nil,{140,180,220}) t = t + 1
     event_queue("saved_say",t,"story-event.contemplate-rust-12") t = t + 180
     event_queue("saved_say",t,"story-event.contemplate-rust-13") t = t + 100
     event_queue("random_say",t,"story-event.contemplate-rust-14") t = t + 60
