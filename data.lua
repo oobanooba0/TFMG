@@ -69,6 +69,7 @@
 	require("prototypes.items.raw-resources")
 	require("prototypes.items.science")
 	require("prototypes.items.spiders")
+	require("prototypes.items.others")
 
 --menu simulations
 	require("prototypes.menu-simulations.menu-simulations")

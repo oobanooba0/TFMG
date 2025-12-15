@@ -69,10 +69,6 @@
       if group then
       	group.add_player(player)
       end
-
-  		--local anchor = {gui=defines.relative_gui_type.space_platform_hub_gui, position=defines.relative_gui_position.bottom}
-    	--local frame = player.gui.relative.add{type="frame", anchor=anchor}
-  		--frame.add{type="button", name="deploy_scout_o_tron", caption={"spider-ui.deploy-scout-o-tron"}}
   end)
 
 --on tick events
@@ -278,6 +274,12 @@ end
   	end
   )
 
+	script.on_event(defines.events.on_player_respawned,
+		function(event)
+			gameplay.on_respawn(event)
+		end
+	)
+
 -- Register vehicle deployment requirements with spider-launcher
 function register_vehicle_requirements()
 
@@ -307,6 +309,8 @@ function register_vehicle_requirements()
     end
   end
 end
+
+
 
 
 

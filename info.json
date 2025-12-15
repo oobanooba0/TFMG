@@ -1,6 +1,6 @@
 {
   "name": "TFMG",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "title": "The Factory Must Grow",
   "author": "oobanooba",
   "factorio_version": "2.0",
@@ -14,7 +14,7 @@
     "TFMG-music >= 0.4.0",
     "TFMG-assets-0 >= 0.4.0",
     "TFMG-simulations >= 0.4.0",
-    "TFMG-thermal >= 0.4.5",
+    "TFMG-thermal >= 0.4.7",
     "TFMG-platform-docking >= 0.1.3",
     "spider-launcher>= 2.9.0",
     "?visible-planets >= 1.5.7"

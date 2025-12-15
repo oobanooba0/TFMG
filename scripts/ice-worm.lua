@@ -96,7 +96,9 @@ end
 function ice_worm.check_active_worms()
   local active_worms = storage.worms.active_worms
   for _,active_worm in pairs(active_worms) do
-    if active_worm.worm.valid then 
+    if not active_worm.worm.valid then 
+      active_worm = nil --clear the entry if its borked
+    else 
       local ai_state = active_worm.worm.get_ai_state().type
       if active_worm.order == "find silo" and ai_state == 0 then
         ice_worm.attack_silo(active_worm,_)
@@ -107,7 +109,7 @@ function ice_worm.check_active_worms()
         if ai_state == 0 then --we're done, lets forget about this worm
           ice_worm.forget_worm(_)
         end
-      end
+      end 
     end
   end
 end

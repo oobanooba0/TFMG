@@ -12,7 +12,9 @@ local gameplay = {}
     platform.distance = 0.314159
     storage.platform = platform
 
-  	force.lock_space_location("nauvis")--Locks nauvis lol.
+    if not force.technologies["consider-your-potential"] then
+  	  force.lock_space_location("nauvis")--Locks nauvis lol, only if tech unlocking it isnt researched,incase of respawn.
+    end
     force.lock_space_location("near-void")
   end
 
@@ -74,6 +76,25 @@ function gameplay.softlock_detection()
       }
     end
   end
+end
+
+function gameplay.goto_platform(player)
+  player.teleport({ x = 0, y = 0 }, storage.platform.surface.name)
+  player.enter_space_platform (storage.platform)
+end
+
+function gameplay.on_respawn(event)
+  if not storage.platform.valid then
+    gameplay.create_self()
+    local platform = storage.platform
+    local hub = platform.hub
+    gameplay.give_starting_items()
+    hub.insert({name = "pistol", count = 4294967295, quality = "legendary"}) --consolation prize
+    platform.distance = 0.0002
+    platform.speed = 1
+  end
+  local player = game.players[event.player_index]
+  gameplay.goto_platform(player)
 end
 
 function gameplay.research_finished(event)

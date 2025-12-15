@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.4
+Date: 2025-12-15
+  Changes:
+    - if SELF gets destroyed, the platform is now replaced automatically.
+  Bugfixes:
+    - Fixed deleted/killed worms from occuping their attack slot forever, preventing worm attacks.
+---------------------------------------------------------------------------------------------------
 Version: 0.4.3
 Date: 2025-12-15
   Changes:
