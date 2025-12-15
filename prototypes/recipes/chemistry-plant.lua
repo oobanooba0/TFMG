@@ -229,6 +229,9 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "fused-crystalline-chunk", amount = 2 },
       { type = "fluid", name = "steam", amount = 1000, temperature = 1000, fluidbox_index = 0},
     },
+    surface_conditions = {
+    { property = "pressure", min = 0, max = 0 }
+  },
   },
   {--Steam condensation
     type = "recipe",

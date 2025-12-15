@@ -225,6 +225,9 @@ data:extend({
     results = { 
       { type = "item", name = "exploitation-science-unverified", amount = 1 }
     },
+    surface_conditions = {
+      { property = "pressure", min = 0, max = 0 }
+    },
   },
   {--spidertron frame
     type = "recipe",

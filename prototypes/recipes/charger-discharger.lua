@@ -28,4 +28,10 @@ data:extend({
     allow_decomposition = true,
     allow_productivity = false,
   },
+  surface_conditions = {
+    { property = "pressure", min = 0, max = 0 }
+  },
+  surface_conditions = {
+    { property = "pressure", min = 0, max = 0 }
+  },
 })
