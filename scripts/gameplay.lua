@@ -89,7 +89,7 @@ function gameplay.on_respawn(event)
     local platform = storage.platform
     local hub = platform.hub
     gameplay.give_starting_items()
-    hub.insert({name = "pistol", count = 4294967295, quality = "legendary"}) --consolation prize
+    hub.insert({name = "pistol", count = 2250831, quality = "legendary"}) --consolation prize
     platform.distance = 0.0002
     platform.speed = 1
   end
