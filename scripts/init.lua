@@ -28,13 +28,6 @@
 		storage.worms.active_worms = {} end
 		if not storage.gameplay then
 			storage.gameplay = {} end
-		if not storage.equipment then
-			storage.equipment = {} end
-		if not storage.equipment.burners then
-			storage.equipment.burners = {}
-		end
-		if not storage.equipment.burner_from_k then
-			storage.equipment.burner_from_k = {} end
   end
 
 
@@ -84,14 +77,12 @@
 --256
 --1
 --5
---10
 
   script.on_event(
   	defines.events.on_tick,
   	function(event)
   		story.on_story_tick(event)
   		supercomputer.on_supercomputer_tick()
-			autofuel.on_tick()
   	end
   )
 
@@ -160,10 +151,10 @@ end
   	{filter = "name", name = "proton-decay-thermoelectric-generator", mode = "or"},
   	{filter = "name", name = "cargo-bay", mode = "or"},
 		{filter = "ghost_name", name = "cargo-bay", mode = "or"},
-		--{filter = "name", name = "scout-o-tron", mode = "or"}, --shouldnt be needed
-		--{filter = "name", name = "constructron", mode = "or"},
+		{filter = "name", name = "scout-o-tron", mode = "or"}, --shouldnt be needed
+		{filter = "name", name = "constructron", mode = "or"},
 		{filter = "name", name = "solar-cell", mode = "or"},
-		{filter = "vehicle", mode = "or"},
+		--{filter = "vehicle", mode = "or"},
   }
 
   script.on_event(--machines create machines create machines create machines create machines create.venjent.wav
@@ -238,9 +229,6 @@ end
 
   function handle_build_event(event)
   	local entity = event.entity
-		if entity.grid then
-			autofuel.scan_grid(entity)
-		end
   	if entity.name == "matter-reconstructor" then
   		gameplay.on_vital_building_built(entity)
   	elseif entity.name == "proton-decay-thermoelectric-generator" then
@@ -288,13 +276,6 @@ end
 			gameplay.on_respawn(event)
 		end
 	)
-
---equipment management
-	script.on_event(defines.events.on_equipment_inserted,
-	function(event)
-		autofuel.equipment_inserted(event)
-	end
-)
 
 -- Register vehicle deployment requirements with spider-launcher
 function register_vehicle_requirements()
