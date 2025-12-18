@@ -124,6 +124,7 @@ data:extend({
     subgroup = "energy",
     order = "c[heat]-a[chemical]",
     place_result = "chemical-reactor",
+    place_as_equipment_result = "chemical-reactor-equipment",
     default_import_location = "nauvis",
   },
 ---Discharge-charge
@@ -144,6 +145,7 @@ data:extend({
     subgroup = "energy",
     order = "d[charger]-b[decharge]",
     place_result = "discharger",
+    place_as_equipment_result = "discharger-equipment",
     stack_size = 50,
     default_import_location = "nauvis",
   },

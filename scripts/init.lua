@@ -10,25 +10,31 @@
   end
 
   local function refresh_data_storage()--This should allow new storages to be added without the creation of a new world
-    if storage.players == nil then
+    if not storage.players then
       storage.players = {} end
-    if storage.supercomputer == nil then
+    if not storage.supercomputer then
       storage.supercomputer = {} end
-    if storage.story == nil then
+    if not storage.story then
       storage.story = {} end
-    if storage.story.tech_progress == nil then
+    if not storage.story.tech_progress then
       storage.story.tech_progress = 0 end
-		if storage.story.handlers == nil then
+		if not storage.story.handlers then
 			storage.story.handlers = {} end
-		if storage.worms == nil then
+		if not storage.worms then
 			storage.worms = {} end
-		if storage.worms.recent_launch_count == nil then
+		if not storage.worms.recent_launch_count then
 		storage.worms.recent_launch_count = 0 end
-		if storage.worms.active_worms == nil then
+		if not storage.worms.active_worms then
 		storage.worms.active_worms = {} end
-		if storage.gameplay == nil then
-			storage.gameplay = {}
+		if not storage.gameplay then
+			storage.gameplay = {} end
+		if not storage.equipment then
+			storage.equipment = {} end
+		if not storage.equipment.burners then
+			storage.equipment.burners = {}
 		end
+		if not storage.equipment.burner_from_k then
+			storage.equipment.burner_from_k = {} end
   end
 
 
@@ -78,12 +84,14 @@
 --256
 --1
 --5
+--10
 
   script.on_event(
   	defines.events.on_tick,
   	function(event)
   		story.on_story_tick(event)
   		supercomputer.on_supercomputer_tick()
+			autofuel.on_tick()
   	end
   )
 
@@ -142,9 +150,6 @@ end
 	)
 
 
-
-
-
 --on player action related events
 
   --i crie everytime i redo several hours of work.
@@ -155,9 +160,10 @@ end
   	{filter = "name", name = "proton-decay-thermoelectric-generator", mode = "or"},
   	{filter = "name", name = "cargo-bay", mode = "or"},
 		{filter = "ghost_name", name = "cargo-bay", mode = "or"},
-		{filter = "name", name = "scout-o-tron", mode = "or"},
-		{filter = "name", name = "constructron", mode = "or"},
+		--{filter = "name", name = "scout-o-tron", mode = "or"}, --shouldnt be needed
+		--{filter = "name", name = "constructron", mode = "or"},
 		{filter = "name", name = "solar-cell", mode = "or"},
+		{filter = "vehicle", mode = "or"},
   }
 
   script.on_event(--machines create machines create machines create machines create machines create.venjent.wav
@@ -232,6 +238,9 @@ end
 
   function handle_build_event(event)
   	local entity = event.entity
+		if entity.grid then
+			autofuel.scan_grid(entity)
+		end
   	if entity.name == "matter-reconstructor" then
   		gameplay.on_vital_building_built(entity)
   	elseif entity.name == "proton-decay-thermoelectric-generator" then
@@ -279,6 +288,13 @@ end
 			gameplay.on_respawn(event)
 		end
 	)
+
+--equipment management
+	script.on_event(defines.events.on_equipment_inserted,
+	function(event)
+		autofuel.equipment_inserted(event)
+	end
+)
 
 -- Register vehicle deployment requirements with spider-launcher
 function register_vehicle_requirements()

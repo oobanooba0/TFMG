@@ -6,22 +6,19 @@ data:extend({
     type = "roboport-equipment",
     name = "roboport-1-equipment",
     take_result = "roboport",
-    sprite =
-    {
+    sprite = {
       filename = "__base__/graphics/equipment/personal-roboport-equipment.png",
       width = 128,
       height = 128,
       priority = "medium",
       scale = 0.5
     },
-    shape =
-    {
+    shape = {
       width = 2,
       height = 2,
       type = "full"
     },
-    energy_source =
-    {
+    energy_source = {
       type = "electric",
       buffer_capacity = "16MJ",
       input_flow_limit = "2MW",
@@ -35,8 +32,7 @@ data:extend({
     charge_approach_distance = 2.6,
     robots_shrink_when_entering_and_exiting = true,
 
-    recharging_animation =
-    {
+    recharging_animation = {
       filename = "__base__/graphics/entity/roboport/roboport-recharging.png",
       draw_as_glow = true,
       priority = "high",
@@ -61,18 +57,39 @@ data:extend({
     take_result = "solar-cell",
     performance_at_day = 1,
     performance_at_night = 0.2,--these solar panels work at night so you dont get hardstuck
-    sprite =
-    {
+    sprite = {
       filename = "__base__/graphics/equipment/solar-panel-equipment.png",
       width = 64,
       height = 64,
       priority = "medium",
       scale = 1
     },
-    shape =
-    {
+    shape = {
       width = 3,
       height = 1,
+      type = "full"
+    },
+    energy_source = {
+      type = "electric",
+      usage_priority = "primary-output"
+    },
+    power = "500kW",
+    categories = {"spider"}
+  },
+  {--chemical-reactor-equipment
+    type = "generator-equipment",
+    name = "chemical-reactor-equipment",
+    take_result = "chemical-reactor",
+    sprite = {
+      filename = "__Krastorio2Assets__/icons/entities/gas-power-station.png",
+      width = 64,
+      height = 64,
+      priority = "medium",
+      scale = 2
+    },
+    shape = {
+      width = 4,
+      height = 4,
       type = "full"
     },
     energy_source =
@@ -80,7 +97,55 @@ data:extend({
       type = "electric",
       usage_priority = "primary-output"
     },
-    power = "500kW",
+    burner =
+    {
+      type = "burner",
+      fuel_inventory_size = 1,
+      burnt_inventory_size = 1,
+      effectivity = 0.5,
+      fuel_categories = {"chemical"},
+    },
+    smoke = {{
+      name = "smoke",
+      deviation = { -0.25, -0.25 },
+      frequency = 1,
+      position = { 0, 0.5 },
+      height = 1.25,
+      starting_frame_deviation = 60,
+    }},
+    power = "1.5MW",
+    categories = {"spider"}
+  },
+  {--discharger-equipment
+    type = "generator-equipment",
+    name = "discharger-equipment",
+    take_result = "discharger",
+    sprite = {
+      filename = "__Krastorio2Assets__/icons/entities/tesla-coil.png",
+      width = 64,
+      height = 64,
+      priority = "medium",
+      scale = 2
+    },
+    shape = {
+      width = 3,
+      height = 3,
+      type = "full"
+    },
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "primary-output"
+    },
+    burner =
+    {
+      type = "burner",
+      fuel_inventory_size = 1,
+      burnt_inventory_size = 1,
+      effectivity = 0.75,
+      fuel_categories = {"electric"},
+    },
+    power = "750kW",
     categories = {"spider"}
   },
   {

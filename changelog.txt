@@ -1,6 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.9
 Date: ????
+  Features:
+    - added chemical reactor equipment.
+    - added discharger equipment.
+    - added autorefuel for equipment grid power sources. Fuel is automatically inserted into the equipment, and byproduct automatically is moved to the trunk.
   Changes:
     - Titanium plate and titanium ore smelting merged in factoriopedia
     - changes to fluid sorting in factoriopedia
