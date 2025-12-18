@@ -66,6 +66,7 @@
 	require("prototypes.items.fluids")
 ---inventory items
 	require("prototypes.items.intermediates")
+	require("prototypes.items.military")
 	require("prototypes.items.raw-resources")
 	require("prototypes.items.science")
 	require("prototypes.items.spiders")

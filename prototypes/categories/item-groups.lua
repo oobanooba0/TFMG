@@ -66,6 +66,35 @@ data:extend({
     group = "intermediate-products",
     order = "j"
   },
+  --fluids group
+  {
+    type = "item-subgroup",
+    name = "energy-fluid",
+    group = "fluids",
+    order = "a"
+  },
+  {
+    type = "item-subgroup",
+    name = "raw-fluid",
+    group = "fluids",
+    order = "b"
+  },
+  {
+    type = "item-subgroup",
+    name = "intermediate-fluid",
+    group = "fluids",
+    order = "c"
+  },
+  {
+    type = "item-subgroup",
+    name = "thruster-fluid",
+    group = "fluids",
+    order = "d"
+  },
+
+
+
+
   --debug group
   {
     type = "item-group",

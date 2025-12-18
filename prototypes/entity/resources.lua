@@ -116,7 +116,7 @@ data:extend({
   {--ice geyser
     type = "resource",
     name = "ice-geyser",
-    icon = "__space-age__/graphics/icons/fluid/lithium-brine.png",
+    icon = "__space-age__/graphics/icons/lithium-brine.png",
     flags = {"placeable-neutral"},
     category = "basic-fluid",
     subgroup = "mineable-fluids",

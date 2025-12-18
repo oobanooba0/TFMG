@@ -178,7 +178,7 @@ data:extend({
     {
       {
         type = "unlock-recipe",
-        recipe = "titanium-ore-smelting"
+        recipe = "titanium-plate"
       },
     },
     prerequisites = {"ferric-ore-purification"},

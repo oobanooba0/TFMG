@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.9
+Date: ????
+  Changes:
+    - Titanium plate and titanium ore smelting merged in factoriopedia
+    - changes to fluid sorting in factoriopedia
+    - changed ice geyser icon so that hydrocarbon slush shows up in the icon selector list properly.
+---------------------------------------------------------------------------------------------------
 Version: 0.4.8
 Date: 2025-12-18
   Bugfixes:

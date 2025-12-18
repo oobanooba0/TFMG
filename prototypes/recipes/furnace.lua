@@ -41,7 +41,7 @@ data:extend({
 --titanium recipes
   {
     type = "recipe",
-    name = "titanium-ore-smelting",
+    name = "titanium-plate",
     category = "furnace",
     auto_recycle = false,
     energy_required = 8,
