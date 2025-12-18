@@ -90,7 +90,9 @@ end
 
 function ice_worm.forget_worm(_)
   --game.print("done")
-  storage.worms.active_worms[_] = nil
+  if storage.worms.active_worms[_] then
+    storage.worms.active_worms[_] = nil
+  end
 end
 
 function ice_worm.check_active_worms()
@@ -104,7 +106,7 @@ function ice_worm.check_active_worms()
         ice_worm.attack_silo(active_worm,_)
       elseif active_worm.order == "attack silo" then
         if ai_state == 4 then
-          ice_worm.continue_attack_silo(active_worm)
+          ice_worm.continue_attack_silo(active_worm,_)
         end
         if ai_state == 0 then --we're done, lets forget about this worm
           ice_worm.forget_worm(_)
