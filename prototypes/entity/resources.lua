@@ -4,12 +4,12 @@ local resource_autoplace = require("resource-autoplace")
 
 resource_autoplace.initialize_patch_set("ice-geyser", false, "nauvis")
 
-local function resource(resource_parameters, autoplace_parameters)
+local function resource(resource_parameters, autoplace_parameters, icon)
   return
   {
     type = "resource",
     name = resource_parameters.name,
-    icon = "__TFMG-assets-0__/icons/" .. resource_parameters.name .. ".png",
+    icon = icon or "__TFMG-assets-0__/icons/" .. resource_parameters.name .. ".png",
     flags = {"placeable-neutral"},
     order="a-b-"..resource_parameters.order,
     tree_removal_probability = 0.8,
@@ -79,7 +79,8 @@ data:extend({
     },
     {
       probability_expression = 0
-    }
+    },
+    "__TFMG-assets-0__/icons/ferric-asteroid-chunk.png"
   ),
   {--ferric ore autoplace controls
     type = "autoplace-control",
@@ -102,7 +103,8 @@ data:extend({
     },
     {
       probability_expression = 0
-    }
+    },
+    "__TFMG-assets-0__/icons/items/crystalline-chunk.png"
   ),
   {--mineral ore autoplace controls
     type = "autoplace-control",
