@@ -404,13 +404,8 @@ data:extend({
   {--micro assembly
     type = "technology",
     name = "micro-assembly",
-    icons = {
-      {icon = "__base__/graphics/icons/arrows/down-left-arrow.png", icon_size = 64, shift = {64,-64}},
-      {icon = "__base__/graphics/icons/arrows/down-right-arrow.png", icon_size = 64, shift = {-64,-64}},
-      {icon = "__base__/graphics/icons/arrows/up-left-arrow.png", icon_size = 64, shift = {64,64}},
-      {icon = "__base__/graphics/icons/arrows/up-right-arrow.png", icon_size = 64, shift = {-64,64}},
-      {icon = "__base__/graphics/technology/automation-2.png", icon_size = 256, scale = 1},
-    },
+    icon = "__TFMG-assets-0__/technology/micro-assembly.png",
+    icon_size = 256,
     effects =
     {
       {
@@ -748,13 +743,8 @@ data:extend({
   {--Mineral glass singing
     type = "technology",
     name = "mineral-glass-singing",
-    icons = {
-      {icon = "__base__/graphics/icons/arrows/down-left-arrow.png", icon_size = 64, shift = {64,-64}},
-      {icon = "__base__/graphics/icons/arrows/down-right-arrow.png", icon_size = 64, shift = {-64,-64}},
-      {icon = "__base__/graphics/icons/arrows/up-left-arrow.png", icon_size = 64, shift = {64,64}},
-      {icon = "__base__/graphics/icons/arrows/up-right-arrow.png", icon_size = 64, shift = {-64,64}},
-      {icon = "__Krastorio2Assets__/icons/items/glass.png", icon_size = 64, scale = 2},
-    },
+    icon = "__TFMG-assets-0__/technology/mineral-glass-singing.png",
+    icon_size = 256,
     effects =
     {
       {
@@ -775,13 +765,8 @@ data:extend({
   {--Conductive coil anti winding
     type = "technology",
     name = "conductive-coil-anti-winding",
-    icons = {
-      {icon = "__base__/graphics/icons/arrows/down-left-arrow.png", icon_size = 64, shift = {64,-64}},
-      {icon = "__base__/graphics/icons/arrows/down-right-arrow.png", icon_size = 64, shift = {-64,-64}},
-      {icon = "__base__/graphics/icons/arrows/up-left-arrow.png", icon_size = 64, shift = {64,64}},
-      {icon = "__base__/graphics/icons/arrows/up-right-arrow.png", icon_size = 64, shift = {-64,64}},
-      {icon = "__TFMG-assets-0__/icons/items/conductive-coil.png", icon_size = 64, scale = 2},
-    },
+    icon = "__TFMG-assets-0__/technology/conductive-coil-anti-winding.png",
+    icon_size = 256,
     effects =
     {
       {

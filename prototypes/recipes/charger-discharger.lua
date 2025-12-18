@@ -19,6 +19,8 @@ data:extend({
   {
     type = "recipe",
     name = "excited-crystalline-chunk-red",
+    icon = "__TFMG-assets-0__/icons/recipes/crystal-excitation.png",
+    icon_size = 64,
     category = "charger",
     auto_recycle = false,
     energy_required = 16,
@@ -27,9 +29,6 @@ data:extend({
     results = {{type="item", name="excited-crystalline-chunk-red", amount=1}},
     allow_decomposition = true,
     allow_productivity = false,
-  },
-  surface_conditions = {
-    { property = "pressure", min = 0, max = 0 }
   },
   surface_conditions = {
     { property = "pressure", min = 0, max = 0 }

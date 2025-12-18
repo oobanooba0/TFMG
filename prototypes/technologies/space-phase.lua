@@ -35,10 +35,8 @@ data:extend({
   {--crystal excitation
     type = "technology",
     name = "crystal-excitation",
-    icons = {
-      {icon = "__TFMG-assets-0__/icons/items/excited-crystalline-chunk-red.png",shift = {-64,0}},
-      {icon = "__TFMG-assets-0__/icons/items/excited-crystalline-chunk-blue.png",shift = {64, 0}},
-    },
+    icon = "__TFMG-assets-0__/technology/crystal-excitation.png",
+    icon_size = 256,
     effects =
     {
       {
