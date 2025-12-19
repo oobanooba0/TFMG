@@ -16,7 +16,7 @@
     "TFMG-simulations >= 0.4.0",
     "TFMG-thermal >= 0.4.7",
     "TFMG-platform-docking >= 0.1.3",
-    "autofuel >= 1.0.0",
+    "autofuel >= 1.1.0",
     "spider-launcher>= 2.9.0",
     "?visible-planets >= 1.5.7"
   ],

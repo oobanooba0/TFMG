@@ -1,9 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.10
-Date: ????
+Date: 2025-12-19
   Changes:
     - Long arm inserters are a little faster, so they dont fail to grab stuff
     - Concrete now has a description describing its ability to block crawler spawns.
+    - Autofuel behaviour has been improved
   Bugfixes:
     - And I would walk 5 miles renamed to I would walk 5 miles to be more correct to the song
     - I would walk 5 miles description actually shows up now.
