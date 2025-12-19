@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.10
+Date: ????
+  Changes:
+    - Long arm inserters are a little faster, so they dont fail to grab stuff
+    - Concrete now has a description describing its ability to block crawler spawns.
+  Bugfixes:
+    - And I would walk 5 miles renamed to I would walk 5 miles to be more correct to the song
+    - I would walk 5 miles description actually shows up now.
+    - volatile asteroid chunk locale fixed
+    - Light space platform foundation locale fixed
+
+---------------------------------------------------------------------------------------------------
 Version: 0.4.9
 Date: 2025-12-19
   Features:
