@@ -1,8 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.11
-Date: ????
+Date: 2025-12-22
   Features:
-    - Cargo bays (now called Hub expansions) Can be accessed by inserters. (soon)
+    - Cargo bays (now called Hub expansions) Can be accessed by inserters.
     - Oxygen percentage surface property added. Arrival has 99% oxygen.
   Changes:
     - Chemical reactors now must be built on a planet with oxygen
