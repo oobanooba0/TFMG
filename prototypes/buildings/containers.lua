@@ -23,6 +23,26 @@ local provider_chest_1 = data.raw["logistic-container"]["passive-provider-chest"
 provider_chest_1.inventory_size = chest_1_slots
 
 data:extend({
+  {--cargo bay proxy
+    type = "proxy-container",
+    name = "cargo-bay-proxy",
+    collision_box = {{-1.9, -1.9}, {1.9, 1.9}},
+    hidden = true,
+    hidden_in_factoriopedia = true,
+    --to be removed but it might help with debug.
+    icon = "__Krastorio2Assets__/icons/entities/strongbox.png",
+    picture = {
+      filename = "__Krastorio2Assets__/buildings/strongbox/strongbox.png",
+      priority = "extra-high",
+      width = 340,
+      height = 340,
+      scale = 0.5,
+    },
+  },
+
+
+
+
   {--chest 2
     type = "container",
     name = "chest-2",
