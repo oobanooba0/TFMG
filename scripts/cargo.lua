@@ -8,7 +8,7 @@ local cargo = {}
     --While i could simply count + 1 each time, checking the number of techs each time might be more resistent to shenanigans
     local level = 0
     local techs = game.forces["player"].technologies
-    if techs["hub-expansion"] then level = level + 4 end
+    if techs["hub-expansion"] then level = level + 1 end
     storage.gameplay.hub_expansion_level = level
   end
 
@@ -16,7 +16,7 @@ local cargo = {}
   function cargo.on_bay_built(event)
     local entity = event.entity
     if not entity or not entity.valid then return end
-    local limit = storage.gameplay.hub_expansion_level or 4
+    local limit = storage.gameplay.hub_expansion_level or 0
     local connected_bays = cargo.find_connected_bays(entity)
 
     if table_size(connected_bays) > (limit + 1) then --+1 needed to compensate for hub/landing pad counting
