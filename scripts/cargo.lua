@@ -35,7 +35,7 @@ local cargo = {}
         })
         proxy.destructible = false
         local connected_non_ghosts = cargo.find_connected_bays(entity,nil,true) --find non ghost, connected bays
-        TFMG.block(connected_non_ghosts)
+        --TFMG.block(connected_non_ghosts)
         local hub = cargo.get_hub(connected_non_ghosts)
         if not storage.cargo_bays then storage.cargo_bays = {} end
         storage.cargo_bays[unit_number] = {

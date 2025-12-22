@@ -32,6 +32,7 @@ data:extend({
     collision_mask = {layers = {}},
     draw_inventory_content = false,
     selectable_in_game = false,
+    selection_priority = 49,
     flags = {"not-on-map"},
     hidden = true,
     hidden_in_factoriopedia = true,
