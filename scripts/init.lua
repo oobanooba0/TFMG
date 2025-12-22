@@ -248,6 +248,7 @@ end
   	defines.events.on_object_destroyed,
   	function(event)
   		supercomputer.on_supercomputer_destroyed(event)
+			cargo.on_bay_destroyed(event)
   	end
   )
 

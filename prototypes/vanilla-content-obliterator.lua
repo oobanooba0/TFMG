@@ -173,6 +173,5 @@ local TFMG = require("util.TFMG")
 	data.raw.item["heat-pipe"].flags = {"always-show"}
 
 --Cargobay
-	local cargo_bay = data.raw["cargo-bay"]["cargo-bay"]
 	local cargo_bayitem = data.raw.item["cargo-bay"]
 	cargo_bayitem.weight = TFMG.rocket_capacity(1)

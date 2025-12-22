@@ -26,18 +26,24 @@ data:extend({
   {--cargo bay proxy
     type = "proxy-container",
     name = "cargo-bay-proxy",
-    collision_box = {{-1.9, -1.9}, {1.9, 1.9}},
+    collision_box = {{-1.7, -1.7}, {1.7, 1.7}}, --smaller than the hub by just enough to avoid collisions
+    selection_box = {{-2, -2}, {2, 2}},
+    build_grid_size = 2,
+    collision_mask = {layers = {}},
+    draw_inventory_content = false,
+    selectable_in_game = false,
+    flags = {"not-on-map"},
     hidden = true,
     hidden_in_factoriopedia = true,
     --to be removed but it might help with debug.
-    icon = "__Krastorio2Assets__/icons/entities/strongbox.png",
-    picture = {
-      filename = "__Krastorio2Assets__/buildings/strongbox/strongbox.png",
-      priority = "extra-high",
-      width = 340,
-      height = 340,
-      scale = 0.5,
-    },
+    --icon = "__Krastorio2Assets__/icons/entities/strongbox.png",
+    --picture = {
+    --  filename = "__Krastorio2Assets__/buildings/strongbox/strongbox.png",
+    --  priority = "extra-high",
+    --  width = 340,
+    --  height = 340,
+    --  scale = 0.5,
+    --},
   },
 
 
