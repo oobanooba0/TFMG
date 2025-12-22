@@ -1,9 +1,10 @@
 
 local item_sounds = require("__base__.prototypes.item_sounds")
+local TFMG = require("__TFMG__.util.TFMG")
 
 
 data:extend({
-    {
+  {
     type = "item",
     name = "neural-node",
     icon = "__base__/graphics/icons/lab.png",

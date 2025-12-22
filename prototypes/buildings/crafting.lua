@@ -1,6 +1,7 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 local simulations = require("__base__.prototypes.factoriopedia-simulations")
+local TFMG = require("__TFMG__.util.TFMG")
 --vanilla building updates.
   local mining_drill = data.raw["mining-drill"]["electric-mining-drill"]
   mining_drill.mining_speed = 1
@@ -354,13 +355,7 @@ data:extend({
       max_working_temperature = 1024,
       max_safe_temperature = 1337,
       heat_ratio = 0.01,
-      surface_conditions = {
-        {
-        property = "pressure",
-        min = 0,
-        max = 0,
-        }
-      },
+      surface_conditions = TFMG.conditions.space,
       connections = {
         { position = {-0.5, -0.5}, direction = 0},
         { position = {0.5, -0.5}, direction = 4},
@@ -463,13 +458,7 @@ data:extend({
       max_working_temperature = 250,
       max_safe_temperature = 350,
       heat_ratio = 0.5,
-      surface_conditions = {
-        {
-        property = "pressure",
-        min = 0,
-        max = 0,
-        }
-      },
+      surface_conditions = TFMG.conditions.space,
       connections = {
         { position = {0, -1}, direction = 0},
         { position = {1, 0}, direction = 4},
@@ -644,13 +633,7 @@ data:extend({
       max_working_temperature = 400,
       max_safe_temperature = 500,
       heat_ratio = 0.8,
-      surface_conditions = {
-        {
-        property = "pressure",
-        min = 0,
-        max = 0,
-        }
-      },
+      surface_conditions = TFMG.conditions.space,
       connections = {--totally pointless, as this is the default connection set in TFMG_thermal, but it feels wrong not to define it explicitly
         { position = {1, -1}, direction = 0},
         { position = {-1, -1}, direction = 0},
@@ -1056,13 +1039,7 @@ data:extend({
       max_working_temperature = 320,
       max_safe_temperature = 355,
       heat_ratio = 0.45,
-      surface_conditions = {
-        {
-        property = "pressure",
-        min = 0,
-        max = 0,
-        }
-      },
+      surface_conditions = TFMG.conditions.space,
       connections = {--totally pointless, as this is the default connection set in TFMG_thermal, but it feels wrong not to define it explicitly
         { position = {1, 1}, direction = 4},
         { position = {1, -1}, direction = 4},
@@ -1293,13 +1270,7 @@ data:extend({
       max_working_temperature = 400,
       max_safe_temperature = 450,
       heat_ratio = 0.7,
-      surface_conditions = {
-        {
-        property = "pressure",
-        min = 0,
-        max = 0,
-        }
-      },
+      surface_conditions = TFMG.conditions.space,
       connections = {
         { position = {-1, -2}, direction = 0},
         { position = {1, -2}, direction = 0},
@@ -1496,13 +1467,7 @@ data:extend({
       max_working_temperature = 250,
       max_safe_temperature = 350,
       heat_ratio = 0.5,
-      surface_conditions = {
-        {
-        property = "pressure",
-        min = 0,
-        max = 0,
-        }
-      },
+      surface_conditions = TFMG.conditions.space,
       connections = {
         { position = {0, -0.5}, direction = 0},
         { position = {0, -0.5}, direction = 4},
@@ -1575,13 +1540,7 @@ data:extend({
       max_working_temperature = 300,
       max_safe_temperature = 450,
       heat_ratio = 0.7,
-      surface_conditions = {
-        {
-        property = "pressure",
-        min = 0,
-        max = 0,
-        }
-      },
+      surface_conditions = TFMG.conditions.space,
       connections = {
         { position = {0.5, 1}, direction = 4},
         { position = {0.5, -1}, direction = 4},

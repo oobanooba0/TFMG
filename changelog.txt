@@ -1,7 +1,17 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.11
 Date: ????
+  Features:
+    - Cargo bays (now called Hub expansions) Can be accessed by inserters. (soon)
+    - Oxygen percentage surface property added. Arrival has 99% oxygen.
   Changes:
+    - Chemical reactors now must be built on a planet with oxygen
+    - Constructrons and spidertrons cannot be built in space.
+    - Some stack sizes changed, Mostly very large/expensive buildings have smaller stack sizes, and smaller, cheaper buildings now have larger stack sizes.
+    - Some rocket capacities changed.
+    - Proton decay generator can be launched via rocket
+    - Matter reassembler can be launched via rocket
+    - Spiders can be launched via rocket
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.10
 Date: 2025-12-19

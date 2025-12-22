@@ -1,5 +1,6 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
+local TFMG = require("__TFMG__.util.TFMG")
 
 ---Heat interface connections, again
   --connected
@@ -1092,6 +1093,7 @@ data:extend({
     minable = {mining_time = 0.5, result = "chemical-reactor"},
     max_health = 500,
     corpse = "nuclear-reactor-remnants",
+    surface_conditions = TFMG.conditions.oxygen,
     dying_explosion = "nuclear-reactor-explosion",
     {
       {

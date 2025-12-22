@@ -1,4 +1,5 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
+local TFMG = require("__TFMG__.util.TFMG")
 
 data:extend({
   {
@@ -12,7 +13,7 @@ data:extend({
     drop_sound = item_sounds.metal_small_inventory_move,
     place_result = "pipe-2",
     stack_size = 100,
-    weight = 5 * kg,
+    weight = TFMG.rocket_capacity(200),
     random_tint_color = item_tints.iron_rust
   },
   {
@@ -26,6 +27,7 @@ data:extend({
     drop_sound = item_sounds.metal_small_inventory_move,
     place_result = "pipe-to-ground-2",
     stack_size = 50,
+    weight = TFMG.rocket_capacity(50),
     random_tint_color = item_tints.iron_rust
   },
 })

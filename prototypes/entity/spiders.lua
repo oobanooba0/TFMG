@@ -1,6 +1,7 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 local movement_triggers = require("__base__.prototypes.entity.movement-triggers")
+local TFMG = require("__TFMG__.util.TFMG")
 
 ---scout o tron
   function create_scout_o_tron(arguments)
@@ -36,6 +37,7 @@ local movement_triggers = require("__base__.prototypes.entity.movement-triggers"
           offset = 0.93333333333
         }
       },
+      surface_conditions = TFMG.conditions.not_space,
       weight = 1,
       braking_force = 1,
       friction_force = 1,
@@ -190,6 +192,7 @@ local movement_triggers = require("__base__.prototypes.entity.movement-triggers"
         braking_force = 1,
         friction_force = 1,
         flags = {"placeable-neutral", "player-creation", "placeable-off-grid"},
+        surface_conditions = TFMG.conditions.not_space,
         minable = {mining_time = 1, result = arguments.name},
         max_health = 1000,
         resistances = util.table.deepcopy(constructron_resistances),
@@ -336,10 +339,10 @@ local movement_triggers = require("__base__.prototypes.entity.movement-triggers"
     }
   end
   create_constructron{
-      name = "constructron",
-      scale = 1.3,
-      leg_scale = 0.9, -- relative to scale
-      leg_thickness = 1.5, -- relative to leg_scale
-      leg_movement_speed = 1,
-      body_height = 1,
-    } 
+    name = "constructron",
+    scale = 1.3,
+    leg_scale = 0.9, -- relative to scale
+    leg_thickness = 1.5, -- relative to leg_scale
+    leg_movement_speed = 1,
+    body_height = 1,
+  } 

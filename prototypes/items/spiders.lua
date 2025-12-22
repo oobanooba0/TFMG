@@ -1,5 +1,6 @@
 
 local item_sounds = require("__base__.prototypes.item_sounds")
+local TFMG = require("__TFMG__.util.TFMG")
 
 data:extend({
   {--Scout'o'tron
@@ -14,7 +15,7 @@ data:extend({
     pick_sound = item_sounds.spidertron_inventory_pickup,
     drop_sound = item_sounds.spidertron_inventory_move,
     place_result = "scout-o-tron",
-    weight = 100 * tons,
+    weight = TFMG.rocket_capacity(1),
     stack_size = 1,
     default_import_location = "nauvis",
   },
@@ -30,7 +31,7 @@ data:extend({
     pick_sound = item_sounds.spidertron_inventory_pickup,
     drop_sound = item_sounds.spidertron_inventory_move,
     place_result = "constructron",
-    weight = 100 * tons,
+    weight = TFMG.rocket_capacity(1),
     stack_size = 1,
     default_import_location = "nauvis",
   },

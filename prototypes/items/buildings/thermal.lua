@@ -1,4 +1,5 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
+local TFMG = require("__TFMG__.util.TFMG")
 
 --small radiator
   local small_radiator = data.raw.item["small-radiator"]
@@ -24,6 +25,7 @@ data:extend({
     drop_sound = item_sounds.mechanical_inventory_move,
     place_result = "heat-monitor",
     stack_size = 50,
+    weight = TFMG.rocket_capacity(50),
     default_import_location = "nauvis",
   },
 })

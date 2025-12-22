@@ -5,10 +5,15 @@ local procession_graphic_catalogue_types = require("__base__/prototypes/planet/p
 local arrival_distance = 70
 local arrival_orientation = 0.275
 data:extend({--surface properties
-    {
+  {
     type = "surface-property",
     name = "spacetime-flow-viscosity",
     default_value = 1
+  },
+  {
+    type = "surface-property",
+    name = "oxygen",
+    default_value = 0
   },
 --planets
   {
@@ -38,6 +43,7 @@ data:extend({--surface properties
       ["solar-power"] = 10,
       pressure = 135,
       gravity = 1.35,
+      oxygen = 99,
     },
     surface_render_parameters =
     {

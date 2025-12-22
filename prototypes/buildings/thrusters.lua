@@ -1,3 +1,4 @@
+local TFMG = require("__TFMG__.util.TFMG")
 --vanilla thruster changes.
 local thruster = data.raw["thruster"]["thruster"]
   thruster.TFMG_thermal = {

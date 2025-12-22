@@ -1,5 +1,6 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
+local TFMG = require("__TFMG__.util.TFMG")
 
 ---Heat interface connections
 --connected
@@ -72,7 +73,7 @@ local small_radiator = data.raw["assembling-machine"]["small-radiator"]
   small_radiator.hidden = false
   small_radiator.energy_source.specific_heat = "250kJ"
   small_radiator.energy_usage = "2MW"
-  small_radiator.surface_conditions ={{property = "gravity",min = 0,max = 0}}
+  small_radiator.surface_conditions = TFMG.conditions.space
 --ground radiator
 local ground_radiator = data.raw["assembling-machine"]["ground-radiator"]
   ground_radiator.hidden = false

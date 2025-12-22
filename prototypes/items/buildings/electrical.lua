@@ -1,4 +1,5 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
+local TFMG = require("__TFMG__.util.TFMG")
 data:extend({
 ---energy monitor
   {
@@ -58,7 +59,7 @@ data:extend({
 
 
 ---generators
-      {--proton decay thermoelectric generator
+    {--proton decay thermoelectric generator
     type = "item",
     name = "proton-decay-thermoelectric-generator",
     icon = "__Krastorio2Assets__/icons/entities/matter-plant.png",
@@ -68,8 +69,9 @@ data:extend({
     pick_sound = item_sounds.reactor_inventory_pickup,
     drop_sound = item_sounds.reactor_inventory_move,
     place_result = "proton-decay-thermoelectric-generator",
-    weight = 1000 * tons,
+    weight = TFMG.rocket_capacity(1),
     stack_size = 1,
+    
     flags = {"always-show"},
     default_import_location = "nauvis",
   },
@@ -85,6 +87,7 @@ data:extend({
     drop_sound = item_sounds.electric_large_inventory_move,
     place_result = "solar-cell",
     stack_size = 50,
+    weight = TFMG.rocket_capacity(25),
     default_import_location = "nauvis",
   },
   {
@@ -97,7 +100,8 @@ data:extend({
     pick_sound = item_sounds.steam_inventory_pickup,
     drop_sound = item_sounds.steam_inventory_move,
     place_result = "small-turbine",
-    stack_size = 10,
+    stack_size = 25,
+    weight = TFMG.rocket_capacity(10),
     random_tint_color = item_tints.iron_rust,
     default_import_location = "nauvis",
   },
@@ -111,8 +115,8 @@ data:extend({
     pick_sound = item_sounds.steam_inventory_pickup,
     drop_sound = item_sounds.steam_inventory_move,
     place_result = "small-heat-exchanger",
-    stack_size = 50,
-    weight = 40*kg,
+    stack_size = 25,
+    weight = TFMG.rocket_capacity(10),
     random_tint_color = item_tints.iron_rust,
     default_import_location = "nauvis",
   },
@@ -121,6 +125,7 @@ data:extend({
     name = "chemical-reactor",
     icon = "__Krastorio2Assets__/icons/entities/gas-power-station.png",
     stack_size = 10,
+    weight = TFMG.rocket_capacity(5),
     subgroup = "energy",
     order = "c[heat]-a[chemical]",
     place_result = "chemical-reactor",
@@ -136,6 +141,7 @@ data:extend({
     order = "d[charger]-a[recharge]",
     place_result = "charger",
     stack_size = 50,
+    weight = TFMG.rocket_capacity(25),
     default_import_location = "nauvis",
   },
   {
@@ -146,7 +152,8 @@ data:extend({
     order = "d[charger]-b[decharge]",
     place_result = "discharger",
     place_as_equipment_result = "discharger-equipment",
-    stack_size = 50,
+    stack_size = 25,
+    weight = TFMG.rocket_capacity(5),
     default_import_location = "nauvis",
   },
 })

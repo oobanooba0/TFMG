@@ -1,4 +1,5 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
+local TFMG = require("__TFMG__.util.TFMG")
 
 data:extend({
   {--matter reconstructor
@@ -11,8 +12,9 @@ data:extend({
     pick_sound = item_sounds.mechanical_inventory_pickup,
     drop_sound = item_sounds.mechanical_inventory_move,
     place_result = "matter-reconstructor",
-    stack_size = 50,
+    stack_size = 1,
     flags = {"always-show"},
+    weight = TFMG.rocket_capacity(1),
     default_import_location = "nauvis",
   },
   {-- assembling machine
@@ -26,7 +28,7 @@ data:extend({
     drop_sound = item_sounds.mechanical_inventory_move,
     place_result = "assembling-machine",
     stack_size = 50,
-    weight = 40*kg,
+    weight = TFMG.rocket_capacity(25),
     default_import_location = "nauvis",
   },
   {-- furnace
@@ -40,7 +42,7 @@ data:extend({
     drop_sound = item_sounds.electric_large_inventory_move,
     place_result = "furnace",
     stack_size = 50,
-    weight = 20*kg,
+    weight = TFMG.rocket_capacity(25),
     default_import_location = "nauvis",
   },
   {--supercomputer
@@ -53,7 +55,8 @@ data:extend({
     pick_sound = item_sounds.mechanical_inventory_pickup,
     drop_sound = item_sounds.mechanical_inventory_move,
     place_result = "supercomputer",
-    stack_size = 50,
+    stack_size = 20,
+    weight = TFMG.rocket_capacity(1),
     default_import_location = "nauvis",
   },
   {--supercomputer input
@@ -88,7 +91,8 @@ data:extend({
     pick_sound = item_sounds.fluid_inventory_pickup,
     drop_sound = item_sounds.fluid_inventory_move,
     place_result = "chemistry-plant",
-    stack_size = 10,
+    stack_size = 20,
+    weight = TFMG.rocket_capacity(10),
     default_import_location = "nauvis",
   },
   {-- refinery
@@ -101,7 +105,8 @@ data:extend({
     pick_sound = item_sounds.fluid_inventory_pickup,
     drop_sound = item_sounds.fluid_inventory_move,
     place_result = "refinery",
-    stack_size = 10,
+    stack_size = 20,
+    weight = TFMG.rocket_capacity(10),
     default_import_location = "nauvis",
   },
   {-- micro assembler
@@ -115,7 +120,7 @@ data:extend({
     drop_sound = item_sounds.mechanical_inventory_move,
     place_result = "micro-assembler",
     stack_size = 50,
-    weight = 40*kg,
+    weight = TFMG.rocket_capacity(25),
     default_import_location = "nauvis",
   },
   {--small crusher
@@ -129,7 +134,7 @@ data:extend({
     drop_sound = item_sounds.drill_inventory_move,
     place_result = "small-crusher",
     stack_size = 10,
-    weight = 100*kg,
+    weight = TFMG.rocket_capacity(25),
     default_import_location = "nauvis",
   },
 })
