@@ -104,3 +104,7 @@
 	require("prototypes.technologies.arrival-phase")
 	require("prototypes.technologies.space-phase")
 	require("prototypes.technologies.extra")
+
+--compat optional mods
+	require("compat.pushbutton.technology")
+	require("compat.pushbutton.recipe")
