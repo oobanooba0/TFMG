@@ -13,6 +13,7 @@ data:extend({
     enabled = false,
     allow_decomposition = false,
     allow_productivity = true,
+    hide_from_signal_gui = false,
     ingredients = {
       {type = "item", name = "ferric-asteroid-chunk", amount = 2}
     },
@@ -35,6 +36,7 @@ data:extend({
     enabled = false,
     allow_decomposition = false,
     allow_productivity = true,
+    hide_from_signal_gui = false,
     ingredients = {
       {type = "item", name = "crystalline-asteroid-chunk", amount = 2}
     },

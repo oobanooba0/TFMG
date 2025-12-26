@@ -3,8 +3,9 @@ Version: 0.4.12
 Date: ????
   Features:
     - Pushbutton mod compatibility by DerFailer merged
-  Changes:
+  Bugfixes:
     - A whole host of spelling, grammer, and punctuation fixes by petrak merged.
+    - Crystalline crushing appears in the circuit signal selector now.
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.11
 Date: 2025-12-22
