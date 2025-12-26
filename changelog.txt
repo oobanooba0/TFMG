@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.12
+Date: ????
+  Features:
+    - Pushbutton mod compatibility by DerFailer merged
+  Changes:
+    - A whole host of spelling, grammer, and punctuation fixes by petrak merged.
+---------------------------------------------------------------------------------------------------
 Version: 0.4.11
 Date: 2025-12-22
   Features:
