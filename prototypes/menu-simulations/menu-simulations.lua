@@ -21,7 +21,7 @@ local make_simulation = function(duration, planet, filename, zoom, volume, scrip
     init =
     [[
       local sim_planet = game.surfaces["]] .. planet .. [["]
-      local logo = sim_planet.find_entities_filtered{name = "factorio-logo-11tiles", limit = 1}[1]
+      local logo = sim_planet.find_entities_filtered{name = "TFMG-logo-11-tiles", limit = 1}[1]
       logo.destructible = false
       local center = {logo.position.x, logo.position.y+]]..9.75/zoom..[[}
       game.simulation.camera_surface_index = sim_planet.index
@@ -51,8 +51,8 @@ local timeline_tools =
 --note that the leading part is handle
 --seconds, surface, file, zoom, volume, script
 
-menu_sims.platform_1 = make_simulation(30, "platform-1", "platform-1.zip", 0.7, 0.7, [[]])
-menu_sims.arrival_1 = make_simulation(30, "nauvis", "arrival-1.zip", 0.7, 0.7, [[]])
-menu_sims.arrival_2 = make_simulation(45, "nauvis", "arrival-2.zip", 0.7, 0.7, [[]])
-menu_sims.arrival_3 = make_simulation(30, "nauvis", "arrival-3.zip", 0.7, 0.7, [[]])
-menu_sims.arrival_4 = make_simulation(30, "nauvis", "arrival-4.zip", 0.7, 0.7, [[]])
+menu_sims.platform_1 = make_simulation(30, "platform-1", "platform-1.zip", 1, 0.7, [[]])
+menu_sims.arrival_1 = make_simulation(30, "nauvis", "arrival-1.zip", 1, 0.7, [[]])
+menu_sims.arrival_2 = make_simulation(45, "nauvis", "arrival-2.zip", 1, 0.7, [[]])
+menu_sims.arrival_3 = make_simulation(30, "nauvis", "arrival-3.zip", 1, 0.7, [[]])
+menu_sims.arrival_4 = make_simulation(30, "nauvis", "arrival-4.zip", 1, 0.7, [[]])

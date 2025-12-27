@@ -156,4 +156,99 @@ data:extend({
     circuit_wire_max_distance = reactor_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["chest"],
   },
+  {--TFMG logo (a radiator)
+    type = "assembling-machine",
+    name = "TFMG-logo-11-tiles",
+    icon = "__TFMG-thermal__/graphics/radiator-ground/radiator-ground-icon.png",
+    hidden = true,
+    flags = {"placeable-neutral","player-creation"},
+    minable = {mining_time = 0.2, result = "TFMG-logo-11-tiles"},
+    max_health = 3,
+    circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["assembling-machine"],
+    collision_box = {{-5.5, -1}, {5.5, 1}},
+    selection_box = {{-5.5, -1}, {5.5, 1}},
+    collision_mask = {layers = {}},
+    open_sound = sounds.machine_open,
+    close_sound = sounds.machine_close,
+    impact_category = "metal",
+    working_sound =
+    {
+      sound = {filename = "__base__/sound/nuclear-reactor-1.ogg", volume = 0.45, audible_distance_modifier = 0.5},
+      fade_in_ticks = 4,
+      fade_out_ticks = 20
+    },
+    damaged_trigger_effect = hit_effects.entity(),
+    graphics_set =
+    {
+      animation =
+      {
+        layers =
+        {
+          {
+            filename = "__TFMG-assets-0__/entity/TFMG-logo/colour.png",
+            priority = "high",
+            line_length = 1,
+            frame_count = 1,
+            animation_speed = 0.25,
+            width = 832,
+            height = 256,
+            scale = 0.5
+          },
+        }
+      },
+      working_visualisations = {{
+        fadeout = true,
+        effect = "uranium-glow",
+        light = {intensity = 2, size = 50, shift = {0, 0}, color = {0.3, 1, 0}},
+        animation = {
+          filename = "__TFMG-assets-0__/entity/TFMG-logo/glow.png",
+          priority = "high",
+          width = 832,
+          height = 256,
+          scale = 0.5,
+          blend_mode = "additive",
+        },
+      }},
+    },
+    crafting_categories = {"radiator"},
+    fixed_recipe = "TFMG-heat-radiation",
+    crafting_speed = 256,
+    energy_usage = "1W",
+    energy_source =
+    {
+      type = "heat",
+      max_temperature = 1000,
+      min_working_temperature = 15,
+      default_temperature = 15,
+      specific_heat = "1MJ",
+      max_transfer = "1GW",
+      connections =
+      {--north connection is not real and cannot hurt me.
+        { position = {4, -0.5}, direction = defines.direction.north},
+        { position = {2, -0.5}, direction = defines.direction.north},
+        { position = {0, -0.5}, direction = defines.direction.north},
+        { position = {-2, -0.5}, direction = defines.direction.north},
+        { position = {-4, -0.5}, direction = defines.direction.north},
+        { position = {4, 0.5}, direction = defines.direction.south},
+        { position = {2, 0.5}, direction = defines.direction.south},
+        { position = {0, 0.5}, direction = defines.direction.south},
+        { position = {-2, 0.5}, direction = defines.direction.south},
+        { position = {-4, 0.5}, direction = defines.direction.south},
+      },
+      heat_picture = {
+        layers = {
+          {
+            filename = "__TFMG-assets-0__/entity/TFMG-logo/heat-glow.png",
+            priority = "high",
+            width = 832,
+            height = 256,
+            scale = 0.5,
+            draw_as_glow = true,
+            blend_mode = "additive-soft",
+          },
+        }
+      }
+    }
+  }
 })
