@@ -132,5 +132,15 @@ data:extend({
     icon = "__base__/graphics/achievement/steam-all-the-way.png",
     icon_size = 128,
   },
+  {--spiders georg
+    type = "produce-achievement",
+    name = "spiders-georg",
+    order = "c[other]-b[secret]-a",
+    item_product = "TFMG-logo-11-tiles",
+    amount = 1,
+    limited_to_one_game = false,
+    icon = "__base__/graphics/achievement/arachnophilia.png",
+    icon_size = 128,
+  },
 })
 

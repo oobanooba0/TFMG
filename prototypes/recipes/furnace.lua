@@ -122,4 +122,18 @@ data:extend({
       min = 0.01,
     }}
   },
+  {--small radiator
+    type = "recipe",
+    category = "furnace",
+    name = "TFMG-logo-11-tiles",
+    energy_required = 60,
+    enabled = true,
+    hidden = true,
+    ingredients = {
+      { type = "item", name = "constructron", amount = 256 },
+    },
+    results = { 
+      { type = "item", name = "TFMG-logo-11-tiles", amount = 1 }
+    },
+  },
 })
