@@ -10,7 +10,7 @@ function ice_worm.rocket_launched(event)
   local max_size = 1
   if active_worm_count < max_worm_count then --if we have more slots open than worms, we can send another
     local sent_worm = ice_worm.find_close_worm(silo,max_size)
-    if not storage.story.handlers.rocket_launched then
+    if not storage.story.handlers.rocket_launched and sent_worm then
       story.worm_warning(sent_worm,silo)
       storage.story.handlers.rocket_launched = true
     end

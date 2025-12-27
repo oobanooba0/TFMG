@@ -175,3 +175,13 @@ local TFMG = require("util.TFMG")
 --Cargobay
 	local cargo_bayitem = data.raw.item["cargo-bay"]
 	cargo_bayitem.weight = TFMG.rocket_capacity(1)
+
+	--local logo = data.raw.container["factorio-logo-11tiles"]
+	--logo.picture = {
+  --  filename = "__TFMG__/test.png",
+  --  priority = "very-low",
+  --  width = 832,
+  --  height = 256,
+  --  shift = util.by_pixel(0, 0),
+  --  scale = 1
+  --}
