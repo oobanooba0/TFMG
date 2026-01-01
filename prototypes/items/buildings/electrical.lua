@@ -37,7 +37,7 @@ data:extend({
   },
   {
     type = "item",
-    name = "solar-cell",
+    name = "solar-panel",
     icon = "__base__/graphics/icons/solar-panel.png",
     place_as_equipment_result = "solar-cell-equipment",
     subgroup = "energy",
@@ -45,7 +45,7 @@ data:extend({
     inventory_move_sound = item_sounds.electric_large_inventory_move,
     pick_sound = item_sounds.electric_large_inventory_pickup,
     drop_sound = item_sounds.electric_large_inventory_move,
-    place_result = "solar-cell",
+    place_result = "solar-panel",
     stack_size = 50,
     weight = TFMG.rocket_capacity(25),
     default_import_location = "nauvis",

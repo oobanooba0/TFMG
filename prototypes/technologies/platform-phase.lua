@@ -390,7 +390,7 @@ data:extend({
     {
       {
         type = "unlock-recipe",
-        recipe = "solar-cell"
+        recipe = "solar-panel"
       },
     },
     prerequisites = {"introspection-science-pack"},

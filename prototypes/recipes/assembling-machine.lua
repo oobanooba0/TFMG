@@ -1217,10 +1217,10 @@ data:extend({
       { type = "item", name = "programmable-speaker", amount = 1 }
     },
   },
-  {--solar cell
+  {--solar panel
     type = "recipe",
     category = "assembling-machine",
-    name = "solar-cell",
+    name = "solar-panel",
     energy_required = 8,
     enabled = false,
     ingredients = {
@@ -1229,7 +1229,7 @@ data:extend({
       { type = "item", name = "crystalline-plate", amount = 2 },
     },
     results = { 
-      { type = "item", name = "solar-cell", amount = 1 }
+      { type = "item", name = "solar-panel", amount = 1 }
     },
   },
   {--laser turret cell

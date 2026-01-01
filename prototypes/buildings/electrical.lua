@@ -388,12 +388,12 @@ data:extend({
     close_sound = { filename = "__Krastorio2Assets__/sounds/buildings/close.ogg", volume = 1 },
     impact_category = "metal",
   },
-  {--solar cell
+  {--solar panel
     type = "solar-panel",
-    name = "solar-cell",
+    name = "solar-panel",
     icon = "__base__/graphics/icons/solar-panel.png",
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 0.1, result = "solar-cell"},
+    minable = {mining_time = 0.1, result = "solar-panel"},
     max_health = 200,
     corpse = "solar-panel-remnants",
     dying_explosion = "solar-panel-explosion",

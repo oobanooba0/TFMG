@@ -54,7 +54,7 @@ data:extend({
   {--solar cell 1
     type = "solar-panel-equipment",
     name = "solar-cell-equipment",
-    take_result = "solar-cell",
+    take_result = "solar-panel",
     performance_at_day = 1,
     performance_at_night = 0.2,--these solar panels work at night so you dont get hardstuck
     sprite = {

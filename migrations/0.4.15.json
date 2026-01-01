@@ -2,16 +2,19 @@
   "recipe" : [
     ["tiny-electric-pylon", "small-electric-pole"],
     ["small-electric-pylon", "medium-electric-pole"],
-    ["large-electric-pylon", "big-electric-pole"]
+    ["large-electric-pylon", "big-electric-pole"],
+    ["solar-cell", "solar-panel"]
   ],
   "item" : [
     ["tiny-electric-pylon", "small-electric-pole"],
     ["small-electric-pylon", "medium-electric-pole"],
-    ["large-electric-pylon", "big-electric-pole"]
+    ["large-electric-pylon", "big-electric-pole"],
+    ["solar-cell", "solar-panel"]
   ],
   "entity" : [
     ["tiny-electric-pylon", "small-electric-pole"],
     ["small-electric-pylon", "medium-electric-pole"],
-    ["large-electric-pylon", "big-electric-pole"]
+    ["large-electric-pylon", "big-electric-pole"],
+    ["solar-cell", "solar-panel"]
   ]
 }
