@@ -118,6 +118,17 @@ function energy_monitor_discharge()
   }
 end
 
+
+--medium pole
+  local medium_pole = data.raw["electric-pole"]["medium-electric-pole"]
+  medium_pole.maximum_wire_distance = 13
+  medium_pole.supply_area_distance = 6.5
+
+--big pole
+  local big_pole = data.raw["electric-pole"]["big-electric-pole"]
+  big_pole.maximum_wire_distance = 64
+  big_pole.supply_area_distance = 2
+
 data:extend({
   {--energy monitor
     type = "accumulator",
@@ -195,11 +206,11 @@ data:extend({
   },
   {--tiny electric pole
     type = "electric-pole",
-    name = "tiny-electric-pylon",
+    name = "small-electric-pole",
     icon = "__base__/graphics/icons/medium-electric-pole.png",
     quality_indicator_scale = 0.75,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 0.1, result = "tiny-electric-pylon"},
+    minable = {mining_time = 0.1, result = "small-electric-pole"},
     max_health = 100,
     corpse = "medium-electric-pole-remnants",
     dying_explosion = "medium-electric-pole-explosion",
@@ -323,274 +334,6 @@ data:extend({
       },
       rotate = false,
       orientation_to_variation = true
-    }
-  },
-  {--small electric pole
-    type = "electric-pole",
-    name = "small-electric-pylon",
-    icon = "__base__/graphics/icons/small-electric-pole.png",
-    quality_indicator_scale = 0.75,
-    flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 0.1, result = "small-electric-pylon"},
-    max_health = 100,
-    corpse = "medium-electric-pole-remnants",
-    dying_explosion = "medium-electric-pole-explosion",
-    fast_replaceable_group = "electric-pole",
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 100
-      }
-    },
-    collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
-    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-    damaged_trigger_effect = hit_effects.entity({{-0.2, -2.2},{0.2, 0.2}}),
-    drawing_box_vertical_extension = 2.3,
-    maximum_wire_distance = 13,
-    supply_area_distance = 6.5,
-    impact_category = "metal",
-    open_sound = sounds.electric_network_open,
-    close_sound = sounds.electric_network_close,
-    pictures =
-    {
-      layers =
-      {
-        {
-          filename = "__base__/graphics/entity/medium-electric-pole/medium-electric-pole.png",
-          priority = "extra-high",
-          width = 84,
-          height = 252,
-          direction_count = 4,
-          shift = util.by_pixel(3.5, -44),
-          scale = 0.5
-        },
-        {
-          filename = "__base__/graphics/entity/medium-electric-pole/medium-electric-pole-shadow.png",
-          priority = "extra-high",
-          width = 280,
-          height = 64,
-          direction_count = 4,
-          shift = util.by_pixel(56.5, -1),
-          draw_as_shadow = true,
-          scale = 0.5
-        }
-      }
-    },
-    connection_points =
-    {
-      {
-        shadow =
-        {
-          copper = util.by_pixel_hr(229, -13),
-          red = util.by_pixel_hr(246, -2),
-          green = util.by_pixel_hr(201, -2)
-        },
-        wire =
-        {
-          copper = util.by_pixel_hr(15, -199),
-          red = util.by_pixel_hr(43, -179),
-          green = util.by_pixel_hr(-15, -185)
-        }
-      },
-      {
-        shadow =
-        {
-          copper = util.by_pixel_hr(229, -13),
-          red = util.by_pixel_hr(230, 10),
-          green = util.by_pixel_hr(196, -23)
-        },
-        wire =
-        {
-          copper = util.by_pixel_hr(15, -199),
-          red = util.by_pixel_hr(27, -167),
-          green = util.by_pixel_hr(-9, -200)
-        }
-      },
-      {
-        shadow =
-        {
-          copper = util.by_pixel_hr(229, -13),
-          red = util.by_pixel_hr(208, 12),
-          green = util.by_pixel_hr(217, -30)
-        },
-        wire =
-        {
-          copper = util.by_pixel_hr(15, -199),
-          red = util.by_pixel_hr(5, -166),
-          green = util.by_pixel_hr(13, -206)
-        }
-      },
-      {
-        shadow =
-        {
-          copper = util.by_pixel_hr(229, -13),
-          red = util.by_pixel_hr(195, 1),
-          green = util.by_pixel_hr(238, -23)
-        },
-        wire =
-        {
-          copper = util.by_pixel_hr(15, -199),
-          red = util.by_pixel_hr(-12, -175),
-          green = util.by_pixel_hr(36, -199)
-        }
-      }
-    },
-    radius_visualisation_picture =
-    {
-      filename = "__base__/graphics/entity/small-electric-pole/electric-pole-radius-visualization.png",
-      width = 12,
-      height = 12,
-      priority = "extra-high-no-scale"
-    },
-    water_reflection =
-    {
-      pictures =
-      {
-        filename = "__base__/graphics/entity/medium-electric-pole/medium-electric-pole-reflection.png",
-        priority = "extra-high",
-        width = 12,
-        height = 28,
-        shift = util.by_pixel(0, 55),
-        variation_count = 1,
-        scale = 5
-      },
-      rotate = false,
-      orientation_to_variation = false
-    }
-  },
-  {--large electric pylon
-    type = "electric-pole",
-    name = "large-electric-pylon",
-    icon = "__base__/graphics/icons/big-electric-pole.png",
-    flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 0.1, result = "large-electric-pylon"},
-    max_health = 150,
-    corpse = "big-electric-pole-remnants",
-    dying_explosion = "big-electric-pole-explosion",
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 100
-      }
-    },
-    collision_box = {{-0.65, -0.65}, {0.65, 0.65}},
-    collision_mask = {layers={item=true, object=true, player=true, water_tile=true, elevated_rail=true, is_object=true, is_lower_object=true}},
-    selection_box = {{-1, -1}, {1, 1}},
-    damaged_trigger_effect = hit_effects.entity({{-0.5, -2.5},{0.5, 0.5}}),
-    drawing_box_vertical_extension = 3,
-    maximum_wire_distance = 64,
-    supply_area_distance = 2,
-    impact_category = "metal",
-    open_sound = sounds.electric_network_open,
-    close_sound = sounds.electric_network_close,
-    track_coverage_during_drag_building = false,
-    pictures =
-    {
-      layers =
-      {
-        {
-          filename = "__base__/graphics/entity/big-electric-pole/big-electric-pole.png",
-          priority = "extra-high",
-          width = 148,
-          height = 312,
-          direction_count = 4,
-          shift = util.by_pixel(0, -51),
-          scale = 0.5
-        },
-        {
-          filename = "__base__/graphics/entity/big-electric-pole/big-electric-pole-shadow.png",
-          priority = "extra-high",
-          width = 374,
-          height = 94,
-          direction_count = 4,
-          shift = util.by_pixel(60, 0),
-          draw_as_shadow = true,
-          scale = 0.5
-        }
-      }
-    },
-    connection_points =
-    {
-      {
-        shadow =
-        {
-          copper = util.by_pixel_hr(245.0, -34.0),
-          red = util.by_pixel_hr(301.0, -0.0),
-          green = util.by_pixel_hr(206.0, -0.0)
-        },
-        wire =
-        {
-          copper = util.by_pixel_hr(0, -246.0),
-          red = util.by_pixel_hr(58.0, -211.0),
-          green = util.by_pixel_hr(-58.0, -211.0)
-        }
-      },
-      {
-        shadow =
-        {
-          copper = util.by_pixel_hr(279.0, -24.0),
-          red = util.by_pixel_hr(284.0, 28.0),
-          green = util.by_pixel_hr(204.0, -31.0)
-        },
-        wire =
-        {
-          copper = util.by_pixel_hr(34.0, -235.0),
-          red = util.by_pixel_hr(41.0, -183.0),
-          green = util.by_pixel_hr(-40.0, -240.0)
-        }
-      },
-      {
-        shadow =
-        {
-          copper = util.by_pixel_hr(292.0, 0.0),
-          red = util.by_pixel_hr(244.0, 41.0),
-          green = util.by_pixel_hr(244.0, -41.0)
-        },
-        wire =
-        {
-          copper = util.by_pixel_hr(47.0, -212.0),
-          red = util.by_pixel_hr(1.0, -170.0),
-          green = util.by_pixel_hr(1.0, -251.0)
-        }
-      },
-      {
-        shadow =
-        {
-          copper = util.by_pixel_hr(277.0, 23.0),
-          red = util.by_pixel_hr(204.0, 30.0),
-          green = util.by_pixel_hr(286.0, -29.0)
-        },
-        wire =
-        {
-          copper = util.by_pixel_hr(33.0, -188.0),
-          red = util.by_pixel_hr(-41.0, -182.5),
-          green = util.by_pixel_hr(41.0, -239.0)
-        }
-      }
-    },
-    radius_visualisation_picture =
-    {
-      filename = "__base__/graphics/entity/small-electric-pole/electric-pole-radius-visualization.png",
-      width = 12,
-      height = 12,
-      priority = "extra-high-no-scale"
-    },
-    water_reflection =
-    {
-      pictures =
-      {
-        filename = "__base__/graphics/entity/big-electric-pole/big-electric-pole-reflection.png",
-        priority = "extra-high",
-        width = 16,
-        height = 32,
-        shift = util.by_pixel(0, 60),
-        variation_count = 1,
-        scale = 5
-      },
-      rotate = false,
-      orientation_to_variation = false
     }
   },
 ---generators

@@ -1025,10 +1025,10 @@ data:extend({
       { type = "item", name = "small-lamp", amount = 1 }
     },
   },
-  {--tiny electric pylon
+  {--small electric pole
     type = "recipe",
     category = "assembling-machine",
-    name = "tiny-electric-pylon",
+    name = "small-electric-pole",
     energy_required = 4,
     enabled = false,
     ingredients = {
@@ -1037,13 +1037,13 @@ data:extend({
       { type = "item", name = "mineral-glass", amount = 1 },
     },
     results = { 
-      { type = "item", name = "tiny-electric-pylon", amount = 1 }
+      { type = "item", name = "small-electric-pole", amount = 1 }
     },
   },
-  {--small electric pylon
+  {--medium electric pole
     type = "recipe",
     category = "assembling-machine",
-    name = "small-electric-pylon",
+    name = "medium-electric-pole",
     energy_required = 4,
     enabled = false,
     ingredients = {
@@ -1052,23 +1052,23 @@ data:extend({
       { type = "item", name = "mineral-glass", amount = 2 },
     },
     results = { 
-      { type = "item", name = "small-electric-pylon", amount = 1 }
+      { type = "item", name = "medium-electric-pole", amount = 1 }
     },
   },
-  {--large electric pylon
+  {--big electric pole
     type = "recipe",
     category = "assembling-machine",
-    name = "large-electric-pylon",
+    name = "big-electric-pole",
     energy_required = 8,
     enabled = false,
     ingredients = {
-      { type = "item", name = "small-electric-pylon", amount = 1 },
+      { type = "item", name = "medium-electric-pole", amount = 1 },
       { type = "item", name = "high-performance-structure", amount = 2 },
       { type = "item", name = "mineral-glass", amount = 6 },
       { type = "item", name = "conductive-coil", amount = 12 },
     },
     results = { 
-      { type = "item", name = "large-electric-pylon", amount = 1 }
+      { type = "item", name = "big-electric-pole", amount = 1 }
     },
   },
   {--small turbine

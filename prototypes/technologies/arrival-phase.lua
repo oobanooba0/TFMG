@@ -495,7 +495,7 @@ data:extend({
     {
       {
         type = "unlock-recipe",
-        recipe = "small-electric-pylon"
+        recipe = "medium-electric-pole"
       },
     },
     prerequisites = {"energy-distribution-1","consider-your-potential"},
@@ -514,7 +514,7 @@ data:extend({
     {
       {
         type = "unlock-recipe",
-        recipe = "large-electric-pylon"
+        recipe = "big-electric-pole"
       },
     },
     prerequisites = {"energy-distribution-2","exploration-science"},

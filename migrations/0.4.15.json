@@ -1,0 +1,17 @@
+{
+  "recipe" : [
+    ["tiny-electric-pylon", "small-electric-pole"],
+    ["small-electric-pylon", "medium-electric-pole"],
+    ["large-electric-pylon", "big-electric-pole"]
+  ],
+  "item" : [
+    ["tiny-electric-pylon", "small-electric-pole"],
+    ["small-electric-pylon", "medium-electric-pole"],
+    ["large-electric-pylon", "big-electric-pole"]
+  ],
+  "entity" : [
+    ["tiny-electric-pylon", "small-electric-pole"],
+    ["small-electric-pylon", "medium-electric-pole"],
+    ["large-electric-pylon", "big-electric-pole"]
+  ]
+}
