@@ -91,8 +91,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   {--microbe-culture
     type = "recipe",
     category = "chemistry-plant",
-    subgroup = "fluid-recipes",
-    name = "microbe-extraction",
+    name = "microbe-culture",
     crafting_machine_tint = {
       primary = {170,240,150},
       secondary = {170,240,150},
@@ -109,12 +108,13 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     results = { 
       { type = "item", name = "microbe-culture", amount = 1 }
     },
+    main_product = "microbe-culture",
+    localised_name = {"recipe-name.microbe-culture"},
   },
   {--bio polymerisation
     type = "recipe",
     category = "chemistry-plant",
-    subgroup = "fluid-recipes",
-    name = "bio-polymerisation",
+    name = "active-bio-polymers",
     crafting_machine_tint = {
       primary = {160,240,160},
       secondary = {160,240,160},
@@ -131,6 +131,8 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     results = { 
       { type = "item", name = "active-bio-polymers", amount = 1 }
     },
+    main_product = "active-bio-polymers",
+    localised_name = {"recipe-name.active-bio-polymers"},
   },
   {--mineral lubricant
     type = "recipe",
@@ -208,8 +210,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   {--Excited crystal quenching
     type = "recipe",
     category = "chemistry-plant",
-    subgroup = "fluid-recipes",
-    name = "excited-crystal-quenching",
+    name = "fused-crystalline-chunk",
     icon = "__TFMG-assets-0__/icons/items/fused-crystalline-chunk.png",
     crafting_machine_tint = {
       primary = {200,0,100},
@@ -229,6 +230,8 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "fused-crystalline-chunk", amount = 2 },
       { type = "fluid", name = "steam", amount = 1000, temperature = 1000, fluidbox_index = 0},
     },
+    main_product = "fused-crystalline-chunk",
+    localised_name = {"recipe-name.fused-crystalline-chunk"},
     surface_conditions = {
     { property = "pressure", min = 0, max = 0 }
   },
@@ -237,7 +240,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     type = "recipe",
     category = "chemistry-plant",
     subgroup = "fluid-recipes",
-    name = "steam-condensation",
+    name = "water",
     crafting_machine_tint = {
       primary = {100,100,140},
       secondary = {100,100,140},
@@ -254,6 +257,8 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     results = { 
       { type = "fluid", name = "water", amount = 19, fluidbox_index = 0},
     },
+    main_product = "water",
+    localised_name = {"recipe-name.water"},
   },
   {--Thruster oxidizer
     type = "recipe",
@@ -279,6 +284,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "thruster-oxidizer", amount = 128 },
       { type = "fluid", name = "thruster-fuel", amount = 16 },
     },
+    main_product = "thruster-oxidizer",
   },
   {--Thruster fuel
     type = "recipe",
@@ -303,5 +309,6 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "thruster-fuel", amount = 128 },
       { type = "fluid", name = "thruster-oxidizer", amount = 16 },
     },
+    main_product = "thruster-fuel",
   },
 })

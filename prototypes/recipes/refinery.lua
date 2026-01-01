@@ -106,4 +106,28 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "concrete", amount = 1 },
     },
   },
+  {--Volatile chunk decomposition
+    type = "recipe",
+    category = "refinery",
+    subgroup = "fluid-recipes",
+    name = "volatile-chunk-decomposition",
+    icons = {
+      { icon = "__space-age__/graphics/icons/oxide-asteroid-chunk.png"},
+      { icon = "__base__/graphics/icons/signal/signal-fire.png", shift = {0,7}, scale = 0.3, tint = {1,0.2,0.2,0.5}}
+    },
+    energy_required = 1,
+    enabled = false,
+    allow_productivity = true,
+    allow_decomposition = false,
+    ingredients = {
+      { type = "item", name = "volatile-asteroid-chunk", amount = 1},
+    },
+    results = {
+      { type = "fluid", name = "short-chain-hydrocarbons", amount_min = 0, amount_max = 10},
+      { type = "fluid", name = "water", amount = 10 },
+      --hydrogen, probably.
+      { type = "item", name = "ferric-ore", amount = 1, probability = 0.15},
+      { type = "item", name = "mineral-ore", amount = 1, probability = 0.15},
+    },
+  },
 })

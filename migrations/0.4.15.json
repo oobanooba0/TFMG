@@ -3,7 +3,11 @@
     ["tiny-electric-pylon", "small-electric-pole"],
     ["small-electric-pylon", "medium-electric-pole"],
     ["large-electric-pylon", "big-electric-pole"],
-    ["solar-cell", "solar-panel"]
+    ["solar-cell", "solar-panel"],
+    ["microbe-extraction", "microbe-culture"],
+    ["bio-polymerisation", "active-bio-polymers"],
+    ["excited-crystal-quenching", "fused-crystalline-chunk"],
+    ["steam-condensation", "water"]
   ],
   "item" : [
     ["tiny-electric-pylon", "small-electric-pole"],

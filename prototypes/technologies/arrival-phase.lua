@@ -122,11 +122,11 @@ data:extend({
     {
       {
         type = "unlock-recipe",
-        recipe = "microbe-extraction"
+        recipe = "microbe-culture"
       },
       {
         type = "unlock-recipe",
-        recipe = "bio-polymerisation"
+        recipe = "active-bio-polymers"
       },
       {
         type = "unlock-recipe",

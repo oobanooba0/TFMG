@@ -45,11 +45,11 @@ data:extend({
       },
       {
         type = "unlock-recipe",
-        recipe = "excited-crystal-quenching"
+        recipe = "fused-crystalline-chunk"
       },
       {
         type = "unlock-recipe",
-        recipe = "steam-condensation"
+        recipe = "water"
       }
     },
     prerequisites = {"contemplate-void"},
@@ -124,6 +124,30 @@ data:extend({
       ingredients = {
         {"introspection-science", 1},
         {"exploration-science", 1}
+      },
+      time = 32
+    },
+  },
+  {--volatile handling
+    type = "technology",
+    name = "volatile-handling",
+    icon = "__space-age__/graphics/technology/advanced-asteroid-processing.png",
+    icon_size = 256,
+    essential = true,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "volatile-chunk-decomposition"
+      },
+    },
+    prerequisites = {"exploitation-science"},
+    unit = {
+      count = 512,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1},
+        {"exploitation-science", 1},
       },
       time = 32
     },

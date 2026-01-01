@@ -383,6 +383,7 @@ data:extend({
       { type = "item", name = "efficiency-module", amount = 1 },
       { type = "item", name = "capacitor-discharged", amount = 8 },
     },
+    main_product = "efficiency-module",
   },
   {--speed module
     type = "recipe",
@@ -403,6 +404,7 @@ data:extend({
       { type = "item", name = "speed-module", amount = 1 },
       { type = "item", name = "capacitor-discharged", amount = 8 },
     },
+    main_product = "speed-module",
   },
 ---building recipes
   {--transport belt
