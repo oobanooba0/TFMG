@@ -2,7 +2,7 @@
 Version: 0.4.15
 Date: 2026-01-01
   Features:
-    - Volatile asteroids can now be decomposed into water and short chain hydrocarbons.
+    - Volatile asteroids can now be decomposed into water and short chain hydrocarbons, with a little bit of byproduct of ferric and crystaline ore. Have fun.
   Changes:
     - Merged the TFMG electric poles with the vanilla ones. Theyre now blueprint compatible
     - Merged Solar cells with solar panels, for the same reason
