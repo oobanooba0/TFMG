@@ -3,6 +3,7 @@ Version: 0.4.15
 Date: ????
   Changes:
     - Merged the TFMG electric poles with the vanilla ones. Theyre now blueprint compatible
+    - Merged Solar cells with solar panels, for the same reason.
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.14
 Date: 2025-12-27
