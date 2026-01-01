@@ -1,3 +1,5 @@
+local TFMG = require("util.TFMG")
+
 data:extend({--6:4:1 Water, Hydrocarbon, Organic
   {--Hydrocarbon seperation
     type = "recipe",
@@ -29,6 +31,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 120 },
       { type = "fluid", name = "organic-sludge", amount = 60 }
     },
+    surface_conditions = TFMG.conditions.arrival,
   },
   {--Hydrocarbon concentration
     type = "recipe",
@@ -59,6 +62,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 280 },
       { type = "fluid", name = "organic-sludge", amount = 40 }
     },
+    surface_conditions = TFMG.conditions.arrival,
   },
   {--Ferric ore washing
     type = "recipe",
@@ -110,6 +114,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     main_product = "microbe-culture",
     localised_name = {"recipe-name.microbe-culture"},
+    surface_conditions = TFMG.conditions.arrival,
   },
   {--bio polymerisation
     type = "recipe",
@@ -232,9 +237,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     main_product = "fused-crystalline-chunk",
     localised_name = {"recipe-name.fused-crystalline-chunk"},
-    surface_conditions = {
-    { property = "pressure", min = 0, max = 0 }
-  },
+    surface_conditions = TFMG.conditions.space,
   },
   {--Steam condensation
     type = "recipe",

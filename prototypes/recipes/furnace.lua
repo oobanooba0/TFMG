@@ -1,3 +1,5 @@
+local TFMG = require("util.TFMG")
+
 data:extend({
 --ferric recipes
   {
@@ -64,11 +66,7 @@ data:extend({
     allow_decomposition = false,
     allow_productivity = true,
     result_is_always_fresh = true,
-    surface_conditions = {{
-      property = "gravity",
-      min = 0,
-      max = 0
-    }},
+    surface_conditions = TFMG.conditions.space,
   },
   {
     type = "recipe",
@@ -81,10 +79,7 @@ data:extend({
     results = {{type="item", name="mineral-glass", amount=1}},
     allow_decomposition = false,
     allow_productivity = true,
-    surface_conditions = {{
-      property = "gravity",
-      min = 0.01,
-    }},
+    surface_conditions = TFMG.conditions.not_space,
   },
   {
     type = "recipe",
@@ -99,11 +94,7 @@ data:extend({
     allow_productivity = true,
     result_is_always_fresh = true,
     factoriopedia_alternative = "hot-mineral-plate",
-    surface_conditions =  {{
-      property = "gravity",
-      min = 0,
-      max = 0
-    }}
+    surface_conditions = TFMG.conditions.space,
   },
   {
     type = "recipe",
@@ -117,10 +108,7 @@ data:extend({
     allow_decomposition = false,
     allow_productivity = true,
     factoriopedia_alternative = "mineral-glass",
-    surface_conditions = {{
-      property = "gravity",
-      min = 0.01,
-    }}
+    surface_conditions = TFMG.conditions.not_space,
   },
   {--small radiator
     type = "recipe",

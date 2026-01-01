@@ -1,3 +1,6 @@
+local TFMG = require("util.TFMG")
+
+
 data:extend({
   {--Mineral Glass singing
     type = "recipe",
@@ -14,6 +17,7 @@ data:extend({
     },
     allow_decomposition = false,
     factoriopedia_alternative = "mineral-glass",
+    surface_conditions = TFMG.conditions.space,
   },
   {--conductive coil 
     type = "recipe",

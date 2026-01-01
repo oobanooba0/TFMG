@@ -1,3 +1,5 @@
+local TFMG = require("util.TFMG")
+
 local charger_power = 10
 
 data:extend({
@@ -30,7 +32,5 @@ data:extend({
     allow_decomposition = true,
     allow_productivity = false,
   },
-  surface_conditions = {
-    { property = "pressure", min = 0, max = 0 }
-  },
+  surface_conditions = TFMG.conditions.space,
 })

@@ -43,7 +43,7 @@ data:extend({--surface properties
       ["solar-power"] = 10,
       pressure = 135,
       gravity = 1.35,
-      oxygen = 99,
+      oxygen = 99, --Recipe exclusicivity is controlled here. so watch for that.
     },
     surface_render_parameters =
     {

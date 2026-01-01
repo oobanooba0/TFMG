@@ -23,6 +23,11 @@ local TFMG = {}
   	  {property = "pressure",min = 100},
   	  {property = "oxygen",min = 15},
   	},
+		arrival = {--For recipes hard exclusive to arrival.
+			{property = "gravity",min = 0.1},
+  	  {property = "pressure",min = 100},
+  	  {property = "oxygen", min = 95 },
+		}
 	}
 
 return TFMG

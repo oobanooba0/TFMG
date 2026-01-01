@@ -1,11 +1,14 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.15
-Date: ????
+Date: 2026-01-01
   Features:
     - Volatile asteroids can now be decomposed into water and short chain hydrocarbons.
   Changes:
     - Merged the TFMG electric poles with the vanilla ones. Theyre now blueprint compatible
     - Merged Solar cells with solar panels, for the same reason
+    - All recipes that use organic sludge are surface locked to arrival. This doesnt change anything, it just makes it more clear that there is no way to aquire or use, organic sludge anywhere other than arrival.
+    - Hot mineral plate cooling surface locked to space, for similar reasons. While it was theoretically possible to drop a hot plate to the surface, and turn it to glass before it spoils, theres 0 reason to do that. Surface locking should help make intended crafting processes more clear.
+    - most surface conditions are now more specific. No meaningful gameplay impact.
   Bugfixes:
     - Merged the speed and efficiency module recipes and item entries.
     - Merged thruster oxidiser fluid with its recipe

@@ -1,3 +1,6 @@
+local TFMG = require("util.TFMG")
+
+
 ---assembling machine recipes.
 ---assembling-machine-pure for recipes that should only appear in the assembling machine, and not the matter reconstructor.
 
@@ -24,8 +27,6 @@ local docking_pipe = data.raw.recipe["TFMG-docking-pipe"]
   }
   docking_pipe.category = "assembling-machine"
 
-
-  
 data:extend({
   {--Mineral Glass (in space)
     type = "recipe",
@@ -42,6 +43,7 @@ data:extend({
       { type = "item", name = "mineral-glass", amount = 1 }
     },
     factoriopedia_alternative = "mineral-glass",
+    surface_conditions = TFMG.conditions.space,
   },
   {--General purpose structure
     type = "recipe",
@@ -184,9 +186,7 @@ data:extend({
     results = { 
       { type = "item", name = "introspection-science-unverified", amount = 1 }
     },
-    surface_conditions = {
-      { property = "pressure", min = 0, max = 0 }
-    },
+    surface_conditions = TFMG.conditions.space,
   },
   {--exploration science
     type = "recipe",
@@ -203,11 +203,7 @@ data:extend({
     results = { 
       { type = "item", name = "exploration-science-unverified", amount = 1 }
     },
-    surface_conditions = {
-      { property = "gravity", min = 1, max = 10 },
-      { property = "pressure", min = 100, max = 1000 },
-
-    },
+    surface_conditions = TFMG.conditions.arrival,
   },
   {--exploitation science
     type = "recipe",
@@ -225,9 +221,7 @@ data:extend({
     results = { 
       { type = "item", name = "exploitation-science-unverified", amount = 1 }
     },
-    surface_conditions = {
-      { property = "pressure", min = 0, max = 0 }
-    },
+    surface_conditions = TFMG.conditions.space,
   },
   {--spidertron frame
     type = "recipe",

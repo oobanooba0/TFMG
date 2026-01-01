@@ -1,3 +1,6 @@
+local TFMG = require("util.TFMG")
+
+
 data:extend({--6:4:1 Water, Hydrocarbon, Organic
   {--Hydrocarbon slush distillation
     type = "recipe",
@@ -20,6 +23,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 32 },
       { type = "fluid", name = "organic-sludge", amount = 4 }
     },
+    surface_conditions = TFMG.conditions.arrival,
   },
   {--water filtration
     type = "recipe",
@@ -43,6 +47,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 80 },
       { type = "fluid", name = "organic-sludge", amount = 5 }
     },
+    surface_conditions = TFMG.conditions.arrival,
   },
   {--sludge cultivation
     type = "recipe",
@@ -66,6 +71,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 80 },
       { type = "fluid", name = "organic-sludge", amount = 75 }
     },
+    surface_conditions = TFMG.conditions.arrival,
   },
   {--ferric solution reduction
     type = "recipe",
@@ -123,11 +129,11 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "volatile-asteroid-chunk", amount = 1},
     },
     results = {
-      { type = "fluid", name = "short-chain-hydrocarbons", amount_min = 0, amount_max = 10},
-      { type = "fluid", name = "water", amount = 10 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount_min = 0, amount_max = 8},
+      { type = "fluid", name = "water", amount = 8 },
       --hydrogen, probably.
-      { type = "item", name = "ferric-ore", amount = 1, probability = 0.15},
-      { type = "item", name = "mineral-ore", amount = 1, probability = 0.15},
+      { type = "item", name = "ferric-ore", amount = 1, probability = 0.08},
+      { type = "item", name = "mineral-ore", amount = 1, probability = 0.08},
     },
   },
 })
