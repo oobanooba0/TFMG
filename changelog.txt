@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.16
+Date: ????
+  Changes:
+    - number of spiders in Spiders Georg achivement has been corrected. It should be 256.
+    - Spiders Georg typos have not been fixed, they're part of the original tumblr post the description refrences.
+---------------------------------------------------------------------------------------------------
 Version: 0.4.15
 Date: 2026-01-01
   Features:
