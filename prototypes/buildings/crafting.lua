@@ -730,6 +730,9 @@ data:extend({
     energy_usage = "100MW",
     module_slots = 5,
     allowed_effects = {"pollution", "quality", "consumption"},
+    --effect_receiver = {
+    --  base_effect = {productivity = 0.001},
+    --},
     TFMG_thermal = {
       max_working_temperature = 105,
       max_safe_temperature = 120,

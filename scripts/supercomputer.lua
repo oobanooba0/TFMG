@@ -2,6 +2,15 @@ local flib_table = require("__flib__/table")
 
 local supercomputer = {}
 
+--ideally i want to migrate this information into mod data, so i can define it in the recipe prototype or something.
+local par_times = { --these are the number of ticks on average that a "good" solution takes. and is the required time to achive a 100% bonus
+  ["introspection-science"] = 2,
+  ["exploration-science"] = 12,
+  ["exploitation-science"] = 90,
+}
+
+--remember to update par times in locale
+
 function supercomputer.on_supercomputer_destroyed(event)
   if event.type == defines.target_type.entity then
     if storage.supercomputer[event.useful_id] ~= nil then
@@ -114,46 +123,76 @@ local function supercomputer_passive_draw(v) --controls passive power draw of su
   v.machine.energy = v.machine.energy*(1/10)
 end
 
-function supercomputer.on_supercomputer_tick()
-  --game.print(serpent.block(storage.supercomputer))
- storage.machine_from_k = flib_table.for_n_of(
-		storage.supercomputer, storage.machine_from_k, 100000000,
-		function(v)
-      if not v.machine.valid then return end --checks for machine validity, preventing a game crash if the machine is destroyed instantly.
-      if v.machine.disabled_by_script then return end --If the machine has been disabled at the start of the tick, we dont have to run anything else.
-      local recipe = v.machine.get_recipe()
+function supercomputer.production_bonus(v) --calculates the production bonus, and also resets the machines state for the next recipe.
+  local par_time = par_times[v.recipe.name]
+  if not par_time then return end
+  local ticks_taken = game.tick - (v.start_tick or 0)
+  local recipe = v.recipe
+  --calculate the bonus to give
+  local bonus_ratio = par_time/ticks_taken -0.01 --this represents the bonus given, relative to craft progress. A flat value is subtracted for the recipe productivity added to make the bar show up.
+  local bonus_given
 
-      if not recipe then--If no recipe then only the reset script needs to run and we can skip all else.
-        if not v.recipe then return end
-        v.output.get_control_behavior().remove_section(1)
-        v.recipe = nil
-      return end
+  if v.machine.status == 1 then
+    bonus_given = (bonus_ratio/recipe.energy)*(v.machine.speed_bonus + 1)
+  elseif v.machine.status == 14 then
+    local energy_multiplier = (1 + v.machine.consumption_bonus)
+    local base_buffer_size = (v.machine.prototype.get_max_energy_usage())*(64/60)
+    local power_level = v.machine.energy/(base_buffer_size*energy_multiplier)
+    bonus_given = (bonus_ratio/recipe.energy)*(v.machine.speed_bonus + 1)*power_level
+  end
 
-      if v.machine.status ~= 1 and v.machine.status ~= 14 then --if the machine isn't able to run for any reason, end the script.
-      return end
+  v.machine.bonus_progress = math.max((v.machine.bonus_progress + bonus_given),0) --because of the flat reduction, the resulting bonus can be negative, which is not allowed.
+  v.recipe = nil --we set this to nil to indicate that we're done and will need a new problem next tick.
+end
 
-      if recipe ~= v.recipe then--check if the recipe has changed, so we know to generate a new problem
-        if recipe.name == "introspection-science" then
-          supercomputer.create_new_problem_introspection(v)
-        end
-        if recipe.name == "exploration-science" then
-          supercomputer.create_new_problem_exploration(v)
-        end
-        if recipe.name == "exploitation-science" then
-          supercomputer.create_new_problem_exploitation(v)
-        end
-        v.recipe = recipe
-      end
-
-      if recipe.name == "introspection-science" then--we need to check different signals for each science. so this needs a seperate script for each, to keep each as lightweight as possible.
-        supercomputer.introspection_solution(v)
-      elseif recipe.name == "exploration-science" then
-        supercomputer.exploration_solution(v)
-      elseif recipe.name == "exploitation-science" then
-        supercomputer.exploitation_solution(v)
-      end
+function supercomputer.make_the_prod_bar_show()
+  for _,force in pairs(game.forces) do
+    if not force then return end
+    for recipe_name,_ in pairs(par_times) do --weird way to do it, but surprisingly functional, as the table contains all the names of the recipes for which this needs to be done
+      local recipe = force.recipes[recipe_name]
+      recipe.productivity_bonus = 0.01
     end
-  )
+  end
+end
+
+function supercomputer.on_supercomputer_tick()
+  for _,v in pairs(storage.supercomputer) do
+    supercomputer.supercomputer_tick(v)
+  end
+end
+
+function supercomputer.supercomputer_tick(v)
+  if not v.machine.valid then return end --checks for machine validity, preventing a game crash if the machine is destroyed instantly.
+  if v.machine.disabled_by_script then return end --If the machine has been disabled at the start of the tick, we dont have to run anything else.
+  
+  local recipe = v.machine.get_recipe()
+  if not recipe then--If no recipe then only the reset script needs to run and we can skip all else.
+    if not v.recipe then return end
+    v.output.get_control_behavior().remove_section(1)
+    v.recipe = nil
+  return end
+
+  if v.machine.status ~= 1 and v.machine.status ~= 14 then v.machine.disabled_by_script = true return end--if the machine isn't able to run for any reason, end the script.
+  --check if the recipe has changed, so we know to generate a new problem
+  if recipe ~= v.recipe then
+    if recipe.name == "introspection-science" then
+      supercomputer.create_new_problem_introspection(v)
+    elseif recipe.name == "exploration-science" then
+      supercomputer.create_new_problem_exploration(v)
+    elseif recipe.name == "exploitation-science" then
+      supercomputer.create_new_problem_exploitation(v)
+    end
+    v.machine.disabled_by_script = true --disable the machine for the tick.
+    v.recipe = recipe
+  return end
+  
+  if recipe.name == "introspection-science" then--we need to check different signals for each science. so this needs a seperate script for each, to keep each as lightweight as possible.
+    supercomputer.introspection_solution(v)
+  elseif recipe.name == "exploration-science" then
+    supercomputer.exploration_solution(v)
+  elseif recipe.name == "exploitation-science" then
+    supercomputer.exploitation_solution(v)
+  end
 end
 ---introspection recipes
 function supercomputer.introspection_solution(v)
@@ -161,7 +200,7 @@ function supercomputer.introspection_solution(v)
   local input_red_signal_x = v.input.get_signal({type = "virtual", name = "signal-X"},defines.wire_connector_id.circuit_red)
 
   if input_green_signal_x == v.solution_x or input_red_signal_x == v.solution_x then--first check if we've solved the current problem
-    supercomputer.create_new_problem_introspection(v)
+    supercomputer.production_bonus(v)
   else
     supercomputer_passive_draw(v)
     v.machine.custom_status = {
@@ -172,6 +211,7 @@ function supercomputer.introspection_solution(v)
 end
 
 function supercomputer.create_new_problem_introspection(v)--introspection recipe mechanics
+  v.start_tick = game.tick
   if v.output.get_control_behavior().get_section(1) == nil then
     v.output.get_control_behavior().add_section(nil)
   end
@@ -214,9 +254,7 @@ function supercomputer.exploration_solution(v)
   local tolerance = 1
 
   if green_difference <= tolerance or red_difference <= tolerance then--first check if we've solved the current problem
-    --game.print("red:"..red_difference.."green:"..green_difference)
-    --v.machine.disabled_by_script = false
-    supercomputer.create_new_problem_exploration(v)
+    supercomputer.production_bonus(v)
   else
     supercomputer_passive_draw(v)
     v.machine.custom_status = {
@@ -227,6 +265,7 @@ function supercomputer.exploration_solution(v)
 end
 
 function supercomputer.create_new_problem_exploration(v)--introspection recipe mechanics
+  v.start_tick = game.tick
   if v.output.get_control_behavior().get_section(1) == nil then
     v.output.get_control_behavior().add_section(nil)
   end
@@ -270,17 +309,18 @@ local function check_exploitation_solution(v)
 return true end
 
 function supercomputer.exploitation_solution(v)
+  --control the combinators
+  local green_swap_a = v.input.get_signal({type = "virtual", name = "signal-A"},defines.wire_connector_id.circuit_green)
+  local green_swap_b = v.input.get_signal({type = "virtual", name = "signal-B"},defines.wire_connector_id.circuit_green)
+  local red_swap_a = v.input.get_signal({type = "virtual", name = "signal-A"},defines.wire_connector_id.circuit_red)
+  local red_swap_b = v.input.get_signal({type = "virtual", name = "signal-B"},defines.wire_connector_id.circuit_red)
+  swap(v,green_swap_a,green_swap_b)
+  swap(v,red_swap_a,red_swap_b)
+  supercomputer.update_problem_exploitation(v)
+  --solution handling
   if check_exploitation_solution(v) then --if we solved it
-    supercomputer.create_new_problem_exploitation(v)
+    supercomputer.production_bonus(v)
   else
-    --control the thing here
-    local green_swap_a = v.input.get_signal({type = "virtual", name = "signal-A"},defines.wire_connector_id.circuit_green)
-    local green_swap_b = v.input.get_signal({type = "virtual", name = "signal-B"},defines.wire_connector_id.circuit_green)
-    local red_swap_a = v.input.get_signal({type = "virtual", name = "signal-A"},defines.wire_connector_id.circuit_red)
-    local red_swap_b = v.input.get_signal({type = "virtual", name = "signal-B"},defines.wire_connector_id.circuit_red)
-    swap(v,green_swap_a,green_swap_b)
-    swap(v,red_swap_a,red_swap_b)
-    supercomputer.update_problem_exploitation(v)
     supercomputer_passive_draw(v)
     v.machine.custom_status = {
 		  diode = defines.entity_status_diode.yellow,
@@ -305,6 +345,7 @@ function supercomputer.update_problem_exploitation(v) --update the output signal
 end
 
 function supercomputer.create_new_problem_exploitation(v)
+  v.start_tick = game.tick
   v.scramble_list = TFMG.newscramble(exploitation_source) --get scrombombled!
   supercomputer.update_problem_exploitation(v)
 end

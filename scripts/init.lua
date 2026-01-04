@@ -48,6 +48,7 @@
 
   script.on_configuration_changed(function()
     refresh_data_storage()
+		supercomputer.make_the_prod_bar_show()
 		--register_vehicle_requirements()
   end)
 
@@ -69,6 +70,12 @@
       	group.add_player(player)
       end
   end)
+
+	script.on_event(defines.events.on_force_created,
+	function()
+		supercomputer.make_the_prod_bar_show() --updating the prod for newly created forces and such.
+	end
+)
 
 --on tick events
 --taken nth ticks.
@@ -263,6 +270,7 @@ end
   	function(event)
   		story.trigger_story_event(event)
   		gameplay.research_finished(event)
+			supercomputer.make_the_prod_bar_show()
   	end
   )
 
