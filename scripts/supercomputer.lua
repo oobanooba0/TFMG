@@ -129,7 +129,7 @@ function supercomputer.production_bonus(v) --calculates the production bonus, an
   local ticks_taken = game.tick - (v.start_tick or 0)
   local recipe = v.recipe
   --calculate the bonus to give
-  local bonus_ratio = par_time/ticks_taken -0.01 --this represents the bonus given, relative to craft progress. A flat value is subtracted for the recipe productivity added to make the bar show up.
+  local bonus_ratio = math.min((par_time/ticks_taken -0.01),5) --this represents the bonus given, relative to craft progress. A flat value is subtracted for the recipe productivity added to make the bar show up. ratio is capped at 5 to prevent any possibility of utter game breakage.
   local bonus_given
 
   if v.machine.status == 1 then

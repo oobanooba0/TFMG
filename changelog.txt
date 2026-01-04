@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.17
+Date: 2026-01-04
+  Features:
+    - Supercomputers now give bonus productivity based on solution speed. Every recipe has a par time, solving a problem at par time gives 100% productivity, while solving it slower gives less, and faster gives more. (bonus is capped at 500% to prevent utter game breakage) (also, expect research to be more expensive, since science was made alot cheaper by this)
+---------------------------------------------------------------------------------------------------
 Version: 0.4.16
 Date: 2026-01-02
   Changes:
