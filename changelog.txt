@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.18
+Date: ????
+  Changes:
+    - 1 byte display is no longer rotatable, because it isn't rotatable
+    - 1 byte display no longer displays its recipe in alt mode, as this isnt useful information.
+    - radiators no longer show their recipe in alt mode, as this isnt useful information.
+    - Self version update.
+---------------------------------------------------------------------------------------------------
 Version: 0.4.17
 Date: 2026-01-04
   Features:

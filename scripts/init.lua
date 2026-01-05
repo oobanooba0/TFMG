@@ -28,6 +28,9 @@
 		storage.worms.active_worms = {} end
 		if not storage.gameplay then
 			storage.gameplay = {} end
+		if not storage.story.self_version then
+			story.get_self_version()
+		end
   end
 
 

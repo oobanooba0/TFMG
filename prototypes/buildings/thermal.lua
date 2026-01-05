@@ -161,7 +161,7 @@ data:extend({
     name = "TFMG-logo-11-tiles",
     icon = "__TFMG-thermal__/graphics/radiator-ground/radiator-ground-icon.png",
     hidden = true,
-    flags = {"placeable-neutral","player-creation"},
+    flags = {"placeable-neutral","player-creation","not-rotatable","hide-alt-info"},
     minable = {mining_time = 0.2, result = "TFMG-logo-11-tiles"},
     max_health = 3,
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,

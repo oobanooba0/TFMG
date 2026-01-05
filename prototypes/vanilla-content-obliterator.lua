@@ -121,7 +121,9 @@ local TFMG = require("util.TFMG")
 		chart_rgb["fusion-generator"] = {200,60,20}
 		--adjust muh radiators
 		data.raw["assembling-machine"]["ground-radiator"].friendly_map_color = {220,110,0}
+		table.insert(data.raw["assembling-machine"]["ground-radiator"].flags,"hide-alt-info")
 		data.raw["assembling-machine"]["small-radiator"].friendly_map_color = {220,110,0}
+		table.insert(data.raw["assembling-machine"]["small-radiator"].flags,"hide-alt-info")
 		--others
 		if settings.startup["map-improved-contrast-mode"].value == "full" then
 			chart_rgb["pipe"] = {169, 70, 165}
