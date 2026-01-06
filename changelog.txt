@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.19
-Date: ????
+Date: 2026-01-06
   Changes:
+    - 2 tips and tricks simulations added, to help explain the thermal system. I hope to have some for each new mechanic in TFMG, so that every mechanic is clearly explained ingame.
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.18
 Date: 2026-01-05

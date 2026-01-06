@@ -45,6 +45,8 @@
 --equipment
 	require("prototypes.equipment")
 	require("prototypes.equipment-grids")
+--tips and tricks
+	require("prototypes.tips-and-tricks-simulations.tips-and-tricks")
 
 --virtual signals
 	require("prototypes.virtual-signals")
