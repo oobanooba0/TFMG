@@ -363,26 +363,75 @@ data:extend({
     performance_at_day = 1,
     performance_at_night =1,
     solar_coefficient_property = "spacetime-flow-viscosity",
-    picture = {
-      layers = {
-        {
-          filename = "__Krastorio2Assets__/buildings/matter-plant/matter-plant.png",
+    stateless_visualisation = {
+      {
+        animation = {
+          layers = {
+            {
+              filename = "__Krastorio2Assets__/buildings/matter-plant/matter-plant.png",
+              priority = "high",
+              width = 462,
+              height = 500,
+              frame_count = 1,
+              shift = { -0.1, -0.2 },
+              scale = 0.5,
+            },
+            {
+              filename = "__Krastorio2Assets__/buildings/matter-plant/matter-plant-sh.png",
+              priority = "high",
+              width = 504,
+              height = 444,
+              frame_count = 1,
+              draw_as_shadow = true,
+              shift = { 0.23, 0.24 },
+              scale = 0.5,
+            },
+          },
+        },
+      },
+      {
+        draw_as_light = true,
+        blend_mode = "additive-soft",
+        animation = {
+          filename = "__Krastorio2Assets__/buildings/matter-plant/matter-plant-working-light.png",
           priority = "high",
           width = 462,
           height = 500,
+          frame_count = 30,
+          line_length = 6,
           shift = { -0.1, -0.2 },
-          scale = 0.55,
+          scale = 0.5,
+          animation_speed = 0.75,
         },
-        {
-          filename = "__Krastorio2Assets__/buildings/matter-plant/matter-plant-sh.png",
+      },
+      {
+        draw_as_glow = true,
+        blend_mode = "additive-soft",
+        synced_fadeout = true,
+        animation = {
+          filename = "__Krastorio2Assets__/buildings/matter-plant/matter-plant-working-glow.png",
           priority = "high",
-          width = 504,
-          height = 444,
-          draw_as_shadow = true,
-          shift = { 0.23, 0.24 },
-          scale = 0.55,
-        }
-      }
+          width = 462,
+          height = 500,
+          frame_count = 30,
+          line_length = 6,
+          shift = { -0.1, -0.2 },
+          scale = 0.5,
+          animation_speed = 0.75,
+        },
+      },
+      {
+        animation = {
+          filename = "__Krastorio2Assets__/buildings/matter-plant/matter-plant-working.png",
+          width = 462,
+          height = 500,
+          frame_count = 30,
+          line_length = 6,
+          shift = { -0.1, -0.2 },
+          scale = 0.5,
+          animation_speed = 0.75,
+        },
+      },
     },
     open_sound = { filename = "__Krastorio2Assets__/sounds/buildings/open.ogg", volume = 1 },
     close_sound = { filename = "__Krastorio2Assets__/sounds/buildings/close.ogg", volume = 1 },

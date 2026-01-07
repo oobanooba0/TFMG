@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.20
+Date: 2026-01-07
+  Changes:
+    - Thruster fuel and oxidizer have been made pipable. Clearly the decision was unpopular, and I'm inclined to agree. Other fluids still will be unpipable in the future, but Thruster fuel was not the right place.
+    - Proton decay thermoelectric generator now has a stateless visualisation, so its animated now.
+---------------------------------------------------------------------------------------------------
 Version: 0.4.19
 Date: 2026-01-06
   Changes:
