@@ -20,24 +20,8 @@ local thruster = data.raw["thruster"]["thruster"]
       volume = 1000,
       pipe_connections =
       {
-        {
-          flow_direction = "input-output",
-          direction = defines.direction.west,
-          position = {-1.5, -2},
-          enable_working_visualisations = { "pipe-4" },
-          connection_category = "unpipe",
-          max_underground_distance = 1,
-          connection_type = "underground",
-        },
-        {
-          flow_direction = "input-output",
-          direction = defines.direction.east,
-          position = { 1.5,  0},
-          enable_working_visualisations = { "pipe-2" },
-          connection_category = "unpipe",
-          max_underground_distance = 1,
-          connection_type = "underground",
-        },
+        {flow_direction = "input-output", direction = defines.direction.west, position = {-1.5, -2}, enable_working_visualisations = { "pipe-4" } },
+        {flow_direction = "input-output", direction = defines.direction.east, position = { 1.5,  0}, enable_working_visualisations = { "pipe-2" } },
       }
     }
   thruster.oxidizer_fluid_box =
@@ -49,23 +33,7 @@ local thruster = data.raw["thruster"]["thruster"]
       volume = 1000,
       pipe_connections =
       {
-        {
-          flow_direction = "input-output",
-          direction = defines.direction.east,
-          position = { 1.5, -2},
-          enable_working_visualisations = { "pipe-1" },
-          connection_category = "unpipe",
-          max_underground_distance = 1,
-          connection_type = "underground",
-        },
-        {
-          flow_direction = "input-output",
-          direction = defines.direction.west,
-          position = {-1.5,  0},
-          enable_working_visualisations = { "pipe-3" },
-          connection_category = "unpipe",
-          max_underground_distance = 1,
-          connection_type = "underground",
-        },
+        {flow_direction = "input-output", direction = defines.direction.east, position = { 1.5, -2}, enable_working_visualisations = { "pipe-1" }},
+        {flow_direction = "input-output", direction = defines.direction.west, position = {-1.5,  0}, enable_working_visualisations = { "pipe-3" }},
       }
     }
