@@ -33,4 +33,19 @@ local game_view_settings = {
     game_view_settings = game_view_settings,
   }
 
+--supercomputer
+  simulations.supercomputer_basics = {
+    save = "__TFMG-simulations__/tips-and-tricks-simulations/supercomputer-basics.zip",
+    mods = mods,
+    init = [[
+      game.simulation.camera_alt_info = true
+      game.simulation.camera_surface_index = game.surfaces["platform-1"].index
+      game.simulation.camera_position = {0,-1}
+      game.simulation.camera_zoom = 1.5
+      game.tick_paused = false
+    ]],
+    hide_health_bars = false,
+    game_view_settings = game_view_settings,
+  }
+
 return simulations
