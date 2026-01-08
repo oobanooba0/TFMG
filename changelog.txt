@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.22
-Date: ????
+Date: 2026-01-08
   Changes:
+    - Added tutorial simulations for supercomputers and introspection science. This should help players understand the supercomputer.
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.21
 Date: 2026-01-08
