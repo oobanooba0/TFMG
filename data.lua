@@ -82,6 +82,7 @@
 
 --planets
 	require("prototypes.planet.arrival-map-gen")
+	require("prototypes.planet.feild-map-gen")
 	require("prototypes.planet.planet")
 	require("prototypes.planet.map-gen-presets")
 

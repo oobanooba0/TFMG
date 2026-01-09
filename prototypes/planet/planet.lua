@@ -1,4 +1,4 @@
-local planet_map_gen = require("__TFMG__.prototypes.planet.planet_map_gen")
+local planet_map_gen = require("__TFMG__.prototypes.planet.planet-map-gen")
 local asteroid_util = require("__TFMG__.prototypes.planet.asteroid-spawn-definitions")
 local effects = require("__core__/lualib/surface-render-parameter-effects")
 local procession_graphic_catalogue_types = require("__base__/prototypes/planet/procession-graphic-catalogue-types")
@@ -140,7 +140,7 @@ data:extend({--surface properties
     order = "c[field]",
     subgroup = "planets",
     map_seed_offset = 1000,
-    map_gen_settings = planet_map_gen.arrival(),
+    map_gen_settings = planet_map_gen.field(),
     pollutant_type = nil,
     solar_power_in_space = 100,
     planet_procession_set =
