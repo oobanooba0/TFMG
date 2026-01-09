@@ -67,11 +67,14 @@
   	if settings.global["start-as-SELF"].value then
     	player.teleport({ x = 0, y = 0 }, storage.platform.surface.name)
     	player.enter_space_platform (storage.platform)
+			if e.player_index == 1 then
+				player.request_translation({"self.self-platform-name"})
+			end
   	end
     local group = game.permissions.get_group("players")
-      if group then
-      	group.add_player(player)
-      end
+    if group then
+    	group.add_player(player)
+    end
   end)
 
 	script.on_event(defines.events.on_force_created,
@@ -79,6 +82,18 @@
 		supercomputer.make_the_prod_bar_show() --updating the prod for newly created forces and such.
 	end
 )
+
+
+--cursed localisation event
+script.on_event(defines.events.on_string_translated, function(e)
+  if e.translated and e.localised_string[1] == "self.self-platform-name" then
+		if not storage.platform then return end
+    storage.platform.name = e.result
+  end
+end)
+
+
+
 
 --on tick events
 --taken nth ticks.
