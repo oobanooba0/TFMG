@@ -10,7 +10,7 @@ local function resource(resource_parameters, autoplace_parameters, icon)
     type = "resource",
     name = resource_parameters.name,
     icon = icon or "__TFMG-assets-0__/icons/" .. resource_parameters.name .. ".png",
-    flags = {"placeable-neutral"},
+    flags = resource_parameters.flags or {"placeable-neutral"},
     order="a-b-"..resource_parameters.order,
     tree_removal_probability = 0.8,
     tree_removal_max_distance = 32 * 32,
@@ -232,6 +232,30 @@ data:extend({
     localised_name = {"", "[entity=ice-geyser] ", {"entity-name.ice-geyser"}},
     richness = true,
     order = "a-b",
+    category = "resource"
+  },
+  resource(--regolith
+    {
+      name = "regolith",
+      order = "b",
+      map_color = {1, 1, 1},
+      mining_time = 1,
+      result = "regolith",
+      walking_sound = sounds.ore,
+      mining_visualisation_tint = {r = 1.000, g = 0.675, b = 0.541, a = 1.000},
+      flags = {"placeable-neutral", "not-on-map"}
+    },
+    {
+      probability_expression = 0
+    },
+    "__space-age__/graphics/icons/big-volcanic-rock.png"
+  ),
+  {--ferric ore autoplace controls
+    type = "autoplace-control",
+    name = "regolith",
+    localised_name = {"", "[entity=regolith] ", {"entity-name.regolith"}},
+    richness = true,
+    order = "b-a",
     category = "resource"
   },
 })

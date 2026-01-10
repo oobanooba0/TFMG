@@ -6,8 +6,8 @@ local procession_graphic_catalogue_types = require("__base__/prototypes/planet/p
 local arrival_distance = 70
 local arrival_orientation = 0.275
 
-local field_distance = 50
-local field_orientation = 0.25
+local extraction_distance = 50
+local extraction_orientation = 0.25
 
 
 data:extend({--surface properties
@@ -129,18 +129,18 @@ data:extend({--surface properties
   },
   {
     type = "planet",
-    name = "field",
+    name = "extraction",
     icon = "__TFMG-assets-0__/icons/planets/arrival.png",
     starmap_icon = "__TFMG-assets-0__/icons/planets/arrival-starmap.png",
     starmap_icon_size = 2048,
     gravity_pull = 10,
-    distance = field_distance,
-    orientation = field_orientation,
+    distance = extraction_distance,
+    orientation = extraction_orientation,
     magnitude = 1,
-    order = "c[field]",
+    order = "c[extraction]",
     subgroup = "planets",
     map_seed_offset = 1000,
-    map_gen_settings = planet_map_gen.field(),
+    map_gen_settings = planet_map_gen.extraction(),
     pollutant_type = nil,
     solar_power_in_space = 100,
     planet_procession_set =
@@ -157,7 +157,7 @@ data:extend({--surface properties
     },
     --Asteroid code
     asteroid_spawn_influence = 1,
-    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.limit_field, 0.9),
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.limit_extraction, 0.9),
     persistent_ambient_sounds =
     {
       base_ambience = {filename = "__space-age__/sound/wind/base-wind-aquilo.ogg", volume = 0.5},
@@ -289,13 +289,13 @@ data:extend({--surface properties
   },
   {
     type = "space-connection",
-    name = "limit-field",
+    name = "limit-extraction",
     subgroup = "planet-connections",
     from = "limit",
-    to = "field",
+    to = "extraction",
     order = "b",
     length = 200000,
-    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.limit_field),
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.limit_extraction),
   },
 --pollution types
 })

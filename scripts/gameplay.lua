@@ -146,4 +146,14 @@ function gameplay.on_solar_panel_built(entity)
   end
 end
 
+
+function gameplay.regolith_mined(event)
+  local ore = event.entity
+  local surface = ore.surface
+  local position = ore.position
+  surface.set_tiles({{position = position, name = "empty-space"},{position = position, name = "space-platform-foundation"}},true,false)
+
+
+end
+
 return gameplay
