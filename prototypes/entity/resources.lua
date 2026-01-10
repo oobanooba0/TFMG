@@ -14,6 +14,7 @@ local function resource(resource_parameters, autoplace_parameters, icon)
     order="a-b-"..resource_parameters.order,
     tree_removal_probability = 0.8,
     tree_removal_max_distance = 32 * 32,
+    cliff_removal_probability = resource_parameters.cliff_removal_probability or 1,
     minable = resource_parameters.minable or
     {
       mining_particle = "stone-particle",--remember to change later
@@ -46,9 +47,8 @@ local function resource(resource_parameters, autoplace_parameters, icon)
       candidate_spot_count = autoplace_parameters.candidate_spot_count,
       tile_restriction = autoplace_parameters.tile_restriction
     },
-    stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
-    stages =
-    {
+    stage_counts = resource_parameters.stage_counts or {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
+    stages = resource_parameters.stages or {
       sheet =
       {
         filename = "__TFMG-assets-0__/entity/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
@@ -243,7 +243,20 @@ data:extend({
       result = "regolith",
       walking_sound = sounds.ore,
       mining_visualisation_tint = {r = 1.000, g = 0.675, b = 0.541, a = 1.000},
-      flags = {"placeable-neutral", "not-on-map"}
+      flags = {"placeable-neutral", "not-on-map"},
+      cliff_removal_probability = 0,
+      stage_counts = {3000, 2000, 1000, 500, 250, 125, 50, 10},
+      stages = {
+        sheet = {
+          filename = "__TFMG-assets-0__/entity/regolith/regolith.png",
+          priority = "extra-high",
+          size = 128,
+          frame_count = 8,
+          variation_count = 8,
+          scale = 0.5,
+          --tint = {0.4,0.4,0.4,0.5},
+        }
+      },
     },
     {
       probability_expression = 0

@@ -106,7 +106,7 @@ local TFMG = require("util.TFMG")
 		local delta_v = "("..acceleration.."-"..combined_drag..")" --the combined expression for acceleration which is accelration from thrusters - drag
 		local conversion_factor = "3600" --the expression seems to take this as km/tick^2 this compensates for that
 		local v2_expression = delta_v.."/"..conversion_factor
-
+		
   util_constant.space_platform_acceleration_expression = v2_expression
 
 	--chart colours
@@ -141,12 +141,19 @@ local TFMG = require("util.TFMG")
 	data.raw["character"]["character"].icon = "__core__/graphics/empty.png"
 
 --add tile collision mask
-	data:extend({{ type = "collision-layer", name = "artificial_ground" }}) --For ice worms and other shenanigans
+	data:extend({
+		{ type = "collision-layer", name = "artificial_ground" }, --This is for ice worms, Artifical tiles block crawlers.
+		{ type = "collision-layer", name = "unstable" }, -- Unstable tiles are tiles not strong enough to support large buildings. this is used for scaffolds.
+	}) 
+
 --tile adjust
 	local tile_collision_masks = require("__base__/prototypes/tile/tile-collision-masks")
 
 
-	data.raw.tile ["ice-smooth"].collision_mask = tile_collision_masks.ground()
+	data.raw.tile["ice-smooth"].collision_mask = tile_collision_masks.ground()
+	--data.raw.tile["empty-space"].destroys_dropped_items = true
+	
+	
 	--tile adjustments
 	for _, tile in pairs(data.raw.tile) do
 		tile.absorptions_per_second = nil

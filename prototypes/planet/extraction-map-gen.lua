@@ -46,12 +46,12 @@ data:extend({
     type = "noise-expression",
     name = "regolith_richness",
     --expression = "distance_from_center*richness",
-    expression = "1", --lol
+    expression = "((extraction_asteroid_spots^2.5)*(white_noise + 3)*10*richness) + 1", --lol
     local_expressions =
     {
-      richness = "control:ferric_ore:richness",
-      frequency = "control:ferric_ore:frequency",
-      size = "control:ferric_ore:size",
+      richness = "control:regolith:richness",
+      frequency = "control:regolith:frequency",
+      size = "control:regolith:size",
     }
   },
   {--regolith placement
@@ -106,7 +106,6 @@ data:extend({
     expression = "max(extraction_asteroid_spots_big + extraction_asteroid_spots_small, (starting_asteroid * 3.5))"
   },
 
-
   {
     type = "noise-expression",
     name = "starting_asteroid",
@@ -118,9 +117,6 @@ data:extend({
     	y_distortion =  (extraction_wobble_y * 15) + (extraction_wobble_tiny_y * 3)\z
 			}"
   },
-
-
-
 
   {--big asteroids
     type = "noise-expression",

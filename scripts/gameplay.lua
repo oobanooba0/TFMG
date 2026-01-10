@@ -151,9 +151,13 @@ function gameplay.regolith_mined(event)
   local ore = event.entity
   local surface = ore.surface
   local position = ore.position
-  surface.set_tiles({{position = position, name = "empty-space"},{position = position, name = "space-platform-foundation"}},true,false)
-
-
+  local random = math.random()
+  if random >= 0.1 then
+    surface.set_tiles({{position = position, name = "ultralight-scaffold"}},true,true)
+  else
+    surface.set_tiles({{position = position, name = "depleted-regolith"}},true,true)
+  end
+  surface.set_hidden_tile(position,"empty-space") 
 end
 
 return gameplay
