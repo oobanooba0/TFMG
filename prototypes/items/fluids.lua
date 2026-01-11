@@ -85,8 +85,8 @@ data:extend({
     subgroup = "intermediate-fluid",
     order = "a[arrival]-d[mineral-lubricant]",
     default_temperature = 15,
-    base_color = {0.15, 0.32, 0.03},
-    flow_color = {0.43, 0.75, 0.31},
+    base_color = {0.30, 0.30, 0.03},
+    flow_color = {0.45, 0.45, 0.10},
     uber_barrel = {},
   },
   {
