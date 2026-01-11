@@ -151,6 +151,33 @@ data:extend({
       time = 32
     },
   },
+  {--advanced microbe 
+    type = "technology",
+    name = "advanced-microbe-cultivation",
+    icon = "__space-age__/graphics/technology/advanced-asteroid-processing.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "microbe-restoration"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "microbe-cultivation"
+      },
+    },
+    prerequisites = {"exploitation-science"},
+    unit = {
+      count = 512,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1},
+        {"exploitation-science", 1},
+      },
+      time = 32
+    },
+  },
   {--Constructron
     type = "technology",
     name = "constructron",

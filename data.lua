@@ -106,6 +106,7 @@
 	require("prototypes.technologies.platform-phase")
 	require("prototypes.technologies.arrival-phase")
 	require("prototypes.technologies.space-phase")
+	require("prototypes.technologies.extraction-phase")
 	require("prototypes.technologies.extra")
 
 --compat optional mods

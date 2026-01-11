@@ -116,6 +116,57 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     localised_name = {"recipe-name.microbe-culture"},
     surface_conditions = TFMG.conditions.arrival,
   },
+
+  {--microbe cultivation
+    type = "recipe",
+    category = "chemistry-plant",
+    name = "microbe-cultivation",
+    crafting_machine_tint = {
+      primary = {170,240,150},
+      secondary = {170,240,150},
+      tertiary = {170,240,150},
+      quaternary = {170,240,150},
+    },
+    energy_required = 4,
+    enabled = false,
+    allow_productivity = true,
+    ingredients = {
+      { type = "item", name = "microbe-culture", amount = 2 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 100, fluidbox_index = 0 },
+    },
+    results = { 
+      { type = "item", name = "microbe-culture", amount = 5 }
+    },
+    reset_freshness_on_craft = true,
+    main_product = "microbe-culture",
+  },
+
+  {--microbe restoration
+    type = "recipe",
+    category = "chemistry-plant",
+    name = "microbe-restoration",
+    crafting_machine_tint = {
+      primary = {170,240,150},
+      secondary = {170,240,150},
+      tertiary = {170,240,150},
+      quaternary = {170,240,150},
+    },
+    energy_required = 4,
+    enabled = false,
+    allow_productivity = false,
+    ingredients = {
+      { type = "item", name = "microbe-culture", amount = 1 },
+      { type = "item", name = "organic-carbon", amount = 1 },
+      { type = "fluid", name = "water", amount = 20, fluidbox_index = 0 },
+    },
+    results = { 
+      { type = "item", name = "microbe-culture", amount = 1, extra_count_fraction = 0.5 }
+    },
+    reset_freshness_on_craft = true,
+    main_product = "microbe-culture",
+  },
+
+
   {--bio polymerisation
     type = "recipe",
     category = "chemistry-plant",

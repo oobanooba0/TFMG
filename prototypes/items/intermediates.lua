@@ -79,7 +79,7 @@ data:extend({
     default_import_location = "nauvis",
     weight = 1 * kg,
   },
-  {
+  {--microbe culture
     type = "item",
     name = "microbe-culture",
     icon = "__TFMG-assets-0__/icons/items/microbe-culture-0.png",
