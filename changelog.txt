@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.0
+Date: ????
+  Major Features:
+    - Field added. Its an asteroid Field. and a planet. Have fun there.
+  Features:
+    - ultralight scaffolding added. Which can be used as a structural component to space platforms.
+---------------------------------------------------------------------------------------------------
 Version: 0.4.24
 Date: 2026-01-11
   Changes:

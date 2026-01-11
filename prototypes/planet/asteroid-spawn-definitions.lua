@@ -27,6 +27,10 @@ asteroid_functions.huge_angle = 0.4
     asteroid_functions.arrival_limit_halfway = {0.6 , 0.4 , 0.1}
     asteroid_functions.limit_chunks = 0.002
     asteroid_functions.limit_small = 0.004
+  --extraction
+    asteroid_functions.extraction_ratio = {0.4 , 0.5 , 0.6}
+    asteroid_functions.extraction_chunks = 0.002
+    asteroid_functions.extraction_small = 0.004
 
 
 
@@ -62,6 +66,26 @@ asteroid_functions.arrival_limit =
     {position = 0.1, ratios = asteroid_functions.arrival_ratio},
     {position = 0.5, ratios = asteroid_functions.arrival_limit_halfway},
     {position = 0.9, ratios = asteroid_functions.limit_ratio},
+  }
+}
+
+asteroid_functions.limit_extraction =
+{
+  route_level = 2,
+  probability_on_range_chunk =
+  {
+    {position = 0.1, probability = asteroid_functions.limit_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
+    {position = 0.9, probability = asteroid_functions.extraction_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
+  },
+  probability_on_range_small =
+  {
+    {position = 0.1, probability = asteroid_functions.limit_small, angle_when_stopped = asteroid_functions.small_angle},
+    {position = 0.9, probability = asteroid_functions.extraction_small, angle_when_stopped = asteroid_functions.small_angle},
+  },
+  type_ratios =
+  {
+    {position = 0.1, ratios = asteroid_functions.limit_ratio},
+    {position = 0.9, ratios = asteroid_functions.extraction_ratio},
   }
 }
 

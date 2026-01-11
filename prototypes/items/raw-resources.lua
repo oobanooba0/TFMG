@@ -120,4 +120,17 @@ data:extend({
     weight = 1*kg,
     default_import_location = "nauvis",
   },
+  {--regolith
+    type = "item",
+    name = "regolith",
+    icon = "__space-age__/graphics/icons/big-volcanic-rock.png",
+    subgroup = "raw-materials",
+    order = "d[regolith]-a[regolith]",
+    inventory_move_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
+    pick_sound = "__space-age__/sound/item/rock-inventory-pickup.ogg",
+    drop_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
+    stack_size = 50,
+    weight = 10 * kg,
+    default_import_location = "extraction",
+  },
 })

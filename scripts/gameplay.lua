@@ -146,4 +146,18 @@ function gameplay.on_solar_panel_built(entity)
   end
 end
 
+
+function gameplay.regolith_mined(event)
+  local ore = event.entity
+  local surface = ore.surface
+  local position = ore.position
+  local random = math.random()
+  if random >= 0.1 then
+    surface.set_tiles({{position = position, name = "ultralight-scaffold"}},true,true)
+  else
+    surface.set_tiles({{position = position, name = "depleted-regolith"}},true,true)
+  end
+  surface.set_hidden_tile(position,"empty-space") 
+end
+
 return gameplay

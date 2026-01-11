@@ -277,6 +277,15 @@ end
   	end
   )
 
+	script.on_event(
+  	defines.events.on_resource_depleted,
+  	function(event)
+			if event.entity.valid and event.entity.name == "regolith" then
+  			gameplay.regolith_mined(event)
+			end
+  	end
+  )
+
   script.on_event(defines.events.on_gui_click, function(event)
       if event.element.name == "deploy_scout_o_tron" then
 				event.element.parent.destroy() --tempoary to remove the old gui
