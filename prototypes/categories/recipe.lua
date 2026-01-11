@@ -43,4 +43,8 @@ data:extend({
         type = "recipe-category",
         name = "charger"
     },
+    {--charger
+        type = "recipe-category",
+        name = "centrifuge"
+    },
 })
