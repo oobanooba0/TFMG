@@ -1737,7 +1737,7 @@ data:extend({
       },
       rotate = false,
       orientation_to_variation = false
-    }
+    },
     TFMG_thermal = { --this will need to be balanced.
       max_working_temperature = 400,
       max_safe_temperature = 500,
