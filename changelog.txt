@@ -3,6 +3,7 @@ Version: 0.4.24
 Date: 2026-01-11
   Changes:
     - Merged Russian locale into main mod. Huzzah!
+    - Changed mineral lubricant fluid colour to be, like, correct.
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.23
 Date: 2026-01-09
