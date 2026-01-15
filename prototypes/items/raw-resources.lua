@@ -133,4 +133,17 @@ data:extend({
     weight = 10 * kg,
     default_import_location = "extraction",
   },
+  --{--crushed regolith
+  --  type = "item",
+  --  name = "crushed-regolith",
+  --  icon = "__space-age__/graphics/icons/tungsten-ore.png",
+  --  subgroup = "raw-materials",
+  --  order = "d[regolith]-b[crushed-regolith]",
+  --  inventory_move_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
+  --  pick_sound = "__space-age__/sound/item/rock-inventory-pickup.ogg",
+  --  drop_sound = "__space-age__/sound/item/rock-inventory-move.ogg",
+  --  stack_size = 50,
+  --  weight = 10 * kg,
+  --  default_import_location = "extraction",
+  --},
 })
