@@ -26,7 +26,6 @@
 
   local LFO_value = "250kJ"
   local thruster_fuel = data.raw.fluid["thruster-fuel"]
-  thruster_fuel.uber_barrel = {}
   thruster_fuel.pipent = false
   thruster_fuel.default_temperature = -183
   thruster_fuel.fuel_value = LFO_value
@@ -34,7 +33,6 @@
   thruster_fuel.order = "a[thruster]-a[fuel]"
 
   local thruster_oxidizer = data.raw.fluid["thruster-oxidizer"]
-  thruster_oxidizer.uber_barrel = {}
   thruster_oxidizer.pipent = false
   thruster_oxidizer.default_temperature = -253
   thruster_oxidizer.fuel_value = LFO_value
