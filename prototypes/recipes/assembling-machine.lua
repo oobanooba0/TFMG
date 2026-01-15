@@ -46,13 +46,11 @@ data:extend({
     },
     results = { 
       { type = "item", name = "regolith", amount = 1, probability = 0.75},
-      { type = "item", name = "ferric-asteroid-chunk", amount = 1, probability = 0.05 },
-      { type = "item", name = "crystalline-asteroid-chunk", amount = 1, probability = 0.05 },
+      { type = "item", name = "ferric-ore", amount = 1, probability = 0.05 },
+      { type = "item", name = "mineral-ore", amount = 1, probability = 0.05 },
       { type = "item", name = "volatile-asteroid-chunk", amount = 1, probability = 0.02 },
     },
   },
-
-
 
   {--Mineral Glass (in space)
     type = "recipe",
