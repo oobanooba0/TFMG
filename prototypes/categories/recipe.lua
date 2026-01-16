@@ -1,3 +1,5 @@
+--for the unpipable script to function properly, new categories involving fluid boxes need to their unpipe lookup tables properly adjusted
+
 data:extend({
     {--matter reconstructor
         type = "recipe-category",

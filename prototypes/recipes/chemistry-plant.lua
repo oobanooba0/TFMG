@@ -64,6 +64,31 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     surface_conditions = TFMG.conditions.arrival,
   },
+  {--industrial acid
+    type = "recipe",
+    category = "chemistry-plant",
+    subgroup = "fluid-recipes",
+    name = "industrial-acid",
+    icon = "__base__/graphics/icons/fluid/sulfuric-acid.png",
+    crafting_machine_tint = {
+      primary = {220,220,00},
+      secondary = {220,220,00},
+      tertiary = {220,220,00},
+      quaternary = {220,220,00},
+    },
+    energy_required = 1,
+    enabled = false,
+    allow_productivity = true,
+    allow_decomposition = false,
+    ingredients = {
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 16, fluidbox_index = 0,},
+      --some other ingredient
+    },
+    results = { 
+      { type = "fluid", name = "nothing", amount = 0, fluidbox_index = 0, show_details_in_recipe_tooltip = false,},
+      { type = "fluid", name = "industrial-acid", amount = 16, fluidbox_index = 0,},
+    },
+  },
   {--Ferric ore washing
     type = "recipe",
     category = "chemistry-plant",
@@ -85,11 +110,11 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     allow_decomposition = false,
     ingredients = {
       { type = "item", name = "ferric-ore", amount = 5 },--was originally 6
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 16, fluidbox_index = 0 },
+      { type = "fluid", name = "industrial-acid", amount = 16, fluidbox_index = 0},
     },
     results = { 
       { type = "item", name = "titanium-ore", amount = 1 },
-      { type = "fluid", name = "ferric-solution", amount = 24, fluidbox_index = 0 }--was originally 30.
+      { type = "fluid", name = "ferric-solution", amount = 24, fluidbox_index = 0}--was originally 30.
     },
   },
   {--microbe-culture
@@ -165,8 +190,6 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     reset_freshness_on_craft = true,
     main_product = "microbe-culture",
   },
-
-
   {--bio polymerisation
     type = "recipe",
     category = "chemistry-plant",

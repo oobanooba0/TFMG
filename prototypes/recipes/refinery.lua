@@ -91,7 +91,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     results = { 
       { type = "item", name = "pure-iron-ore", amount = 2 },
-      { type = "fluid", name = "water", amount = 50, fluidbox_index = 0 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 40, fluidbox_index = 0 },
     },
   },
   {--concrete
@@ -129,8 +129,8 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "volatile-asteroid-chunk", amount = 1},
     },
     results = {
-      { type = "fluid", name = "short-chain-hydrocarbons", amount_min = 0, amount_max = 8},
-      { type = "fluid", name = "water", amount = 8 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount_min = 0, amount_max = 24},
+      { type = "fluid", name = "water", amount = 24 },
       --hydrogen, probably.
       { type = "item", name = "ferric-ore", amount = 1, probability = 0.08},
       { type = "item", name = "mineral-ore", amount = 1, probability = 0.08},

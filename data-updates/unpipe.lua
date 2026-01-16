@@ -1,8 +1,71 @@
+
+--lookup table from recipe-category to the machine in data.raw which owns them.
+--this also acts as the master list of machines that even *have* unpipable connections in them
+local unpipe_lookup = { 
+  ["assembling-machine"] = data.raw["assembling-machine"]["assembling-machine"],
+  ["chemistry-plant"] = data.raw["assembling-machine"]["chemistry-plant"],
+  ["refinery"] = data.raw["assembling-machine"]["refinery"],
+  ["micro-assembler"] = data.raw["assembling-machine"]["micro-assembler"],
+  ["rocket-building"] = data.raw["rocket-silo"]["rocket-silo"],
+}
+
+
+local function fluid_ingredient_declare_index(ingredient,index,box_count)
+  if ingredient.fluidbox_index then return end --if the fluidbox index of a recipe has been specifically declared, don't run any script. (For example 0, to use the autoindexing of the game)
+  if data.raw.fluid[ingredient.name].pipent then
+    ingredient.fluidbox_index = index + box_count
+  else
+    ingredient.fluidbox_index = index
+  end
+end
+
+for _,recipe in pairs(data.raw.recipe) do
+  local machine = unpipe_lookup[recipe.category]
+  if machine and machine.fluid_boxes then
+    --at this point, the unpipe boxes haven't been added yet, so the number of boxes is the amount of regular, pipable boxes.
+    local input_boxes = 0
+    local output_boxes = 0
+    for _,fluid_box in pairs(machine.fluid_boxes) do
+      if fluid_box.production_type == "input" then
+        input_boxes = input_boxes + 1
+      elseif fluid_box.production_type == "output" then
+        output_boxes = output_boxes + 1
+      end
+    end
+
+    if recipe.ingredients then
+      local ingredient_i = 1
+      for _,ingredient in pairs(recipe.ingredients) do
+        if ingredient.type == "fluid" then
+          fluid_ingredient_declare_index(ingredient,ingredient_i,input_boxes)
+          ingredient_i = ingredient_i + 1
+        end
+      end
+    end
+    if recipe.results then
+      local ingredient_i = 1
+      for _,ingredient in pairs(recipe.results) do
+        if ingredient.type == "fluid" then
+          fluid_ingredient_declare_index(ingredient,ingredient_i,output_boxes)
+          ingredient_i = ingredient_i + 1
+        end
+      end
+    end
+  end
+end
+
+
+--
+
 local function unpipe_prototype(machine)--replace the old machine fluid box with a new one
   local fluid_boxes = table.deepcopy(machine.fluid_boxes)--we must copy, else we edit the original while we reference it which is bad
   local new_fluid_boxes = {}
-  for _,fluid_box in pairs(fluid_boxes) do
+
+  for _,fluid_box in pairs(fluid_boxes) do --first we add the regular fluid boxes (so that when autoindex applies to recipes, the nothing fluid goes to them first)
     table.insert(new_fluid_boxes,fluid_box)
+  end
+
+  for _,fluid_box in pairs(fluid_boxes) do --now we add the unpipable ones after.
     local unpipe_fluid_box = table.deepcopy(fluid_box)
     --unpipe_fluid_box.pipe_covers = nil
     --unpipe_fluid_box.pipe_picture = nil
@@ -16,41 +79,16 @@ local function unpipe_prototype(machine)--replace the old machine fluid box with
   machine.fluid_boxes = new_fluid_boxes
 end
 
-unpipe_prototype(data.raw["assembling-machine"]["assembling-machine"])
-unpipe_prototype(data.raw["assembling-machine"]["chemistry-plant"])
-unpipe_prototype(data.raw["assembling-machine"]["refinery"])
-unpipe_prototype(data.raw["assembling-machine"]["micro-assembler"])
-unpipe_prototype(data.raw["rocket-silo"]["rocket-silo"])
 
 
-
-local function fluid_ingredient_declare_index(ingredient,index)
-  if ingredient.fluidbox_index then return end
-  if data.raw.fluid[ingredient.name].pipent then ingredient.fluidbox_index = index*2
-    else ingredient.fluidbox_index = index*2-1
-  end
+for _,machine in pairs(unpipe_lookup) do --for every machine in the lookup table, we'll add the unpipe connections.
+  unpipe_prototype(machine)
 end
 
-for _,recipe in pairs(data.raw.recipe) do
-  if recipe.ingredients then 
-    local ingredient_i = 1
-    for _,ingredient in pairs(recipe.ingredients) do
-      if ingredient.type == "fluid" then
-        fluid_ingredient_declare_index(ingredient,ingredient_i)
-        ingredient_i = ingredient_i + 1
-      end
-    end
-  end
-  if recipe.results then
-    local ingredient_i = 1
-    for _,ingredient in pairs(recipe.results) do
-      if ingredient.type == "fluid" then
-        fluid_ingredient_declare_index(ingredient,ingredient_i)
-        ingredient_i = ingredient_i + 1
-      end
-    end
-  end
-end
+--after this point, machines now have their unpipe fluidboxes
+
+
+
 
 --- pipe connection category handler
 --- 

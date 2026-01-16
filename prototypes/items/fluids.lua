@@ -100,6 +100,17 @@ data:extend({
   },
   {
     type = "fluid",
+    name = "nothing",
+    icon = "__core__/graphics/empty.png",
+    subgroup = "raw-fluid",
+    order = "a[arrival]-z[nothing]",
+    default_temperature = 15,
+    base_color = {1, 1, 1},
+    flow_color = {1, 1, 1},
+    hidden = true,
+  },
+  {
+    type = "fluid",
     name = "ferric-solution",
     icon = "__TFMG-assets-0__/icons/fluids/ferric-solution.png",
     subgroup = "intermediate-fluid",

@@ -45,26 +45,26 @@ data:extend({
       {type="item", name="ferric-ore", amount=1},
     },
   },
-  --{
-  --  type = "recipe",
-  --  name = "regolith-crushing",
-  --  icons ={
-  --    {icon = "__space-age__/graphics/icons/big-volcanic-rock.png"},
-  --    {icon = "__Krastorio2Assets__/icons/recipes/crushing-overlay.png"},
-  --  },
-  --  category = "small-crusher",
-  --  subgroup = "raw-materials",
-  --  auto_recycle = false,
-  --  energy_required = 10,
-  --  enabled = false,
-  --  allow_decomposition = false,
-  --  allow_productivity = true,
-  --  hide_from_signal_gui = false,
-  --  ingredients = {
-  --    {type = "item", name = "regolith", amount = 2}
-  --  },
-  --  results = {
-  --    {type="item", name="crushed-regolith", amount = 4 },
-  --  },
-  --},
+  {
+    type = "recipe",
+    name = "regolith-crushing",
+    icons ={
+      {icon = "__space-age__/graphics/icons/big-volcanic-rock.png"},
+      {icon = "__Krastorio2Assets__/icons/recipes/crushing-overlay.png"},
+    },
+    category = "small-crusher",
+    subgroup = "raw-materials",
+    auto_recycle = false,
+    energy_required = 4,
+    enabled = false,
+    allow_decomposition = false,
+    allow_productivity = true,
+    hide_from_signal_gui = false,
+    ingredients = {
+      {type = "item", name = "regolith", amount = 1}
+    },
+    results = {
+      {type="item", name="crushed-regolith", amount = 4 },
+    },
+  },
 })

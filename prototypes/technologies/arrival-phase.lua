@@ -160,6 +160,10 @@ data:extend({
         type = "unlock-recipe",
         recipe = "pure-iron-ore-smelting"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "industrial-acid"
+      },
     },
     prerequisites = {"hydrocarbon-processing","small-crusher","solid-extraction"},
     unit = {
