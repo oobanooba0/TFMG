@@ -47,7 +47,7 @@ data:extend({
       name = "EXPLOITATION",
       track_type = "main-track",
       sound = {
-        filename = "__TFMG-music__/space/THERMAL.ogg",
+        filename = "__TFMG-music__/space/EXPLOITATION.ogg",
         volume = 1,
       },
       weight = 10
