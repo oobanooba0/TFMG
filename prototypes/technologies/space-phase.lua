@@ -117,6 +117,10 @@ data:extend({
         type = "unlock-recipe",
         recipe = "exploitation-science"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "exploitation-science-easy"
+      },
     },
     prerequisites = {"evaluate-mind","space-flight"},
     unit = {

@@ -23,5 +23,11 @@ data:extend({
     setting_type = "startup",
     allowed_values = {"full","only-heat","off"},
     default_value = "full",
-  }
+  },
+  {
+    type = "bool-setting",
+    name = "enable-simple-science-verification",
+    setting_type = "startup",
+    default_value = false,
+  },
 })

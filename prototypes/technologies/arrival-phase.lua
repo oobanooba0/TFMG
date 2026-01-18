@@ -319,6 +319,10 @@ data:extend({
         type = "unlock-recipe",
         recipe = "exploration-science"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "exploration-science-easy"
+      },
     },
     prerequisites = {"heat-management-2","optical-coil"},
     unit = {

@@ -250,6 +250,10 @@ data:extend({
       },
       {
         type = "unlock-recipe",
+        recipe = "introspection-science-easy"
+      },
+      {
+        type = "unlock-recipe",
         recipe = "neural-node"
       },
       {
