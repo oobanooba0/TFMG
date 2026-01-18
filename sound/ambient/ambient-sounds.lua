@@ -1,8 +1,8 @@
 data.raw ['ambient-sound']['main-menu'] = nil--to boldly delete the vanilla main menu music
 
 
-for _,track in pairs(data.raw ['ambient-sound']) do --removing the vanilla nauvis tracks. Normally I'd delete everything but space still needs some music that isnt just one track.
-  if track.planet == "nauvis" then 
+for _,track in pairs(data.raw ['ambient-sound']) do --removing the vanilla nauvis tracks. Normally I'd delete everything but space still needs some music, since i lack interludes for it still.
+  if track.planet == "nauvis" then
     data.raw['ambient-sound'][track.name] = nil 
   end
 end
@@ -34,7 +34,7 @@ data:extend({
     },
     {
       type = "ambient-sound",
-      name = "FIELDS",
+      name = "THERMAL",
       track_type = "main-track",
       sound = {
         filename = "__TFMG-music__/space/THERMAL.ogg",
@@ -42,7 +42,16 @@ data:extend({
       },
       weight = 10
     },
-
+    {
+      type = "ambient-sound",
+      name = "EXPLOITATION",
+      track_type = "main-track",
+      sound = {
+        filename = "__TFMG-music__/space/THERMAL.ogg",
+        volume = 1,
+      },
+      weight = 10
+    },
 --arrival
   --main
     {
