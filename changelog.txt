@@ -3,8 +3,16 @@ Version: 0.5.0
 Date: ????
   Major Features:
     - Field added. Its an asteroid Field. and a planet. Have fun there.
+    - You can now enable easy science verification, which gives alt science verification recipes that do not require any circuit computers. Disabled by default, since its not the intended way to play, its just here to make the mod more accessable.
   Features:
     - ultralight scaffolding added. Which can be used as a structural component to space platforms.
+---------------------------------------------------------------------------------------------------
+Version: 0.4.25
+Date: 2026-01-18
+  Changes:
+    - added EXPLOITATION music track
+  Bugfixes:
+    - made it so FIELDs actually plays.
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.24
 Date: 2026-01-11
