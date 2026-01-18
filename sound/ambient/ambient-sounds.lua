@@ -34,7 +34,7 @@ data:extend({
     },
     {
       type = "ambient-sound",
-      name = "FIELDS",
+      name = "THERMAL",
       track_type = "main-track",
       sound = {
         filename = "__TFMG-music__/space/THERMAL.ogg",
@@ -42,7 +42,16 @@ data:extend({
       },
       weight = 10
     },
-
+    {
+      type = "ambient-sound",
+      name = "EXPLOITATION",
+      track_type = "main-track",
+      sound = {
+        filename = "__TFMG-music__/space/THERMAL.ogg",
+        volume = 1,
+      },
+      weight = 10
+    },
 --arrival
   --main
     {
