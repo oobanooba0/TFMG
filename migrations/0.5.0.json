@@ -1,0 +1,6 @@
+{
+  "recipe" : [
+    ["exploitation-science","exploration-science"],
+    ["exploration-science", "exploitation-science"]
+  ]
+}
