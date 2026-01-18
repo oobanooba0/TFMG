@@ -57,7 +57,7 @@ data:extend({
     map_color={57, 39, 26},
     scorch_mark_color = {r = 0.329, g = 0.242, b = 0.177, a = 1.000}
   },
-  {
+  {--light platform foundation
     type = "tile",
     name = "light-space-platform-foundation",
     order = "a[artificial]-d[utility]-c[light-space-platform-foundation]",
@@ -243,7 +243,7 @@ data:extend({
     subgroup = "artificial-tiles",
     minable = {mining_time = 0.5, result = "ultralight-scaffold"},
     mined_sound = base_sounds.deconstruct_bricks(0.8),
-    is_foundation = false, --for whatever reason, this does the trick. But i hate you.
+    is_foundation = true, --for whatever reason, this does the trick. But i hate you.
     allows_being_covered = false,
     tint = {1,1,1,1},
     max_health = 5,
