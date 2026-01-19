@@ -11,7 +11,7 @@ data:extend({
     inventory_move_sound = item_sounds.electric_large_inventory_move,
     pick_sound = item_sounds.electric_large_inventory_pickup,
     drop_sound = item_sounds.electric_large_inventory_move,
-    place_result = "energy-monitor",
+    place_result = "energy-monitor-combinator",
     stack_size = 50,
     default_import_location = "nauvis",
   },

@@ -29,95 +29,6 @@ local TFMG = require("__TFMG__.util.TFMG")
   local HP_W_Hot = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5}
   local HP_W_Hot_big = {size = 64, filename = "__base__/graphics/entity/heat-pipe/heated-ending-right-1.png", scale = 0.5,shift = {-0.3,-0}}
 
-function energy_monitor_picture(tint, repeat_count)
-  return
-  {
-    layers =
-    {
-      {
-        filename = "__base__/graphics/entity/accumulator/accumulator.png",
-        priority = "high",
-        width = 130,
-        height = 189,
-        repeat_count = repeat_count,
-        shift = util.by_pixel(0, -5.5),
-        tint = tint,
-        scale = 0.25
-      },
-      {
-        filename = "__base__/graphics/entity/accumulator/accumulator-shadow.png",
-        priority = "high",
-        width = 234,
-        height = 106,
-        repeat_count = repeat_count,
-        shift = util.by_pixel(14.5, 3),
-        draw_as_shadow = true,
-        scale = 0.25
-      }
-    }
-  }
-end
-
-function energy_monitor_charge()
-  return
-  {
-    layers =
-    {
-      energy_monitor_picture({1, 1, 1, 1} , 24),
-      {
-        filename = "__base__/graphics/entity/accumulator/accumulator-charge.png",
-        priority = "high",
-        width = 178,
-        height = 210,
-        line_length = 6,
-        frame_count = 24,
-        draw_as_glow = true,
-        shift = util.by_pixel(0.5, -10),
-        scale = 0.25
-      }
-    }
-  }
-end
-
-function energy_monitor_reflection()
-  return
-  {
-    pictures =
-      {
-        filename = "__base__/graphics/entity/accumulator/accumulator-reflection.png",
-        priority = "extra-high",
-        width = 20,
-        height = 24,
-        shift = util.by_pixel(0, 25),
-        variation_count = 1,
-        scale = 2.5
-      },
-      rotate = false,
-      orientation_to_variation = false
-  }
-end
-
-function energy_monitor_discharge()
-  return
-  {
-    layers =
-    {
-      energy_monitor_picture({1, 1, 1, 1} , 24),
-      {
-        filename = "__base__/graphics/entity/accumulator/accumulator-discharge.png",
-        priority = "high",
-        width = 174,
-        height = 214,
-        line_length = 6,
-        frame_count = 24,
-        draw_as_glow = true,
-        shift = util.by_pixel(-0.5, -10.5),
-        scale = 0.25
-      }
-    }
-  }
-end
-
 
 --medium pole
   local medium_pole = data.raw["electric-pole"]["medium-electric-pole"]
@@ -129,81 +40,88 @@ end
   big_pole.maximum_wire_distance = 64
   big_pole.supply_area_distance = 2
 
-data:extend({
-  {--energy monitor
-    type = "accumulator",
-    name = "energy-monitor",
+--energy monitor (combinator)
+  local energy_monitor = table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
+  energy_monitor.name = "energy-monitor-combinator"
+  energy_monitor.icon = "__base__/graphics/icons/accumulator.png"
+  energy_monitor.minable = {mining_time = 0.1, result = "energy-monitor"}
+
+--energy monitor generators
+  --primary
+  local energy_monitor_generator_primary = {
+    type = "generator",
+    name = "energy-monitor-generator-primary",
     icon = "__base__/graphics/icons/accumulator.png",
-    flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 0.1, result = "energy-monitor"},
-    max_health = 150,
-    corpse = "accumulator-remnants",
-    dying_explosion = "accumulator-explosion",
-    collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
-    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-    damaged_trigger_effect = hit_effects.entity(),
-    drawing_box_vertical_extension = 0.5,
+    flags = {"placeable-neutral","player-creation"},
+    selectable_in_game = false,
+    hidden = true,
+    max_health = 300,
+    max_power_output = "60W",
+    fluid_usage_per_tick = 1,
+    effectivity = 100,
+    maximum_temperature = 0,
+    burns_fluid = true,
+    scale_fluid_usage = true,
+    collision_box =  {{-0.5, -0.5}, {0.5, 0.5}},
+    selection_box = {{-0.25, -0.25}, {0.25, 0.25}},
+    collision_mask = {layers = {},not_colliding_with_itself = true},
+    fluid_box =
+    {
+      volume = 100,
+      production_type = "input",
+      pipe_connections = {}
+    },
     energy_source =
     {
       type = "electric",
-      buffer_capacity = "10J",
-      usage_priority = "tertiary",
-      input_flow_limit = "1W",
-      output_flow_limit = "1W"
+      usage_priority = "primary-output",
     },
-    chargable_graphics =
+  }
+  --secondary
+  local energy_monitor_generator_secondary = table.deepcopy(energy_monitor_generator_primary)
+  energy_monitor_generator_secondary.name = "energy-monitor-generator-secondary"
+  energy_monitor_generator_secondary.energy_source.usage_priority = "secondary-output"
+  --tertiary
+  local energy_monitor_generator_tertiary = table.deepcopy(energy_monitor_generator_primary)
+  energy_monitor_generator_tertiary.name = "energy-monitor-generator-tertiary"
+  energy_monitor_generator_tertiary.energy_source.usage_priority = "tertiary"
+---energy monitor consumers
+  --primary
+  local energy_monitor_consumer_primary = {
+    type = "electric-energy-interface",
+    name = "energy-monitor-consumer-primary",
+    energy_source =
     {
-      picture = energy_monitor_picture(),
-      charge_animation = energy_monitor_charge(),
-      charge_cooldown = 30,
-      discharge_animation = energy_monitor_discharge(),
-      discharge_cooldown = 60
-      --discharge_light = {intensity = 0.7, size = 7, color = {r = 1.0, g = 1.0, b = 1.0}},
+      type = "electric",
+      usage_priority = "primary-input",
+      buffer_capacity = "100J",
     },
-    water_reflection = energy_monitor_reflection(),
-    impact_category = "metal",
-    open_sound = sounds.electric_large_open,
-    close_sound = sounds.electric_large_close,
-    working_sound =
-    {
-      main_sounds =
-      {
-        {
-          sound =
-          {
-            filename = "__base__/sound/accumulator-working.ogg",
-            volume = 0.4,
-            modifiers = volume_multiplier("main-menu", 1.44),
-            audible_distance_modifier = 0.5
-          },
-          match_volume_to_activity = true,
-          activity_to_volume_modifiers = {offset = 2, inverted = true},
-          fade_in_ticks = 4,
-          fade_out_ticks = 20
-        },
-        {
-          sound =
-          {
-            filename = "__base__/sound/accumulator-discharging.ogg",
-            volume = 0.4,
-            modifiers = volume_multiplier("main-menu", 1.44),
-            audible_distance_modifier = 0.5
-          },
-          match_volume_to_activity = true,
-          activity_to_volume_modifiers = {offset = 1},
-          fade_in_ticks = 4,
-          fade_out_ticks = 20
-        }
-      },
-      idle_sound = {filename = "__base__/sound/accumulator-idle.ogg", volume = 0.35, audible_distance_modifier = 0.5},
-      max_sounds_per_prototype = 3,
-    },
+    energy_usage = "6000W",
+    collision_box =  {{-0.5, -0.5}, {0.5, 0.5}},
+    selection_box = {{-0.25, -0.25}, {0.25, 0.25}},
+    collision_mask = {layers = {},not_colliding_with_itself = true},
+    selectable_in_game = false,
+    hidden = true,
+  }
+  --secondry
+  local energy_monitor_consumer_secondary = table.deepcopy(energy_monitor_consumer_primary)
+  energy_monitor_consumer_secondary.name = "energy-monitor-consumer-secondary"
+  energy_monitor_consumer_secondary.energy_source.usage_priority = "secondary-input"
+  --tertiary
+  local energy_monitor_consumer_tertiary = table.deepcopy(energy_monitor_consumer_primary)
+  energy_monitor_consumer_tertiary.name = "energy-monitor-consumer-tertiary"
+  energy_monitor_consumer_tertiary.energy_source.usage_priority = "tertiary"
 
-    circuit_connector = circuit_connector_definitions["chest"],
-    circuit_wire_max_distance = default_circuit_wire_max_distance,
 
-    default_output_signal = {type = "virtual", name = "signal-A"}
-  },
+data:extend({
+  energy_monitor,
+  energy_monitor_generator_primary,
+  energy_monitor_generator_secondary,
+  energy_monitor_generator_tertiary,
+  energy_monitor_consumer_primary,
+  energy_monitor_consumer_secondary,
+  energy_monitor_consumer_tertiary,
+  
   {--tiny electric pole
     type = "electric-pole",
     name = "small-electric-pole",

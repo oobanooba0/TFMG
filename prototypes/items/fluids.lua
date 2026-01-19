@@ -105,6 +105,7 @@ data:extend({
     subgroup = "raw-fluid",
     order = "a[arrival]-z[nothing]",
     default_temperature = 15,
+    fuel_value = "1GJ",
     base_color = {1, 1, 1},
     flow_color = {1, 1, 1},
     hidden = true,

@@ -17,7 +17,7 @@ function supercomputer.on_supercomputer_destroyed(event)
       local entry = storage.supercomputer[event.useful_id]
       entry.input.destroy()
       entry.output.destroy()--byebye!
-      if entry.interface ~= nil then
+      if entry.interface ~= nil then --legacy code perhaps? probably todo with the old heat interface implementaiton
         entry.interface.destroy()
       end
   		storage.supercomputer[event.useful_id] = nil

@@ -28,9 +28,12 @@
 		storage.worms.active_worms = {} end
 		if not storage.gameplay then
 			storage.gameplay = {} end
+		if not storage.energy_monitor then
+			storage.energy_monitor = {} end
+		if not storage.energy_monitor_k then
+			storage.energy_monitor_k = {} end
 		if not storage.story.self_version then
-			story.get_self_version()
-		end
+			story.get_self_version() end
   end
 
 
@@ -108,6 +111,7 @@ end)
   	function(event)
   		story.on_story_tick(event)
   		supercomputer.on_supercomputer_tick()
+			energy_monitor.on_tick()
   	end
   )
 
@@ -179,6 +183,7 @@ end
 		{filter = "name", name = "scout-o-tron", mode = "or"}, --shouldnt be needed
 		{filter = "name", name = "constructron", mode = "or"},
 		{filter = "name", name = "solar-cell", mode = "or"},
+		{filter = "name", name = "energy-monitor-combinator", mode = "or"},
 		--{filter = "vehicle", mode = "or"},
   }
 
@@ -266,6 +271,8 @@ end
 			gameplay.on_spider_built(entity)
 		elseif entity.name == "solar-cell" then
 			gameplay.on_solar_panel_built(entity)
+		elseif entity.name == "energy-monitor-combinator" then
+			energy_monitor.on_energy_monitor_built(entity)
 		end
   end
 
@@ -274,6 +281,7 @@ end
   	function(event)
   		supercomputer.on_supercomputer_destroyed(event)
 			cargo.on_bay_destroyed(event)
+			energy_monitor.on_energy_monitor_destroyed(event)
   	end
   )
 
