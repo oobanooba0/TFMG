@@ -43,7 +43,11 @@ local TFMG = require("__TFMG__.util.TFMG")
 --energy monitor (combinator)
   local energy_monitor = table.deepcopy(data.raw["constant-combinator"]["constant-combinator"])
   energy_monitor.name = "energy-monitor-combinator"
-  energy_monitor.icon = "__base__/graphics/icons/accumulator.png"
+  energy_monitor.icon = nil
+  energy_monitor.icons = {{
+      icon = "__base__/graphics/icons/accumulator.png",
+      tint = {1,1,0}
+    }}
   energy_monitor.minable = {mining_time = 0.1, result = "energy-monitor"}
 
 --energy monitor generators
@@ -51,7 +55,10 @@ local TFMG = require("__TFMG__.util.TFMG")
   local energy_monitor_generator_primary = {
     type = "generator",
     name = "energy-monitor-generator-primary",
-    icon = "__base__/graphics/icons/accumulator.png",
+    icons = {{
+      icon = "__base__/graphics/icons/accumulator.png",
+      tint = {1,1,0}
+    }},
     flags = {"placeable-neutral","player-creation"},
     selectable_in_game = false,
     hidden = true,
@@ -90,6 +97,10 @@ local TFMG = require("__TFMG__.util.TFMG")
   local energy_monitor_consumer_primary = {
     type = "electric-energy-interface",
     name = "energy-monitor-consumer-primary",
+    icons = {{
+      icon = "__base__/graphics/icons/accumulator.png",
+      tint = {1,1,0}
+    }},
     energy_source =
     {
       type = "electric",

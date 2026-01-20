@@ -60,16 +60,16 @@ local function update_energy_monitor(v) --update a single energy monitor
     if not child.valid then return game.print("borked energy monitor?") end
     if child.type == "generator" then
       child.fluidbox[1] = { name = "nothing", amount = 100}
-      signal_values[k] = child.energy_generated_last_tick
+      signal_values[k] =   -(child.energy_generated_last_tick * 100)
     elseif child.type == "electric-energy-interface" then
       signal_values[k] = child.energy
     end
   end
 
   combinator_control.filters = {
-    {value = {type = "virtual", name = "signal-A", quality = "normal"}, min = math.ceil(signal_values["A"] / (signal_values["1"] + 0.0001))},
-    {value = {type = "virtual", name = "signal-B", quality = "normal"}, min = math.ceil(signal_values["B"] / (signal_values["2"] + 0.0001))},
-    {value = {type = "virtual", name = "signal-C", quality = "normal"}, min = math.ceil(signal_values["C"] / (signal_values["3"] + 0.0001))},
+    {value = {type = "virtual", name = "signal-P", quality = "normal"}, min = math.ceil(signal_values["A"] + signal_values["1"])},
+    {value = {type = "virtual", name = "signal-S", quality = "normal"}, min = math.ceil(signal_values["B"] + signal_values["2"])},
+    {value = {type = "virtual", name = "signal-T", quality = "normal"}, min = math.ceil(signal_values["C"] + signal_values["3"])},
   }
   combinator_control.group = ""
 

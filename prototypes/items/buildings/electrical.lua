@@ -5,7 +5,10 @@ data:extend({
   {
     type = "item",
     name = "energy-monitor",
-    icon = "__base__/graphics/icons/accumulator.png",
+    icons = {{
+      icon = "__base__/graphics/icons/accumulator.png",
+      tint = {1,1,0}
+    }},
     subgroup = "energy",
     order = "a-z",
     inventory_move_sound = item_sounds.electric_large_inventory_move,
