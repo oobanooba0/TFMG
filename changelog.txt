@@ -5,7 +5,9 @@ Date: ????
     - Field added. Its an asteroid Field. and a planet. Have fun there.
     - You can now enable easy science verification, which gives alt science verification recipes that do not require any circuit computers. Disabled by default, since its not the intended way to play, its just here to make the mod more accessable.
   Features:
+    - Energy monitor is now significantly better, and can track Primary, secondary and tertiary power satisfaction/capacities. Allowing you to actually make those charger/discharger power storage setups I wanted.
     - ultralight scaffolding added. Which can be used as a structural component to space platforms.
+  Changes:
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.25
 Date: 2026-01-18

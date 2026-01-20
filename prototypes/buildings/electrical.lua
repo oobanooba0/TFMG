@@ -125,14 +125,13 @@ local TFMG = require("__TFMG__.util.TFMG")
 
 
 data:extend({
-  energy_monitor,
+  energy_monitor,--the energy monitor is a 7 part compound entity im crying
   energy_monitor_generator_primary,
   energy_monitor_generator_secondary,
   energy_monitor_generator_tertiary,
   energy_monitor_consumer_primary,
   energy_monitor_consumer_secondary,
   energy_monitor_consumer_tertiary,
-  
   {--tiny electric pole
     type = "electric-pole",
     name = "small-electric-pole",
@@ -1091,9 +1090,6 @@ data:extend({
     max_power_output = "20MW",
     max_health = 200,
     damaged_trigger_effect = hit_effects.entity(),
-    resistances = {
-      { type = "fire", percent = 60 },
-    },
     vehicle_impact_sound = sounds.generic_impact,
     working_sound = {
       sound = {
