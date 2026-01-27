@@ -1,5 +1,6 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
+data.raw["pipe-to-ground"]["pipe-to-ground"].fluid_box.pipe_connections[2].max_underground_distance = 16
 
 data:extend({
   {
@@ -287,7 +288,7 @@ data:extend({
           connection_type = "underground",
           direction = defines.direction.south,
           position = {0, 0},
-          max_underground_distance = 10,
+          max_underground_distance = 16,
           connection_category = "pipe-2"
         }
       },
