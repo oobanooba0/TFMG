@@ -81,15 +81,21 @@ data:extend({
   },
   {
     type = "item-subgroup",
-    name = "intermediate-fluid",
+    name = "gas",
     group = "fluids",
     order = "c"
   },
   {
     type = "item-subgroup",
-    name = "thruster-fluid",
+    name = "intermediate-fluid",
     group = "fluids",
     order = "d"
+  },
+  {
+    type = "item-subgroup",
+    name = "thruster-fluid",
+    group = "fluids",
+    order = "e"
   },
 
 

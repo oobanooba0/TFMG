@@ -81,12 +81,40 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     allow_productivity = true,
     allow_decomposition = false,
     ingredients = {
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 16, fluidbox_index = 0,},
-      --some other ingredient
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 16, fluidbox_index = 1,},
+      { type = "fluid", name = "hydrogen", amount = 24, fluidbox_index = 2,},
     },
     results = { 
       { type = "fluid", name = "nothing", amount = 0, fluidbox_index = 0, show_details_in_recipe_tooltip = false,},
       { type = "fluid", name = "industrial-acid", amount = 16, fluidbox_index = 0,},
+    },
+  },
+
+  {--water electrolysis
+    type = "recipe",
+    category = "chemistry-plant",
+    subgroup = "fluid-recipes",
+    name = "water-electrolysis",
+    icon = "__Krastorio2Assets__/icons/recipes/water-separation.png",
+    icon_size = 128,
+    crafting_machine_tint = {
+      primary = {220,00,00},
+      secondary = {220,220,220},
+      tertiary = {220,00,00},
+      quaternary = {220,220,220},
+    },
+    energy_required = 2,
+    enabled = false,
+    allow_productivity = false,
+    allow_decomposition = false,
+    ingredients = {
+      { type = "item", name = "conductive-coil", amount = 4},
+      { type = "fluid", name = "water", amount = 16, fluidbox_index = 0,},
+    },
+    results = { 
+      { type = "item", name = "pure-iron-ore", amount = 1, probability = 0.6},
+      { type = "fluid", name = "hydrogen", amount = 32, fluidbox_index = 1},
+      { type = "fluid", name = "oxygen", amount = 16, fluidbox_index = 2},
     },
   },
   {--Ferric ore washing

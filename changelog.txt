@@ -8,10 +8,14 @@ Date: ????
     - Energy monitor is now significantly better, and can track Primary, secondary and tertiary power satisfaction/capacities. Allowing you to actually make those charger/discharger power storage setups I wanted.
     - ultralight scaffolding added. Which can be used as a structural component to space platforms.
     - Industrial acid added, this is a new intermediate used in crafting titanium plates. The main gimick is that industrial acid cannot be piped or barreled. It must be directly inserted.
+    - Added hydrogen
+    - Added oxygen
+    - Added water electrolysis
   Changes:
     - Yellow undergrounds now reach 8 tiles
     - Red undergrounds now reach 10 tiles (allowing for some nicer inline designs.)
     - Underground pipes (both types) now reach 16 tiles
+    - Conductive coil anti-winding buffed
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.25
 Date: 2026-01-18

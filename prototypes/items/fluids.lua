@@ -121,4 +121,27 @@ data:extend({
     flow_color = {0.7, 0.2, 0.0},
     uber_barrel = {},
   },
+  {
+    type = "fluid",
+    name = "hydrogen",
+    icon = "__Krastorio2Assets__/icons/fluids/hydrogen.png",
+    subgroup = "gas",
+    fuel_value = "0.3MJ", --random ass fuel value
+    order = "a[arrival]-f[ferric-solution]",
+    default_temperature = 0,
+    base_color = {0.9, 0.9, 0.9},
+    flow_color = {0.9, 0.9, 0.9},
+    uber_barrel = {},
+  },
+  {
+    type = "fluid",
+    name = "oxygen",
+    icon = "__Krastorio2Assets__/icons/fluids/oxygen.png",
+    subgroup = "gas",
+    order = "a[arrival]-f[ferric-solution]",
+    default_temperature = 0,
+    base_color = {0.5, 0.0, 0.0},
+    flow_color = {0.7, 0.0, 0.0},
+    uber_barrel = {},
+  },
 })
