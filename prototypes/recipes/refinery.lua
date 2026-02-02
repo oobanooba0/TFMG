@@ -130,7 +130,8 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     results = {
       { type = "fluid", name = "short-chain-hydrocarbons", amount_min = 0, amount_max = 24},
-      { type = "fluid", name = "water", amount = 24 },
+      { type = "fluid", name = "oxygen", amount = 32 },
+      { type = "fluid", name = "hydrogen", amount = 32 },
       --hydrogen, probably.
       { type = "item", name = "ferric-ore", amount = 1, probability = 0.08},
       { type = "item", name = "mineral-ore", amount = 1, probability = 0.08},

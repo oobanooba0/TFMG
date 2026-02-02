@@ -168,6 +168,7 @@ data:extend({
         type = "unlock-recipe",
         recipe = "water-electrolysis"
       },
+      
     },
     prerequisites = {"hydrocarbon-processing","small-crusher","solid-extraction"},
     unit = {

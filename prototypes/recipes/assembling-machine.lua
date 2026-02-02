@@ -155,9 +155,10 @@ data:extend({
     ingredients = {
       { type = "item", name = "mineral-glass", amount = 4 },
       { type = "item", name = "polymer-bar", amount = 1 },
+      { type = "fluid", name = "industrial-acid", amount = 16, fluidbox_index = 0 },
     },
     results = { 
-      { type = "item", name = "optical-coil", amount = 4 }
+      { type = "item", name = "optical-coil", amount = 6 }
     },
   },
   {--modular circuit
@@ -180,14 +181,14 @@ data:extend({
     type = "recipe",
     category = "assembling-machine-pure",
     name = "ai-processor",
-    energy_required = 12,
+    energy_required = 8,
     enabled = false,
     allow_productivity = true,
     ingredients = {
       { type = "item", name = "modular-circuit", amount = 2 },
       { type = "item", name = "fused-crystalline-chunk", amount = 1 },
       { type = "item", name = "capacitor-discharged", amount = 2 },
-      { type = "item", name = "optical-coil", amount = 6 },
+      { type = "item", name = "optical-coil", amount = 12 },
     },
     results = { 
       { type = "item", name = "ai-processor", amount = 1 }
@@ -221,7 +222,7 @@ data:extend({
     allow_productivity = true,
     ingredients = {
       { type = "item", name = "high-performance-structure", amount = 2 },
-      { type = "item", name = "optical-coil", amount = 8 },
+      { type = "item", name = "optical-coil", amount = 12 },
       { type = "fluid", name = "organic-sludge", amount = 50 },
     },
     results = { 
@@ -510,7 +511,7 @@ data:extend({
       { type = "item", name = "splitter", amount = 1 },
       { type = "item", name = "high-performance-structure", amount = 2 },
       { type = "item", name = "mechatronic-components", amount = 4 },
-      { type = "item", name = "optical-coil", amount = 8 },
+      { type = "item", name = "optical-coil", amount = 12 },
       { type = "fluid", name = "mineral-lubricant", amount = 16 },
     },
     results = { 
@@ -795,7 +796,7 @@ data:extend({
     enabled = false,
     ingredients = {
       { type = "item", name = "high-performance-structure", amount = 4 },
-      { type = "item", name = "optical-coil", amount = 10 },
+      { type = "item", name = "optical-coil", amount = 16 },
     },
     results = { 
       { type = "item", name = "light-space-platform-foundation", amount = 1 }

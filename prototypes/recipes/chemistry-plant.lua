@@ -308,10 +308,10 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "conductive-coil", amount = 4 },
       { type = "item", name = "crystalline-plate", amount = 1 },
       { type = "item", name = "polymer-bar", amount = 2 },
-      { type = "fluid", name = "ferric-solution", amount = 5, fluidbox_index = 0 },
+      { type = "fluid", name = "ferric-solution", amount = 8, fluidbox_index = 0 },
     },
     results = { 
-      { type = "item", name = "capacitor-discharged", amount = 2 }
+      { type = "item", name = "capacitor-discharged", amount = 1 }
     },
   },
   {--Excited crystal quenching
