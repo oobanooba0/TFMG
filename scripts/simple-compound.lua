@@ -30,11 +30,7 @@ function simple_compound.on_built_chemical_reactor(event)
   })
   reactor.destructible = false
   TFMG.force_storage({"simple_compound",unit_number},{entity,reactor})
-  TFMG.block(entity.fluidbox[1])
   entity.fluidbox.add_linked_connection(1,reactor,1)
-
-
-
 end
 
 return simple_compound

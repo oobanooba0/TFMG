@@ -813,7 +813,7 @@ data:extend({
     minable = {mining_time = 0.5, result = "chemical-reactor"},
     max_health = 400,
     collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    selection_box = {{-2.4, -2.4}, {2.4, 2.4}},
     selection_priority = 55,
     corpse = "nuclear-reactor-remnants",
     dying_explosion = "nuclear-reactor-explosion",
@@ -894,30 +894,29 @@ data:extend({
       animation_progress = 0.5,
       animation =
       {
-        layers =
+        layers = {
         {
-          {
-            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3.png",
-            priority = "high",
-            width = 214,
-            height = 237,
-            frame_count = 32,
-            line_length = 8,
-            shift = util.by_pixel(0, -0.75),
-            scale = 0.5
-          },
-          {
-            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-shadow.png",
-            priority = "high",
-            width = 260,
-            height = 162,
-            frame_count = 32,
-            line_length = 8,
-            draw_as_shadow = true,
-            shift = util.by_pixel(28, 4),
-            scale = 0.5
-          }
-        }
+          filename = "__Krastorio2Assets__/buildings/gas-power-station/gas-power-station.png",
+          width = 380,
+          height = 380,
+          scale = 0.5,
+          frame_count = 32,
+          line_length = 8,
+          animation_speed = 1.2,
+          shift = { 0, 0 },
+        },
+        {
+          filename = "__Krastorio2Assets__/buildings/gas-power-station/gas-power-station-sh.png",
+          width = 380,
+          height = 380,
+          scale = 0.5,
+          frame_count = 1,
+          repeat_count = 32,
+          animation_speed = 1.2,
+          draw_as_shadow = true,
+          shift = { 0, 0 },
+        },
+      },
       }
     },
   },
@@ -1013,40 +1012,6 @@ data:extend({
       HP_E_Hot_big,HP_E_Hot_big,
       HP_S_Hot_big,HP_S_Hot_big,
       HP_W_Hot_big,HP_W_Hot_big,
-    },
-    picture = {
-      layers = {
-        {
-          filename = "__Krastorio2Assets__/buildings/gas-power-station/gas-power-station.png",
-          width = 380,
-          height = 380,
-          scale = 0.5,
-          frame_count = 32,
-          line_length = 8,
-          animation_speed = 1.2,
-          shift = { 0, 0 },
-        },
-        {
-          filename = "__Krastorio2Assets__/buildings/pipe-patch/pipe-patch.png",
-          width = 55,
-          height = 50,
-          frame_count = 1,
-          repeat_count = 32,
-          scale = 0.5,
-          shift = { 0, 2.5 },
-        },
-        {
-          filename = "__Krastorio2Assets__/buildings/gas-power-station/gas-power-station-sh.png",
-          width = 380,
-          height = 380,
-          scale = 0.5,
-          frame_count = 1,
-          repeat_count = 32,
-          animation_speed = 1.2,
-          draw_as_shadow = true,
-          shift = { 0, 0 },
-        },
-      },
     },
     impact_category = "metal-large",
     open_sound = {filename = "__base__/sound/open-close/nuclear-open.ogg", volume = 0.8},
