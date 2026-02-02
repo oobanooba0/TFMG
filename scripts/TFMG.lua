@@ -45,4 +45,16 @@ function TFMG.global_achievement(achievement) --unlock an achievement for every 
   end
 end
 
+function TFMG.force_storage(keys,data) --give a list of keys and data. and this function will create the appropriate directory in storage
+  local subtable = storage
+  for i = 1,(#keys - 1) do
+    local key = keys[i]
+    if not subtable[key] then subtable[key] = {} end
+    subtable = subtable[key]
+  end
+  subtable[keys[#keys]] = data
+  --TFMG.block(storage[keys[1]])
+end
+
+
 return TFMG

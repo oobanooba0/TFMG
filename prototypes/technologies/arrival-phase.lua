@@ -277,6 +277,14 @@ data:extend({
         type = "unlock-recipe",
         recipe = "chemical-reactor"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "react-short-chain-hydrocarbons"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "react-hydrogen-oxygen"
+      },
     },
     prerequisites = {"energy-distribution-2","contemplate-life"},
     unit = {

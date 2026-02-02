@@ -89,6 +89,7 @@
 --recipes
 	require("prototypes.recipes.assembling-machine")
 	require("prototypes.recipes.charger-discharger")
+	require("prototypes.recipes.chemical-reactor")
 	require("prototypes.recipes.chemistry-plant")
 	require("prototypes.recipes.furnace")
 	require("prototypes.recipes.matter-reconstructor")

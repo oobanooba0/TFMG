@@ -45,8 +45,12 @@ data:extend({
         type = "recipe-category",
         name = "charger"
     },
-    {--charger
+    {--centrifuge
         type = "recipe-category",
         name = "centrifuge"
+    },
+    {--chemical-reactor
+        type = "recipe-category",
+        name = "chemical-reactor"
     },
 })

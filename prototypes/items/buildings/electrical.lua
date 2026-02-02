@@ -91,7 +91,7 @@ data:extend({
     weight = TFMG.rocket_capacity(5),
     subgroup = "energy",
     order = "c[heat]-a[chemical]",
-    place_result = "chemical-reactor",
+    place_result = "chemical-reactor-assembler", --I might need to find some way to trick the game into showing the correct information. Idk.
     place_as_equipment_result = "chemical-reactor-equipment",
     default_import_location = "nauvis",
   },

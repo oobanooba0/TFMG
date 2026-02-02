@@ -32,7 +32,7 @@ function energy_monitor.on_energy_monitor_built(entity)
     children = children
   })
 
-  TFMG.block(storage.energy_monitor[unit_number])
+  --TFMG.block(storage.energy_monitor[unit_number])
 end
 
 function energy_monitor.on_energy_monitor_destroyed(event)

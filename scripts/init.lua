@@ -34,7 +34,9 @@
 			storage.energy_monitor_k = {} end
 		if not storage.story.self_version then
 			story.get_self_version() end
-  end
+		if not storage.simple_compound then
+			storage.simple_compound = {} end
+	end
 
 
 --init events
@@ -184,6 +186,7 @@ end
 		{filter = "name", name = "constructron", mode = "or"},
 		{filter = "name", name = "solar-cell", mode = "or"},
 		{filter = "name", name = "energy-monitor-combinator", mode = "or"},
+		{filter = "name", name = "chemical-reactor-assembler", mode = "or"},
 		--{filter = "vehicle", mode = "or"},
   }
 
@@ -273,6 +276,8 @@ end
 			gameplay.on_solar_panel_built(entity)
 		elseif entity.name == "energy-monitor-combinator" then
 			energy_monitor.on_energy_monitor_built(entity)
+		elseif entity.name == "chemical-reactor-assembler" then
+			simple_compound.on_built_chemical_reactor(event)
 		end
   end
 
@@ -282,6 +287,7 @@ end
   		supercomputer.on_supercomputer_destroyed(event)
 			cargo.on_bay_destroyed(event)
 			energy_monitor.on_energy_monitor_destroyed(event)
+			simple_compound.on_destroyed(event)
   	end
   )
 

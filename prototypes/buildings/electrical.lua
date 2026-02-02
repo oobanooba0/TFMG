@@ -805,32 +805,38 @@ data:extend({
     burning_cooldown = 20,
     water_reflection = boiler_reflection()
   },
-  {--chemical reactor
-    type = "reactor",
-    name = "chemical-reactor",
-    icon  = "__base__/graphics/icons/nuclear-reactor.png",
+  {--chemical reactor assembler
+    type = "assembling-machine",
+    name = "chemical-reactor-assembler",
+    icon = "__base__/graphics/icons/assembling-machine-3.png",
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 0.5, result = "chemical-reactor"},
-    max_health = 500,
+    max_health = 400,
+    collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    selection_priority = 55,
     corpse = "nuclear-reactor-remnants",
-    surface_conditions = TFMG.conditions.oxygen,
     dying_explosion = "nuclear-reactor-explosion",
+    icon_draw_specification = {shift = {0, -0.3}},
+    circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["assembling-machine"],
+    alert_icon_shift = util.by_pixel(0, -12),
+    fluid_boxes =
     {
       {
-        property = "pressure",
-        min = 1,
-      }
-    },
-    consumption = "20MW",
-    neighbour_bonus = 0.5,
-    energy_source =
-    {
-      type = "fluid",
-      effectivity = 0.5,
-      burns_fluid = true,
-      scale_fluid_usage = true,
-      destroy_non_fuel_fluid = false,
-      fluid_box = {
+        production_type = "output",
+        volume = 1,
+        pipe_connections = {
+          { 
+            flow_direction = "output",
+            connection_type = "linked",
+            linked_connection_id = 1,
+          },
+        },
+      },
+      {
+        production_type = "output",
+        pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
         volume = 200,
         pipe_connections = {
@@ -839,46 +845,133 @@ data:extend({
           { flow_direction = "input-output", direction = defines.direction.south, position = { 0, 2 } },
           { flow_direction = "input-output", direction = defines.direction.north, position = { 0, -2 } },
         },
-        production_type = "input-output",
+        secondary_draw_orders = { north = -1 },
       },
+      {
+        production_type = "input",
+        pipe_picture = assembler3pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 100,
+        pipe_connections = {
+          { flow_direction = "input-output", direction = defines.direction.east, position = { 2, 1 } },
+          { flow_direction = "input-output", direction = defines.direction.west, position = { -2, -1 } },
+          { flow_direction = "input-output", direction = defines.direction.south, position = { -1, 2 } },
+          { flow_direction = "input-output", direction = defines.direction.north, position = { 1, -2 } },
+        },
+        secondary_draw_orders = { north = -1 },
+      },
+      {
+        production_type = "input",
+        pipe_picture = assembler3pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 100,
+        pipe_connections = {
+          { flow_direction = "input-output", direction = defines.direction.east, position = { 2, -1 } },
+          { flow_direction = "input-output", direction = defines.direction.west, position = { -2, 1 } },
+          { flow_direction = "input-output", direction = defines.direction.south, position = { 1, 2 } },
+          { flow_direction = "input-output", direction = defines.direction.north, position = { -1, -2 } },
+        },
+        secondary_draw_orders = { north = -1 },
+      },
+    },
+    fluid_boxes_off_when_no_fluid_recipe = false,
+    open_sound = sounds.machine_open,
+    close_sound = sounds.machine_close,
+    impact_category = "metal",
+    damaged_trigger_effect = hit_effects.entity(),
+    drawing_box_vertical_extension = 0.2,
+    crafting_categories = {
+      "chemical-reactor"
+    },
+    crafting_speed = 1,
+    energy_source =
+    {
+      type = "void",
+    },
+    energy_usage = "1W",
+    graphics_set =
+    {
+      animation_progress = 0.5,
+      animation =
+      {
+        layers =
+        {
+          {
+            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3.png",
+            priority = "high",
+            width = 214,
+            height = 237,
+            frame_count = 32,
+            line_length = 8,
+            shift = util.by_pixel(0, -0.75),
+            scale = 0.5
+          },
+          {
+            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-shadow.png",
+            priority = "high",
+            width = 260,
+            height = 162,
+            frame_count = 32,
+            line_length = 8,
+            draw_as_shadow = true,
+            shift = util.by_pixel(28, 4),
+            scale = 0.5
+          }
+        }
+      }
+    },
+  },
+  {--chemical reactor reactor
+    type = "reactor",
+    name = "chemical-reactor-reactor",
+    icon  = "__base__/graphics/icons/nuclear-reactor.png",
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {mining_time = 0.5, result = "chemical-reactor"},
+    max_health = 500,
+    corpse = "nuclear-reactor-remnants",
+    dying_explosion = "nuclear-reactor-explosion",
+    {
+      {
+        property = "pressure",
+        min = 1,
+      }
+    },
+    consumption = "10MW",
+    neighbour_bonus = 0.5,
+    scale_energy_usage = false,
+    energy_source =
+    {
+      type = "fluid",
+      fluid_usage_per_tick = (1/60),--hopefully that means i can work in easy numbers
+      scale_fluid_usage = true,
+      burns_fluid = false,
+      fluid_box = {
+        production_type = "input",
+        volume = 1, --small volume to limit shenanigans
+        pipe_connections = {
+          { 
+            flow_direction = "input",
+            connection_type = "linked",
+            linked_connection_id = 1,
+          },
+        },
+      },
+      light_flicker = {
+        color = {0,0,0},
+        minimum_intensity = 0.7,
+        maximum_intensity = 0.95
+      },
+      smoke =
+      {{
+          name = "smoke",
+          frequency = 15,
+          starting_vertical_speed = 0.0,
+          starting_frame_deviation = 60
+      }},
     },
     collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     damaged_trigger_effect = hit_effects.entity(),
-    picture = {
-      layers = {
-        {
-          filename = "__Krastorio2Assets__/buildings/gas-power-station/gas-power-station.png",
-          width = 380,
-          height = 380,
-          scale = 0.5,
-          frame_count = 32,
-          line_length = 8,
-          animation_speed = 1.2,
-          shift = { 0, 0 },
-        },
-        {
-          filename = "__Krastorio2Assets__/buildings/pipe-patch/pipe-patch.png",
-          width = 55,
-          height = 50,
-          frame_count = 1,
-          repeat_count = 32,
-          scale = 0.5,
-          shift = { 0, 2.5 },
-        },
-        {
-          filename = "__Krastorio2Assets__/buildings/gas-power-station/gas-power-station-sh.png",
-          width = 380,
-          height = 380,
-          scale = 0.5,
-          frame_count = 1,
-          repeat_count = 32,
-          animation_speed = 1.2,
-          draw_as_shadow = true,
-          shift = { 0, 0 },
-        },
-      },
-    },
     heat_buffer =
     {
       max_temperature = 750,
@@ -921,6 +1014,40 @@ data:extend({
       HP_S_Hot_big,HP_S_Hot_big,
       HP_W_Hot_big,HP_W_Hot_big,
     },
+    picture = {
+      layers = {
+        {
+          filename = "__Krastorio2Assets__/buildings/gas-power-station/gas-power-station.png",
+          width = 380,
+          height = 380,
+          scale = 0.5,
+          frame_count = 32,
+          line_length = 8,
+          animation_speed = 1.2,
+          shift = { 0, 0 },
+        },
+        {
+          filename = "__Krastorio2Assets__/buildings/pipe-patch/pipe-patch.png",
+          width = 55,
+          height = 50,
+          frame_count = 1,
+          repeat_count = 32,
+          scale = 0.5,
+          shift = { 0, 2.5 },
+        },
+        {
+          filename = "__Krastorio2Assets__/buildings/gas-power-station/gas-power-station-sh.png",
+          width = 380,
+          height = 380,
+          scale = 0.5,
+          frame_count = 1,
+          repeat_count = 32,
+          animation_speed = 1.2,
+          draw_as_shadow = true,
+          shift = { 0, 0 },
+        },
+      },
+    },
     impact_category = "metal-large",
     open_sound = {filename = "__base__/sound/open-close/nuclear-open.ogg", volume = 0.8},
     close_sound = {filename = "__base__/sound/open-close/nuclear-close.ogg", volume = 0.8},
@@ -951,6 +1078,7 @@ data:extend({
     circuit_wire_max_distance = reactor_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["nuclear-reactor"],
   },
+  
 ---Charger discharger
   {--Charger
     type = "furnace",
