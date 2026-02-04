@@ -103,10 +103,11 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       tertiary = {220,00,00},
       quaternary = {220,220,220},
     },
-    energy_required = 2,
+    energy_required = 4,
     enabled = false,
     allow_productivity = false,
     allow_decomposition = false,
+    allow_consumption = false,
     ingredients = {
       { type = "item", name = "conductive-coil", amount = 4},
       { type = "fluid", name = "water", amount = 16, fluidbox_index = 0,},

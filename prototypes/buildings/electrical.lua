@@ -807,7 +807,7 @@ data:extend({
   },
   {--chemical reactor assembler
     type = "assembling-machine",
-    name = "chemical-reactor-assembler",
+    name = "chemical-reactor",
     icon = "__base__/graphics/icons/assembling-machine-3.png",
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 0.5, result = "chemical-reactor"},
@@ -925,7 +925,7 @@ data:extend({
     name = "chemical-reactor-reactor",
     icon  = "__base__/graphics/icons/nuclear-reactor.png",
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 0.5, result = "chemical-reactor"},
+    hidden = true,
     max_health = 500,
     corpse = "nuclear-reactor-remnants",
     dying_explosion = "nuclear-reactor-explosion",
@@ -935,7 +935,7 @@ data:extend({
         min = 1,
       }
     },
-    consumption = "10MW",
+    consumption = "20MW",
     neighbour_bonus = 0.5,
     scale_energy_usage = false,
     energy_source =
@@ -979,14 +979,14 @@ data:extend({
       minimum_glow_temperature = 350,
       connections =
       {
-        { position = {-1, -2}, direction = defines.direction.north },
-        { position = {1, -2}, direction = defines.direction.north },
-        { position = {2, -1}, direction = defines.direction.east },
-        { position = {2, 1}, direction = defines.direction.east },
-        { position = {1, 2}, direction = defines.direction.south },
-        { position = {-1, 2}, direction = defines.direction.south },
-        { position = {-2, 1}, direction = defines.direction.west },
-        { position = {-2, -1}, direction = defines.direction.west }
+        { position = {-2, -2}, direction = defines.direction.north },
+        { position = {2, -2}, direction = defines.direction.north },
+        { position = {2, -2}, direction = defines.direction.east },
+        { position = {2, 2}, direction = defines.direction.east },
+        { position = {2, 2}, direction = defines.direction.south },
+        { position = {-2, 2}, direction = defines.direction.south },
+        { position = {-2, 2}, direction = defines.direction.west },
+        { position = {-2, -2}, direction = defines.direction.west }
       },
     },
     connection_patches_connected = {

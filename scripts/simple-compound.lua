@@ -30,7 +30,15 @@ function simple_compound.on_built_chemical_reactor(event)
   })
   reactor.destructible = false
   TFMG.force_storage({"simple_compound",unit_number},{entity,reactor})
+  --linked pipe connection
   entity.fluidbox.add_linked_connection(1,reactor,1)
+  --secret_circuit_wire
+  local assembler_connectors = entity.get_wire_connectors(true)
+  local reactor_connectors = reactor.get_wire_connectors(true)
+  assembler_connectors[1].connect_to(reactor_connectors[1],false,defines.wire_origin.script)
+  assembler_connectors[2].connect_to(reactor_connectors[2],false,defines.wire_origin.script)
+  local reactor_control = reactor.get_or_create_control_behavior()
+  reactor_control.read_temperature = true
 end
 
 return simple_compound

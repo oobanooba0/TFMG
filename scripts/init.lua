@@ -186,7 +186,7 @@ end
 		{filter = "name", name = "constructron", mode = "or"},
 		{filter = "name", name = "solar-cell", mode = "or"},
 		{filter = "name", name = "energy-monitor-combinator", mode = "or"},
-		{filter = "name", name = "chemical-reactor-assembler", mode = "or"},
+		{filter = "name", name = "chemical-reactor", mode = "or"},
 		--{filter = "vehicle", mode = "or"},
   }
 
@@ -276,7 +276,7 @@ end
 			gameplay.on_solar_panel_built(entity)
 		elseif entity.name == "energy-monitor-combinator" then
 			energy_monitor.on_energy_monitor_built(entity)
-		elseif entity.name == "chemical-reactor-assembler" then
+		elseif entity.name == "chemical-reactor" then
 			simple_compound.on_built_chemical_reactor(event)
 		end
   end
