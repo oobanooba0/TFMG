@@ -19,6 +19,22 @@ data:extend({
       { type = "fluid", name = "hot-gas", amount = 1, temperature = 1000, fluidbox_index = 1}
     },
   },
+  {--short chain hydrocarbons
+    type = "recipe",
+    category = "chemical-reactor",
+    name = "react-short-chain-hydrocarbons-in-air",
+    subgroup = "fluid-recipes",
+    energy_required = 1,
+    surface_conditions = TFMG.conditions.arrival,
+    enabled = false,
+    allow_productivity = false,
+    ingredients = {
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 20, fluidbox_index = 1},
+    },
+    results = { 
+      { type = "fluid", name = "hot-gas", amount = 1, temperature = 1000, fluidbox_index = 1}
+    },
+  },
   {--hydrogen-oxygen-combustion
     type = "recipe",
     category = "chemical-reactor",

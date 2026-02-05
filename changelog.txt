@@ -14,6 +14,8 @@ Date: ????
     - Added oxygen
     - Added water electrolysis
     - Optical coils now use industrial acid
+    - Chemical power has been reworked, chemical reactors now take multiple inputs (fuel + oxygen) and can give byproducts when producing power.
+    - Chemical reactors pipe and heat pipe layout has been changed to suit the rework.
   Balancing:
     - Yellow undergrounds now reach 8 tiles
     - Red undergrounds now reach 10 tiles (allowing for some nicer inline designs.)

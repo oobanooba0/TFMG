@@ -283,6 +283,10 @@ data:extend({
       },
       {
         type = "unlock-recipe",
+        recipe = "react-short-chain-hydrocarbons-in-air"
+      },
+      {
+        type = "unlock-recipe",
         recipe = "react-hydrogen-oxygen"
       },
     },
