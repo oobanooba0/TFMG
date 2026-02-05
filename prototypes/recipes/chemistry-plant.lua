@@ -1,38 +1,38 @@
 local TFMG = require("util.TFMG")
 
-data:extend({--6:4:1 Water, Hydrocarbon, Organic
-  {--Hydrocarbon seperation
-    type = "recipe",
-    category = "chemistry-plant",
-    subgroup = "fluid-recipes",
-    name = "hydrocarbon-seperation",
-    icons = {
-      { icon = "__base__/graphics/icons/fluid/water.png", shift = {10,0},scale = 0.7},
-      { icon = "__base__/graphics/icons/fluid/lubricant.png", shift = {-10,0},scale = 0.7},
-      { icon = "__base__/graphics/icons/arrows/signal-left-right-arrow.png", shift = {0,7}, scale = 0.3,}
-    },
-    crafting_machine_tint = {
-      primary = {150,150,10},
-      secondary = {150,150,10},
-      tertiary = {150,150,10},
-      quaternary = {150,150,10},
-    },
-    energy_required = 1,
-    enabled = false,
-    allow_decomposition = false,
-    allow_productivity = false,
-    ingredients = {
-      { type = "fluid", name = "water", amount = 300 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
-      { type = "fluid", name = "organic-sludge", amount = 50 },
-    },
-    results = { 
-      { type = "fluid", name = "water", amount = 360 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 120 },
-      { type = "fluid", name = "organic-sludge", amount = 60 }
-    },
-    surface_conditions = TFMG.conditions.arrival,
-  },
+data:extend({--1:1:1 Water, Hydrocarbon, Organic
+  --{--Hydrocarbon seperation
+  --  type = "recipe",
+  --  category = "chemistry-plant",
+  --  subgroup = "fluid-recipes",
+  --  name = "hydrocarbon-seperation",
+  --  icons = {
+  --    { icon = "__base__/graphics/icons/fluid/water.png", shift = {10,0},scale = 0.7},
+  --    { icon = "__base__/graphics/icons/fluid/lubricant.png", shift = {-10,0},scale = 0.7},
+  --    { icon = "__base__/graphics/icons/arrows/signal-left-right-arrow.png", shift = {0,7}, scale = 0.3,}
+  --  },
+  --  crafting_machine_tint = {
+  --    primary = {150,150,10},
+  --    secondary = {150,150,10},
+  --    tertiary = {150,150,10},
+  --    quaternary = {150,150,10},
+  --  },
+  --  energy_required = 1,
+  --  enabled = false,
+  --  allow_decomposition = false,
+  --  allow_productivity = false,
+  --  ingredients = {
+  --    { type = "fluid", name = "water", amount = 100 },
+  --    { type = "fluid", name = "short-chain-hydrocarbons", amount = 100 },
+  --    { type = "fluid", name = "organic-sludge", amount = 100 },
+  --  },
+  --  results = { 
+  --    { type = "fluid", name = "water", amount = 140 },
+  --    { type = "fluid", name = "short-chain-hydrocarbons", amount = 20 },
+  --    { type = "fluid", name = "organic-sludge", amount = 140 }
+  --  },
+  --  surface_conditions = TFMG.conditions.arrival,
+  --},
   {--Hydrocarbon concentration
     type = "recipe",
     category = "chemistry-plant",
@@ -53,14 +53,14 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     allow_productivity = false,
     allow_decomposition = false,
     ingredients = {
-      { type = "fluid", name = "water", amount = 300 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
-      { type = "fluid", name = "organic-sludge", amount = 50 },
+      { type = "fluid", name = "water", amount = 100 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 100 },
+      { type = "fluid", name = "organic-sludge", amount = 100 },
     },
     results = { 
-      { type = "fluid", name = "water", amount = 240 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 280 },
-      { type = "fluid", name = "organic-sludge", amount = 40 }
+      { type = "fluid", name = "water", amount = 60 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 180 },
+      { type = "fluid", name = "organic-sludge", amount = 60 }
     },
     surface_conditions = TFMG.conditions.arrival,
   },
@@ -160,7 +160,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     enabled = false,
     allow_productivity = true,
     ingredients = {
-      { type = "fluid", name = "organic-sludge", amount = 10, fluidbox_index = 0 },
+      { type = "fluid", name = "organic-sludge", amount = 40, fluidbox_index = 0 },
       { type = "item", name = "mineral-ore", amount = 1 },
     },
     results = { 

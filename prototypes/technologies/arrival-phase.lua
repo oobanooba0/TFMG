@@ -100,10 +100,10 @@ data:extend({
         type = "unlock-recipe",
         recipe = "hydrocarbon-concentration"
       },
-      {
-        type = "unlock-recipe",
-        recipe = "hydrocarbon-seperation"
-      },
+      --{ --Removed due to being redundant
+      --  type = "unlock-recipe",
+      --  recipe = "hydrocarbon-seperation"
+      --},
     },
     prerequisites = {"fluid-extraction"},
     unit = {

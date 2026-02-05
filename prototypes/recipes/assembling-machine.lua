@@ -223,7 +223,7 @@ data:extend({
     ingredients = {
       { type = "item", name = "high-performance-structure", amount = 2 },
       { type = "item", name = "optical-coil", amount = 12 },
-      { type = "fluid", name = "organic-sludge", amount = 50 },
+      { type = "fluid", name = "organic-sludge", amount = 200 },
     },
     results = { 
       { type = "item", name = "exploration-science-unverified", amount = 1 }

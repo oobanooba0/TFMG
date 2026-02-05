@@ -21,7 +21,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     results = { 
       { type = "fluid", name = "water", amount = 64 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 32 },
-      { type = "fluid", name = "organic-sludge", amount = 4 }
+      { type = "fluid", name = "organic-sludge", amount = 16 }
     },
     surface_conditions = TFMG.conditions.arrival,
   },
@@ -39,13 +39,13 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     allow_productivity = false,
     allow_decomposition = false,
     ingredients = {
-      { type = "fluid", name = "water", amount = 300 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
+      { type = "fluid", name = "water", amount = 150 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 150 },
     },
     results = { 
-      { type = "fluid", name = "water", amount = 450 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 80 },
-      { type = "fluid", name = "organic-sludge", amount = 5 }
+      { type = "fluid", name = "water", amount = 225 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 60 },
+      { type = "fluid", name = "organic-sludge", amount = 15 }
     },
     surface_conditions = TFMG.conditions.arrival,
   },
@@ -63,13 +63,13 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     allow_productivity = false,
     allow_decomposition = false,
     ingredients = {
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
-      { type = "fluid", name = "organic-sludge", amount = 50 },  
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 150 },
+      { type = "fluid", name = "organic-sludge", amount = 150 },
     },
     results = { 
-      { type = "fluid", name = "water", amount = 30 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 80 },
-      { type = "fluid", name = "organic-sludge", amount = 75 }
+      { type = "fluid", name = "water", amount = 15 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 60 },
+      { type = "fluid", name = "organic-sludge", amount = 225 }
     },
     surface_conditions = TFMG.conditions.arrival,
   },
@@ -105,7 +105,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     ingredients = {
       { type = "item", name = "mineral-ore", amount = 4 },
       { type = "item", name = "general-purpose-structure", amount = 1 },
-      { type = "fluid", name = "water", amount = 10 },
+      { type = "fluid", name = "water", amount = 40 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 10 },
     },
     results = { 
