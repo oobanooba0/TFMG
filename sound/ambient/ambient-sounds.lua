@@ -1,10 +1,10 @@
 data.raw ['ambient-sound']['main-menu'] = nil--to boldly delete the vanilla main menu music
 
 
-for _,track in pairs(data.raw ['ambient-sound']) do --removing the vanilla nauvis tracks. Normally I'd delete everything but space still needs some music, since i lack interludes for it still.
-  if track.planet == "nauvis" then
-    data.raw['ambient-sound'][track.name] = nil 
-  end
+for track_name,track in pairs(data.raw ['ambient-sound']) do --removing the vanilla nauvis tracks. Normally I'd delete everything but space still needs some music, since i lack interludes for it still.
+  --if track.planet == "nauvis" then
+  data.raw['ambient-sound'][track_name] = nil 
+  --end
 end
 
 data:extend({
@@ -87,6 +87,17 @@ data:extend({
       },
       weight = 10
     },
+    {
+      type = "ambient-sound",
+      name = "RIPPLES",
+      track_type = "main-track",
+      planet = "nauvis",
+      sound = {
+        filename = "__TFMG-music__/arrival/RIPPLES.ogg",
+        volume = 1,
+      },
+      weight = 10
+    },
   --interludes
     {
       type = "ambient-sound",
@@ -151,6 +162,19 @@ data:extend({
       sound = {
         filename = "__TFMG-music__/arrival/Decomposition-Interlude.ogg",
         volume = 0.7,
+      },
+      weight = 10
+    },
+--extraction
+  --main tracks
+    {
+      type = "ambient-sound",
+      name = "EXTRACTION",
+      track_type = "main-track",
+      planet = "extraction",
+      sound = {
+        filename = "__TFMG-music__/extraction/EXTRACTION.ogg",
+        volume = 1,
       },
       weight = 10
     },
