@@ -151,9 +151,7 @@ local TFMG = require("util.TFMG")
 
 
 	data.raw.tile["ice-smooth"].collision_mask = tile_collision_masks.ground()
-	--data.raw.tile["empty-space"].destroys_dropped_items = true
-	
-	
+	data.raw.tile["empty-space"].destroys_dropped_items = true --remove later
 	--tile adjustments
 	for _, tile in pairs(data.raw.tile) do
 		tile.absorptions_per_second = nil
@@ -165,14 +163,35 @@ local TFMG = require("util.TFMG")
 
 --train wagons
 	local KMH = 216
-	data.raw ["locomotive"]["locomotive"].energy_source.fuel_categories = {"chemical","electric"}
-	data.raw ["locomotive"]["locomotive"].energy_source.fuel_inventory_size = 2
-	data.raw ["locomotive"]["locomotive"].energy_source.burnt_inventory_size = 2
-	data.raw ["locomotive"]["locomotive"].max_speed = 100 / KMH
-	data.raw ["locomotive"]["locomotive"].max_power = "1MW"
-	data.raw ["locomotive"]["locomotive"].weight = 25000
-	data.raw ["cargo-wagon"]["cargo-wagon"].weight = 5000
-	data.raw ["fluid-wagon"]["fluid-wagon"].weight = 5000
+	data.raw["locomotive"]["locomotive"].energy_source.fuel_categories = {"chemical","electric"}
+	data.raw["locomotive"]["locomotive"].energy_source.fuel_inventory_size = 2
+	data.raw["locomotive"]["locomotive"].energy_source.burnt_inventory_size = 2
+	data.raw["locomotive"]["locomotive"].max_speed = 100 / KMH
+	data.raw["locomotive"]["locomotive"].max_power = "1MW"
+	data.raw["locomotive"]["locomotive"].weight = 25000
+	data.raw["locomotive"]["locomotive"].surface_conditions = TFMG.conditions.not_space
+	data.raw["cargo-wagon"]["cargo-wagon"].weight = 5000
+	data.raw["cargo-wagon"]["cargo-wagon"].surface_conditions = TFMG.conditions.not_space
+	data.raw["fluid-wagon"]["fluid-wagon"].weight = 5000
+	data.raw["fluid-wagon"]["fluid-wagon"].surface_conditions = TFMG.conditions.not_space
+
+--rails
+	--regular
+	data.raw["straight-rail"]["straight-rail"].surface_conditions = TFMG.conditions.not_space
+	data.raw["half-diagonal-rail"]["half-diagonal-rail"].surface_conditions = TFMG.conditions.not_space
+	data.raw["curved-rail-a"]["curved-rail-a"].surface_conditions = TFMG.conditions.not_space
+	data.raw["curved-rail-b"]["curved-rail-b"].surface_conditions = TFMG.conditions.not_space
+	--elevated
+	data.raw["elevated-straight-rail"]["elevated-straight-rail"].surface_conditions = TFMG.conditions.not_space
+	data.raw["elevated-curved-rail-a"]["elevated-curved-rail-a"].surface_conditions = TFMG.conditions.not_space
+	data.raw["elevated-curved-rail-b"]["elevated-curved-rail-b"].surface_conditions = TFMG.conditions.not_space
+	data.raw["elevated-half-diagonal-rail"]["elevated-half-diagonal-rail"].surface_conditions = TFMG.conditions.not_space
+	--components
+	data.raw["rail-ramp"]["rail-ramp"].surface_conditions = TFMG.conditions.not_space
+	data.raw["rail-support"]["rail-support"].surface_conditions = TFMG.conditions.not_space
+	data.raw["rail-signal"]["rail-signal"].surface_conditions = TFMG.conditions.not_space
+	data.raw["rail-chain-signal"]["rail-chain-signal"].surface_conditions = TFMG.conditions.not_space
+	data.raw["train-stop"]["train-stop"].surface_conditions = TFMG.conditions.not_space
 
 --asteroid collector adjust
 	data.raw.item ["asteroid-collector"].flags = {"always-show"}
@@ -184,3 +203,6 @@ local TFMG = require("util.TFMG")
 --Cargobay
 	local cargo_bayitem = data.raw.item["cargo-bay"]
 	cargo_bayitem.weight = TFMG.rocket_capacity(1)
+--surface condition adjust
+	data.raw["roboport"]["roboport"].surface_conditions = TFMG.conditions.not_space
+

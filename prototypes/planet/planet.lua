@@ -152,7 +152,7 @@ data:extend({--surface properties
     {
       ["day-night-cycle"] = 7 * minute,
       ["solar-power"] = 100,
-      pressure = 1,
+      pressure = 1, --tweak how bots work lol
       gravity = 0.1,
     },
     --Asteroid code

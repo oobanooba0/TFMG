@@ -67,8 +67,8 @@ end
 
 
 data:extend({
-  resource(--Ferric ore
-    {
+  --Ferric ore
+    resource({
       name = "ferric-ore",
       order = "b",
       map_color = {0.803, 0.388, 0.215},
@@ -91,8 +91,7 @@ data:extend({
     category = "resource"
   },
   --Mineral Ore
-    resource(
-    {
+    resource({
       name = "mineral-ore",
       order = "b",
       map_color = {0.7, 0.4, 0.7},
@@ -114,7 +113,6 @@ data:extend({
     order = "a-b",
     category = "resource"
   },
-
   {--ice geyser
     type = "resource",
     name = "ice-geyser",
@@ -234,13 +232,24 @@ data:extend({
     order = "a-b",
     category = "resource"
   },
-  resource(--regolith
-    {
+  --regolith
+    resource({
       name = "regolith",
       order = "b",
       map_color = {1, 1, 1},
-      mining_time = 1,
-      result = "regolith",
+      minable =
+      {
+        mining_particle = "stone-particle",
+        mining_time = 2,
+        results =
+        {
+          {
+            type = "item",
+            name = "regolith",
+            amount = 1,
+          }
+        }
+      },
       walking_sound = sounds.ore,
       mining_visualisation_tint = {r = 1.000, g = 0.675, b = 0.541, a = 1.000},
       flags = {"placeable-neutral", "not-on-map"},
@@ -263,7 +272,7 @@ data:extend({
     },
     "__space-age__/graphics/icons/big-volcanic-rock.png"
   ),
-  {--ferric ore autoplace controls
+  {--regolith autoplace controls
     type = "autoplace-control",
     name = "regolith",
     localised_name = {"", "[entity=regolith] ", {"entity-name.regolith"}},
