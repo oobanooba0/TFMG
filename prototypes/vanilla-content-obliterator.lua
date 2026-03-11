@@ -193,6 +193,14 @@ local TFMG = require("util.TFMG")
 	data.raw["rail-chain-signal"]["rail-chain-signal"].surface_conditions = TFMG.conditions.not_space
 	data.raw["train-stop"]["train-stop"].surface_conditions = TFMG.conditions.not_space
 
+--bots logistics and construction robots and whatever keywords can help me find this when using ctrl-f
+	local construction_bot = data.raw["construction-robot"]["construction-robot"]
+	construction_bot.speed = 0.1 --construction bots are the primary focus here
+	--logi bots need to be bad enough to discourage their use, but not be entirely useless.
+	local logi_bot = data.raw["logistic-robot"]["logistic-robot"]
+	logi_bot.speed = 0.05
+	logi_bot.energy_per_move = "15kJ"
+
 --asteroid collector adjust
 	data.raw.item ["asteroid-collector"].flags = {"always-show"}
 
@@ -205,4 +213,5 @@ local TFMG = require("util.TFMG")
 	cargo_bayitem.weight = TFMG.rocket_capacity(1)
 --surface condition adjust
 	data.raw["roboport"]["roboport"].surface_conditions = TFMG.conditions.not_space
+
 

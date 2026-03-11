@@ -32,6 +32,10 @@ Date: ????
     - Optical coils now craft 6 at a time instaid of 4
     - most recipes involving optical coils now need 50% more optical coils.
     - hydrocarbon balancing is now more effective, recipes shifting over 50% of the fluids rather than only ~25%. 
+    - bots balance readjusted, Logi bots are nerfed, since you're not really supposed to use them except for resuppling spiders and such. Construction bots are buffed, making early construction less painful.
+    - logistics bots use more energy while moving, they can only effectively transport items short distances
+    - construction bots move significantly faster
+    - logistics bots are slightly slower.
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.25
 Date: 2026-01-18

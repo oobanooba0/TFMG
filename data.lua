@@ -45,6 +45,10 @@
 --equipment
 	require("prototypes.equipment")
 	require("prototypes.equipment-grids")
+
+--surface properties
+	require("prototypes.surface-properties")
+	
 --tips and tricks
 	require("prototypes.tips-and-tricks-simulations.tips-and-tricks")
 
@@ -111,5 +115,6 @@
 	require("prototypes.technologies.extra")
 
 --compat optional mods
-	require("compat.pushbutton.technology")
-	require("compat.pushbutton.recipe")
+	--pushbutton
+		require("compat.pushbutton.technology")
+		require("compat.pushbutton.recipe")

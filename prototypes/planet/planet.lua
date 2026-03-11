@@ -11,16 +11,7 @@ local extraction_orientation = 0.25
 
 
 data:extend({--surface properties
-  {
-    type = "surface-property",
-    name = "spacetime-flow-viscosity",
-    default_value = 1
-  },
-  {
-    type = "surface-property",
-    name = "oxygen",
-    default_value = 0
-  },
+
 --planets
   {
     type = "planet",
@@ -47,9 +38,10 @@ data:extend({--surface properties
     {
       ["day-night-cycle"] = 85 * minute,
       ["solar-power"] = 10,
-      pressure = 135,
+      pressure = 15,
       gravity = 1.35,
       oxygen = 99, --Recipe exclusicivity is controlled here. so watch for that.
+      ["bot-usage"] = 1
     },
     surface_render_parameters =
     {
@@ -152,8 +144,9 @@ data:extend({--surface properties
     {
       ["day-night-cycle"] = 7 * minute,
       ["solar-power"] = 100,
-      pressure = 1, --tweak how bots work lol
+      pressure = 0, --tweak how bots work lol
       gravity = 0.1,
+      ["bot-usage"] = 0.75
     },
     --Asteroid code
     asteroid_spawn_influence = 1,
