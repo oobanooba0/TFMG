@@ -220,7 +220,7 @@ function supercomputer.create_new_problem_introspection(v)--introspection recipe
   local problem_a = math.random(100)
   local problem_b = math.random(100)
   local operator_select = math.random(4)
-  
+
   if operator_select == 1 then
   v.solution_x = problem_a + problem_b
   problem_operator = "signal-plus"
@@ -237,9 +237,9 @@ function supercomputer.create_new_problem_introspection(v)--introspection recipe
 
 
   output_control.filters = {
-    {value = {type = "virtual", name = "signal-A", quality = "normal"}, min = problem_a},
-    {value = {type = "virtual", name = "signal-B", quality = "normal"}, min = problem_b},
-    {value = {type = "virtual", name = problem_operator, quality = "normal"}, min = 1},
+      {value = {type = "virtual", name = "signal-A", quality = "normal"}, min = problem_a},
+      {value = {type = "virtual", name = "signal-B", quality = "normal"}, min = problem_b},
+      {value = {type = "virtual", name = problem_operator, quality = "normal"}, min = 1},
     }
   output_control.group = ""
 end
@@ -281,10 +281,10 @@ function supercomputer.create_new_problem_exploitation(v)--introspection recipe 
 
 
   output_control.filters = {
-    {value = {type = "virtual", name = "signal-x-0", quality = "normal"}, min = x_0},
-    {value = {type = "virtual", name = "signal-y-0", quality = "normal"}, min = y_0},
-    {value = {type = "virtual", name = "signal-x-1", quality = "normal"}, min = x_1},
-    {value = {type = "virtual", name = "signal-y-1", quality = "normal"}, min = y_1},
+      {value = {type = "virtual", name = "signal-x-0", quality = "normal"}, min = x_0},
+      {value = {type = "virtual", name = "signal-y-0", quality = "normal"}, min = y_0},
+      {value = {type = "virtual", name = "signal-x-1", quality = "normal"}, min = x_1},
+      {value = {type = "virtual", name = "signal-y-1", quality = "normal"}, min = y_1},
     }
   output_control.group = ""
   --game.print(v.problem_a..v.problem_operator..v.problem_b.."="..v.solution_x)
