@@ -18,8 +18,8 @@ data:extend({
       {type = "item", name = "ferric-asteroid-chunk", amount = 2}
     },
     results = {
-      {type="item", name="ferric-ore", amount=5},
-      {type="item", name="mineral-ore", amount=1},
+      {type="item", name = "ferric-ore", amount=5},
+      {type="item", name = "mineral-ore", amount=1},
     },
   },
   {
@@ -41,8 +41,8 @@ data:extend({
       {type = "item", name = "crystalline-asteroid-chunk", amount = 2}
     },
     results = {
-      {type="item", name="mineral-ore", amount=5},
-      {type="item", name="ferric-ore", amount=1},
+      {type="item", name = "mineral-ore", amount=5},
+      {type="item", name = "ferric-ore", amount=1},
     },
   },
   {
@@ -61,10 +61,12 @@ data:extend({
     allow_productivity = true,
     hide_from_signal_gui = false,
     ingredients = {
-      {type = "item", name = "regolith", amount = 1}
+      {type = "item", name = "regolith", amount = 1},
+      {type = "fluid", name = "industrial-acid", amount = 5},
     },
     results = {
-      {type="item", name="crushed-regolith", amount = 4 },
+      {type="item", name = "crushed-regolith", amount = 2 },
+      {type="fluid", name = "rich-slurry", amount = 10 },
     },
   },
 })

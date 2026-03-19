@@ -15,7 +15,11 @@ data:extend({
       {
         type = "unlock-recipe",
         recipe = "regolith-crushing"
-      },      
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "centrifuge-slurry",
+      },
     },
     prerequisites = {"volatile-handling"},
     unit = {

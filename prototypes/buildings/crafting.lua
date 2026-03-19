@@ -383,7 +383,7 @@ data:extend({
         production_type = "input",
         pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
-        volume = 1000,
+        volume = 200,
         pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {0, -1}}},
         secondary_draw_orders = { north = -1 },
       },
@@ -391,7 +391,7 @@ data:extend({
         production_type = "output",
         pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
-        volume = 1000,
+        volume = 200,
         pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {0, 1}}},
         secondary_draw_orders = { north = -1 },
       },
@@ -1523,6 +1523,29 @@ data:extend({
       fade_out_ticks = 20,
       max_sounds_per_prototype = 3
     },
+    fluid_boxes = {
+      {
+        production_type = "input",
+        pipe_picture = assembler3pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 200,
+        pipe_connections = {
+          { flow_direction="input", direction = defines.direction.east, position = {0.5, 0}},
+        },
+        secondary_draw_orders = { north = -1 },
+      },
+      {
+        production_type = "output",
+        pipe_picture = assembler3pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 200,
+        pipe_connections = {
+          { flow_direction="output", direction = defines.direction.west, position = {-0.5, 0}},
+        },
+        secondary_draw_orders = { north = -1 },
+      },
+    },
+    fluid_boxes_off_when_no_fluid_recipe = true,
     graphics_set = require("__space-age__.prototypes.entity.crusher-pictures"),
     water_reflection =
     {
@@ -1566,10 +1589,34 @@ data:extend({
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["centrifuge"],
     --resistances = {},
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    collision_box = {{-1.8, -1.8}, {1.8, 1.8}},
+    selection_box = {{-2, -2}, {2, 2}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.7,
+    fluid_boxes ={
+      {
+        production_type = "input",
+        pipe_picture = assembler3pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 1000,
+        pipe_connections = {
+          { flow_direction="input-output", direction = defines.direction.north, position = {0.5, -1.5}},
+          { flow_direction="input-output", direction = defines.direction.south, position = {-0.5, 1.5}},
+        },
+        secondary_draw_orders = { north = -1 },
+      },
+      {
+        production_type = "output",
+        pipe_picture = assembler3pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 1000,
+        pipe_connections = {
+          { flow_direction="input-output", direction = defines.direction.north, position = {-0.5, -1.5}},
+          { flow_direction="input-output", direction = defines.direction.south, position = {0.5, 1.5}},
+        },
+        secondary_draw_orders = { north = -1 },
+      },
+    },
     graphics_set =
     {
       always_draw_idle_animation = true,
@@ -1581,7 +1628,7 @@ data:extend({
           {
             filename = "__base__/graphics/entity/centrifuge/centrifuge-C.png",
             priority = "high",
-            scale = 0.5,
+            scale = 0.66,
             line_length = 8,
             width = 237,
             height = 214,
@@ -1592,7 +1639,7 @@ data:extend({
             filename = "__base__/graphics/entity/centrifuge/centrifuge-C-shadow.png",
             draw_as_shadow = true,
             priority = "high",
-            scale = 0.5,
+            scale = 0.66,
             line_length = 8,
             width = 279,
             height = 152,
@@ -1603,7 +1650,7 @@ data:extend({
           {
             filename = "__base__/graphics/entity/centrifuge/centrifuge-B.png",
             priority = "high",
-            scale = 0.5,
+            scale = 0.66,
             line_length = 8,
             width = 156,
             height = 234,
@@ -1614,7 +1661,7 @@ data:extend({
             filename = "__base__/graphics/entity/centrifuge/centrifuge-B-shadow.png",
             draw_as_shadow = true,
             priority = "high",
-            scale = 0.5,
+            scale = 0.66,
             line_length = 8,
             width = 251,
             height = 149,
@@ -1625,7 +1672,7 @@ data:extend({
           {
             filename = "__base__/graphics/entity/centrifuge/centrifuge-A.png",
             priority = "high",
-            scale = 0.5,
+            scale = 0.66,
             line_length = 8,
             width = 139,
             height = 246,
@@ -1636,7 +1683,7 @@ data:extend({
             filename = "__base__/graphics/entity/centrifuge/centrifuge-A-shadow.png",
             priority = "high",
             draw_as_shadow = true,
-            scale = 0.5,
+            scale = 0.66,
             line_length = 8,
             width = 230,
             height = 124,
@@ -1664,7 +1711,7 @@ data:extend({
               {
                 filename = "__base__/graphics/entity/centrifuge/centrifuge-C-light.png",
                 priority = "high",
-                scale = 0.5,
+                scale = 0.66,
                 blend_mode = "additive", -- centrifuge
                 line_length = 8,
                 width = 190,
@@ -1677,7 +1724,7 @@ data:extend({
               {
                 filename = "__base__/graphics/entity/centrifuge/centrifuge-B-light.png",
                 priority = "high",
-                scale = 0.5,
+                scale = 0.66,
                 blend_mode = "additive", -- centrifuge
                 line_length = 8,
                 width = 131,
@@ -1690,7 +1737,7 @@ data:extend({
               {
                 filename = "__base__/graphics/entity/centrifuge/centrifuge-A-light.png",
                 priority = "high",
-                scale = 0.5,
+                scale = 0.66,
                 blend_mode = "additive", -- centrifuge
                 line_length = 8,
                 width = 108,
@@ -1720,7 +1767,7 @@ data:extend({
       type = "electric",
       usage_priority = "secondary-input",
     },
-    energy_usage = "10MW",
+    energy_usage = "24MW",
     module_slots = 4,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
     water_reflection =

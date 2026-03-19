@@ -28,7 +28,7 @@ local docking_pipe = data.raw.recipe["TFMG-docking-pipe"]
   docking_pipe.category = "assembling-machine"
 
 data:extend({
-  {--General purpose structure
+  {--Regolith sorting
     type = "recipe",
     category = "assembling-machine",
     subgroup = "raw-materials",
@@ -47,7 +47,8 @@ data:extend({
     results = { 
       { type = "item", name = "regolith", amount = 1, probability = 0.75},
       { type = "item", name = "ferric-ore", amount = 1, probability = 0.05 },
-      { type = "item", name = "mineral-ore", amount = 1, probability = 0.05 },
+      { type = "item", name = "mineral-ore", amount = 1, probability = 0.08 },
+      { type = "item", name = "titanium-ore", amount = 1, probability = 0.01 },
       { type = "item", name = "volatile-asteroid-chunk", amount = 1, probability = 0.02 },
     },
   },

@@ -111,6 +111,17 @@ data:extend({
   },
   {
     type = "fluid",
+    name = "rich-slurry",
+    icon = "__TFMG-assets-0__/icons/fluids/ferric-solution.png",
+    subgroup = "intermediate-fluid",
+    order = "a[arrival]-f[ferric-solution]",
+    default_temperature = 0,
+    base_color = {0.3, 0.3, 0.3},
+    flow_color = {0.5, 0.5, 0.5},
+    uber_barrel = {},
+  },
+  {
+    type = "fluid",
     name = "hydrogen",
     icon = "__Krastorio2Assets__/icons/fluids/hydrogen.png",
     subgroup = "gas",
