@@ -252,6 +252,20 @@ data:extend({
     default_import_location = "nauvis",
     weight = 5 * kg,
   },
+--nuclear intermediates
+  {--thorium
+    type = "item",
+    name = "thorium",
+    icon = "__base__/graphics/icons/uranium-235.png",
+    subgroup = "nuclear-intermediates",
+    order = "a[thorium]-a",
+    inventory_move_sound = item_sounds.electric_small_inventory_move,
+    pick_sound = item_sounds.electric_small_inventory_pickup,
+    drop_sound = item_sounds.electric_small_inventory_move,
+    stack_size = 50,
+    default_import_location = "extraction",
+    weight = 10 * kg,
+  },
 --capacitors
   {--capacitor discharged
     type = "item",

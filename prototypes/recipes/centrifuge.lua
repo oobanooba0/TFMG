@@ -16,12 +16,10 @@ data:extend({
     allow_productivity = true,
     hide_from_signal_gui = false,
     ingredients = {
-      {type = "item", name = "regolith", amount = 2},
-      {type = "fluid", name = "industrial-acid", amount = 10},
+      {type = "fluid", name = "rich-slurry", amount = 10},
     },
     results = {
-      {type="item", name = "crushed-regolith", amount = 5 },
-      {type="fluid", name = "rich-slurry", amount = 15 },
+      {type = "item", name = "thorium", amount = 1},
     },
   },
 })
