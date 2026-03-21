@@ -36,6 +36,11 @@ Date: ????
     - logistics bots use more energy while moving, they can only effectively transport items short distances
     - construction bots move significantly faster
     - logistics bots are slightly slower.
+    - The starting platform now falls towards arrival more slowly encouraging building more asteroid collectors earlier.
+    - Arrival has 50% more asteroids in orbit now.
+  Bugfixes:
+    - Advanced darkness achivement should work now
+    - Scout o tron description no longer includes refrence to "integrated build tool" which it does not have
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.25
 Date: 2026-01-18

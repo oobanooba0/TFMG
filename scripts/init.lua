@@ -272,7 +272,7 @@ end
 			cargo.on_bay_built(event)
 		elseif entity.name == "constructron" or entity.name == "scout-o-tron" then
 			gameplay.on_spider_built(entity)
-		elseif entity.name == "solar-cell" then
+		elseif entity.name == "solar-panel" then
 			gameplay.on_solar_panel_built(entity)
 		elseif entity.name == "energy-monitor-combinator" then
 			energy_monitor.on_energy_monitor_built(entity)

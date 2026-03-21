@@ -20,6 +20,7 @@ data:extend({
     },
     results = {
       {type = "item", name = "thorium", amount = 1},
+      {type = "fluid", name = "water", amount = 5},
     },
   },
 })

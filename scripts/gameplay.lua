@@ -118,7 +118,7 @@ function gameplay.self_control()--this script runs in the platform phase to make
   if not SELF then return end
   local progression = storage.story.tech_progress
   if SELF.distance <= 0.0005 then SELF.distance = 0.01 end
-  SELF.speed = (progression + 1)/3
+  SELF.speed = (progression + 1)/6
 end
 
 function gameplay.self_arrive()
