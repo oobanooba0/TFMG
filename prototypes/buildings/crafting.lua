@@ -1600,7 +1600,7 @@ data:extend({
         production_type = "input",
         pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
-        volume = 1000,
+        volume = 200,
         pipe_connections = {
           { flow_direction="input-output", direction = defines.direction.north, position = {0.5, -1.5}},
           { flow_direction="input-output", direction = defines.direction.south, position = {-0.5, 1.5}},
@@ -1611,7 +1611,7 @@ data:extend({
         production_type = "output",
         pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
-        volume = 1000,
+        volume = 200,
         pipe_connections = {
           { flow_direction="input-output", direction = defines.direction.north, position = {-0.5, -1.5}},
           { flow_direction="input-output", direction = defines.direction.south, position = {0.5, 1.5}},

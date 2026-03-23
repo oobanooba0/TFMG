@@ -137,4 +137,30 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "mineral-ore", amount = 1, probability = 0.08},
     },
   },
+  {--rich slurry
+    type = "recipe",
+    category = "refinery",
+    subgroup = "fluid-recipes",
+    name = "slurry-filtering",
+    icons = {
+      { icon = "__TFMG-assets-0__/icons/fluids/rich-slurry.png"},
+      { icon = "__base__/graphics/icons/signal/signal-fire.png", shift = {0,7}, scale = 0.3, tint = {1,0.2,0.2,0.5}}
+    },
+    energy_required = 2,
+    enabled = false,
+    allow_productivity = true,
+    allow_decomposition = true,
+    ingredients = {
+      { type = "fluid", name = "rich-slurry", amount = 16},
+      { type = "fluid", name = "water", amount = 8},
+    },
+    results = {
+      { type = "item", name = "ferric-ore", amount = 2},
+      { type = "item", name = "titanium-ore", amount = 2},
+      { type = "item", name = "mineral-ore", amount = 4},
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 6},
+    },
+  },
+
+
 })

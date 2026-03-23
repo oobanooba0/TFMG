@@ -55,18 +55,17 @@ data:extend({
     category = "crusher",
     subgroup = "raw-materials",
     auto_recycle = false,
-    energy_required = 4,
+    energy_required = 2,
     enabled = false,
     allow_decomposition = false,
     allow_productivity = true,
     hide_from_signal_gui = false,
     ingredients = {
-      {type = "item", name = "regolith", amount = 1},
-      {type = "fluid", name = "industrial-acid", amount = 5},
+      {type = "item", name = "regolith", amount = 2},
+      {type = "fluid", name = "industrial-acid", amount = 8},
     },
     results = {
-      {type="item", name = "crushed-regolith", amount = 2 },
-      {type="fluid", name = "rich-slurry", amount = 10 },
+      {type= "fluid", name = "rich-slurry", amount = 16 },
     },
   },
 })

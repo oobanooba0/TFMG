@@ -20,6 +20,10 @@ data:extend({
         type = "unlock-recipe",
         recipe = "centrifuge-slurry",
       },
+      {
+        type = "unlock-recipe",
+        recipe = "slurry-filtering",
+      },
     },
     prerequisites = {"volatile-handling"},
     unit = {

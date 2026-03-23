@@ -16,11 +16,11 @@ data:extend({
     allow_productivity = true,
     hide_from_signal_gui = false,
     ingredients = {
-      {type = "fluid", name = "rich-slurry", amount = 10},
+      {type = "fluid", name = "rich-slurry", amount = 16},
     },
     results = {
       {type = "item", name = "thorium", amount = 1},
-      {type = "fluid", name = "water", amount = 5},
+      {type = "fluid", name = "water", amount = 6},
     },
   },
 })
