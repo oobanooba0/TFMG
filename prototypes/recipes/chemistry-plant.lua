@@ -125,7 +125,7 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
     name = "ferric-ore-washing",
     icons = {
       { icon = "__base__/graphics/icons/copper-ore.png"},
-      { icon = "__base__/graphics/icons/fluid/petroleum-gas.png", shift = {0,7}, scale = 0.3,}
+      { icon = "__base__/graphics/icons/fluid/sulfuric-acid.png", shift = {0,7}, scale = 0.3,}
     },
     crafting_machine_tint = {
       primary = {220,40,00},

@@ -760,10 +760,10 @@ data:extend({
       { type = "item", name = "scout-radar", amount = 1 }
     },
   },
-  {--small crusher
+  {--crusher
     type = "recipe",
     category = "assembling-machine",
-    name = "small-crusher",
+    name = "crusher",
     energy_required = 12,
     enabled = false,
     ingredients = {
@@ -773,7 +773,7 @@ data:extend({
 
     },
     results = { 
-      { type = "item", name = "small-crusher", amount = 1 }
+      { type = "item", name = "crusher", amount = 1 }
     },
   },
   {--heavy space platform

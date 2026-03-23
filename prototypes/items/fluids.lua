@@ -112,7 +112,7 @@ data:extend({
   {
     type = "fluid",
     name = "rich-slurry",
-    icon = "__TFMG-assets-0__/icons/fluids/ferric-solution.png",
+    icon = "__TFMG-assets-0__/icons/fluids/rich-slurry.png",
     subgroup = "intermediate-fluid",
     order = "a[arrival]-f[ferric-solution]",
     default_temperature = 0,

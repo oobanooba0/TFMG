@@ -1479,12 +1479,12 @@ data:extend({
       },
     }
   },
-  {--Small crusher
+  {--crusher
     type = "assembling-machine",
-    name = "small-crusher",
+    name = "crusher",
     icon = "__space-age__/graphics/icons/crusher.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = 0.2, result = "small-crusher"},
+    minable = {mining_time = 0.2, result = "crusher"},
     max_health = 350,
     corpse = "crusher-remnants",
     dying_explosion = "electric-furnace-explosion",
@@ -1498,7 +1498,7 @@ data:extend({
       {inventory_index = defines.inventory.crafter_modules, shift = {0, 0.3}, max_icons_per_row = 3}
     },
     icon_draw_specification = {shift = {0, -0.45}},
-    crafting_categories = {"small-crusher"},
+    crafting_categories = {"crusher"},
     crafting_speed = 1,
     energy_usage = "1.5MW",
     module_slots = 3,
@@ -1530,7 +1530,8 @@ data:extend({
         pipe_covers = pipecoverspictures(),
         volume = 200,
         pipe_connections = {
-          { flow_direction="input", direction = defines.direction.east, position = {0.5, 0}},
+          { flow_direction="input", direction = defines.direction.north, position = {-0.5, -1}},
+          { flow_direction="input", direction = defines.direction.north, position = {0.5, -1}},
         },
         secondary_draw_orders = { north = -1 },
       },
@@ -1540,7 +1541,8 @@ data:extend({
         pipe_covers = pipecoverspictures(),
         volume = 200,
         pipe_connections = {
-          { flow_direction="output", direction = defines.direction.west, position = {-0.5, 0}},
+          { flow_direction="input-output", direction = defines.direction.east, position = {0.5, 0}},
+          { flow_direction="input-output", direction = defines.direction.west, position = {-0.5, 0}},
         },
         secondary_draw_orders = { north = -1 },
       },

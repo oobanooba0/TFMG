@@ -39,7 +39,7 @@ data:extend({
     },
     {--small crusher
         type = "recipe-category",
-        name = "small-crusher"
+        name = "crusher"
     },
     {--charger
         type = "recipe-category",

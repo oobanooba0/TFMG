@@ -1,6 +1,13 @@
 {
   "recipe" : [
     ["exploitation-science","exploration-science"],
-    ["exploration-science", "exploitation-science"]
+    ["exploration-science", "exploitation-science"],
+    ["small-crusher", "crusher"]
+  ],
+  "entity" : [
+    ["small-crusher", "crusher"]
+  ],
+  "item" : [
+    ["small-crusher", "crusher"]
   ]
 }

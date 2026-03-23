@@ -7,6 +7,8 @@ local unpipe_lookup = {
   ["refinery"] = data.raw["assembling-machine"]["refinery"],
   ["micro-assembler"] = data.raw["assembling-machine"]["micro-assembler"],
   ["rocket-building"] = data.raw["rocket-silo"]["rocket-silo"],
+  ["crusher"] = data.raw["assembling-machine"]["crusher"],
+  ["centrifuge"] = data.raw["assembling-machine"]["centrifuge"],
 }
 
 
