@@ -152,13 +152,11 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     allow_decomposition = true,
     ingredients = {
       { type = "fluid", name = "rich-slurry", amount = 16},
-      { type = "fluid", name = "water", amount = 8},
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 8},
     },
     results = {
-      { type = "item", name = "ferric-ore", amount = 2},
-      { type = "item", name = "titanium-ore", amount = 2},
-      { type = "item", name = "mineral-ore", amount = 4},
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 6},
+      { type = "item", name = "crushed-regolith", amount_min = 2, amount_max = 5},
+      { type = "fluid", name = "hydrogen", amount = 6},
     },
   },
 

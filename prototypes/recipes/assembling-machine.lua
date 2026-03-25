@@ -28,31 +28,6 @@ local docking_pipe = data.raw.recipe["TFMG-docking-pipe"]
   docking_pipe.category = "assembling-machine"
 
 data:extend({
-  {--Regolith sorting
-    type = "recipe",
-    category = "assembling-machine",
-    subgroup = "raw-materials",
-    name = "regolith-sorting",
-    icons ={
-      {icon = "__space-age__/graphics/icons/big-volcanic-rock.png"},
-      {icon = "__Krastorio2Assets__/icons/recipes/crushing-overlay.png"},
-    },
-    energy_required = 8,
-    enabled = false,
-    allow_productivity = false,
-    allow_decomposition = false,
-    ingredients = {
-      { type = "item", name = "regolith", amount = 1 },
-    },
-    results = { 
-      { type = "item", name = "regolith", amount = 1, probability = 0.75},
-      { type = "item", name = "ferric-ore", amount = 1, probability = 0.05 },
-      { type = "item", name = "mineral-ore", amount = 1, probability = 0.08 },
-      { type = "item", name = "titanium-ore", amount = 1, probability = 0.01 },
-      { type = "item", name = "volatile-asteroid-chunk", amount = 1, probability = 0.02 },
-    },
-  },
-
   {--Mineral Glass (in space)
     type = "recipe",
     category = "assembling-machine-pure",

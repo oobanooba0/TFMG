@@ -10,10 +10,6 @@ data:extend({
     {
       {
         type = "unlock-recipe",
-        recipe = "regolith-sorting"
-      },
-      {
-        type = "unlock-recipe",
         recipe = "regolith-crushing"
       },
       {
