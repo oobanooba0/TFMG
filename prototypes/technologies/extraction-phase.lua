@@ -20,6 +20,10 @@ data:extend({
         type = "unlock-recipe",
         recipe = "slurry-filtering",
       },
+      {
+        type = "unlock-recipe",
+        recipe = "thorium-reduction",
+      },
     },
     prerequisites = {"volatile-handling"},
     unit = {

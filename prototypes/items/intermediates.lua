@@ -79,6 +79,25 @@ data:extend({
     default_import_location = "nauvis",
     weight = 1 * kg,
   },
+  {
+    type = "item",
+    name = "lead-plate",
+    icon = "__TFMG-assets-0__/icons/items/lead-plate.png",
+    pictures =
+    {
+      { size = 64, filename = "__TFMG-assets-0__/icons/items/lead-plate.png", scale = 0.5, mipmap_count = 4 },
+    },
+    random_tint_color = item_tints.iron_rust,
+    subgroup = "basic-intermediates",
+    order = "d[lead]-a[lead-plate]",
+    inventory_move_sound = item_sounds.metal_small_inventory_move,
+    pick_sound = item_sounds.metal_small_inventory_pickup,
+    drop_sound = item_sounds.metal_small_inventory_move,
+    stack_size = 100,
+    default_import_location = "extraction",
+    weight = 20 * kg,
+  },
+--hydrocarbons
   {--microbe culture
     type = "item",
     name = "microbe-culture",
@@ -177,6 +196,20 @@ data:extend({
     default_import_location = "nauvis",
     weight = 2 * kg,
   },
+  {--radiation-shielding
+    type = "item",
+    name = "radiation-shielding",
+    icon = "__TFMG-assets-0__/icons/items/radiation-shielding.png",
+    subgroup = "structural-intermediates",
+    order = "c[radiation-shielding]",
+    inventory_move_sound = item_sounds.low_density_inventory_move,
+    pick_sound = item_sounds.low_density_inventory_pickup,
+    drop_sound = item_sounds.low_density_inventory_move,
+    stack_size = 50,
+    random_tint_color = item_tints.iron_rust,
+    default_import_location = "extraction",
+    weight = 50 * kg,
+  },
 ---mechanical intermediates (things that make other things move)
   {--mechanical components
     type = "item",
@@ -256,7 +289,24 @@ data:extend({
   {--thorium
     type = "item",
     name = "thorium",
-    icon = "__base__/graphics/icons/uranium-235.png",
+    icon = "__TFMG-assets-0__/icons/items/thorium.png",
+    pictures = {
+      layers = {
+        {
+          filename = "__TFMG-assets-0__/icons/items/thorium.png",
+          size = 64,
+          scale = 0.5,
+          mipmap_count = 4,
+        },
+        {
+          filename = "__TFMG-assets-0__/icons/items/thorium.png",
+          size = 64,
+          scale = 0.5,
+          draw_as_light = true,
+          mipmap_count = 4,
+        },
+      },
+    },
     subgroup = "nuclear-intermediates",
     order = "a[thorium]-a",
     inventory_move_sound = item_sounds.electric_small_inventory_move,

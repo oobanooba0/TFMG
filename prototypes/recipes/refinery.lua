@@ -159,6 +159,26 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "hydrogen", amount = 6},
     },
   },
-
-
+  {--thorium
+    type = "recipe",
+    category = "refinery",
+    subgroup = "fluid-recipes",
+    name = "thorium-reduction",
+    icons = {
+      { icon = "__TFMG-assets-0__/icons/items/thorium.png"},
+      { icon = "__base__/graphics/icons/signal/signal-fire.png", shift = {0,7}, scale = 0.3, tint = {1,0.2,0.2,0.5}}
+    },
+    energy_required = 2,
+    enabled = false,
+    allow_productivity = true,
+    allow_decomposition = true,
+    ingredients = {
+      { type = "fluid", name = "thorium-salts", amount = 16},
+      { type = "fluid", name = "oxygen", amount = 16},
+    },
+    results = {
+      { type = "item", name = "thorium", amount = 1, probability = 0.5},
+      { type = "fluid", name = "steam", amount = 240, temperature = 100},
+    },
+  },
 })
