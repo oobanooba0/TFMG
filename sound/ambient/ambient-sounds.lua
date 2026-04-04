@@ -178,4 +178,26 @@ data:extend({
       },
       weight = 10
     },
+    {
+      type = "ambient-sound",
+      name = "UPSTREAM",
+      track_type = "main-track",
+      planet = "extraction",
+      sound = {
+        filename = "__TFMG-music__/extraction/UPSTREAM.ogg",
+        volume = 1,
+      },
+      weight = 10
+    },
+    {
+      type = "ambient-sound",
+      name = "SCALAR",
+      track_type = "main-track",
+      planet = "extraction",
+      sound = {
+        filename = "__TFMG-music__/extraction/SCALAR.ogg",
+        volume = 1,
+      },
+      weight = 10
+    },
 })
