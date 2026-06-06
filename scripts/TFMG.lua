@@ -64,15 +64,11 @@ function TFMG.direction(position1,position2)--returns the direction, in radians,
   local x2 = position2[1] or position2.x
   local y1 = position1[2] or position1.y
   local y2 = position2[2] or position2.y
-
   local xdelta = x2-x1
   local ydelta = y2-y1
-  
+
   theta = math.atan2(ydelta,xdelta)
   --so basically this yeilds the angle in radiens ranging from negative 2pi to 2pi with 0 being on the + y axis going clockwise. Thats a bit annoying.
-  
-  game.print(theta)
-
 return theta end
 
 

@@ -164,7 +164,7 @@ function ice_worm.distant_roar()
   local random_variation = math.random(10)
   distant_sounds.play_sound_panned({
     path = "ice-worm-roar",
-    variation = random_variation,
+    variation = random_variation,--we select a random variation here, so that all players get the same sound, from the same source.
     surface = roaring_worm.surface,
     position = roaring_worm.get_body_nodes()[1],
     volume_modifier = 1,
