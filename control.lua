@@ -3,6 +3,7 @@ util = require("util")
 require("scripts.TFMG")
 TFMG = require("scripts.TFMG")
 require("scripts.init")
+distant_sounds = require("scripts.distant-sounds")
 
 require("scripts.gameplay")
 gameplay = require("scripts.gameplay")

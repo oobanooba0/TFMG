@@ -316,6 +316,59 @@ data:extend({
     default_import_location = "extraction",
     weight = 10 * kg,
   },
+  {--thorium-fuel-pellet
+    type = "item",
+    name = "thorium-fuel-pellet",
+    icon = "__base__/graphics/icons/uranium-fuel-cell.png",
+    pictures = {
+      layers = {
+        {
+          filename = "__base__/graphics/icons/uranium-fuel-cell.png",
+          size = 64,
+          scale = 0.5,
+          mipmap_count = 4,
+        },
+        {
+          filename = "__base__/graphics/icons/uranium-fuel-cell-light.png",
+          size = 64,
+          scale = 0.5,
+          draw_as_light = true,
+          mipmap_count = 4,
+        },
+      },
+    },
+    subgroup = "nuclear-intermediates",
+    order = "a[thorium]-b",
+    inventory_move_sound = item_sounds.electric_small_inventory_move,
+    pick_sound = item_sounds.electric_small_inventory_pickup,
+    drop_sound = item_sounds.electric_small_inventory_move,
+    stack_size = 100,
+    default_import_location = "extraction",
+    weight = 10 * kg,
+  },
+  {--thorium fuel pellet spent
+    type = "item",
+    name = "thorium-fuel-pellet-spent",
+    icon = "__base__/graphics/icons/uranium-fuel-cell.png",
+    pictures = {
+      layers = {
+        {
+          filename = "__base__/graphics/icons/uranium-fuel-cell.png",
+          size = 64,
+          scale = 0.5,
+          mipmap_count = 4,
+        },
+      },
+    },
+    subgroup = "nuclear-intermediates",
+    order = "a[thorium]-c",
+    inventory_move_sound = item_sounds.electric_small_inventory_move,
+    pick_sound = item_sounds.electric_small_inventory_pickup,
+    drop_sound = item_sounds.electric_small_inventory_move,
+    stack_size = 100,
+    default_import_location = "extraction",
+    weight = 10 * kg,
+  },
 --capacitors
   {--capacitor discharged
     type = "item",

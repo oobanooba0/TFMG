@@ -104,9 +104,9 @@ end)
 --taken nth ticks.
 --36000
 --300
---256
---1
---5
+--256 --gets unregistered
+--1 --gets unregistered
+--5 --Where?
 
   script.on_event(
   	defines.events.on_tick,
@@ -120,6 +120,12 @@ end)
 	script.on_nth_tick(36000,--past 10 min, I should do a rolling average but im lazy.
 		function()
 			storage.worms.recent_launch_count = 0
+		end
+	)
+
+	script.on_nth_tick(600,--600 ticks so that there isnt much chance that random roars overlap.
+		function()
+			ice_worm.distant_roar()
 		end
 	)
 

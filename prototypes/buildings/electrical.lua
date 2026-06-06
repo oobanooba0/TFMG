@@ -291,6 +291,7 @@ data:extend({
     performance_at_day = 1,
     performance_at_night =1,
     solar_coefficient_property = "spacetime-flow-viscosity",
+    draw_stateless_visualisations_in_ghost = true,
     stateless_visualisation = {
       {
         animation = {
@@ -923,7 +924,7 @@ data:extend({
   {--chemical reactor reactor
     type = "reactor",
     name = "chemical-reactor-reactor",
-    icon  = "__base__/graphics/icons/nuclear-reactor.png",
+    icon  = "__Krastorio2Assets__/icons/entities/gas-power-station.png",
     flags = {"placeable-neutral", "player-creation"},
     hidden = true,
     max_health = 500,
@@ -1043,7 +1044,11 @@ data:extend({
     circuit_wire_max_distance = reactor_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["nuclear-reactor"],
   },
+---Nuclear reactor
   
+
+
+
 ---Charger discharger
   {--Charger
     type = "furnace",

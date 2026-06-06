@@ -11,6 +11,9 @@ Date: ????
     - Added EXTRACTION music track which plays on Extraction.
     - Added RIPPLES music track which plays on arrival and is a whopping 13 minutes long.
     - LIFE music track has been edited to not suck.
+    - Ice worms now have a whole host of new sound effects (thanks fluid natalie)
+    - Ice worms now roar in the distance when agrroed
+    - Ice worms roars can be heard from several KM away, thanks to a new sound system I made.
   Changes:
     - Water, Short chain hydrocarbons, and organic sludge now have 1:1:1 weight ratios, rather than 6:4:1, this should make the fact that their balancing recipes don't destroy items more clear. (this also means, relatively speaking, you're getting less water)
     - hydrocarbon seperation recipe has been removed. (Distilation and cultivation can be run together for pretty much identical results, so its not needed)
@@ -41,6 +44,8 @@ Date: ????
   Bugfixes:
     - Advanced darkness achivement should work now
     - Scout o tron description no longer includes refrence to "integrated build tool" which it does not have
+    - Fixed PD-TEG ghost being invisible
+    - Changed chemical reactors icon to the k2 gas power station icon to match the item.
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.25
 Date: 2026-01-18

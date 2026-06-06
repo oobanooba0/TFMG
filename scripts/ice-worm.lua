@@ -18,7 +18,6 @@ function ice_worm.rocket_launched(event)
 end
 
 function ice_worm.meets_size_requirement(worm,max_size)
-  
   if 2 >= max_size then
     if worm.prototype.name == "big-ice-worm" then return false end
   end
@@ -58,6 +57,17 @@ function ice_worm.send_to_silo(worm_to_send,silo)
   }
   worm_to_send.set_ai_state(ai_state)
   table.insert(storage.worms.active_worms,{worm = worm_to_send,silo = silo,order = "find silo"})
+  --make worm roar when first agrroed
+  local random_variation = math.random(10)
+  distant_sounds.play_sound_panned({
+    path = "ice-worm-roar",
+    variation = random_variation,
+    surface = worm_to_send.surface,
+    position = worm_to_send.get_body_nodes()[1],
+    volume_modifier = 1,
+    max_distance = 5000,
+    min_distance = 250,
+  })
 end
 
 function ice_worm.attack_silo(active_worm,_)
@@ -138,6 +148,29 @@ function ice_worm.spawn_hatchling(event)
     --I cant yet decide what order makes the most sense, so whatever.
     hatchling.commandable.set_command({type = defines.command.go_to_location, destination = target, distraction = defines.distraction.none, pathfind_flags = {cache = true}})
   end
+end
+
+function ice_worm.distant_roar()
+  local random = math.random(15)
+  --game.print(random)
+  if random ~= 1 then return end
+
+  local worms = game.surfaces["nauvis"].get_segmented_units()
+  if not worms[1] then return end --if there are no worms in the game, end the script
+
+  local roaring_worm = TFMG.random_table_entry(worms)
+  --TFMG.block(roaring_worm)
+
+  local random_variation = math.random(10)
+  distant_sounds.play_sound_panned({
+    path = "ice-worm-roar",
+    variation = random_variation,
+    surface = roaring_worm.surface,
+    position = roaring_worm.get_body_nodes()[1],
+    volume_modifier = 1,
+    max_distance = 5000,
+    min_distance = 250,
+  })
 end
 
 return ice_worm

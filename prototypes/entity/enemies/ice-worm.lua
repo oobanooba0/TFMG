@@ -1,17 +1,5 @@
-local space_age_sounds = require("__TFMG__.prototypes.entity.sounds")
-local function ice_worm_spritesheet(file_name, is_shadow, scale)
-  is_shadow = is_shadow or false
-  return util.sprite_load("__space-age__/graphics/entity/lavaslug/lavaslug-" .. file_name,
-  {
-    direction_count = 128,
-    dice = 0, -- dicing is incompatible with sprite alpha masking, do not attempt
-    draw_as_shadow = is_shadow,
-    scale = scale,
-    multiply_shift = scale * 2,
-    surface = "vulcanus",
-    usage = "enemy"
-  })
-end
+local ice_worm_sounds = require("__TFMG__.sound.enemy.ice-worm")
+
 local ice_worm_overkill_fraction = 0.2
 local ice_worm_segment_scales ={
   1.09,
@@ -189,20 +177,22 @@ function make_ice_worm_head(base_name, order, scale, damage_multiplier, health, 
         volume = 1, 
         audible_distance_modifier = 0.8,
         speed = 1
-    },
+      },
       max_sounds_per_prototype = 1,
       match_volume_to_activity = true
     },
     backward_padding = -2.5 * scale, -- tiles
     render_layer = "higher-object-under",
-    update_effects ={{
-      distance_cooldown = 4 * scale,
-      effect ={{
-          type = "create-smoke",
-          entity_name = "big-demolisher-ash-cloud-trail",
-          show_in_tooltip = false
+    update_effects ={
+      {--ash cloud stuff
+        distance_cooldown = 4 * scale,
+        effect ={{
+            type = "create-smoke",
+            entity_name = "big-demolisher-ash-cloud-trail",
+            show_in_tooltip = false
         }}
-      }},
+      },
+    },
     update_effects_while_enraged = ice_worm_enraged_attack,
     segment_engine =
     {
@@ -367,10 +357,9 @@ function make_ice_worm(base_name, order, scale, damage_multiplier, health, regen
   data:extend(make_ice_worm_segments(base_name, ice_worm_segment_scales, scale, damage_multiplier, health, sounds))
 end
 
--- With a few damage and rate of fire upgrades the engineer can easily be at 60 DPS if Vulcanus is the first new planet.
-make_ice_worm("small-ice-worm", "a-a", 0.8, 1, 8000000, 1000, 0.5, space_age_sounds.demolisher.small)
-make_ice_worm("medium-ice-worm", "a-b", 2, 1.5, 50000000, 1000, 0.7, space_age_sounds.demolisher.medium)
-make_ice_worm("big-ice-worm", "a-c", 5, 2.5, 1000000000, 1000, 1, space_age_sounds.demolisher.big)
+make_ice_worm("small-ice-worm", "a-a", 0.8, 1, 8000000, 1000, 0.5, ice_worm_sounds.small)
+make_ice_worm("medium-ice-worm", "a-b", 2, 1.5, 50000000, 1000, 0.7, ice_worm_sounds.medium)
+make_ice_worm("big-ice-worm", "a-c", 5, 2.5, 1000000000, 1000, 1, ice_worm_sounds.big)
 
 data:extend({
   {--ice worm creation delayed trigger

@@ -68,6 +68,26 @@ local story = {}
     end
   end)
 
+  --tfmg thermal pause/unpause tests
+
+  --script.on_event(defines.events.on_console_command, function(event)
+  --  if event.command == "pause" then
+  --    local id = tonumber(event.parameters)
+  --    remote.call("TFMG-thermal","set_interface_pause",id,true)
+  --  elseif event.command == "unpause" then
+  --    local id = tonumber(event.parameters)
+  --    remote.call("TFMG-thermal","set_interface_pause",id,false)
+  --  elseif event.command == "read" then
+  --    local id = tonumber(event.parameters)
+  --    local status = remote.call("TFMG-thermal","get_interface_pause",id)
+  --    game.print(status)
+  --  elseif event.command == "toggle" then
+  --    local id = tonumber(event.parameters)
+  --    local status = remote.call("TFMG-thermal","toggle_interface_pause",id)
+  --    game.print(status)
+  --  end
+  --end)
+
 --scripts which allow me to fuck with players by pretending to be them.
 
   function story.print(message)--game print, but with special aguments
