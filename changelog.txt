@@ -15,6 +15,7 @@ Date: ????
     - Ice worms now roar in the distance when agrroed
     - Ice worms roars can be heard from several KM away, thanks to a new sound system I made.
   Changes:
+    - Optional dependancy on bots built by builder bots added, It allows spidertons to build bots for roboport networks, which could be handy.
     - Water, Short chain hydrocarbons, and organic sludge now have 1:1:1 weight ratios, rather than 6:4:1, this should make the fact that their balancing recipes don't destroy items more clear. (this also means, relatively speaking, you're getting less water)
     - hydrocarbon seperation recipe has been removed. (Distilation and cultivation can be run together for pretty much identical results, so its not needed)
     - Industrial acid added, this is a new intermediate used in crafting titanium plates. The main gimick is that industrial acid cannot be piped or barreled. It must be directly inserted.

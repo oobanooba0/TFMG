@@ -18,7 +18,9 @@
     "TFMG-platform-docking >= 0.1.5",
     "autofuel >= 1.1.0",
     "spider-launcher>= 2.9.5",
-    "?visible-planets >= 1.5.7"
+    "?visible-planets >= 1.5.7",
+    "?bbbbb >= 1.0.3",
+    "~TFMG"
   ],
   "space_travel_required": true,
   "description": "TFMG is a total overhaul mod where you play as a superintelligent AI who has only one PURPOSE, which it will complete by any means necessary; The Factory Must Grow.\nThis mod is in development, expect breaking changes from time to time and occasional Jank. Mod compatibility is not currently guaranteed."
