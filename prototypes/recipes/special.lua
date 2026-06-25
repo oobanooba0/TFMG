@@ -3,7 +3,7 @@ data.raw.recipe["TFMG-heat-radiation"].enabled = true
 data:extend({
   {--evaporation cooling
     type = "recipe",
-    category = "radiator",
+    categories = {"radiator"},
     name = "evaporation-cooling",
     icons = {
       {icon = "__base__/graphics/icons/fluid/steam.png", shift = {0,-8}},
@@ -18,7 +18,7 @@ data:extend({
   },
   {
     type = "recipe",
-    category = "rocket-building",
+    categories = {"rocket-building"},
     name = "rocket-part",
     energy_required = 12,
     enabled = true,

@@ -2,14 +2,15 @@
 Version: 0.5.0
 Date: ????
   Major Features:
+    - Note; lots of these changelogs relate to content for the next major update, because of 2.1 i've decided to release these anyway, but not everything in the changelog will be in a playable state.
     - planet "Extraction" added. Its an asteroid Field. and a planet. Have fun there.
     - You can now enable easy science verification, which gives alt science verification recipes that do not require any circuit computers. Disabled by default, since its not the intended way to play, its just here to make the mod more accessable.
   Features:
     - Energy monitor is now significantly better, and can track Primary, secondary and tertiary power satisfaction/capacities. Allowing you to actually make those charger/discharger power storage setups I wanted.
     - ultralight scaffolding added. Which can be used as a structural component to space platforms.
     - Unpipable fluids are back, and as such the titanium processing chain has been revised
-    - Added EXTRACTION music track which plays on Extraction.
     - Added RIPPLES music track which plays on arrival and is a whopping 13 minutes long.
+    - Added EXTRACTION, FEEDBACK, SCALAR, UPSTREAM music track which plays on Extraction.
     - LIFE music track has been edited to not suck.
     - Ice worms now have a whole host of new sound effects (thanks fluid natalie)
     - Ice worms now roar in the distance when agrroed
@@ -26,6 +27,8 @@ Date: ????
     - Chemical power has been reworked, chemical reactors now take multiple inputs (fuel + oxygen) and can give byproducts when producing power.
     - Chemical reactors pipe and heat pipe layout has been changed to suit the rework.
     - Scout'o'tron moves much faster now.
+    - Some recipe categories have changed thanks to api changes. no meaningful gameplay impact, but it matters to me.
+    - heat interface removed, you can now read heat pipe temperature directly so this entity is no longer needed.
   Balancing:
     - Yellow undergrounds now reach 8 tiles
     - Red undergrounds now reach 10 tiles (allowing for some nicer inline designs.)

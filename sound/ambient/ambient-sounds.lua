@@ -200,4 +200,15 @@ data:extend({
       },
       weight = 10
     },
+    {
+      type = "ambient-sound",
+      name = "FEEDBACK",
+      track_type = "main-track",
+      planet = "extraction",
+      sound = {
+        filename = "__TFMG-music__/extraction/FEEDBACK.ogg",
+        volume = 1,
+      },
+      weight = 10
+    },
 })

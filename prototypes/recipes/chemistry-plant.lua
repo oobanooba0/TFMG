@@ -3,7 +3,7 @@ local TFMG = require("util.TFMG")
 data:extend({--1:1:1 Water, Hydrocarbon, Organic
   --{--Hydrocarbon seperation
   --  type = "recipe",
-  --  category = "chemistry-plant",
+  --  categories = {"chemistry-plant"},
   --  subgroup = "fluid-recipes",
   --  name = "hydrocarbon-seperation",
   --  icons = {
@@ -35,7 +35,7 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
   --},
   {--Hydrocarbon concentration
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "hydrocarbon-concentration",
     icons = {
@@ -66,7 +66,7 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
   },
   {--industrial acid
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "industrial-acid",
     icon = "__base__/graphics/icons/fluid/sulfuric-acid.png",
@@ -92,7 +92,7 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
 
   {--water electrolysis
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "water-electrolysis",
     icon = "__Krastorio2Assets__/icons/recipes/water-separation.png",
@@ -112,15 +112,16 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
       { type = "item", name = "conductive-coil", amount = 4},
       { type = "fluid", name = "water", amount = 16, fluidbox_index = 0,},
     },
-    results = { 
-      { type = "item", name = "pure-iron-ore", amount = 1, probability = 0.6},
+    results = {
+      { type = "item", name = "pure-iron-ore", amount = 1, shared_probability = {min = 0, max = 0.5}},
+      { type = "item", name = "conductive-coil", amount = 4, shared_probability ={min = 0.5, max = 1}},
       { type = "fluid", name = "hydrogen", amount = 32, fluidbox_index = 1},
       { type = "fluid", name = "oxygen", amount = 16, fluidbox_index = 2},
     },
   },
   {--Ferric ore washing
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "ferric-ore-washing",
     icons = {
@@ -148,7 +149,7 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
   },
   {--microbe-culture
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     name = "microbe-culture",
     crafting_machine_tint = {
       primary = {170,240,150},
@@ -173,7 +174,7 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
 
   {--microbe cultivation
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     name = "microbe-cultivation",
     crafting_machine_tint = {
       primary = {170,240,150},
@@ -189,15 +190,14 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 100, fluidbox_index = 0 },
     },
     results = { 
-      { type = "item", name = "microbe-culture", amount = 5 }
+      { type = "item", name = "microbe-culture", amount = 5, reset_freshness_on_craft = true,}
     },
-    reset_freshness_on_craft = true,
     main_product = "microbe-culture",
   },
 
   {--microbe restoration
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     name = "microbe-restoration",
     crafting_machine_tint = {
       primary = {170,240,150},
@@ -214,14 +214,14 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "water", amount = 20, fluidbox_index = 0 },
     },
     results = { 
-      { type = "item", name = "microbe-culture", amount = 1, extra_count_fraction = 0.5 }
+      { type = "item", name = "microbe-culture", amount = 1, extra_count_fraction = 0.5, reset_freshness_on_craft = true,}
     },
-    reset_freshness_on_craft = true,
+    
     main_product = "microbe-culture",
   },
   {--bio polymerisation
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     name = "active-bio-polymers",
     crafting_machine_tint = {
       primary = {160,240,160},
@@ -244,7 +244,7 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
   },
   {--mineral lubricant
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "mineral-lubricant",
     crafting_machine_tint = {
@@ -267,7 +267,7 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
   },
   {--organic carbon liquefaction
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "organic-carbon-liquefaction",
     icons = {
@@ -293,7 +293,7 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
   },
   {--capacitor
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "capacitor-discharged",
     crafting_machine_tint = {
@@ -317,7 +317,7 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
   },
   {--Excited crystal quenching
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     name = "fused-crystalline-chunk",
     icon = "__TFMG-assets-0__/icons/items/fused-crystalline-chunk.png",
     crafting_machine_tint = {
@@ -344,7 +344,7 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
   },
   {--Steam condensation
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "water",
     crafting_machine_tint = {
@@ -368,7 +368,7 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
   },
   {--Thruster oxidizer
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "thruster-oxidizer",
     icon = "__space-age__/graphics/icons/fluid/thruster-oxidizer.png",
@@ -394,7 +394,7 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
   },
   {--Thruster fuel
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "thruster-fuel",
     icon = "__space-age__/graphics/icons/fluid/thruster-fuel.png",

@@ -7,7 +7,7 @@ local TFMG = require("util.TFMG")
 
 --pistol trolling
   local pistol = data.raw.gun["pistol"]
-  pistol.stack_size = 4294967295
+  pistol.stack_size = 1000000000
   pistol.weight = 4294967295
   pistol.icon = nil
   pistol.icons = {{

@@ -21,6 +21,7 @@
 
   local steam = data.raw.fluid["steam"]
   steam.default_temperature = 0
+  steam.max_temperature = 1000
   steam.subgroup = "energy-fluid"
   steam.order = "a[steam]"
 

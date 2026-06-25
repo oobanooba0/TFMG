@@ -1,6 +1,7 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
-local TFMG = require("__TFMG__.util.TFMG")
+local TFMG = require("util.TFMG")
+local assembler_pictures = require("__base__.prototypes.entity.assembler-pictures")
 
 ---Heat interface connections, again
   --connected
@@ -567,12 +568,12 @@ data:extend({
       orientation_to_variation = true
     }
   },
-  {--small heat exchanger
+  {-- heat exchanger
     type = "boiler",
-    name = "small-heat-exchanger",
+    name = "heat-exchanger",
     icon = "__base__/graphics/icons/heat-boiler.png",
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 0.1, result = "small-heat-exchanger"},
+    minable = {mining_time = 0.1, result = "heat-exchanger"},
     max_health = 200,
     corpse = "heat-exchanger-remnants",
     dying_explosion = "heat-exchanger-explosion",
@@ -704,25 +705,28 @@ data:extend({
         {
           layers =
           {
+            util.sprite_load("__base__/graphics/entity/heat-exchanger/heatex-N-idle",
             {
-              filename = "__base__/graphics/entity/heat-exchanger/heatex-N-idle.png",
               priority = "extra-high",
-              width = 269,
-              height = 221,
-              shift = util.by_pixel(-1.25, 5.25),
               scale = 0.5
-            },
+            }),
+            util.sprite_load("__base__/graphics/entity/heat-exchanger/heatex-N-shadow",
             {
-              filename = "__base__/graphics/entity/boiler/boiler-N-shadow.png",
               priority = "extra-high",
-              width = 274,
-              height = 164,
               scale = 0.5,
-              shift = util.by_pixel(20.5, 9),
               draw_as_shadow = true
-            }
+            })
           }
-        }
+        },
+       fire = util.sprite_load("__base__/graphics/entity/heat-exchanger/heatex-N-fluid",
+        {
+          draw_as_glow = true,
+          priority = "extra-high",
+          frame_count = 32,
+          animation_speed = 0.5,
+          blend_mode = "additive",
+          scale = 0.5,
+        })
       },
       east =
       {
@@ -730,25 +734,28 @@ data:extend({
         {
           layers =
           {
+            util.sprite_load("__base__/graphics/entity/heat-exchanger/heatex-E-idle",
             {
-              filename = "__base__/graphics/entity/heat-exchanger/heatex-E-idle.png",
               priority = "extra-high",
-              width = 211,
-              height = 301,
-              shift = util.by_pixel(-1.75, 1.25),
               scale = 0.5
-            },
+            }),
+            util.sprite_load("__base__/graphics/entity/heat-exchanger/heatex-E-shadow",
             {
-              filename = "__base__/graphics/entity/boiler/boiler-E-shadow.png",
               priority = "extra-high",
-              width = 184,
-              height = 194,
               scale = 0.5,
-              shift = util.by_pixel(30, 9.5),
               draw_as_shadow = true
-            }
+            })
           }
-        }
+        },
+        fire = util.sprite_load("__base__/graphics/entity/heat-exchanger/heatex-E-fluid",
+        {
+          draw_as_glow = true,
+          priority = "extra-high",
+          frame_count = 32,
+          animation_speed = 0.5,
+          blend_mode = "additive",
+          scale = 0.5,
+        })
       },
       south =
       {
@@ -756,25 +763,28 @@ data:extend({
         {
           layers =
           {
+            util.sprite_load("__base__/graphics/entity/heat-exchanger/heatex-S-idle",
             {
-              filename = "__base__/graphics/entity/heat-exchanger/heatex-S-idle.png",
               priority = "extra-high",
-              width = 260,
-              height = 201,
-              shift = util.by_pixel(4, 10.75),
               scale = 0.5
-            },
+            }),
+            util.sprite_load("__base__/graphics/entity/heat-exchanger/heatex-S-shadow",
             {
-              filename = "__base__/graphics/entity/boiler/boiler-S-shadow.png",
               priority = "extra-high",
-              width = 311,
-              height = 131,
               scale = 0.5,
-              shift = util.by_pixel(29.75, 15.75),
               draw_as_shadow = true
-            }
+            })
           }
-        }
+        },
+        fire = util.sprite_load("__base__/graphics/entity/heat-exchanger/heatex-S-fluid",
+          {
+            draw_as_glow = true,
+            priority = "extra-high",
+            frame_count = 32,
+            animation_speed = 0.5,
+            blend_mode = "additive",
+            scale = 0.5
+          })
       },
       west =
       {
@@ -782,25 +792,28 @@ data:extend({
         {
           layers =
           {
+            util.sprite_load("__base__/graphics/entity/heat-exchanger/heatex-W-idle",
             {
-              filename = "__base__/graphics/entity/heat-exchanger/heatex-W-idle.png",
               priority = "extra-high",
-              width = 196,
-              height = 273,
-              shift = util.by_pixel(1.5, 7.75),
               scale = 0.5
-            },
+            }),
+            util.sprite_load("__base__/graphics/entity/heat-exchanger/heatex-W-shadow",
             {
-              filename = "__base__/graphics/entity/boiler/boiler-W-shadow.png",
               priority = "extra-high",
-              width = 206,
-              height = 218,
               scale = 0.5,
-              shift = util.by_pixel(19.5, 6.5),
               draw_as_shadow = true
-            }
+            })
           }
-        }
+        },
+        fire = util.sprite_load("__base__/graphics/entity/heat-exchanger/heatex-W-fluid",
+          {
+            draw_as_glow = true,
+            priority = "extra-high",
+            frame_count = 32,
+            animation_speed = 0.5,
+            blend_mode = "additive",
+            scale = 0.5
+          })
       },
     },
     burning_cooldown = 20,
@@ -837,7 +850,7 @@ data:extend({
       },
       {
         production_type = "output",
-        pipe_picture = assembler3pipepictures(),
+        pipe_picture = assembler_pictures.assembler3pipepictures,
         pipe_covers = pipecoverspictures(),
         volume = 200,
         pipe_connections = {
@@ -850,7 +863,7 @@ data:extend({
       },
       {
         production_type = "input",
-        pipe_picture = assembler3pipepictures(),
+        pipe_picture = assembler_pictures.assembler3pipepictures,
         pipe_covers = pipecoverspictures(),
         volume = 100,
         pipe_connections = {
@@ -863,7 +876,7 @@ data:extend({
       },
       {
         production_type = "input",
-        pipe_picture = assembler3pipepictures(),
+        pipe_picture = assembler_pictures.assembler3pipepictures,
         pipe_covers = pipecoverspictures(),
         volume = 100,
         pipe_connections = {

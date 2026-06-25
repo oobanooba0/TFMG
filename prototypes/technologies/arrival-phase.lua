@@ -78,7 +78,7 @@ data:extend({
     {
       {
         type = "unlock-recipe",
-        recipe = "refinery"
+        recipe = "oil-refinery"
       },
       {
         type = "unlock-recipe",
@@ -271,7 +271,7 @@ data:extend({
       },
       {
         type = "unlock-recipe",
-        recipe = "small-heat-exchanger"
+        recipe = "heat-exchanger"
       },
       {
         type = "unlock-recipe",
@@ -307,10 +307,6 @@ data:extend({
       {
         type = "unlock-recipe",
         recipe = "ground-radiator"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "heat-monitor"
       },
     },
     prerequisites = {"high-performance-structure","chemical-power"},

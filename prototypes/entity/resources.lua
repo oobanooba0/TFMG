@@ -136,7 +136,6 @@ data:extend({
           name = "hydrocarbon-slush",
           amount_min = 10,
           amount_max = 10,
-          probability = 1
         }
       }
     },

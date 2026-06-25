@@ -2,6 +2,7 @@ local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 local simulations = require("__base__.prototypes.factoriopedia-simulations")
 local TFMG = require("__TFMG__.util.TFMG")
+local assembler_pictures = require("__base__.prototypes.entity.assembler-pictures")
 --vanilla building updates.
   local mining_drill = data.raw["mining-drill"]["electric-mining-drill"]
   mining_drill.mining_speed = 1
@@ -328,10 +329,7 @@ data:extend({
         },
       },
     },
-    crafting_categories = {
-      "matter-reconstructor",
-      "assembling-machine"
-    },
+    crafting_categories = {"matter-reconstructor",},
     crafting_speed = 10,
     energy_source =
     {
@@ -381,7 +379,7 @@ data:extend({
     {
       {
         production_type = "input",
-        pipe_picture = assembler3pipepictures(),
+        pipe_picture = assembler_pictures.assembler3pipepictures,
         pipe_covers = pipecoverspictures(),
         volume = 200,
         pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {0, -1}}},
@@ -389,7 +387,7 @@ data:extend({
       },
       {
         production_type = "output",
-        pipe_picture = assembler3pipepictures(),
+        pipe_picture = assembler_pictures.assembler3pipepictures,
         pipe_covers = pipecoverspictures(),
         volume = 200,
         pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {0, 1}}},
@@ -410,40 +408,8 @@ data:extend({
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.2,
-    graphics_set =
-    {
-      animation_progress = 0.5,
-      animation =
-      {
-        layers =
-        {
-          {
-            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3.png",
-            priority = "high",
-            width = 214,
-            height = 237,
-            frame_count = 32,
-            line_length = 8,
-            shift = util.by_pixel(0, -0.75),
-            scale = 0.5
-          },
-          {
-            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-shadow.png",
-            priority = "high",
-            width = 260,
-            height = 162,
-            frame_count = 32,
-            line_length = 8,
-            draw_as_shadow = true,
-            shift = util.by_pixel(28, 4),
-            scale = 0.5
-          }
-        }
-      }
-    },
-    crafting_categories = {
-      "assembling-machine","assembling-machine-pure"
-    },
+    graphics_set = require("__base__.prototypes.entity.assembler-pictures").assembler3_graphics_set,
+    crafting_categories = {"assembling-machine"},
     crafting_speed = 1,
     energy_source =
     {
@@ -674,7 +640,7 @@ data:extend({
     {
       {
         production_type = "input",
-        --pipe_picture = assembler2pipepictures(),
+        --pipe_picture = assembler_pictures.assembler2pipepictures,,
         --pipe_covers = pipecoverspictures(),
         volume = 1000,
         pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {3, 5} }},
@@ -683,7 +649,7 @@ data:extend({
       },
       {
         production_type = "output",
-        --pipe_picture = assembler2pipepictures(),
+        --pipe_picture = assembler_pictures.assembler2pipepictures,,
         --pipe_covers = pipecoverspictures(),
         volume = 1000,
         pipe_connections = {{ flow_direction="output", direction = defines.direction.north, position = {-3, 5} }},
@@ -1053,10 +1019,10 @@ data:extend({
   },
   {--refinery
     type = "assembling-machine",
-    name = "refinery",
+    name = "oil-refinery",
     icon = "__base__/graphics/icons/oil-refinery.png",
     flags = {"placeable-neutral","player-creation"},
-    minable = {mining_time = 0.2, result = "refinery"},
+    minable = {mining_time = 0.2, result = "oil-refinery"},
     max_health = 350,
     corpse = "oil-refinery-remnants",
     dying_explosion = "oil-refinery-explosion",
@@ -1083,100 +1049,7 @@ data:extend({
     energy_usage = "4MW",
     module_slots = 6,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-    graphics_set =
-    {
-      animation = make_4way_animation_from_spritesheet(
-      {
-        layers =
-        {
-          {
-            filename = "__base__/graphics/entity/oil-refinery/oil-refinery.png",
-            width = 386,
-            height = 430,
-            shift = util.by_pixel(0, -7.5),
-            scale = 0.5
-          },
-          {
-            filename = "__base__/graphics/entity/oil-refinery/oil-refinery-shadow.png",
-            width = 674,
-            height = 426,
-            shift = util.by_pixel(82.5, 26.5),
-            draw_as_shadow = true,
-            scale = 0.5
-          }
-        }
-      }),
-
-      working_visualisations =
-      {
-        {
-          fadeout = true,
-          constant_speed = true,
-          north_position = util.by_pixel(34, -65),
-          east_position = util.by_pixel(-52, -61),
-          south_position = util.by_pixel(-59, -82),
-          west_position = util.by_pixel(57, -58),
-          animation =
-          {
-            filename = "__base__/graphics/entity/oil-refinery/oil-refinery-fire.png",
-            line_length = 10,
-            width = 40,
-            height = 81,
-            frame_count = 60,
-            animation_speed = 0.75,
-            scale = 0.5,
-            draw_as_glow = true,
-            shift = util.by_pixel(0, -14.25)
-          },
-        },
-        {
-          fadeout = true,
-          north_animation =
-          {
-            filename = "__base__/graphics/entity/oil-refinery/oil-refinery-light.png",
-            width = 321,
-            height = 205,
-            blend_mode = "additive",
-            draw_as_glow = true,
-            shift = util.by_pixel(-1, -50),
-            scale = 0.5,
-          },
-          east_animation =
-          {
-            filename = "__base__/graphics/entity/oil-refinery/oil-refinery-light.png",
-            width = 321,
-            x = 321;
-            height = 205,
-            blend_mode = "additive",
-            draw_as_glow = true,
-            shift = util.by_pixel(-1, -50),
-            scale = 0.5,
-          },
-          south_animation =
-          {
-            filename = "__base__/graphics/entity/oil-refinery/oil-refinery-light.png",
-            width = 321,
-            x = 321 * 2;
-            height = 205,
-            blend_mode = "additive",
-            draw_as_glow = true,
-            shift = util.by_pixel(-1, -50),
-            scale = 0.5,
-          },
-          west_animation =
-          {
-            filename = "__base__/graphics/entity/oil-refinery/oil-refinery-light.png",
-            width = 321,
-            x = 321 * 3;
-            height = 205,
-            blend_mode = "additive",
-            draw_as_glow = true,
-            shift = util.by_pixel(-1, -50),
-            scale = 0.5,
-          },
-        }
-      }
-    },
+    graphics_set = require("__base__/prototypes/entity/oil-refinery-animation"),
     impact_category = "metal-large",
     open_sound = sounds.metal_large_open,
     close_sound = sounds.metal_large_close,
@@ -1256,16 +1129,11 @@ data:extend({
     },
     water_reflection =
     {
-      pictures =
+      pictures = util.sprite_load("__base__/graphics/entity/oil-refinery/oil-refinery-reflections",
       {
-        filename = "__base__/graphics/entity/oil-refinery/oil-refinery-reflection.png",
-        priority = "extra-high",
-        width = 40,
-        height = 48,
-        shift = util.by_pixel(5, 95),
+        scale = 3,
         variation_count = 4,
-        scale = 5
-      },
+      }),
       rotate = false,
       orientation_to_variation = true
     },
@@ -1304,7 +1172,7 @@ data:extend({
     {
       {
         production_type = "input",
-        pipe_picture = assembler2pipepictures(),
+        pipe_picture = assembler_pictures.assembler2pipepictures,
         pipe_covers = pipecoverspictures(),
         draw_only_when_connected = true,
         volume = 1000,
@@ -1317,7 +1185,7 @@ data:extend({
       },
       {
         production_type = "output",
-        pipe_picture = assembler2pipepictures(),
+        pipe_picture = assembler_pictures.assembler2pipepictures,
         pipe_covers = pipecoverspictures(),
         draw_only_when_connected = true,
         volume = 1000,
@@ -1526,7 +1394,7 @@ data:extend({
     fluid_boxes = {
       {
         production_type = "input",
-        pipe_picture = assembler3pipepictures(),
+        pipe_picture = assembler_pictures.assembler3pipepictures,
         pipe_covers = pipecoverspictures(),
         volume = 200,
         pipe_connections = {
@@ -1537,7 +1405,7 @@ data:extend({
       },
       {
         production_type = "output",
-        pipe_picture = assembler3pipepictures(),
+        pipe_picture = assembler_pictures.assembler3pipepictures,
         pipe_covers = pipecoverspictures(),
         volume = 200,
         pipe_connections = {
@@ -1598,7 +1466,7 @@ data:extend({
     fluid_boxes ={
       {
         production_type = "input",
-        pipe_picture = assembler3pipepictures(),
+        pipe_picture = assembler_pictures.assembler3pipepictures,
         pipe_covers = pipecoverspictures(),
         volume = 200,
         pipe_connections = {
@@ -1609,7 +1477,7 @@ data:extend({
       },
       {
         production_type = "output",
-        pipe_picture = assembler3pipepictures(),
+        pipe_picture = assembler_pictures.assembler3pipepictures,
         pipe_covers = pipecoverspictures(),
         volume = 200,
         pipe_connections = {
@@ -1626,72 +1494,26 @@ data:extend({
       {
         layers =
         {
-          -- Centrifuge A
+          util.sprite_load("__base__/graphics/entity/centrifuge/centrifuge-ABC-integration",
           {
-            filename = "__base__/graphics/entity/centrifuge/centrifuge-C.png",
             priority = "high",
             scale = 0.66,
-            line_length = 8,
-            width = 237,
-            height = 214,
-            frame_count = 64,
-            shift = util.by_pixel(-0.25, -26.5)
-          },
+            frame_count = 1,
+            repeat_count = 64
+          }),
+          util.sprite_load("__base__/graphics/entity/centrifuge/centrifuge-ABC",
           {
-            filename = "__base__/graphics/entity/centrifuge/centrifuge-C-shadow.png",
-            draw_as_shadow = true,
             priority = "high",
             scale = 0.66,
-            line_length = 8,
-            width = 279,
-            height = 152,
-            frame_count = 64,
-            shift = util.by_pixel(16.75, -10)
-          },
-          -- Centrifuge B
+            frame_count = 64
+          }),
+          util.sprite_load("__base__/graphics/entity/centrifuge/centrifuge-ABC-shadow",
           {
-            filename = "__base__/graphics/entity/centrifuge/centrifuge-B.png",
             priority = "high",
             scale = 0.66,
-            line_length = 8,
-            width = 156,
-            height = 234,
             frame_count = 64,
-            shift = util.by_pixel(23, 6.5)
-          },
-          {
-            filename = "__base__/graphics/entity/centrifuge/centrifuge-B-shadow.png",
-            draw_as_shadow = true,
-            priority = "high",
-            scale = 0.66,
-            line_length = 8,
-            width = 251,
-            height = 149,
-            frame_count = 64,
-            shift = util.by_pixel(63.25, 15.25)
-          },
-          -- Centrifuge A
-          {
-            filename = "__base__/graphics/entity/centrifuge/centrifuge-A.png",
-            priority = "high",
-            scale = 0.66,
-            line_length = 8,
-            width = 139,
-            height = 246,
-            frame_count = 64,
-            shift = util.by_pixel(-26.25, 3.5)
-          },
-          {
-            filename = "__base__/graphics/entity/centrifuge/centrifuge-A-shadow.png",
-            priority = "high",
-            draw_as_shadow = true,
-            scale = 0.66,
-            line_length = 8,
-            width = 230,
-            height = 124,
-            frame_count = 64,
-            shift = util.by_pixel(8.5, 23.5)
-          }
+            draw_as_shadow = true
+          })
         }
       },
 
@@ -1709,45 +1531,14 @@ data:extend({
           {
             layers =
             {
-              -- Centrifuge C
+              util.sprite_load("__base__/graphics/entity/centrifuge/centrifuge-ABC-light",
               {
-                filename = "__base__/graphics/entity/centrifuge/centrifuge-C-light.png",
                 priority = "high",
                 scale = 0.66,
-                blend_mode = "additive", -- centrifuge
-                line_length = 8,
-                width = 190,
-                height = 207,
                 frame_count = 64,
-                draw_as_glow = true,
-                shift = util.by_pixel(0, -27.25)
-              },
-              -- Centrifuge B
-              {
-                filename = "__base__/graphics/entity/centrifuge/centrifuge-B-light.png",
-                priority = "high",
-                scale = 0.66,
-                blend_mode = "additive", -- centrifuge
-                line_length = 8,
-                width = 131,
-                height = 206,
-                frame_count = 64,
-                draw_as_glow = true,
-                shift = util.by_pixel(16.75, 0.5)
-              },
-              -- Centrifuge A
-              {
-                filename = "__base__/graphics/entity/centrifuge/centrifuge-A-light.png",
-                priority = "high",
-                scale = 0.66,
-                blend_mode = "additive", -- centrifuge
-                line_length = 8,
-                width = 108,
-                height = 197,
-                frame_count = 64,
-                draw_as_glow = true,
-                shift = util.by_pixel(-23.5, -1.75)
-              }
+                blend_mode = "additive",
+                draw_as_glow = true
+              })
             }
           }
         }

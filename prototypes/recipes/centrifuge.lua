@@ -7,7 +7,7 @@ data:extend({
     type = "recipe",
     name = "centrifuge-slurry",
     icon = "__TFMG-assets-0__/icons/fluids/rich-slurry.png",
-    category = "centrifuge",
+    categories = {"centrifuge"},
     subgroup = "raw-materials",
     auto_recycle = false,
     energy_required = 4,

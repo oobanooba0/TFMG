@@ -5,7 +5,7 @@ local TFMG = require("util.TFMG")
 data:extend({
   {--short-chain-hydrocarbon-combustion
     type = "recipe",
-    category = "chemical-reactor",
+    categories = {"chemical-reactor"},
     name = "react-short-chain-hydrocarbons",
     subgroup = "fluid-recipes",
     energy_required = 1,
@@ -21,7 +21,7 @@ data:extend({
   },
   {--short chain hydrocarbons
     type = "recipe",
-    category = "chemical-reactor",
+    categories = {"chemical-reactor"},
     name = "react-short-chain-hydrocarbons-in-air",
     subgroup = "fluid-recipes",
     energy_required = 1,
@@ -37,7 +37,7 @@ data:extend({
   },
   {--hydrogen-oxygen-combustion
     type = "recipe",
-    category = "chemical-reactor",
+    categories = {"chemical-reactor"},
     name = "react-hydrogen-oxygen",
     subgroup = "fluid-recipes",
     --icon = "__base__/graphics/icons/signal/signal-fire.png",

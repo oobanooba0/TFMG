@@ -1,7 +1,7 @@
 data:extend({
   {--general purpose structure simple recipe
     type = "recipe",
-    category = "matter-reconstructor",
+    categories = {"matter-reconstructor"},
     name = "general-purpose-structure-reconstruction",
     energy_required = 10,
     enabled = false,
@@ -17,7 +17,7 @@ data:extend({
   },
   {--mechanical components simple recipe
     type = "recipe",
-    category = "matter-reconstructor",
+    categories = {"matter-reconstructor"},
     name = "mechanical-components-reconstruction",
     energy_required = 10,
     enabled = false,
@@ -33,7 +33,7 @@ data:extend({
   },
   {--conductive coil simple recipe
     type = "recipe",
-    category = "matter-reconstructor",
+    categories = {"matter-reconstructor"},
     name = "conductive-coil-reconstruction",
     energy_required = 10,
     enabled = false,
@@ -49,7 +49,7 @@ data:extend({
   },
   {--modular circuit simple recipe
     type = "recipe",
-    category = "matter-reconstructor",
+    categories = {"matter-reconstructor"},
     name = "modular-circuit-reconstruction",
     energy_required = 10,
     enabled = false,
@@ -66,7 +66,7 @@ data:extend({
   },
   {--Ai Processor printing
     type = "recipe",
-    category = "matter-reconstructor",
+    categories = {"matter-reconstructor"},
     name = "print-ai-processor",
     energy_required = 64,
     enabled = false,

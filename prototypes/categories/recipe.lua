@@ -13,10 +13,6 @@ data:extend({
         type = "recipe-category",
         name = "micro-assembler"
     },
-    {--recipes that explicitly only craft in the assembling machine, not the matter reconstructor
-        type = "recipe-category",
-        name = "assembling-machine-pure"
-    },
     {--furnace
         type = "recipe-category",
         name = "furnace"

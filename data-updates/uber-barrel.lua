@@ -1,5 +1,6 @@
 --We must uberbarrel. Notably this does not replace the vanilla autobarrel script,
 local item_sounds = require("__base__.prototypes.item_sounds")
+local barrel_categories = {"assembling-machine","matter-reconstructor","micro-assembler"}
 
 local function get_item(name)
   for typeName in pairs(defines.prototypes.item) do
@@ -112,8 +113,8 @@ local function generate_barrel_recipe_icons(fluid, base_icon, side_mask, top_mas
     table.insert(icons,
     {
       icon = fluid.icon,
-      icon_size = (fluid.icon_size or defines.default_icon_size),
-      scale = 16.0 / (fluid.icon_size or defines.default_icon_size), -- scale = 0.5 * 32 / icon_size simplified
+      icon_size = (fluid.icon_size or defines.constant.default_icon_size),
+      scale = 16.0 / (fluid.icon_size or defines.constant.default_icon_size), -- scale = 0.5 * 32 / icon_size simplified
       shift = fluid_icon_shift
     }
     )
@@ -128,14 +129,13 @@ end
 local function create_fill_barrel_recipe(item, fluid)
   local recipe_name = item.name
   local fluid_density = fluid.uber_barrel.density or fluid_per_barrel
-  local categories = fluid.uber_barrel.crafting_categories or {"assembling-machine-pure","micro-assembler"}
+  local categories = fluid.uber_barrel.crafting_categories or barrel_categories
   local recipe =
   {
     type = "recipe",
     name = recipe_name,
     localised_name = {"recipe-name.fill-barrel", fluid.localised_name or {"fluid-name." .. fluid.name}},
-    category = categories[1],
-    additional_categories = categories,
+    categories = categories,
     energy_required = fluid.uber_barrel.thiccness or energy_per_fill,
     subgroup = "fill-barrel",
     order = fluid.order,
@@ -165,14 +165,13 @@ end
 local function create_empty_barrel_recipe(item, fluid)
   local recipe_name = "empty-" .. item.name
   local fluid_density = fluid.uber_barrel.density or fluid_per_barrel
-  local categories = fluid.uber_barrel.crafting_categories or {"assembling-machine-pure","micro-assembler"}
+  local categories = fluid.uber_barrel.crafting_categories or barrel_categories
   local recipe =
   {
     type = "recipe",
     name = recipe_name,
     localised_name = {"recipe-name.empty-filled-barrel", fluid.localised_name or {"fluid-name." .. fluid.name}},
-    category = categories[1],
-    additional_categories = categories,
+    categories = categories,
     energy_required = fluid.uber_barrel.thiccness or energy_per_empty,
     subgroup = "empty-barrel",
     order = fluid.order,

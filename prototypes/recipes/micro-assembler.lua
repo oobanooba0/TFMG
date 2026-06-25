@@ -4,7 +4,7 @@ local TFMG = require("util.TFMG")
 data:extend({
   {--Mineral Glass singing
     type = "recipe",
-    category = "micro-assembler",
+    categories = {"micro-assembler"},
     name = "mineral-glass-singing",
     energy_required = 1,
     enabled = false,
@@ -21,7 +21,7 @@ data:extend({
   },
   {--conductive coil 
     type = "recipe",
-    category = "micro-assembler",
+    categories = {"micro-assembler"},
     name = "conductive-coil-anti-winding",
     energy_required = 1,
     enabled = false,

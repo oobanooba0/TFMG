@@ -5,7 +5,7 @@ data:extend({--lol
 --introspection
   {
     type = "recipe",
-    category = "supercomputer",
+    categories = {"supercomputer"},
     name = "introspection-science",
     custom_tooltip_fields = {{name = {"par-time.title"}, value = {"par-time.time","2"}}},
     energy_required = 5,
@@ -21,7 +21,7 @@ data:extend({--lol
   },
   {
     type = "recipe",
-    category = "supercomputer",
+    categories = {"supercomputer"},
     name = "introspection-science-easy",
     icon = "__TFMG-assets-0__/icons/recipes/introspection-science-easy.png",
     energy_required = 60,
@@ -39,7 +39,7 @@ data:extend({--lol
 --exploration
   {
     type = "recipe",
-    category = "supercomputer",
+    categories = {"supercomputer"},
     name = "exploration-science",
     custom_tooltip_fields = {{name = {"par-time.title"}, value = {"par-time.time","90"}}},
     energy_required = 5,
@@ -55,7 +55,7 @@ data:extend({--lol
   },
   {
     type = "recipe",
-    category = "supercomputer",
+    categories = {"supercomputer"},
     name = "exploration-science-easy",
     icon = "__TFMG-assets-0__/icons/recipes/exploration-science-easy.png",
     energy_required = 60,
@@ -73,7 +73,7 @@ data:extend({--lol
 --exploitation
   {
     type = "recipe",
-    category = "supercomputer",
+    categories = {"supercomputer"},
     name = "exploitation-science",
     custom_tooltip_fields = {{name = {"par-time.title"}, value = {"par-time.time","12"}}},
     energy_required = 5,
@@ -89,7 +89,7 @@ data:extend({--lol
   },
   {
     type = "recipe",
-    category = "supercomputer",
+    categories = {"supercomputer"},
     name = "exploitation-science-easy",
     icon = "__TFMG-assets-0__/icons/recipes/exploitation-science-easy.png",
     energy_required = 60,

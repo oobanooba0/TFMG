@@ -1,13 +1,19 @@
 {
   "recipe" : [
     ["exploitation-science","exploration-science"],
-    ["exploration-science", "exploitation-science"],
-    ["small-crusher", "crusher"]
+    ["exploration-science","exploitation-science"],
+    ["small-crusher","crusher"],
+    ["refinery","oil-refinery"],
+    ["small-heat-exchanger","heat-exchanger"]
   ],
   "entity" : [
-    ["small-crusher", "crusher"]
+    ["small-crusher","crusher"],
+    ["refinery","oil-refinery"],
+    ["small-heat-exchanger","heat-exchanger"]
   ],
   "item" : [
-    ["small-crusher", "crusher"]
+    ["small-crusher","crusher"],
+    ["refinery","oil-refinery"],
+    ["small-heat-exchanger","heat-exchanger"]
   ]
 }

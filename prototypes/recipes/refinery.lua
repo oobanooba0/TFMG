@@ -4,7 +4,7 @@ local TFMG = require("util.TFMG")
 data:extend({--6:4:1 Water, Hydrocarbon, Organic
   {--Hydrocarbon slush distillation
     type = "recipe",
-    category = "refinery",
+    categories = {"refinery"},
     subgroup = "fluid-recipes",
     name = "hydrocarbon-slush-distillation",
     icons = {
@@ -27,7 +27,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   },
   {--water filtration
     type = "recipe",
-    category = "refinery",
+    categories = {"refinery"},
     subgroup = "fluid-recipes",
     name = "water-filtration",
     icons = {
@@ -51,7 +51,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   },
   {--sludge cultivation
     type = "recipe",
-    category = "refinery",
+    categories = {"refinery"},
     subgroup = "fluid-recipes",
     name = "organic-sludge-cultivation",
     icons = {
@@ -75,7 +75,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   },
   {--ferric solution reduction
     type = "recipe",
-    category = "refinery",
+    categories = {"refinery"},
     subgroup = "fluid-recipes",
     name = "ferric-solution-reduction",
     icons = {
@@ -96,7 +96,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   },
   {--concrete
     type = "recipe",
-    category = "refinery",
+    categories = {"refinery"},
     subgroup = "fluid-recipes",
     name = "concrete",
     energy_required = 2,
@@ -114,7 +114,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   },
   {--Volatile chunk decomposition
     type = "recipe",
-    category = "refinery",
+    categories = {"refinery"},
     subgroup = "fluid-recipes",
     name = "volatile-chunk-decomposition",
     icons = {
@@ -132,13 +132,13 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "short-chain-hydrocarbons", amount_min = 0, amount_max = 24},
       { type = "fluid", name = "oxygen", amount = 32 },
       { type = "fluid", name = "hydrogen", amount = 32 },
-      { type = "item", name = "ferric-ore", amount = 1, probability = 0.08},
-      { type = "item", name = "mineral-ore", amount = 1, probability = 0.08},
+      { type = "item", name = "ferric-ore", amount = 1, independant_probability = 0.08},
+      { type = "item", name = "mineral-ore", amount = 1, independant_probability = 0.08},
     },
   },
   {--rich slurry
     type = "recipe",
-    category = "refinery",
+    categories = {"refinery"},
     subgroup = "fluid-recipes",
     name = "slurry-filtering",
     icons = {
@@ -160,7 +160,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   },
   {--thorium
     type = "recipe",
-    category = "refinery",
+    categories = {"refinery"},
     subgroup = "fluid-recipes",
     name = "thorium-reduction",
     icons = {
@@ -176,7 +176,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "oxygen", amount = 16},
     },
     results = {
-      { type = "item", name = "thorium", amount = 1, probability = 0.5},
+      { type = "item", name = "thorium", amount = 1, independant_probability = 0.5},
       { type = "fluid", name = "steam", amount = 240, temperature = 100},
     },
   },
