@@ -4,21 +4,20 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-  
     {
-      "type": "factoriomod",
+      "type": "factorio",
       "request": "launch",
       "name": "Factorio Mod Debug",
     },
     {
-      "type": "factoriomod",
+      "type": "factorio",
       "request": "launch",
       "name": "Factorio Mod Debug (Settings & Data)",
       "hookSettings": true,
       "hookData": true
     },
     {
-      "type": "factoriomod",
+      "type": "factorio",
       "request": "launch",
       "name": "Factorio Mod Debug (Profile)",
       "hookMode": "profile"
