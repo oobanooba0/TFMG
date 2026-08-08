@@ -1,5 +1,3 @@
-local TFMG = require("util.TFMG")
-
 --centrifuge recipes
 
 data:extend({

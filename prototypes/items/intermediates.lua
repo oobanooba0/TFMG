@@ -2,7 +2,6 @@ local item_sounds = require("__base__.prototypes.item_sounds")
 local space_age_item_sounds = require("__space-age__.prototypes.item_sounds")
 local second = 60
 local minute = 3600
-local TFMG = require("util.TFMG")
 --Intermediates
 data:extend({
 ---Base intermediates (Things we make other intermediates out of)

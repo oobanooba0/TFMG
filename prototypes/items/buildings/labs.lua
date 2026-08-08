@@ -1,6 +1,5 @@
 
 local item_sounds = require("__base__.prototypes.item_sounds")
-local TFMG = require("__TFMG__.util.TFMG")
 
 
 data:extend({

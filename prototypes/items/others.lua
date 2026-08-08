@@ -3,7 +3,6 @@ local sounds = require("__base__.prototypes.entity.sounds")
 local space_age_item_sounds = require("__space-age__.prototypes.item_sounds")
 local second = 60
 local minute = 3600
-local TFMG = require("util.TFMG")
 
 --pistol trolling
   local pistol = data.raw.gun["pistol"]

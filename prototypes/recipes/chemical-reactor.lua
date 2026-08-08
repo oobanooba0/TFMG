@@ -1,5 +1,3 @@
-local TFMG = require("util.TFMG")
-
 --chemical reactor recipes. Remember that maintaining correct fuel values of inputs/vs outputs is important here.
 
 data:extend({

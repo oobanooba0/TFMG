@@ -1,6 +1,5 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
-local TFMG = require("util.TFMG")
 local assembler_pictures = require("__base__.prototypes.entity.assembler-pictures")
 
 ---Heat interface connections, again

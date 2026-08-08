@@ -1,5 +1,3 @@
-local TFMG = require("util.TFMG")
-
 local charger_power = 10
 
 data:extend({

@@ -1,5 +1,4 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
-local TFMG = require("util.TFMG")
 
 --heavy space platform
 local HSP = data.raw.item["space-platform-foundation"] --halal snack pack

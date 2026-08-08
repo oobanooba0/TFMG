@@ -1,6 +1,5 @@
 -- my utility functions
-	require("util.TFMG")
-	TFMG = ("util.TFMG")
+	TFMG = require("__TFMG-lib__.data.util")
 
 --end of vanilla
 	require("prototypes.vanilla-content-obliterator")

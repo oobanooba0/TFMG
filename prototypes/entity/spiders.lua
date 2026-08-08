@@ -1,7 +1,6 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 local movement_triggers = require("__base__.prototypes.entity.movement-triggers")
-local TFMG = require("__TFMG__.util.TFMG")
 
 ---scout o tron
   function create_scout_o_tron(arguments)

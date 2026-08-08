@@ -1,6 +1,3 @@
-local TFMG = require("util.TFMG")
-
-
 ---assembling machine recipes.
 ---assembling-machine-pure for recipes that should only appear in the assembling machine, and not the matter reconstructor.
 

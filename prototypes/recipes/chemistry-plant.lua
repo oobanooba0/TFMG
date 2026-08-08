@@ -1,5 +1,3 @@
-local TFMG = require("util.TFMG")
-
 data:extend({--1:1:1 Water, Hydrocarbon, Organic
   --{--Hydrocarbon seperation
   --  type = "recipe",

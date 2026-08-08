@@ -1,15 +1,4 @@
 local sound_util = {}
-
-  ---@param filename_string #name of file, without the -1.ogg at the end
-  ---| string
-  ---@param variations #number of variations
-  ---| int
-  ---@param volume_parameter #multiplier to the volume of the sound
-  ---| int
-  ---@param modifiers_parameter #modifiers to apply to the sound
-  ---| any
-  ---@param speed_parameter #multiplier to the playback speed of the sound
-  ---| int
   function sound_util.sound_variations_with_speed(filename_string, variations, volume_parameter, modifiers_parameter, speed_parameter)
     --this function is somewhat clunky, you'll probably be catching me rewriting this function at some point.
     local result = {}
