@@ -1,4 +1,5 @@
 
+TFMG_table = require("__TFMG-lib__.control.table") --table functions
 util = require("util")
 require("scripts.TFMG")
 TFMG = require("scripts.TFMG")

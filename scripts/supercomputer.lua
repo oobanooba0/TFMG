@@ -1,4 +1,3 @@
-local flib_table = require("__flib__/table")
 
 local supercomputer = {}
 
@@ -220,19 +219,20 @@ function supercomputer.create_new_problem_introspection(v)--introspection recipe
   local problem_a = math.random(100)
   local problem_b = math.random(100)
   local operator_select = math.random(4)
+  local problem_operator
 
   if operator_select == 1 then
-  v.solution_x = problem_a + problem_b
-  problem_operator = "signal-plus"
+    v.solution_x = problem_a + problem_b
+    problem_operator = "signal-plus"
   elseif operator_select == 2 then
-  v.solution_x = problem_a - problem_b
-  problem_operator = "signal-minus"
+    v.solution_x = problem_a - problem_b
+    problem_operator = "signal-minus"
   elseif operator_select == 3 then
-  v.solution_x = problem_a * problem_b
-  problem_operator = "signal-multiplication"
+    v.solution_x = problem_a * problem_b
+    problem_operator = "signal-multiplication"
   elseif operator_select == 4 then
-  v.solution_x = math.floor(problem_a / problem_b)
-  problem_operator = "signal-division"
+    v.solution_x = math.floor(problem_a / problem_b)
+    problem_operator = "signal-division"
   end
 
 

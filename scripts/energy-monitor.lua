@@ -1,4 +1,4 @@
-local flib_table = require("__flib__/table")
+--energy monitors should be rewritten
 
 local energy_monitor = {}
 
@@ -80,7 +80,7 @@ end
 --that might be alot more complex though, so we're gonna start with a basic implementaiton
 
 function energy_monitor.on_tick()
-  storage.energy_monitor_k = flib_table.for_n_of( storage.energy_monitor, storage.energy_monitor_k, 1,
+  storage.energy_monitor_k = TFMG_table.for_n( storage.energy_monitor, storage.energy_monitor_k, 1,
   function(v,k)
     update_energy_monitor(v)
   end)

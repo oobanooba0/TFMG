@@ -268,6 +268,7 @@ data:extend({
     friendly_map_color = {150,0,150},
     collision_box = {{-0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{-0.9, -0.9}, {0.9, 0.9}},
+    use_mirroring = true,
     damaged_trigger_effect = hit_effects.entity(),
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["assembling-machine"],
@@ -405,6 +406,7 @@ data:extend({
     },
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    use_mirroring = true,
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.2,
     graphics_set = require("__base__.prototypes.entity.assembler-pictures").assembler3_graphics_set,
@@ -445,6 +447,7 @@ data:extend({
     dying_explosion = "electric-furnace-explosion",
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    use_mirroring = true,
     damaged_trigger_effect = hit_effects.entity(),
     icon_draw_specification = {shift = {0, -0.1}},
     icons_positioning =
@@ -663,6 +666,7 @@ data:extend({
     impact_category = "metal",
     collision_box = {{-5.2, -5.2}, {5.2, 5.2}},
     selection_box = {{-5.5, -5.5}, {5.5, 5.5}},
+    use_mirroring = true,
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.2,
     graphics_set = {--this is a pain in the ass, but whatever
@@ -730,6 +734,7 @@ data:extend({
     circuit_connector = circuit_connector_definitions["chemical-plant"],
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    use_mirroring = true,
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.4,
     graphics_set =
@@ -1148,6 +1153,7 @@ data:extend({
     collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
     collision_mask = {layers={item=true, object=true, player=true, water_tile=true, elevated_rail=true, is_object=true, is_lower_object=true, meltable=true}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    use_mirroring = true,
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.3,
     crafting_categories = {"refinery"},
@@ -1321,6 +1327,7 @@ data:extend({
     },
     collision_box = {{-0.3, -0.8}, {0.3, 0.8}},
     selection_box = {{-0.5, -1}, {0.5, 1}},
+    use_mirroring = true,
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.2,
     graphics_set =
@@ -1472,6 +1479,7 @@ data:extend({
     circuit_connector = circuit_connector_definitions["crusher"],
     collision_box = {{-0.7, -1.2}, {0.7, 1.2}},
     selection_box = {{-1, -1.5}, {1, 1.5}},
+    use_mirroring = true,
     damaged_trigger_effect = hit_effects.entity(),
     icons_positioning =
     {
@@ -1573,6 +1581,7 @@ data:extend({
     --resistances = {},
     collision_box = {{-1.8, -1.8}, {1.8, 1.8}},
     selection_box = {{-2, -2}, {2, 2}},
+    use_mirroring = true,
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.7,
     fluid_boxes ={

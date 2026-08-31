@@ -5,6 +5,10 @@ small_crawler_scale = 0.5
 small_crawler_tint1 = {0.60, 0.58, 0.51, 1}
 small_crawler_tint2 = {0.62, 0.55, 0.2, 0.7}
 
+local crawler_ai_settings = {
+  destroy_when_commands_fail = true,
+}
+
 
 local make_unit_melee_ammo_type = function(damage_value)
   return
@@ -67,7 +71,7 @@ data:extend({
     run_animation = biterrunanimation(small_crawler_scale, small_crawler_tint1, small_crawler_tint2),
     running_sound_animation_positions = {2,},
     walking_sound = sounds.biter_walk(0, 0.3),
-    ai_settings = biter_ai_settings,
+    ai_settings = crawler_ai_settings,
     water_reflection = biter_water_reflection(small_biter_scale)
   },
   add_biter_die_animation(small_crawler_scale, small_crawler_tint1, small_crawler_tint2,
