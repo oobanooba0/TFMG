@@ -1,8 +1,10 @@
 
+TFMG_table = require("__TFMG-lib__.control.table") --table functions
 util = require("util")
 require("scripts.TFMG")
 TFMG = require("scripts.TFMG")
 require("scripts.init")
+distant_sounds = require("scripts.distant-sounds")
 
 require("scripts.gameplay")
 gameplay = require("scripts.gameplay")
@@ -14,3 +16,7 @@ require("scripts.ice-worm")
 ice_worm = require("scripts.ice-worm")
 require("scripts.cargo")
 cargo = require("scripts.cargo")
+require("scripts.energy-monitor")
+energy_monitor = require("scripts.energy-monitor")
+require("scripts.simple-compound")
+simple_compound = require("scripts.simple-compound")

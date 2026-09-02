@@ -118,7 +118,7 @@ function gameplay.self_control()--this script runs in the platform phase to make
   if not SELF then return end
   local progression = storage.story.tech_progress
   if SELF.distance <= 0.0005 then SELF.distance = 0.01 end
-  SELF.speed = (progression + 1)/3
+  SELF.speed = (progression + 1)/6
 end
 
 function gameplay.self_arrive()
@@ -144,6 +144,20 @@ function gameplay.on_solar_panel_built(entity)
     TFMG.global_achievement("everyday-darkness")
     storage.story.handlers.everyday_darkness = true
   end
+end
+
+
+function gameplay.regolith_mined(event)
+  local ore = event.entity
+  local surface = ore.surface
+  local position = ore.position
+  local random = math.random()
+  if random >= 0.1 then
+    surface.set_tiles({{position = position, name = "ultralight-scaffold"}},true,true)
+  else
+    surface.set_tiles({{position = position, name = "depleted-regolith"}},true,true)
+  end
+  surface.set_hidden_tile(position,"empty-space") 
 end
 
 return gameplay

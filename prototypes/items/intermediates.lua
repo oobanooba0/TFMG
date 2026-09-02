@@ -2,7 +2,6 @@ local item_sounds = require("__base__.prototypes.item_sounds")
 local space_age_item_sounds = require("__space-age__.prototypes.item_sounds")
 local second = 60
 local minute = 3600
-local TFMG = require("util.TFMG")
 --Intermediates
 data:extend({
 ---Base intermediates (Things we make other intermediates out of)
@@ -80,6 +79,25 @@ data:extend({
     weight = 1 * kg,
   },
   {
+    type = "item",
+    name = "lead-plate",
+    icon = "__TFMG-assets-0__/icons/items/lead-plate.png",
+    pictures =
+    {
+      { size = 64, filename = "__TFMG-assets-0__/icons/items/lead-plate.png", scale = 0.5, mipmap_count = 4 },
+    },
+    random_tint_color = item_tints.iron_rust,
+    subgroup = "basic-intermediates",
+    order = "d[lead]-a[lead-plate]",
+    inventory_move_sound = item_sounds.metal_small_inventory_move,
+    pick_sound = item_sounds.metal_small_inventory_pickup,
+    drop_sound = item_sounds.metal_small_inventory_move,
+    stack_size = 100,
+    default_import_location = "extraction",
+    weight = 20 * kg,
+  },
+--hydrocarbons
+  {--microbe culture
     type = "item",
     name = "microbe-culture",
     icon = "__TFMG-assets-0__/icons/items/microbe-culture-0.png",
@@ -177,6 +195,20 @@ data:extend({
     default_import_location = "nauvis",
     weight = 2 * kg,
   },
+  {--radiation-shielding
+    type = "item",
+    name = "radiation-shielding",
+    icon = "__TFMG-assets-0__/icons/items/radiation-shielding.png",
+    subgroup = "structural-intermediates",
+    order = "c[radiation-shielding]",
+    inventory_move_sound = item_sounds.low_density_inventory_move,
+    pick_sound = item_sounds.low_density_inventory_pickup,
+    drop_sound = item_sounds.low_density_inventory_move,
+    stack_size = 50,
+    random_tint_color = item_tints.iron_rust,
+    default_import_location = "extraction",
+    weight = 50 * kg,
+  },
 ---mechanical intermediates (things that make other things move)
   {--mechanical components
     type = "item",
@@ -251,6 +283,90 @@ data:extend({
     stack_size = 100,
     default_import_location = "nauvis",
     weight = 5 * kg,
+  },
+--nuclear intermediates
+  {--thorium
+    type = "item",
+    name = "thorium",
+    icon = "__TFMG-assets-0__/icons/items/thorium.png",
+    pictures = {
+      layers = {
+        {
+          filename = "__TFMG-assets-0__/icons/items/thorium.png",
+          size = 64,
+          scale = 0.5,
+          mipmap_count = 4,
+        },
+        {
+          filename = "__TFMG-assets-0__/icons/items/thorium.png",
+          size = 64,
+          scale = 0.5,
+          draw_as_light = true,
+          mipmap_count = 4,
+        },
+      },
+    },
+    subgroup = "nuclear-intermediates",
+    order = "a[thorium]-a",
+    inventory_move_sound = item_sounds.electric_small_inventory_move,
+    pick_sound = item_sounds.electric_small_inventory_pickup,
+    drop_sound = item_sounds.electric_small_inventory_move,
+    stack_size = 50,
+    default_import_location = "extraction",
+    weight = 10 * kg,
+  },
+  {--thorium-fuel-pellet
+    type = "item",
+    name = "thorium-fuel-pellet",
+    icon = "__base__/graphics/icons/uranium-fuel-cell.png",
+    pictures = {
+      layers = {
+        {
+          filename = "__base__/graphics/icons/uranium-fuel-cell.png",
+          size = 64,
+          scale = 0.5,
+          mipmap_count = 4,
+        },
+        {
+          filename = "__base__/graphics/icons/uranium-fuel-cell-light.png",
+          size = 64,
+          scale = 0.5,
+          draw_as_light = true,
+          mipmap_count = 4,
+        },
+      },
+    },
+    subgroup = "nuclear-intermediates",
+    order = "a[thorium]-b",
+    inventory_move_sound = item_sounds.electric_small_inventory_move,
+    pick_sound = item_sounds.electric_small_inventory_pickup,
+    drop_sound = item_sounds.electric_small_inventory_move,
+    stack_size = 100,
+    default_import_location = "extraction",
+    weight = 10 * kg,
+  },
+  {--thorium fuel pellet spent
+    type = "item",
+    name = "thorium-fuel-pellet-spent",
+    icon = "__base__/graphics/icons/uranium-fuel-cell.png",
+    pictures = {
+      layers = {
+        {
+          filename = "__base__/graphics/icons/uranium-fuel-cell.png",
+          size = 64,
+          scale = 0.5,
+          mipmap_count = 4,
+        },
+      },
+    },
+    subgroup = "nuclear-intermediates",
+    order = "a[thorium]-c",
+    inventory_move_sound = item_sounds.electric_small_inventory_move,
+    pick_sound = item_sounds.electric_small_inventory_pickup,
+    drop_sound = item_sounds.electric_small_inventory_move,
+    stack_size = 100,
+    default_import_location = "extraction",
+    weight = 10 * kg,
   },
 --capacitors
   {--capacitor discharged
@@ -400,46 +516,5 @@ data:extend({
     stack_size = 20,
     weight = 100 * kg,
     default_import_location = "nauvis",
-  },
-})
-
-data:extend({--debug items
-  {
-    type = "item",
-    name = "kraken-uber-fuel",
-    icon = "__base__/graphics/icons/nuclear-fuel.png",
-    flags = {"hide-from-fuel-tooltip"},
-    pictures =
-    {
-      layers =
-      {
-        {
-          size = 64,
-          filename = "__base__/graphics/icons/nuclear-fuel.png",
-          scale = 0.5,
-          mipmap_count = 4
-        },
-        {
-          draw_as_light = true,
-          size = 64,
-          filename = "__base__/graphics/icons/nuclear-fuel-light.png",
-          scale = 0.5
-        }
-      }
-    },
-    fuel_category = "chemical",
-    fuel_value = "1000000000GJ",
-    fuel_acceleration_multiplier = 10,
-    fuel_top_speed_multiplier = 100,
-    -- fuel_glow_color = {r = 0.1, g = 1, b = 0.1},
-    subgroup = "uranium-processing",
-    order = "r[uranium-processing]-e[nuclear-fuel]",
-    inventory_move_sound = item_sounds.fuel_cell_inventory_move,
-    pick_sound = item_sounds.fuel_cell_inventory_pickup,
-    drop_sound = item_sounds.fuel_cell_inventory_move,
-    stack_size = 100,
-    weight = 100*kg,
-    hidden = true,
-    hidden_in_factoriopedia = true,
   },
 })

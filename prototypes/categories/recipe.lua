@@ -1,3 +1,5 @@
+--for the unpipable script to function properly, new categories involving fluid boxes need to their unpipe lookup tables properly adjusted
+
 data:extend({
     {--matter reconstructor
         type = "recipe-category",
@@ -10,10 +12,6 @@ data:extend({
     {--micro assembler
         type = "recipe-category",
         name = "micro-assembler"
-    },
-    {--recipes that explicitly only craft in the assembling machine, not the matter reconstructor
-        type = "recipe-category",
-        name = "assembling-machine-pure"
     },
     {--furnace
         type = "recipe-category",
@@ -37,10 +35,18 @@ data:extend({
     },
     {--small crusher
         type = "recipe-category",
-        name = "small-crusher"
+        name = "crusher"
     },
     {--charger
         type = "recipe-category",
         name = "charger"
+    },
+    {--centrifuge
+        type = "recipe-category",
+        name = "centrifuge"
+    },
+    {--chemical-reactor
+        type = "recipe-category",
+        name = "chemical-reactor"
     },
 })

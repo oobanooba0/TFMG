@@ -1,17 +1,19 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
-local TFMG = require("__TFMG__.util.TFMG")
 data:extend({
 ---energy monitor
   {
     type = "item",
     name = "energy-monitor",
-    icon = "__base__/graphics/icons/accumulator.png",
+    icons = {{
+      icon = "__base__/graphics/icons/accumulator.png",
+      tint = {1,1,0}
+    }},
     subgroup = "energy",
     order = "a-z",
     inventory_move_sound = item_sounds.electric_large_inventory_move,
     pick_sound = item_sounds.electric_large_inventory_pickup,
     drop_sound = item_sounds.electric_large_inventory_move,
-    place_result = "energy-monitor",
+    place_result = "energy-monitor-combinator",
     stack_size = 50,
     default_import_location = "nauvis",
   },
@@ -67,14 +69,14 @@ data:extend({
   },
   {
     type = "item",
-    name = "small-heat-exchanger",
+    name = "heat-exchanger",
     icon = "__base__/graphics/icons/heat-boiler.png",
     subgroup = "energy",
     order = "b[steam]-b[heat]",
     inventory_move_sound = item_sounds.steam_inventory_move,
     pick_sound = item_sounds.steam_inventory_pickup,
     drop_sound = item_sounds.steam_inventory_move,
-    place_result = "small-heat-exchanger",
+    place_result = "heat-exchanger",
     stack_size = 25,
     weight = TFMG.rocket_capacity(10),
     random_tint_color = item_tints.iron_rust,
@@ -88,7 +90,7 @@ data:extend({
     weight = TFMG.rocket_capacity(5),
     subgroup = "energy",
     order = "c[heat]-a[chemical]",
-    place_result = "chemical-reactor",
+    place_result = "chemical-reactor", --I might need to find some way to trick the game into showing the correct information. Idk.
     place_as_equipment_result = "chemical-reactor-equipment",
     default_import_location = "nauvis",
   },

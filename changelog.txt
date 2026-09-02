@@ -1,4 +1,56 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.1
+Date: 2026-09-02
+  Major Features:
+    - Note; lots of these changelogs relate to content for the next major update, because of 2.1 i've decided to release these anyway, but not everything in the changelog will be in a playable state.
+    - planet "Extraction" added. It's an asteroid field. and a planet. Have fun there.
+    - You can now enable easy science verification, which gives alt science verification recipes that do not require any circuit computers. Disabled by default, since its not the intended way to play, its just here to make the mod more accessable.
+  Features:
+    - Energy monitor is now significantly better, and can track Primary, secondary and tertiary power satisfaction/capacities. Allowing you to actually make those charger/discharger power storage setups I wanted.
+    - ultralight scaffolding added. Which can be used as a structural component to space platforms.
+    - Unpipable fluids are back, and as such the titanium processing chain has been revised
+    - Added RIPPLES music track which plays on arrival and is a whopping 13 minutes long.
+    - Added EXTRACTION, FEEDBACK, SCALAR, UPSTREAM music track which plays on Extraction.
+    - LIFE music track has been edited to not suck.
+    - Ice worms now have a whole host of new sound effects (thanks fluid natalie)
+    - Ice worms now roar in the distance when agrroed
+    - Ice worms roars can be heard from several KM away, thanks to a new sound system I made.
+  Changes:
+    - Optional dependancy on bots built by builder bots added, It allows spidertons to build bots for roboport networks, which could be handy.
+    - Water, Short chain hydrocarbons, and organic sludge now have 1:1:1 weight ratios, rather than 6:4:1, this should make the fact that their balancing recipes don't destroy items more clear. (this also means, relatively speaking, you're getting less water)
+    - hydrocarbon seperation recipe has been removed. (Distilation and cultivation can be run together for pretty much identical results, so its not needed)
+    - Industrial acid added, this is a new intermediate used in crafting titanium plates. The main gimick is that industrial acid cannot be piped or barreled. It must be directly inserted.
+    - Added hydrogen
+    - Added oxygen
+    - Added water electrolysis
+    - Optical coils now use industrial acid
+    - Chemical power has been reworked, chemical reactors now take multiple inputs (fuel + oxygen) and can give byproducts when producing power.
+    - Chemical reactors pipe and heat pipe layout has been changed to suit the rework.
+    - Scout'o'tron moves much faster now.
+    - Some recipe categories have changed thanks to api changes. no meaningful gameplay impact, but it matters to me.
+    - heat interface removed, you can now read heat pipe temperature directly so this entity is no longer needed.
+  Balancing:
+    - Yellow undergrounds now reach 8 tiles
+    - Red undergrounds now reach 10 tiles (allowing for some nicer inline designs.)
+    - Underground pipes (both types) now reach 16 tiles
+    - Conductive coil anti-winding buffed
+    - Capacitors now cost 16 ferric solution each, rather than 2.5
+    - Capacitors craft 1 at a time now. so they cost twice as much.
+    - Optical coils now craft 6 at a time instaid of 4
+    - most recipes involving optical coils now need 50% more optical coils.
+    - hydrocarbon balancing is now more effective, recipes shifting over 50% of the fluids rather than only ~25%. 
+    - bots balance readjusted, Logi bots are nerfed, since you're not really supposed to use them except for resuppling spiders and such. Construction bots are buffed, making early construction less painful.
+    - logistics bots use more energy while moving, they can only effectively transport items short distances
+    - construction bots move significantly faster
+    - logistics bots are slightly slower.
+    - The starting platform now falls towards arrival more slowly encouraging building more asteroid collectors earlier.
+    - Arrival has 50% more asteroids in orbit now.
+  Bugfixes:
+    - Advanced darkness achivement should work now
+    - Scout o tron description no longer includes refrence to "integrated build tool" which it does not have
+    - Fixed PD-TEG ghost being invisible
+    - Changed chemical reactors icon to the k2 gas power station icon to match the item.
+---------------------------------------------------------------------------------------------------
 Version: 0.4.25
 Date: 2026-01-18
   Changes:

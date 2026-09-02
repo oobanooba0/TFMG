@@ -1,10 +1,10 @@
-local TFMG = require("util.TFMG")
+
 
 
 data:extend({--6:4:1 Water, Hydrocarbon, Organic
   {--Hydrocarbon slush distillation
     type = "recipe",
-    category = "refinery",
+    categories = {"refinery"},
     subgroup = "fluid-recipes",
     name = "hydrocarbon-slush-distillation",
     icons = {
@@ -21,13 +21,13 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     results = { 
       { type = "fluid", name = "water", amount = 64 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 32 },
-      { type = "fluid", name = "organic-sludge", amount = 4 }
+      { type = "fluid", name = "organic-sludge", amount = 16 }
     },
     surface_conditions = TFMG.conditions.arrival,
   },
   {--water filtration
     type = "recipe",
-    category = "refinery",
+    categories = {"refinery"},
     subgroup = "fluid-recipes",
     name = "water-filtration",
     icons = {
@@ -39,19 +39,19 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     allow_productivity = false,
     allow_decomposition = false,
     ingredients = {
-      { type = "fluid", name = "water", amount = 300 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
+      { type = "fluid", name = "water", amount = 150 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 150 },
     },
     results = { 
-      { type = "fluid", name = "water", amount = 450 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 80 },
-      { type = "fluid", name = "organic-sludge", amount = 5 }
+      { type = "fluid", name = "water", amount = 225 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 60 },
+      { type = "fluid", name = "organic-sludge", amount = 15 }
     },
     surface_conditions = TFMG.conditions.arrival,
   },
   {--sludge cultivation
     type = "recipe",
-    category = "refinery",
+    categories = {"refinery"},
     subgroup = "fluid-recipes",
     name = "organic-sludge-cultivation",
     icons = {
@@ -63,19 +63,19 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     allow_productivity = false,
     allow_decomposition = false,
     ingredients = {
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
-      { type = "fluid", name = "organic-sludge", amount = 50 },  
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 150 },
+      { type = "fluid", name = "organic-sludge", amount = 150 },
     },
     results = { 
-      { type = "fluid", name = "water", amount = 30 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 80 },
-      { type = "fluid", name = "organic-sludge", amount = 75 }
+      { type = "fluid", name = "water", amount = 15 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 60 },
+      { type = "fluid", name = "organic-sludge", amount = 225 }
     },
     surface_conditions = TFMG.conditions.arrival,
   },
   {--ferric solution reduction
     type = "recipe",
-    category = "refinery",
+    categories = {"refinery"},
     subgroup = "fluid-recipes",
     name = "ferric-solution-reduction",
     icons = {
@@ -91,12 +91,12 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     },
     results = { 
       { type = "item", name = "pure-iron-ore", amount = 2 },
-      { type = "fluid", name = "water", amount = 50, fluidbox_index = 0 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 40, fluidbox_index = 0 },
     },
   },
   {--concrete
     type = "recipe",
-    category = "refinery",
+    categories = {"refinery"},
     subgroup = "fluid-recipes",
     name = "concrete",
     energy_required = 2,
@@ -105,7 +105,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     ingredients = {
       { type = "item", name = "mineral-ore", amount = 4 },
       { type = "item", name = "general-purpose-structure", amount = 1 },
-      { type = "fluid", name = "water", amount = 10 },
+      { type = "fluid", name = "water", amount = 40 },
       { type = "fluid", name = "short-chain-hydrocarbons", amount = 10 },
     },
     results = { 
@@ -114,7 +114,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   },
   {--Volatile chunk decomposition
     type = "recipe",
-    category = "refinery",
+    categories = {"refinery"},
     subgroup = "fluid-recipes",
     name = "volatile-chunk-decomposition",
     icons = {
@@ -129,11 +129,55 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "volatile-asteroid-chunk", amount = 1},
     },
     results = {
-      { type = "fluid", name = "short-chain-hydrocarbons", amount_min = 0, amount_max = 8},
-      { type = "fluid", name = "water", amount = 8 },
-      --hydrogen, probably.
-      { type = "item", name = "ferric-ore", amount = 1, probability = 0.08},
-      { type = "item", name = "mineral-ore", amount = 1, probability = 0.08},
+      { type = "fluid", name = "short-chain-hydrocarbons", amount_min = 0, amount_max = 24},
+      { type = "fluid", name = "oxygen", amount = 32 },
+      { type = "fluid", name = "hydrogen", amount = 32 },
+      { type = "item", name = "ferric-ore", amount = 1, independant_probability = 0.08},
+      { type = "item", name = "mineral-ore", amount = 1, independant_probability = 0.08},
+    },
+  },
+  {--rich slurry
+    type = "recipe",
+    categories = {"refinery"},
+    subgroup = "fluid-recipes",
+    name = "slurry-filtering",
+    icons = {
+      { icon = "__TFMG-assets-0__/icons/fluids/rich-slurry.png"},
+      { icon = "__base__/graphics/icons/signal/signal-fire.png", shift = {0,7}, scale = 0.3, tint = {1,0.2,0.2,0.5}}
+    },
+    energy_required = 2,
+    enabled = false,
+    allow_productivity = true,
+    allow_decomposition = true,
+    ingredients = {
+      { type = "fluid", name = "rich-slurry", amount = 16},
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 8},
+    },
+    results = {
+      { type = "item", name = "crushed-regolith", amount_min = 2, amount_max = 5},
+      { type = "fluid", name = "hydrogen", amount = 6},
+    },
+  },
+  {--thorium
+    type = "recipe",
+    categories = {"refinery"},
+    subgroup = "fluid-recipes",
+    name = "thorium-reduction",
+    icons = {
+      { icon = "__TFMG-assets-0__/icons/items/thorium.png"},
+      { icon = "__base__/graphics/icons/signal/signal-fire.png", shift = {0,7}, scale = 0.3, tint = {1,0.2,0.2,0.5}}
+    },
+    energy_required = 2,
+    enabled = false,
+    allow_productivity = true,
+    allow_decomposition = true,
+    ingredients = {
+      { type = "fluid", name = "thorium-salts", amount = 16},
+      { type = "fluid", name = "oxygen", amount = 16},
+    },
+    results = {
+      { type = "item", name = "thorium", amount = 1, independant_probability = 0.5},
+      { type = "fluid", name = "steam", amount = 240, temperature = 100},
     },
   },
 })

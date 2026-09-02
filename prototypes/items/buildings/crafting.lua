@@ -1,6 +1,4 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
-local TFMG = require("__TFMG__.util.TFMG")
-
 data:extend({
   {--matter reconstructor
     type = "item",
@@ -97,14 +95,14 @@ data:extend({
   },
   {-- refinery
     type = "item",
-    name = "refinery",
+    name = "oil-refinery",
     icon = "__base__/graphics/icons/oil-refinery.png",
     subgroup = "production-machine",
     order = "a-d",
     inventory_move_sound = item_sounds.fluid_inventory_move,
     pick_sound = item_sounds.fluid_inventory_pickup,
     drop_sound = item_sounds.fluid_inventory_move,
-    place_result = "refinery",
+    place_result = "oil-refinery",
     stack_size = 20,
     weight = TFMG.rocket_capacity(10),
     default_import_location = "nauvis",
@@ -125,14 +123,14 @@ data:extend({
   },
   {--small crusher
     type = "item",
-    name = "small-crusher",
+    name = "crusher",
     icon = "__space-age__/graphics/icons/crusher.png",
     subgroup = "production-machine",
     order = "a-e",
     inventory_move_sound = item_sounds.drill_inventory_move,
     pick_sound = item_sounds.drill_inventory_pickup,
     drop_sound = item_sounds.drill_inventory_move,
-    place_result = "small-crusher",
+    place_result = "crusher",
     stack_size = 10,
     weight = TFMG.rocket_capacity(25),
     default_import_location = "nauvis",

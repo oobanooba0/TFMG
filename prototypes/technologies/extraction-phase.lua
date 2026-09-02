@@ -1,0 +1,39 @@
+
+
+data:extend({
+  {--regolith sorting
+    type = "technology",
+    name = "regolith-sorting",
+    icon = "__space-age__/graphics/technology/advanced-asteroid-processing.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "regolith-crushing"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "centrifuge-slurry",
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "slurry-filtering",
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "thorium-reduction",
+      },
+    },
+    prerequisites = {"volatile-handling"},
+    unit = {
+      count = 512,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1},
+        {"exploitation-science", 1},
+      },
+      time = 32
+    },
+  },
+})

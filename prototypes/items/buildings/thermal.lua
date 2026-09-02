@@ -1,5 +1,4 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
-local TFMG = require("__TFMG__.util.TFMG")
 
 --small radiator
   local small_radiator = data.raw.item["small-radiator"]
@@ -14,20 +13,6 @@ local TFMG = require("__TFMG__.util.TFMG")
   ground_radiator.default_import_location = "nauvis"
 
 data:extend({
-  {--heat monitor
-    type = "item",
-    name = "heat-monitor",
-    icon = "__base__/graphics/icons/heat-interface.png",
-    subgroup = "energy",
-    order = "a-z",
-    inventory_move_sound = item_sounds.mechanical_inventory_move,
-    pick_sound = item_sounds.mechanical_inventory_pickup,
-    drop_sound = item_sounds.mechanical_inventory_move,
-    place_result = "heat-monitor",
-    stack_size = 50,
-    weight = TFMG.rocket_capacity(50),
-    default_import_location = "nauvis",
-  },
   {--TFMG-logo-11-tiles
     type = "item",
     name = "TFMG-logo-11-tiles",

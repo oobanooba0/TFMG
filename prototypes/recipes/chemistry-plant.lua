@@ -1,41 +1,39 @@
-local TFMG = require("util.TFMG")
-
-data:extend({--6:4:1 Water, Hydrocarbon, Organic
-  {--Hydrocarbon seperation
-    type = "recipe",
-    category = "chemistry-plant",
-    subgroup = "fluid-recipes",
-    name = "hydrocarbon-seperation",
-    icons = {
-      { icon = "__base__/graphics/icons/fluid/water.png", shift = {10,0},scale = 0.7},
-      { icon = "__base__/graphics/icons/fluid/lubricant.png", shift = {-10,0},scale = 0.7},
-      { icon = "__base__/graphics/icons/arrows/signal-left-right-arrow.png", shift = {0,7}, scale = 0.3,}
-    },
-    crafting_machine_tint = {
-      primary = {150,150,10},
-      secondary = {150,150,10},
-      tertiary = {150,150,10},
-      quaternary = {150,150,10},
-    },
-    energy_required = 1,
-    enabled = false,
-    allow_decomposition = false,
-    allow_productivity = false,
-    ingredients = {
-      { type = "fluid", name = "water", amount = 300 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
-      { type = "fluid", name = "organic-sludge", amount = 50 },
-    },
-    results = { 
-      { type = "fluid", name = "water", amount = 360 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 120 },
-      { type = "fluid", name = "organic-sludge", amount = 60 }
-    },
-    surface_conditions = TFMG.conditions.arrival,
-  },
+data:extend({--1:1:1 Water, Hydrocarbon, Organic
+  --{--Hydrocarbon seperation
+  --  type = "recipe",
+  --  categories = {"chemistry-plant"},
+  --  subgroup = "fluid-recipes",
+  --  name = "hydrocarbon-seperation",
+  --  icons = {
+  --    { icon = "__base__/graphics/icons/fluid/water.png", shift = {10,0},scale = 0.7},
+  --    { icon = "__base__/graphics/icons/fluid/lubricant.png", shift = {-10,0},scale = 0.7},
+  --    { icon = "__base__/graphics/icons/arrows/signal-left-right-arrow.png", shift = {0,7}, scale = 0.3,}
+  --  },
+  --  crafting_machine_tint = {
+  --    primary = {150,150,10},
+  --    secondary = {150,150,10},
+  --    tertiary = {150,150,10},
+  --    quaternary = {150,150,10},
+  --  },
+  --  energy_required = 1,
+  --  enabled = false,
+  --  allow_decomposition = false,
+  --  allow_productivity = false,
+  --  ingredients = {
+  --    { type = "fluid", name = "water", amount = 100 },
+  --    { type = "fluid", name = "short-chain-hydrocarbons", amount = 100 },
+  --    { type = "fluid", name = "organic-sludge", amount = 100 },
+  --  },
+  --  results = { 
+  --    { type = "fluid", name = "water", amount = 140 },
+  --    { type = "fluid", name = "short-chain-hydrocarbons", amount = 20 },
+  --    { type = "fluid", name = "organic-sludge", amount = 140 }
+  --  },
+  --  surface_conditions = TFMG.conditions.arrival,
+  --},
   {--Hydrocarbon concentration
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "hydrocarbon-concentration",
     icons = {
@@ -53,25 +51,80 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     allow_productivity = false,
     allow_decomposition = false,
     ingredients = {
-      { type = "fluid", name = "water", amount = 300 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 200 },
-      { type = "fluid", name = "organic-sludge", amount = 50 },
+      { type = "fluid", name = "water", amount = 100 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 100 },
+      { type = "fluid", name = "organic-sludge", amount = 100 },
     },
     results = { 
-      { type = "fluid", name = "water", amount = 240 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 280 },
-      { type = "fluid", name = "organic-sludge", amount = 40 }
+      { type = "fluid", name = "water", amount = 60 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 180 },
+      { type = "fluid", name = "organic-sludge", amount = 60 }
     },
     surface_conditions = TFMG.conditions.arrival,
   },
+  {--industrial acid
+    type = "recipe",
+    categories = {"chemistry-plant"},
+    subgroup = "fluid-recipes",
+    name = "industrial-acid",
+    icon = "__base__/graphics/icons/fluid/sulfuric-acid.png",
+    crafting_machine_tint = {
+      primary = {220,220,00},
+      secondary = {220,220,00},
+      tertiary = {220,220,00},
+      quaternary = {220,220,00},
+    },
+    energy_required = 1,
+    enabled = false,
+    allow_productivity = true,
+    allow_decomposition = false,
+    ingredients = {
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 16, fluidbox_index = 1,},
+      { type = "fluid", name = "hydrogen", amount = 24, fluidbox_index = 2,},
+    },
+    results = { 
+      { type = "fluid", name = "nothing", amount = 0, fluidbox_index = 0, show_details_in_recipe_tooltip = false,},
+      { type = "fluid", name = "industrial-acid", amount = 16, fluidbox_index = 0,},
+    },
+  },
+
+  {--water electrolysis
+    type = "recipe",
+    categories = {"chemistry-plant"},
+    subgroup = "fluid-recipes",
+    name = "water-electrolysis",
+    icon = "__Krastorio2Assets__/icons/recipes/water-separation.png",
+    icon_size = 128,
+    crafting_machine_tint = {
+      primary = {220,00,00},
+      secondary = {220,220,220},
+      tertiary = {220,00,00},
+      quaternary = {220,220,220},
+    },
+    energy_required = 4,
+    enabled = false,
+    allow_productivity = false,
+    allow_decomposition = false,
+    allow_consumption = false,
+    ingredients = {
+      { type = "item", name = "conductive-coil", amount = 4},
+      { type = "fluid", name = "water", amount = 16, fluidbox_index = 0,},
+    },
+    results = {
+      { type = "item", name = "pure-iron-ore", amount = 1, shared_probability = {min = 0, max = 0.5}},
+      { type = "item", name = "conductive-coil", amount = 4, shared_probability ={min = 0.5, max = 1}},
+      { type = "fluid", name = "hydrogen", amount = 32, fluidbox_index = 1},
+      { type = "fluid", name = "oxygen", amount = 16, fluidbox_index = 2},
+    },
+  },
   {--Ferric ore washing
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "ferric-ore-washing",
     icons = {
       { icon = "__base__/graphics/icons/copper-ore.png"},
-      { icon = "__base__/graphics/icons/fluid/petroleum-gas.png", shift = {0,7}, scale = 0.3,}
+      { icon = "__base__/graphics/icons/fluid/sulfuric-acid.png", shift = {0,7}, scale = 0.3,}
     },
     crafting_machine_tint = {
       primary = {220,40,00},
@@ -85,16 +138,16 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     allow_decomposition = false,
     ingredients = {
       { type = "item", name = "ferric-ore", amount = 5 },--was originally 6
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 16, fluidbox_index = 0 },
+      { type = "fluid", name = "industrial-acid", amount = 16, fluidbox_index = 0},
     },
     results = { 
       { type = "item", name = "titanium-ore", amount = 1 },
-      { type = "fluid", name = "ferric-solution", amount = 24, fluidbox_index = 0 }--was originally 30.
+      { type = "fluid", name = "ferric-solution", amount = 24, fluidbox_index = 0}--was originally 30.
     },
   },
   {--microbe-culture
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     name = "microbe-culture",
     crafting_machine_tint = {
       primary = {170,240,150},
@@ -106,7 +159,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     enabled = false,
     allow_productivity = true,
     ingredients = {
-      { type = "fluid", name = "organic-sludge", amount = 10, fluidbox_index = 0 },
+      { type = "fluid", name = "organic-sludge", amount = 40, fluidbox_index = 0 },
       { type = "item", name = "mineral-ore", amount = 1 },
     },
     results = { 
@@ -116,9 +169,57 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
     localised_name = {"recipe-name.microbe-culture"},
     surface_conditions = TFMG.conditions.arrival,
   },
+
+  {--microbe cultivation
+    type = "recipe",
+    categories = {"chemistry-plant"},
+    name = "microbe-cultivation",
+    crafting_machine_tint = {
+      primary = {170,240,150},
+      secondary = {170,240,150},
+      tertiary = {170,240,150},
+      quaternary = {170,240,150},
+    },
+    energy_required = 4,
+    enabled = false,
+    allow_productivity = true,
+    ingredients = {
+      { type = "item", name = "microbe-culture", amount = 2 },
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 100, fluidbox_index = 0 },
+    },
+    results = { 
+      { type = "item", name = "microbe-culture", amount = 5, reset_freshness_on_craft = true,}
+    },
+    main_product = "microbe-culture",
+  },
+
+  {--microbe restoration
+    type = "recipe",
+    categories = {"chemistry-plant"},
+    name = "microbe-restoration",
+    crafting_machine_tint = {
+      primary = {170,240,150},
+      secondary = {170,240,150},
+      tertiary = {170,240,150},
+      quaternary = {170,240,150},
+    },
+    energy_required = 4,
+    enabled = false,
+    allow_productivity = false,
+    ingredients = {
+      { type = "item", name = "microbe-culture", amount = 1 },
+      { type = "item", name = "organic-carbon", amount = 1 },
+      { type = "fluid", name = "water", amount = 20, fluidbox_index = 0 },
+    },
+    results = { 
+      { type = "item", name = "microbe-culture", amount = 1, extra_count_fraction = 0.5, reset_freshness_on_craft = true,}
+    },
+    
+    main_product = "microbe-culture",
+  },
   {--bio polymerisation
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     name = "active-bio-polymers",
     crafting_machine_tint = {
       primary = {160,240,160},
@@ -141,7 +242,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   },
   {--mineral lubricant
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "mineral-lubricant",
     crafting_machine_tint = {
@@ -164,7 +265,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   },
   {--organic carbon liquefaction
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "organic-carbon-liquefaction",
     icons = {
@@ -190,7 +291,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   },
   {--capacitor
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "capacitor-discharged",
     crafting_machine_tint = {
@@ -206,15 +307,15 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
       { type = "item", name = "conductive-coil", amount = 4 },
       { type = "item", name = "crystalline-plate", amount = 1 },
       { type = "item", name = "polymer-bar", amount = 2 },
-      { type = "fluid", name = "ferric-solution", amount = 5, fluidbox_index = 0 },
+      { type = "fluid", name = "ferric-solution", amount = 8, fluidbox_index = 0 },
     },
     results = { 
-      { type = "item", name = "capacitor-discharged", amount = 2 }
+      { type = "item", name = "capacitor-discharged", amount = 1 }
     },
   },
   {--Excited crystal quenching
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     name = "fused-crystalline-chunk",
     icon = "__TFMG-assets-0__/icons/items/fused-crystalline-chunk.png",
     crafting_machine_tint = {
@@ -241,7 +342,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   },
   {--Steam condensation
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "water",
     crafting_machine_tint = {
@@ -265,7 +366,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   },
   {--Thruster oxidizer
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "thruster-oxidizer",
     icon = "__space-age__/graphics/icons/fluid/thruster-oxidizer.png",
@@ -291,7 +392,7 @@ data:extend({--6:4:1 Water, Hydrocarbon, Organic
   },
   {--Thruster fuel
     type = "recipe",
-    category = "chemistry-plant",
+    categories = {"chemistry-plant"},
     subgroup = "fluid-recipes",
     name = "thruster-fuel",
     icon = "__space-age__/graphics/icons/fluid/thruster-fuel.png",

@@ -28,10 +28,15 @@
 		storage.worms.active_worms = {} end
 		if not storage.gameplay then
 			storage.gameplay = {} end
+		if not storage.energy_monitor then
+			storage.energy_monitor = {} end
+		if not storage.energy_monitor_k then
+			storage.energy_monitor_k = {} end
 		if not storage.story.self_version then
-			story.get_self_version()
-		end
-  end
+			story.get_self_version() end
+		if not storage.simple_compound then
+			storage.simple_compound = {} end
+	end
 
 
 --init events
@@ -99,21 +104,28 @@ end)
 --taken nth ticks.
 --36000
 --300
---256
---1
---5
+--256 --gets unregistered
+--1 --gets unregistered
+--5 --Where?
 
   script.on_event(
   	defines.events.on_tick,
   	function(event)
   		story.on_story_tick(event)
   		supercomputer.on_supercomputer_tick()
+			energy_monitor.on_tick()
   	end
   )
 
 	script.on_nth_tick(36000,--past 10 min, I should do a rolling average but im lazy.
 		function()
 			storage.worms.recent_launch_count = 0
+		end
+	)
+
+	script.on_nth_tick(600,--600 ticks so that there isnt much chance that random roars overlap.
+		function()
+			ice_worm.distant_roar()
 		end
 	)
 
@@ -179,6 +191,8 @@ end
 		{filter = "name", name = "scout-o-tron", mode = "or"}, --shouldnt be needed
 		{filter = "name", name = "constructron", mode = "or"},
 		{filter = "name", name = "solar-cell", mode = "or"},
+		{filter = "name", name = "energy-monitor-combinator", mode = "or"},
+		{filter = "name", name = "chemical-reactor", mode = "or"},
 		--{filter = "vehicle", mode = "or"},
   }
 
@@ -264,8 +278,12 @@ end
 			cargo.on_bay_built(event)
 		elseif entity.name == "constructron" or entity.name == "scout-o-tron" then
 			gameplay.on_spider_built(entity)
-		elseif entity.name == "solar-cell" then
+		elseif entity.name == "solar-panel" then
 			gameplay.on_solar_panel_built(entity)
+		elseif entity.name == "energy-monitor-combinator" then
+			energy_monitor.on_energy_monitor_built(entity)
+		elseif entity.name == "chemical-reactor" then
+			simple_compound.on_built_chemical_reactor(event)
 		end
   end
 
@@ -274,6 +292,17 @@ end
   	function(event)
   		supercomputer.on_supercomputer_destroyed(event)
 			cargo.on_bay_destroyed(event)
+			energy_monitor.on_energy_monitor_destroyed(event)
+			simple_compound.on_destroyed(event)
+  	end
+  )
+
+	script.on_event(
+  	defines.events.on_resource_depleted,
+  	function(event)
+			if event.entity.valid and event.entity.name == "regolith" then
+  			gameplay.regolith_mined(event)
+			end
   	end
   )
 

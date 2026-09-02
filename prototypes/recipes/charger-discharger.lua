@@ -1,5 +1,3 @@
-local TFMG = require("util.TFMG")
-
 local charger_power = 10
 
 data:extend({
@@ -8,7 +6,7 @@ data:extend({
   {
     type = "recipe",
     name = "capacitor-charged",
-    category = "charger",
+    categories = {"charger"},
     auto_recycle = false,
     energy_required = 10/(charger_power*0.6),--60% efficient.
     enabled = false,
@@ -23,7 +21,7 @@ data:extend({
     name = "excited-crystalline-chunk-red",
     icon = "__TFMG-assets-0__/icons/recipes/crystal-excitation.png",
     icon_size = 64,
-    category = "charger",
+    categories = {"charger"},
     auto_recycle = false,
     energy_required = 16,
     enabled = false,

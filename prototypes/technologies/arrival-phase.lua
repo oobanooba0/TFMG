@@ -78,7 +78,7 @@ data:extend({
     {
       {
         type = "unlock-recipe",
-        recipe = "refinery"
+        recipe = "oil-refinery"
       },
       {
         type = "unlock-recipe",
@@ -100,10 +100,10 @@ data:extend({
         type = "unlock-recipe",
         recipe = "hydrocarbon-concentration"
       },
-      {
-        type = "unlock-recipe",
-        recipe = "hydrocarbon-seperation"
-      },
+      --{ --Removed due to being redundant
+      --  type = "unlock-recipe",
+      --  recipe = "hydrocarbon-seperation"
+      --},
     },
     prerequisites = {"fluid-extraction"},
     unit = {
@@ -160,6 +160,15 @@ data:extend({
         type = "unlock-recipe",
         recipe = "pure-iron-ore-smelting"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "industrial-acid"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "water-electrolysis"
+      },
+      
     },
     prerequisites = {"hydrocarbon-processing","small-crusher","solid-extraction"},
     unit = {
@@ -262,11 +271,23 @@ data:extend({
       },
       {
         type = "unlock-recipe",
-        recipe = "small-heat-exchanger"
+        recipe = "heat-exchanger"
       },
       {
         type = "unlock-recipe",
         recipe = "chemical-reactor"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "react-short-chain-hydrocarbons"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "react-short-chain-hydrocarbons-in-air"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "react-hydrogen-oxygen"
       },
     },
     prerequisites = {"energy-distribution-2","contemplate-life"},
@@ -286,10 +307,6 @@ data:extend({
       {
         type = "unlock-recipe",
         recipe = "ground-radiator"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "heat-monitor"
       },
     },
     prerequisites = {"high-performance-structure","chemical-power"},
@@ -314,6 +331,10 @@ data:extend({
       {
         type = "unlock-recipe",
         recipe = "exploration-science"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "exploration-science-easy"
       },
     },
     prerequisites = {"heat-management-2","optical-coil"},

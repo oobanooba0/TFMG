@@ -44,27 +44,33 @@ data:extend({
   },
   {
     type = "item-subgroup",
-    name = "capacitor-intermediates",
+    name = "nuclear-intermediates",
     group = "intermediate-products",
     order = "g"
   },
   {
     type = "item-subgroup",
-    name = "advanced-intermediates",
+    name = "capacitor-intermediates",
     group = "intermediate-products",
     order = "h"
   },
   {
     type = "item-subgroup",
-    name = "science-unverified",
+    name = "advanced-intermediates",
     group = "intermediate-products",
     order = "i"
   },
   {
     type = "item-subgroup",
-    name = "science-verified",
+    name = "science-unverified",
     group = "intermediate-products",
     order = "j"
+  },
+  {
+    type = "item-subgroup",
+    name = "science-verified",
+    group = "intermediate-products",
+    order = "k"
   },
   --fluids group
   {
@@ -81,19 +87,22 @@ data:extend({
   },
   {
     type = "item-subgroup",
-    name = "intermediate-fluid",
+    name = "gas",
     group = "fluids",
     order = "c"
   },
   {
     type = "item-subgroup",
-    name = "thruster-fluid",
+    name = "intermediate-fluid",
     group = "fluids",
     order = "d"
   },
-
-
-
+  {
+    type = "item-subgroup",
+    name = "thruster-fluid",
+    group = "fluids",
+    order = "e"
+  },
 
   --debug group
   {

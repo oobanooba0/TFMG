@@ -1,6 +1,3 @@
-local TFMG = require("util.TFMG")
-
-
 ---assembling machine recipes.
 ---assembling-machine-pure for recipes that should only appear in the assembling machine, and not the matter reconstructor.
 
@@ -10,14 +7,14 @@ local docking_port = data.raw.recipe["TFMG-docking-port"]
     { type = "item", name = "high-performance-structure", amount = 8 },
     { type = "item", name = "ai-processor", amount = 2 },
   }
-  docking_port.category = "assembling-machine"
+  docking_port.categories = {"assembling-machine","matter-reconstructor"}
 
 local docking_belt = data.raw.recipe["TFMG-docking-belt"]
   docking_belt.ingredients = {
     { type = "item", name = "high-performance-structure", amount = 8 },
     { type = "item", name = "mechatronic-components", amount = 12 },
   }
-  docking_belt.category = "assembling-machine"
+  docking_belt.categories = {"assembling-machine","matter-reconstructor"}
 
 local docking_pipe = data.raw.recipe["TFMG-docking-pipe"]
   docking_pipe.ingredients = {
@@ -25,12 +22,12 @@ local docking_pipe = data.raw.recipe["TFMG-docking-pipe"]
     { type = "item", name = "mineral-glass", amount = 8 },
     { type = "item", name = "mechatronic-components", amount = 12 },
   }
-  docking_pipe.category = "assembling-machine"
+  docking_pipe.categories = {"assembling-machine","matter-reconstructor"}
 
 data:extend({
   {--Mineral Glass (in space)
     type = "recipe",
-    category = "assembling-machine-pure",
+    categories = {"assembling-machine"},
     name = "mineral-glass-cooling",
     energy_required = 1,
     enabled = false,
@@ -47,7 +44,7 @@ data:extend({
   },
   {--General purpose structure
     type = "recipe",
-    category = "assembling-machine-pure",
+    categories = {"assembling-machine"},
     name = "general-purpose-structure",
     energy_required = 1,
     enabled = false,
@@ -61,7 +58,7 @@ data:extend({
   },
   {--High performance structure
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "high-performance-structure",
     energy_required = 2,
     enabled = false,
@@ -77,7 +74,7 @@ data:extend({
   },
   {--mechanical components
     type = "recipe",
-    category = "assembling-machine-pure",
+    categories = {"assembling-machine"},
     name = "mechanical-components",
     energy_required = 2,
     enabled = false,
@@ -92,7 +89,7 @@ data:extend({
   },
   {--mechatronic-components
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "mechatronic-components",
     energy_required = 4,
     enabled = false,
@@ -109,7 +106,7 @@ data:extend({
   },
   {--conductive-coil
     type = "recipe",
-    category = "assembling-machine-pure",
+    categories = {"assembling-machine"},
     name = "conductive-coil",
     energy_required = 1,
     enabled = false,
@@ -123,7 +120,7 @@ data:extend({
   },
   {--optical coil
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "optical-coil",
     energy_required = 2,
     enabled = false,
@@ -131,14 +128,15 @@ data:extend({
     ingredients = {
       { type = "item", name = "mineral-glass", amount = 4 },
       { type = "item", name = "polymer-bar", amount = 1 },
+      { type = "fluid", name = "industrial-acid", amount = 16, fluidbox_index = 0 },
     },
     results = { 
-      { type = "item", name = "optical-coil", amount = 4 }
+      { type = "item", name = "optical-coil", amount = 6 }
     },
   },
   {--modular circuit
     type = "recipe",
-    category = "assembling-machine-pure",
+    categories = {"assembling-machine"},
     name = "modular-circuit",
     energy_required = 2,
     enabled = false,
@@ -154,16 +152,16 @@ data:extend({
   },
   {--AI processor
     type = "recipe",
-    category = "assembling-machine-pure",
+    categories = {"assembling-machine"},
     name = "ai-processor",
-    energy_required = 12,
+    energy_required = 8,
     enabled = false,
     allow_productivity = true,
     ingredients = {
       { type = "item", name = "modular-circuit", amount = 2 },
       { type = "item", name = "fused-crystalline-chunk", amount = 1 },
       { type = "item", name = "capacitor-discharged", amount = 2 },
-      { type = "item", name = "optical-coil", amount = 6 },
+      { type = "item", name = "optical-coil", amount = 12 },
     },
     results = { 
       { type = "item", name = "ai-processor", amount = 1 }
@@ -172,7 +170,7 @@ data:extend({
 --Science packs
   {--introspection science
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "introspection-science-unverified",
     energy_required = 5,
     enabled = false,
@@ -190,15 +188,15 @@ data:extend({
   },
   {--exploration science
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "exploration-science-unverified",
     energy_required = 10,
     enabled = false,
     allow_productivity = true,
     ingredients = {
       { type = "item", name = "high-performance-structure", amount = 2 },
-      { type = "item", name = "optical-coil", amount = 8 },
-      { type = "fluid", name = "organic-sludge", amount = 50 },
+      { type = "item", name = "optical-coil", amount = 12 },
+      { type = "fluid", name = "organic-sludge", amount = 200 },
     },
     results = { 
       { type = "item", name = "exploration-science-unverified", amount = 1 }
@@ -207,7 +205,7 @@ data:extend({
   },
   {--exploitation science
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "exploitation-science-unverified",
     energy_required = 16,
     enabled = false,
@@ -225,7 +223,7 @@ data:extend({
   },
   {--spidertron frame
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "spidertron-frame",
     energy_required = 16,
     enabled = false,
@@ -242,7 +240,7 @@ data:extend({
   },
   {--mechanical leg
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "mechanical-leg",
     energy_required = 12,
     enabled = false,
@@ -258,7 +256,7 @@ data:extend({
   },
   {--toolbelt equipment
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "toolbelt-equipment",
     energy_required = 12,
     enabled = false,
@@ -275,7 +273,7 @@ data:extend({
 ---spider hell
   {--Scout'o'tron
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "scout-o-tron",
     energy_required = 32,
     enabled = false,
@@ -291,7 +289,7 @@ data:extend({
   },
   {--Constructron
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "constructron",
     energy_required = 64,
     enabled = false,
@@ -310,7 +308,7 @@ data:extend({
 ---robots
   {--construction robot
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "construction-robot",
     energy_required = 8,
     enabled = false,
@@ -327,7 +325,7 @@ data:extend({
   },
   {--logistic robot
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "logistic-robot",
     energy_required = 8,
     enabled = false,
@@ -344,7 +342,7 @@ data:extend({
   },
   {--roboport 1
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "roboport",
     energy_required = 12,
     enabled = false,
@@ -361,7 +359,7 @@ data:extend({
 ---modules
   {--efficiency module
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     subgroup = "module",
     name = "efficiency-module",
     icon = "__base__/graphics/icons/efficiency-module-3.png",
@@ -381,7 +379,7 @@ data:extend({
   },
   {--speed module
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     subgroup = "module",
     name = "speed-module",
     icon = "__base__/graphics/icons/speed-module-3.png",
@@ -403,7 +401,7 @@ data:extend({
 ---building recipes
   {--transport belt
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "transport-belt",
     energy_required = 2,
     enabled = false,
@@ -417,7 +415,7 @@ data:extend({
   },
   {--fast transport belt
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "fast-transport-belt",
     energy_required = 4,
     enabled = false,
@@ -433,7 +431,7 @@ data:extend({
   },
   {--underground belt
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "underground-belt",
     energy_required = 4,
     enabled = false,
@@ -447,7 +445,7 @@ data:extend({
   },
   {--fast underground belt
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "fast-underground-belt",
     energy_required = 8,
     enabled = false,
@@ -463,7 +461,7 @@ data:extend({
   },
   {--splitter
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "splitter",
     energy_required = 4,
     enabled = false,
@@ -478,7 +476,7 @@ data:extend({
   },
   {--splitter-2
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "fast-splitter",
     energy_required = 8,
     enabled = false,
@@ -486,7 +484,7 @@ data:extend({
       { type = "item", name = "splitter", amount = 1 },
       { type = "item", name = "high-performance-structure", amount = 2 },
       { type = "item", name = "mechatronic-components", amount = 4 },
-      { type = "item", name = "optical-coil", amount = 8 },
+      { type = "item", name = "optical-coil", amount = 12 },
       { type = "fluid", name = "mineral-lubricant", amount = 16 },
     },
     results = { 
@@ -495,7 +493,7 @@ data:extend({
   },
   {--inserter-1
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "inserter",
     energy_required = 4,
     enabled = false,
@@ -510,7 +508,7 @@ data:extend({
   },
   {--pipe
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "pipe",
     energy_required = 1,
     enabled = false,
@@ -524,7 +522,7 @@ data:extend({
   },
   {--pipe-to-ground
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "pipe-to-ground",
     energy_required = 4,
     enabled = false,
@@ -538,7 +536,7 @@ data:extend({
   },
   {--pipe-2
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "pipe-2",
     energy_required = 2,
     enabled = false,
@@ -552,7 +550,7 @@ data:extend({
   },
   {--pipe-to-ground-2
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "pipe-to-ground-2",
     energy_required = 4,
     enabled = false,
@@ -566,7 +564,7 @@ data:extend({
   },
   {--pump
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "pump",
     energy_required = 6,
     enabled = false,
@@ -574,7 +572,6 @@ data:extend({
       { type = "item", name = "general-purpose-structure", amount = 2 },
       { type = "item", name = "mechanical-components", amount = 2 },
       { type = "item", name = "pipe", amount = 2 },
-      
     },
     results = { 
       { type = "item", name = "pump", amount = 1 }
@@ -582,7 +579,7 @@ data:extend({
   },
   {--storage tank
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "storage-tank",
     energy_required = 6,
     enabled = false,
@@ -590,7 +587,6 @@ data:extend({
       { type = "item", name = "general-purpose-structure", amount = 12 },
       { type = "item", name = "mineral-glass", amount = 12 },
       { type = "item", name = "pipe", amount = 4 },
-      
     },
     results = { 
         { type = "item", name = "storage-tank", amount = 1 }
@@ -598,7 +594,7 @@ data:extend({
   },
   {--pumpjack
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "pumpjack",
     energy_required = 6,
     enabled = false,
@@ -614,7 +610,7 @@ data:extend({
   },
   {--electric-mining-drill
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "electric-mining-drill",
     energy_required = 8,
     enabled = false,
@@ -629,7 +625,7 @@ data:extend({
   },
   {--assembling machine
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "assembling-machine",
     energy_required = 16,
     enabled = false,
@@ -644,7 +640,7 @@ data:extend({
   },
   {--furnace
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "furnace",
     energy_required = 8,
     enabled = false,
@@ -659,7 +655,7 @@ data:extend({
   },
   {--chemistry plant
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "chemistry-plant",
     energy_required = 12,
     enabled = false,
@@ -674,8 +670,8 @@ data:extend({
   },
   {--refinery
     type = "recipe",
-    category = "assembling-machine",
-    name = "refinery",
+    categories = {"assembling-machine","matter-reconstructor"},
+    name = "oil-refinery",
     energy_required = 16,
     enabled = false,
     ingredients = {
@@ -684,12 +680,12 @@ data:extend({
       { type = "item", name = "modular-circuit", amount = 8 },
     },
     results = { 
-      { type = "item", name = "refinery", amount = 1 }
+      { type = "item", name = "oil-refinery", amount = 1 }
     },
   },
   {--asteroid collector
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "asteroid-collector",
     energy_required = 16,
     enabled = false,
@@ -705,7 +701,7 @@ data:extend({
   },
   {--vision radar
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "radar",
     energy_required = 16,
     enabled = false,
@@ -721,7 +717,7 @@ data:extend({
   },
   {--scout radar
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "scout-radar",
     energy_required = 16,
     enabled = false,
@@ -734,10 +730,10 @@ data:extend({
       { type = "item", name = "scout-radar", amount = 1 }
     },
   },
-  {--small crusher
+  {--crusher
     type = "recipe",
-    category = "assembling-machine",
-    name = "small-crusher",
+    categories = {"assembling-machine","matter-reconstructor"},
+    name = "crusher",
     energy_required = 12,
     enabled = false,
     ingredients = {
@@ -747,12 +743,12 @@ data:extend({
 
     },
     results = { 
-      { type = "item", name = "small-crusher", amount = 1 }
+      { type = "item", name = "crusher", amount = 1 }
     },
   },
   {--heavy space platform
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "space-platform-foundation",
     energy_required = 2,
     enabled = true,
@@ -765,13 +761,13 @@ data:extend({
   },
   {--light space platform
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "light-space-platform-foundation",
     energy_required = 12,
     enabled = false,
     ingredients = {
       { type = "item", name = "high-performance-structure", amount = 4 },
-      { type = "item", name = "optical-coil", amount = 10 },
+      { type = "item", name = "optical-coil", amount = 16 },
     },
     results = { 
       { type = "item", name = "light-space-platform-foundation", amount = 1 }
@@ -779,7 +775,7 @@ data:extend({
   },
   {--heat pipe
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "heat-pipe",
     energy_required = 4,
     enabled = false,
@@ -794,7 +790,7 @@ data:extend({
   },
   {--small radiator
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "small-radiator",
     energy_required = 12,
     enabled = false,
@@ -808,7 +804,7 @@ data:extend({
   },
   {--repair pack
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "repair-pack",
     energy_required = 6,
     enabled = false,
@@ -822,7 +818,7 @@ data:extend({
   },
   {--supercomputer
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "supercomputer",
     energy_required = 20,
     enabled = false,
@@ -838,7 +834,7 @@ data:extend({
   },
   {--neural-node
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "neural-node",
     energy_required = 20,
     enabled = false,
@@ -854,7 +850,7 @@ data:extend({
   },
   {--charger
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "charger",
     energy_required = 12,
     enabled = false,
@@ -869,7 +865,7 @@ data:extend({
   },
   {--discharger
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "discharger",
     energy_required = 24,
     enabled = false,
@@ -884,7 +880,7 @@ data:extend({
   },
   {--Energy monitor
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "energy-monitor",
     energy_required = 8,
     enabled = false,
@@ -898,24 +894,9 @@ data:extend({
       { type = "item", name = "energy-monitor", amount = 1 }
     },
   },
-  {--heat monitor
-    type = "recipe",
-    category = "assembling-machine",
-    name = "heat-monitor",
-    energy_required = 8,
-    enabled = false,
-    ingredients = {
-      { type = "item", name = "heat-pipe", amount = 4},
-      { type = "item", name = "high-performance-structure", amount = 2 },
-      { type = "item", name = "modular-circuit", amount = 8 },
-    },
-    results = { 
-      { type = "item", name = "heat-monitor", amount = 1 }
-    },
-  },
   {--micro assembler
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "micro-assembler",
     energy_required = 24,
     enabled = false,
@@ -930,7 +911,7 @@ data:extend({
   },
   {--ground radiator
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "ground-radiator",
     energy_required = 8,
     enabled = false,
@@ -945,7 +926,7 @@ data:extend({
   },
   {--rocket silo
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "rocket-silo",
     energy_required = 64,
     enabled = false,
@@ -961,7 +942,7 @@ data:extend({
   },
   {--platform thruster
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "thruster",
     energy_required = 64,
     enabled = false,
@@ -977,7 +958,7 @@ data:extend({
   },
   {--platform starter pack
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "space-platform-starter-pack",
     energy_required = 64,
     enabled = false,
@@ -992,7 +973,7 @@ data:extend({
   },
   {--platform cargo bay
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "cargo-bay",
     energy_required = 32,
     enabled = false,
@@ -1008,7 +989,7 @@ data:extend({
   },
   {--lamp
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "small-lamp",
     energy_required = 4,
     enabled = false,
@@ -1023,7 +1004,7 @@ data:extend({
   },
   {--small electric pole
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "small-electric-pole",
     energy_required = 4,
     enabled = false,
@@ -1038,7 +1019,7 @@ data:extend({
   },
   {--medium electric pole
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "medium-electric-pole",
     energy_required = 4,
     enabled = false,
@@ -1053,7 +1034,7 @@ data:extend({
   },
   {--big electric pole
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "big-electric-pole",
     energy_required = 8,
     enabled = false,
@@ -1069,7 +1050,7 @@ data:extend({
   },
   {--small turbine
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "small-turbine",
     energy_required = 8,
     enabled = false,
@@ -1085,8 +1066,8 @@ data:extend({
   },
   {--heat exchanger
     type = "recipe",
-    category = "assembling-machine",
-    name = "small-heat-exchanger",
+    categories = {"assembling-machine","matter-reconstructor"},
+    name = "heat-exchanger",
     energy_required = 12,
     enabled = false,
     ingredients = {
@@ -1095,12 +1076,12 @@ data:extend({
       { type = "item", name = "pipe", amount = 8 },
     },
     results = { 
-      { type = "item", name = "small-heat-exchanger", amount = 1 }
+      { type = "item", name = "heat-exchanger", amount = 1 }
     },
   },
   {--chemical reactor
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "chemical-reactor",
     energy_required = 24,
     enabled = false,
@@ -1115,7 +1096,7 @@ data:extend({
   },
   {--constant combinator
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "constant-combinator",
     energy_required = 4,
     enabled = false,
@@ -1129,7 +1110,7 @@ data:extend({
   },
   {--arithmetic combinator
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "arithmetic-combinator",
     energy_required = 4,
     enabled = false,
@@ -1143,7 +1124,7 @@ data:extend({
   },
   {--decider combinator
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "decider-combinator",
     energy_required = 4,
     enabled = false,
@@ -1157,7 +1138,7 @@ data:extend({
   },
   {--selector combinator
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "selector-combinator",
     energy_required = 4,
     enabled = false,
@@ -1171,7 +1152,7 @@ data:extend({
   },
   {--power switch
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "power-switch",
     energy_required = 4,
     enabled = false,
@@ -1186,7 +1167,7 @@ data:extend({
   },
   {--display-panel
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "display-panel",
     energy_required = 4,
     enabled = false,
@@ -1201,7 +1182,7 @@ data:extend({
   },
   {--programmable speaker
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "programmable-speaker",
     energy_required = 4,
     enabled = false,
@@ -1215,7 +1196,7 @@ data:extend({
   },
   {--solar panel
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "solar-panel",
     energy_required = 8,
     enabled = false,
@@ -1230,7 +1211,7 @@ data:extend({
   },
   {--laser turret cell
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "laser-turret",
     energy_required = 8,
     enabled = false,
@@ -1246,7 +1227,7 @@ data:extend({
   },
   {--chest-1
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "steel-chest",
     energy_required = 4,
     enabled = false,
@@ -1259,7 +1240,7 @@ data:extend({
   },
   {--passive-provider-chest-1
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "passive-provider-chest",
     energy_required = 4,
     enabled = false,
@@ -1275,7 +1256,7 @@ data:extend({
   },
   {--storage-chest-1
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "storage-chest",
     energy_required = 4,
     enabled = false,
@@ -1290,7 +1271,7 @@ data:extend({
   },
   {--active-provider-chest-1
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "active-provider-chest",
     energy_required = 4,
     enabled = false,
@@ -1306,7 +1287,7 @@ data:extend({
   },
   {--buffer-chest-1
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "buffer-chest",
     energy_required = 4,
     enabled = false,
@@ -1322,7 +1303,7 @@ data:extend({
   },
   {--requester-chest-1
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "requester-chest",
     energy_required = 4,
     enabled = false,
@@ -1338,7 +1319,7 @@ data:extend({
   },
   {--chest-2
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "chest-2",
     energy_required = 8,
     enabled = false,
@@ -1352,7 +1333,7 @@ data:extend({
   },
   {--storage-chest-2
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "storage-chest-2",
     energy_required = 8,
     enabled = false,
@@ -1367,7 +1348,7 @@ data:extend({
   },
   {--passive-provider-chest-2
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "passive-provider-chest-2",
     energy_required = 8,
     enabled = false,
@@ -1382,7 +1363,7 @@ data:extend({
   },
   {--active-provider-chest-2
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "active-provider-chest-2",
     energy_required = 8,
     enabled = false,
@@ -1398,7 +1379,7 @@ data:extend({
   },
   {--buffer-chest-2
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "buffer-chest-2",
     energy_required = 8,
     enabled = false,
@@ -1414,7 +1395,7 @@ data:extend({
   },
   {--requester-chest-2
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "requester-chest-2",
     energy_required = 8,
     enabled = false,
@@ -1430,7 +1411,7 @@ data:extend({
   },
   {--stone wall
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "stone-wall",
     energy_required = 4,
     enabled = false,
@@ -1443,7 +1424,7 @@ data:extend({
   },
   {--gate
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "gate",
     energy_required = 4,
     enabled = false,
@@ -1457,7 +1438,7 @@ data:extend({
   },
   {--cargo-landing-pad
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "cargo-landing-pad",
     energy_required = 32,
     enabled = false,
@@ -1469,7 +1450,7 @@ data:extend({
     results = { 
       { type = "item",   {--passive-provider-chest-1
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "passive-provider-chest",
     energy_required = 4,
     enabled = false,
@@ -1485,7 +1466,7 @@ data:extend({
   },
   {--storage-chest-1
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "storage-chest",
     energy_required = 4,
     enabled = false,
@@ -1502,7 +1483,7 @@ data:extend({
   },
   {--long-inserter-1
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "long-handed-inserter",
     energy_required = 4,
     enabled = false,
@@ -1516,7 +1497,7 @@ data:extend({
   },
   {--locomotive
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "locomotive",
     energy_required = 16,
     enabled = false,
@@ -1530,7 +1511,7 @@ data:extend({
   },
   {--cargo wagon
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "cargo-wagon",
     energy_required = 16,
     enabled = false,
@@ -1545,7 +1526,7 @@ data:extend({
   },
   {--fluid wagon
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "fluid-wagon",
     energy_required = 16,
     enabled = false,
@@ -1560,7 +1541,7 @@ data:extend({
   },
   {--rail
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "rail",
     energy_required = 1,
     enabled = false,
@@ -1574,7 +1555,7 @@ data:extend({
   },
   {--rail signal
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "rail-signal",
     energy_required = 1,
     enabled = false,
@@ -1588,7 +1569,7 @@ data:extend({
   },
   {--rail chain signal
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "rail-chain-signal",
     energy_required = 1,
     enabled = false,
@@ -1602,7 +1583,7 @@ data:extend({
   },
   {--train stop
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "train-stop",
     energy_required = 1,
     enabled = false,
@@ -1616,7 +1597,7 @@ data:extend({
   },
   {--hazard concrete
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "hazard-concrete",
     energy_required = 1,
     enabled = false,
@@ -1629,7 +1610,7 @@ data:extend({
   },
   {--barrel
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     name = "barrel",
     energy_required = 1,
     enabled = false,
@@ -1642,7 +1623,7 @@ data:extend({
   },
   {--cliff explosives
     type = "recipe",
-    category = "assembling-machine",
+    categories = {"assembling-machine","matter-reconstructor"},
     subgroup = "fluid-recipes",
     name = "cliff-explosives",
     energy_required = 8,

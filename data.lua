@@ -1,6 +1,5 @@
 -- my utility functions
-	require("util.TFMG")
-	TFMG = ("util.TFMG")
+	TFMG = require("__TFMG-lib__.data.util")
 
 --end of vanilla
 	require("prototypes.vanilla-content-obliterator")
@@ -45,6 +44,10 @@
 --equipment
 	require("prototypes.equipment")
 	require("prototypes.equipment-grids")
+
+--surface properties
+	require("prototypes.surface-properties")
+	
 --tips and tricks
 	require("prototypes.tips-and-tricks-simulations.tips-and-tricks")
 
@@ -82,31 +85,37 @@
 
 --planets
 	require("prototypes.planet.arrival-map-gen")
+	require("prototypes.planet.extraction-map-gen")
 	require("prototypes.planet.planet")
 	require("prototypes.planet.map-gen-presets")
 
 --recipes
 	require("prototypes.recipes.assembling-machine")
+	require("prototypes.recipes.centrifuge")
 	require("prototypes.recipes.charger-discharger")
+	require("prototypes.recipes.chemical-reactor")
 	require("prototypes.recipes.chemistry-plant")
 	require("prototypes.recipes.furnace")
 	require("prototypes.recipes.matter-reconstructor")
 	require("prototypes.recipes.micro-assembler")
 	require("prototypes.recipes.refinery")
-	require("prototypes.recipes.small-crusher")
+	require("prototypes.recipes.crusher")
 	require("prototypes.recipes.special")
 	require("prototypes.recipes.supercomputer")
 
 --sound
 	require("sound.ambient.ambient-sounds")
+	--require("sound.enemy.ice-worm")
 	require("sound.utility.sounds")
 
 --technolgoies
 	require("prototypes.technologies.platform-phase")
 	require("prototypes.technologies.arrival-phase")
 	require("prototypes.technologies.space-phase")
+	require("prototypes.technologies.extraction-phase")
 	require("prototypes.technologies.extra")
 
 --compat optional mods
-	require("compat.pushbutton.technology")
-	require("compat.pushbutton.recipe")
+	--pushbutton
+		require("compat.pushbutton.technology")
+		require("compat.pushbutton.recipe")

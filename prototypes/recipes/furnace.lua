@@ -1,11 +1,11 @@
-local TFMG = require("util.TFMG")
+
 
 data:extend({
 --ferric recipes
   {
     type = "recipe",
     name = "ferric-plate",
-    category = "furnace",
+    categories = {"furnace"},
     auto_recycle = false,
     energy_required = 1,
     enabled = false,
@@ -17,7 +17,7 @@ data:extend({
   {
     type = "recipe",
     name = "ferric-ore-smelting",
-    category = "furnace",
+    categories = {"furnace"},
     auto_recycle = false,
     energy_required = 2,
     enabled = false,
@@ -30,7 +30,7 @@ data:extend({
   {
     type = "recipe",
     name = "pure-iron-ore-smelting",
-    category = "furnace",
+    categories = {"furnace"},
     auto_recycle = false,
     energy_required = 6,
     enabled = false,
@@ -44,7 +44,7 @@ data:extend({
   {
     type = "recipe",
     name = "titanium-plate",
-    category = "furnace",
+    categories = {"furnace"},
     auto_recycle = false,
     energy_required = 8,
     enabled = false,
@@ -57,21 +57,20 @@ data:extend({
   {
     type = "recipe",
     name = "hot-mineral-plate",
-    category = "furnace",
+    categories = {"furnace"},
     auto_recycle = false,
     energy_required = 2,
     enabled = false,
     ingredients = {{type = "item", name = "crystalline-asteroid-chunk", amount = 1}},
-    results = {{type="item", name="hot-mineral-plate", amount=1}},
+    results = {{type="item", name="hot-mineral-plate", amount=1,always_fresh = true}},
     allow_decomposition = false,
     allow_productivity = true,
-    result_is_always_fresh = true,
     surface_conditions = TFMG.conditions.space,
   },
   {
     type = "recipe",
     name = "mineral-glass",
-    category = "furnace",
+    categories = {"furnace"},
     auto_recycle = false,
     energy_required = 2,
     enabled = false,
@@ -84,22 +83,21 @@ data:extend({
   {
     type = "recipe",
     name = "hot-mineral-plate-smelting",
-    category = "furnace",
+    categories = {"furnace"},
     auto_recycle = false,
     energy_required = 3,
     enabled = false,
     ingredients = {{type = "item", name = "mineral-ore", amount = 2}},
-    results = {{type="item", name="hot-mineral-plate", amount=1}},
+    results = {{type = "item", name = "hot-mineral-plate", amount = 1, always_fresh = true}},
     allow_decomposition = false,
     allow_productivity = true,
-    result_is_always_fresh = true,
     factoriopedia_alternative = "hot-mineral-plate",
     surface_conditions = TFMG.conditions.space,
   },
   {
     type = "recipe",
     name = "mineral-glass-smelting",
-    category = "furnace",
+    categories = {"furnace"},
     auto_recycle = false,
     energy_required = 3,
     enabled = false,
@@ -112,7 +110,7 @@ data:extend({
   },
   {--small radiator
     type = "recipe",
-    category = "furnace",
+    categories = {"furnace"},
     name = "TFMG-logo-11-tiles",
     energy_required = 60,
     enabled = true,

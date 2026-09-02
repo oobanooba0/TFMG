@@ -1,12 +1,11 @@
-local flib_table = require("__flib__/table")
 
 local supercomputer = {}
 
 --ideally i want to migrate this information into mod data, so i can define it in the recipe prototype or something.
 local par_times = { --these are the number of ticks on average that a "good" solution takes. and is the required time to achive a 100% bonus
   ["introspection-science"] = 2,
-  ["exploration-science"] = 12,
-  ["exploitation-science"] = 90,
+  ["exploration-science"] = 90,
+  ["exploitation-science"] = 12,
 }
 
 --remember to update par times in locale
@@ -17,7 +16,7 @@ function supercomputer.on_supercomputer_destroyed(event)
       local entry = storage.supercomputer[event.useful_id]
       entry.input.destroy()
       entry.output.destroy()--byebye!
-      if entry.interface ~= nil then
+      if entry.interface ~= nil then --legacy code perhaps? probably todo with the old heat interface implementaiton
         entry.interface.destroy()
       end
   		storage.supercomputer[event.useful_id] = nil
@@ -220,33 +219,34 @@ function supercomputer.create_new_problem_introspection(v)--introspection recipe
   local problem_a = math.random(100)
   local problem_b = math.random(100)
   local operator_select = math.random(4)
-  
+  local problem_operator
+
   if operator_select == 1 then
-  v.solution_x = problem_a + problem_b
-  problem_operator = "signal-plus"
+    v.solution_x = problem_a + problem_b
+    problem_operator = "signal-plus"
   elseif operator_select == 2 then
-  v.solution_x = problem_a - problem_b
-  problem_operator = "signal-minus"
+    v.solution_x = problem_a - problem_b
+    problem_operator = "signal-minus"
   elseif operator_select == 3 then
-  v.solution_x = problem_a * problem_b
-  problem_operator = "signal-multiplication"
+    v.solution_x = problem_a * problem_b
+    problem_operator = "signal-multiplication"
   elseif operator_select == 4 then
-  v.solution_x = math.floor(problem_a / problem_b)
-  problem_operator = "signal-division"
+    v.solution_x = math.floor(problem_a / problem_b)
+    problem_operator = "signal-division"
   end
 
 
   output_control.filters = {
-    {value = {type = "virtual", name = "signal-A", quality = "normal"}, min = problem_a},
-    {value = {type = "virtual", name = "signal-B", quality = "normal"}, min = problem_b},
-    {value = {type = "virtual", name = problem_operator, quality = "normal"}, min = 1},
+      {value = {type = "virtual", name = "signal-A", quality = "normal"}, min = problem_a},
+      {value = {type = "virtual", name = "signal-B", quality = "normal"}, min = problem_b},
+      {value = {type = "virtual", name = problem_operator, quality = "normal"}, min = 1},
     }
   output_control.group = ""
 end
 
----exploration recipes
+---exploitation recipes
 
-function supercomputer.exploration_solution(v)
+function supercomputer.exploitation_solution(v)
   local green_distance = v.input.get_signal({type = "virtual", name = "signal-distance"},defines.wire_connector_id.circuit_green)
   local red_distance = v.input.get_signal({type = "virtual", name = "signal-distance"},defines.wire_connector_id.circuit_red)
   local green_difference = math.abs(green_distance - v.solution_x)
@@ -264,7 +264,7 @@ function supercomputer.exploration_solution(v)
   end 
 end
 
-function supercomputer.create_new_problem_exploration(v)--introspection recipe mechanics
+function supercomputer.create_new_problem_exploitation(v)--introspection recipe mechanics
   v.start_tick = game.tick
   if v.output.get_control_behavior().get_section(1) == nil then
     v.output.get_control_behavior().add_section(nil)
@@ -281,18 +281,18 @@ function supercomputer.create_new_problem_exploration(v)--introspection recipe m
 
 
   output_control.filters = {
-    {value = {type = "virtual", name = "signal-x-0", quality = "normal"}, min = x_0},
-    {value = {type = "virtual", name = "signal-y-0", quality = "normal"}, min = y_0},
-    {value = {type = "virtual", name = "signal-x-1", quality = "normal"}, min = x_1},
-    {value = {type = "virtual", name = "signal-y-1", quality = "normal"}, min = y_1},
+      {value = {type = "virtual", name = "signal-x-0", quality = "normal"}, min = x_0},
+      {value = {type = "virtual", name = "signal-y-0", quality = "normal"}, min = y_0},
+      {value = {type = "virtual", name = "signal-x-1", quality = "normal"}, min = x_1},
+      {value = {type = "virtual", name = "signal-y-1", quality = "normal"}, min = y_1},
     }
   output_control.group = ""
   --game.print(v.problem_a..v.problem_operator..v.problem_b.."="..v.solution_x)
 end
 
---exploitation science
+--exploration science
 
-local exploitation_source = {"0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"}
+local exploration_source = {"0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"}
 
 local function swap(v,a,b)
   local table = v.scramble_list
@@ -302,13 +302,13 @@ local function swap(v,a,b)
   end
 end
 
-local function check_exploitation_solution(v)
+local function check_exploration_solution(v)
   for index, letter in pairs(v.scramble_list) do
-    if letter ~= exploitation_source[index] then return false end
+    if letter ~= exploration_source[index] then return false end
   end
 return true end
 
-function supercomputer.exploitation_solution(v)
+function supercomputer.exploration_solution(v)
   --control the combinators
   local green_swap_a = v.input.get_signal({type = "virtual", name = "signal-A"},defines.wire_connector_id.circuit_green)
   local green_swap_b = v.input.get_signal({type = "virtual", name = "signal-B"},defines.wire_connector_id.circuit_green)
@@ -316,9 +316,9 @@ function supercomputer.exploitation_solution(v)
   local red_swap_b = v.input.get_signal({type = "virtual", name = "signal-B"},defines.wire_connector_id.circuit_red)
   swap(v,green_swap_a,green_swap_b)
   swap(v,red_swap_a,red_swap_b)
-  supercomputer.update_problem_exploitation(v)
+  supercomputer.update_problem_exploration(v)
   --solution handling
-  if check_exploitation_solution(v) then --if we solved it
+  if check_exploration_solution(v) then --if we solved it
     supercomputer.production_bonus(v)
   else
     supercomputer_passive_draw(v)
@@ -329,7 +329,7 @@ function supercomputer.exploitation_solution(v)
   end
 end
 
-function supercomputer.update_problem_exploitation(v) --update the output signals
+function supercomputer.update_problem_exploration(v) --update the output signals
   if v.output.get_control_behavior().get_section(1) == nil then
     v.output.get_control_behavior().add_section(nil)
   end
@@ -344,10 +344,10 @@ function supercomputer.update_problem_exploitation(v) --update the output signal
 
 end
 
-function supercomputer.create_new_problem_exploitation(v)
+function supercomputer.create_new_problem_exploration(v)
   v.start_tick = game.tick
-  v.scramble_list = TFMG.newscramble(exploitation_source) --get scrombombled!
-  supercomputer.update_problem_exploitation(v)
+  v.scramble_list = TFMG.newscramble(exploration_source) --get scrombombled!
+  supercomputer.update_problem_exploration(v)
 end
 
 return supercomputer

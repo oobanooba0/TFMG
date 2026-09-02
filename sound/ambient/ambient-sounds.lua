@@ -1,10 +1,10 @@
 data.raw ['ambient-sound']['main-menu'] = nil--to boldly delete the vanilla main menu music
 
 
-for _,track in pairs(data.raw ['ambient-sound']) do --removing the vanilla nauvis tracks. Normally I'd delete everything but space still needs some music that isnt just one track.
-  if track.planet == "nauvis" then 
-    data.raw['ambient-sound'][track.name] = nil 
-  end
+for track_name,track in pairs(data.raw ['ambient-sound']) do --removing the vanilla nauvis tracks. Normally I'd delete everything but space still needs some music, since i lack interludes for it still.
+  --if track.planet == "nauvis" then
+  data.raw['ambient-sound'][track_name] = nil 
+  --end
 end
 
 data:extend({
@@ -58,7 +58,7 @@ data:extend({
       type = "ambient-sound",
       name = "ENTROPY",
       track_type = "main-track",
-      planet = "nauvis",
+      planets = {"nauvis"},
       sound = {
         filename = "__TFMG-music__/arrival/ENTROPY.ogg",
         volume = 1,
@@ -69,7 +69,7 @@ data:extend({
       type = "ambient-sound",
       name = "LIFE",
       track_type = "main-track",
-      planet = "nauvis",
+      planets = {"nauvis"},
       sound = {
         filename = "__TFMG-music__/arrival/LIFE.ogg",
         volume = 1,
@@ -80,9 +80,20 @@ data:extend({
       type = "ambient-sound",
       name = "TREMOR",
       track_type = "main-track",
-      planet = "nauvis",
+      planets = {"nauvis"},
       sound = {
         filename = "__TFMG-music__/arrival/TREMOR.ogg",
+        volume = 1,
+      },
+      weight = 10
+    },
+    {
+      type = "ambient-sound",
+      name = "RIPPLES",
+      track_type = "main-track",
+      planets = {"nauvis"},
+      sound = {
+        filename = "__TFMG-music__/arrival/RIPPLES.ogg",
         volume = 1,
       },
       weight = 10
@@ -92,7 +103,7 @@ data:extend({
       type = "ambient-sound",
       name = "Clock-Interlude",
       track_type = "interlude",
-      planet = "nauvis",
+      planets = {"nauvis"},
       sound = {
         filename = "__TFMG-music__/arrival/Clock-Interlude.ogg",
         volume = 0.7,
@@ -103,7 +114,7 @@ data:extend({
       type = "ambient-sound",
       name = "Count-Interlude",
       track_type = "interlude",
-      planet = "nauvis",
+      planets = {"nauvis"},
       sound = {
         filename = "__TFMG-music__/arrival/Count-Interlude.ogg",
         volume = 0.7,
@@ -114,7 +125,7 @@ data:extend({
       type = "ambient-sound",
       name = "Spider-Steps-Interlude",
       track_type = "interlude",
-      planet = "nauvis",
+      planets = {"nauvis"},
       sound = {
         filename = "__TFMG-music__/arrival/Spider-Steps-Interlude.ogg",
         volume = 0.7,
@@ -125,7 +136,7 @@ data:extend({
       type = "ambient-sound",
       name = "Wyrms-Interlude",
       track_type = "interlude",
-      planet = "nauvis",
+      planets = {"nauvis"},
       sound = {
         filename = "__TFMG-music__/arrival/Wyrms-Interlude.ogg",
         volume = 0.7,
@@ -136,7 +147,7 @@ data:extend({
       type = "ambient-sound",
       name = "Reflections-Interlude",
       track_type = "interlude",
-      planet = "nauvis",
+      planets = {"nauvis"},
       sound = {
         filename = "__TFMG-music__/arrival/Reflections-Interlude.ogg",
         volume = 0.7,
@@ -147,10 +158,56 @@ data:extend({
       type = "ambient-sound",
       name = "Decomposition-Interlude",
       track_type = "interlude",
-      planet = "nauvis",
+      planets = {"nauvis"},
       sound = {
         filename = "__TFMG-music__/arrival/Decomposition-Interlude.ogg",
         volume = 0.7,
+      },
+      weight = 10
+    },
+--extraction
+  --main tracks
+    {
+      type = "ambient-sound",
+      name = "EXTRACTION",
+      track_type = "main-track",
+      planets = {"extraction"},
+      sound = {
+        filename = "__TFMG-music__/extraction/EXTRACTION.ogg",
+        volume = 1,
+      },
+      weight = 10
+    },
+    {
+      type = "ambient-sound",
+      name = "UPSTREAM",
+      track_type = "main-track",
+      planets = {"extraction"},
+      sound = {
+        filename = "__TFMG-music__/extraction/UPSTREAM.ogg",
+        volume = 1,
+      },
+      weight = 10
+    },
+    {
+      type = "ambient-sound",
+      name = "SCALAR",
+      track_type = "main-track",
+      planets = {"extraction"},
+      sound = {
+        filename = "__TFMG-music__/extraction/SCALAR.ogg",
+        volume = 1,
+      },
+      weight = 10
+    },
+    {
+      type = "ambient-sound",
+      name = "FEEDBACK",
+      track_type = "main-track",
+      planets = {"extraction"},
+      sound = {
+        filename = "__TFMG-music__/extraction/FEEDBACK.ogg",
+        volume = 1,
       },
       weight = 10
     },

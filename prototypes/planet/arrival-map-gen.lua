@@ -487,7 +487,7 @@ data.raw.tile["dust-crests"].autoplace = {
 }
 data.raw.tile["dust-patchy"].autoplace = {
 	probability_expression = [[
-  arrival_height(x, y) - noise >= 0.4
+  	arrival_height(x, y) - noise >= 0.4
 	]],
 	local_expressions = {
   noise = [[

@@ -1,6 +1,4 @@
-if not mods["pushbutton"] then
-    return
-end
+if not mods["pushbutton"] then return end
 
 data:extend({
   {--pushbutton

@@ -117,6 +117,10 @@ data:extend({
         type = "unlock-recipe",
         recipe = "exploitation-science"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "exploitation-science-easy"
+      },
     },
     prerequisites = {"evaluate-mind","space-flight"},
     unit = {
@@ -133,7 +137,6 @@ data:extend({
     name = "volatile-handling",
     icon = "__space-age__/graphics/technology/advanced-asteroid-processing.png",
     icon_size = 256,
-    essential = true,
     effects =
     {
       {
@@ -152,12 +155,38 @@ data:extend({
       time = 32
     },
   },
+  {--advanced microbe 
+    type = "technology",
+    name = "advanced-microbe-cultivation",
+    icon = "__space-age__/graphics/technology/advanced-asteroid-processing.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "microbe-restoration"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "microbe-cultivation"
+      },
+    },
+    prerequisites = {"exploitation-science"},
+    unit = {
+      count = 512,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1},
+        {"exploitation-science", 1},
+      },
+      time = 32
+    },
+  },
   {--Constructron
     type = "technology",
     name = "constructron",
     icon = "__base__/graphics/technology/spidertron.png",
     icon_size = 256,
-    essential = true,
     effects =
     {
       {
@@ -181,7 +210,6 @@ data:extend({
     name = "hub-expansion",
     icon = "__space-age__/graphics/technology/space-platform.png",
     icon_size = 256,
-    essential = true,
     effects =
     {
       {
@@ -203,6 +231,31 @@ data:extend({
       },
       time = 32
     },
+  },
+  {--extraction
+    type = "technology",
+    name = "extraction",
+    icon = "__TFMG-assets-0__/icons/planets/extraction-starmap.png",
+    icon_size = 512,
+    effects =
+    {
+      {
+        type = "unlock-space-location",
+        space_location = "extraction",
+        use_icon_overlay_constant = true
+      },
+    },
+    unit = {
+      count = 1024,
+      ingredients = {
+        {"introspection-science", 1},
+        {"exploration-science", 1},
+        {"exploitation-science", 1},
+      },
+      time = 32
+    },
+    prerequisites = {"volatile-handling"},
+    essential = true
   },
 --side researches
   {--cliff explosives

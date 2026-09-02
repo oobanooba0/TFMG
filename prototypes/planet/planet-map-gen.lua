@@ -80,4 +80,71 @@ planet_map_gen.arrival = function()
   }
 end
 
+planet_map_gen.extraction = function()
+  return
+  {
+    property_expression_names =
+    {
+      ["entity:regolith:probability"] = "regolith_probability",
+      ["entity:regolith:richness"] = "regolith_richness",
+
+
+      elevation = "extraction_cliff_craters",
+      cliffiness = "cliffiness_basic",
+      cliff_elevation = "cliff_elevation_from_elevation",
+      ["tile:empty-space"] = "extraction_empty_space",
+      ["tile:dust-flat:probability"] = "extraction_dust_flat",
+      ["tile:dust-patchy:probability"] = "extraction_dust_patchy",
+      ["tile:dust-crests:probability"] = "extraction_dust_crests",
+      ["tile:dust-lumpy:probability"] = "extraction_dust_lumpy",
+      ["tile:dust-crater:probability"] = "extraction_dust_crater",
+    },
+    cliff_settings =
+    {
+      name = "cliff-vulcanus",
+      cliff_elevation_interval = 100,
+      cliff_elevation_0 = 9.6,
+      cliff_smoothing = 0,
+      richness = 100
+    },
+    autoplace_controls =
+    {
+      ["regolith"] = {},
+    },
+    autoplace_settings =
+    {
+      ["tile"] =
+      {
+        settings =
+        {
+          ["empty-space"] = {},
+          ["dust-flat"] = {},
+          ["dust-patchy"] = {},
+          ["dust-crests"] = {},
+          ["dust-lumpy"] = {},
+          ["dust-crater"] = {},
+        }
+      },
+      ["decorative"] =
+      {
+        settings =
+        {
+          ["vulcanus-dune-decal"] = {},
+          ["crater-small"] = {},
+          ["crater-large"] = {},
+          ["pumice-relief-decal"] = {},
+          ["waves-decal"] = {},
+        }
+      },
+      ["entity"] =
+      {
+        settings =
+        {
+          ["regolith"] = {},
+        }
+      }
+    }
+  }
+end
+
 return planet_map_gen

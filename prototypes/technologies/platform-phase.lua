@@ -250,6 +250,10 @@ data:extend({
       },
       {
         type = "unlock-recipe",
+        recipe = "introspection-science-easy"
+      },
+      {
+        type = "unlock-recipe",
         recipe = "neural-node"
       },
       {
@@ -292,7 +296,7 @@ data:extend({
     time = 16
     },
   },
-  {--small crusher
+  {--crusher
     type = "technology",
     name = "small-crusher",
     icon = "__space-age__/graphics/technology/asteroid-reprocessing.png",
@@ -301,7 +305,7 @@ data:extend({
     {
       {
         type = "unlock-recipe",
-        recipe = "small-crusher"
+        recipe = "crusher"
       },
       {
         type = "unlock-recipe",

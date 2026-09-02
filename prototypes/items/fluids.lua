@@ -21,12 +21,12 @@
 
   local steam = data.raw.fluid["steam"]
   steam.default_temperature = 0
+  steam.max_temperature = 1000
   steam.subgroup = "energy-fluid"
   steam.order = "a[steam]"
 
   local LFO_value = "250kJ"
   local thruster_fuel = data.raw.fluid["thruster-fuel"]
-  thruster_fuel.uber_barrel = {}
   thruster_fuel.pipent = false
   thruster_fuel.default_temperature = -183
   thruster_fuel.fuel_value = LFO_value
@@ -34,7 +34,6 @@
   thruster_fuel.order = "a[thruster]-a[fuel]"
 
   local thruster_oxidizer = data.raw.fluid["thruster-oxidizer"]
-  thruster_oxidizer.uber_barrel = {}
   thruster_oxidizer.pipent = false
   thruster_oxidizer.default_temperature = -253
   thruster_oxidizer.fuel_value = LFO_value
@@ -91,13 +90,95 @@ data:extend({
   },
   {
     type = "fluid",
+    name = "industrial-acid",
+    icon = "__base__/graphics/icons/fluid/sulfuric-acid.png",
+    subgroup = "intermediate-fluid",
+    order = "a[arrival]-e[industrial-acid]",
+    default_temperature = 95,
+    base_color = {0.50, 0.50, 0.1},
+    flow_color = {0.9, 0.9, 0.20},
+    pipent = true,
+  },
+  {
+    type = "fluid",
     name = "ferric-solution",
     icon = "__TFMG-assets-0__/icons/fluids/ferric-solution.png",
     subgroup = "intermediate-fluid",
-    order = "a[arrival]-e[ferric-solution]",
+    order = "a[arrival]-f[ferric-solution]",
     default_temperature = 95,
     base_color = {0.5, 0.1, 0.0},
     flow_color = {0.7, 0.2, 0.0},
     uber_barrel = {},
+  },
+  {
+    type = "fluid",
+    name = "rich-slurry",
+    icon = "__TFMG-assets-0__/icons/fluids/rich-slurry.png",
+    subgroup = "intermediate-fluid",
+    order = "b[extraction]-a[rich-slurry]",
+    default_temperature = 0,
+    base_color = {0.3, 0.3, 0.3},
+    flow_color = {0.5, 0.5, 0.5},
+    uber_barrel = {},
+  },
+  {
+    type = "fluid",
+    name = "thorium-salts",
+    icon = "__TFMG-assets-0__/icons/fluids/thorium-salts.png",
+    subgroup = "intermediate-fluid",
+    order = "b[extraction]-b[thorium-dioxide]",
+    default_temperature = 0,
+    base_color = {0.2, 0.2, 0.5},
+    flow_color = {0.4, 0.4, 0.7},
+    uber_barrel = {},
+  },
+  {
+    type = "fluid",
+    name = "hydrogen",
+    icon = "__Krastorio2Assets__/icons/fluids/hydrogen.png",
+    subgroup = "gas",
+    fuel_value = "0.3MJ", --random ass fuel value
+    order = "a[arrival]-f[ferric-solution]",
+    default_temperature = 0,
+    base_color = {0.9, 0.9, 0.9},
+    flow_color = {0.9, 0.9, 0.9},
+    uber_barrel = {},
+  },
+  {
+    type = "fluid",
+    name = "oxygen",
+    icon = "__Krastorio2Assets__/icons/fluids/oxygen.png",
+    subgroup = "gas",
+    order = "a[arrival]-f[ferric-solution]",
+    default_temperature = 0,
+    base_color = {0.5, 0.0, 0.0},
+    flow_color = {0.7, 0.0, 0.0},
+    uber_barrel = {},
+  },
+--special fluids 
+  {
+    type = "fluid",
+    name = "nothing",
+    icon = "__core__/graphics/empty.png",
+    subgroup = "unobtainable",
+    order = "a[utility]-a[nothing]",
+    default_temperature = 15,
+    fuel_value = "1GJ",
+    base_color = {1, 1, 1},
+    flow_color = {1, 1, 1},
+    hidden = true,
+  },
+  {
+    type = "fluid",
+    name = "hot-gas",
+    icon = "__base__/graphics/icons/signal/signal-fire.png",
+    subgroup = "unobtainable",
+    order = "z[chemical-reactor]-b[nothing]",
+    default_temperature = 0,
+    max_temperature = 2000,
+    heat_capacity = "10kJ",
+    base_color = {1, 1, 1},
+    flow_color = {1, 1, 1},
+    hidden = true,
   },
 })
