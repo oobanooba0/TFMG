@@ -1,9 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.1
-Date: ????
+Date: 2026-09-02
   Major Features:
     - Note; lots of these changelogs relate to content for the next major update, because of 2.1 i've decided to release these anyway, but not everything in the changelog will be in a playable state.
-    - planet "Extraction" added. Its an asteroid Field. and a planet. Have fun there.
+    - planet "Extraction" added. It's an asteroid field. and a planet. Have fun there.
     - You can now enable easy science verification, which gives alt science verification recipes that do not require any circuit computers. Disabled by default, since its not the intended way to play, its just here to make the mod more accessable.
   Features:
     - Energy monitor is now significantly better, and can track Primary, secondary and tertiary power satisfaction/capacities. Allowing you to actually make those charger/discharger power storage setups I wanted.
