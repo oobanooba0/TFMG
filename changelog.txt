@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.5.0
+Version: 0.5.1
 Date: ????
   Major Features:
     - Note; lots of these changelogs relate to content for the next major update, because of 2.1 i've decided to release these anyway, but not everything in the changelog will be in a playable state.
