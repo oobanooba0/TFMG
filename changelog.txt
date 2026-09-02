@@ -1,7 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.3
-Date: ????
-  Changes:
+Date: 2026-09-02
+  Bugfixes:
+    - Fixed a dependency issue
+    - Removed dependency on TFMG, while it technically worked, and was funny, the mod portal doesn't like it.
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.2
 Date: 2026-09-02
