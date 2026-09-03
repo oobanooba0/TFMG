@@ -17,7 +17,7 @@
     "TFMG-thermal >= 0.5.1",
     "TFMG-platform-docking >= 0.5.0",
     "TFMG-lib >= 0.5.2",
-    "autofuel >= 1.2.4",
+    "autofuel >= 1.2.5",
     "spider-launcher>= 2.9.5",
     "?bbbbb >= 1.0.3"
   ],
