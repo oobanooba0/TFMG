@@ -38,6 +38,10 @@
 			storage.simple_compound = {} end
 	end
 
+	--local function tweak_player_settings(player)
+	--	player.toggle_menu_leaves_remote_view = false --wtf bro
+	--end
+
 
 --init events
   script.on_init(function(e)--Code shamelessly plagerised from Platformer by Corlin and Xiroc
@@ -57,12 +61,14 @@
   script.on_configuration_changed(function()
     refresh_data_storage()
 		supercomputer.make_the_prod_bar_show()
-		--register_vehicle_requirements()
+
+		--for _, player in pairs(game.players) do
+		--	tweak_player_settings(player)
+		--end
   end)
 
 	script.on_load(function()
 		deal_with_stupid_handlers()
-		--register_vehicle_requirements()
 	end)
 
 --Upon player joins
@@ -76,10 +82,15 @@
 				player.request_translation({"self.self-platform-name"})
 			end
   	end
+
+		--deal with permission groups
+
     local group = game.permissions.get_group("players")
     if group then
     	group.add_player(player)
     end
+
+		--tweak_player_settings(player)
   end)
 
 	script.on_event(defines.events.on_force_created,

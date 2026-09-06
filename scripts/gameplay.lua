@@ -49,7 +49,8 @@ local gameplay = {}
 -- Player permissions
 
 function gameplay.create_permission_group()--hopefully prevents players from goign to surface
- 	local group = game.permissions.create_group("players")
+  local group = game.permissions.get_group("players")
+  if not group then group = game.permissions.create_group("players") end
  	if group then
 		group.set_allows_action(defines.input_action.land_at_planet, false)
 	end
