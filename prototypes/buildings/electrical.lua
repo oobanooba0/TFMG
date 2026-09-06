@@ -831,7 +831,7 @@ data:extend({
   {--chemical reactor assembler
     type = "assembling-machine",
     name = "chemical-reactor",
-    icon = "__base__/graphics/icons/assembling-machine-3.png",
+    icon  = "__Krastorio2Assets__/icons/entities/gas-power-station.png",
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 0.5, result = "chemical-reactor"},
     max_health = 400,
