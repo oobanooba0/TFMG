@@ -57,8 +57,6 @@ for _,recipe in pairs(data.raw.recipe) do
 end
 
 
---
-
 local function unpipe_prototype(machine)--replace the old machine fluid box with a new one
   local fluid_boxes = table.deepcopy(machine.fluid_boxes)--we must copy, else we edit the original while we reference it which is bad
   local new_fluid_boxes = {}
@@ -111,7 +109,7 @@ local function fluid_box_add_pipe2_category(fluid_box) --add pipe 2 connection c
   end
 end
 
-local function handle_pipe_2_category(prototype_class) --generic script for prootypes which could have some combination of fluid boxes
+local function handle_pipe_2_category(prototype_class) --generic script for prototypes which could have some combination of fluid boxes
   for _,building in pairs(prototype_class) do
     if building.fluid_boxes then--recursively for buildings with many fluid boxes.
       for _,fluid_box in pairs(building.fluid_boxes) do fluid_box_add_pipe2_category(fluid_box) end

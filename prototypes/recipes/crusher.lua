@@ -62,10 +62,10 @@ data:extend({
     hide_from_signal_gui = false,
     ingredients = {
       {type = "item", name = "regolith", amount = 2},
-      {type = "fluid", name = "industrial-acid", amount = 8},
+      {type = "fluid", name = "industrial-acid", amount = 8, fluidbox_index = 2},
     },
     results = {
-      {type= "fluid", name = "rich-slurry", amount = 16 },
+      {type= "fluid", name = "rich-slurry", amount = 16},
     },
   },
 })

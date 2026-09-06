@@ -51,14 +51,14 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
     allow_productivity = false,
     allow_decomposition = false,
     ingredients = {
-      { type = "fluid", name = "water", amount = 100 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 100 },
-      { type = "fluid", name = "organic-sludge", amount = 100 },
+      { type = "fluid", name = "water", amount = 100, fluidbox_index = 1},
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 100, fluidbox_index = 2 },
+      { type = "fluid", name = "organic-sludge", amount = 100, fluidbox_index = 3 },
     },
     results = { 
-      { type = "fluid", name = "water", amount = 60 },
-      { type = "fluid", name = "short-chain-hydrocarbons", amount = 180 },
-      { type = "fluid", name = "organic-sludge", amount = 60 }
+      { type = "fluid", name = "water", amount = 60, fluidbox_index = 1},
+      { type = "fluid", name = "short-chain-hydrocarbons", amount = 180, fluidbox_index = 2 },
+      { type = "fluid", name = "organic-sludge", amount = 60, fluidbox_index = 3}
     },
     surface_conditions = TFMG.conditions.arrival,
   },
@@ -83,8 +83,7 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
       { type = "fluid", name = "hydrogen", amount = 24, fluidbox_index = 2,},
     },
     results = { 
-      { type = "fluid", name = "nothing", amount = 0, fluidbox_index = 0, show_details_in_recipe_tooltip = false,},
-      { type = "fluid", name = "industrial-acid", amount = 16, fluidbox_index = 0,},
+      { type = "fluid", name = "industrial-acid", amount = 16, fluidbox_index = 4, optional_fluidbox_indexes = {5,6}},
     },
   },
 
@@ -138,7 +137,7 @@ data:extend({--1:1:1 Water, Hydrocarbon, Organic
     allow_decomposition = false,
     ingredients = {
       { type = "item", name = "ferric-ore", amount = 5 },--was originally 6
-      { type = "fluid", name = "industrial-acid", amount = 16, fluidbox_index = 0},
+      { type = "fluid", name = "industrial-acid", amount = 16, fluidbox_index = 4, optional_fluidbox_indexes = {5,6}},
     },
     results = { 
       { type = "item", name = "titanium-ore", amount = 1 },
