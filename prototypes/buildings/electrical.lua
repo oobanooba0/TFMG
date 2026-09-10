@@ -960,6 +960,15 @@ data:extend({
     },
     consumption = "20MW",
     neighbour_bonus = 0.5,
+    neighbour_connectable = {
+      connections =
+      {
+        { location = { position = {  0,   -2.5 }, direction = defines.direction.north }, category = "chemical-reactor", neighbour_category = {"chemical-reactor"} },
+        { location = { position = {  2.5,  0   }, direction = defines.direction.east  }, category = "chemical-reactor", neighbour_category = {"chemical-reactor"} },
+        { location = { position = {  0,    2.5 }, direction = defines.direction.south }, category = "chemical-reactor", neighbour_category = {"chemical-reactor"} },
+        { location = { position = { -2.5,  0   }, direction = defines.direction.west  }, category = "chemical-reactor", neighbour_category = {"chemical-reactor"} },
+      }
+    },
     scale_energy_usage = false,
     energy_source =
     {
