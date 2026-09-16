@@ -137,6 +137,7 @@ end)
 	script.on_nth_tick(600,--600 ticks so that there isnt much chance that random roars overlap.
 		function()
 			ice_worm.distant_roar()
+			--introspection.random()
 		end
 	)
 

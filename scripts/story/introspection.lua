@@ -1,0 +1,14 @@
+--local introspects = {
+--  ["node-culling"] = {}
+--}
+--
+--
+--
+--
+--local introspection = {}
+--
+--function introspection.random()
+--
+--end
+--
+--return introspection
