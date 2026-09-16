@@ -22,34 +22,36 @@ local function fluid_ingredient_declare_index(ingredient,index,box_count)
 end
 
 for _,recipe in pairs(data.raw.recipe) do
-  local machine = unpipe_lookup[recipe.category]
-  if machine and machine.fluid_boxes then
-    --at this point, the unpipe boxes haven't been added yet, so the number of boxes is the amount of regular, pipable boxes.
-    local input_boxes = 0
-    local output_boxes = 0
-    for _,fluid_box in pairs(machine.fluid_boxes) do
-      if fluid_box.production_type == "input" then
-        input_boxes = input_boxes + 1
-      elseif fluid_box.production_type == "output" then
-        output_boxes = output_boxes + 1
-      end
-    end
-
-    if recipe.ingredients then
-      local ingredient_i = 1
-      for _,ingredient in pairs(recipe.ingredients) do
-        if ingredient.type == "fluid" then
-          fluid_ingredient_declare_index(ingredient,ingredient_i,input_boxes)
-          ingredient_i = ingredient_i + 1
+  if recipe.categories and recipe.categories[1] then --skip if recipe categories are messed up?
+    local machine = unpipe_lookup[recipe.categories[1]]--gotta look inside the recipe categoires
+    if machine and machine.fluid_boxes then
+      --at this point, the unpipe boxes haven't been added yet, so the number of boxes is the amount of regular, pipable boxes.
+      local input_boxes = 0
+      local output_boxes = 0
+      for _,fluid_box in pairs(machine.fluid_boxes) do
+        if fluid_box.production_type == "input" then
+          input_boxes = input_boxes + 1
+        elseif fluid_box.production_type == "output" then
+          output_boxes = output_boxes + 1
         end
       end
-    end
-    if recipe.results then
-      local ingredient_i = 1
-      for _,ingredient in pairs(recipe.results) do
-        if ingredient.type == "fluid" then
-          fluid_ingredient_declare_index(ingredient,ingredient_i,output_boxes)
-          ingredient_i = ingredient_i + 1
+
+      if recipe.ingredients then
+        local ingredient_i = 1
+        for _,ingredient in pairs(recipe.ingredients) do
+          if ingredient.type == "fluid" then
+            fluid_ingredient_declare_index(ingredient,ingredient_i,input_boxes)
+            ingredient_i = ingredient_i + 1
+          end
+        end
+      end
+      if recipe.results then
+        local ingredient_i = 1
+        for _,ingredient in pairs(recipe.results) do
+          if ingredient.type == "fluid" then
+            fluid_ingredient_declare_index(ingredient,ingredient_i,output_boxes)
+            ingredient_i = ingredient_i + 1
+          end
         end
       end
     end

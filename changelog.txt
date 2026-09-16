@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.9
+Date: 2026-09-16
+  Bugfixes:
+    - fixed unpipable fluid system fluidbox indexing problem, rocket silos and rocket fuel should now be unmangled and usable. Im sorry im tired and didnt check these things properly.
+---------------------------------------------------------------------------------------------------
 Version: 0.5.8
 Date: 2026-09-10
   Bugfixes:
