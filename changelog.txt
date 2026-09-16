@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.10
+Date: ????
+  Changes:
+    - made it so thrusters are dangerous, and do not stop operating before exceeding their maximum temperature. They can now melt themselves.
+    - Thruster specific heat is halved from 5MJ to 2.5MJ (so they heat up and cool down faster)
+---------------------------------------------------------------------------------------------------
 Version: 0.5.9
 Date: 2026-09-16
   Bugfixes:

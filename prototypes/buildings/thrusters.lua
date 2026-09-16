@@ -8,6 +8,9 @@ local thruster = data.raw["thruster"]["thruster"]
       { position = {-1.5, -1}, direction = 12},
     },
     heat_per_unit_fluid = "250kJ",
+    max_safe_temperature = 850,
+    max_working_temperature = 1000,
+    specific_heat = "2.5MJ",
   }
   thruster.min_performance = {fluid_volume = 0.1, fluid_usage = 0.1, effectivity = 1}
   thruster.max_performance = {fluid_volume = 0.8, fluid_usage = 2, effectivity = 0.5}
