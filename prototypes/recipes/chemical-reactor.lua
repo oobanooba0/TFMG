@@ -19,7 +19,7 @@ data:extend({
       { type = "fluid", name = "oxygen", amount = 20},
     },
     results = { 
-      { type = "fluid", name = "hot-gas", amount = 1, temperature = 1000, fluidbox_index = 1}
+      { type = "fluid", name = "hot-gas", amount = 1, temperature = 1500, fluidbox_index = 1}
     },
   },
   {--short chain hydrocarbons

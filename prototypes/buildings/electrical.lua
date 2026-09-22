@@ -837,6 +837,7 @@ data:extend({
     max_health = 400,
     collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
     selection_box = {{-2.4, -2.4}, {2.4, 2.4}},
+    use_mirroring = true,
     selection_priority = 55,
     corpse = "nuclear-reactor-remnants",
     dying_explosion = "nuclear-reactor-explosion",

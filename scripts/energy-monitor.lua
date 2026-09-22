@@ -59,7 +59,7 @@ local function update_energy_monitor(v) --update a single energy monitor
   for k,child in pairs(v.children) do
     if not child.valid then return game.print("borked energy monitor?") end
     if child.type == "generator" then
-      child.fluidbox[1] = { name = "nothing", amount = 100}
+      child.set_fluid(1,{ name = "nothing", amount = 100})
       signal_values[k] =   -(child.energy_generated_last_tick * 100)
     elseif child.type == "electric-energy-interface" then
       signal_values[k] = child.energy

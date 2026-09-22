@@ -1,9 +1,16 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.10
-Date: ????
+Date: 2026-09-22
   Changes:
     - made it so thrusters are dangerous, and do not stop operating before exceeding their maximum temperature. They can now melt themselves.
     - Thruster specific heat is halved from 5MJ to 2.5MJ (so they heat up and cool down faster)
+    - Chemical reactor Short chain hydrocarbons + oxygen now produces a bit more energy
+    - I promise you the chemical reactor neighbor bonus does work, It just doesnt show in the tooltip becuase you're hovering over an assembling machine, and not the actual heat generator entity itself. I'll try and find a solution to this at some point
+  Bugfixes:
+    - Quick fix on the energy monitor so it no longer crashes the game
+    - Chemical reactor recipes now report correct power production in recipe.
+    - Chemical reactor can be flipped again
+    - Ground radiator can be flipped again
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.9
 Date: 2026-09-16
