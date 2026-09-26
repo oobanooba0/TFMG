@@ -61,7 +61,7 @@ data:extend({
         }
       }
     },
-    fuel_category = "chemical",
+    fuel_categories = {"chemical","electric"},
     fuel_value = "1000000000GJ",
     fuel_acceleration_multiplier = 10,
     fuel_top_speed_multiplier = 100,
