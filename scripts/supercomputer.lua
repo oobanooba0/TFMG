@@ -221,6 +221,11 @@ function supercomputer.create_new_problem_introspection(v)--introspection recipe
   local operator_select = math.random(4)
   local problem_operator
 
+  -- now way to receive zero, so swap A<=>B, if A < B 
+  if operator_select == 4 and problem_a < problem_b then
+    problem_a, problem_b = problem_b, problem_a
+  end
+
   if operator_select == 1 then
     v.solution_x = problem_a + problem_b
     problem_operator = "signal-plus"
