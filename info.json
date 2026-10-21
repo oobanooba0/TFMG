@@ -1,11 +1,11 @@
 {
   "name": "TFMG",
-  "version": "0.5.11",
+  "version": "0.5.12",
   "title": "TFMG: The Factory Must Grow",
   "author": "oobanooba",
   "factorio_version": "2.1",
   "dependencies": [
-    "base >= 2.1.20",
+    "base >= 2.1.23",
     "space-age >= 2.1.7",
     "elevated-rails >= 2.1.7",
     "quality >= 2.1.7",
